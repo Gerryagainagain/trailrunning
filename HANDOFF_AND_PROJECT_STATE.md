@@ -1,14 +1,21 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.08 (MARTINSLAUF 10K: RENN-ANWEISUNG & WETTERKALIBRIERUNG IN MOBILE LOG-SHEET & BRIEFING INTEGRIERT)  
-**Last Updated:** November 07, 2026  
+**Document Version:** 11.09 (MOBILE LOG-SHEET: DAUER-EINGABE MIT MINUTEN:SEKUNDEN / DEZIMALSTELLEN Z.B. 00:00 FREIGEGEBEN)  
+**Last Updated:** November 08, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.08)
+## 📌 1. Project Overview & Release Freeze State (v11.09)
+
+- **Mobile Log-Sheet Dauer-Eingabe (v11.09 / State 11.09):**
+  - **Problembehebung:** Das Input-Feld für die Dauer war zuvor auf `type="number"` beschränkt, wodurch weder Doppelpunkte (`:`) noch Dezimaltrennzeichen eingegeben werden konnten und Sekunden abgeschnitten wurden.
+  - **Präzise Zeiterfassung:** Das Feld akzeptiert nun `MM:SS` (z. B. `57:42` oder `00:00`), `HH:MM:SS` (z. B. `1:15:30`), Dezimalwerte (`57.42` / `57,42`) sowie reine Minuten (`58`).
+  - **Sekundengenaue Pace-Berechnung:** `paceFrom` rechnet nun exakt auf Sekundenbasis herunter, wodurch die Pace bei krummen Zeiten (z. B. 10 km in 57:45 min -> 5:47 min/km) fehlerfrei ermittelt wird.
+  - **Kompakte Darstellung:** Bereits geloggte Einheiten zeigen in der Liste und in den Karten präzise `57:42 min` (bzw. `1:15:30 h`) statt pauschal gerundeter Ganzzahlen.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Martinslauf 10k: Renn-Anweisung & Wetterkalibrierung (v11.08 / State 11.08):**
   - **Mobile Log-Sheet (`openSheet`):** Das Sonntags-Modal (08.11) zeigt nun direkt auf dem Smartphone neben Distanz, Startzeit und Sub 58:00 Zielzeit die konkreten Rennbedingungen (7–9 °C, trocken, 10 km/h Wind) sowie die exakte Renntaktik und Bekleidungsempfehlung (Brustschutz: Windweste nur mit offenem Mesh-Rücken zwecks Thermoregulation oder Baselayer; KM 0–3 strikt < 118 bpm VT1; Windschatten am See; Endbeschleunigung ab KM 7).

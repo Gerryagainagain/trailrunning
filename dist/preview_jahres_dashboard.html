@@ -3237,7 +3237,7 @@
 
         let heroHtml = '';
         if (log) {
-          const meta = [log.hr ? `Ø ${log.hr} bpm` : '', minutesFromDuration(log.duration) ? `${minutesFromDuration(log.duration)} min` : '', log.hm ? `${log.hm} Hm` : ''].filter(Boolean).join(' · ');
+          const meta = [log.hr ? `Ø ${log.hr} bpm` : '', log.duration ? formatDurationCompact(log.duration) : '', log.hm ? `${log.hm} Hm` : ''].filter(Boolean).join(' · ');
           heroHtml = `
             <div class="hero-val-wrap">
               <span class="hero-val" style="color:var(--apple-green);">${Number(log.dist).toFixed(1)}</span>
@@ -3371,10 +3371,105 @@
       if (p.length === 2) return Math.round(p[0] + p[1] / 60);
       return Number(p[0]) || 0;
     }
-    function paceFrom(distKm, min) {
-      if (!distKm || !min) return '-:--';
-      const secs = (min * 60) / distKm;
-      const pm = Math.floor(secs / 60), ps = Math.round(secs % 60);
+    function parseDurationInput(raw) {
+      if (!raw) return { duration: '00:00:00', totalSeconds: 0, totalMinutes: 0 };
+      const s = String(raw).trim();
+      if (!s) return { duration: '00:00:00', totalSeconds: 0, totalMinutes: 0 };
+
+      // Doppelpunkt-Notation (hh:mm:ss oder mm:ss z.B. 57:42)
+      if (s.includes(':')) {
+        const parts = s.split(':').map(p => parseInt(p, 10) || 0);
+        let h = 0, m = 0, sec = 0;
+        if (parts.length === 3) {
+          h = parts[0];
+          m = parts[1];
+          sec = parts[2];
+        } else if (parts.length === 2) {
+          m = parts[0];
+          sec = parts[1];
+          if (m >= 60) {
+            h = Math.floor(m / 60);
+            m = m % 60;
+          }
+        } else {
+          m = parts[0];
+        }
+        const totalSec = h * 3600 + m * 60 + sec;
+        const durStr = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        return { duration: durStr, totalSeconds: totalSec, totalMinutes: totalSec / 60 };
+      }
+
+      // Punkt oder Komma (z. B. 57.42 oder 57,42 bzw. Dezimalminuten 57.5)
+      if (s.includes('.') || s.includes(',')) {
+        const parts = s.split(/[.,]/);
+        if (parts.length === 2 && parts[1].length === 2) {
+          const m = parseInt(parts[0], 10) || 0;
+          const sec = parseInt(parts[1], 10) || 0;
+          if (sec < 60) {
+            const h = Math.floor(m / 60);
+            const remM = m % 60;
+            const totalSec = h * 3600 + remM * 60 + sec;
+            const durStr = `${String(h).padStart(2, '0')}:${String(remM).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+            return { duration: durStr, totalSeconds: totalSec, totalMinutes: totalSec / 60 };
+          }
+        }
+        const dec = parseFloat(s.replace(',', '.')) || 0;
+        const totalSec = Math.round(dec * 60);
+        const h = Math.floor(totalSec / 3600);
+        const m = Math.floor((totalSec % 3600) / 60);
+        const sec = totalSec % 60;
+        const durStr = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+        return { duration: durStr, totalSeconds: totalSec, totalMinutes: totalSec / 60 };
+      }
+
+      // Reine Ganzzahl (z. B. 58 = 58 Minuten)
+      const num = parseInt(s, 10) || 0;
+      const h = Math.floor(num / 60);
+      const m = num % 60;
+      const totalSec = num * 60;
+      const durStr = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00`;
+      return { duration: durStr, totalSeconds: totalSec, totalMinutes: num };
+    }
+
+    function formatDurationForInput(dur) {
+      if (!dur) return '';
+      const parts = String(dur).split(':');
+      if (parts.length === 3) {
+        const h = parseInt(parts[0], 10) || 0;
+        const m = parts[1];
+        const s = parts[2];
+        if (h > 0) return `${h}:${m}:${s}`;
+        return `${m}:${s}`;
+      }
+      return dur;
+    }
+
+    function formatDurationCompact(dur) {
+      if (!dur) return '';
+      const parts = String(dur).split(':');
+      if (parts.length === 3) {
+        const h = parseInt(parts[0], 10) || 0;
+        const m = parts[1];
+        const s = parts[2];
+        if (h > 0) return `${h}:${m}:${s} h`;
+        return `${m}:${s} min`;
+      }
+      return `${dur} min`;
+    }
+
+    function paceFrom(distKm, durationOrSecs) {
+      if (!distKm || distKm <= 0) return '-:--';
+      let totalSecs = 0;
+      if (typeof durationOrSecs === 'number') {
+        totalSecs = durationOrSecs > 500 ? durationOrSecs : durationOrSecs * 60;
+      } else if (typeof durationOrSecs === 'string') {
+        const parsed = parseDurationInput(durationOrSecs);
+        totalSecs = parsed.totalSeconds;
+      }
+      if (!totalSecs || totalSecs <= 0) return '-:--';
+      const secsPerKm = totalSecs / distKm;
+      const pm = Math.floor(secsPerKm / 60);
+      const ps = Math.round(secsPerKm % 60);
       return ps === 60 ? `${pm + 1}:00` : `${pm}:${ps < 10 ? '0' : ''}${ps}`;
     }
     const isRunDay = (day) => !day.isStudio && !day.isHike && day.val !== '—' && !isNaN(parseFloat(day.val));
@@ -3432,7 +3527,7 @@
         // Subcopy: Keine BPM mehr in der Zeile! Zeigt sauberen Tag / kurze Ansage
         let tagLine = '';
         if (log) {
-          tagLine = `✓ ${day.tag || 'Erledigt'} · ${log.duration ? minutesFromDuration(log.duration) + ' min' : Number(log.dist).toFixed(1) + ' km'}`;
+          tagLine = `✓ ${day.tag || 'Erledigt'} · ${log.duration ? formatDurationCompact(log.duration) : Number(log.dist).toFixed(1) + ' km'}`;
         } else if (day.isRace) {
           tagLine = day.tag || 'Wettkampf';
         } else if (day.tag) {
@@ -3518,7 +3613,7 @@
       }
 
       const val = (k) => (log[k] !== undefined && log[k] !== 0 ? log[k] : '');
-      const durMin = minutesFromDuration(log.duration);
+      const durFormatted = formatDurationForInput(log.duration);
 
       document.getElementById('sheetBody').innerHTML = `
         <div class="s-date">${day.d.replace(' ', ' · ')} · KW ${kwNum}</div>
@@ -3527,7 +3622,7 @@
         <div class="s-section">Ist-Werte eintragen</div>
         <form class="s-form" onsubmit="saveSheetLog(event, ${kwNum}, ${i})">
           <div class="s-field"><label>Distanz</label><div><input name="dist" type="number" step="0.01" min="0" inputmode="decimal" value="${log.dist !== undefined ? log.dist : ''}" placeholder="${run ? parseFloat(day.val).toFixed(1) : '0.0'}"><span>km</span></div></div>
-          <div class="s-field"><label>Dauer</label><div><input name="dur" type="number" min="0" inputmode="numeric" value="${durMin || ''}" placeholder="0"><span>min</span></div></div>
+          <div class="s-field"><label>Dauer (00:00 / min)</label><div><input name="dur" type="text" value="${durFormatted || ''}" placeholder="00:00" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><span>min</span></div></div>
           <div class="s-field"><label>Ø HF (BPM)</label><div><input name="hr" type="number" min="0" inputmode="numeric" value="${val('hr')}" placeholder="0"><span>bpm</span></div></div>
           <div class="s-field"><label>Höhenmeter</label><div><input name="hm" type="number" min="0" inputmode="numeric" value="${val('hm')}" placeholder="0"><span>Hm</span></div></div>
           <button type="submit" class="s-save">✓ Speichern</button>
@@ -3550,7 +3645,7 @@
       const f = new FormData(e.target);
       const run = isRunDay(day);
       const dist = parseFloat(String(f.get('dist')).replace(',', '.')) || (f.get('dist') === '' && run ? parseFloat(day.val) : 0);
-      const min = parseInt(f.get('dur'), 10) || 0;
+      const durParsed = parseDurationInput(f.get('dur'));
       const type = run ? 'laufen' : (day.isStudio ? 'kraft' : (day.isHike ? 'wandern' : 'laufen'));
       const isErsatz = type !== 'laufen';
 
@@ -3562,13 +3657,13 @@
         dist: dist,
         distMeters: 0,
         hm: parseInt(f.get('hm'), 10) || 0,
-        duration: durationFromMinutes(min),
+        duration: durParsed.duration,
         hr: parseInt(f.get('hr'), 10) || 0,
-        pace: dist > 0 ? paceFrom(dist, min) : '-:--',
+        pace: dist > 0 && durParsed.totalSeconds > 0 ? paceFrom(dist, durParsed.totalSeconds) : '-:--',
         type: type,
         isErsatz: isErsatz,
         tag: day.tag || (day.isStudio ? 'Kraft & Stabi' : 'Lauf'),
-        notes: `Einheit ${day.tag || ''} absolviert (Mobile-Log)`.replace('  ', ' ')
+        notes: `Einheit ${day.tag || ''} absolviert: ${dist.toFixed(1)} km in ${formatDurationCompact(durParsed.duration)} (Mobile-Log)`.replace('  ', ' ')
       };
 
       const runs = loadRuns().filter(r => r.dayDate !== dd && r.date !== entry.date);
