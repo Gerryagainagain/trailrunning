@@ -86,7 +86,24 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
-  // KW 45 (Rennwoche Martinslauf)
+  // KW 45 (48. SFD Martinslauf 10k)
+  {
+    id: 1794138300000,
+    kw: 45,
+    date: '08.11.2026',
+    dayDate: '08.11',
+    dist: 10.0,
+    distMeters: 10000,
+    hm: 10,
+    duration: '00:58:25',
+    hr: 151,
+    pace: '5:50',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Martinslauf 10k (Offiziell)',
+    notes: 'Offizielle Urkunde: 58:25 min Netto (Brutto 59:04) · Pace 5:50 min/km · Ø 151 bpm (Max 166 bpm) · TE 5,0 Aerob / 0,2 Anaerob · Ø 346 W / 156 spm · Wasserstopp bei KM 6 (~15s) · Zielsprint bis 4:44 min/km'
+  },
+  // KW 45 (Locker GA1)
   {
     id: 1793700000000,
     kw: 45,

@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.09 (MOBILE LOG-SHEET: DAUER-EINGABE MIT MINUTEN:SEKUNDEN / DEZIMALSTELLEN Z.B. 00:00 FREIGEGEBEN)  
+**Document Version:** 11.10 (48. SFD MARTINLAUF 10K REALDATEN FEST EINGEPFLEGT: 58:25 MIN NETTO · PACE 5:50 · Ø 151 BPM)  
 **Last Updated:** November 08, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.09)
+## 📌 1. Project Overview & Release Freeze State (v11.10)
+
+- **48. SFD Martinslauf 10k Realdaten eingepflegt (v11.10 / State 11.10):**
+  - **Rennergebnis (08.11.2026):** 10,0 km in **58:25 min Netto** (Brutto 59:04 min / 39s Startverzögerung im Pulk); Pace **5:50 min/km**; Ø Herzfrequenz **151 bpm** (Max **166 bpm**); Leistung **Ø 346 W** (Max 441 W); Schrittfrequenz **Ø 156 spm** (Max 167 spm); Training Effect **5,0 Aerob / 0,2 Anaerob**; Höhenmeter 10 Hm.
+  - **Vergleich 2025 vs. 2026:** Verbesserung um **-1:02 min** gegenüber dem Martinslauf 2025 (59:27 min @ 5:55 min/km). Ohne den Verpflegungsstopp bei KM 6 (~15s) lag die reine Bewegungs-Pace bei 5:47–5:48 min/km (Soll-Pace Sub 58 exakt getroffen).
+  - **Persistenz:** Fest in `defaultInitialRuns` (`app.js`), `seedDefaultRuns` (`index.html`) und `preview_jahres_dashboard.html` hinterlegt, nach `dist/` gespiegelt und in `localStorage` verankert.
 
 - **Mobile Log-Sheet Dauer-Eingabe (v11.09 / State 11.09):**
   - **Problembehebung:** Das Input-Feld für die Dauer war zuvor auf `type="number"` beschränkt, wodurch weder Doppelpunkte (`:`) noch Dezimaltrennzeichen eingegeben werden konnten und Sekunden abgeschnitten wurden.
