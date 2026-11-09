@@ -2610,7 +2610,7 @@
 
       // 2. OPTIONALE LÄUFE (LILA GESTRICHELT MIT KLICKBAREN ANMELDELINKS)
       if (mIdx === 3 && day === 17) {
-        keyEl.innerHTML = 'Option: 17. April 2027 · Rureifel Trail RET22 (22 km · ~800 Hm · Nideggen) · <a href="https://www.rureifel-trail.com/" target="_blank" rel="noopener noreferrer" class="option-reg-link">Zur Anmeldung / Infos ↗</a>';
+        keyEl.innerHTML = 'Option: 17. April 2027 · Rureifel Trail RET22 (22,8 km · 851 Hm · Nideggen) · <a href="https://www.rureifel-trail.com/" target="_blank" rel="noopener noreferrer" class="option-reg-link">Anmeldung ↗</a> · <a href="https://tracedetrail.fr/fr/trace/275720" target="_blank" rel="noopener noreferrer" class="option-reg-link">Strecken-Track (Trace de Trail) ↗</a> · <a href="javascript:void(0)" onclick="openRaceDrawer(\'ret22\')" class="option-reg-link">Briefing ↗</a>';
         return;
       }
       if (mIdx === 8 && day === 11) {
@@ -2889,6 +2889,37 @@
             title: 'Verpflegung & Pflichtausrüstung',
             type: 'text',
             text: 'Trailweste mit 2x 500ml Flasks, 3–4 Gels / Riegel, Rettungsdecke und Notfall-Windjacke.'
+          }
+        ]
+      },
+      ret22: {
+        title: 'Rureifel Trail RET22',
+        subtitle: 'Samstag, 17. April 2027 · Nideggen / Rurtal',
+        targetPill: 'Option: 22,8 km · 851 Hm D+',
+        organizerUrl: 'https://www.rureifel-trail.com/',
+        organizerLabel: 'Offizielle Website & Anmeldung ↗',
+        routeUrl: 'https://tracedetrail.fr/fr/trace/275720',
+        routeLabel: 'Strecken-Track (Trace de Trail) ↗',
+        sections: [
+          {
+            title: 'Eckdaten & Logistik',
+            type: 'grid',
+            items: [
+              { label: 'Start / Ziel', val: 'Burg Nideggen' },
+              { label: 'Distanz / Hm', val: '22,8 km · 851 Hm D+' },
+              { label: 'Profil', val: 'Buntsandstein-Singletrails' },
+              { label: 'Anmeldung', val: '11.11.2026 um 00:00 Uhr' }
+            ]
+          },
+          {
+            title: 'Strecke, Highlights & Track',
+            type: 'text',
+            text: 'Steile Singletrails im Rurtal, Burgberg (Bergstein), Stausee Obermaubach und knackiger Uphill zur Waldkapelle. Steigungsdichte 36–45 Hm/km.<br><a href="https://tracedetrail.fr/fr/trace/275720" target="_blank" rel="noopener noreferrer" style="color:var(--apple-cyan); font-weight:700; text-decoration:underline; display:inline-block; margin-top:6px;">Offizieller Strecken-Track auf Trace de Trail (Trace #275720) ↗</a>'
+          },
+          {
+            title: 'Pflichtausrüstung',
+            type: 'text',
+            text: 'Profilierte Trailschuhe, Faltbecher oder Trinkflasche, Mobiltelefon, Trailweste mit Eigenverpflegung.'
           }
         ]
       },

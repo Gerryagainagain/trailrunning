@@ -1,14 +1,20 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.10 (48. SFD MARTINLAUF 10K REALDATEN FEST EINGEPFLEGT: 58:25 MIN NETTO · PACE 5:50 · Ø 151 BPM)  
-**Last Updated:** November 08, 2026  
+**Document Version:** 11.11 (RUREIFEL TRAIL RET22: OFFIZIELLER TRACE DE TRAIL STRECKEN-TRACK #275720 & BRIEFING INTEGRIERT)  
+**Last Updated:** November 09, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.10)
+## 📌 1. Project Overview & Release Freeze State (v11.11)
+
+- **Rureifel Trail RET22 Strecken-Track & Briefing integriert (v11.11 / State 11.11):**
+  - **Offizieller Strecken-Track:** [`https://tracedetrail.fr/fr/trace/275720`](https://tracedetrail.fr/fr/trace/275720) (Trace de Trail #275720: 22,8 km · 851 Hm D+ / 852 Hm D-) im System hinterlegt.
+  - **Meta-Dock & Klick-Handler (17. April 2027):** Direkte Verlinkung von Anmelde-Portal (`rureifel-trail.com`), Strecken-Track (`tracedetrail.fr`) sowie Aufruf des Apple HIG Slide-Over Drawers (`openRaceDrawer('ret22')`).
+  - **Apple HIG Drawer Briefing:** Spezifische Sektionen für RET22 (Eckdaten, Steigungsdichte 36–45 Hm/km, Uphills Burgberg/Waldkapelle, Pflichtausrüstung, Anmeldetermin 11.11. 00:00 Uhr) in `raceBriefings.ret22` hinterlegt.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **48. SFD Martinslauf 10k Realdaten eingepflegt (v11.10 / State 11.10):**
   - **Rennergebnis (08.11.2026):** 10,0 km in **58:25 min Netto** (Brutto 59:04 min / 39s Startverzögerung im Pulk); Pace **5:50 min/km**; Ø Herzfrequenz **151 bpm** (Max **166 bpm**); Leistung **Ø 346 W** (Max 441 W); Schrittfrequenz **Ø 156 spm** (Max 167 spm); Training Effect **5,0 Aerob / 0,2 Anaerob**; Höhenmeter 10 Hm.
