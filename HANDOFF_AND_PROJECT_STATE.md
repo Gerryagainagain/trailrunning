@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.12 (RUREIFEL TRAIL RET22: STATUS AUF FESTEN WETTKAMPF ORANGE AKTUALISIERT)  
+**Document Version:** 11.13 (RUREIFEL TRAIL RET22: AUFBAUPHASEN & BLAUTÖNE IM SAISONKALENDER KALIBRIERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,20 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.12)
+## 📌 1. Project Overview & Release Freeze State (v11.13)
+
+- **Rureifel Trail RET22 Periodisierung & Blautöne kalibriert (v11.13 / State 11.13):**
+  - **Nahtlose Trainings-Periodisierung März/April 2027:** Die 4-wöchige Lücke zwischen der Belgenbach-Regeneration (Ende 21. März) und dem Rureifel Trail RET22 (17. April) wurde mit den gestuften Cycling-Phasen (Apple Cyan Blautöne) geschlossen:
+    - *22.–28. März (KW 12):* `build-light` (8% Cyan) – Re-Aktivierung & Grundlagenausdauer GA1 (VT1 105–118 bpm).
+    - *29. März – 04. April (KW 13):* `build` (18% Cyan) – Spezifischer Aufbau RET22, Einstieg Hügel-/Trailläufe Erkrath (250–350 Hm).
+    - *05.–11. April (KW 14):* `build-peak` (32% Cyan) – Peak-Woche RET22 mit Schlüsseltraining & wettkampfspezifischer Belastung (überlagert am 10.–11.04. vom *Sing Barbershop Festival Apeldoorn* via Reise-Layer).
+    - *12.–16. April (KW 15):* `taper` (12% Cyan) – Tapering vor RET22 (Umfang -40%, Beinspannung & Frische).
+    - *17. April (Samstag):* `race` (Apple Orange) – Rureifel Trail RET22 (22,8 km · 851 Hm D+).
+    - *18. April (Sonntag):* `rekom-acute` (28% Grün) – Post-Race Tag, ZNS-Ruhe.
+    - *19.–25. April (KW 16):* `rekom-light` (8% Grün) – Aktive Erholung RET22 mit leichten GA1-Lockertrabs (VT1 105–118 bpm).
+    - *26. April – 02. Mai (KW 17):* `build-light` (8% Cyan) – Frühjahrs-Reaktivierung vor dem TS16-Bergblock (ab 03. Mai).
+  - **Meta-Dock & Klick-Handler:** Sämtliche Tagesklicks in KW 12 bis KW 17 liefern nun präzise, trainingsspezifische Erläuterungen im Statusdock.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Rureifel Trail RET22: Status von Option auf festen Wettkampf (Orange) umgestellt (v11.12 / State 11.12):**
   - **Offizielle Anmeldung erfolgt (11.11.2026):** Der Rureifel Trail RET22 (22,8 km · 851 Hm D+ am 17.04.2027) ist verbindlich angemeldet und im Saisonkalender 2027 von einer violetten Option (`.phase-option`) zu einem festen Hauptwettkampf (`.phase-race`, Apple Orange Solid) erhoben.

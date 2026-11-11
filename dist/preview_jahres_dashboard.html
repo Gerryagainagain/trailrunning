@@ -2319,13 +2319,18 @@
         if (d === 7) return 'race'; // Belgenbach 30k Hauptziel Q1
         if (d >= 8 && d <= 14) return 'rekom-acute'; // Post-Race W1: Akute Regeneration & ZNS-Ruhe
         if (d >= 15 && d <= 21) return 'rekom-light'; // Post-Race W2: Aktiver Übergang & Lockertrabs
-        return '';
+        if (d >= 22 && d <= 28) return 'build-light'; // KW 12: Re-Aktivierung & Basis RET22 (GA1 VT1 105–118 bpm)
+        return 'build'; // KW 13: 29.–31. Mär Spezifischer Aufbau RET22
       }
       // --- Q2 (Apr – Jun 2027) ---
       if (mIdx === 3) { // Apr
+        if (d <= 4) return 'build'; // KW 13: 01.–04. Apr Spezifischer Aufbau RET22 (Hügel Erkrath)
+        if (d >= 5 && d <= 11) return 'build-peak'; // KW 14: 05.–11. Apr Peak-Woche RET22 (inkl. Barbershop)
+        if (d >= 12 && d <= 16) return 'taper'; // KW 15: 12.–16. Apr Tapering RET22 & Frische
         if (d === 17) return 'race'; // 17.04.2027: Rureifel Trail RET22 (22,8 km · 851 Hm D+ · Fest angemeldet)
-        if (d >= 19) return 'build-light'; // KW 16–17: Frühjahrs-Reaktivierung & sanfte Basis
-        return ''; // 01.–18. Apr: Frühjahrs-Basis & Erhaltung
+        if (d === 18) return 'rekom-acute'; // Post-Race Tag: Akute Erholung RET22
+        if (d >= 19 && d <= 25) return 'rekom-light'; // KW 16: Post-Race Woche Aktive Erholung RET22
+        return 'build-light'; // KW 17: 26.–30. Apr Frühjahrs-Reaktivierung vor TS16-Bergblock
       }
       if (mIdx === 4) { // Mai
         if (d <= 2) return 'build-light'; // KW 17: Abschluss Re-Aktivierung
@@ -2633,8 +2638,12 @@
           keyEl.innerHTML = 'Phase 1 (06.–17. Jan) · Re-Aktivierung & sanfte Basis (GA1 VT1 105–118 bpm) · Wiedereinstieg nach Jahreswechsel';
           return;
         }
-        if (mIdx === 3 || mIdx === 4) {
-          keyEl.innerHTML = 'Frühjahrs-Reaktivierung (19. Apr – 02. Mai) · Sanfte Basis & GA1-Umfang vor dem TS16-Bergblock';
+        if (mIdx === 2 && day >= 22) {
+          keyEl.innerHTML = 'Aufbau-Phase 1 (22.–28. März · KW 12) · Re-Aktivierung nach Belgenbach & Basis RET22 (GA1 VT1 105–118 bpm)';
+          return;
+        }
+        if ((mIdx === 3 && day >= 26) || (mIdx === 4 && day <= 2)) {
+          keyEl.innerHTML = 'Frühjahrs-Reaktivierung (26. Apr – 02. Mai · KW 17) · Sanfte Basis & GA1-Umfang vor dem TS16-Bergblock';
           return;
         }
         if (mIdx === 7 || (mIdx === 8 && day <= 5)) {
@@ -2647,6 +2656,10 @@
       if (phase === 'build') {
         if (mIdx === 0 || mIdx === 1) {
           keyEl.innerHTML = 'Phase 2 (18. Jan – 14. Feb) · Spezifischer Aufbau Belgenbachtrail · Erkrath-Longruns (350–450 Hm) & Tempohärte';
+          return;
+        }
+        if ((mIdx === 2 && day >= 29) || (mIdx === 3 && day <= 4)) {
+          keyEl.innerHTML = 'Aufbau-Phase 2 (29. März – 04. Apr · KW 13) · Spezifischer Aufbau RET22 · Hügel- & Trailgewöhnung Erkrath (250–350 Hm)';
           return;
         }
         if (mIdx === 4) {
@@ -2675,6 +2688,10 @@
           keyEl.innerHTML = 'Phase 3 (15.–21. Feb) · Peak-Woche Belgenbach · Schlüsseltraining (20–22 km Trail) & maximale Spezifik';
           return;
         }
+        if (mIdx === 3 && day >= 5 && day <= 11) {
+          keyEl.innerHTML = 'Peak-Woche RET22 (05.–11. Apr · KW 14) · Schlüsseltraining & Spezifik (inkl. Sing Barbershop Reise)';
+          return;
+        }
         if (mIdx === 4) {
           keyEl.innerHTML = 'Peak-Woche TS16 (24.–30. Mai) · Spezifischer Bergab-Bremskraft-Reiz & alpine Höhenmeter';
           return;
@@ -2689,6 +2706,10 @@
       if (phase === 'taper') {
         if (mIdx === 1 || (mIdx === 2 && day < 7)) {
           keyEl.innerHTML = 'Phase 4 (22. Feb – 06. März) · Tapering Belgenbach · Umfang -40%, Spezifik punktuell halten';
+          return;
+        }
+        if (mIdx === 3 && day >= 12 && day <= 16) {
+          keyEl.innerHTML = 'Tapering RET22 (12.–16. Apr · KW 15) · Umfang -40%, Frische & Beinspannung sichern';
           return;
         }
         if (mIdx === 4 || (mIdx === 5 && day < 12)) {
@@ -2707,6 +2728,10 @@
           keyEl.innerHTML = 'Post-Race Woche 1 (08.–14. März) · Akute Regeneration Belgenbach · ZNS-Erholung & Muskelreparatur';
           return;
         }
+        if (mIdx === 3 && day === 18) {
+          keyEl.innerHTML = 'Post-Race Tag (18. Apr) · Akute Regeneration Rureifel Trail RET22 · ZNS-Ruhe';
+          return;
+        }
         if (mIdx === 5) {
           keyEl.innerHTML = 'Post-Race Woche 1 (13.–20. Juni) · Akute alpine Regeneration Camping FiNK · Null Laufbelastung, reines Familienwandern';
           return;
@@ -2721,6 +2746,10 @@
       if (phase === 'rekom-light') {
         if (mIdx === 2) {
           keyEl.innerHTML = 'Post-Race Woche 2 (15.–21. März) · Aktive Erholung Belgenbach · Erste kurze GA1-Lockertrabs (VT1 105–118 bpm)';
+          return;
+        }
+        if (mIdx === 3 && day >= 19 && day <= 25) {
+          keyEl.innerHTML = 'Post-Race Woche 1 (19.–25. Apr · KW 16) · Aktive Erholung RET22 · Kurze GA1-Lockertrabs (VT1 105–118 bpm)';
           return;
         }
         if (mIdx === 5) {
