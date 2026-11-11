@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.21 (SIEBENGEBIRGS-HM: ZIELKORRIDOR 2:28–2:33 H NACH 3+1 PROTOKOLL BESTÄTIGT)  
+**Document Version:** 11.22 (VERPFLEGUNGS-SSOT BEREINIGT: BANN VON GELS & ERNÄHRUNGS-DIREKTIVE VERANKERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.21)
+## 📌 1. Project Overview & Release Freeze State (v11.22)
+
+- **Verpflegungs-SSOT bereinigt & Bann von „Gels“ (v11.22 / State 11.22):**
+  - **Audit aller Race-Briefings (`index.html`):** Generische Lehrbuch-Floskeln („1 Gel bei KM 12“ im 7G-HM und „3–4 Gels“ im Belgenbachtrail) wurden restlos entfernt.
+  - **Reale Athleten-SSOT verankert:** Ausschließlich **leichte Maltodextrin-Lösung in Softflasks** (500 ml) sowie bei langen Einheiten/Trails (> 15 km) **Marzipan & Feigen** (bzw. an Strecken-VPs Bananen, Wasser/Tee, Cola).
+  - **Feste Systemregel (GEMINI.md § 9):**
+    1. *Striktes Verbot von „Gels“:* Das Wort „Gel“ / „Gels“ oder herkömmliche Industrie-Gels dürfen niemals verwendet werden.
+    2. *Freigabepflicht für Rennanweisungen:* Jede Verpflegungs- und Taktikanweisung in Briefings bedarf der expliziten Ableitung aus den Realdaten oder der Freigabe durch den Athleten.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Siebengebirgs-HM: Zielkorridor 2:28 – 2:33 Std. vom Athleten freigegeben (v11.21 / State 11.21):**
   - **Verbindliche Zielzeit-Festlegung (GEMINI.md § 8):** Der Athlet hat sich für Szenario A (Engagierter Wettkampf Z2 mit ~128–132 bpm wie an der Côte d'Opale) entschieden.

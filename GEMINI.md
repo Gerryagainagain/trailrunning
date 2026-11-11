@@ -63,4 +63,15 @@ This file contains strict system-level instructions for the AI assistant when op
 - **Obligatorischer Impact-Check bei neuen Wettkampf-Logs:**
   - Jedes Mal, wenn ein neuer Wettkampf oder Benchmark-Lauf geloggt wird (z. B. Martinslauf 10k), MUSS der Assistent automatisch prüfen, ob die bestehenden Zielzeiten kommender Wettkämpfe noch mit den neuen Leistungsdaten physikalisch kompatibel sind. Bei Diskrepanzen (> 5 %) muss unaufgefordert eine Korrektur-Empfehlung vorgelegt werden.
 
+---
+
+## 📌 9. Verpflegungs- & Rennanweisungs-Direktive (SSOT-Verpflegung & Freigabepflicht)
+- **Authentische Verpflegungs-SSOT des Athleten:**
+  - **Erlaubt / Authentisch:** Ausschließlich **Maltodextrin-Lösung in Softflasks** (1x oder 2x 500ml Flasks) sowie bei langen Einheiten / Trails (> 15 km) **Marzipan & Feigen** (bzw. an Strecken-VPs Bananen, Wasser, Cola).
+  - **Striktes Verbot von „Gels“:** Das Wort „Gel“ / „Gels“ oder herkömmliche Industrie-Gels dürfen **niemals** in Empfehlungen, Briefings oder Code auftauchen.
+- **Freigabepflicht für Renn- & Taktikanweisungen:**
+  - Jede taktische Anweisung, Ausrüstungsempfehlung oder Verpflegungsstrategie in den Briefings (`raceBriefings`, Modals) darf nur verwendet werden, wenn sie aus den echten Realdaten hervorgeht oder vom Athleten explizit freigegeben wurde.
+  - Das Erfinden generischer Lehrbuch-Ratschläge (wie „1 Gel bei KM 12“, „3–4 Gels“) ist ein systematischer Fehler und strikt untersagt.
+
+
 
