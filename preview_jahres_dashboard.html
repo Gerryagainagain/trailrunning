@@ -2082,7 +2082,7 @@
         <!-- WOCHENFOKUS STRIP -->
         <div class="week-summary-strip" id="weekSummaryStrip">
           <span class="week-summary-tag">FOKUS</span>
-          <span class="week-summary-text" id="weekSummaryText">Frische für Martinslauf sichern. 10 km am Unterbacher See, Start 11:45 Uhr · Pacing: 5:50 ➔ 5:45 ➔ 5:35 min/km · Samstag: Ruhetag & Pre-Race-Carboload.</span>
+          <span class="week-summary-text" id="weekSummaryText">Frische für Martinslauf sichern. 10 km am Unterbacher See, Start 11:45 Uhr · Pacing: 5:50 ➔ 5:45 ➔ 5:35 min/km · Samstag: Ruhetag vor dem Rennen.</span>
         </div>
       </div>
 
@@ -2644,7 +2644,7 @@
           return;
         }
         if (mIdx === 2 && day >= 22) {
-          keyEl.innerHTML = 'Aufbau-Phase 1 (22.–28. März · KW 12) · Re-Aktivierung nach Belgenbach & Basis RET22 (GA1 VT1 105–118 bpm)';
+          keyEl.innerHTML = 'Aufbau-Phase (22.–28. März · KW 12) · Re-Aktivierung nach Belgenbach (Inhalte werden noch abgestimmt)';
           return;
         }
         if ((mIdx === 3 && day >= 26) || (mIdx === 4 && day <= 2)) {
@@ -2660,19 +2660,19 @@
       }
       if (phase === 'build') {
         if (mIdx === 0 || mIdx === 1) {
-          keyEl.innerHTML = 'Phase 2 (18. Jan – 14. Feb) · Spezifischer Aufbau Belgenbachtrail · Erkrath-Longruns (350–450 Hm) & Tempohärte';
+          keyEl.innerHTML = 'Phase 2 (18. Jan – 14. Feb) · Spezifischer Aufbau Belgenbachtrail · Erkrath-Longruns & Tempohärte';
           return;
         }
         if ((mIdx === 2 && day >= 29) || (mIdx === 3 && day <= 4)) {
-          keyEl.innerHTML = 'Aufbau-Phase 2 (29. März – 04. Apr · KW 13) · Spezifischer Aufbau RET22 · Hügel- & Trailgewöhnung Erkrath (250–350 Hm)';
+          keyEl.innerHTML = 'Aufbau-Phase (29. März – 04. Apr · KW 13) · Spezifischer Aufbau RET22 (Inhalte werden noch abgestimmt)';
           return;
         }
         if (mIdx === 4) {
-          keyEl.innerHTML = 'Spezifischer Bergaufbau TS16 (03.–23. Mai) · Höhenmeter-Gewöhnung (400–600 Hm), Hang-Kraftausdauer & Trittsicherheit';
+          keyEl.innerHTML = 'Spezifischer Bergaufbau TS16 (03.–23. Mai) · Höhenmeter-Gewöhnung, Hang-Kraftausdauer & Trittsicherheit';
           return;
         }
         if ((mIdx === 8 && day >= 6) || (mIdx === 9 && day <= 3)) {
-          keyEl.innerHTML = 'Phase 2/3 (06. Sep – 03. Okt · KW 36–39) · Spezifischer Drachenlauf-Aufbau · Treppen, 7-Gipfel-Simulation & Steilhänge (inkl. 11.09. UTML)';
+          keyEl.innerHTML = 'Phase 2/3 (06. Sep – 03. Okt · KW 36–39) · Spezifischer Drachenlauf-Aufbau (inkl. 11.09. UTML)';
           return;
         }
         if (mIdx === 1026) {
@@ -2690,11 +2690,11 @@
       }
       if (phase === 'build-peak') {
         if (mIdx === 1) {
-          keyEl.innerHTML = 'Phase 3 (15.–21. Feb) · Peak-Woche Belgenbach · Schlüsseltraining (20–22 km Trail) & maximale Spezifik';
+          keyEl.innerHTML = 'Phase 3 (15.–21. Feb) · Peak-Woche Belgenbach · Schlüsseltraining & Spezifik (Umfänge werden noch abgestimmt)';
           return;
         }
         if (mIdx === 3 && day >= 5 && day <= 11) {
-          keyEl.innerHTML = 'Peak-Woche RET22 (05.–11. Apr · KW 14) · Schlüsseltraining & Spezifik (inkl. Sing Barbershop Reise)';
+          keyEl.innerHTML = 'Vorbereitung RET22 (05.–11. Apr · KW 14 · inkl. Sing Barbershop Reise 10.–11.04.)';
           return;
         }
         if (mIdx === 4) {
@@ -2702,30 +2702,30 @@
           return;
         }
         if (mIdx === 9) {
-          keyEl.innerHTML = 'Drachenlauf Peak-Woche (04.–10. Okt) · Schlüssel-Longrun Siebengebirge (22–24 km · 900–1.100 Hm)';
+          keyEl.innerHTML = 'Drachenlauf Peak-Woche (04.–10. Okt) · Schlüssel-Longrun Siebengebirge';
           return;
         }
-        keyEl.innerHTML = 'Peak-Woche · Schlüsseltraining & maximale wettkampfspezifische Belastung';
+        keyEl.innerHTML = 'Peak-Woche · Schlüsseltraining & wettkampfspezifische Belastung';
         return;
       }
       if (phase === 'taper') {
         if (mIdx === 1 || (mIdx === 2 && day < 7)) {
-          keyEl.innerHTML = 'Phase 4 (22. Feb – 06. März) · Tapering Belgenbach · Umfang -40%, Spezifik punktuell halten';
+          keyEl.innerHTML = 'Phase 4 (22. Feb – 06. März) · Tapering Belgenbach · Frische & Beinspannung sichern';
           return;
         }
         if (mIdx === 3 && day >= 12 && day <= 16) {
-          keyEl.innerHTML = 'Tapering RET22 (12.–16. Apr · KW 15) · Umfang -40%, Frische & Beinspannung sichern';
+          keyEl.innerHTML = 'Tapering RET22 (12.–16. Apr · KW 15) · Frische & Beinspannung sichern';
           return;
         }
         if (mIdx === 4 || (mIdx === 5 && day < 12)) {
-          keyEl.innerHTML = 'Tapering TS16 (31. Mai – 11. Juni) · Frische sichern & Akklimatisation im Standlager Camping FiNK Imst';
+          keyEl.innerHTML = 'Tapering TS16 (31. Mai – 11. Juni) · Frische sichern & Standlager Camping FiNK Imst';
           return;
         }
         if (mIdx === 9 && day >= 11 && day <= 23) {
-          keyEl.innerHTML = 'Finales Tapering Drachenlauf (11.–23. Okt) · Umfang -40%, Beine lockern, ZNS entlasten, Glykogen sichern';
+          keyEl.innerHTML = 'Finales Tapering Drachenlauf (11.–23. Okt) · Beine lockern, ZNS entlasten, Frische sichern';
           return;
         }
-        keyEl.innerHTML = 'Tapering-Phase · Umfang deutlich reduzieren, Frische & Spannung sichern';
+        keyEl.innerHTML = 'Tapering-Phase · Umfang reduzieren, Frische & Spannung sichern';
         return;
       }
       if (phase === 'rekom-acute') {
@@ -2878,13 +2878,9 @@
             ]
           },
           {
-            title: 'Pacing- & HF-Strategie (Zielkorridor 2:28–2:33 h)',
-            type: 'pacing',
-            steps: [
-              { km: 'Anstiege (> 8%)', speed: 'Powertrip / Bergauftrab (8:45–9:30)', hr: 'Pulsdeckel 132–136 bpm' },
-              { km: 'Flachpassagen', speed: '6:35–6:50 min/km', hr: '128–132 bpm (Z2 Fokus)' },
-              { km: 'Downhills', speed: '6:00–6:25 min/km rollen', hr: 'Schrittfrequenz hoch' }
-            ]
+            title: 'Pacing- & HF-Strategie (Zielkorridor 2:28–2:33 h freigegeben)',
+            type: 'text',
+            text: 'Zielkorridor 2:28–2:33 Std. vom Athleten freigegeben (Schnitt ~6:55–7:10 min/km). Spezifische Pace- und Puls-Splits für Anstiege und Downhills werden vor der Rennwoche abgestimmt.'
           },
           {
             title: 'Verpflegung',
@@ -2894,14 +2890,14 @@
           {
             title: 'Ausrüstung',
             type: 'text',
-            text: 'Trailrunningschuhe mit aggressivem Profil für feuchten Winter-Waldboden. Windbreaker & Mütze.'
+            text: 'Profilierte Trailschuhe für feuchten Winter-Waldboden. Wind- und Wetterschutz nach Tageswitterung.'
           }
         ]
       },
       belgenbach: {
         title: 'Belgenbachtrail',
         subtitle: 'Sonntag, 07. März 2027 · Monschau / Eifel',
-        targetPill: 'Zielzeit ~3:45 h · 941 Hm',
+        targetPill: '[HYPOTHESE – Abstimmung offen] · 941 Hm',
         organizerUrl: 'https://my.raceresult.com/417090/registration',
         organizerLabel: 'Offizielle Anmeldung ↗',
         routeUrl: 'https://www.peak-flow.app/?rennen=79ad147d-c935-4c51-a356-6efd4af7edff',
@@ -2920,7 +2916,7 @@
           {
             title: 'Pacing- & Rennstrategie',
             type: 'text',
-            text: 'Reiner Kraftausdauer-Lauf. Anstiege strikt im schnellen Gehschritt (Puls unter 122 bpm halten). Keine frühen Tempoverführungen im Belgenbachtal.<br><a href="https://www.peak-flow.app/?rennen=79ad147d-c935-4c51-a356-6efd4af7edff" target="_blank" rel="noopener noreferrer" style="color:var(--apple-cyan); font-weight:700; text-decoration:underline; display:inline-block; margin-top:6px;">Peak Flow Rennrechner & Pacing-Plan ↗</a>'
+            text: 'Reiner Kraftausdauer-Lauf. Anstiege im schnellen Gehschritt / Power-Hiking (GA1 VT1). Pacing- und HF-Strategie werden noch abgestimmt.<br><a href="https://www.peak-flow.app/?rennen=79ad147d-c935-4c51-a356-6efd4af7edff" target="_blank" rel="noopener noreferrer" style="color:var(--apple-cyan); font-weight:700; text-decoration:underline; display:inline-block; margin-top:6px;">Peak Flow Rennrechner ↗</a>'
           },
           {
             title: 'Verpflegung & Pflichtausrüstung',
@@ -2982,33 +2978,28 @@
           {
             title: 'Rennstrategie & Streckenprofil',
             type: 'text',
-            text: 'Hohe alpine Konzentration. Stockeinsatz an steilen Rampen, Trittsicherheit auf Geröll und Wurzelpassagen.<br><a href="https://tschirgant-sky.run/wp-content/uploads/2025/06/de-tschirgantskyrun-ts16.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--apple-cyan); font-weight:700; text-decoration:underline; display:inline-block; margin-top:6px;">Offizielles Streckenprofil & Höhenprofil (PDF) ↗</a>'
+            text: 'Hohe alpine Konzentration. Trittsicherheit auf Geröll und Wurzelpassagen, Steilhänge im Power-Hiking (ohne Stöcke).<br><a href="https://tschirgant-sky.run/wp-content/uploads/2025/06/de-tschirgantskyrun-ts16.pdf" target="_blank" rel="noopener noreferrer" style="color:var(--apple-cyan); font-weight:700; text-decoration:underline; display:inline-block; margin-top:6px;">Offizielles Streckenprofil & Höhenprofil (PDF) ↗</a>'
           }
         ]
       },
       drachenlauf: {
         title: 'Drachenlauf Siebengebirge',
         subtitle: 'Sonntag, 24. Oktober 2027 · Königswinter',
-        targetPill: 'Zielzeit 3:50–4:05 h (Sub 4:00 h) · 1.250 Hm',
+        targetPill: '[HYPOTHESE – Abstimmung offen] · 1.250 Hm',
         organizerUrl: 'https://www.drachenlauf.net/',
         organizerLabel: 'Ausschreibung ↗',
         routeUrl: 'https://www.komoot.com/de-de/tour/1882550924?share_token=aKlmkGGP9QBKIGBYNofjmXhqYJ5YwPvvoWl2QgWkmoCSU36YTz&ref=wtd&t_s=referral&t_cid=route_share&t_ref_username=5238953605179',
         routeLabel: 'Komoot-Route ↗',
         sections: [
           {
-            title: 'Zielzeit & Rennkorridor (2026er Kalibrierung)',
+            title: 'Zielzeit & Rennkorridor',
             type: 'text',
-            text: '<b>3:50:00 – 4:05:00 Std. (Zielkorridor Sub 4:00 h)</b><br><span style="font-size:0.80rem; opacity:0.85; display:inline-block; margin-top:4px;">Kalibrierte Durchgangszeiten: KM 5 @ 0:45 h · KM 11 @ 1:38 h · KM 18,5 @ 2:45 h · KM 23,3 @ 3:30 h (Referenz Probedrachen 18k / 710 Hm in 03:02:59 h).</span>'
+            text: '<b>[HYPOTHESE – Abstimmung im Spätsommer 2027]</b><br><span style="font-size:0.80rem; opacity:0.85; display:inline-block; margin-top:4px;">Konkrete Durchgangszeiten und HF-Zonen werden anhand der Trainingsdaten der Kampagne 2027 kalibriert.</span>'
           },
           {
             title: 'Pacing & Herzfrequenz',
-            type: 'phases',
-            items: [
-              { km: 'KM 0–16', hr: '120–125 bpm', desc: 'Power-Hiking · Kräfte sparen' },
-              { km: 'KM 16–19', hr: '130–135 bpm', desc: 'Drachenfels · Uphill freigeben' },
-              { km: 'KM 19–23,3', hr: 'Deckel 140', desc: 'Petersberg · Schlussanstieg' },
-              { km: 'KM 23,3–26', hr: '< 130 bpm', desc: 'Zielabstieg · kontrolliert rollen' }
-            ]
+            type: 'text',
+            text: '[HYPOTHESE] Power-Hiking an Anstiegen, Kräfte schonen bis Drachenfels/Petersberg. Genaue Zonenabstimmung erfolgt vor dem Rennen.'
           },
           {
             title: 'Verpflegung & Versorgung',
@@ -3160,7 +3151,7 @@
           { d: 'MIT 04.11', val: '—', tag: '', sub: 'Passiv schonen' },
           { d: 'DON 05.11', val: '4.0', unit: 'KM', tag: 'Aktivierung', sub: '< 115 bpm · Flach' },
           { d: 'FRE 06.11', val: '—', tag: '', sub: 'Kein Krafttraining' },
-          { d: 'SAM 07.11', val: '—', tag: 'Pre-Race', tagColor: 'var(--apple-orange)', sub: 'Carboload & Ruhe' },
+          { d: 'SAM 07.11', val: '—', tag: 'Pre-Race', tagColor: 'var(--apple-orange)', sub: 'Ruhetag & Vorbereitung' },
           { d: 'SON 08.11', val: '10.0', unit: 'KM', tag: 'Martinslauf', sub: 'SUB 58:00 · Start 11:45 Uhr', isRace: true, main: true, raceKey: 'martinslauf' }
         ]
       },
@@ -3201,10 +3192,10 @@
         dates: '23. – 29. November 2026',
         benchmark: '38,0 km · Key 18k Erkrath (+500–600 Hm)',
         benchmarkType: 'orange',
-        summary: 'Schlüsselwoche vor Siebengebirgs-HM · Di 8k mit 3k HM-Renntempo · Sa 18k Key-Longrun Erkrath (+500–600 Hm mit Steilhängen).',
+        summary: 'Schlüsselwoche vor Siebengebirgs-HM · Di 8k (Tempo / Fahrtspiel nach Abstimmung) · Sa 18k Key-Longrun Erkrath (+500–600 Hm mit Steilhängen).',
         days: [
           { d: 'MON 23.11', val: '—', tag: 'Ruhe', sub: 'Regeneration' },
-          { d: 'DIE 24.11', val: '8.0', unit: 'KM', tag: 'Tempo-GA2', sub: '3k im HM-Renntempo' },
+          { d: 'DIE 24.11', val: '8.0', unit: 'KM', tag: 'Tempo / Fahrtspiel', sub: 'Inhalte zur Abstimmung' },
           { d: 'MIT 25.11', val: '—', tag: 'Ruhe', sub: 'Passiv' },
           { d: 'DON 26.11', val: '10.0', unit: 'KM', tag: 'Locker GA1', sub: '112–115 bpm' },
           { d: 'FRE 27.11', val: '—', tag: 'Ruhe', sub: 'Kein Studio vor Key' },

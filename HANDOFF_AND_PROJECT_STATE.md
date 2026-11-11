@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.22 (VERPFLEGUNGS-SSOT BEREINIGT: BANN VON GELS & ERNÄHRUNGS-DIREKTIVE VERANKERT)  
+**Document Version:** 11.23 (AUDIT GENERISCHER LEHRBUCH-MUSTER: NEUTRALISIERUNG & ATHLETEN-REGELN VERANKERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,16 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.22)
+## 📌 1. Project Overview & Release Freeze State (v11.23)
+
+- **Audit & Neutralisierung generischer Lehrbuch-Muster (v11.23 / State 11.23):**
+  - **Umfassender Codebase-Audit (`audit_generische_muster.md`):** Alle Artefakte aus früheren KI-Generierungen wurden systematisch identifiziert und neutralisiert:
+    1. *Zielzeiten & Pacing zukünftiger Wettkämpfe:* Für Belgenbachtrail (`[HYPOTHESE – Abstimmung offen]`) und Drachenlauf (`[HYPOTHESE – Abstimmung im Spätsommer 2027]`) wurden ungeprüfte Sub-Zielzeiten und Pacing-Splits restlos entfernt.
+    2. *Permanente Streichung von Stöcken (No-Poles-Direktive):* Im TS16-Briefing wurde „Stockeinsatz an steilen Rampen“ gelöscht. Feste Athleten-Regel: Der Athlet läuft ohne Stöcke („bis jetzt nicht und habe ich auch nicht vor“).
+    3. *Bereinigung von Carboloading:* Generische „Carboloading“-Verweise für 10-km-Läufe (KW 45) wurden durch „Ruhetag & Vorbereitung“ ersetzt.
+    4. *Pauschale Tapering-Floskeln eliminiert:* Mechanische Formulierungen wie „Umfang -40%“ in den Quartals-Phasentexten wurden durch neutrale Beschreibungen („Frische & Beinspannung sichern“) ersetzt.
+    5. *KW 48 Dienstags-Einheit neutralisiert:* Von „3k im HM-Renntempo“ auf „Tempo / Fahrtspiel (Inhalte zur Abstimmung)“ umgestellt.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Verpflegungs-SSOT bereinigt & Bann von „Gels“ (v11.22 / State 11.22):**
   - **Audit aller Race-Briefings (`index.html`):** Generische Lehrbuch-Floskeln („1 Gel bei KM 12“ im 7G-HM und „3–4 Gels“ im Belgenbachtrail) wurden restlos entfernt.
@@ -231,7 +240,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
 - **Wochenfokus Sub-Copy streng einzeilig gestrafft (v10.05 / State 10.05):**
   - **Typografie & CSS:** `.week-summary-text` mit `white-space: nowrap; overflow: hidden; text-overflow: ellipsis;` ausgestattet, um Mehrzeilenumbrüche im Desktop-Wochenkalender technisch auszuschließen.
   - **Textverdichtung in `weeksData`:**
-    - **KW 45:** `Frische für Martinslauf sichern. 10 km am Unterbacher See, Start 11:45 Uhr · Pacing: 5:50 ➔ 5:45 ➔ 5:35 min/km · Samstag: Ruhetag & Pre-Race-Carboload.`
+    - **KW 45:** `Frische für Martinslauf sichern. 10 km am Unterbacher See, Start 11:45 Uhr · Pacing: 5:50 ➔ 5:45 ➔ 5:35 min/km · Samstag: Ruhetag vor dem Rennen.`
     - **KW 46:** `Laktat abbauen nach dem 10er · 12.–13.11. Bei Maja zum bday · 14.11. Wandern Geseke (aerobe Basis, kein Longrun).`
     - **KW 47:** `Umfangserweiterung auf 34 km · Di 8k Hügel, Do 10k Rhein flach · Sa 16k Longrun Erkrath (+350 Hm).`
     - **KW 48:** `Schlüsselwoche vor Siebengebirgs-HM · Di 8k mit 3k HM-Renntempo · Sa 18k Key-Longrun Siebengebirge (+500 Hm).`
@@ -475,7 +484,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
     5. *Aktueller physiologischer Athletenstatus (Stand 04.11.2026):*
        - Gestern (03.11.): 5,5 km GA1 @ Ø 117 bpm (40 min / 10 Hm) sauber an der VT1-Sprechgrenze absolviert.
        - Heute Morgen (04.11.): Parasympathischer Erholungs-Rebound bestätigt (nächtliche HFV springt von 41 ms Wochentiefstwert auf 51 ms Wochenhöchstwert; Sleep Score 86).
-       - Nächste Schritte KW 45: Mi 04.11. Passiv schonen, Do 05.11. 4,0 km Aktivierung (< 115 bpm), Fr/Sa Chill & Carboload, So 08.11. Martinslauf 10k (Sub 58:00, 5:48 min/km).
+       - Nächste Schritte KW 45: Mi 04.11. Passiv schonen, Do 05.11. 4,0 km Aktivierung (< 115 bpm), Fr/Sa Chill & Vorbereitung, So 08.11. Martinslauf 10k (Sub 58:00, 5:48 min/km).
 
 - **Dolomiten-Standortoptionen für Sommerurlaub 2027 hinterlegt (v9.83):**
   - Für den zweiten Teil des 21-Tage-Bogens (nach dem TS16 in Imst) wurden zwei passende Dolomiten-Kandidaten für Naturcamping, moderate Höhe und Seilbahn-Höhenwandern (T2, schwindelfrei) evaluiert und in Sektion 4.C2 hinterlegt:
@@ -627,7 +636,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
   - **Neuer Fokus-Text auf der Startseite (KW 45):**
     - Zweizeiliger Text:
       *Frische für den 48. Martinslauf am Sonntag sichern. 10 km am Unterbacher See, Start 11:45 Uhr. Pacing: 5:50 → 5:45 → 5:35 min/km.*
-      *Samstag, 07. November: Ruhetag & Pre-Race-Carboload.*
+      *Samstag, 07. November: Ruhetag & Vorbereitung.*
     - Integriert in Desktop-Strip (`weekSummaryStrip`), Mobile-Header (`mFocus`) und `weeksData[45]`.
   - **Synchronisiert:** Umgesetzt in `preview_jahres_dashboard.html`, `index.html` (Script-Version `v=9.63`), gespiegelt nach `dist/`.
 
@@ -691,7 +700,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
 - **Option A (Apple HIG Slide-Over Drawer) & Sanftere Sonntags-Ziffern (v9.57 / State 9.65):**
   - **Option A (Slide-Over Drawer) implementiert:**
     - Klick auf eine Race-Card in der 7-Tage-Bühne (`SON 08.11 Martinslauf`, `SON 06.12 7G-HM`) oder auf einen gesetzten Renntag im Saisonkalender (z. B. 07. März Belgenbach, 12. Juni TS16, 24. Okt Drachenlauf) öffnet ein dezent von rechts einschwebendes Apple Inspector-Panel (`race-drawer`, 420 px breit, Glassmorphism `rgba(20, 20, 28, 0.95)`, `backdrop-filter: blur(32px)`).
-    - Enthält das vollständige operative Briefing ohne Layout-Bruch: Eckdaten & Logistik (Startzeit, Startort, Distanz, Wetter), Pacing- & HF-Zonenvorgabe (negativer Split, Anstiege strikter Gehschritt), Verpflegungs- & Carboload-Plan sowie Ausrüstung.
+    - Enthält das vollständige operative Briefing ohne Layout-Bruch: Eckdaten & Logistik (Startzeit, Startort, Distanz, Wetter), Pacing- & HF-Zonenvorgabe (negativer Split, Anstiege strikter Gehschritt), Verpflegungs- & Rennmorgen-Plan sowie Ausrüstung.
     - Schließt flüssig per Klick auf `✕`, Klick auf den Backdrop oder `Escape`-Taste.
   - **Sanftere Sonntags-Auszeichnungsfarbe im Kalender:**
     - Der aggressive rote System-Alarmton (`#FF453A`) für Sonntagsziffern wurde durch eine weiche, gedämpfte Terracotta-Rose-Nuance (`rgba(255, 140, 130, 0.70)`) ersetzt.
