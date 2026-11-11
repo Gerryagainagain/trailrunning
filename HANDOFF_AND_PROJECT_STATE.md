@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.16 (REISE 04.–08. FEB KULTURHAUPTSTADT HALLE & KLARSTELLUNG POST-WETTKAMPF REGEL)  
+**Document Version:** 11.17 (ZIELZEIT- & PROGNOSE-PROTOKOLL 3+1 IN GEMINI.MD VERANKERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.16)
+## 📌 1. Project Overview & Release Freeze State (v11.17)
+
+- **Zielzeit- & Prognose-Protokoll (Kombination 3+1) verbindlich implementiert (v11.17 / State 11.17):**
+  - **Feste Systemregel (GEMINI.md § 8):**
+    1. *Strikte Daten-Separation:* Nur real absolvierte Läufe aus `runsData` / `defaultInitialRuns` gelten als Primärdaten (SSOT). Zukünftige Zielzeiten oder Pläne tragen zwingend den Status `[HYPOTHESE]`.
+    2. *Schätzungs- & Proklamationsverbot für den Assistenten:* Der Assistent darf niemals eigenmächtig eine Zielzeit oder Pace festlegen. Er darf ausschließlich physikalisch-mathematische Korridore aus den Primärdaten herleiten.
+    3. *Entscheidungshoheit beim Athleten:* Die Festlegung einer Zielzeit im Code (`raceBriefings`, `targetPill`, `weeksData`) erfolgt ausschließlich nach expliziter Bestätigung durch den Athleten.
+    4. *Obligatorischer Impact-Check:* Bei jedem neuen Wettkampf- oder Benchmark-Log (z. B. 10k Martinslauf) werden bestehende Zielzeiten der Folge-Wettkämpfe automatisch auf mathematische Plausibilität auditiert.
+  - **Status 7G-HM (06.12.2026):** Die historische Reißbrett-Schätzung `Sub 2:20 h` wurde auf `[HYPOTHESE - REVISION ANHÄNGIG]` gesetzt; Neu-Evaluation durch den Athleten anhängig.
 
 - **Reise Kulturhauptstadt Halle (04.–08. Feb 2027) im Saisonkalender integriert (v11.16 / State 11.16):**
   - **Reise-Eintrag:** Do 04. – Mo 08. Februar 2027 als aktiver Trip `{ id: 'halle', label: 'Kulturhauptstadt Halle (04.–08.02.)', startDay: 4, endDay: 8, details: '04.–08. Februar 2027: Kulturhauptstadt Halle' }` in `quartersData[0].months[1]` (Februar) hinterlegt.
@@ -744,7 +752,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
 - **Gesamtertrag der Kampagne 2026:** **50 Einheiten · 422,4 km · 8.179 Hm** geloggt (Soll-Hm über 12.000). Die aerobe Grundausdauer (VT1 105–118 bpm), das Power-Hiking-Fundament und die intakte Sehnenstruktur wurden zu 100 % erhalten und unbeschadet für die Saison 2027 konserviert.
 - **Nächste Saisonziele (Spätherbst 2026 & Saison 2027):**
   1. **Herbst-Abschluss 1 (10k Martinslauf Düsseldorf · 08.11.2026):** **Status: Fest angemeldet am 27.10.2026.** Ziel: **Sub 58:00 min** (Pace: 5:47 min/km, Ø 145–147 bpm, Max 166 bpm) auf Basis der Realdaten von 2025 (59:27 / 5:55 min/km).
-  2. **Herbst-Abschluss 2 (Siebengebirgs-Halbmarathon Aegidienberg · 06.12.2026):** **Status: Fest angemeldet am 27.10.2026.** 21,4 km / 360 Hm (Komoot-Streckenprofil). Ziel: **Sub 2:20:00 h** (Erwartungswert: 02:18:30 h, Pace ~6:28–6:32 min/km, Ø 128–132 bpm) auf Basis der Realdaten (RheinCity HM 2025: 7:19 min/km @ 132 bpm flach; Erkrath 2026: 13,3 km / 333 Hm mit 7:12 min/km @ 115 bpm).
+  2. **Herbst-Abschluss 2 (Siebengebirgs-Halbmarathon Aegidienberg · 06.12.2026):** **Status: Fest angemeldet am 27.10.2026.** 21,4 km / 360 Hm (Komoot-Streckenprofil). **Ziel: [HYPOTHESE - REVISION ANHÄNGIG]** (vormals rechnerische Schätzung Sub 2:20 h; Revision auf Basis 10k Martinslauf Realdaten 58:25 min @ 151 bpm in Abstimmung mit Athlet).
   3. **Frühjahrs-Anker (07.03.2027 · TV Konzen):** **Belgenbachtrail 30,7 km Strong-Trail de Luxe** (941 Hm · Limit 300 Starter) als primäres sportliches Ziel zur Abrufung der erarbeiteten Langstrecken-Form. Buchungsfenster: Mitte Dezember 2026 nach 7G HM. Nach 7G HM folgt eine 4-wöchige Reset-Phase (Dezember bis 04.01.2027), gezielter 9-Wochen-Aufbauplan startet am 05./06.01.2027.
   4. **Sommerurlaubs-Trail (05.06. – 25.06.2027 · Imst & Kaub):** 21-Tage-Rundreise mit Camping-Kraftwagen. Hinfahrt Sa 05.06. via Bodensee ➔ 14 Tage Standlager Campingpark FiNK (06.–20.06.) mit Tschirgant Sky Run **TS16 Adventure** (16,9 km · ~850 Hm) am Sa 12.06.2027 ➔ Rückreise-Etappe via Holzmaden bis **Kaub am Rhein** am Fr 25.06.2027 (Mittelrhein-Ausklang). Buchungsfenster: Dez 2026 / Jan 2027.
   5. **Herbst-Anker (Oktober 2027):** Drachenlauf 2027 (26 km / 1.250 Hm · Revanche auf bekannter Strecke).

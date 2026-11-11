@@ -49,4 +49,18 @@ This file contains strict system-level instructions for the AI assistant when op
 - **Klarstellung:** Gilt **ausschließlich für Wettkämpfe / Rennen** (nicht für reguläre sonntägliche GA1-Longruns).
 - **Verbot:** Niemals am Montag oder Dienstag direkt nach einem Sonntags-Wettkampf eine Laufeinheit (auch keinen Rekom-Lauf) ansetzen. Der Wiedereinstieg darf frühestens am Mittwoch oder Donnerstag erfolgen.
 
+---
+
+## 📌 8. Zielzeit- & Prognose-Protokoll (Kombination 3+1: Schätzungsverbot, Daten-Separation & Impact-Check)
+- **Strikte Daten-Separation:**
+  - **Kategorie A (Primärdaten / SSOT):** Ausschließlich real absolvierte Läufe aus `runsData` / `defaultInitialRuns` (mit realer Distanz, Nettozeit, Hm und Herzfrequenz).
+  - **Kategorie B (Hypothesen & Planungen):** Alle noch nicht gelaufenen Zielzeiten, Prognosen oder Rennabsichten tragen zwingend den Status `[HYPOTHESE]`. Textbausteine im Fließtext dürfen niemals als Primärdaten zitiert werden.
+- **Schätzungs- & Proklamationsverbot für den Assistenten:**
+  - Der Assistent darf **niemals eigenmächtig eine feste Zielzeit oder Ziel-Pace für einen Wettkampf proklamieren oder im Code/Briefing fixieren**.
+  - Der Assistent ist verpflichtet, ausschließlich einen **mathematisch und physiologisch hergeleiteten Korridor** vorzulegen (Formel: Flach-Äquivalent via Riegel-Formel auf Basis des jüngsten Benchmark-Laufs + Höhenmeter-Zuschlag + Untergrund-/Witterungsfaktor).
+- **Entscheidungshoheit beim Athleten:**
+  - Erst wenn der Athlet eine konkrete Zielzeit oder einen Korridor explizit bestätigt oder vorgibt („Setze Zielzeit auf X“), darf der Wert in den Code (`raceBriefings`, `weeksData`, `targetPill`) eingetragen werden.
+- **Obligatorischer Impact-Check bei neuen Wettkampf-Logs:**
+  - Jedes Mal, wenn ein neuer Wettkampf oder Benchmark-Lauf geloggt wird (z. B. Martinslauf 10k), MUSS der Assistent automatisch prüfen, ob die bestehenden Zielzeiten kommender Wettkämpfe noch mit den neuen Leistungsdaten physikalisch kompatibel sind. Bei Diskrepanzen (> 5 %) muss unaufgefordert eine Korrektur-Empfehlung vorgelegt werden.
+
 
