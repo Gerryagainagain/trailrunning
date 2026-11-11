@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.23 (AUDIT GENERISCHER LEHRBUCH-MUSTER: NEUTRALISIERUNG & ATHLETEN-REGELN VERANKERT)  
+**Document Version:** 11.24 (TRAININGSPLAN KW 47 & KW 48 VOM ATHLETEN KALIBRIERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.23)
+## 📌 1. Project Overview & Release Freeze State (v11.24)
+
+- **Trainingsplan KW 47 & KW 48 vom Athleten kalibriert (v11.24 / State 11.24):**
+  - **Dienstag KW 48 (24.11.):** Auf spezifisches **Hügel-Fahrtspiel (8,0 km)** festgelegt: 4–5 dynamische Bergauf-Schübe nach Gefühl mit Pulsdeckel an der Kuppe bis max. 132 bpm (Option B).
+  - **Samstag KW 47 (21.11.):** Longrun Erkrath auf **16,0 km / 350–400 Hm** im GA1-Bereich (105–118 bpm) bestätigt als Vorstufe zur Peak-Woche KW 48.
+  - **Freitag KW 47 (20.11.):** Studio-Einheit präzisiert als **reines Rumpf/Oberkörper/Mobility-Training (keine Beinkraft)** zur Schonung der Beine vor dem 16-km-Lauf.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Audit & Neutralisierung generischer Lehrbuch-Muster (v11.23 / State 11.23):**
   - **Umfassender Codebase-Audit (`audit_generische_muster.md`):** Alle Artefakte aus früheren KI-Generierungen wurden systematisch identifiziert und neutralisiert:
