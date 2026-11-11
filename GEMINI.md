@@ -42,3 +42,10 @@ This file contains strict system-level instructions for the AI assistant when op
 - **Pflicht zum Trade-Off:** Jede Trainingsverkürzung, Zeitspar-Maßnahme oder Streckenalternative (z. B. Flachlauf statt Höhenmeter, Deich statt Gelände) MUSS zwingend als physiologischer Kompromiss mit ihren konkreten Abstrichen benannt werden (Was spart Zeit? Welche De-Adaptation entsteht peripher muskulär, exzentrisch oder koordinativ?).
 - **Differenzierung statt Pauschalierung:** Niemals pauschal von „der Form“ sprechen, sondern differenzieren zwischen zentraler Herzkreislauf-Ausdauer (Sauerstoffaufnahme/Fettstoffwechsel) und peripherer muskulär-koordinativer Belastbarkeit (exzentrische Bremskräfte, Trittsicherheit, Sehnen-Steifigkeit).
 
+---
+
+## 📌 7. Post-Sonntag Erholungs-Regel (48h / 2 volle Tage Recovery)
+- **Regel:** Nach jedem Sonntags-Lauf (Wettkampf oder intensiver/langer Lauf am Sonntag) müssen **IMMER mindestens 2 volle Tage vollständige Recovery (Montag + Dienstag)** eingeplant werden (Ruhetag / CHILL / passiv).
+- **Verbot:** Niemals am Montag oder Dienstag direkt nach einem Sonntags-Lauf eine Laufeinheit (auch keinen Rekom-Lauf) ansetzen. Der Wiedereinstieg darf frühestens am Mittwoch oder Donnerstag erfolgen.
+
+

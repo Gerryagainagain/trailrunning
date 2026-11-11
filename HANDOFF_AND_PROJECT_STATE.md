@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.14 (KW 46: DIENSTAGS-LAUF 10.11. WEGEN RECOVERY NACH MARTINSLAUF AUSGEFALLEN)  
+**Document Version:** 11.15 (POST-SONNTAG ERHOLUNGS-REGEL: 48H / MO + DI RECOVERY IN GEMINI.MD VERANKERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.14)
+## 📌 1. Project Overview & Release Freeze State (v11.15)
+
+- **Post-Sonntag Erholungs-Regel (48h Recovery Mo + Di) in Systemregeln verankert (v11.15 / State 11.15):**
+  - **Feste Systemregel (GEMINI.md § 7):** Nach jedem Sonntags-Lauf (Wettkampf oder intensiver/langer Lauf am Sonntag) müssen zwingend **2 volle Tage vollständige Regeneration (Montag + Dienstag)** eingeplant werden (Ruhetag / CHILL / passiv).
+  - **Laufverbot Mo + Di:** Es darf an diesen beiden Tagen kein Lauf (auch kein Rekom-Lauf) angesetzt werden. Frühester Wiedereinstieg ist Mittwoch oder Donnerstag.
+  - **Abgleich Bestandswochen:**
+    - KW 46 (nach Martinslauf): Montag 09.11. und Dienstag 10.11. beide auf Ruhetag / Recovery gesetzt.
+    - KW 50 (nach 7G-HM): Montag 07.12. und Dienstag 08.12. beide auf Ruhetag / Pause gesetzt.
+    - Belgenbachtrail (07.03.2027) & Drachenlauf (24.10.2027): Montag und Dienstag liegen jeweils in der akuten Post-Race Regenerationsphase (`rekom-acute`).
 
 - **KW 46 Dienstags-Lauf entfallen zugunsten Post-Race Recovery (v11.14 / State 11.14):**
   - **Status Dienstag 10.11.2026:** Der geplante 6,0 km Rekom-Lauf entfiel infolge von Erholungsbedarf nach dem All-Out 10k Martinslauf (08.11., Ø 151 bpm, TE 5.0).
