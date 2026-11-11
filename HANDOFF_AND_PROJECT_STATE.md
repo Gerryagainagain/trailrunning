@@ -1,14 +1,21 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.11 (RUREIFEL TRAIL RET22: OFFIZIELLER TRACE DE TRAIL STRECKEN-TRACK #275720 & BRIEFING INTEGRIERT)  
-**Last Updated:** November 09, 2026  
+**Document Version:** 11.12 (RUREIFEL TRAIL RET22: STATUS AUF FESTEN WETTKAMPF ORANGE AKTUALISIERT)  
+**Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.11)
+## 📌 1. Project Overview & Release Freeze State (v11.12)
+
+- **Rureifel Trail RET22: Status von Option auf festen Wettkampf (Orange) umgestellt (v11.12 / State 11.12):**
+  - **Offizielle Anmeldung erfolgt (11.11.2026):** Der Rureifel Trail RET22 (22,8 km · 851 Hm D+ am 17.04.2027) ist verbindlich angemeldet und im Saisonkalender 2027 von einer violetten Option (`.phase-option`) zu einem festen Hauptwettkampf (`.phase-race`, Apple Orange Solid) erhoben.
+  - **Quartals-Header Q2:** Aktualisiert auf `17. April · Rureifel Trail RET22 & 12. Juni · Tschirgant Sky Run TS16`.
+  - **Kalender-Zelle & Klick-Handler:** 17. April triggert nun direkt `openRaceDrawer('ret22')` und zeigt im Meta-Dock: `17. April 2027 · Rureifel Trail RET22 (22,8 km · 851 Hm D+ · Fest angemeldet) · Strecken-Track (Trace de Trail) ↗`.
+  - **Apple HIG Drawer (`raceBriefings.ret22`):** Badge auf `Wettkampf: 22,8 km · 851 Hm D+` aktualisiert; Status: `Fest angemeldet am 11.11.2026`.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Rureifel Trail RET22 Strecken-Track & Briefing integriert (v11.11 / State 11.11):**
   - **Offizieller Strecken-Track:** [`https://tracedetrail.fr/fr/trace/275720`](https://tracedetrail.fr/fr/trace/275720) (Trace de Trail #275720: 22,8 km · 851 Hm D+ / 852 Hm D-) im System hinterlegt.
