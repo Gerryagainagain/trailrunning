@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.25 (TS16 TRACE DE TRAIL STRECKEN-TRACK #224096 INTEGRIERT)  
+**Document Version:** 11.26 (BELGENBACHTRAIL WETTERMITTEL IM RACE DRAWER HINTERLEGT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.25)
+## 📌 1. Project Overview & Release Freeze State (v11.26)
+
+- **Belgenbachtrail Race Drawer: Historisches Wettermittel hinterlegt (v11.26 / State 11.26):**
+  - **Präzise 5-Jahres-Recherche (2020–2025):** Monschau-Konzen (550 m ü. NHN).
+  - **Ultrakurzform im Drawer:** `Erwartetes Temperatur- und Wettermittel: 2–9 °C (Spannweite -2 bis 15 °C) · Oft wechselhaft/nasskalt · Waldboden & Bachtäler durchgehend tief und morastig.`
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **TS16 Race Drawer: Trace de Trail Strecken-Track #224096 integriert (v11.25 / State 11.25):**
   - **Trace de Trail Verlinkung:** Der offizielle GPX/Höhenprofil-Track [`https://tracedetrail.fr/en/trace/224096`](https://tracedetrail.fr/en/trace/224096) wurde als primärer Strecken-Track (`routeUrl`) im Tschirgant Sky Run TS16 Race Drawer hinterlegt (`Strecken-Track (Trace de Trail #224096) ↗`).
