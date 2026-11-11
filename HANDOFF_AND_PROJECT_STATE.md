@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.13 (RUREIFEL TRAIL RET22: AUFBAUPHASEN & BLAUTÖNE IM SAISONKALENDER KALIBRIERT)  
+**Document Version:** 11.14 (KW 46: DIENSTAGS-LAUF 10.11. WEGEN RECOVERY NACH MARTINSLAUF AUSGEFALLEN)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.13)
+## 📌 1. Project Overview & Release Freeze State (v11.14)
+
+- **KW 46 Dienstags-Lauf entfallen zugunsten Post-Race Recovery (v11.14 / State 11.14):**
+  - **Status Dienstag 10.11.2026:** Der geplante 6,0 km Rekom-Lauf entfiel infolge von Erholungsbedarf nach dem All-Out 10k Martinslauf (08.11., Ø 151 bpm, TE 5.0).
+  - **Anpassung `weeksData[46]`:** 
+    - Dienstag 10.11. von `6.0 KM` auf `—` gesetzt (`tag: 'Recovery'`, `sub: 'Ausgefallen (Erholung)'`).
+    - Wochen-Benchmark auf `8,0 km Lauf + Wandern` angepasst.
+    - Zusammenfassung aktualisiert: Fokus auf vollständige ZNS- und Muskelreparatur vor dem Donnerstag-Lauf (8 km GA1 bei Maja) und dem Wander-Wochenende in Geseke.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Rureifel Trail RET22 Periodisierung & Blautöne kalibriert (v11.13 / State 11.13):**
   - **Nahtlose Trainings-Periodisierung März/April 2027:** Die 4-wöchige Lücke zwischen der Belgenbach-Regeneration (Ende 21. März) und dem Rureifel Trail RET22 (17. April) wurde mit den gestuften Cycling-Phasen (Apple Cyan Blautöne) geschlossen:
