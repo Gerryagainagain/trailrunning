@@ -2598,7 +2598,7 @@
         return;
       }
       if (mIdx === 1126 && day === 6) {
-        keyEl.innerHTML = '06. Dezember 2026 · Siebengebirgs-HM (21,4 km · 360 Hm) · <a href="https://www.komoot.com/de-de/tour/3389646526" target="_blank" rel="noopener noreferrer" class="option-reg-link">Komoot-Route ↗</a>';
+        keyEl.innerHTML = '06. Dezember 2026 · Siebengebirgs-HM (21,4 km · 360 Hm · Zielkorridor 2:28–2:33 h) · <a href="https://www.komoot.com/de-de/tour/3389646526" target="_blank" rel="noopener noreferrer" class="option-reg-link">Komoot-Route ↗</a>';
         openRaceDrawer('7ghm');
         return;
       }
@@ -2861,7 +2861,7 @@
       '7ghm': {
         title: 'Siebengebirgs-Halbmarathon',
         subtitle: 'Sonntag, 06. Dezember 2026 · Aegidienberg',
-        targetPill: 'Zielzeit: Abstimmung offen · 360 Hm',
+        targetPill: 'Zielkorridor 2:28–2:33 h · 360 Hm',
         organizerUrl: 'https://siebengebirgsmarathon.net/',
         organizerLabel: 'Offizielle Ausschreibung · siebengebirgsmarathon.net ↗',
         routeUrl: 'https://www.komoot.com/de-de/tour/3389646526',
@@ -2878,12 +2878,12 @@
             ]
           },
           {
-            title: 'Pacing- & HF-Strategie',
+            title: 'Pacing- & HF-Strategie (Zielkorridor 2:28–2:33 h)',
             type: 'pacing',
             steps: [
-              { km: 'Anstiege (> 8%)', speed: 'Powertrip / Gehschritt', hr: 'Pulsdeckel < 128 bpm' },
-              { km: 'Flachpassagen', speed: '5:55–6:05 min/km', hr: '112–118 bpm GA1' },
-              { km: 'Downhills', speed: 'Schrittfrequenz hoch', hr: 'Exzentrisch abfangen' }
+              { km: 'Anstiege (> 8%)', speed: 'Powertrip / Bergauftrab (8:45–9:30)', hr: 'Pulsdeckel 132–136 bpm' },
+              { km: 'Flachpassagen', speed: '6:35–6:50 min/km', hr: '128–132 bpm (Z2 Fokus)' },
+              { km: 'Downhills', speed: '6:00–6:25 min/km rollen', hr: 'Schrittfrequenz hoch' }
             ]
           },
           {
@@ -3217,7 +3217,7 @@
         dates: '30. November – 06. Dezember 2026',
         benchmark: '31,4 km · 21,4k (360 Hm)',
         benchmarkType: 'race',
-        summary: 'Tapering & Wettkampf · Di 6k locker, Do 4,5k Aktivierung · So 21,4 km / 360 Hm Siebengebirgs-HM (Sub 2:20 h).',
+        summary: 'Tapering & Wettkampf · Di 6k locker, Do 4,5k Aktivierung · So 21,4 km / 360 Hm Siebengebirgs-HM (Zielkorridor 2:28–2:33 h).',
         days: [
           { d: 'MON 30.11', val: '—', tag: 'Ruhe', sub: 'Tapering Beginn' },
           { d: 'DIE 01.12', val: '6.0', unit: 'KM', tag: 'Locker GA1', sub: '< 115 bpm flach' },
@@ -3225,7 +3225,7 @@
           { d: 'DON 03.12', val: '4.5', unit: 'KM', tag: 'Aktivierung', sub: '3 kurze Steigerungen' },
           { d: 'FRE 04.12', val: '—', tag: 'Ruhe', sub: 'Speicher füllen' },
           { d: 'SAM 05.12', val: '—', tag: 'Pre-Race', sub: 'Frische wahren' },
-          { d: 'SON 06.12', val: '21.4', unit: 'KM', tag: '7G-HM', sub: '360 Hm · Sub 2:20 h', isRace: true, main: true, raceKey: '7ghm' }
+          { d: 'SON 06.12', val: '21.4', unit: 'KM', tag: '7G-HM', sub: '360 Hm · 2:28–2:33 h', isRace: true, main: true, raceKey: '7ghm' }
         ]
       },
       50: {

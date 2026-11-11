@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.20 (KW 48: ERKRATH HÖHENMETER-POTENTIAL BIS 600 HM KORRIGIERT)  
+**Document Version:** 11.21 (SIEBENGEBIRGS-HM: ZIELKORRIDOR 2:28–2:33 H NACH 3+1 PROTOKOLL BESTÄTIGT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,16 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.20)
+## 📌 1. Project Overview & Release Freeze State (v11.21)
+
+- **Siebengebirgs-HM: Zielkorridor 2:28 – 2:33 Std. vom Athleten freigegeben (v11.21 / State 11.21):**
+  - **Verbindliche Zielzeit-Festlegung (GEMINI.md § 8):** Der Athlet hat sich für Szenario A (Engagierter Wettkampf Z2 mit ~128–132 bpm wie an der Côte d'Opale) entschieden.
+  - **UI-Synchronisation (`index.html`):**
+    - `raceBriefings['7ghm'].targetPill`: Auf `Zielkorridor 2:28–2:33 h · 360 Hm` gesetzt.
+    - Pacing-Tabelle kalibriert: Flach zügig 6:35–6:50 min/km (128–132 bpm), Anstiege 8:45–9:30 min/km (Pulsdeckel 132–136 bpm), Downhills 6:00–6:25 min/km.
+    - `weeksData[49]`: Zusammenfassung und Sonntags-Card auf `360 Hm · 2:28–2:33 h` harmonisiert.
+    - Meta-Dock (06.12.): `06. Dezember 2026 · Siebengebirgs-HM (21,4 km · 360 Hm · Zielkorridor 2:28–2:33 h) · Komoot-Route ↗`.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **KW 48 Key Longrun (Sa 28.11.): Erkrath Höhenmeter-Profil auf bis zu 600 Hm kalibriert (v11.20 / State 11.20):**
   - **Reales Terrain-Potential Erkrath:** Auf 18 km sind in Erkrath durch die Einbindung der Steilhänge (Neanderthal, Morper Bachtal, Düsseltal-Rampen) problemlos **500 bis 600 Hm** erreichbar (bestätigt durch die Realdaten: 10.10.2026 wies 400 Hm auf lediglich 12 km auf = 33,3 Hm/km Dichte).
@@ -769,7 +778,7 @@ Sämtliche Komponenten, Datenmodelle, Ansichten (Desktop, Mobile, Drawer, Sync) 
 - **Gesamtertrag der Kampagne 2026:** **50 Einheiten · 422,4 km · 8.179 Hm** geloggt (Soll-Hm über 12.000). Die aerobe Grundausdauer (VT1 105–118 bpm), das Power-Hiking-Fundament und die intakte Sehnenstruktur wurden zu 100 % erhalten und unbeschadet für die Saison 2027 konserviert.
 - **Nächste Saisonziele (Spätherbst 2026 & Saison 2027):**
   1. **Herbst-Abschluss 1 (10k Martinslauf Düsseldorf · 08.11.2026):** **Status: Fest angemeldet am 27.10.2026.** Ziel: **Sub 58:00 min** (Pace: 5:47 min/km, Ø 145–147 bpm, Max 166 bpm) auf Basis der Realdaten von 2025 (59:27 / 5:55 min/km).
-  2. **Herbst-Abschluss 2 (Siebengebirgs-Halbmarathon Aegidienberg · 06.12.2026):** **Status: Fest angemeldet am 27.10.2026.** 21,4 km / 360 Hm (Komoot-Streckenprofil). **Ziel: [HYPOTHESE - REVISION ANHÄNGIG]** (vormals rechnerische Schätzung Sub 2:20 h; Revision auf Basis 10k Martinslauf Realdaten 58:25 min @ 151 bpm in Abstimmung mit Athlet).
+  2. **Herbst-Abschluss 2 (Siebengebirgs-Halbmarathon Aegidienberg · 06.12.2026):** **Status: Fest angemeldet am 27.10.2026.** 21,4 km / 360 Hm (Komoot-Streckenprofil [#3389646526](https://www.komoot.com/de-de/tour/3389646526)). **Ziel: Zielkorridor 2:28 – 2:33 Std.** (Pace ~6:55–7:10 min/km @ Ø 128–132 bpm) auf Basis der Realdaten von Erkrath (13,3 km / 333 Hm in 7:12 min/km @ 115 bpm) und Trail Côte d'Opale (24,9 km / 290 Hm in 8:16 min/km @ 129 bpm). Vom Athleten am 11.11.2026 freigegeben.
   3. **Frühjahrs-Anker (07.03.2027 · TV Konzen):** **Belgenbachtrail 30,7 km Strong-Trail de Luxe** (941 Hm · Limit 300 Starter) als primäres sportliches Ziel zur Abrufung der erarbeiteten Langstrecken-Form. Buchungsfenster: Mitte Dezember 2026 nach 7G HM. Nach 7G HM folgt eine 4-wöchige Reset-Phase (Dezember bis 04.01.2027), gezielter 9-Wochen-Aufbauplan startet am 05./06.01.2027.
   4. **Sommerurlaubs-Trail (05.06. – 25.06.2027 · Imst & Kaub):** 21-Tage-Rundreise mit Camping-Kraftwagen. Hinfahrt Sa 05.06. via Bodensee ➔ 14 Tage Standlager Campingpark FiNK (06.–20.06.) mit Tschirgant Sky Run **TS16 Adventure** (16,9 km · ~850 Hm) am Sa 12.06.2027 ➔ Rückreise-Etappe via Holzmaden bis **Kaub am Rhein** am Fr 25.06.2027 (Mittelrhein-Ausklang). Buchungsfenster: Dez 2026 / Jan 2027.
   5. **Herbst-Anker (Oktober 2027):** Drachenlauf 2027 (26 km / 1.250 Hm · Revanche auf bekannter Strecke).
