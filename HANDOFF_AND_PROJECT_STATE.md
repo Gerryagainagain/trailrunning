@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.18 (SIEBENGEBIRGS-HM: KOMOOT-STRECKENTOUR #3389646526 IM BRIEFING VERANKERT)  
+**Document Version:** 11.19 (KW 48: KEY 18K LONGRUN VON SIEBENGEBIRGE NACH ERKRATH VERLEGT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,18 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.18)
+## 📌 1. Project Overview & Release Freeze State (v11.19)
+
+- **KW 48 Key Longrun (Sa 28.11.): Verlegung nach Erkrath (+400 Hm) (v11.19 / State 11.19):**
+  - **Streckenverlegung:** Der 18,0 km Schlüssel-Longrun vor dem 7G-HM findet nicht im Siebengebirge, sondern im heimischen Terrain in Erkrath statt.
+  - **Anpassung `weeksData[48]`:**
+    - Benchmark: `38,0 km · Key 18k Erkrath (+400 Hm)`
+    - Zusammenfassung: `Schlüsselwoche vor Siebengebirgs-HM · Di 8k mit 3k HM-Renntempo · Sa 18k Key-Longrun Erkrath (+400 Hm).`
+    - Samstag 28.11.: `sub: 'Erkrath (+400 Hm)'`
+  - **Physiologische Differenzierung & Trade-Off (GEMINI.md § 6):**
+    - *Vorteil:* Vollständiger Entfall von ~2 Std. PKW-Fahrzeit; Start direkt vor der Haustür/Waldrand; signifikant geringere alltagslogistische ZNS-Gesamtbelastung.
+    - *Trade-Off:* In Erkrath sind auf 18 km ca. 350–420 Hm erreichbar (vs. 500+ Hm im Siebengebirge). Die Steigungen sind kürzer und weniger alpin; die langen, anhaltenden Downhills (> 150 Hm am Stück) fehlen, wodurch die exzentrische Oberschenkel-Bremsbelastung geringer ausfällt. Zentral-kardiovaskulär (Fettstoffwechsel & aerobe Grundausdauer über 2 Std. bei 105–118 bpm) bleibt der Trainingsreiz zu 100% wirksam.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Siebengebirgs-HM Komoot Strecken-Tour #3389646526 integriert (v11.18 / State 11.18):**
   - **Komoot-Streckenlink:** Tour [`https://www.komoot.com/de-de/tour/3389646526`](https://www.komoot.com/de-de/tour/3389646526) direkt in `raceBriefings['7ghm'].routeUrl` als Action-Button `[ Komoot Strecken-Route ↗ ]` hinterlegt.
