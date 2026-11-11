@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.24 (TRAININGSPLAN KW 47 & KW 48 VOM ATHLETEN KALIBRIERT)  
+**Document Version:** 11.25 (TS16 TRACE DE TRAIL STRECKEN-TRACK #224096 INTEGRIERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.24)
+## 📌 1. Project Overview & Release Freeze State (v11.25)
+
+- **TS16 Race Drawer: Trace de Trail Strecken-Track #224096 integriert (v11.25 / State 11.25):**
+  - **Trace de Trail Verlinkung:** Der offizielle GPX/Höhenprofil-Track [`https://tracedetrail.fr/en/trace/224096`](https://tracedetrail.fr/en/trace/224096) wurde als primärer Strecken-Track (`routeUrl`) im Tschirgant Sky Run TS16 Race Drawer hinterlegt (`Strecken-Track (Trace de Trail #224096) ↗`).
+  - **Doppelte Verlinkung im Fließtext:** In der Sektion *Rennstrategie & Streckenprofil* sind sowohl der interaktive Trace de Trail Track als auch das offizielle Streckenplan & Höhenprofil PDF direkt abrufbar.
+  - **Meta-Dock Kalender (12.06.2027):** Beim Klick auf den Renntag im Quartalskalender Q2 wird der Trace de Trail Link direkt in der Detailzeile angezeigt.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Trainingsplan KW 47 & KW 48 vom Athleten kalibriert (v11.24 / State 11.24):**
   - **Dienstag KW 48 (24.11.):** Auf spezifisches **Hügel-Fahrtspiel (8,0 km)** festgelegt: 4–5 dynamische Bergauf-Schübe nach Gefühl mit Pulsdeckel an der Kuppe bis max. 132 bpm (Option B).
