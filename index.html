@@ -121,6 +121,17 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-secondary);
+      cursor: pointer;
+      user-select: none;
+      transition: color var(--transition-fast, 0.15s ease), opacity var(--transition-fast, 0.15s ease);
+    }
+
+    .brand-title:hover {
+      color: var(--text-primary);
+    }
+
+    .brand-title:active {
+      opacity: 0.6;
     }
 
     .master-segmented-control {
@@ -2021,7 +2032,7 @@
 
     <!-- MASTER HEADER MIT SEGMENTED CONTROL & SYNC -->
     <header>
-      <div class="brand-title">Trailrunning 2027</div>
+      <div class="brand-title" onclick="forceHardReload()" onkeydown="if(event.key==='Enter'||event.key===' ')forceHardReload()" role="button" tabindex="0" title="Hard Reload erzwingen (Cache leeren & neu laden)">Trailrunning 2027</div>
       
       <div class="master-header-actions">
         <button class="header-sync-btn" onclick="openDesktopSyncModal()" title="Läufe mit iPhone synchronisieren">
@@ -2215,6 +2226,21 @@
   </div>
 
   <script>
+    // Hard Reload Funktion: Leert Cache Storage und erzwingt frisches Laden via Cache-Buster Timestamp
+    async function forceHardReload() {
+      try {
+        if ('caches' in window) {
+          const cacheKeys = await caches.keys();
+          await Promise.all(cacheKeys.map(k => caches.delete(k)));
+        }
+      } catch (err) {
+        console.warn('Cache clearing error:', err);
+      }
+      const url = new URL(window.location.href);
+      url.searchParams.set('_t', Date.now().toString());
+      window.location.replace(url.toString());
+    }
+
     // Tab-Umschalter Training vs. Saison 2027
     function switchMasterTab(tabId) {
       document.querySelectorAll('.master-segment-btn').forEach(btn => btn.classList.remove('active'));

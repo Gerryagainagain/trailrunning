@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.26 (BELGENBACHTRAIL WETTERMITTEL IM RACE DRAWER HINTERLEGT)  
+**Document Version:** 11.27 (HARD RELOAD FUNKTION AUF BRAND-TITLE INTEGRIERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.26)
+## 📌 1. Project Overview & Release Freeze State (v11.27)
+
+- **Hard Reload Funktion auf Brand-Title integriert (v11.27 / State 11.27):**
+  - **Funktion `forceHardReload()`:** Klick auf „Trailrunning 2027“ oben links im Master-Header leert eventuell gecachte Daten in der Cache Storage API (`caches.keys()`) und erzwingt einen frischen Netzwerk-Abruf über einen Timestamp-Parameter (`_t=${Date.now()}`), wodurch aggressive Browser- und PWA-Caches vollständig umgangen werden.
+  - **UI/UX & Accessibility:** Cursor-Pointer, Hover- und Active-Feedback, Tastatur-Bedienbarkeit (`Enter` / `Space`) sowie Tooltip `Hard Reload erzwingen (Cache leeren & neu laden)`.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Belgenbachtrail Race Drawer: Historisches Wettermittel hinterlegt (v11.26 / State 11.26):**
   - **Präzise 5-Jahres-Recherche (2020–2025):** Monschau-Konzen (550 m ü. NHN).
