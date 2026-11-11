@@ -44,8 +44,9 @@ This file contains strict system-level instructions for the AI assistant when op
 
 ---
 
-## 📌 7. Post-Sonntag Erholungs-Regel (48h / 2 volle Tage Recovery)
-- **Regel:** Nach jedem Sonntags-Lauf (Wettkampf oder intensiver/langer Lauf am Sonntag) müssen **IMMER mindestens 2 volle Tage vollständige Recovery (Montag + Dienstag)** eingeplant werden (Ruhetag / CHILL / passiv).
-- **Verbot:** Niemals am Montag oder Dienstag direkt nach einem Sonntags-Lauf eine Laufeinheit (auch keinen Rekom-Lauf) ansetzen. Der Wiedereinstieg darf frühestens am Mittwoch oder Donnerstag erfolgen.
+## 📌 7. Post-Wettkampf Erholungs-Regel (48h / 2 volle Tage Recovery nach Rennen)
+- **Regel:** Nach jedem Sonntags-Wettkampf (Rennen / Race am Sonntag) müssen **IMMER mindestens 2 volle Tage vollständige Recovery (Montag + Dienstag)** eingeplant werden (Ruhetag / CHILL / passiv).
+- **Klarstellung:** Gilt **ausschließlich für Wettkämpfe / Rennen** (nicht für reguläre sonntägliche GA1-Longruns).
+- **Verbot:** Niemals am Montag oder Dienstag direkt nach einem Sonntags-Wettkampf eine Laufeinheit (auch keinen Rekom-Lauf) ansetzen. Der Wiedereinstieg darf frühestens am Mittwoch oder Donnerstag erfolgen.
 
 

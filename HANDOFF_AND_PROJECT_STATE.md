@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.15 (POST-SONNTAG ERHOLUNGS-REGEL: 48H / MO + DI RECOVERY IN GEMINI.MD VERANKERT)  
+**Document Version:** 11.16 (REISE 04.–08. FEB KULTURHAUPTSTADT HALLE & KLARSTELLUNG POST-WETTKAMPF REGEL)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.15)
+## 📌 1. Project Overview & Release Freeze State (v11.16)
+
+- **Reise Kulturhauptstadt Halle (04.–08. Feb 2027) im Saisonkalender integriert (v11.16 / State 11.16):**
+  - **Reise-Eintrag:** Do 04. – Mo 08. Februar 2027 als aktiver Trip `{ id: 'halle', label: 'Kulturhauptstadt Halle (04.–08.02.)', startDay: 4, endDay: 8, details: '04.–08. Februar 2027: Kulturhauptstadt Halle' }` in `quartersData[0].months[1]` (Februar) hinterlegt.
+  - **Visualisierung & Interaktion:** Bei aktiviertem Master-Reiseschalter überlagert die gelbe Diagonalschraffur (`.vacation-layer`) die Tage 4 bis 8 im Februar; Klick auf die Tage zeigt im Meta-Dock die Reisedetails.
+  - **Klarstellung Post-Wettkampf Erholungs-Regel (GEMINI.md § 7):** Die 48h-Regel (Montag + Dienstag vollständige Erholung / Ruhetag) gilt **ausschließlich für Wettkämpfe/Rennen am Sonntag**, nicht für reguläre sonntägliche GA1-Longruns.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Post-Sonntag Erholungs-Regel (48h Recovery Mo + Di) in Systemregeln verankert (v11.15 / State 11.15):**
   - **Feste Systemregel (GEMINI.md § 7):** Nach jedem Sonntags-Lauf (Wettkampf oder intensiver/langer Lauf am Sonntag) müssen zwingend **2 volle Tage vollständige Regeneration (Montag + Dienstag)** eingeplant werden (Ruhetag / CHILL / passiv).
