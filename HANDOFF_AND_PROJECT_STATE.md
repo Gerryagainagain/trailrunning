@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.17 (ZIELZEIT- & PROGNOSE-PROTOKOLL 3+1 IN GEMINI.MD VERANKERT)  
+**Document Version:** 11.18 (SIEBENGEBIRGS-HM: KOMOOT-STRECKENTOUR #3389646526 IM BRIEFING VERANKERT)  
 **Last Updated:** November 11, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.17)
+## 📌 1. Project Overview & Release Freeze State (v11.18)
+
+- **Siebengebirgs-HM Komoot Strecken-Tour #3389646526 integriert (v11.18 / State 11.18):**
+  - **Komoot-Streckenlink:** Tour [`https://www.komoot.com/de-de/tour/3389646526`](https://www.komoot.com/de-de/tour/3389646526) direkt in `raceBriefings['7ghm'].routeUrl` als Action-Button `[ Komoot Strecken-Route ↗ ]` hinterlegt.
+  - **Meta-Dock Kalender (06.12.2026):** Direkte Verlinkung der Komoot-Tour beim Klick auf den Renntag.
+  - **Target-Pill Bereinigung:** Die vormalige Reißbrett-Vorgabe `Sub 2:20 h` auf `Zielzeit: Abstimmung offen · 360 Hm` gesetzt, bis der Athlet seine Entscheidung zum Zielkorridor getroffen hat.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Zielzeit- & Prognose-Protokoll (Kombination 3+1) verbindlich implementiert (v11.17 / State 11.17):**
   - **Feste Systemregel (GEMINI.md § 8):**
