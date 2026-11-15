@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.29 (DESKTOP WOCHEN-PROGRESSBAR & 12.11 LAUF INTEGRIERT)  
+**Document Version:** 11.30 (PROGRESSBAR BENCHMARKS AUF MINIMALISTISCHE KM-WERTE GESTRAFFT)  
 **Last Updated:** November 15, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,16 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.29)
+## 📌 1. Project Overview & Release Freeze State (v11.30)
+
+- **Micro-Progressbar Benchmarks auf minimalistische km-Werte gestrafft (v11.30 / State 11.30):**
+  - **Reduktion der Benchmark-Strings (`weeksData`):** Um Überfrachtung in der Micro-Headerzeile zu vermeiden, wurden die Labels auf die reine Ziel-Distanz gestrafft:
+    - KW 47: von `34,0 km · 16k Erkrath (+350 Hm)` ➔ **`34,0 km`**
+    - KW 48: von `38,0 km · Key 18k Erkrath (+500–600 Hm)` ➔ **`38,0 km`**
+    - KW 49: von `31,4 km · 21,4k (360 Hm)` ➔ **`31,4 km`**
+    - KW 50: von `12,0 km · Regeneration` ➔ **`12,0 km`**
+  - **Resultat:** Die Header-Anzeige lautet nun ultrakompakt `0.0 / 34.0 km` (links) und `34,0 km` (rechts) über dem 3px feinen grünen Fortschrittsbalken.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Dezente Desktop-Fortschrittsanzeige & Wochenbalken integriert (v11.29 / State 11.29):**
   - **Platzierung im `.calendar-header` (oben rechts):** Direkt auf Höhe der Wochen-Headline (`Diese Woche KW 46 • ...`) rechtsbündig als minimalistisches Apple HIG Element (`.week-desktop-progress`).
