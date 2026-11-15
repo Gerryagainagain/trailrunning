@@ -255,16 +255,8 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 0.35rem;
-      min-width: 220px;
+      min-width: 140px;
       flex-shrink: 0;
-    }
-
-    .d-prog-row {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      width: 100%;
-      gap: 0.75rem;
     }
 
     .d-prog-val {
@@ -281,14 +273,6 @@
       font-size: 0.76rem;
       font-weight: 600;
       color: var(--text-secondary);
-    }
-
-    .d-prog-bench {
-      font-family: var(--font-text);
-      font-size: 0.74rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      white-space: nowrap;
     }
 
     .d-prog-bar-track {
@@ -2143,10 +2127,7 @@
         <div class="calendar-header">
           <div class="week-headline" id="currentWeekTitle">Diese Woche KW 45 • Martinslauf</div>
           <div class="week-desktop-progress" id="desktopWeekProgress">
-            <div class="d-prog-row">
-              <span class="d-prog-val" id="dProgVal">0.0 <small>/ 0.0 km</small></span>
-              <span class="d-prog-bench" id="dProgBench"></span>
-            </div>
+            <div class="d-prog-val" id="dProgVal">0.0 <small>/ 0.0 km</small></div>
             <div class="d-prog-bar-track">
               <div class="d-prog-bar-fill" id="dProgBar"></div>
             </div>
@@ -3465,15 +3446,11 @@
 
       grid.innerHTML = html;
 
-      // Update Desktop Fortschritt (Identisch zur Mobile-Logik)
+      // Update Desktop Fortschritt
       const dProgValEl = document.getElementById('dProgVal');
-      const dProgBenchEl = document.getElementById('dProgBench');
       const dProgBarEl = document.getElementById('dProgBar');
       if (dProgValEl) {
         dProgValEl.innerHTML = `<strong>${done.toFixed(1)}</strong> <small>/ ${planned.toFixed(1)} km</small>`;
-      }
-      if (dProgBenchEl) {
-        dProgBenchEl.textContent = data.benchmark || '';
       }
       if (dProgBarEl) {
         dProgBarEl.style.width = planned ? Math.min(100, (done / planned) * 100) + '%' : '0%';

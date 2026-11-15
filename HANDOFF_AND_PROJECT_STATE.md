@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.30 (PROGRESSBAR BENCHMARKS AUF MINIMALISTISCHE KM-WERTE GESTRAFFT)  
+**Document Version:** 11.31 (DESKTOP PROGRESSBAR AUF REINE DUAL-ZAHL REDUZIERT)  
 **Last Updated:** November 15, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.30)
+## 📌 1. Project Overview & Release Freeze State (v11.31)
+
+- **Desktop Progressbar auf pure Dual-Zahl ohne Redundanz reduziert (v11.31 / State 11.31):**
+  - **Radikale Bereinigung:** Die doppelte Nennung des Ziel-km-Wertes auf der rechten Seite wurde vollständig entfernt.
+  - **Puristisches Apple-Design:** Die Anzeige beschränkt sich nun exakt auf `0.0 / 34.0 km` (bzw. `12.0 / 15.0 km`) direkt über dem feinen 3px-Fortschrittsbalken.
+  - **Kein visueller Ballast:** Maximale Ruhe im Header ohne überflüssige Wiederholungen.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Micro-Progressbar Benchmarks auf minimalistische km-Werte gestrafft (v11.30 / State 11.30):**
   - **Reduktion der Benchmark-Strings (`weeksData`):** Um Überfrachtung in der Micro-Headerzeile zu vermeiden, wurden die Labels auf die reine Ziel-Distanz gestrafft:
