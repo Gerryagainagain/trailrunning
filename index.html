@@ -3187,11 +3187,11 @@
         ]
       },
       46: {
-        title: 'KW 46 • Post-Race Erholung & Wander-Wochenende',
+        title: 'KW 46 • Post-Race Erholung & Rückreise',
         dates: '09. – 15. November 2026',
-        benchmark: '8,0 km Lauf + Wandern',
+        benchmark: '7,0 km GA1 (geloggt)',
         benchmarkType: 'blue',
-        summary: 'Dienstag-Lauf zugunsten voller Erholung entfallen · 12.–13.11. Bei Maja zum bday (Do 8k GA1) · 14.–15.11. Wandern Geseke (aerobe Basis).',
+        summary: 'Dienstag-Lauf zugunsten voller Erholung entfallen · 14.11. Geseke · So 15.11. Rückreise-Lauf 7,0 km @ 118 bpm (VT1-Sprechgrenze).',
         days: [
           { d: 'MON 09.11', val: '—', tag: 'Ruhe', sub: 'Post-Race Pause' },
           { d: 'DIE 10.11', val: '—', tag: 'Recovery', sub: 'Ausgefallen (Erholung)' },
@@ -3199,7 +3199,7 @@
           { d: 'DON 12.11', val: '8.0', unit: 'KM', tag: 'Locker GA1', sub: '112–116 bpm · Bei Maja' },
           { d: 'FRE 13.11', val: 'STUDIO', tag: 'Rumpf & Stabi', sub: 'Maja bday', isStudio: true },
           { d: 'SAM 14.11', val: 'WANDERN', tag: 'Wandertour', sub: 'Geseke · Aerobe Basis', isHike: true },
-          { d: 'SON 15.11', val: 'WANDERN', tag: 'Wandertour', sub: 'Rückreise · Erholung', isHike: true }
+          { d: 'SON 15.11', val: '7.0', unit: 'KM', tag: 'Locker GA1', sub: '56 min · 118 bpm · 33 Hm' }
         ]
       },
       47: {
@@ -3412,6 +3412,22 @@
     const SEASON_YEAR = 2026;
 
     const seedDefaultRuns = [
+      {
+        id: 1794760000000,
+        kw: 46,
+        date: "15.11.2026",
+        dayDate: "15.11",
+        dist: 7.0,
+        distMeters: 7000,
+        duration: "00:56:00",
+        hm: 33,
+        hr: 118,
+        pace: "8:00",
+        type: "laufen",
+        isErsatz: false,
+        tag: "Locker GA1",
+        notes: "Geloggt: 7.0 km in 56 min · Pace 8:00 min/km · Ø 118 bpm · 33 Hm (Punktgenau an der VT1 Sprechgrenze)"
+      },
       {
         id: 1794138300000,
         kw: 45,

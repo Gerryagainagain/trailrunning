@@ -82,10 +82,28 @@ const kwMap = {
   42: { phase: 4, travel: 'KW 42 · Erkrath Tapering (300 Hm)' },
   43: { phase: 5, travel: 'KW 43 · Königswinter Drachenlauf' },
   44: { phase: 5, travel: 'KW 44 · Post-Infekt Wiedereinstieg' },
-  45: { phase: 5, travel: 'KW 45 · Rennwoche Martinslauf 10k' }
+  45: { phase: 5, travel: 'KW 45 · Rennwoche Martinslauf 10k' },
+  46: { phase: 5, travel: 'KW 46 · Post-Race Erholung & Rückreise' }
 };
 
 const defaultInitialRuns = [
+  // KW 46 (Locker GA1 / Rückreise)
+  {
+    id: 1794760000000,
+    kw: 46,
+    date: '15.11.2026',
+    dayDate: '15.11',
+    dist: 7.0,
+    distMeters: 7000,
+    hm: 33,
+    duration: '00:56:00',
+    hr: 118,
+    pace: '8:00',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Locker GA1',
+    notes: 'Einheit Locker GA1 absolviert: 7,0 km / 33 Hm / 56 Min. / Pace 8:00 min/km / Ø 118 bpm (saubere GA1 Sprechgrenze VT1)'
+  },
   // KW 45 (48. SFD Martinslauf 10k)
   {
     id: 1794138300000,

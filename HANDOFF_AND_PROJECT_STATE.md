@@ -1,14 +1,21 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.27 (HARD RELOAD FUNKTION AUF BRAND-TITLE INTEGRIERT)  
-**Last Updated:** November 11, 2026  
+**Document Version:** 11.28 (LAUF VOM 15.11.2026 EINGETRAGEN & SYNCHRONISIERT)  
+**Last Updated:** November 15, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.27)
+## 📌 1. Project Overview & Release Freeze State (v11.28)
+
+- **Lauf vom Sonntag 15.11.2026 geloggt & fest synchronisiert (v11.28 / State 11.28):**
+  - **Realdaten des Laufs:** Sonntag 15.11.2026 (KW 46 Rückreise): `7,0 km / 56:00 min / Pace 8:00 min/km / Ø 118 bpm / 33 Hm`.
+  - **Physiologische Bewertung (GEMINI.md § 1 & § 2):** Punktgenaue Einhaltung der aeroben VT1-Sprechgrenze (105–118 bpm GA1). Bestätigt die vollständige aerobe Erholung nach dem Martinslauf 10k (08.11.).
+  - **SSOT-Seed verankert:** In `seedDefaultRuns` (`index.html`) und `defaultInitialRuns` (`app.js`) fest hinterlegt. Der Lauf wird auf allen Endgeräten (Mobile & Desktop) automatisch mit grünem Häkchen (`✓ Locker GA1 · 7,0 km in 56 min · Ø 118 bpm · 33 Hm`) gerendert.
+  - **Wochenplan-Harmonisierung:** `weeksData[46]` auf `7,0 km GA1 (geloggt)` angepasst.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Hard Reload Funktion auf Brand-Title integriert (v11.27 / State 11.27):**
   - **Funktion `forceHardReload()`:** Klick auf „Trailrunning 2027“ oben links im Master-Header leert eventuell gecachte Daten in der Cache Storage API (`caches.keys()`) und erzwingt einen frischen Netzwerk-Abruf über einen Timestamp-Parameter (`_t=${Date.now()}`), wodurch aggressive Browser- und PWA-Caches vollständig umgangen werden.
