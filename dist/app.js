@@ -104,6 +104,23 @@ const defaultInitialRuns = [
     tag: 'Locker GA1',
     notes: 'Einheit Locker GA1 absolviert: 7,0 km / 33 Hm / 56 Min. / Pace 8:00 min/km / Ø 118 bpm (saubere GA1 Sprechgrenze VT1)'
   },
+  // KW 46 (Locker GA1 / Bei Maja)
+  {
+    id: 1794500000000,
+    kw: 46,
+    date: '12.11.2026',
+    dayDate: '12.11',
+    dist: 5.0,
+    distMeters: 5000,
+    hm: 15,
+    duration: '00:41:00',
+    hr: 114,
+    pace: '8:12',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Locker GA1',
+    notes: 'Einheit Locker GA1 absolviert: 5,0 km / 15 Hm / 41 Min. / Pace 8:12 min/km / Bei Maja'
+  },
   // KW 45 (48. SFD Martinslauf 10k)
   {
     id: 1794138300000,

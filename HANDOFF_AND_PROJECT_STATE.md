@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.28 (LAUF VOM 15.11.2026 EINGETRAGEN & SYNCHRONISIERT)  
+**Document Version:** 11.29 (DESKTOP WOCHEN-PROGRESSBAR & 12.11 LAUF INTEGRIERT)  
 **Last Updated:** November 15, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,14 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.28)
+## 📌 1. Project Overview & Release Freeze State (v11.29)
+
+- **Dezente Desktop-Fortschrittsanzeige & Wochenbalken integriert (v11.29 / State 11.29):**
+  - **Platzierung im `.calendar-header` (oben rechts):** Direkt auf Höhe der Wochen-Headline (`Diese Woche KW 46 • ...`) rechtsbündig als minimalistisches Apple HIG Element (`.week-desktop-progress`).
+  - **Anzeige:** Tabellarischer Wert (`12.0 / 15.0 km`), Wochen-Benchmark (`7,0 km GA1 (geloggt)`) sowie ein 3px feiner, abgerundeter grüner Fortschrittsbalken (`var(--apple-green)`).
+  - **Dynamische Berechnung in `renderWeek()`:** Exakt synchron zur mobilen Logik (`planned` vs. `done`), reagiert in Echtzeit auf alle geloggten Ist-Werte und Wochenwechsel.
+  - **Do 12.11. Lauf (5,0 km in 41 min bei Maja) fest geseedet:** Übernommen aus dem Mobile-Log in `seedDefaultRuns` (`index.html`) und `defaultInitialRuns` (`app.js`). Damit stehen für KW 46 mobil wie desktop identisch 12,0 / 15,0 km auf der Uhr.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Lauf vom Sonntag 15.11.2026 geloggt & fest synchronisiert (v11.28 / State 11.28):**
   - **Realdaten des Laufs:** Sonntag 15.11.2026 (KW 46 Rückreise): `7,0 km / 56:00 min / Pace 8:00 min/km / Ø 118 bpm / 33 Hm`.
