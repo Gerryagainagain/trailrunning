@@ -2677,7 +2677,7 @@
         return;
       }
       if (mIdx === 2 && day === 7) {
-        keyEl.innerHTML = '07. März 2027 · Belgenbachtrail (30,7 km · 941 Hm) · <a href="https://my.raceresult.com/417090/registration" target="_blank" rel="noopener noreferrer" class="option-reg-link">Zur Anmeldung ↗</a>';
+        keyEl.innerHTML = '07. März 2027 · Belgenbachtrail (30,7 km · 941 Hm · 123/300 gebucht) · <a href="https://my.raceresult.com/417090/registration" target="_blank" rel="noopener noreferrer" class="option-reg-link">Zur Anmeldung ↗</a>';
         openRaceDrawer('belgenbach');
         return;
       }
@@ -2984,8 +2984,15 @@
               { label: 'Startzeit', val: '09:30 Uhr' },
               { label: 'Startort', val: 'Monschau-Konzen' },
               { label: 'Distanz / Hm', val: '30,7 km · 941 Hm' },
-              { label: 'Profil', val: 'Anspruchsvoller Eifeltrail' }
+              { label: 'Profil', val: 'Anspruchsvoller Eifeltrail' },
+              { label: 'Teilnehmerlimit', val: 'Max. 300 Starter je Distanz' },
+              { label: 'Anmeldestand (15.11.)', val: '30,7k: 123/300 (41 %) · 18,7k: 173/300 (58 %)' }
             ]
+          },
+          {
+            title: 'Anmeldedynamik & Kontingent',
+            type: 'text',
+            text: '<b>Strenges Limit von max. 300 Teilnehmenden je Distanz.</b> Nach der ersten Anmeldewoche sind beim 30,7 km Strong-Trail de Luxe bereits <b>123 von 300 Plätzen (41,0 %)</b> und beim 18,7 km Strong-Trail plus <b>173 von 300 Plätzen (57,7 %)</b> vergeben. Plätze müssen im Auge behalten werden (Buchungsfenster spätestens bei Erreichen von ~200 Anmeldungen oder nach dem 7G-HM).'
           },
           {
             title: 'Wetter & Bedingungen',

@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.31 (DESKTOP PROGRESSBAR AUF REINE DUAL-ZAHL REDUZIERT)  
+**Document Version:** 11.32 (BELGENBACHTRAIL ANMELDE-KONTINGENTE & FILL-RATE SYNCHRONISIERT)  
 **Last Updated:** November 15, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,20 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.31)
+## 📌 1. Project Overview & Release Freeze State (v11.32)
+
+- **Belgenbachtrail Anmeldestand & Kontingente hinterlegt (v11.32 / State 11.32):**
+  - **Realdaten der Anmeldephase (Stand 15.11.2026 nach 1 Woche):**
+    - `30,7 km Strong-Trail de Luxe` (09:30 Uhr): **123 von max. 300 Plätzen gebucht (41,0 % Belegung)**.
+    - `18,7 km Strong-Trail plus` (10:00 Uhr): **173 von max. 300 Plätzen gebucht (57,7 % Belegung)**.
+  - **Race Drawer & Kalender-Dock:**
+    - `raceBriefings.belgenbach`: `Teilnehmerlimit: Max. 300 Starter je Distanz` und `Anmeldestand (15.11.): 30,7k: 123/300 (41 %) · 18,7k: 173/300 (58 %)` im Eckdaten-Grid ergänzt.
+    - Eigener Infoblock `Anmeldedynamik & Kontingent` integriert, der auf das strikte 300er Limit hinweist.
+    - Kalenderdock (07. März) zeigt Status direkt im Header: `07. März 2027 · Belgenbachtrail (30,7 km · 941 Hm · 123/300 gebucht)`.
+  - **Strategische Empfehlung für den Athleten:**
+    - Die 18,7k-Distanz ist nach 7 Tagen bereits zu fast 60 % vergriffen; die angestrebte 30,7k-Distanz zu über 40 %.
+    - Buchungs-Trigger: Die Entwicklung sollte wöchentlich beobachtet werden. Spätestens bei Erreichen von ~200 Anmeldungen (oder unmittelbar nach der 7G-HM Auswertung Anfang Dezember) sollte die Anmeldung fixiert werden, um einen vorzeitigen Meldeschluss zu vermeiden.
+  - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
 - **Desktop Progressbar auf pure Dual-Zahl ohne Redundanz reduziert (v11.31 / State 11.31):**
   - **Radikale Bereinigung:** Die doppelte Nennung des Ziel-km-Wertes auf der rechten Seite wurde vollständig entfernt.
