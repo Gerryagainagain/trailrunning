@@ -619,20 +619,74 @@
       transform: rotate(-1.5deg);
       font-weight: 700;
     }
-  </style>
+  
+    /* VOLUME SWITCHER */
+    .volume-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .vol-btn {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #A1A1A6;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .vol-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .vol-btn.active {
+      background: #0071E3;
+      border-color: #0071E3;
+      color: #FFFFFF;
+      box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+    }
+    .vol-btn.extreme {
+      border-color: rgba(255, 0, 85, 0.4);
+      color: #FF5E8E;
+    }
+    .vol-btn.extreme:hover {
+      background: rgba(255, 0, 85, 0.2);
+      color: #FFF;
+    }
+    .vol-btn.extreme.active {
+      background: #FF0055;
+      border-color: #FF0055;
+      color: #FFFFFF;
+      box-shadow: 0 0 14px rgba(255, 0, 85, 0.6);
+    }
+</style>
 </head>
 <body>
 
-  <!-- STICKY TOPBAR JUMP NAVIGATION (ALL 30) -->
+  <!-- STICKY TOPBAR JUMP NAVIGATION -->
   <header class="showcase-header">
     <div class="showcase-topbar">
       <div class="showcase-brand">
-        ⚡ <span>Trailrunning 2027</span> · 30 Architektonische Layouts &amp; Stile
+        ⚡ <span>Trailrunning 2027</span> <span style="color:rgba(255,255,255,0.4); font-weight:400; font-size:0.85rem;">/ Alle 30 Konzepte</span>
       </div>
-      <a href="index.html" class="btn-return">← Zurück zur Haupt-App</a>
+      
+      <div class="volume-switcher">
+        <span style="font-size:0.72rem; color:#888; text-transform:uppercase; font-weight:800; letter-spacing:0.5px;">Bände:</span>
+        <a href="preview_layouts_01_10.html" class="vol-btn ">Teil 1 (#01–10)</a>
+        <a href="preview_layouts_11_20.html" class="vol-btn ">Teil 2 (#11–20)</a>
+        <a href="preview_layouts_21_30.html" class="vol-btn  extreme">Teil 3 (#21–30 Extrem)</a>
+        <a href="preview_10_layouts.html" class="vol-btn active">Alle 30</a>
+        <a href="index.html" class="btn-return">← Zurück zur App</a>
+      </div>
+
     </div>
     <nav class="showcase-nav">
-      <!-- 1-10 -->
+      
       <a href="#style-1" class="nav-pill">01. Swiss Brutalism</a>
       <a href="#style-2" class="nav-pill">02. Cyber-Biometrie</a>
       <a href="#style-3" class="nav-pill">03. Alpin-Topographie</a>
@@ -643,7 +697,7 @@
       <a href="#style-8" class="nav-pill">08. Nordic Glass</a>
       <a href="#style-9" class="nav-pill">09. Retro CRT</a>
       <a href="#style-10" class="nav-pill">10. Pro Studio</a>
-      <!-- 11-20 -->
+
       <a href="#style-11" class="nav-pill">11. Bio-Chem Lab</a>
       <a href="#style-12" class="nav-pill">12. Transit Metro</a>
       <a href="#style-13" class="nav-pill">13. Blueprint Bauplan</a>
@@ -654,7 +708,7 @@
       <a href="#style-18" class="nav-pill">18. Fighter Jet HUD</a>
       <a href="#style-19" class="nav-pill">19. Wabi-Sabi Bento</a>
       <a href="#style-20" class="nav-pill">20. Cyber-RPG Quest</a>
-      <!-- EXTREME TIER 21-30 -->
+
       <a href="#style-21" class="nav-pill extreme">21. Punk Fanzine</a>
       <a href="#style-22" class="nav-pill extreme">22. Salomon Gorpcore</a>
       <a href="#style-23" class="nav-pill extreme">23. Constructivism</a>
@@ -665,10 +719,11 @@
       <a href="#style-28" class="nav-pill extreme">28. Swiss Mega-Plakat</a>
       <a href="#style-29" class="nav-pill extreme">29. Outrun 1984</a>
       <a href="#style-30" class="nav-pill extreme">30. Ray Gun Grunge</a>
+
     </nav>
   </header>
 
-  <!-- INTRO -->
+  <!-- INTRO ALL 30 -->
   <div class="showcase-intro">
     <span class="kicker">Kompendium der 30 Gestaltungs-Paradigmen</span>
     <h1>30 Radikal Eigenständige Design-Konzepte</h1>
@@ -1490,6 +1545,7 @@
       </div>
     </div>
   </section>
+
 
 </body>
 </html>

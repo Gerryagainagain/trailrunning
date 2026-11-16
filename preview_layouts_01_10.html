@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trailrunning 2027 · 30 Architektonische Layout- &amp; Design-Konzepte</title>
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600;700;800;900&family=Italiana&family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Noto+Serif+JP:wght@400;700;900&family=Orbitron:wght@600;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400&family=Press+Start+2P&family=Righteous&family=Rubik+Glitch&family=Russo+One&family=Share+Tech+Mono&family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Syne:wght@700;800;900&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background-color: #060608;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      line-height: 1.4;
+      overflow-x: hidden;
+      padding-bottom: 160px;
+    }
+
+    /* GLOBAL STICKY SHOWCASE HEADER */
+    .showcase-header {
+      position: sticky;
+      top: 0;
+      z-index: 99999;
+      background: rgba(6, 6, 10, 0.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .showcase-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .showcase-brand {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .showcase-brand span {
+      background: linear-gradient(135deg, #FFF, var(--apple-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .showcase-nav {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      scrollbar-width: none;
+    }
+    .showcase-nav::-webkit-scrollbar { display: none; }
+    .nav-pill {
+      white-space: nowrap;
+      font-size: 0.70rem;
+      font-weight: 800;
+      padding: 0.32rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #A1A1A6;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-pill:hover {
+      background: rgba(100, 210, 255, 0.18);
+      border-color: var(--apple-cyan);
+      color: #FFF;
+      transform: translateY(-1px);
+    }
+    .nav-pill.extreme {
+      background: rgba(255, 0, 85, 0.15);
+      border-color: rgba(255, 0, 85, 0.4);
+      color: #FF5E8E;
+    }
+    .nav-pill.extreme:hover {
+      background: #FF0055;
+      border-color: #FF0055;
+      color: #FFF;
+      box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
+    }
+
+    .btn-return {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FFF;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-return:hover { background: rgba(255, 255, 255, 0.15); }
+
+    /* INTRO */
+    .showcase-intro {
+      max-width: 1240px;
+      margin: 3.5rem auto 2rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .showcase-intro .kicker {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #FF0055;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+    .showcase-intro h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #FFFFFF 20%, #B0E4FF 50%, #FF0055 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .showcase-intro p {
+      color: #A1A1A6;
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* SECTION BANNERS */
+    .tier-divider-banner {
+      max-width: 1340px;
+      margin: 5rem auto 2rem;
+      padding: 1.25rem 2rem;
+      background: linear-gradient(90deg, rgba(255, 0, 85, 0.2), rgba(100, 210, 255, 0.08), transparent);
+      border-left: 5px solid #FF0055;
+      border-radius: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tier-divider-banner h2 { font-size: 1.35rem; font-weight: 900; color: #FFF; }
+    .tier-divider-banner span { font-size: 0.8rem; font-weight: 800; color: #FF0055; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* LAYOUT STAGES */
+    .layout-stage {
+      max-width: 1340px;
+      margin: 4.5rem auto;
+      padding: 0 1.5rem;
+      scroll-margin-top: 110px;
+    }
+    .layout-briefing {
+      background: #0E0F14;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    @media (max-width: 860px) {
+      .layout-briefing { grid-template-columns: 1fr; }
+    }
+    .layout-idx {
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--apple-cyan);
+      margin-bottom: 0.35rem;
+    }
+    .layout-idx.extreme { color: #FF0055; }
+    .layout-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.35rem;
+    }
+    .layout-narrative {
+      font-size: 0.9rem;
+      color: #A1A1A6;
+      line-height: 1.5;
+      max-width: 850px;
+    }
+    .style-spec-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      font-size: 0.78rem;
+      line-height: 1.45;
+      color: #D1D1D6;
+    }
+    .style-spec-box strong { color: #FFF; display: block; margin-bottom: 0.2rem; }
+
+    .canvas-frame {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.75);
+      position: relative;
+    }
+
+    /* STYLES 01 TO 20 BASE DEFINITIONS */
+    .s1-canvas { background: #F4F4F6; color: #0A0A0E; font-family: 'Space Grotesk', sans-serif; padding: 2.5rem; }
+    .s1-grid { display: grid; grid-template-columns: 320px 1fr 340px; border: 2px solid #0A0A0E; background: #FFF; }
+    @media (max-width: 1024px) { .s1-grid { grid-template-columns: 1fr; } }
+    .s1-cell { padding: 2rem; border-right: 2px solid #0A0A0E; display: flex; flex-direction: column; gap: 1.5rem; }
+    .s1-cell:last-child { border-right: none; }
+    .s1-num { font-size: 4rem; font-weight: 900; line-height: 0.85; letter-spacing: -3px; }
+    .s1-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 2px solid #0A0A0E; }
+    .s1-btn { background: #0A0A0E; color: #FFF; font-weight: 900; font-size: 0.82rem; text-transform: uppercase; padding: 0.85rem 1.25rem; border: none; cursor: pointer; display: inline-block; }
+
+    .s2-canvas { background: #040507; color: #00FF88; font-family: 'Orbitron', monospace; padding: 2.5rem; border: 1px solid rgba(0, 255, 136, 0.3); }
+    .s2-cockpit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 1rem; }
+    @media (max-width: 900px) { .s2-cockpit-grid { grid-template-columns: 1fr 1fr; } }
+    .s2-pod { background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.25); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .s2-val { font-size: 2.8rem; font-weight: 900; text-shadow: 0 0 12px rgba(0, 255, 136, 0.5); }
+    .s2-ekg-line { height: 4px; background: linear-gradient(90deg, #00FF88, #00F0FF 50%, #FFB000 100%); box-shadow: 0 0 10px #00FF88; }
+
+    .s3-canvas { background: #141619; color: #E8E5DF; font-family: 'Syne', sans-serif; padding: 2.5rem; }
+    .s3-ridge-item { background: #1C1F24; border: 1px solid #323842; border-left: 5px solid #C49B55; padding: 1.25rem 1.75rem; display: grid; grid-template-columns: 140px 1fr 180px; align-items: center; gap: 1.5rem; }
+    .s3-alt-tag { font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 800; color: #C49B55; }
+
+    .s4-canvas { background: #0D0F13; color: #E6EDF3; font-family: 'JetBrains Mono', monospace; padding: 2.5rem; border: 2px solid #30363D; }
+    .s4-tactical-card { background: #161B22; border: 1px solid #FF9F0A; padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem; position: relative; }
+    .s4-stripe-tape { position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: repeating-linear-gradient(45deg, #FF9F0A, #FF9F0A 12px, #000 12px, #000 24px); }
+
+    .s5-canvas { background: #000000; color: #FFFFFF; font-family: -apple-system, sans-serif; padding: 2.5rem; }
+    .s5-watch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .s5-squircle { background: #121214; border-radius: 32px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; border: 1px solid rgba(255, 255, 255, 0.08); }
+    .s5-num-giant { font-size: 3.5rem; font-weight: 900; line-height: 0.9; color: #FF5500; }
+
+    .s6-canvas { background: #181512; color: #E5DFD5; font-family: 'Newsreader', serif; padding: 3rem 2.5rem; border: 1px solid #332B24; }
+    .s6-entry-block .dropcap { float: left; font-size: 3.8rem; line-height: 0.8; font-weight: 700; margin-right: 0.75rem; color: #D6A868; font-family: 'Cinzel', serif; }
+
+    .s7-canvas { background: radial-gradient(circle at center, #101426 0%, #05060D 75%); color: #A3B8FF; font-family: 'Space Grotesk', sans-serif; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; }
+    .s7-astrolabe { width: 440px; height: 440px; border-radius: 50%; border: 2px dashed rgba(163, 184, 255, 0.3); position: relative; display: flex; align-items: center; justify-content: center; }
+    .s7-inner-dial { width: 220px; height: 220px; border-radius: 50%; background: #0A0D1A; border: 1px solid #4F6BFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; }
+
+    .s8-canvas { background: #0B0D13; color: #F0F3F9; font-family: 'DM Sans', sans-serif; padding: 2.5rem; }
+    .s8-kanban-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .s8-glass-col { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .s8-glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1rem; }
+
+    .s9-canvas { background: #000000; color: #33FF33; font-family: 'VT323', monospace; padding: 2.5rem; border: 4px solid #1A331A; font-size: 1.35rem; }
+    .s9-scanline { background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 4px, 6px 100%; }
+
+    .s10-canvas { background: #111216; color: #E1E2E8; font-family: -apple-system, sans-serif; display: grid; grid-template-columns: 280px 1fr; min-height: 520px; border: 1px solid rgba(255, 255, 255, 0.12); }
+    .s10-sidebar { background: #17181E; border-right: 1px solid rgba(255, 255, 255, 0.08); padding: 1.75rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .s10-content { padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .s11-canvas { background: #F0F4F8; color: #1A2533; font-family: 'DM Mono', monospace; padding: 2.5rem; border: 2px solid #CBD5E1; }
+    .s11-lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+    .s11-beaker { background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .s12-canvas { background: #18191F; color: #FFF; font-family: 'Inter', sans-serif; padding: 2.5rem; }
+    .s12-map-line { display: flex; align-items: center; position: relative; margin: 2rem 0; padding: 0 1rem; }
+    .s12-rail { position: absolute; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, #64D2FF 0%, #30D158 35%, #FF9F0A 70%, #FF453A 100%); border-radius: 4px; }
+    .s12-stations { width: 100%; display: flex; justify-content: space-between; position: relative; z-index: 2; }
+    .s12-station { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; }
+    .s12-dot { width: 22px; height: 22px; border-radius: 50%; background: #FFF; border: 4px solid #18191F; box-shadow: 0 0 0 3px #64D2FF; }
+
+    .s13-canvas { background: #002244; color: #E6F0FA; font-family: 'Courier Prime', monospace; padding: 2.5rem; border: 2px solid #336699; background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+    .s13-spec-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .s13-spec-table th, .s13-spec-table td { border: 1px solid rgba(255, 255, 255, 0.25); padding: 0.85rem; text-align: left; }
+
+    .s14-canvas { background: #1C1D21; color: #D1D2D6; font-family: 'Share Tech Mono', monospace; padding: 2.5rem; border: 2px solid #3A3B42; }
+    .s14-rack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+    .s14-strip { background: #25262B; border: 1px solid #40424A; border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .s14-vu-box { width: 100%; background: #0F1012; border: 1px solid #000; border-radius: 4px; padding: 0.5rem; display: flex; flex-direction: column; gap: 3px; }
+
+    .s15-canvas { background: #0B0A0F; color: #E2D7BE; font-family: 'Italiana', serif; padding: 3rem 2rem; }
+    .s15-deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .s15-card { border: 2px solid #C49B55; border-radius: 14px; background: #131119; padding: 2rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+
+    .s16-canvas { background: #060E1A; color: #92B4D6; font-family: 'Space Mono', monospace; padding: 2.5rem; border: 1px solid #1E3A5F; }
+    .s16-stations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+    .s16-wx-box { background: #0A172A; border: 1px solid #1E3A5F; border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .s17-canvas { background: #F7F5F0; color: #1A1A1A; font-family: 'Newsreader', Georgia, serif; padding: 3rem 2.5rem; border: 3px double #000; }
+    .s17-headline { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; text-align: center; line-height: 1.05; border-bottom: 2px solid #000; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .s17-cols { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+
+    .s18-canvas { background: #030805; color: #24E556; font-family: 'VT323', monospace; padding: 2.5rem; border: 2px solid #175428; font-size: 1.3rem; }
+    .s18-hud-grid { display: grid; grid-template-columns: 180px 1fr 180px; gap: 1.5rem; align-items: center; }
+    .s18-reticle { border: 1px dashed #24E556; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; text-align: center; }
+
+    .s19-canvas { background: #161514; color: #E2DBD2; font-family: 'Noto Serif JP', serif; padding: 2.5rem; }
+    .s19-bento-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .s19-bento-box { background: #1E1D1B; border: 1px solid #33312E; border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .s19-hanko { width: 32px; height: 32px; border: 2px solid #C43D32; color: #C43D32; font-size: 0.75rem; font-weight: 900; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+
+    .s20-canvas { background: #09080F; color: #E0DAF5; font-family: 'Space Grotesk', sans-serif; padding: 2.5rem; border: 2px solid #5B32A3; }
+    .s20-quest-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; margin-top: 1rem; }
+    .s20-hero-stats { background: #141124; border: 1px solid #3D2370; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .s20-quest-card { background: #141124; border: 1px solid #FF9F0A; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+
+    /* ==========================================================================
+       RADICAL & EXTREME STYLES 21 TO 30
+       ========================================================================== */
+
+    /* 21. ANTI-DESIGN PUNK FANZINE */
+    .s21-canvas {
+      background: #E8E5DD;
+      color: #111;
+      font-family: 'Permanent Marker', cursive;
+      padding: 3rem 2rem;
+      border: 6px solid #000;
+      box-shadow: 15px 15px 0px #000;
+      position: relative;
+      background-image: radial-gradient(#000 15%, transparent 16%);
+      background-size: 8px 8px;
+    }
+    .s21-cutout-header {
+      background: #FF0055;
+      color: #FFF;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      font-size: 2.4rem;
+      transform: rotate(-3deg);
+      box-shadow: 6px 6px 0px #000;
+      border: 3px solid #000;
+      margin-bottom: 1.5rem;
+    }
+    .s21-zine-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      font-family: 'Courier Prime', monospace;
+    }
+    @media (max-width: 850px) { .s21-zine-grid { grid-template-columns: 1fr; } }
+    .s21-tape-card {
+      background: #FFF;
+      border: 3px solid #000;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: 8px 8px 0px #000;
+      transform: rotate(1deg);
+    }
+    .s21-tape {
+      position: absolute;
+      top: -12px;
+      left: 30%;
+      width: 100px;
+      height: 24px;
+      background: rgba(255, 235, 59, 0.7);
+      transform: rotate(-2deg);
+      border: 1px dashed rgba(0,0,0,0.3);
+    }
+
+    /* 22. SALOMON S/LAB ACRONYM GORPCORE */
+    .s22-canvas {
+      background: #0B0C0E;
+      color: #E2E4E8;
+      font-family: 'Inter', sans-serif;
+      padding: 2.5rem;
+      border: 1px solid #23272F;
+    }
+    .s22-tech-bar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #CCFF00;
+      padding-bottom: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: #CCFF00;
+      letter-spacing: 2px;
+    }
+    .s22-gear-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 850px) { .s22-gear-grid { grid-template-columns: 1fr; } }
+    .s22-module {
+      background: #14171C;
+      border: 1px solid #262B34;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      position: relative;
+    }
+    .s22-seam-tape {
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: #CCFF00;
+    }
+
+    /* 23. RUSSIAN CONSTRUCTIVISM AGITPROP */
+    .s23-canvas {
+      background: #E8E2D2;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      padding: 3rem 2rem;
+      border: 8px solid #000;
+      position: relative;
+      overflow: hidden;
+    }
+    .s23-wedge {
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 320px;
+      height: 320px;
+      background: #D90429;
+      transform: rotate(45deg);
+      z-index: 1;
+    }
+    .s23-content { position: relative; z-index: 2; }
+    .s23-title {
+      font-size: 4.5rem;
+      line-height: 0.85;
+      color: #000;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+    }
+    .s23-title span { color: #D90429; }
+    .s23-slogan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 850px) { .s23-slogan-grid { grid-template-columns: 1fr; } }
+    .s23-box {
+      background: #000;
+      color: #FFF;
+      padding: 1.5rem;
+      transform: skewY(-2deg);
+    }
+
+    /* 24. Y2K ACID LIQUID CHROME */
+    .s24-canvas {
+      background: #050010;
+      color: #FFF;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 3rem 2rem;
+      border: 2px solid #FF00E5;
+      box-shadow: inset 0 0 50px rgba(255, 0, 229, 0.25);
+    }
+    .s24-chrome-text {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #A0E9FF 40%, #002244 50%, #FF00D4 80%, #FFFFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6));
+    }
+    .s24-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) { .s24-grid { grid-template-columns: 1fr; } }
+    .s24-card {
+      background: rgba(255, 0, 229, 0.05);
+      border: 1px solid #FF00D4;
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: 0 0 20px rgba(255, 0, 212, 0.2);
+    }
+
+    /* 25. APOLLO 11 FLIGHT MANUAL */
+    .s25-canvas {
+      background: #F4EFE6;
+      color: #1F2328;
+      font-family: 'Special Elite', monospace;
+      padding: 3rem 2.5rem 3rem 4rem;
+      border: 1px solid #D0C8B8;
+      position: relative;
+    }
+    .s25-binder-ring {
+      position: absolute;
+      left: 15px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #060608;
+      border: 3px solid #8C8270;
+    }
+    .s25-ring-1 { top: 60px; }
+    .s25-ring-2 { top: 220px; }
+    .s25-ring-3 { top: 380px; }
+    .s25-stamp {
+      border: 3px solid #C92A2A;
+      color: #C92A2A;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      transform: rotate(-4deg);
+      letter-spacing: 2px;
+    }
+
+    /* 26. 8-BIT GAMEBOY CLASSIC */
+    .s26-canvas {
+      background: #8BAC0F;
+      color: #0F380F;
+      font-family: 'Press Start 2P', monospace;
+      padding: 2.5rem 2rem;
+      border: 8px solid #306230;
+      box-shadow: inset 0 0 30px rgba(15, 56, 15, 0.3);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .s26-dialog-box {
+      border: 4px solid #0F380F;
+      background: #9BBC0F;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* 27. FORENSIC AUTOPSY FILE */
+    .s27-canvas {
+      background: #D8C3A5;
+      color: #2D2721;
+      font-family: 'Courier Prime', monospace;
+      padding: 3rem 2.5rem;
+      border: 2px solid #8E7960;
+    }
+    .s27-redacted {
+      background: #000;
+      color: #000;
+      padding: 0 0.4rem;
+      user-select: none;
+    }
+    .s27-paperclip {
+      position: absolute;
+      top: -15px;
+      right: 40px;
+      width: 18px;
+      height: 50px;
+      border: 3px solid #777;
+      border-radius: 9px;
+    }
+
+    /* 28. MONUMENTAL SWISS ALPINE PLAKAT */
+    .s28-canvas {
+      background: #FFF000;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      padding: 3rem 2rem;
+      border: 12px solid #000;
+    }
+    .s28-mega-number {
+      font-size: 8rem;
+      line-height: 0.8;
+      letter-spacing: -4px;
+      margin-bottom: 1rem;
+    }
+
+    /* 29. SYNTHWAVE 1984 RETROWAVE */
+    .s29-canvas {
+      background: #0B0014;
+      color: #00F0FF;
+      font-family: 'Righteous', cursive;
+      padding: 3rem 2rem;
+      border: 3px solid #FF007F;
+      box-shadow: 0 0 40px rgba(255, 0, 127, 0.4);
+      position: relative;
+    }
+    .s29-horizon-grid {
+      height: 120px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 127, 0.2) 100%),
+        repeating-linear-gradient(90deg, #00F0FF 0px, #00F0FF 2px, transparent 2px, transparent 40px);
+      border-bottom: 3px solid #00F0FF;
+      margin-top: 1.5rem;
+    }
+
+    /* 30. DAVID CARSON RAY GUN DECONSTRUCTION */
+    .s30-canvas {
+      background: #141416;
+      color: #E0E0E0;
+      font-family: 'Permanent Marker', cursive;
+      padding: 3.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 4px solid #FFF;
+    }
+    .s30-layer-bg {
+      position: absolute;
+      font-size: 9rem;
+      color: rgba(255,255,255,0.04);
+      font-weight: 900;
+      top: -20px; left: -10px;
+      line-height: 0.8;
+      user-select: none;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+    .s30-fragment {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.95rem;
+      background: #FFF;
+      color: #000;
+      padding: 0.6rem 1rem;
+      display: inline-block;
+      margin: 0.5rem 0;
+      transform: rotate(-1.5deg);
+      font-weight: 700;
+    }
+  
+    /* VOLUME SWITCHER */
+    .volume-switcher {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .vol-btn {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #A1A1A6;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+    .vol-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    .vol-btn.active {
+      background: #0071E3;
+      border-color: #0071E3;
+      color: #FFFFFF;
+      box-shadow: 0 0 10px rgba(0, 113, 227, 0.5);
+    }
+    .vol-btn.extreme {
+      border-color: rgba(255, 0, 85, 0.4);
+      color: #FF5E8E;
+    }
+    .vol-btn.extreme:hover {
+      background: rgba(255, 0, 85, 0.2);
+      color: #FFF;
+    }
+    .vol-btn.extreme.active {
+      background: #FF0055;
+      border-color: #FF0055;
+      color: #FFFFFF;
+      box-shadow: 0 0 14px rgba(255, 0, 85, 0.6);
+    }
+</style>
+</head>
+<body>
+
+  <!-- STICKY TOPBAR JUMP NAVIGATION -->
+  <header class="showcase-header">
+    <div class="showcase-topbar">
+      <div class="showcase-brand">
+        ⚡ <span>Trailrunning 2027</span> <span style="color:rgba(255,255,255,0.4); font-weight:400; font-size:0.85rem;">/ Teil 1 (#01–10)</span>
+      </div>
+      
+      <div class="volume-switcher">
+        <span style="font-size:0.72rem; color:#888; text-transform:uppercase; font-weight:800; letter-spacing:0.5px;">Bände:</span>
+        <a href="preview_layouts_01_10.html" class="vol-btn active">Teil 1 (#01–10)</a>
+        <a href="preview_layouts_11_20.html" class="vol-btn ">Teil 2 (#11–20)</a>
+        <a href="preview_layouts_21_30.html" class="vol-btn  extreme">Teil 3 (#21–30 Extrem)</a>
+        <a href="preview_10_layouts.html" class="vol-btn ">Alle 30</a>
+        <a href="index.html" class="btn-return">← Zurück zur App</a>
+      </div>
+
+    </div>
+    <nav class="showcase-nav">
+      
+      <a href="#style-1" class="nav-pill">01. Swiss Brutalism</a>
+      <a href="#style-2" class="nav-pill">02. Cyber-Biometrie</a>
+      <a href="#style-3" class="nav-pill">03. Alpin-Topographie</a>
+      <a href="#style-4" class="nav-pill">04. Tactical Mission</a>
+      <a href="#style-5" class="nav-pill">05. Ultra Titanium</a>
+      <a href="#style-6" class="nav-pill">06. Moleskine Sepia</a>
+      <a href="#style-7" class="nav-pill">07. Polar Astrolabe</a>
+      <a href="#style-8" class="nav-pill">08. Nordic Glass</a>
+      <a href="#style-9" class="nav-pill">09. Retro CRT</a>
+      <a href="#style-10" class="nav-pill">10. Pro Studio</a>
+
+    </nav>
+  </header>
+
+  <!-- INTRO 01-10 -->
+  <div class="showcase-intro">
+    <span class="kicker">Teil 1 von 3 · Kern-Architekturen &amp; Klassische Stile</span>
+    <h1>Konzepte #01 bis #10: Fundamentale Gestaltungs-Systeme</h1>
+    <p>
+      10 eigenständige visuelle Identitäten: Von Swiss Brutalism, Cyber-Biometrie, alpiner Kartographie über Luftfahrt-Leitstände und Apple Watch Ultra bis hin zu Moleskine-Sepia, Polar-Astrolabien, nordischem Minimalismus, Phosphor-Röhren (VT220) und Tahoe macOS Pro Studio.
+    </p>
+  </div>
+
+  <!-- 01. SWISS BRUTALISM -->
+  <section id="style-1" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 01 // Kernwert: Reine Mathematische Struktur</div>
+        <h2 class="layout-name">Swiss Brutalism &amp; High-Precision Grid</h2>
+        <p class="layout-narrative">Reines Schwarz-Weiß, monolithische 2px-Rahmen, serifenlose Space Grotesk.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> #F4F4F6 &amp; Tiefschwarz<br><strong>Typo:</strong> Space Grotesk</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s1-canvas">
+        <div class="s1-grid">
+          <div class="s1-cell"><span class="s1-label">01 / Mikro (24H)</span><div class="s1-num">0.0</div><div style="font-weight:900; font-size:1.4rem;">CHILL · MO 16.11.</div><p>7,0 km Rückreise-Lauf (118 bpm) regeneriert. Beine frei für 8k GA1 am Dienstag.</p><div class="s1-btn">Status: Ruhetag</div></div>
+          <div class="s1-cell"><span class="s1-label">02 / Meso (Woche KW 47)</span><div class="s1-num">34.0</div><div style="font-weight:900; font-size:1.4rem;">KM SOLL-UMFANG</div><p>Schwerpunkt: Samstag 16k Erkrath (+350 Hm). Freitag Studio reines Rumpf/Mobility ohne Beine.</p><div class="s1-btn" style="background:#FFF; color:#000; border:2px solid #000;">DI 8K · DO 10K · SA 16K</div></div>
+          <div class="s1-cell"><span class="s1-label">03 / Makro (Saison)</span><div class="s1-num">20</div><div style="font-weight:900; font-size:1.4rem;">TAGE BIS 7G-HM</div><p>06.12.2026: 21,4 km (+360 Hm). Zielkorridor: 2:28 – 2:33 Std. Nächster Halt: Belgenbach 30k.</p><div class="s1-btn">Drachenlauf: T-342 D</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. CYBER BIOMETRICS -->
+  <section id="style-2" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 02 // Kernwert: Vital-Telemetrie &amp; Homöostase</div>
+        <h2 class="layout-name">Cyber-Biometrics Medical Cockpit</h2>
+        <p class="layout-narrative">Phosphor-Neon (#00FF88), kardiale Belastungszonen und Glüh-Effekte.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Void (#040507) &amp; Neon Phosphor<br><strong>Typo:</strong> Orbitron &amp; JetBrains Mono</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s2-canvas">
+        <div class="s2-cockpit-grid">
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#A1FFA1;">AEROBIC CORE (VT1)</span><div class="s2-val">118</div><span style="font-size:0.75rem;">MAX BPM · 100% COMPLIANT</span><div class="s2-ekg-line"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#00F0FF;">POWER-HIKE LOAD</span><div class="s2-val" style="color:#00F0FF;">132</div><span style="font-size:0.75rem;">Z2 THRESHOLD</span><div class="s2-ekg-line" style="background:#00F0FF;"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#FFB000;">ANAEROBIC PEAK</span><div class="s2-val" style="color:#FFB000;">151</div><span style="font-size:0.75rem;">MARTINSLAUF 10K BENCHMARK</span><div class="s2-ekg-line" style="background:#FFB000;"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#FFF;">CNS HOMEOSTASIS</span><div class="s2-val" style="color:#FFF;">0.0</div><span style="font-size:0.75rem;">PASSIVE RECOVERY ACTIVE</span><div class="s2-ekg-line" style="background:#FFF;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. TOPOGRAPHIC -->
+  <section id="style-3" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 03 // Kernwert: Höhenmeter &amp; Geologisches Terrain</div>
+        <h2 class="layout-name">Alpine Topographic Cartography</h2>
+        <p class="layout-narrative">Schiefergrau (#141619), geodätisches Topo-Gold (#C49B55) und Fels-Typografie.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Mineral-Schiefer, Topo-Gold<br><strong>Typo:</strong> Syne &amp; Inter</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s3-canvas">
+        <div class="s3-ridge-item"><div class="s3-alt-tag">50 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Tschirgant Sky TS16 &amp; Drachenlauf</strong><div style="font-size:0.8rem; color:#9BA1A8;">1.250 Hm &amp; 850 Hm · Alpin &amp; 7 Gipfel</div></div><div style="color:#C49B55; text-align:right;">100% Power-Hiking</div></div>
+        <div class="s3-ridge-item" style="border-left-color:#E57A3C; margin-top:0.75rem;"><div class="s3-alt-tag" style="color:#E57A3C;">37 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Rureifel RET22 &amp; Belgenbach</strong><div style="font-size:0.8rem; color:#9BA1A8;">851 Hm &amp; 941 Hm · Buntsandstein</div></div><div style="color:#E57A3C; text-align:right;">Morast &amp; Stollen</div></div>
+        <div class="s3-ridge-item" style="border-left-color:#64D2FF; margin-top:0.75rem;"><div class="s3-alt-tag" style="color:#64D2FF;">17 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Siebengebirgs-HM</strong><div style="font-size:0.8rem; color:#9BA1A8;">21,4 km / 360 Hm · Waldwege</div></div><div style="color:#64D2FF; text-align:right;">Korridor: 2:28–2:33 h</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. TACTICAL MISSION -->
+  <section id="style-4" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 04 // Kernwert: Renn-Hierarchie &amp; Taktischer Fokus</div>
+        <h2 class="layout-name">Aerospace Tactical Mission Control</h2>
+        <p class="layout-narrative">Militärisches Lagezentrum: Warnstreifen, Status-Beacons und Monospace-Codes.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Stealth Graphite (#0D0F13), Amber<br><strong>Typo:</strong> JetBrains Mono</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s4-canvas">
+        <div class="s4-tactical-card"><div class="s4-stripe-tape"></div><div style="font-size:0.75rem; color:#FF9F0A; font-weight:800; margin-top:0.4rem;">PRIORITY ALPHA // T-342 DAYS</div><div style="font-size:1.8rem; font-weight:900;">DRACHENLAUF 2027</div><div style="font-size:0.85rem; color:#8B949E;">SPECS: 26.0 KM · 1.250 HM · 7 GIPFEL · FUELING: 2x 500ML MALTO · NO GELS · NO POLES</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. ULTRA TITANIUM -->
+  <section id="style-5" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 05 // Kernwert: Extreme Glancability &amp; Modularität</div>
+        <h2 class="layout-name">Apple Watch Ultra "Wayfinder" OLED</h2>
+        <p class="layout-narrative">OLED-Schwarz (#000000), leuchtendes Titanium-Orange (#FF5500) und 32px-Squircles.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> OLED Black &amp; Titanium Orange<br><strong>Typo:</strong> SF Pro Display</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s5-canvas">
+        <div class="s5-watch-grid">
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">Wochendistanz</span><div class="s5-num-giant">12.0</div><span style="font-size:0.85rem; color:#30D158;">von 15.0 km (80%)</span></div>
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">VT1 Sprechgrenze</span><div class="s5-num-giant" style="color:#64D2FF;">118</div><span style="font-size:0.85rem; color:#64D2FF;">BPM MAX (100% GA1)</span></div>
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">Countdown 7G-HM</span><div class="s5-num-giant" style="color:#FFF;">20</div><span style="font-size:0.85rem; color:#8E8E93;">TAGE BIS 06. DEZEMBER</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. MOLESKINE SEPIA -->
+  <section id="style-6" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 06 // Kernwert: Kontemplative Reise &amp; Alpin-Chronik</div>
+        <h2 class="layout-name">Vintage Alpine Field Journal</h2>
+        <p class="layout-narrative">Pergament-Sepia (#181512), Renaissance-Schrift und literarische Depeschen.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Antik-Sepia, Tinte<br><strong>Typo:</strong> Newsreader &amp; Cinzel</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s6-canvas">
+        <div class="s6-entry-block"><span class="dropcap">A</span>m fünfzehnten Tage des Novembers kehrte der Läufer aus den weiten Ebenen von Geseke zurück. Die Uhr wies sieben Kilometer und eine Nettozeit von sechsundfünfzig Minuten aus. Der Puls verweilte mit eiserner Stetigkeit bei einhundertundachtzehn Schlägen – exakt an der Schwelle des ruhigen Wortwechsels.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. POLAR ASTROLABE -->
+  <section id="style-7" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 07 // Kernwert: Zyklen der Natur &amp; Kosmische Bahn</div>
+        <h2 class="layout-name">Astronomical Astrolabe &amp; Polar Year</h2>
+        <p class="layout-narrative">Deep Nebula Indigo (#101426), sphärische Orbit-Bahnen und Planeten-Knotenpunkte.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Kosmisches Indigo, Polar-Glow<br><strong>Typo:</strong> Space Grotesk</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s7-canvas">
+        <div class="s7-astrolabe"><div class="s7-inner-dial"><span style="font-size:0.75rem; color:#64D2FF;">STANDORT JETZT</span><div style="font-size:2rem; font-weight:900; color:#FFF;">KW 46</div><span style="font-size:0.75rem; color:#A3B8FF;">SPÄTHERBST 2026</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. NORDIC GLASS -->
+  <section id="style-8" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 08 // Kernwert: Moderner Arbeitsfluss &amp; Kanban</div>
+        <h2 class="layout-name">Nordic Minimalist SaaS (Linear Glass)</h2>
+        <p class="layout-narrative">Frosted Glassmorphism, 1px-Lichtkanten und agile Statuskarten.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Frosted Glassmorphism<br><strong>Typo:</strong> DM Sans</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s8-canvas">
+        <div class="s8-kanban-row">
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#8E8E93;">Backlog</span><div class="s8-glass-card"><strong>Drachenlauf '27</strong><span style="font-size:0.75rem; color:#8E8E93;">26k / 1.250 Hm</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#64D2FF;">KW 47 Geplant</span><div class="s8-glass-card"><strong>Sa 16k Key Longrun</strong><span style="font-size:0.75rem; color:#64D2FF;">Erkrath (+350 Hm)</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#FFD60A;">Heute</span><div class="s8-glass-card" style="border-color:#FFD60A;"><strong>Mo 16.11. CHILL</strong><span style="font-size:0.75rem; color:#D1D1D6;">Ruhetag &amp; Regeneration</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#30D158;">Verifiziert</span><div class="s8-glass-card" style="border-color:#30D158;"><strong>✓ So 7,0k GA1</strong><span style="font-size:0.75rem; color:#30D158;">56 min @ 118 bpm</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09. RETRO CRT -->
+  <section id="style-9" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 09 // Kernwert: Unverfälschte Rohdaten</div>
+        <h2 class="layout-name">Phosphor CRT Terminal / VT220 Retro Cyberdeck</h2>
+        <p class="layout-narrative">Monochrom-Grün (#33FF33) auf gewölbtem Röhren-Schwarz mit horizontalen Scanlines.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> CRT Scanlines, Phosphor-Glow<br><strong>Typo:</strong> VT323</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s9-canvas s9-scanline">
+        <div>>>> ATHLETE TELEMETRY RUNNING GUIDE OS [VERSION 11.35]</div>
+        <div>  VT1_THRESHOLD : 105-118 BPM [STATUS: LOCKED_OK]</div>
+        <div>  WEEK_PROGRESS : [********************-----] 12.0/15.0 KM (80%)</div>
+        <div>  NEXT_RACE     : SIEBENGEBIRGS-HM IN 20 DAYS (21.4K / +360HM)</div>
+        <div>  CORRIDOR_SPEC : 2:28:00 - 2:33:20 [VALIDATED VIA ERKRATH & OPALE]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. PRO STUDIO -->
+  <section id="style-10" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 10 // Kernwert: Desktop-Produktivität</div>
+        <h2 class="layout-name">macOS Pro Studio Workstation (Tahoe Split-View)</h2>
+        <p class="layout-narrative">Steuerungs-Sidebar links (#17181E), Titan-Akzente und Detail-Inspektor.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Titan-Anthrazit, SF Symbols<br><strong>Typo:</strong> SF Pro Text</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s10-canvas">
+        <aside class="s10-sidebar"><div class="s10-nav-btn active"><span>📅</span> KW 47 • Basis &amp; 16k</div><div class="s10-nav-btn"><span>⚡</span> KW 48 • Key 18k</div><div class="s10-nav-btn"><span>🏁</span> KW 49 • 7G-HM</div></aside>
+        <main class="s10-content"><div style="font-size:1.4rem; font-weight:900;">KW 47 • Basis &amp; 16k Erkrath (+350 Hm)</div><p style="color:#8C8E99;">Soll-Umfang 34,0 km. Samstag Key Longrun im Morper Bachtal. Freitag reines Rumpfstabi ohne Beinkraft.</p></main>
+      </div>
+    </div>
+  </section>
+
+  
+</body>
+</html>

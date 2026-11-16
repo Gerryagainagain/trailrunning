@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.36 (30 RADIKAL DIFFERENZIERTE ARCHITEKTUR- & EXTREME AVANTGARDE DESIGN-KONZEPTE)  
+**Document Version:** 11.37 (3 SEPARATE VOLUME-PAGES 01–10 / 11–20 / 21–30 + MASTER INDEX MIT BAND-SWITCHER)  
 **Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.36)
+## 📌 1. Project Overview & Release Freeze State (v11.37)
+
+- **3 Separate Volume-Showcase-Seiten + Master-Index (`v11.37`):**
+  - **Teil 1 (`preview_layouts_01_10.html`):** Konzepte #01 bis #10 (Klassische & fundamentale Gestaltungs-Systeme: Swiss Brutalism, Cyber-Biometrie, Alpin-Kartographie, Tactical Mission, Apple Watch Ultra, Moleskine Sepia, Polar-Astrolabium, Nordic Glass, Retro CRT VT220, macOS Pro Studio).
+  - **Teil 2 (`preview_layouts_11_20.html`):** Konzepte #11 bis #20 (Metaphorische Themen-Welten: Bio-Chem Laboratory, Transit Metro Liniennetz, Cyanotype Bauplan, Analog Audio Mixing Console, Gold-Foil Tarot, Synoptic Weather Radar, Sunday Sports Gazette, Fighter Jet HUD, Wabi-Sabi Bento, Cyber-RPG Questlog).
+  - **Teil 3 (`preview_layouts_21_30.html`):** Konzepte #21 bis #30 (Extreme Avantgarde & Anti-Design: Anti-Design Punk Fanzine 1977, Salomon S/LAB Acronym Gorpcore, Russischer Konstruktivismus 1925, Y2K Liquid Chrome Rave, NASA Apollo 11 Manual, 8-Bit Nintendo GameBoy, Gerichtsmedizinische Autopsie-Akte, Swiss 120pt Mega-Plakat, Outrun Synthwave 1984, David Carson Ray Gun Grunge).
+  - **Master-Index (`preview_10_layouts.html`):** Enthält alle 30 Konzepte auf einer einzigen Seite.
+  - **Globaler Volume-Switcher Header:** Jede der 4 Seiten verfügt über eine globale Top-Navigation mit Direkt-Umschaltern zwischen `Teil 1 (#01–10)`, `Teil 2 (#11–20)`, `Teil 3 (#21–30 Extrem)` und `Alle 30` sowie seitenspezifischen Sprungmarken-Pills.
+  - Alle Seiten sind zu 100% nach `dist/` gespiegelt und synchronisiert.
 
 - **30 Radikal Differenzierte Architektur- & Extreme Avantgarde Design-Konzepte (`preview_10_layouts.html` · v11.36):**
   - **Erweiterung um 10 extreme, unkonventionelle Avantgarde-Stile (#21 bis #30):**
