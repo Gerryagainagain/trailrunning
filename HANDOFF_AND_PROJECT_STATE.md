@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.38 (30 LANDING VIEW VOLL-ADAPTIONEN AUF EINER SEITE · `preview_30_landing_views.html`)  
+**Document Version:** 11.39 (30 ECHTE RADIKAL DIFFERENZIERTE LANDING ARCHITECTURES · `preview_30_landing_views.html`)  
 **Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,17 +8,41 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.38)
+## 📌 1. Project Overview & Release Freeze State (v11.39)
 
-- **30 Landing View Voll-Adaptionen auf einer Single-View-Seite (`preview_30_landing_views.html` · v11.38):**
-  - **1:1 Transformation der Startansicht:** Alle 30 Design-Stile und konzeptuellen Paradigmen (#01 bis #30) wurden direkt auf die reale Hauptansicht (Landing View) der Applikation adaptiert.
-  - **Umfasst in jeder der 30 Versionen:**
-    1. Master-Header mit Brand-Titel (`TRAILRUNNING 2027`), Synchronisations-Button und Segmented Control (`Training` / `Saison 2027`).
-    2. Wochen-Selektor-Bar mit Pills (KW 45 Martinslauf, KW 46, KW 47 aktiv, KW 48, KW 49 7G-HM).
-    3. Wochen-Bühnen-Banner (`Diese Woche KW 47 • Spezifischer HM-Aufbau I`) mit Fortschrittsanzeige (`16.0 / 34.0 km`).
-    4. 7-Tage-Raster (Montag Chill, Dienstag 8.0k GA1 Hügel, Mittwoch Studio Stabi, Donnerstag 10.0k GA1 Rhein, Freitag Ruhe, Samstag 16.0k Key Longrun Morper Bachtal +380 Hm, Sonntag Chill).
-    5. Wochenfokus-Strip (34 km Umfangsziel, VT1 105–118 bpm, 2 Flasks Malto, keine Gels).
-  - **Single View Page:** Nahtloses Durchscrollen aller 30 adaptierten Landing Views untereinander mit Sticky-Header und One-Click-Direktsprüngen.
+- **30 Echte, Radikal Differenzierte Landing Architectures (`preview_30_landing_views.html` · v11.39):**
+  - **Bruch mit dem statischen 7-Karten-Raster:** Jedes einzelne der 30 Konzepte (#01 bis #30) besitzt eine **vollkommen eigenständige DOM-Struktur, Informationshierarchie und ein individuelles mentales Modell** für die Startansicht:
+    1. *#01 (Temporal Horizon Matrix):* 3-Ebenen-Zoom (Mikro 24h Großansicht ➔ Meso-Wochenstreifen ➔ Makro-Saisonpfad bis Drachenlauf).
+    2. *#02 (Metabolic Heatmap Clustered):* Gruppierung nach 3 Energiesystemen (Zone 1: VT1 Fettoxidation 105–118 bpm, Zone 2: Kraft & Stabi, Zone 3: ZNS-Erholung) statt nach Wochentagen.
+    3. *#03 (Topographic Hypsometric Pyramid):* Vertikale Höhenstufen-Staffelung nach Hm/km (Talsohle flach ➔ Mittelgebirge +120 Hm ➔ Gipfelzone Key Longrun +380 Hm).
+    4. *#04 (Strategic Race Funnel):* Konvergierender Trichter (Wochenbasis KW 47 ➔ B-Rennen 7G-HM ➔ Apex A-Rennen Drachenlauf).
+    5. *#05 (Apple Watch Ultra Modular):* 2x2 Großdisplay-Complications (Longrun-Gauge, Volume-Dial, VT1-Zone-Lock, Recovery-Balance).
+    6. *#06 (Vintage Alpine Field Journal):* Zweiseitiges Expeditions-Notizbuch (Links Tagebuch-Chronik, Rechts topographische Routenskizze mit Ausrüstungs-Inventar).
+    7. *#07 (Astronomical Astrolabe & Polar Radar):* Zirkuläres Koordinatensystem (Zentraler Athleten-Hub, 7 orbitale Satelliten-Knoten auf Kreisbahnen).
+    8. *#08 (Split-Pane Master-Detail):* Desktop Pro 2-Spalten-Split (Links kompakte Liste, Rechts weiträumiger Detail-Inspektor für das ausgewählte Training).
+    9. *#09 (Terminal CLI Shell):* Reines Monospace-Prompt (`agy-coach --status --week 47`) mit gepipter ASCII-Tabelle und Kernel-Telemetrie (keine UI-Kacheln).
+    10. *#10 (Multi-Column Kanban Pipeline):* 4 Prozess-Spalten (`[ERLEDIGT]`, `[HEUTE AKTIV]`, `[GEPLANT]`, `[RECOVERY]`).
+    11. *#11 (Bio-Chem Laboratory Report):* Substrat-Oxidations-Kurve (82% Lipid bei 115 bpm) & Osmolaritäts-Formeln (280 mOsm/L).
+    12. *#12 (Mass Transit Metro Line):* Durchgehende topologische U-Bahn-Linie mit Umsteigestationen.
+    13. *#13 (Cyanotype Blueprint):* Technischer CAD-Bauplan mit Bemaßungspfeilen und Lastannahmen.
+    14. *#14 (Analog Audio Mixing Console):* 7 vertikale Faderzüge mit VU-Metern und Gain-Potis.
+    15. *#15 (Mystical Tarot Spread):* Triptychon aus drei Großen Arkana-Karten (Vergangenheit, Gegenwart, Bergdrache).
+    16. *#16 (Synoptic Weather Radar):* Meteorologischer Lagebericht mit Doppler-Sweep und Niederschlagsfenstern.
+    17. *#17 (Sunday Sports Gazette):* Klassischer Zeitungsdruck im 3-Spalten-Bleisatz mit großer Aufmacher-Schlagzeile.
+    18. *#18 (Fighter Jet Flight HUD):* Kollimiertes Head-Up Display mit Steigbändern und Waypoint Target Lock.
+    19. *#19 (Japanese Wabi-Sabi Bento):* Asymmetrisch ausbalancierte Hinoki-Holzfächer (Yin & Yang) mit Hanko-Siegeln.
+    20. *#20 (Cyber-RPG Quest Terminal):* 16-Bit Charakterbogen mit HP/Mana und S-Rank Raidboss-Quest.
+    21. *#21 (Anti-Design Punk Fanzine):* Ripped-Paper-Collage mit Paketband-Kreuzen und schrägen Marker-Fragmenten.
+    22. *#22 (Salomon S/LAB Gorpcore):* Modulare Ripstop-Pockets mit Seam-Sealed Nahtbändern und Barcodes.
+    23. *#23 (Russian Constructivism):* Rodtschenko-45°-Diagonalkeil mit monumentalem Stoßpfeil.
+    24. *#24 (Y2K Liquid Chrome Rave):* Diagonales 3D-Flyer-Mesh mit schwebenden Chrom-Modulen.
+    25. *#25 (NASA Apollo 11 Manual):* Ringbuch-Checkliste mit T-Minus Timetags und Freigabestempeln.
+    26. *#26 (8-Bit Nintendo GameBoy):* 1989 RPG-Screen mit Dot-Matrix-Dialogbox und Aktionsauswahl.
+    27. *#27 (Forensic Autopsy File):* Manila-Akte mit Büroklammer und geschwärzten Zensurbalken.
+    28. *#28 (Swiss Monumental Bill-Poster):* 140pt Typo-Explosion mit dramatischem Randanschnitt.
+    29. *#29 (Synthwave 1984 Retrowave):* 3D-Perspektivnetz mit neonbeleuchteten Highway-Meilensteinen.
+    30. *#30 (David Carson Ray Gun):* Dekonstruierte Typo-Überlappung ohne herkömmliche Leserichtung.
+  - **Single View Page:** Nahtloses Durchscrollen aller 30 echten Architekturen untereinander mit Sticky-Header und Direktsprüngen.
   - Gespiegelt nach `dist/preview_30_landing_views.html`.
 
 - **3 Separate Volume-Showcase-Seiten + Master-Index (`v11.37`):**
