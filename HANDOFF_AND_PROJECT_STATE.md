@@ -1,14 +1,30 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.32 (BELGENBACHTRAIL ANMELDE-KONTINGENTE & FILL-RATE SYNCHRONISIERT)  
-**Last Updated:** November 15, 2026  
+**Document Version:** 11.33 (10 DIFFERENZIERTE ARCHITEKTUR-LAYOUTS SHOWCASE IMPLEMENTIERT)  
+**Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.32)
+## 📌 1. Project Overview & Release Freeze State (v11.33)
+
+- **10 Differenzierte Architektur-Konzepte auf einer Single-View-Scrollseite (`preview_10_layouts.html` · v11.33):**
+  - **Single View Page:** Erstellung von [`preview_10_layouts.html`](file:///Users/Gerhard/Desktop/running_guide/preview_10_layouts.html) mit fixierter Sticky-Navigation (`01` bis `10`) für nahtloses Durchscrollen und One-Click-Sprünge.
+  - **10 fundamentale Organisationsprinzipien (jedes Konzept bricht mit dem vorherigen):**
+    1. *Layout 01 – Temporal Horizon Matrix:* Semantic Time-Zoom (Mikro: Nächste 24h / Heute ➔ Meso: Wochenstruktur KW 47 ➔ Makro: Saisonpfad bis Drachenlauf).
+    2. *Layout 02 – Physiological Strain & Metabolic Heatmap:* Sortierung nach Energiesystemen und Herzfrequenz (GA1 VT1 105–118 bpm, Kraftausdauer 125–132 bpm, Schwelle 145–151 bpm, ZNS-Recovery).
+    3. *Layout 03 – Topographic Elevation & Trail Gradient:* Vertikale Steigungs-Dichte (Hm/km) und Untergrund (Flach 1 Hm/km ➔ Wellig 17 Hm/km ➔ Mittelgebirge 31–37 Hm/km ➔ Alpin 48–50 Hm/km).
+    4. *Layout 04 – Race Hierarchy & Milestone Funnel (A / B / C):* Strategische Wettkampf-Pyramide (A-Apex: Drachenlauf & Belgenbach ➔ B-Tier: 7G-HM, RET22, TS16 ➔ C-Base: Benchmarks & Optionen).
+    5. *Layout 05 – Apple Watch Ultra Infographic Modular:* Neomorphe Complication-Kacheln mit massiven Zahlen, Nachtmodus-Kontrasten und Kreis-Ringen.
+    6. *Layout 06 – Expedition Logbook & Narrative Field Notes:* Chronologisches alpines Expeditionsjournal mit Depeschen, Wetterbeobachtungen und Telemetrie.
+    7. *Layout 07 – Radial 365-Day Seasonal Clock:* 360-Grad-Polar-Uhr mit 4 Jahreszeiten-Quadranten und kreisenden Renn-Meilensteinen um den aktuellen Positionskern (KW 46/47).
+    8. *Layout 08 – Workflow Kanban Pipeline Board:* State-basierter Board-Ablauf (Backlog ➔ Geplant KW 47 ➔ Aktiv Heute ➔ Done & Verified).
+    9. *Layout 09 – Terminal / CLI Telemetry Stream:* Radikale Reduktion auf ASCII-Telemetrie und Entwickler-Monospace (Zero Fluff, reine Statusvariablen und Logs).
+    10. *Layout 10 – Spatial Split-View Master-Detail:* macOS/iPadOS Split-View Architektur mit fester Navigations-Sidebar links und weiträumiger Detail-Leinwand rechts.
+  - **Design System Adhärenz:** Vollständige Bindung an `tokens.css` und `DESIGN.md`.
+  - Gespiegelt nach `dist/preview_10_layouts.html`.
 
 - **Belgenbachtrail Anmeldestand & Kontingente hinterlegt (v11.32 / State 11.32):**
   - **Realdaten der Anmeldephase (Stand 15.11.2026 nach 1 Woche):**
