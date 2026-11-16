@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.37 (3 SEPARATE VOLUME-PAGES 01–10 / 11–20 / 21–30 + MASTER INDEX MIT BAND-SWITCHER)  
+**Document Version:** 11.38 (30 LANDING VIEW VOLL-ADAPTIONEN AUF EINER SEITE · `preview_30_landing_views.html`)  
 **Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,18 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.37)
+## 📌 1. Project Overview & Release Freeze State (v11.38)
+
+- **30 Landing View Voll-Adaptionen auf einer Single-View-Seite (`preview_30_landing_views.html` · v11.38):**
+  - **1:1 Transformation der Startansicht:** Alle 30 Design-Stile und konzeptuellen Paradigmen (#01 bis #30) wurden direkt auf die reale Hauptansicht (Landing View) der Applikation adaptiert.
+  - **Umfasst in jeder der 30 Versionen:**
+    1. Master-Header mit Brand-Titel (`TRAILRUNNING 2027`), Synchronisations-Button und Segmented Control (`Training` / `Saison 2027`).
+    2. Wochen-Selektor-Bar mit Pills (KW 45 Martinslauf, KW 46, KW 47 aktiv, KW 48, KW 49 7G-HM).
+    3. Wochen-Bühnen-Banner (`Diese Woche KW 47 • Spezifischer HM-Aufbau I`) mit Fortschrittsanzeige (`16.0 / 34.0 km`).
+    4. 7-Tage-Raster (Montag Chill, Dienstag 8.0k GA1 Hügel, Mittwoch Studio Stabi, Donnerstag 10.0k GA1 Rhein, Freitag Ruhe, Samstag 16.0k Key Longrun Morper Bachtal +380 Hm, Sonntag Chill).
+    5. Wochenfokus-Strip (34 km Umfangsziel, VT1 105–118 bpm, 2 Flasks Malto, keine Gels).
+  - **Single View Page:** Nahtloses Durchscrollen aller 30 adaptierten Landing Views untereinander mit Sticky-Header und One-Click-Direktsprüngen.
+  - Gespiegelt nach `dist/preview_30_landing_views.html`.
 
 - **3 Separate Volume-Showcase-Seiten + Master-Index (`v11.37`):**
   - **Teil 1 (`preview_layouts_01_10.html`):** Konzepte #01 bis #10 (Klassische & fundamentale Gestaltungs-Systeme: Swiss Brutalism, Cyber-Biometrie, Alpin-Kartographie, Tactical Mission, Apple Watch Ultra, Moleskine Sepia, Polar-Astrolabium, Nordic Glass, Retro CRT VT220, macOS Pro Studio).
