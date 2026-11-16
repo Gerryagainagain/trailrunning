@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trailrunning 2027 · 10 Architektonische Layout-Konzepte</title>
+  <title>Trailrunning 2027 · 10 Distinkte Design-Stile & Architekturen</title>
   <link rel="stylesheet" href="tokens.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Courier+Prime:wght@400;700&family=DM+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Orbitron:wght@600;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Space+Grotesk:wght@500;700;900&family=Syne:wght@700;800;900&family=VT323&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --showcase-nav-height: 64px;
-    }
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,29 +16,29 @@
       -webkit-font-smoothing: antialiased;
     }
     body {
-      background-color: var(--color-bg-app, #0B0B10);
-      color: var(--color-text-white, #FFFFFF);
-      font-family: var(--typography-font-family-sans, 'Inter', sans-serif);
+      background-color: #060608;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
       line-height: 1.4;
       overflow-x: hidden;
-      padding-bottom: 120px;
+      padding-bottom: 140px;
     }
 
     /* ==========================================================================
-       STICKY TOP SHOWCASE NAVIGATION
+       GLOBAL SHOWCASE HEADER & JUMP NAV
        ========================================================================== */
     .showcase-header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(11, 11, 16, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      z-index: 9999;
+      background: rgba(6, 6, 10, 0.94);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      padding: 0.6rem 1.5rem;
+      padding: 0.75rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
     .showcase-topbar {
       display: flex;
@@ -49,964 +46,700 @@
       align-items: center;
     }
     .showcase-brand {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 900;
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
     .showcase-brand span {
-      color: var(--apple-cyan);
+      background: linear-gradient(135deg, #FFF, var(--apple-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .showcase-nav {
       display: flex;
-      gap: 0.4rem;
+      gap: 0.45rem;
       overflow-x: auto;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.35rem;
       scrollbar-width: none;
     }
-    .showcase-nav::-webkit-scrollbar {
-      display: none;
-    }
+    .showcase-nav::-webkit-scrollbar { display: none; }
     .nav-pill {
       white-space: nowrap;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.35rem 0.75rem;
-      border-radius: var(--border-radius-pill, 999px);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--color-text-secondary, #A1A1A6);
+      font-size: 0.73rem;
+      font-weight: 800;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #A1A1A6;
       text-decoration: none;
       transition: all 0.2s ease;
     }
-    .nav-pill:hover, .nav-pill.active {
+    .nav-pill:hover {
       background: rgba(100, 210, 255, 0.18);
       border-color: var(--apple-cyan);
-      color: var(--color-text-white);
+      color: #FFF;
+      transform: translateY(-1px);
     }
 
+    .btn-return {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #FFF;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn-return:hover { background: rgba(255, 255, 255, 0.15); }
+
     /* ==========================================================================
-       SHOWCASE CONTAINER & SECTION FRAMING
+       INTRO HERO
        ========================================================================== */
     .showcase-intro {
-      max-width: 1280px;
-      margin: 2.5rem auto 1.5rem;
+      max-width: 1200px;
+      margin: 3.5rem auto 2rem;
       padding: 0 1.5rem;
       text-align: center;
     }
-    .showcase-intro h1 {
-      font-size: 2.4rem;
+    .showcase-intro .kicker {
+      font-size: 0.75rem;
       font-weight: 900;
-      letter-spacing: -1px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--apple-cyan);
       margin-bottom: 0.75rem;
-      background: linear-gradient(135deg, #FFFFFF 40%, var(--apple-cyan) 100%);
+      display: inline-block;
+    }
+    .showcase-intro h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #FFFFFF 20%, #B0E4FF 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .showcase-intro p {
-      color: var(--color-text-secondary);
-      font-size: 1.05rem;
-      max-width: 840px;
+      color: #A1A1A6;
+      font-size: 1.1rem;
+      max-width: 860px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
+    /* ==========================================================================
+       LAYOUT STAGES & FRAMING
+       ========================================================================== */
     .layout-stage {
-      max-width: 1320px;
-      margin: 3.5rem auto;
-      padding: 0 1.25rem;
+      max-width: 1340px;
+      margin: 4.5rem auto;
+      padding: 0 1.5rem;
       scroll-margin-top: 110px;
     }
-    .layout-meta-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-left: 4px solid var(--apple-cyan);
-      border-radius: var(--border-radius-card, 16px);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    .layout-briefing {
+      background: #0E0F14;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
-    .layout-badge-num {
-      display: inline-block;
-      font-size: 0.72rem;
+    @media (max-width: 860px) {
+      .layout-briefing { grid-template-columns: 1fr; }
+    }
+    .layout-idx {
+      font-size: 0.75rem;
       font-weight: 900;
-      letter-spacing: 1px;
-      color: var(--apple-cyan);
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      margin-bottom: 0.25rem;
+      color: var(--apple-cyan);
+      margin-bottom: 0.35rem;
     }
-    .layout-title {
-      font-size: 1.45rem;
+    .layout-name {
+      font-size: 1.5rem;
       font-weight: 900;
       letter-spacing: -0.5px;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
     }
-    .layout-desc {
-      font-size: 0.88rem;
-      color: var(--color-text-secondary);
-      max-width: 820px;
+    .layout-narrative {
+      font-size: 0.9rem;
+      color: #A1A1A6;
+      line-height: 1.5;
+      max-width: 850px;
+    }
+    .style-spec-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 0.85rem 1.15rem;
+      font-size: 0.78rem;
       line-height: 1.45;
+      color: #D1D1D6;
     }
-    .layout-principle-pill {
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--border-radius-pill);
-      background: rgba(100, 210, 255, 0.12);
-      border: 1px solid rgba(100, 210, 255, 0.3);
-      color: var(--apple-cyan);
-    }
-    .layout-canvas {
-      border-radius: var(--border-radius-card-large, 24px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #0D0D14;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    .style-spec-box strong { color: #FFF; display: block; margin-bottom: 0.2rem; }
+
+    /* The canvas wrapper */
+    .canvas-frame {
+      border-radius: 28px;
       overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.75);
       position: relative;
     }
 
-    /* Common UI components across layouts */
-    .btn-action {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #FFF;
-      font-weight: 700;
-      font-size: 0.78rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: var(--border-radius-md, 6px);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .tag-pill {
-      font-size: 0.68rem;
-      font-weight: 800;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-    .tag-ga1 { background: rgba(48, 209, 88, 0.15); color: var(--apple-green); border: 1px solid rgba(48, 209, 88, 0.3); }
-    .tag-tempo { background: rgba(255, 159, 10, 0.15); color: var(--apple-orange); border: 1px solid rgba(255, 159, 10, 0.3); }
-    .tag-race { background: var(--apple-orange); color: #000; font-weight: 900; }
-    .tag-rest { background: rgba(255, 255, 255, 0.08); color: var(--color-text-secondary); }
-
     /* ==========================================================================
-       LAYOUT 01: TEMPORAL ZOOM MATRIX (MIKRO ➔ MESO ➔ MAKRO)
+       STYLE 01: SWISS BRUTALISM & INTERNATIONAL HIGH-PRECISION GRID
        ========================================================================== */
-    .l1-container {
+    .s1-canvas {
+      background: #F4F4F6;
+      color: #0A0A0E;
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      padding: 2.5rem;
+    }
+    .s1-grid {
       display: grid;
       grid-template-columns: 320px 1fr 340px;
-      min-height: 580px;
+      border: 2px solid #0A0A0E;
+      background: #FFF;
     }
     @media (max-width: 1024px) {
-      .l1-container { grid-template-columns: 1fr; }
+      .s1-grid { grid-template-columns: 1fr; }
     }
-    .l1-col {
-      padding: 1.5rem;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .l1-col:last-child {
-      border-right: none;
-    }
-    .l1-level-tag {
-      font-size: 0.65rem;
-      font-weight: 900;
-      letter-spacing: 1px;
-      color: var(--apple-cyan);
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .l1-today-hero {
-      background: linear-gradient(180deg, rgba(32, 32, 45, 0.8) 0%, rgba(20, 20, 28, 0.9) 100%);
-      border: 1px solid rgba(100, 210, 255, 0.3);
-      border-radius: var(--border-radius-card);
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .l1-today-hero .date { font-size: 0.85rem; color: var(--apple-cyan); font-weight: 800; }
-    .l1-today-hero .task { font-size: 1.5rem; font-weight: 900; }
-    .l1-today-hero .status { font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.4; }
-
-    .l1-meso-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 0.4rem;
-    }
-    .l1-meso-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-md);
-      padding: 0.75rem 0.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0.35rem;
-    }
-    .l1-meso-card.today {
-      border-color: var(--apple-cyan);
-      background: rgba(100, 210, 255, 0.08);
-    }
-    .l1-meso-card.highlight {
-      border-color: var(--apple-orange);
-      background: rgba(255, 159, 10, 0.08);
-    }
-    .l1-meso-day { font-size: 0.65rem; color: var(--color-text-secondary); font-weight: 800; }
-    .l1-meso-km { font-size: 1.15rem; font-weight: 900; }
-    .l1-meso-tag { font-size: 0.6rem; font-weight: 800; color: var(--apple-green); }
-
-    .l1-macro-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--border-radius-md);
-    }
-    .l1-macro-info h4 { font-size: 0.88rem; font-weight: 800; }
-    .l1-macro-info span { font-size: 0.75rem; color: var(--color-text-secondary); }
-    .l1-macro-days { font-size: 0.85rem; font-weight: 900; color: var(--apple-orange); }
-
-    /* ==========================================================================
-       LAYOUT 02: PHYSIOLOGICAL STRAIN & METABOLIC HEATMAP
-       ========================================================================== */
-    .l2-container {
+    .s1-cell {
       padding: 2rem;
+      border-right: 2px solid #0A0A0E;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      background: #09090D;
     }
-    .l2-cockpit {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
+    .s1-cell:last-child { border-right: none; }
+    @media (max-width: 1024px) {
+      .s1-cell { border-right: none; border-bottom: 2px solid #0A0A0E; }
     }
-    @media (max-width: 900px) {
-      .l2-cockpit { grid-template-columns: 1fr 1fr; }
-    }
-    .l2-zone-box {
-      background: rgba(22, 22, 32, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-card);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .l2-zone-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 4px; height: 100%;
-    }
-    .l2-z1::before { background: var(--apple-green); }
-    .l2-z2::before { background: var(--apple-cyan); }
-    .l2-z3::before { background: var(--apple-orange); }
-    .l2-z0::before { background: #8E8E93; }
-
-    .l2-zone-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .l2-zone-name { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; }
-    .l2-zone-pct { font-size: 1.5rem; font-weight: 900; }
-    .l2-zone-bar {
-      height: 6px;
-      border-radius: 3px;
-      background: rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      margin: 0.4rem 0;
-    }
-    .l2-zone-fill { height: 100%; border-radius: 3px; }
-    .l2-zone-details { font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.35; }
-
-    .l2-cardiac-stream {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-card);
-      padding: 1.5rem;
-    }
-    .l2-stream-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: var(--apple-cyan);
-    }
-    .l2-stream-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.75rem;
-    }
-    .l2-session-pill {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--border-radius-md);
-      padding: 0.75rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .l2-session-info span { font-size: 0.72rem; color: var(--color-text-secondary); }
-    .l2-session-info strong { display: block; font-size: 0.9rem; }
-    .l2-session-hr { font-size: 1.1rem; font-weight: 900; color: var(--apple-green); text-align: right; }
-
-    /* ==========================================================================
-       LAYOUT 03: TOPOGRAPHIC ELEVATION & TRAIL GRADIENT LADDER
-       ========================================================================== */
-    .l3-container {
-      padding: 2.5rem;
-      background: radial-gradient(circle at 100% 0%, rgba(255, 159, 10, 0.08) 0%, transparent 50%), #0A0A0F;
-    }
-    .l3-ladder {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      position: relative;
-    }
-    .l3-step {
-      display: grid;
-      grid-template-columns: 140px 180px 1fr 200px;
-      align-items: center;
-      gap: 1.5rem;
-      padding: 1.25rem 1.5rem;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-card);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .l3-step:hover {
-      transform: translateX(4px);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-    @media (max-width: 900px) {
-      .l3-step { grid-template-columns: 1fr; gap: 0.75rem; }
-    }
-    .l3-density {
-      font-size: 1.45rem;
+    .s1-num {
+      font-size: 4rem;
       font-weight: 900;
-      color: var(--apple-orange);
-      display: flex;
-      flex-direction: column;
+      line-height: 0.85;
+      letter-spacing: -3px;
     }
-    .l3-density span { font-size: 0.65rem; color: var(--color-text-secondary); text-transform: uppercase; font-weight: 700; }
-    .l3-race-name { font-size: 1.05rem; font-weight: 900; }
-    .l3-race-meta { font-size: 0.75rem; color: var(--color-text-secondary); }
-    .l3-terrain-bar {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .l3-profile-line {
-      height: 8px;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-    .l3-profile-fill {
-      height: 100%;
-      border-radius: 4px;
-      background: linear-gradient(90deg, var(--apple-cyan) 0%, var(--apple-orange) 100%);
-    }
-    .l3-tactics {
-      font-size: 0.78rem;
-      color: var(--color-text-secondary);
-      line-height: 1.35;
-    }
-    .l3-tactics strong { color: var(--color-text-white); }
-
-    /* ==========================================================================
-       LAYOUT 04: RACE HIERARCHY & MILESTONE FUNNEL (A / B / C)
-       ========================================================================== */
-    .l4-container {
-      padding: 2.5rem;
-      background: #0C0C12;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .l4-tier-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .l4-tier-badge {
+    .s1-label {
       font-size: 0.75rem;
       font-weight: 900;
-      padding: 0.35rem 0.8rem;
-      border-radius: var(--border-radius-pill);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #0A0A0E;
     }
-    .l4-tier-a { background: rgba(255, 159, 10, 0.2); color: var(--apple-orange); border: 1px solid var(--apple-orange); }
-    .l4-tier-b { background: rgba(100, 210, 255, 0.2); color: var(--apple-cyan); border: 1px solid var(--apple-cyan); }
-    .l4-tier-c { background: rgba(255, 255, 255, 0.1); color: var(--color-text-secondary); border: 1px solid rgba(255, 255, 255, 0.2); }
+    .s1-btn {
+      background: #0A0A0E;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      padding: 0.85rem 1.25rem;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
 
-    .l4-grid-a {
+    /* ==========================================================================
+       STYLE 02: CYBER-BIOMETRICS MEDICAL COCKPIT
+       ========================================================================== */
+    .s2-canvas {
+      background: #040507;
+      color: #00FF88;
+      font-family: 'Orbitron', monospace;
+      padding: 2.5rem;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      position: relative;
+    }
+    .s2-canvas::before {
+      content: "SYSTEM: BIO-TELEMETRY 2026 // ATHLETE_CORE: VITAL";
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 0.65rem;
+      color: rgba(0, 255, 136, 0.5);
+      letter-spacing: 1px;
+    }
+    .s2-cockpit-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 900px) {
+      .s2-cockpit-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .s2-pod {
+      background: rgba(0, 255, 136, 0.03);
+      border: 1px solid rgba(0, 255, 136, 0.25);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      box-shadow: inset 0 0 20px rgba(0, 255, 136, 0.05);
+    }
+    .s2-val {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-shadow: 0 0 12px rgba(0, 255, 136, 0.5);
+    }
+    .s2-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #79FFA8;
+      line-height: 1.4;
+    }
+    .s2-ekg-line {
+      height: 4px;
+      background: linear-gradient(90deg, #00FF88 0%, #00F0FF 50%, #FFB000 100%);
+      box-shadow: 0 0 10px #00FF88;
+      margin-top: 0.5rem;
+    }
+
+    /* ==========================================================================
+       STYLE 03: ALPINE TOPOGRAPHIC CARTOGRAPHY / MINERAL FIELD GUIDE
+       ========================================================================== */
+    .s3-canvas {
+      background: #141619;
+      color: #E8E5DF;
+      font-family: 'Syne', sans-serif;
+      padding: 2.5rem;
+      position: relative;
+    }
+    .s3-topo-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #C49B55;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    .s3-topo-ladder {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .s3-ridge-item {
+      background: #1C1F24;
+      border: 1px solid #323842;
+      border-left: 5px solid #C49B55;
+      padding: 1.25rem 1.75rem;
+      display: grid;
+      grid-template-columns: 140px 1fr 180px;
+      align-items: center;
+      gap: 1.5rem;
+      font-family: 'Inter', sans-serif;
     }
     @media (max-width: 800px) {
-      .l4-grid-a { grid-template-columns: 1fr; }
+      .s3-ridge-item { grid-template-columns: 1fr; gap: 0.5rem; }
     }
-    .l4-race-card-a {
-      background: linear-gradient(145deg, rgba(32, 24, 18, 0.8) 0%, rgba(20, 20, 28, 0.9) 100%);
-      border: 1px solid rgba(255, 159, 10, 0.4);
-      border-radius: var(--border-radius-card);
+    .s3-ridge-item strong {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      color: #FFF;
+    }
+    .s3-alt-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #C49B55;
+    }
+
+    /* ==========================================================================
+       STYLE 04: AEROSPACE TACTICAL MISSION CONTROL
+       ========================================================================== */
+    .s4-canvas {
+      background: #0D0F13;
+      color: #E6EDF3;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 2.5rem;
+      border: 2px solid #30363D;
+    }
+    .s4-hud-bar {
+      background: #161B22;
+      border: 1px solid #30363D;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+    }
+    .s4-beacon {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #FF9F0A;
+      box-shadow: 0 0 10px #FF9F0A;
+      margin-right: 0.5rem;
+    }
+    .s4-cards-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .s4-cards-grid { grid-template-columns: 1fr; }
+    }
+    .s4-tactical-card {
+      background: #161B22;
+      border: 1px solid #FF9F0A;
       padding: 1.75rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      box-shadow: 0 8px 30px rgba(255, 159, 10, 0.12);
-    }
-    .l4-countdown-chip {
-      align-self: flex-start;
-      font-size: 0.72rem;
-      font-weight: 900;
-      padding: 0.25rem 0.65rem;
-      background: var(--apple-orange);
-      color: #000;
-      border-radius: 4px;
-    }
-    .l4-race-card-a h3 { font-size: 1.4rem; font-weight: 900; }
-    .l4-race-card-a .metrics {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.88rem;
-      font-weight: 800;
-      color: var(--apple-cyan);
-    }
-    .l4-fueling-box {
-      font-size: 0.78rem;
-      color: var(--color-text-secondary);
-      background: rgba(0, 0, 0, 0.4);
-      padding: 0.75rem;
-      border-radius: 6px;
-      line-height: 1.4;
-    }
-
-    .l4-grid-b {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    @media (max-width: 900px) {
-      .l4-grid-b { grid-template-columns: 1fr; }
-    }
-    .l4-race-card-b {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(100, 210, 255, 0.25);
-      border-radius: var(--border-radius-card);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    /* ==========================================================================
-       LAYOUT 05: APPLE WATCH ULTRA INFOGRAPHIC MODULAR
-       ========================================================================== */
-    .l5-container {
-      padding: 2.5rem;
-      background: #000000;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-    @media (max-width: 950px) {
-      .l5-container { grid-template-columns: 1fr; }
-    }
-    .l5-widget {
-      background: #111116;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 22px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 200px;
-    }
-    .l5-widget-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: var(--color-text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .l5-big-num {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -1.5px;
-      color: var(--apple-green);
-    }
-    .l5-big-num.orange { color: var(--apple-orange); }
-    .l5-big-num.cyan { color: var(--apple-cyan); }
-    .l5-ring-display {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
-    .l5-gauge-circle {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 8px solid rgba(48, 209, 88, 0.2);
-      border-top-color: var(--apple-green);
-      border-right-color: var(--apple-green);
-      transform: rotate(45deg);
-    }
-    .l5-sub-meta {
-      font-size: 0.8rem;
-      color: var(--color-text-secondary);
-      font-weight: 600;
-    }
-
-    /* ==========================================================================
-       LAYOUT 06: EXPEDITION LOGBOOK & NARRATIVE FIELD NOTES
-       ========================================================================== */
-    .l6-container {
-      padding: 3rem 2.5rem;
-      background: #0E0F12;
-      font-family: 'Playfair Display', Georgia, serif;
-      color: #E8E8EC;
-    }
-    .l6-ledger-header {
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .l6-ledger-title {
-      font-size: 2.2rem;
-      font-weight: 800;
-      font-style: italic;
-      letter-spacing: -0.5px;
-    }
-    .l6-ledger-meta {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--apple-cyan);
-    }
-    .l6-entries {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .l6-entry {
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
-      padding-bottom: 1.75rem;
-      display: grid;
-      grid-template-columns: 180px 1fr 220px;
-      gap: 1.5rem;
-    }
-    @media (max-width: 900px) {
-      .l6-entry { grid-template-columns: 1fr; gap: 0.5rem; }
-    }
-    .l6-date {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      color: var(--color-text-secondary);
-      font-weight: 600;
-    }
-    .l6-narrative h4 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      font-family: var(--typography-font-family-sans);
-    }
-    .l6-narrative p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #C0C0C8;
-    }
-    .l6-telemetry {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--apple-green);
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    /* ==========================================================================
-       LAYOUT 07: RADIAL 365-DAY SEASONAL CLOCK (POLAR PERIODIZATION)
-       ========================================================================== */
-    .l7-container {
-      padding: 2.5rem;
-      background: radial-gradient(circle at center, #151522 0%, #08080C 70%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
-    }
-    .l7-clock-wrapper {
       position: relative;
-      width: 480px;
-      height: 480px;
-      max-width: 100%;
+    }
+    .s4-stripe-tape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: repeating-linear-gradient(45deg, #FF9F0A, #FF9F0A 12px, #000 12px, #000 24px);
+    }
+
+    /* ==========================================================================
+       STYLE 05: APPLE WATCH ULTRA OLED TRUE BLACK & TITANIUM ORANGE
+       ========================================================================== */
+    .s5-canvas {
+      background: #000000;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+      padding: 2.5rem;
+    }
+    .s5-watch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 900px) {
+      .s5-watch-grid { grid-template-columns: 1fr; }
+    }
+    .s5-squircle {
+      background: #121214;
+      border-radius: 32px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .s5-num-giant {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 0.9;
+      color: #FF5500;
+    }
+    .s5-label-micro {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #8E8E93;
+    }
+
+    /* ==========================================================================
+       STYLE 06: VINTAGE ALPINE FIELD JOURNAL / MOLESKINE SEPIA
+       ========================================================================== */
+    .s6-canvas {
+      background: #181512;
+      color: #E5DFD5;
+      font-family: 'Newsreader', serif;
+      padding: 3rem 2.5rem;
+      border: 1px solid #332B24;
+    }
+    .s6-journal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #D6A868;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #42382E;
+      padding-bottom: 1.5rem;
+    }
+    .s6-entry-block {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .s6-entry-block .dropcap {
+      float: left;
+      font-size: 3.8rem;
+      line-height: 0.8;
+      font-weight: 700;
+      margin-right: 0.75rem;
+      color: #D6A868;
+      font-family: 'Cinzel', serif;
+    }
+
+    /* ==========================================================================
+       STYLE 07: ASTROLABE CELESTIAL POLAR RADAR
+       ========================================================================== */
+    .s7-canvas {
+      background: radial-gradient(circle at center, #101426 0%, #05060D 75%);
+      color: #A3B8FF;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(100, 150, 255, 0.2);
+    }
+    .s7-astrolabe {
+      width: 440px;
+      height: 440px;
       border-radius: 50%;
-      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border: 2px dashed rgba(163, 184, 255, 0.3);
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 0 50px rgba(80, 120, 255, 0.15);
     }
-    .l7-clock-center {
+    .s7-inner-dial {
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      background: rgba(18, 18, 26, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
+      background: #0A0D1A;
+      border: 1px solid #4F6BFF;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 1.5rem;
-      z-index: 10;
+      box-shadow: 0 0 25px rgba(79, 107, 255, 0.4);
     }
-    .l7-orbit-race {
+    .s7-node-pin {
       position: absolute;
-      background: var(--color-bg-card);
-      border: 1px solid var(--apple-orange);
-      padding: 0.4rem 0.75rem;
-      border-radius: var(--border-radius-pill);
-      font-size: 0.72rem;
+      background: #0E1328;
+      border: 1px solid #FF9F0A;
+      color: #FFF;
+      font-size: 0.75rem;
       font-weight: 800;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
       white-space: nowrap;
-      box-shadow: 0 0 15px rgba(255, 159, 10, 0.3);
     }
-    .l7-pos-drachen { top: 12px; left: 50%; transform: translateX(-50%); border-color: var(--apple-orange); }
-    .l7-pos-belgen { bottom: 40px; left: 15%; border-color: var(--apple-cyan); }
-    .l7-pos-ret22 { bottom: 85px; right: 12%; border-color: var(--apple-green); }
-    .l7-pos-ts16 { top: 75px; right: 15%; border-color: var(--apple-yellow); }
-    .l7-pos-7ghm { bottom: 12px; left: 50%; transform: translateX(-50%); border-color: var(--apple-orange); }
 
     /* ==========================================================================
-       LAYOUT 08: WORKFLOW KANBAN PIPELINE BOARD
+       STYLE 08: NORDIC MINIMALIST LINEAR SAAS GLASSMORPHISM
        ========================================================================== */
-    .l8-container {
-      padding: 2rem;
-      background: #0A0A0F;
+    .s8-canvas {
+      background: #0B0D13;
+      color: #F0F3F9;
+      font-family: 'DM Sans', sans-serif;
+      padding: 2.5rem;
+    }
+    .s8-kanban-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      min-height: 540px;
+      gap: 1.25rem;
     }
-    @media (max-width: 1024px) {
-      .l8-container { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 950px) {
+      .s8-kanban-row { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 600px) {
-      .l8-container { grid-template-columns: 1fr; }
-    }
-    .l8-column {
-      background: rgba(18, 18, 26, 0.6);
+    .s8-glass-col {
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-card);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .s8-glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
     }
-    .l8-col-title {
-      font-size: 0.78rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--apple-cyan);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .s8-glass-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
     }
-    .l8-col-count {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.15rem 0.45rem;
-      border-radius: var(--border-radius-pill);
-      font-size: 0.68rem;
-    }
-    .l8-card {
-      background: rgba(26, 26, 38, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--border-radius-md);
-      padding: 0.85rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      cursor: pointer;
-      transition: border-color 0.15s ease;
-    }
-    .l8-card:hover { border-color: rgba(255, 255, 255, 0.25); }
-    .l8-card-title { font-size: 0.9rem; font-weight: 800; }
-    .l8-card-meta { font-size: 0.75rem; color: var(--color-text-secondary); }
 
     /* ==========================================================================
-       LAYOUT 09: TERMINAL / CLI TELEMETRY STREAM
+       STYLE 09: PHOSPHOR CRT TERMINAL / VT220 RETRO CYBERDECK
        ========================================================================== */
-    .l9-container {
-      padding: 2rem;
-      background: #050508;
-      font-family: 'JetBrains Mono', monospace;
-      color: #30D158;
-      border: 1px solid rgba(48, 209, 88, 0.3);
+    .s9-canvas {
+      background: #000000;
+      color: #33FF33;
+      font-family: 'VT323', monospace;
+      padding: 2.5rem;
+      border: 4px solid #1A331A;
+      box-shadow: inset 0 0 40px rgba(51, 255, 51, 0.2);
+      font-size: 1.35rem;
+      line-height: 1.25;
+      letter-spacing: 1px;
     }
-    .l9-prompt-bar {
-      border-bottom: 1px solid rgba(48, 209, 88, 0.2);
-      padding-bottom: 0.75rem;
-      margin-bottom: 1.25rem;
-      font-size: 0.82rem;
-      display: flex;
-      justify-content: space-between;
+    .s9-scanline {
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 4px, 6px 100%;
     }
-    .l9-stream-log {
+
+    /* ==========================================================================
+       STYLE 10: MACOS PRO STUDIO / BRUSHED TITANIUM WORKSTATION
+       ========================================================================== */
+    .s10-canvas {
+      background: #111216;
+      color: #E1E2E8;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 520px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    @media (max-width: 850px) {
+      .s10-canvas { grid-template-columns: 1fr; }
+    }
+    .s10-sidebar {
+      background: #17181E;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.75rem 1.25rem;
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+    }
+    .s10-nav-btn {
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
       font-size: 0.85rem;
-      line-height: 1.45;
-    }
-    .l9-stream-log .cyan { color: var(--apple-cyan); }
-    .l9-stream-log .orange { color: var(--apple-orange); }
-    .l9-stream-log .white { color: #FFF; }
-    .l9-stream-log .muted { color: #6E6E73; }
-    .l9-ascii-bar {
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    /* ==========================================================================
-       LAYOUT 10: SPATIAL SPLIT-VIEW MASTER-DETAIL (DESKTOP DUAL-PANE)
-       ========================================================================== */
-    .l10-container {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      min-height: 560px;
-      background: #0C0C12;
-    }
-    @media (max-width: 850px) {
-      .l10-container { grid-template-columns: 1fr; }
-    }
-    .l10-sidebar {
-      background: rgba(14, 14, 20, 0.95);
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .l10-nav-item {
-      padding: 0.65rem 0.85rem;
-      border-radius: var(--border-radius-md);
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--color-text-secondary);
+      font-weight: 600;
+      color: #8C8E99;
       display: flex;
       align-items: center;
       gap: 0.6rem;
       cursor: pointer;
     }
-    .l10-nav-item.active {
-      background: rgba(100, 210, 255, 0.14);
+    .s10-nav-btn.active {
+      background: #252833;
       color: #FFF;
-      border-left: 3px solid var(--apple-cyan);
+      font-weight: 700;
     }
-    .l10-main-canvas {
-      padding: 2rem;
+    .s10-content {
+      padding: 2.25rem;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-    }
-    .l10-canvas-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- STICKY TOPBAR JUMP NAVIGATION -->
+  <!-- STICKY TOPBAR -->
   <header class="showcase-header">
     <div class="showcase-topbar">
       <div class="showcase-brand">
-        🏃‍♂️ <span>Trailrunning 2027</span> · 10 Architektonische Layouts
+        ⚡ <span>Trailrunning 2027</span> · 10 Distinkte Gestaltungs-Stile
       </div>
-      <a href="index.html" class="btn-action">← Zurück zum Haupt-Dashboard</a>
+      <a href="index.html" class="btn-return">← Zurück zur Haupt-App</a>
     </div>
     <nav class="showcase-nav">
-      <a href="#layout-1" class="nav-pill">01. Zeit-Matrix</a>
-      <a href="#layout-2" class="nav-pill">02. Biometrie & Zonen</a>
-      <a href="#layout-3" class="nav-pill">03. Höhen-Leiter</a>
-      <a href="#layout-4" class="nav-pill">04. Race-Pyramide (A/B/C)</a>
-      <a href="#layout-5" class="nav-pill">05. Ultra Modular</a>
-      <a href="#layout-6" class="nav-pill">06. Expeditions-Logbuch</a>
-      <a href="#layout-7" class="nav-pill">07. Radial 365-Uhr</a>
-      <a href="#layout-8" class="nav-pill">08. Kanban-Pipeline</a>
-      <a href="#layout-9" class="nav-pill">09. CLI Telemetrie</a>
-      <a href="#layout-10" class="nav-pill">10. Spatial Dual-Pane</a>
+      <a href="#style-1" class="nav-pill">01. Swiss Brutalism</a>
+      <a href="#style-2" class="nav-pill">02. Cyber-Biometrie</a>
+      <a href="#style-3" class="nav-pill">03. Alpin-Topographie</a>
+      <a href="#style-4" class="nav-pill">04. Tactical Mission</a>
+      <a href="#style-5" class="nav-pill">05. Ultra Titanium</a>
+      <a href="#style-6" class="nav-pill">06. Moleskine Sepia</a>
+      <a href="#style-7" class="nav-pill">07. Polar Astrolabe</a>
+      <a href="#style-8" class="nav-pill">08. Nordic Glass</a>
+      <a href="#style-9" class="nav-pill">09. Retro CRT Console</a>
+      <a href="#style-10" class="nav-pill">10. Pro Studio Tahoe</a>
     </nav>
   </header>
 
-  <!-- INTRO HEADER -->
+  <!-- INTRO -->
   <div class="showcase-intro">
-    <h1>10 Radikal Differenzierte Architektur-Konzepte</h1>
+    <span class="kicker">Form Follows Essence</span>
+    <h1>10 Radikal Eigenständige Design-Identitäten</h1>
     <p>
-      Jedes Layout bricht bewusst mit dem vorangegangenen Paradigma. Alle 10 Designs nutzen dieselben authentischen Realdaten des Athleten (GA1 105–118 bpm, Malto-Setup, keine Gels, keine Stöcke, reale Wettkämpfe Drachenlauf, Belgenbach, 7G-HM, RET22, TS16), organisieren die Informationsarchitektur jedoch nach fundamental anderen Prinzipien.
+      Jedes Konzept besitzt eine maßgeschneiderte visuelle DNA: Eigenständige Farbwelten, Oberflächen-Materialien, Typografie und Atmosphären – exakt abgestimmt auf den Kernwert des jeweiligen Organisationsprinzips.
     </p>
   </div>
 
   <!-- =========================================================================
-       LAYOUT 01: TEMPORAL ZOOM MATRIX (MIKRO ➔ MESO ➔ MAKRO)
+       01. SWISS BRUTALISM GRID
        ========================================================================= -->
-  <section id="layout-1" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-1" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 01 / 10</span>
-        <h2 class="layout-title">Temporal Horizon Matrix (Mikro ➔ Meso ➔ Makro)</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Zeitskalen-Fächerung.</strong> Der Athlet sieht simultan drei Zoom-Stufen: Das taktische Heute (nächste 24h), die operative Wochenstruktur (KW 47) und die strategische Jahres-Perspektive bis zum Drachenlauf.
+        <div class="layout-idx">Konzept 01 // Kernwert: Reine Mathematische Struktur</div>
+        <h2 class="layout-name">Swiss Brutalism &amp; High-Precision Grid</h2>
+        <p class="layout-narrative">
+          Inspiriert vom Schweizer Plakatdesign der 60er (Müller-Brockmann). Reines Schwarz-Weiß, monolithische 2px-Rahmen, serifenlose Space Grotesk. Keine Schatten, keine Transparenzen – nur reine Information.
         </p>
       </div>
-      <span class="layout-principle-pill">Semantic Time-Zoom</span>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Starker Papierkontrast (#F4F4F6 &amp; Tiefschwarz)<br>
+        <strong>Typografie:</strong> Space Grotesk (Bold &amp; Black)
+      </div>
     </div>
 
-    <div class="layout-canvas">
-      <div class="l1-container">
-        <!-- Col 1: Mikro (Heute) -->
-        <div class="l1-col">
-          <div class="l1-level-tag">
-            <span>Level 1 · Mikro</span>
-            <span>Nächste 24h</span>
-          </div>
-          <div class="l1-today-hero">
-            <span class="date">Montag, 16. November 2026</span>
-            <div class="task">CHILL &amp; RECOVERY</div>
-            <p class="status">
-              Vollständige Erholung nach 7,0 km Rückreise-Lauf (118 bpm). Beine schonen, Vorbereitung auf 8k GA1 am Dienstag.
+    <div class="canvas-frame">
+      <div class="s1-canvas">
+        <div style="font-size:0.75rem; font-weight:900; letter-spacing:2px; margin-bottom:1rem; text-transform:uppercase;">
+          GERHARD RUNNING SYSTEM · TEMPORAL HORIZON MATRIX
+        </div>
+        <div class="s1-grid">
+          <!-- Mikro -->
+          <div class="s1-cell">
+            <span class="s1-label">01 / Mikro (24H)</span>
+            <div class="s1-num">0.0</div>
+            <div style="font-weight:900; font-size:1.4rem;">CHILL · MONTAG 16.11.</div>
+            <p style="font-size:0.9rem; line-height:1.4;">
+              Vollständige Erholung nach 7,0 km Rückreise-Lauf (118 bpm). 48h Post-Race Regeneration aktiv.
             </p>
-            <span class="tag-pill tag-rest" style="align-self: flex-start;">Ruhetag · Passiv</span>
+            <div class="s1-btn">Status: Ruhetag</div>
           </div>
-          <div style="font-size:0.75rem; color:var(--color-text-secondary); line-height:1.4;">
-            <strong>Morgen (Dienstag 17.11.):</strong> 8,0 km GA1 Flachlauf (&lt; 118 bpm Sprechgrenze).
-          </div>
-        </div>
-
-        <!-- Col 2: Meso (Diese Woche) -->
-        <div class="l1-col">
-          <div class="l1-level-tag">
-            <span>Level 2 · Meso</span>
-            <span>KW 47 • 34,0 km Ziel</span>
-          </div>
-          <div style="font-size: 0.95rem; font-weight: 800; display:flex; justify-content:space-between;">
-            <span>Wochenfortschritt</span>
-            <span style="color:var(--apple-green);">0.0 / 34.0 km</span>
-          </div>
-          <div class="l1-meso-grid">
-            <div class="l1-meso-card today">
-              <span class="l1-meso-day">MO</span>
-              <span class="l1-meso-km">—</span>
-              <span class="l1-meso-tag" style="color:var(--color-text-secondary)">CHILL</span>
-            </div>
-            <div class="l1-meso-card">
-              <span class="l1-meso-day">DI</span>
-              <span class="l1-meso-km">8.0</span>
-              <span class="l1-meso-tag">GA1</span>
-            </div>
-            <div class="l1-meso-card">
-              <span class="l1-meso-day">MI</span>
-              <span class="l1-meso-km">—</span>
-              <span class="l1-meso-tag" style="color:var(--color-text-secondary)">CHILL</span>
-            </div>
-            <div class="l1-meso-card">
-              <span class="l1-meso-day">DO</span>
-              <span class="l1-meso-km">10.0</span>
-              <span class="l1-meso-tag">GA1</span>
-            </div>
-            <div class="l1-meso-card">
-              <span class="l1-meso-day">FR</span>
-              <span class="l1-meso-km">0.0</span>
-              <span class="l1-meso-tag" style="color:var(--apple-cyan)">STABI</span>
-            </div>
-            <div class="l1-meso-card highlight">
-              <span class="l1-meso-day">SA</span>
-              <span class="l1-meso-km">16.0</span>
-              <span class="l1-meso-tag" style="color:var(--apple-orange)">KEY</span>
-            </div>
-            <div class="l1-meso-card">
-              <span class="l1-meso-day">SO</span>
-              <span class="l1-meso-km">—</span>
-              <span class="l1-meso-tag" style="color:var(--color-text-secondary)">RUHE</span>
+          <!-- Meso -->
+          <div class="s1-cell">
+            <span class="s1-label">02 / Meso (Woche KW 47)</span>
+            <div class="s1-num">34.0</div>
+            <div style="font-weight:900; font-size:1.4rem;">KM SOLL-UMFANG</div>
+            <p style="font-size:0.9rem; line-height:1.4;">
+              Schwerpunkt: Samstag 16k Erkrath (+350 Hm). Freitag Studio reines Rumpf/Mobility ohne Beinkraft.
+            </p>
+            <div style="font-weight:900; font-size:0.85rem; border:2px solid #000; padding:0.6rem; text-align:center;">
+              DI 8K · DO 10K · SA 16K
             </div>
           </div>
-          <div style="background:rgba(255,255,255,0.03); padding:0.85rem; border-radius:8px; font-size:0.78rem; color:var(--color-text-secondary);">
-            <strong>Wochenschwerpunkt:</strong> 16k Erkrath (+350 Hm) am Samstag. Freitag Studio reines Rumpf/Mobility ohne Beinkraft.
-          </div>
-        </div>
-
-        <!-- Col 3: Makro (Saison-Ziele) -->
-        <div class="l1-col">
-          <div class="l1-level-tag">
-            <span>Level 3 · Makro</span>
-            <span>Saisonpfad 2026/27</span>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:0.5rem;">
-            <div class="l1-macro-row">
-              <div class="l1-macro-info">
-                <h4>Siebengebirgs-HM</h4>
-                <span>21,4 km · 360 Hm · 06.12.</span>
-              </div>
-              <div class="l1-macro-days">20 Tage</div>
-            </div>
-            <div class="l1-macro-row">
-              <div class="l1-macro-info">
-                <h4>Belgenbachtrail</h4>
-                <span>30,7 km · 941 Hm · 07.03.</span>
-              </div>
-              <div class="l1-macro-days">111 Tage</div>
-            </div>
-            <div class="l1-macro-row">
-              <div class="l1-macro-info">
-                <h4>Rureifel RET22</h4>
-                <span>22,8 km · 851 Hm · 17.04.</span>
-              </div>
-              <div class="l1-macro-days">152 Tage</div>
-            </div>
-            <div class="l1-macro-row">
-              <div class="l1-macro-info">
-                <h4>Drachenlauf 2027</h4>
-                <span>26,0 km · 1.250 Hm · 24.10.</span>
-              </div>
-              <div class="l1-macro-days" style="color:var(--apple-cyan);">342 Tage</div>
+          <!-- Makro -->
+          <div class="s1-cell">
+            <span class="s1-label">03 / Makro (Saison)</span>
+            <div class="s1-num">20</div>
+            <div style="font-weight:900; font-size:1.4rem;">TAGE BIS 7G-HM</div>
+            <p style="font-size:0.9rem; line-height:1.4;">
+              06.12.2026: 21,4 km (+360 Hm). Zielkorridor: 2:28 – 2:33 Std. Nächster Halt: Belgenbachtrail 30k.
+            </p>
+            <div class="s1-btn" style="background:#FFF; color:#000; border:2px solid #000;">
+              Drachenlauf: T-342 D
             </div>
           </div>
         </div>
@@ -1015,90 +748,52 @@
   </section>
 
   <!-- =========================================================================
-       LAYOUT 02: PHYSIOLOGICAL STRAIN & ZONE HEATMAP
+       02. CYBER-BIOMETRICS
        ========================================================================= -->
-  <section id="layout-2" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-2" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 02 / 10</span>
-        <h2 class="layout-title">Physiological Strain &amp; Metabolic Heatmap</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Herzfrequenz-Zonen &amp; Energiestoffwechsel.</strong> Nicht nach Wochentagen, sondern nach physiologischer Belastung sortiert: Echtes GA1 (105–118 bpm), Kraftausdauer (125–132 bpm), Schwellenlast (145–151 bpm) und Erholungs-Biometrie.
+        <div class="layout-idx">Konzept 02 // Kernwert: Vital-Telemetrie &amp; Homöostase</div>
+        <h2 class="layout-name">Cyber-Biometrics Medical Cockpit</h2>
+        <p class="layout-narrative">
+          Visualisiert die physiologische Belastung wie auf der Intensivstation oder im Raumschiff-Cockpit: Phosphor-Neon (#00FF88), digitale Scanlinien, kardiale Belastungszonen und Glüh-Effekte.
         </p>
       </div>
-      <span class="layout-principle-pill">Metabolic Load</span>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Deep Space Void (#040507) &amp; Neon Phosphor<br>
+        <strong>Typografie:</strong> Orbitron &amp; JetBrains Mono
+      </div>
     </div>
 
-    <div class="layout-canvas">
-      <div class="l2-container">
-        <!-- 4 Metabolic Pillars -->
-        <div class="l2-cockpit">
-          <div class="l2-zone-box l2-z1">
-            <div class="l2-zone-header">
-              <span class="l2-zone-name">GA1 Aerob (VT1)</span>
-              <span class="l2-zone-pct" style="color:var(--apple-green);">72 %</span>
-            </div>
-            <span style="font-size:0.72rem; color:var(--apple-green); font-weight:800;">105 – 118 BPM</span>
-            <div class="l2-zone-bar"><div class="l2-zone-fill" style="width: 72%; background:var(--apple-green);"></div></div>
-            <p class="l2-zone-details">Fettstoffwechsel-Basis &amp; Sprechgrenze. Reines aerobes Fundament (z.B. So 15.11.: 7k @ 118 bpm).</p>
-          </div>
-
-          <div class="l2-zone-box l2-z2">
-            <div class="l2-zone-header">
-              <span class="l2-zone-name">GA2 Kraftausdauer</span>
-              <span class="l2-zone-pct" style="color:var(--apple-cyan);">20 %</span>
-            </div>
-            <span style="font-size:0.72rem; color:var(--apple-cyan); font-weight:800;">125 – 132 BPM</span>
-            <div class="l2-zone-bar"><div class="l2-zone-fill" style="width: 20%; background:var(--apple-cyan);"></div></div>
-            <p class="l2-zone-details">Hügelige Anstiege &amp; HM-Wettkampftempo (Côte d'Opale @ 129 bpm, Steilhänge Erkrath).</p>
-          </div>
-
-          <div class="l2-zone-box l2-z3">
-            <div class="l2-zone-header">
-              <span class="l2-zone-name">Schwelle / Z3</span>
-              <span class="l2-zone-pct" style="color:var(--apple-orange);">8 %</span>
-            </div>
-            <span style="font-size:0.72rem; color:var(--apple-orange); font-weight:800;">145 – 151 BPM</span>
-            <div class="l2-zone-bar"><div class="l2-zone-fill" style="width: 8%; background:var(--apple-orange);"></div></div>
-            <p class="l2-zone-details">Maximal-Tests (SFD Martinslauf 10k: 58:25 min @ 151 bpm). Streng dosiert.</p>
-          </div>
-
-          <div class="l2-zone-box l2-z0">
-            <div class="l2-zone-header">
-              <span class="l2-zone-name">ZNS-Recovery</span>
-              <span class="l2-zone-pct" style="color:#FFF;">100 %</span>
-            </div>
-            <span style="font-size:0.72rem; color:var(--color-text-secondary); font-weight:800;">RUHEPULS / SCHLAF</span>
-            <div class="l2-zone-bar"><div class="l2-zone-fill" style="width: 100%; background:#FFF;"></div></div>
-            <p class="l2-zone-details">48h Post-Race Regel strikt eingehalten (Mo/Di Ruhetage). Volle ZNS-Regeneration.</p>
-          </div>
+    <div class="canvas-frame">
+      <div class="s2-canvas">
+        <div style="font-size:0.85rem; letter-spacing:2px; margin-bottom:1.5rem; text-transform:uppercase;">
+          ▲ PHYSIOLOGICAL STRAIN TELEMETRY // REALTIME
         </div>
-
-        <!-- Biometrischer Aktivitäten-Strom -->
-        <div class="l2-cardiac-stream">
-          <div class="l2-stream-title">Verifizierte Herzfrequenz-Protokolle der jüngsten Läufe</div>
-          <div class="l2-stream-grid">
-            <div class="l2-session-pill">
-              <div class="l2-session-info">
-                <span>So 15.11. · Rückreise</span>
-                <strong>7,0 km GA1 (56:00 min)</strong>
-              </div>
-              <div class="l2-session-hr">118 bpm<br><small style="font-size:0.65rem; color:var(--color-text-secondary)">VT1 Punktlandung</small></div>
-            </div>
-            <div class="l2-session-pill">
-              <div class="l2-session-info">
-                <span>Do 12.11. · Locker</span>
-                <strong>5,0 km GA1 (41:00 min)</strong>
-              </div>
-              <div class="l2-session-hr">114 bpm<br><small style="font-size:0.65rem; color:var(--color-text-secondary)">Aerob regenerativ</small></div>
-            </div>
-            <div class="l2-session-pill">
-              <div class="l2-session-info">
-                <span>So 08.11. · Martinslauf</span>
-                <strong>10,0 km All-Out (58:25)</strong>
-              </div>
-              <div class="l2-session-hr" style="color:var(--apple-orange)">151 bpm<br><small style="font-size:0.65rem; color:var(--color-text-secondary)">Schwelle / TE 5.0</small></div>
-            </div>
+        <div class="s2-cockpit-grid">
+          <div class="s2-pod">
+            <span style="font-size:0.75rem; letter-spacing:1px; color:#A1FFA1;">AEROBIC CORE (VT1)</span>
+            <div class="s2-val">118</div>
+            <span class="s2-sub">MAX BPM CEILING · 100% COMPLIANT</span>
+            <div class="s2-ekg-line"></div>
+          </div>
+          <div class="s2-pod">
+            <span style="font-size:0.75rem; letter-spacing:1px; color:#00F0FF;">POWER-HIKE LOAD</span>
+            <div class="s2-val" style="color:#00F0FF; text-shadow:0 0 12px #00F0FF;">132</div>
+            <span class="s2-sub" style="color:#80F7FF;">Z2 THRESHOLD · CÔTE D'OPALE LEVEL</span>
+            <div class="s2-ekg-line" style="background:#00F0FF; box-shadow:0 0 10px #00F0FF;"></div>
+          </div>
+          <div class="s2-pod">
+            <span style="font-size:0.75rem; letter-spacing:1px; color:#FFB000;">ANAEROBIC PEAK</span>
+            <div class="s2-val" style="color:#FFB000; text-shadow:0 0 12px #FFB000;">151</div>
+            <span class="s2-sub" style="color:#FFD273;">MARTINSLAUF 10K BENCHMARK</span>
+            <div class="s2-ekg-line" style="background:#FFB000; box-shadow:0 0 10px #FFB000;"></div>
+          </div>
+          <div class="s2-pod">
+            <span style="font-size:0.75rem; letter-spacing:1px; color:#FFF;">CNS HOMEOSTASIS</span>
+            <div class="s2-val" style="color:#FFF; text-shadow:0 0 12px #FFF;">0.0</div>
+            <span class="s2-sub" style="color:#D1D1D6;">PASSIVE CELLULAR RECOVERY ACTIVE</span>
+            <div class="s2-ekg-line" style="background:#FFF; box-shadow:0 0 10px #FFF;"></div>
           </div>
         </div>
       </div>
@@ -1106,92 +801,106 @@
   </section>
 
   <!-- =========================================================================
-       LAYOUT 03: TOPOGRAPHIC ELEVATION & TRAIL GRADIENT LADDER
+       03. ALPINE TOPOGRAPHIC CARTOGRAPHY
        ========================================================================= -->
-  <section id="layout-3" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-3" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 03 / 10</span>
-        <h2 class="layout-title">Topographic Elevation &amp; Trail Gradient Ladder</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Steigungs-Dichte (Hm/km) &amp; Terrain.</strong> Läufe und Wettkämpfe sortiert nach vertikaler Härte: von flachem Straßenasphalt bis zum alpinen Tschirgant-Skyrun und den 7 Gipfeln des Drachenlaufs.
+        <div class="layout-idx">Konzept 03 // Kernwert: Höhenmeter &amp; Geologisches Terrain</div>
+        <h2 class="layout-name">Alpine Topographic Cartography</h2>
+        <p class="layout-narrative">
+          Die Ästhetik alter geodätischer Geländekarten: Schiefergrau (#141619), Topo-Gold (#C49B55) und markante Fels-Typografie (Syne). Steigungsdichte (Hm/km) als primäres Ordnungsmaß.
         </p>
       </div>
-      <span class="layout-principle-pill">Vertical Ascent Density</span>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Mineral-Schiefer, Höhenlinien, Topo-Gold<br>
+        <strong>Typografie:</strong> Syne (Bold Display) &amp; Inter
+      </div>
     </div>
 
-    <div class="layout-canvas">
-      <div class="l3-container">
-        <div class="l3-ladder">
-          <!-- Step 4: Alpin / Extrem -->
-          <div class="l3-step" style="border-left: 4px solid var(--apple-red);">
-            <div class="l3-density">
-              48–50 <span>Hm / km Dichte</span>
-            </div>
+    <div class="canvas-frame">
+      <div class="s3-canvas">
+        <div class="s3-topo-header">
+          <span style="font-size:1.1rem; font-weight:900; letter-spacing:1px;">TOPOGRAFISCHE HÖHENLEITER // VERTIKALE HÄRTE</span>
+          <span style="font-size:0.85rem; color:#C49B55; font-family:'JetBrains Mono';">DATUM: KAMPAGNE 2026/27</span>
+        </div>
+        <div class="s3-topo-ladder">
+          <div class="s3-ridge-item">
+            <div class="s3-alt-tag">50 Hm/km</div>
             <div>
-              <div class="l3-race-name">Drachenlauf &amp; TS16</div>
-              <div class="l3-race-meta">26k / 1.250 Hm · 16,9k / 850 Hm</div>
+              <strong>Tschirgant Sky TS16 &amp; Drachenlauf</strong>
+              <div style="font-size:0.8rem; color:#9BA1A8;">1.250 Hm &amp; 850 Hm · Alpin &amp; 7 Gipfel</div>
             </div>
-            <div class="l3-terrain-bar">
-              <span style="font-size:0.75rem; color:var(--color-text-secondary)">Steilste Pfade, Fels &amp; alpine Rampen</span>
-              <div class="l3-profile-line"><div class="l3-profile-fill" style="width: 100%;"></div></div>
-            </div>
-            <div class="l3-tactics">
-              <strong>Taktik:</strong> 100% Power-Hiking an Steigungen &gt; 10%, keine Stöcke, Malto in 2x 500ml Flasks.
-            </div>
+            <div style="font-size:0.8rem; color:#C49B55; text-align:right;">100% Power-Hiking</div>
           </div>
-
-          <!-- Step 3: Mittelgebirge / Morast -->
-          <div class="l3-step" style="border-left: 4px solid var(--apple-orange);">
-            <div class="l3-density">
-              31–37 <span>Hm / km Dichte</span>
-            </div>
+          <div class="s3-ridge-item" style="border-left-color:#E57A3C;">
+            <div class="s3-alt-tag" style="color:#E57A3C;">37 Hm/km</div>
             <div>
-              <div class="l3-race-name">Belgenbach &amp; RET22</div>
-              <div class="l3-race-meta">30,7k / 941 Hm · 22,8k / 851 Hm</div>
+              <strong>Rureifel Trail RET22 &amp; Belgenbach</strong>
+              <div style="font-size:0.8rem; color:#9BA1A8;">851 Hm &amp; 941 Hm · Buntsandstein &amp; Bachtäler</div>
             </div>
-            <div class="l3-terrain-bar">
-              <span style="font-size:0.75rem; color:var(--color-text-secondary)">Tiefe Bachtäler, Matsch, Buntsandstein</span>
-              <div class="l3-profile-line"><div class="l3-profile-fill" style="width: 70%;"></div></div>
-            </div>
-            <div class="l3-tactics">
-              <strong>Taktik:</strong> Griffiges Stollenprofil, Marzipan &amp; Feigen, kontrollierte GA1-Watt am Hang.
-            </div>
+            <div style="font-size:0.8rem; color:#E57A3C; text-align:right;">Morast &amp; Stollen</div>
           </div>
-
-          <!-- Step 2: Hügelig / Forstwege -->
-          <div class="l3-step" style="border-left: 4px solid var(--apple-cyan);">
-            <div class="l3-density">
-              17 <span>Hm / km Dichte</span>
-            </div>
+          <div class="s3-ridge-item" style="border-left-color:#64D2FF;">
+            <div class="s3-alt-tag" style="color:#64D2FF;">17 Hm/km</div>
             <div>
-              <div class="l3-race-name">Siebengebirgs-HM</div>
-              <div class="l3-race-meta">21,4k / 360 Hm · 06.12.2026</div>
+              <strong>Siebengebirgs-HM</strong>
+              <div style="font-size:0.8rem; color:#9BA1A8;">21,4 km / 360 Hm · Wald &amp; Schotter</div>
             </div>
-            <div class="l3-terrain-bar">
-              <span style="font-size:0.75rem; color:var(--color-text-secondary)">Winter-Waldwege &amp; Schotter</span>
-              <div class="l3-profile-line"><div class="l3-profile-fill" style="width: 38%;"></div></div>
+            <div style="font-size:0.8rem; color:#64D2FF; text-align:right;">Korridor: 2:28–2:33 h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       04. TACTICAL MISSION CONTROL
+       ========================================================================= -->
+  <section id="style-4" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 04 // Kernwert: Renn-Hierarchie &amp; Taktischer Fokus</div>
+        <h2 class="layout-name">Aerospace Tactical Mission Control</h2>
+        <p class="layout-narrative">
+          Stilisiert als militärisches Lagezentrum oder NASA-Leitstand: Warnstreifen, Status-Beacons, Monospace-Codes und A/B/C Einsatzprioritäten.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Stealth Graphite (#0D0F13), Gefahrenstreifen, Amber<br>
+        <strong>Typografie:</strong> JetBrains Mono (Strict Code Align)
+      </div>
+    </div>
+
+    <div class="canvas-frame">
+      <div class="s4-canvas">
+        <div class="s4-hud-bar">
+          <div><span class="s4-beacon"></span>TACTICAL AIR-GROUND RUNNING RADAR // ACTIVE</div>
+          <div>MISSION: DRACHENLAUF_CAMPAIGN</div>
+        </div>
+        <div class="s4-cards-grid">
+          <div class="s4-tactical-card">
+            <div class="s4-stripe-tape"></div>
+            <div style="font-size:0.75rem; color:#FF9F0A; font-weight:800; margin-top:0.4rem;">PRIORITY ALPHA // T-342 DAYS</div>
+            <div style="font-size:1.8rem; font-weight:900;">DRACHENLAUF 2027</div>
+            <div style="font-size:0.85rem; color:#8B949E; line-height:1.4;">
+              SPECS: 26.0 KM · 1.250 HM · 7 GIPFEL<br>
+              STATUS: REVANCHE GESETZT · SPEZIFISCHER BLOCK AB KW 36
             </div>
-            <div class="l3-tactics">
-              <strong>Zielkorridor:</strong> 2:28 – 2:33 h (Z2 @ 128–132 bpm wie Côte d'Opale).
+            <div style="background:#0D1117; padding:0.75rem; border:1px solid #30363D; font-size:0.78rem;">
+              FUELING: 2x 500ML MALTO · NO GELS · NO POLES
             </div>
           </div>
-
-          <!-- Step 1: Flach / Road -->
-          <div class="l3-step" style="border-left: 4px solid var(--apple-green);">
-            <div class="l3-density">
-              1 <span>Hm / km Dichte</span>
+          <div class="s4-tactical-card" style="border-color:#388BFD;">
+            <div class="s4-stripe-tape" style="background:repeating-linear-gradient(45deg, #388BFD, #388BFD 12px, #000 12px, #000 24px);"></div>
+            <div style="font-size:0.75rem; color:#388BFD; font-weight:800; margin-top:0.4rem;">DEPLOYMENT BRAVO // T-20 DAYS</div>
+            <div style="font-size:1.4rem; font-weight:900;">SIEBENGEBIRGS-HM</div>
+            <div style="font-size:0.85rem; color:#8B949E; line-height:1.4;">
+              SPECS: 21.4 KM · 360 HM<br>
+              TARGET: 2:28:00 - 2:33:20 (128-132 BPM Z2)
             </div>
-            <div>
-              <div class="l3-race-name">SFD Martinslauf</div>
-              <div class="l3-race-meta">10,0k / 10 Hm · Flacher Asphalt</div>
-            </div>
-            <div class="l3-terrain-bar">
-              <span style="font-size:0.75rem; color:var(--color-text-secondary)">Seeufer-Promenade flach</span>
-              <div class="l3-profile-line"><div class="l3-profile-fill" style="width: 6%;"></div></div>
-            </div>
-            <div class="l3-tactics">
-              <strong>Benchmark:</strong> 58:25 min (5:50 min/km @ 151 bpm). Reines Schwellentest-Terrain.
+            <div style="background:#0D1117; padding:0.75rem; border:1px solid #30363D; font-size:0.78rem;">
+              CHECK: KEY LONGRUN ERKRATH (18K) AM 28.11.
             </div>
           </div>
         </div>
@@ -1200,87 +909,181 @@
   </section>
 
   <!-- =========================================================================
-       LAYOUT 04: RACE HIERARCHY & MILESTONE FUNNEL (A / B / C)
+       05. APPLE WATCH ULTRA MODULAR
        ========================================================================= -->
-  <section id="layout-4" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-5" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 04 / 10</span>
-        <h2 class="layout-title">Race Hierarchy &amp; Milestone Funnel (A / B / C)</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Strategische Wettkampf-Priorität.</strong> Strukturierung streng nach sportlicher Wertigkeit: A-Apex (Höchstpriorität), B-Tier (Vorbereitungs-Trails mit Anspruch) und C-Base (Testläufe &amp; Optionen).
+        <div class="layout-idx">Konzept 05 // Kernwert: Extreme Glancability &amp; Wearable Modularität</div>
+        <h2 class="layout-name">Apple Watch Ultra "Wayfinder" OLED</h2>
+        <p class="layout-narrative">
+          Tiefstes OLED-Schwarz (#000000), leuchtendes Titanium-Orange (#FF5500) und markante 32px-Squircle-Kacheln. Entwickelt für sofortiges Erfassen mit einem einzigen Blick.
         </p>
       </div>
-      <span class="layout-principle-pill">Priority Command Funnel</span>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> True OLED Black, Titanium Orange Glühakzent<br>
+        <strong>Typografie:</strong> SF Pro Display &amp; Compact Numerals
+      </div>
     </div>
 
-    <div class="layout-canvas">
-      <div class="l4-container">
-        <!-- A-Tier -->
-        <div>
-          <div class="l4-tier-header">
-            <span class="l4-tier-badge l4-tier-a">Kategorie A · Haupt-Saisonziele</span>
-            <span style="font-size:0.8rem; color:var(--color-text-secondary)">Voller Tapering-Fokus &amp; absolute Priorität</span>
+    <div class="canvas-frame">
+      <div class="s5-canvas">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem; align-items:center;">
+          <span style="font-weight:900; font-size:1.1rem; color:#FF5500;">WAYFINDER // MODULAR ULTRA</span>
+          <span style="font-size:0.8rem; font-weight:700; color:#8E8E93;">KW 46 ERHOLUNG</span>
+        </div>
+        <div class="s5-watch-grid">
+          <div class="s5-squircle">
+            <span class="s5-label-micro">Wochendistanz</span>
+            <div class="s5-num-giant">12.0</div>
+            <span style="font-size:0.85rem; color:#30D158; font-weight:800;">von 15.0 km (80%)</span>
           </div>
-          <div class="l4-grid-a">
-            <div class="l4-race-card-a">
-              <div class="l4-countdown-chip">SAISON-HAUPTZIEL 2027</div>
-              <div>
-                <h3>Drachenlauf 2027</h3>
-                <span style="font-size:0.85rem; color:var(--color-text-secondary)">Sonntag, 24. Oktober 2027 · Königswinter</span>
-              </div>
-              <div class="metrics">
-                <span>26,0 km</span>
-                <span>1.250 Hm</span>
-                <span>7 Gipfel</span>
-              </div>
-              <div class="l4-fueling-box">
-                <strong>Strategie:</strong> Spezifischer Aufbau ab KW 36 (bis 950 Hm Longruns). 2 Wochen volles Tapering vor dem Start.
-              </div>
-            </div>
-
-            <div class="l4-race-card-a">
-              <div class="l4-countdown-chip" style="background:var(--apple-cyan);">FRÜHJAHR-PEAK 2027</div>
-              <div>
-                <h3>Belgenbachtrail 30k</h3>
-                <span style="font-size:0.85rem; color:var(--color-text-secondary)">Sonntag, 07. März 2027 · Monschau-Konzen</span>
-              </div>
-              <div class="metrics">
-                <span>30,7 km</span>
-                <span>941 Hm</span>
-                <span>123/300 gebucht</span>
-              </div>
-              <div class="l4-fueling-box">
-                <strong>Status:</strong> Anmeldung aktiv. Längste Distanz des Jahres. Winter-Aufbau startet ab 06. Januar 2027.
-              </div>
-            </div>
+          <div class="s5-squircle">
+            <span class="s5-label-micro">VT1 Sprechgrenze</span>
+            <div class="s5-num-giant" style="color:#64D2FF;">118</div>
+            <span style="font-size:0.85rem; color:#64D2FF; font-weight:800;">BPM MAX (100% GA1)</span>
+          </div>
+          <div class="s5-squircle">
+            <span class="s5-label-micro">Countdown 7G-HM</span>
+            <div class="s5-num-giant" style="color:#FFF;">20</div>
+            <span style="font-size:0.85rem; color:#8E8E93; font-weight:800;">TAGE BIS 06. DEZEMBER</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- B-Tier -->
-        <div>
-          <div class="l4-tier-header">
-            <span class="l4-tier-badge l4-tier-b">Kategorie B · Vorbereitungs- &amp; Bergtests</span>
-            <span style="font-size:0.8rem; color:var(--color-text-secondary)">Wettkampfbelastung mit Teiltapering</span>
+  <!-- =========================================================================
+       06. VINTAGE FIELD JOURNAL
+       ========================================================================= -->
+  <section id="style-6" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 06 // Kernwert: Kontemplative Reise &amp; Alpin-Chronik</div>
+        <h2 class="layout-name">Vintage Alpine Field Journal</h2>
+        <p class="layout-narrative">
+          Klassische Buchdruck-Eleganz wie im handgebundenen Moleskine: Warme Tinte auf Pergament-Sepia (#181512), Renaissance-Schrift (Newsreader/Cinzel) und literarische Expeditions-Depeschen.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Antik-Sepia, Tinte &amp; Goldfolien-Prägung<br>
+        <strong>Typografie:</strong> Newsreader (Serif) &amp; Cinzel (Titling)
+      </div>
+    </div>
+
+    <div class="canvas-frame">
+      <div class="s6-canvas">
+        <div class="s6-journal-title">Chronik der Pfade &amp; Gipfel</div>
+        <div class="s6-entry-block">
+          <span class="dropcap">A</span>m fünfzehnten Tage des Novembers kehrte der Läufer aus den weiten Ebenen von Geseke zurück. Die Uhr wies sieben Kilometer und eine Nettozeit von sechsundfünfzig Minuten aus. Der Puls verweilte mit eiserner Stetigkeit bei einhundertundachtzehn Schlägen – exakt an der Schwelle des ruhigen Wortwechsels. Es war ein Werk der Besonnenheit nach dem schnellen Lauf am Unterbacher See.
+          <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px dashed #42382E; font-size:0.95rem; font-style:italic; color:#D6A868;">
+            — Gezeichnet: Basislager Erkrath vor dem Aufbruch zur KW 47.
           </div>
-          <div class="l4-grid-b">
-            <div class="l4-race-card-b">
-              <span class="tag-pill tag-tempo" style="align-self:flex-start;">Jahresabschluss '26</span>
-              <strong style="font-size:1.05rem;">Siebengebirgs-HM</strong>
-              <span style="font-size:0.8rem; color:var(--color-text-secondary)">06.12.2026 · 21,4 km (+360 Hm)</span>
-              <div style="font-size:0.8rem; font-weight:800; color:var(--apple-green);">Korridor: 2:28 – 2:33 h</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       07. ASTROLABE POLAR RADAR
+       ========================================================================= -->
+  <section id="style-7" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 07 // Kernwert: Zyklen der Natur &amp; Kosmische 365-Tage-Bahn</div>
+        <h2 class="layout-name">Astronomical Astrolabe &amp; Polar Year</h2>
+        <p class="layout-narrative">
+          Das Jahr 2027 als 360-Grad-Astrolabium: Deep Nebula Indigo (#101426), sphärische Orbit-Bahnen und kreisende Himmelskörper für die Schlüsselwettkämpfe.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Kosmisches Indigo, Polar-Glow &amp; Himmelsradien<br>
+        <strong>Typografie:</strong> Space Grotesk &amp; DM Sans
+      </div>
+    </div>
+
+    <div class="canvas-frame">
+      <div class="s7-canvas">
+        <div class="s7-astrolabe">
+          <div class="s7-node-pin" style="top:10px; left:50%; transform:translateX(-50%); border-color:#FF453A;">
+            ★ 24.10. DRACHENLAUF
+          </div>
+          <div class="s7-node-pin" style="bottom:30px; left:10%; border-color:#64D2FF;">
+            ★ 07.03. BELGENBACH 30K
+          </div>
+          <div class="s7-node-pin" style="bottom:60px; right:10%; border-color:#30D158;">
+            ★ 17.04. RET22 RUREIFEL
+          </div>
+          <div class="s7-node-pin" style="top:50px; right:12%; border-color:#FFD60A;">
+            ★ 12.06. TS16 IMST
+          </div>
+
+          <div class="s7-inner-dial">
+            <span style="font-size:0.75rem; letter-spacing:1.5px; color:#64D2FF;">STANDORT JETZT</span>
+            <div style="font-size:2rem; font-weight:900; color:#FFF; margin:0.3rem 0;">KW 46</div>
+            <span style="font-size:0.75rem; color:#A3B8FF;">SPÄTHERBST 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       08. NORDIC SAAS GLASSMORPHISM
+       ========================================================================= -->
+  <section id="style-8" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 08 // Kernwert: Moderner Arbeitsfluss &amp; Agile Vorbereitung</div>
+        <h2 class="layout-name">Nordic Minimalist SaaS (Linear Glass)</h2>
+        <p class="layout-narrative">
+          Inspiriert von skandinavischen Produktivitätstools (Linear / Cron): Feinstes Milchglas, 1px-Lichtkanten, samtweiche Pastelltöne und flüssige Interaktionskarten.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Frosted Glassmorphism, 1px Gradient Border<br>
+        <strong>Typografie:</strong> DM Sans (Clean Geometric)
+      </div>
+    </div>
+
+    <div class="canvas-frame">
+      <div class="s8-canvas">
+        <div style="font-size:1.1rem; font-weight:800; margin-bottom:1.5rem;">Pipeline // Saison-Vorbereitung</div>
+        <div class="s8-kanban-row">
+          <div class="s8-glass-col">
+            <span style="font-size:0.75rem; font-weight:700; color:#8E8E93; text-transform:uppercase;">Backlog</span>
+            <div class="s8-glass-card">
+              <strong style="font-size:0.9rem;">Drachenlauf '27</strong>
+              <span style="font-size:0.75rem; color:#8E8E93;">26k / 1.250 Hm</span>
             </div>
-            <div class="l4-race-card-b">
-              <span class="tag-pill tag-ga1" style="align-self:flex-start;">Fest angemeldet</span>
-              <strong style="font-size:1.05rem;">Rureifel Trail RET22</strong>
-              <span style="font-size:0.8rem; color:var(--color-text-secondary)">17.04.2027 · 22,8 km (+851 Hm)</span>
-              <div style="font-size:0.8rem; font-weight:800; color:var(--apple-cyan);">Buntsandstein-Singletrail</div>
+            <div class="s8-glass-card">
+              <strong style="font-size:0.9rem;">Belgenbach 30k</strong>
+              <span style="font-size:0.75rem; color:#8E8E93;">30,7k / 941 Hm</span>
             </div>
-            <div class="l4-race-card-b">
-              <span class="tag-pill tag-tempo" style="align-self:flex-start;">Alpin-Urlaub</span>
-              <strong style="font-size:1.05rem;">Tschirgant Sky TS16</strong>
-              <span style="font-size:0.8rem; color:var(--color-text-secondary)">12.06.2027 · 16,9 km (+850 Hm)</span>
-              <div style="font-size:0.8rem; font-weight:800; color:var(--apple-orange);">Standlager Camping FiNK</div>
+          </div>
+          <div class="s8-glass-col">
+            <span style="font-size:0.75rem; font-weight:700; color:#64D2FF; text-transform:uppercase;">Diese Woche (KW 47)</span>
+            <div class="s8-glass-card" style="border-color:rgba(100,210,255,0.3);">
+              <strong style="font-size:0.9rem;">Sa 16k Key Longrun</strong>
+              <span style="font-size:0.75rem; color:#64D2FF;">Erkrath (+350 Hm)</span>
+            </div>
+            <div class="s8-glass-card">
+              <strong style="font-size:0.9rem;">Di 8k GA1 Flach</strong>
+              <span style="font-size:0.75rem; color:#8E8E93;">105–118 bpm</span>
+            </div>
+          </div>
+          <div class="s8-glass-col">
+            <span style="font-size:0.75rem; font-weight:700; color:#FFD60A; text-transform:uppercase;">Heute</span>
+            <div class="s8-glass-card" style="border-color:rgba(255,214,10,0.4); background:rgba(255,214,10,0.05);">
+              <strong style="font-size:0.9rem; color:#FFD60A;">Mo 16.11. CHILL</strong>
+              <span style="font-size:0.75rem; color:#D1D1D6;">Ruhetag &amp; passive Erholung</span>
+            </div>
+          </div>
+          <div class="s8-glass-col">
+            <span style="font-size:0.75rem; font-weight:700; color:#30D158; text-transform:uppercase;">Verifiziert</span>
+            <div class="s8-glass-card" style="border-color:rgba(48,209,88,0.3);">
+              <strong style="font-size:0.9rem;">✓ So 7,0k GA1</strong>
+              <span style="font-size:0.75rem; color:#30D158;">56 min @ 118 bpm</span>
             </div>
           </div>
         </div>
@@ -1289,443 +1092,107 @@
   </section>
 
   <!-- =========================================================================
-       LAYOUT 05: APPLE WATCH ULTRA INFOGRAPHIC MODULAR
+       09. PHOSPHOR CRT TERMINAL
        ========================================================================= -->
-  <section id="layout-5" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-9" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 05 / 10</span>
-        <h2 class="layout-title">Apple Watch Ultra Infographic Modular</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Neomorphe Complication-Kacheln.</strong> Inspiriert von den hochverdichteten Modular-Zifferblättern der Apple Watch Ultra: Kreis-Ringe, massive Ziffern, Nachtmodus-Kontraste.
+        <div class="layout-idx">Konzept 09 // Kernwert: Unverfälschte Rohdaten &amp; Hacker-Effizienz</div>
+        <h2 class="layout-name">Phosphor CRT Terminal / VT220 Retro Cyberdeck</h2>
+        <p class="layout-narrative">
+          Tiefes Monochrom-Grün (#33FF33) auf gewölbtem Röhren-Schwarz (#000000) mit dezenten horizontalen Scanlines. Null Grafik-Ballast, 100% reine Telemetrie.
         </p>
       </div>
-      <span class="layout-principle-pill">Modular Glancability</span>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> CRT Röhren-Scanlines, Phosphor-Nachleuchten<br>
+        <strong>Typografie:</strong> VT323 (Klassischer 80er Röhren-Font)
+      </div>
     </div>
 
-    <div class="layout-canvas">
-      <div class="l5-container">
-        <!-- Widget 1: Weekly Progress -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Wochen-Distanz</span>
-            <span>KW 46 ERHOLUNG</span>
-          </div>
-          <div class="l5-ring-display">
-            <div class="l5-gauge-circle"></div>
-            <div>
-              <div class="l5-big-num">12.0</div>
-              <div class="l5-sub-meta">von 15.0 km (80%)</div>
-            </div>
-          </div>
-          <div class="l5-sub-meta" style="color:var(--apple-green);">✓ 7,0k So + 5,0k Do geloggt</div>
-        </div>
-
-        <!-- Widget 2: Heart Rate VT1 Compliance -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Sprechgrenze VT1</span>
-            <span>GA1 PULSDECKEL</span>
-          </div>
-          <div>
-            <div class="l5-big-num cyan">118</div>
-            <div class="l5-sub-meta">BPM MAX (Ø 115 BPM)</div>
-          </div>
-          <div class="l5-sub-meta">100% aerobe Adhärenz eingehalten</div>
-        </div>
-
-        <!-- Widget 3: Elevation Gain -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Nächster Meilenstein</span>
-            <span>IN 20 TAGEN</span>
-          </div>
-          <div>
-            <div class="l5-big-num orange">+360</div>
-            <div class="l5-sub-meta">HM · 7G-HALBMARATHON</div>
-          </div>
-          <div class="l5-sub-meta">Zielkorridor: 2:28 – 2:33 h</div>
-        </div>
-
-        <!-- Widget 4: Nutrition Setup -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Fueling Protocol</span>
-            <span>SSOT REGEL §9</span>
-          </div>
-          <div style="font-size:1.15rem; font-weight:900;">2x 500ml Malto</div>
-          <div class="l5-sub-meta">Feigen &amp; Marzipan (&gt;15km) · Gels strikt gebannt</div>
-        </div>
-
-        <!-- Widget 5: Key Upcoming Session -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Key Workout KW 47</span>
-            <span>SAMSTAG 21.11.</span>
-          </div>
-          <div style="font-size:1.8rem; font-weight:900; color:var(--apple-cyan);">16,0 KM</div>
-          <div class="l5-sub-meta">Erkrath Steilhänge (+350 Hm)</div>
-        </div>
-
-        <!-- Widget 6: Equipment Setup -->
-        <div class="l5-widget">
-          <div class="l5-widget-header">
-            <span>Hardware &amp; Traktionsprofil</span>
-            <span>NO POLES</span>
-          </div>
-          <div style="font-size:1.15rem; font-weight:900;">Stollenprofil 5mm</div>
-          <div class="l5-sub-meta">Keine Stöcke · Griffiger Waldtrail-Standard</div>
-        </div>
+    <div class="canvas-frame">
+      <div class="s9-canvas s9-scanline">
+        <div>>>> ATHLETE TELEMETRY RUNNING GUIDE OS [VERSION 11.33]</div>
+        <div>>>> AUTHENTICATED: GERRY // DRIVER: TRAILRUNNING_CORE</div>
+        <div>------------------------------------------------------------------------</div>
+        <div>[TELEMETRY STREAM]</div>
+        <div>  VT1_THRESHOLD : 105-118 BPM [STATUS: LOCKED_OK]</div>
+        <div>  HARD_MAX_PULSE: 132 BPM (Z2 RUNNING/POWER-HIKE)</div>
+        <div>  STRICT_RULES  : GELS=BANNED | POLES=DISABLED | RECOVERY=48H_ENFORCED</div>
+        <div>  WEEK_PROGRESS : [********************-----] 12.0/15.0 KM (80%)</div>
+        <div>  NEXT_RACE     : SIEBENGEBIRGS-HM IN 20 DAYS (21.4K / +360HM)</div>
+        <div>  CORRIDOR_SPEC : 2:28:00 - 2:33:20 [VALIDATED VIA ERKRATH & OPALE]</div>
+        <div>------------------------------------------------------------------------</div>
+        <div>READY FOR EXECUTION: TUE 17.11 -> 8.0 KM GA1 [AWAITING START] _</div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================================
-       LAYOUT 06: EXPEDITION LOGBOOK & NARRATIVE FIELD NOTES
+       10. MACOS PRO STUDIO WORKSTATION
        ========================================================================= -->
-  <section id="layout-6" class="layout-stage">
-    <div class="layout-meta-card">
+  <section id="style-10" class="layout-stage">
+    <div class="layout-briefing">
       <div>
-        <span class="layout-badge-num">Layout 06 / 10</span>
-        <h2 class="layout-title">Expedition Logbook &amp; Narrative Field Notes</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Chronologisches Expeditionsjournal.</strong> Liest sich wie ein altes alpines Logbuch: Datierte Depeschen mit Wetterbedingungen, Geländebeobachtungen und physiologischen Berichten.
+        <div class="layout-idx">Konzept 10 // Kernwert: Desktop-Produktivität &amp; Räumliche Tiefe</div>
+        <h2 class="layout-name">macOS Pro Studio Workstation (Tahoe Split-View)</h2>
+        <p class="layout-narrative">
+          Die professionelle Desktop-Erfahrung: Feste Steuerungs-Sidebar links (#17181E), gebürstete Titan-Akzente und ein weiträumiger Detail-Inspektor rechts mit vollem Kontext.
         </p>
       </div>
-      <span class="layout-principle-pill">Narrative Ledger</span>
-    </div>
-
-    <div class="layout-canvas">
-      <div class="l6-container">
-        <div class="l6-ledger-header">
-          <div>
-            <div class="l6-ledger-title">Gerry's Trailrunning Logbook</div>
-            <div style="font-size:0.85rem; color:#A0A0A8;">Kampagnenbericht Spätherbst 2026 / Saison 2027</div>
-          </div>
-          <div class="l6-ledger-meta">STATION: GESETZTE BASEN · 51°13'N 6°54'E</div>
-        </div>
-
-        <div class="l6-entries">
-          <!-- Entry 1 -->
-          <div class="l6-entry">
-            <div class="l6-date">15. NOV 2026<br><span style="font-size:0.75rem; color:#888;">17:45 CET</span></div>
-            <div class="l6-narrative">
-              <h4>Depesche 46.7: Rückreise-Lauf &amp; Aerobe Standortbestimmung</h4>
-              <p>
-                Rückkehr aus Geseke. 7,0 km GA1 bei 8:00 min/km über 33 Höhenmeter gelaufen. Die Herzfrequenz blieb bei exakt 118 bpm an der oberen VT1-Grenze wie festgenagelt. Beine fühlten sich locker an, keinerlei Restermüdung vom 10k-Martinslauf mehr spürbar.
-              </p>
-            </div>
-            <div class="l6-telemetry">
-              <span>DISTANZ: 7.00 KM</span>
-              <span>ZEIT: 56:00 MIN</span>
-              <span>PULS: Ø 118 BPM</span>
-              <span>TERRAIN: ASPHALT/FELD</span>
-            </div>
-          </div>
-
-          <!-- Entry 2 -->
-          <div class="l6-entry">
-            <div class="l6-date">12. NOV 2026<br><span style="font-size:0.75rem; color:#888;">16:20 CET</span></div>
-            <div class="l6-narrative">
-              <h4>Depesche 46.4: Post-Race Re-Aktivierung</h4>
-              <p>
-                Erster Testlauf nach 4 Tagen strikter Erholung. 5,0 km in 41 Minuten bei Maja. Vollständig symptomfrei, tiefer Puls von 114 bpm, reine Durchblutungsförderung für die Muskulatur.
-              </p>
-            </div>
-            <div class="l6-telemetry">
-              <span>DISTANZ: 5.00 KM</span>
-              <span>ZEIT: 41:00 MIN</span>
-              <span>PULS: Ø 114 BPM</span>
-              <span>STATUS: REKOM OK</span>
-            </div>
-          </div>
-
-          <!-- Entry 3 -->
-          <div class="l6-entry">
-            <div class="l6-date">08. NOV 2026<br><span style="font-size:0.75rem; color:#888;">11:45 CET</span></div>
-            <div class="l6-narrative">
-              <h4>Depesche 45.7: 48. SFD Martinslauf All-Out Schwellentest</h4>
-              <p>
-                Wettkampf unter Volllast am Unterbacher See. 58:25 min Nettozeit bei 151 bpm Durchschnittspuls. Bestätigt maximale Schwellenleistung im Flachen. Anschließend 2 volle Ruhetage verordnet.
-              </p>
-            </div>
-            <div class="l6-telemetry">
-              <span>DISTANZ: 10.00 KM</span>
-              <span>ZEIT: 58:25 MIN</span>
-              <span>PULS: Ø 151 BPM</span>
-              <span>TE: 5.0 VOLLAST</span>
-            </div>
-          </div>
-        </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Titan-Anthrazit, SF Symbols, Tiefen-Vektoren<br>
+        <strong>Typografie:</strong> SF Pro Text / System UI
       </div>
     </div>
-  </section>
 
-  <!-- =========================================================================
-       LAYOUT 07: RADIAL 365-DAY SEASONAL CLOCK (POLAR PERIODIZATION)
-       ========================================================================= -->
-  <section id="layout-7" class="layout-stage">
-    <div class="layout-meta-card">
-      <div>
-        <span class="layout-badge-num">Layout 07 / 10</span>
-        <h2 class="layout-title">Radial 365-Day Seasonal Clock (Polar Periodization)</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Zyklische Zeit &amp; Jahreszeiten-Radar.</strong> Das gesamte Jahr 2027 visualisiert als 360-Grad-Kompass. Die vier Jahreszeiten bilden die Quadranten, auf deren Umlaufbahn die Renntage und Regenerationsphasen kreisen.
-        </p>
-      </div>
-      <span class="layout-principle-pill">Cyclical Polar Orbit</span>
-    </div>
-
-    <div class="layout-canvas">
-      <div class="l7-container">
-        <div class="l7-clock-wrapper">
-          <!-- Orbital race markers -->
-          <div class="l7-orbit-race l7-pos-drachen">🏁 24.10. Drachenlauf (A)</div>
-          <div class="l7-orbit-race l7-pos-belgen">🏁 07.03. Belgenbach 30k (A)</div>
-          <div class="l7-orbit-race l7-pos-ret22">🏁 17.04. RET22 (B)</div>
-          <div class="l7-orbit-race l7-pos-ts16">🏁 12.06. TS16 Imst (B)</div>
-          <div class="l7-orbit-race l7-pos-7ghm">🏁 06.12. 7G-HM (B)</div>
-
-          <!-- Center Core -->
-          <div class="l7-clock-center">
-            <span style="font-size:0.7rem; color:var(--apple-cyan); font-weight:900; letter-spacing:1px; text-transform:uppercase;">Aktuelle Position</span>
-            <div style="font-size:1.8rem; font-weight:900; margin:0.25rem 0;">KW 46 / 47</div>
-            <span style="font-size:0.75rem; color:var(--color-text-secondary);">Spätherbst 2026<br>Fokus: 7G-HM Vorbereitung</span>
+    <div class="canvas-frame">
+      <div class="s10-canvas">
+        <aside class="s10-sidebar">
+          <div style="font-size:0.75rem; font-weight:800; color:#6E7180; letter-spacing:1px; margin-bottom:0.5rem; text-transform:uppercase;">
+            Studio Nav
           </div>
-        </div>
-        <div style="font-size:0.8rem; color:var(--color-text-secondary); text-align:center; max-width:640px;">
-          <strong>Quadranten-Legende:</strong> Q1 Winter (Aufbau Belgenbach) · Q2 Frühling (RET22 &amp; Alpin-Urlaub TS16) · Q3 Sommer (Grundlage &amp; Re-Aktivierung) · Q4 Herbst (Höhepunkt Drachenlauf).
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       LAYOUT 08: WORKFLOW KANBAN PIPELINE BOARD
-       ========================================================================= -->
-  <section id="layout-8" class="layout-stage">
-    <div class="layout-meta-card">
-      <div>
-        <span class="layout-badge-num">Layout 08 / 10</span>
-        <h2 class="layout-title">Workflow Kanban Pipeline Board</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Status-getriebener Prozessablauf.</strong> Training als agile Pipeline: Backlog (Großziele) ➔ Geplant (Wochenplan KW 47) ➔ In Arbeit (Heutiger Status) ➔ Verifiziert (Geloggte Läufe).
-        </p>
-      </div>
-      <span class="layout-principle-pill">Status Pipeline Board</span>
-    </div>
-
-    <div class="layout-canvas">
-      <div class="l8-container">
-        <!-- Col 1: Backlog -->
-        <div class="l8-column">
-          <div class="l8-col-title">
-            <span>Backlog 2027</span>
-            <span class="l8-col-count">4</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Drachenlauf 2027</div>
-            <div class="l8-card-meta">26k · 1.250 Hm · Ziel: Revanche</div>
-            <span class="tag-pill tag-race" style="align-self:flex-start;">A-Rennen</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Belgenbachtrail 30k</div>
-            <div class="l8-card-meta">30,7k · 941 Hm · Frühjahrs-Peak</div>
-            <span class="tag-pill tag-race" style="align-self:flex-start;">A-Rennen</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Tschirgant Sky TS16</div>
-            <div class="l8-card-meta">16,9k · 850 Hm · Alpin Imst</div>
-            <span class="tag-pill tag-tempo" style="align-self:flex-start;">B-Rennen</span>
-          </div>
-        </div>
-
-        <!-- Col 2: Geplant KW 47 -->
-        <div class="l8-column">
-          <div class="l8-col-title">
-            <span>Geplant (KW 47)</span>
-            <span class="l8-col-count">4</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Di 17.11. · 8,0 km GA1</div>
-            <div class="l8-card-meta">Flachlauf &lt; 118 bpm</div>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Do 19.11. · 10,0 km GA1</div>
-            <div class="l8-card-meta">Umfang festigen · 112–115 bpm</div>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">Fr 20.11. · Studio Stabi</div>
-            <div class="l8-card-meta">Reines Rumpf/Mobility (keine Beine)</div>
-          </div>
-          <div class="l8-card" style="border-color:var(--apple-orange);">
-            <div class="l8-card-title">Sa 21.11. · 16,0 km Key</div>
-            <div class="l8-card-meta">Erkrath (+350 Hm) · Trail</div>
-            <span class="tag-pill tag-tempo" style="align-self:flex-start;">Key Longrun</span>
-          </div>
-        </div>
-
-        <!-- Col 3: Aktiv Heute -->
-        <div class="l8-column">
-          <div class="l8-col-title">
-            <span>Aktiv (Heute)</span>
-            <span class="l8-col-count">1</span>
-          </div>
-          <div class="l8-card" style="background:rgba(100, 210, 255, 0.08); border-color:var(--apple-cyan);">
-            <div class="l8-card-title" style="color:var(--apple-cyan);">Mo 16.11. · CHILL</div>
-            <div class="l8-card-meta">Ruhetag &amp; Beine entlasten nach 7k Rückreise</div>
-            <span class="tag-pill tag-rest" style="align-self:flex-start;">In Progress</span>
-          </div>
-        </div>
-
-        <!-- Col 4: Done & Verified -->
-        <div class="l8-column">
-          <div class="l8-col-title">
-            <span>Verifiziert (KW 46)</span>
-            <span class="l8-col-count">3</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">✓ So 15.11. · 7,0 km GA1</div>
-            <div class="l8-card-meta">56:00 min · Ø 118 bpm · 33 Hm</div>
-            <span class="tag-pill tag-ga1" style="align-self:flex-start;">Verified</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">✓ Do 12.11. · 5,0 km GA1</div>
-            <div class="l8-card-meta">41:00 min · Ø 114 bpm</div>
-            <span class="tag-pill tag-ga1" style="align-self:flex-start;">Verified</span>
-          </div>
-          <div class="l8-card">
-            <div class="l8-card-title">✓ So 08.11. · Martinslauf</div>
-            <div class="l8-card-meta">10,0 km · 58:25 min · 151 bpm</div>
-            <span class="tag-pill tag-ga1" style="align-self:flex-start;">Verified</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       LAYOUT 09: TERMINAL / CLI TELEMETRY STREAM
-       ========================================================================= -->
-  <section id="layout-9" class="layout-stage">
-    <div class="layout-meta-card">
-      <div>
-        <span class="layout-badge-num">Layout 09 / 10</span>
-        <h2 class="layout-title">Terminal / CLI Telemetry Stream</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Reine Telemetrie &amp; Zero-Fluff Stream.</strong> Radikale Reduktion auf ASCII-Telemetrie und Entwickler-Monospace. Keine Grafiken, reiner Datenstrom, maximale Informationsdichte.
-        </p>
-      </div>
-      <span class="layout-principle-pill">Monochrome Raw Telemetry</span>
-    </div>
-
-    <div class="layout-canvas">
-      <div class="l9-container">
-        <div class="l9-prompt-bar">
-          <span>trailrunning@gerry-system:~$ agy-telemetry --status --live</span>
-          <span>SYSTEM_STATE: NOMINAL · RECOVERY_STATUS: 100%</span>
-        </div>
-
-        <div class="l9-stream-log">
-          <div><span class="cyan">[INIT]</span> Initializing Drachenlauf Core Engine v11.32...</div>
-          <div><span class="cyan">[DATA]</span> Athlete SSOT loaded: 50 completed units | 422.4 km | 8.179 Hm logged.</div>
-          <div><span class="white">[CONF]</span> VT1_THRESHOLD: <span class="cyan">105-118 BPM</span> | HARD_CAP: <span class="orange">132 BPM (Z2)</span> | GELS: <span class="orange">BANNED</span> | POLES: <span class="orange">DISABLED</span></div>
-          <br>
-          <div class="white">================================================================================</div>
-          <div class="white">CURRENT MESOCYCLE: KW 46 (09. - 15. NOV 2026) -> TRANSITION KW 47</div>
-          <div class="white">================================================================================</div>
-          <div>WEEK_PROGRESS_KM: <span class="cyan">12.0 / 15.0 KM</span> <span class="l9-ascii-bar">[████████████████████░░░░░]</span> 80.0%</div>
-          <div>ELEVATION_GAIN:   <span class="cyan">+33 HM</span>          <span class="l9-ascii-bar">[█████████████████████████]</span> 100% (TARGET MET)</div>
-          <br>
-          <div><span class="white">[LOG_STREAM] Recent activities:</span></div>
-          <div class="muted">  ├─ 2026-11-15T17:45:00Z: 7.00 km | 00:56:00 | 118 bpm | 33 hm | STATUS: VERIFIED_OK</div>
-          <div class="muted">  ├─ 2026-11-12T16:20:00Z: 5.00 km | 00:41:00 | 114 bpm |  0 hm | STATUS: VERIFIED_OK</div>
-          <div class="muted">  └─ 2026-11-08T11:45:00Z: 10.0 km | 00:58:25 | 151 bpm | 10 hm | BENCHMARK: SUB_58_CLOSE</div>
-          <br>
-          <div><span class="orange">[TARGET_RADAR] Upcoming deployments:</span></div>
-          <div>  [T-20 DAYS] 2026-12-06: 7G_HM (21.4 km · +360 Hm) · CORRIDOR: 2:28:00 - 2:33:20 [CONFIRMED]</div>
-          <div>  [T-111 D]   2027-03-07: BELGENBACH_30K (30.7 km · +941 Hm) · REG: 123/300 SLOTS BOOKED</div>
-          <div>  [T-152 D]   2027-04-17: RET22_RUREIFEL (22.8 km · +851 Hm) · STATUS: REGISTERED</div>
-          <div>  [T-342 D]   2027-10-24: DRACHENLAUF_2027 (26.0 km · +1250 Hm) · PRIORITY: ALPHA_ONE</div>
-          <br>
-          <div class="cyan">trailrunning@gerry-system:~$ <span style="animation: blink 1s infinite;">_</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       LAYOUT 10: SPATIAL SPLIT-VIEW MASTER-DETAIL (DESKTOP DUAL-PANE)
-       ========================================================================= -->
-  <section id="layout-10" class="layout-stage">
-    <div class="layout-meta-card">
-      <div>
-        <span class="layout-badge-num">Layout 10 / 10</span>
-        <h2 class="layout-title">Spatial Split-View Master-Detail (Desktop Command Suite)</h2>
-        <p class="layout-desc">
-          <strong>Organisationsprinzip: Räumliche Navigation &amp; Kontexterhalt.</strong> Klassische iPad Pro / macOS Split-View Architektur: Feste Navigations-Säule links für schnellen Sprung zwischen Phasen und Rennen; weiträumige Detail-Leinwand rechts für vertiefte Wochen- und Streckendetails.
-        </p>
-      </div>
-      <span class="layout-principle-pill">Dual-Pane Spatial Context</span>
-    </div>
-
-    <div class="layout-canvas">
-      <div class="l10-container">
-        <!-- Sidebar Master Rail -->
-        <aside class="l10-sidebar">
-          <div style="font-size:0.75rem; font-weight:900; color:var(--apple-cyan); text-transform:uppercase; letter-spacing:1px; margin-bottom:0.25rem;">
-            Cockpit Navigation
-          </div>
-          <div class="l10-nav-item active">
+          <div class="s10-nav-btn active">
             <span>📅</span> KW 47 • Basis &amp; 16k
           </div>
-          <div class="l10-nav-item">
+          <div class="s10-nav-btn">
             <span>⚡</span> KW 48 • Key 18k Peak
           </div>
-          <div class="l10-nav-item">
-            <span>🏁</span> KW 49 • 7G-HM Race
+          <div class="s10-nav-btn">
+            <span>🏁</span> KW 49 • 7G-HM
           </div>
           <div style="height:1px; background:rgba(255,255,255,0.08); margin:0.5rem 0;"></div>
-          <div style="font-size:0.72rem; font-weight:800; color:var(--color-text-secondary); text-transform:uppercase;">Wettkämpfe</div>
-          <div class="l10-nav-item">
-            <span>🏔️</span> Belgenbach 30k
+          <div class="s10-nav-btn">
+            <span>⛰️</span> Belgenbachtrail
           </div>
-          <div class="l10-nav-item">
-            <span>🌲</span> Rureifel RET22
+          <div class="s10-nav-btn">
+            <span>🌲</span> RET22 Rureifel
           </div>
-          <div class="l10-nav-item">
-            <span>⛺</span> Tschirgant TS16
-          </div>
-          <div class="l10-nav-item">
+          <div class="s10-nav-btn">
             <span>👑</span> Drachenlauf 2027
           </div>
         </aside>
 
-        <!-- Right Detail Canvas -->
-        <main class="l10-main-canvas">
-          <div class="l10-canvas-header">
+        <main class="s10-content">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:1rem;">
             <div>
-              <span style="font-size:0.75rem; color:var(--apple-cyan); font-weight:800;">DETAILANSICHT · MESOZYKLUS</span>
+              <span style="font-size:0.75rem; color:var(--apple-cyan); font-weight:800;">MESOZYKLUS ÜBERSICHT</span>
               <h3 style="font-size:1.6rem; font-weight:900;">KW 47 • Basis &amp; 16k Erkrath (+350 Hm)</h3>
-              <span style="font-size:0.85rem; color:var(--color-text-secondary);">16. – 22. November 2026 · Soll-Wochenumfang: 34,0 km</span>
             </div>
             <div style="text-align:right;">
-              <div style="font-size:1.4rem; font-weight:900; color:var(--apple-green);">0.0 / 34.0 km</div>
-              <span style="font-size:0.75rem; color:var(--color-text-secondary);">Wochenfortschritt</span>
+              <span style="font-size:1.4rem; font-weight:900; color:var(--apple-green);">0.0 / 34.0 km</span>
             </div>
           </div>
-
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1rem;">
-            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem;">
-              <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:0.5rem; color:var(--apple-orange);">Key Workout (Samstag 21.11.)</h4>
-              <p style="font-size:0.85rem; color:var(--color-text-secondary); line-height:1.4;">
-                <strong>16,0 km Longrun Erkrath:</strong> Höhenprofil mit Morper Bachtal und Neandertal-Rampen (+350 Hm). Test der 500ml Malto-Flask und Verpflegungsrhythmus alle 20 Minuten.
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+            <div style="background:#17181E; padding:1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+              <strong style="color:var(--apple-orange); font-size:0.95rem;">Key Longrun (Samstag 21.11.)</strong>
+              <p style="font-size:0.85rem; color:#8C8E99; margin-top:0.4rem; line-height:1.4;">
+                16k durch Morper Bachtal und Neandertal (+350 Hm). Test der 500ml Malto-Flask und Rhythmus alle 20 Minuten.
               </p>
             </div>
-            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:1.25rem;">
-              <h4 style="font-size:0.9rem; font-weight:800; margin-bottom:0.5rem; color:var(--apple-cyan);">Regenerations- &amp; Kraftstrategie</h4>
-              <p style="font-size:0.85rem; color:var(--color-text-secondary); line-height:1.4;">
-                <strong>Freitag 20.11. Studio:</strong> Reines Rumpf-, Rücken- und Schultermobility-Training. Absoluter Verzicht auf Beinkraftgeräte zur Schonung der Beine vor dem 16k-Lauf.
+            <div style="background:#17181E; padding:1.25rem; border-radius:12px; border:1px solid rgba(255,255,255,0.06);">
+              <strong style="color:var(--apple-cyan); font-size:0.95rem;">Studio Rumpf &amp; Mobility (Freitag)</strong>
+              <p style="font-size:0.85rem; color:#8C8E99; margin-top:0.4rem; line-height:1.4;">
+                Reines Oberkörper- und Stabi-Training. Strikt keine Beinmaschinen vor dem 16k-Lauf am Samstag.
               </p>
             </div>
           </div>
