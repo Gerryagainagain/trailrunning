@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.34 (10 DISTINKTE DESIGN-STILE FÜR ALLE 10 LAYOUTS VOLLENDET)  
+**Document Version:** 11.35 (20 RADIKAL DIFFERENZIERTE LAYOUTS & DESIGN-STILE VOLLENDET)  
 **Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,22 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.34)
+## 📌 1. Project Overview & Release Freeze State (v11.35)
+
+- **20 Radikal Differenzierte Architektur- & Design-Konzepte (`preview_10_layouts.html` · v11.35):**
+  - **Erweiterung um 10 völlig neue Gestaltungs-Welten (#11 bis #20):**
+    11. *Konzept 11 (Bio-Chemical Laboratory):* Stoffwechsel-Chemie & Osmolarität (Fettoxidation bei VT1, Maltodextrin-Grammatur pro Stunde, sterile Labor-Ästhetik #F0F4F8).
+    12. *Konzept 12 (Mass Transit Metro Line):* Topologisches U-Bahn-Liniennetz nach Beck-Standard (Winter-Linie, Umsteigebahnhof 7G-HM, Endstation Drachenlauf).
+    13. *Konzept 13 (Cyanotype Architectural Blueprint):* Statischer Tragwerks-Bauplan auf Preußisch-Blau (#002244) mit Lastannahmen, Stützpfeilern und Sicherheitsbeiwerten.
+    14. *Konzept 14 (Analog Audio Mixing Console):* Neve/SSL Multitrack-Pult mit Fadern für Distanz, Höhenmeter, Pace und VU-Metern gegen ZNS-Clipping.
+    15. *Konzept 15 (Mystical Gold-Foil Tarot Deck):* Arkana-Phasenkarten (Der Bergdrache XIX, Der Tiefe Bach VII, Die Stille Einkehr II) mit Goldprägung (#C49B55).
+    16. *Konzept 16 (Synoptic Weather Radar Station):* Meteorologische Einsatzkarte mit Doppler-Radar, Isobaren und Mikroklima-Daten (Monschau 2–9 °C, Imst 1.800m).
+    17. *Konzept 17 (Sunday Sports Gazette Broadsheet):* Klassischer Bleisatz-Zeitungsdruck (*L'Équipe* / *NZZ*) mit großer Schlagzeile und investigativen Meldezahlen.
+    18. *Konzept 18 (Military Fighter Jet Flight HUD):* Kollimiertes Phosphor-Grün mit Steigrate (+650 m/h), Anstellwinkeln und Ziel-Lock auf Belgenbach & Drachenlauf.
+    19. *Konzept 19 (Japanese Wabi-Sabi Bento & Hinoki Wood):* Zen-Gleichgewicht aus Anstrengung (Yang) und Ruhe (Yin), Sumi-e Tinte, Hinoki-Holz und Zinnober-Hanko.
+    20. *Konzept 20 (Cyber-RPG Quest Terminal & Overworld Log):* Gamifizierte Rollenspiel-Kampagne mit Charakter-Werten (Level 47), Mana (Malto) und Drachen-Raidboss.
+  - **Single View Page:** Nahtloses Durchscrollen aller 20 Layouts (#01–#20) mit Sticky-Header und One-Click-Direktsprüngen.
+  - Gespiegelt nach `dist/preview_10_layouts.html`.
 
 - **10 Distinkte Gestaltungs-Stile & visuelle Identitäten (`preview_10_layouts.html` · v11.34):**
   - **Individuelle Ästhetik je Konzept:** Jedes der 10 Layouts wurde mit einer eigenständigen visuellen DNA, Farbpalette, Oberflächenmaterialität und Typografie ausgestattet:
