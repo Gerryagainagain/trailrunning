@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.35 (20 RADIKAL DIFFERENZIERTE LAYOUTS & DESIGN-STILE VOLLENDET)  
+**Document Version:** 11.36 (30 RADIKAL DIFFERENZIERTE ARCHITEKTUR- & EXTREME AVANTGARDE DESIGN-KONZEPTE)  
 **Last Updated:** November 16, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,22 +8,25 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.35)
+## 📌 1. Project Overview & Release Freeze State (v11.36)
 
-- **20 Radikal Differenzierte Architektur- & Design-Konzepte (`preview_10_layouts.html` · v11.35):**
-  - **Erweiterung um 10 völlig neue Gestaltungs-Welten (#11 bis #20):**
-    11. *Konzept 11 (Bio-Chemical Laboratory):* Stoffwechsel-Chemie & Osmolarität (Fettoxidation bei VT1, Maltodextrin-Grammatur pro Stunde, sterile Labor-Ästhetik #F0F4F8).
-    12. *Konzept 12 (Mass Transit Metro Line):* Topologisches U-Bahn-Liniennetz nach Beck-Standard (Winter-Linie, Umsteigebahnhof 7G-HM, Endstation Drachenlauf).
-    13. *Konzept 13 (Cyanotype Architectural Blueprint):* Statischer Tragwerks-Bauplan auf Preußisch-Blau (#002244) mit Lastannahmen, Stützpfeilern und Sicherheitsbeiwerten.
-    14. *Konzept 14 (Analog Audio Mixing Console):* Neve/SSL Multitrack-Pult mit Fadern für Distanz, Höhenmeter, Pace und VU-Metern gegen ZNS-Clipping.
-    15. *Konzept 15 (Mystical Gold-Foil Tarot Deck):* Arkana-Phasenkarten (Der Bergdrache XIX, Der Tiefe Bach VII, Die Stille Einkehr II) mit Goldprägung (#C49B55).
-    16. *Konzept 16 (Synoptic Weather Radar Station):* Meteorologische Einsatzkarte mit Doppler-Radar, Isobaren und Mikroklima-Daten (Monschau 2–9 °C, Imst 1.800m).
-    17. *Konzept 17 (Sunday Sports Gazette Broadsheet):* Klassischer Bleisatz-Zeitungsdruck (*L'Équipe* / *NZZ*) mit großer Schlagzeile und investigativen Meldezahlen.
-    18. *Konzept 18 (Military Fighter Jet Flight HUD):* Kollimiertes Phosphor-Grün mit Steigrate (+650 m/h), Anstellwinkeln und Ziel-Lock auf Belgenbach & Drachenlauf.
-    19. *Konzept 19 (Japanese Wabi-Sabi Bento & Hinoki Wood):* Zen-Gleichgewicht aus Anstrengung (Yang) und Ruhe (Yin), Sumi-e Tinte, Hinoki-Holz und Zinnober-Hanko.
-    20. *Konzept 20 (Cyber-RPG Quest Terminal & Overworld Log):* Gamifizierte Rollenspiel-Kampagne mit Charakter-Werten (Level 47), Mana (Malto) und Drachen-Raidboss.
-  - **Single View Page:** Nahtloses Durchscrollen aller 20 Layouts (#01–#20) mit Sticky-Header und One-Click-Direktsprüngen.
+- **30 Radikal Differenzierte Architektur- & Extreme Avantgarde Design-Konzepte (`preview_10_layouts.html` · v11.36):**
+  - **Erweiterung um 10 extreme, unkonventionelle Avantgarde-Stile (#21 bis #30):**
+    21. *Konzept 21 (Anti-Design Punk Fanzine 1977):* Roh fotokopierter Zine-Look, abgerissene Papierfetzen, Text unter -3° rotiert, Paketklebeband, Marker-Typo (*Permanent Marker*), rohe Street-Energie.
+    22. *Konzept 22 (Salomon S/LAB Acronym Gorpcore):* Radikale High-Tech Outdoor-Ästhetik, Nahtversiegelungs-Tapes (Seam-Sealed), Laser-Neon `#CCFF00`, maschinelle Barcodes, Geokoordinaten und Material-Gewebe-Codes.
+    23. *Konzept 23 (Russian Constructivism Agitprop 1925):* Monumentale Alexander-Rodtschenko-Winkel (45°-Diagonalen), scharfes Rot `#D90429`, Tiefschwarz und Reines Weiß, monumentale Blockschrift (*Bebas Neue*).
+    24. *Konzept 24 (Y2K Acid Liquid Chrome Rave):* 2000er Liquid-Metal-Optik, metallisch changierender Textverlauf, Acid-Magenta `#FF00D4`, 3D-Drahtgitter-Draufsichten und Rave-Flyer-Typografie.
+    25. *Konzept 25 (NASA Apollo 11 Flight Operations Manual):* Locher-Stanzungen (Ring-Binder), roter Gummistempel "FLIGHT CRITICAL", vergilbtes Missionspapier `#F2EBD9`, mechanische Monospace-Schreibmaschine (*Special Elite*).
+    26. *Konzept 26 (8-Bit Nintendo GameBoy 1989):* Original 4-Ton-Grün LCD-Farbpalette (`#8BAC0F`), Pixel-Art-Schrift (*Press Start 2P*), Scanlines, RPG-Dialogbox mit blinkendem Cursor und 8-Bit-Stats.
+    27. *Konzept 27 (Forensic Autopsy & Morgue Casefile):* Manila-Aktenordner `#D8C3A5`, Büroklammer-Optik, Zensur-Balken (Redacted Blackout), Stempel "CASE CLASSIFIED: PHYSIOLOGICAL AUTOPSY", pathologische Befundung.
+    28. *Konzept 28 (Swiss Alpine Monumental Bill-Poster):* Monumentale 120pt-Typografie mit brutalem Beschnitt am Kantenrand, riesige Ziffern, rohes Plakatgelb `#FFF000` und radikaler Editorial-Grotesk-Druck.
+    29. *Konzept 29 (Synthwave 1984 Outrun Retrowave):* Sonnenuntergangs-Horizont-Drahtgitter in 3D-Perspektive, glühendes Laser-Pink `#FF007F` & Cyber-Cyan `#00F0FF`, 80s-Chrom-Kalligrafie (*Righteous*).
+    30. *Konzept 30 (David Carson Ray Gun Deconstruction):* Radikale 90er-Jahre-Grunge-Typografie, überlappende Schriftebenen, rotierte Wortfragmente, gebrochene Lesbarkeit und emotionale Dekonstruktion.
+  - **Single View Page:** Nahtloses Durchscrollen aller 30 Layouts (#01–#30) auf einer einzigen Seite mit Sticky-Header und Direktsprüngen für alle 30 Konzepte.
   - Gespiegelt nach `dist/preview_10_layouts.html`.
+
+- **20 Vorherige Architektur- & Design-Konzepte (#01–#20):**
+  - #01 (Temporal Matrix / Swiss Brutalism), #02 (Metabolic Heatmap / Cyber Cockpit), #03 (Topographic Gradient / Alpine Slate), #04 (Race Hierarchy / Aerospace Mission Control), #05 (Apple Watch Ultra OLED), #06 (Vintage Alpine Journal), #07 (Astronomical Astrolabe), #08 (Nordic Minimalist SaaS), #09 (CRT Terminal VT220), #10 (macOS Pro Studio), #11 (Bio-Chemical Lab), #12 (Mass Transit Metro), #13 (Cyanotype Blueprint), #14 (Audio Mixing Console), #15 (Tarot Deck), #16 (Weather Radar), #17 (Sports Gazette), #18 (Fighter Jet HUD), #19 (Wabi-Sabi Bento), #20 (Cyber-RPG Quest).
 
 - **10 Distinkte Gestaltungs-Stile & visuelle Identitäten (`preview_10_layouts.html` · v11.34):**
   - **Individuelle Ästhetik je Konzept:** Jedes der 10 Layouts wurde mit einer eigenständigen visuellen DNA, Farbpalette, Oberflächenmaterialität und Typografie ausgestattet:

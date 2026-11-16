@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trailrunning 2027 · 20 Architektonische Layout- &amp; Design-Konzepte</title>
+  <title>Trailrunning 2027 · 30 Architektonische Layout- &amp; Design-Konzepte</title>
   <link rel="stylesheet" href="tokens.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600;700;800;900&family=Italiana&family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Noto+Serif+JP:wght@400;700;900&family=Orbitron:wght@600;800;900&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400&family=Share+Tech+Mono&family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;600;700;800;900&family=Italiana&family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&family=Noto+Serif+JP:wght@400;700;900&family=Orbitron:wght@600;800;900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400&family=Press+Start+2P&family=Righteous&family=Rubik+Glitch&family=Russo+One&family=Share+Tech+Mono&family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Syne:wght@700;800;900&family=VT323&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -24,9 +24,7 @@
       padding-bottom: 160px;
     }
 
-    /* ==========================================================================
-       GLOBAL SHOWCASE HEADER & JUMP NAV (ALL 20 CONCEPTS)
-       ========================================================================== */
+    /* GLOBAL STICKY SHOWCASE HEADER */
     .showcase-header {
       position: sticky;
       top: 0;
@@ -68,9 +66,9 @@
     .showcase-nav::-webkit-scrollbar { display: none; }
     .nav-pill {
       white-space: nowrap;
-      font-size: 0.72rem;
+      font-size: 0.70rem;
       font-weight: 800;
-      padding: 0.35rem 0.8rem;
+      padding: 0.32rem 0.75rem;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
@@ -84,14 +82,16 @@
       color: #FFF;
       transform: translateY(-1px);
     }
-    .nav-pill.new-tier {
-      border-color: rgba(255, 159, 10, 0.4);
-      color: #FFD273;
+    .nav-pill.extreme {
+      background: rgba(255, 0, 85, 0.15);
+      border-color: rgba(255, 0, 85, 0.4);
+      color: #FF5E8E;
     }
-    .nav-pill.new-tier:hover {
-      background: rgba(255, 159, 10, 0.25);
-      border-color: var(--apple-orange);
+    .nav-pill.extreme:hover {
+      background: #FF0055;
+      border-color: #FF0055;
       color: #FFF;
+      box-shadow: 0 0 12px rgba(255, 0, 85, 0.6);
     }
 
     .btn-return {
@@ -107,9 +107,7 @@
     }
     .btn-return:hover { background: rgba(255, 255, 255, 0.15); }
 
-    /* ==========================================================================
-       INTRO HERO
-       ========================================================================== */
+    /* INTRO */
     .showcase-intro {
       max-width: 1240px;
       margin: 3.5rem auto 2rem;
@@ -121,46 +119,44 @@
       font-weight: 900;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--apple-cyan);
+      color: #FF0055;
       margin-bottom: 0.75rem;
       display: inline-block;
     }
     .showcase-intro h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 900;
       letter-spacing: -1.2px;
-      line-height: 1.1;
+      line-height: 1.05;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #FFFFFF 20%, #B0E4FF 70%, var(--apple-orange) 100%);
+      background: linear-gradient(135deg, #FFFFFF 20%, #B0E4FF 50%, #FF0055 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     .showcase-intro p {
       color: #A1A1A6;
       font-size: 1.1rem;
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
       line-height: 1.55;
     }
 
-    /* Section divider banner */
+    /* SECTION BANNERS */
     .tier-divider-banner {
       max-width: 1340px;
       margin: 5rem auto 2rem;
       padding: 1.25rem 2rem;
-      background: linear-gradient(90deg, rgba(255, 159, 10, 0.15), rgba(100, 210, 255, 0.08), transparent);
-      border-left: 5px solid var(--apple-orange);
+      background: linear-gradient(90deg, rgba(255, 0, 85, 0.2), rgba(100, 210, 255, 0.08), transparent);
+      border-left: 5px solid #FF0055;
       border-radius: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .tier-divider-banner h2 { font-size: 1.35rem; font-weight: 900; color: #FFF; }
-    .tier-divider-banner span { font-size: 0.8rem; font-weight: 800; color: var(--apple-orange); text-transform: uppercase; letter-spacing: 1px; }
+    .tier-divider-banner span { font-size: 0.8rem; font-weight: 800; color: #FF0055; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* ==========================================================================
-       LAYOUT STAGES & FRAMING
-       ========================================================================== */
+    /* LAYOUT STAGES */
     .layout-stage {
       max-width: 1340px;
       margin: 4.5rem auto;
@@ -189,7 +185,7 @@
       color: var(--apple-cyan);
       margin-bottom: 0.35rem;
     }
-    .layout-idx.orange { color: var(--apple-orange); }
+    .layout-idx.extreme { color: #FF0055; }
     .layout-name {
       font-size: 1.5rem;
       font-weight: 900;
@@ -220,31 +216,17 @@
       position: relative;
     }
 
-    /* Common helper pills */
-    .pill-status {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-    }
-
-    /* ==========================================================================
-       STYLES 01 - 10
-       ========================================================================== */
+    /* STYLES 01 TO 20 BASE DEFINITIONS */
     .s1-canvas { background: #F4F4F6; color: #0A0A0E; font-family: 'Space Grotesk', sans-serif; padding: 2.5rem; }
     .s1-grid { display: grid; grid-template-columns: 320px 1fr 340px; border: 2px solid #0A0A0E; background: #FFF; }
     @media (max-width: 1024px) { .s1-grid { grid-template-columns: 1fr; } }
     .s1-cell { padding: 2rem; border-right: 2px solid #0A0A0E; display: flex; flex-direction: column; gap: 1.5rem; }
     .s1-cell:last-child { border-right: none; }
-    @media (max-width: 1024px) { .s1-cell { border-right: none; border-bottom: 2px solid #0A0A0E; } }
     .s1-num { font-size: 4rem; font-weight: 900; line-height: 0.85; letter-spacing: -3px; }
     .s1-label { font-size: 0.75rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 0.5rem; border-bottom: 2px solid #0A0A0E; }
     .s1-btn { background: #0A0A0E; color: #FFF; font-weight: 900; font-size: 0.82rem; text-transform: uppercase; padding: 0.85rem 1.25rem; border: none; cursor: pointer; display: inline-block; }
 
-    .s2-canvas { background: #040507; color: #00FF88; font-family: 'Orbitron', monospace; padding: 2.5rem; border: 1px solid rgba(0, 255, 136, 0.3); position: relative; }
+    .s2-canvas { background: #040507; color: #00FF88; font-family: 'Orbitron', monospace; padding: 2.5rem; border: 1px solid rgba(0, 255, 136, 0.3); }
     .s2-cockpit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 1rem; }
     @media (max-width: 900px) { .s2-cockpit-grid { grid-template-columns: 1fr 1fr; } }
     .s2-pod { background: rgba(0, 255, 136, 0.03); border: 1px solid rgba(0, 255, 136, 0.25); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
@@ -253,7 +235,6 @@
 
     .s3-canvas { background: #141619; color: #E8E5DF; font-family: 'Syne', sans-serif; padding: 2.5rem; }
     .s3-ridge-item { background: #1C1F24; border: 1px solid #323842; border-left: 5px solid #C49B55; padding: 1.25rem 1.75rem; display: grid; grid-template-columns: 140px 1fr 180px; align-items: center; gap: 1.5rem; }
-    @media (max-width: 800px) { .s3-ridge-item { grid-template-columns: 1fr; gap: 0.5rem; } }
     .s3-alt-tag { font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 800; color: #C49B55; }
 
     .s4-canvas { background: #0D0F13; color: #E6EDF3; font-family: 'JetBrains Mono', monospace; padding: 2.5rem; border: 2px solid #30363D; }
@@ -262,380 +243,396 @@
 
     .s5-canvas { background: #000000; color: #FFFFFF; font-family: -apple-system, sans-serif; padding: 2.5rem; }
     .s5-watch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-    @media (max-width: 900px) { .s5-watch-grid { grid-template-columns: 1fr; } }
     .s5-squircle { background: #121214; border-radius: 32px; padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 220px; border: 1px solid rgba(255, 255, 255, 0.08); }
     .s5-num-giant { font-size: 3.5rem; font-weight: 900; line-height: 0.9; color: #FF5500; }
 
     .s6-canvas { background: #181512; color: #E5DFD5; font-family: 'Newsreader', serif; padding: 3rem 2.5rem; border: 1px solid #332B24; }
     .s6-entry-block .dropcap { float: left; font-size: 3.8rem; line-height: 0.8; font-weight: 700; margin-right: 0.75rem; color: #D6A868; font-family: 'Cinzel', serif; }
 
-    .s7-canvas { background: radial-gradient(circle at center, #101426 0%, #05060D 75%); color: #A3B8FF; font-family: 'Space Grotesk', sans-serif; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; border: 1px solid rgba(100, 150, 255, 0.2); }
+    .s7-canvas { background: radial-gradient(circle at center, #101426 0%, #05060D 75%); color: #A3B8FF; font-family: 'Space Grotesk', sans-serif; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; }
     .s7-astrolabe { width: 440px; height: 440px; border-radius: 50%; border: 2px dashed rgba(163, 184, 255, 0.3); position: relative; display: flex; align-items: center; justify-content: center; }
-    .s7-inner-dial { width: 220px; height: 220px; border-radius: 50%; background: #0A0D1A; border: 1px solid #4F6BFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; box-shadow: 0 0 25px rgba(79, 107, 255, 0.4); }
+    .s7-inner-dial { width: 220px; height: 220px; border-radius: 50%; background: #0A0D1A; border: 1px solid #4F6BFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; }
 
     .s8-canvas { background: #0B0D13; color: #F0F3F9; font-family: 'DM Sans', sans-serif; padding: 2.5rem; }
     .s8-kanban-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
-    @media (max-width: 950px) { .s8-kanban-row { grid-template-columns: 1fr 1fr; } }
     .s8-glass-col { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.85rem; }
-    .s8-glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+    .s8-glass-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 1rem; }
 
-    .s9-canvas { background: #000000; color: #33FF33; font-family: 'VT323', monospace; padding: 2.5rem; border: 4px solid #1A331A; font-size: 1.35rem; line-height: 1.25; }
+    .s9-canvas { background: #000000; color: #33FF33; font-family: 'VT323', monospace; padding: 2.5rem; border: 4px solid #1A331A; font-size: 1.35rem; }
     .s9-scanline { background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 4px, 6px 100%; }
 
     .s10-canvas { background: #111216; color: #E1E2E8; font-family: -apple-system, sans-serif; display: grid; grid-template-columns: 280px 1fr; min-height: 520px; border: 1px solid rgba(255, 255, 255, 0.12); }
-    @media (max-width: 850px) { .s10-canvas { grid-template-columns: 1fr; } }
     .s10-sidebar { background: #17181E; border-right: 1px solid rgba(255, 255, 255, 0.08); padding: 1.75rem 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
     .s10-content { padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
 
+    .s11-canvas { background: #F0F4F8; color: #1A2533; font-family: 'DM Mono', monospace; padding: 2.5rem; border: 2px solid #CBD5E1; }
+    .s11-lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+    .s11-beaker { background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .s12-canvas { background: #18191F; color: #FFF; font-family: 'Inter', sans-serif; padding: 2.5rem; }
+    .s12-map-line { display: flex; align-items: center; position: relative; margin: 2rem 0; padding: 0 1rem; }
+    .s12-rail { position: absolute; left: 0; right: 0; height: 8px; background: linear-gradient(90deg, #64D2FF 0%, #30D158 35%, #FF9F0A 70%, #FF453A 100%); border-radius: 4px; }
+    .s12-stations { width: 100%; display: flex; justify-content: space-between; position: relative; z-index: 2; }
+    .s12-station { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; }
+    .s12-dot { width: 22px; height: 22px; border-radius: 50%; background: #FFF; border: 4px solid #18191F; box-shadow: 0 0 0 3px #64D2FF; }
+
+    .s13-canvas { background: #002244; color: #E6F0FA; font-family: 'Courier Prime', monospace; padding: 2.5rem; border: 2px solid #336699; background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+    .s13-spec-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .s13-spec-table th, .s13-spec-table td { border: 1px solid rgba(255, 255, 255, 0.25); padding: 0.85rem; text-align: left; }
+
+    .s14-canvas { background: #1C1D21; color: #D1D2D6; font-family: 'Share Tech Mono', monospace; padding: 2.5rem; border: 2px solid #3A3B42; }
+    .s14-rack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+    .s14-strip { background: #25262B; border: 1px solid #40424A; border-radius: 8px; padding: 1.25rem; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .s14-vu-box { width: 100%; background: #0F1012; border: 1px solid #000; border-radius: 4px; padding: 0.5rem; display: flex; flex-direction: column; gap: 3px; }
+
+    .s15-canvas { background: #0B0A0F; color: #E2D7BE; font-family: 'Italiana', serif; padding: 3rem 2rem; }
+    .s15-deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .s15-card { border: 2px solid #C49B55; border-radius: 14px; background: #131119; padding: 2rem 1.5rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+
+    .s16-canvas { background: #060E1A; color: #92B4D6; font-family: 'Space Mono', monospace; padding: 2.5rem; border: 1px solid #1E3A5F; }
+    .s16-stations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 1.25rem; }
+    .s16-wx-box { background: #0A172A; border: 1px solid #1E3A5F; border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .s17-canvas { background: #F7F5F0; color: #1A1A1A; font-family: 'Newsreader', Georgia, serif; padding: 3rem 2.5rem; border: 3px double #000; }
+    .s17-headline { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; text-align: center; line-height: 1.05; border-bottom: 2px solid #000; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+    .s17-cols { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+
+    .s18-canvas { background: #030805; color: #24E556; font-family: 'VT323', monospace; padding: 2.5rem; border: 2px solid #175428; font-size: 1.3rem; }
+    .s18-hud-grid { display: grid; grid-template-columns: 180px 1fr 180px; gap: 1.5rem; align-items: center; }
+    .s18-reticle { border: 1px dashed #24E556; border-radius: 50%; width: 200px; height: 200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; text-align: center; }
+
+    .s19-canvas { background: #161514; color: #E2DBD2; font-family: 'Noto Serif JP', serif; padding: 2.5rem; }
+    .s19-bento-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .s19-bento-box { background: #1E1D1B; border: 1px solid #33312E; border-radius: 6px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .s19-hanko { width: 32px; height: 32px; border: 2px solid #C43D32; color: #C43D32; font-size: 0.75rem; font-weight: 900; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+
+    .s20-canvas { background: #09080F; color: #E0DAF5; font-family: 'Space Grotesk', sans-serif; padding: 2.5rem; border: 2px solid #5B32A3; }
+    .s20-quest-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; margin-top: 1rem; }
+    .s20-hero-stats { background: #141124; border: 1px solid #3D2370; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .s20-quest-card { background: #141124; border: 1px solid #FF9F0A; border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+
     /* ==========================================================================
-       ALL-NEW STYLES 11 - 20
+       RADICAL & EXTREME STYLES 21 TO 30
        ========================================================================== */
 
-    /* 11. BIO-CHEMICAL LABORATORY */
-    .s11-canvas {
-      background: #F0F4F8;
-      color: #1A2533;
-      font-family: 'DM Mono', monospace;
-      padding: 2.5rem;
-      border: 2px solid #CBD5E1;
+    /* 21. ANTI-DESIGN PUNK FANZINE */
+    .s21-canvas {
+      background: #E8E5DD;
+      color: #111;
+      font-family: 'Permanent Marker', cursive;
+      padding: 3rem 2rem;
+      border: 6px solid #000;
+      box-shadow: 15px 15px 0px #000;
+      position: relative;
+      background-image: radial-gradient(#000 15%, transparent 16%);
+      background-size: 8px 8px;
     }
-    .s11-lab-grid {
+    .s21-cutout-header {
+      background: #FF0055;
+      color: #FFF;
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      font-size: 2.4rem;
+      transform: rotate(-3deg);
+      box-shadow: 6px 6px 0px #000;
+      border: 3px solid #000;
+      margin-bottom: 1.5rem;
+    }
+    .s21-zine-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 2rem;
+      font-family: 'Courier Prime', monospace;
+    }
+    @media (max-width: 850px) { .s21-zine-grid { grid-template-columns: 1fr; } }
+    .s21-tape-card {
+      background: #FFF;
+      border: 3px solid #000;
+      padding: 1.5rem;
+      position: relative;
+      box-shadow: 8px 8px 0px #000;
+      transform: rotate(1deg);
+    }
+    .s21-tape {
+      position: absolute;
+      top: -12px;
+      left: 30%;
+      width: 100px;
+      height: 24px;
+      background: rgba(255, 235, 59, 0.7);
+      transform: rotate(-2deg);
+      border: 1px dashed rgba(0,0,0,0.3);
+    }
+
+    /* 22. SALOMON S/LAB ACRONYM GORPCORE */
+    .s22-canvas {
+      background: #0B0C0E;
+      color: #E2E4E8;
+      font-family: 'Inter', sans-serif;
+      padding: 2.5rem;
+      border: 1px solid #23272F;
+    }
+    .s22-tech-bar {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #CCFF00;
+      padding-bottom: 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 900;
+      color: #CCFF00;
+      letter-spacing: 2px;
+    }
+    .s22-gear-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
-      margin-top: 1.25rem;
+      margin-top: 1.5rem;
     }
-    @media (max-width: 850px) { .s11-lab-grid { grid-template-columns: 1fr; } }
-    .s11-beaker {
-      background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      border-radius: 12px;
+    @media (max-width: 850px) { .s22-gear-grid { grid-template-columns: 1fr; } }
+    .s22-module {
+      background: #14171C;
+      border: 1px solid #262B34;
       padding: 1.5rem;
-      position: relative;
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      position: relative;
     }
-    .s11-beaker-fill {
-      height: 8px;
-      border-radius: 4px;
-      background: #E2E8F0;
-      overflow: hidden;
-      margin-top: 0.5rem;
-    }
-    .s11-fill-inner { height: 100%; border-radius: 4px; }
-    .s11-badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      align-self: flex-start;
+    .s22-seam-tape {
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: #CCFF00;
     }
 
-    /* 12. TRANSIT ROUTE MAP */
-    .s12-canvas {
-      background: #18191F;
-      color: #FFF;
-      font-family: 'Inter', sans-serif;
-      padding: 2.5rem;
+    /* 23. RUSSIAN CONSTRUCTIVISM AGITPROP */
+    .s23-canvas {
+      background: #E8E2D2;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      padding: 3rem 2rem;
+      border: 8px solid #000;
       position: relative;
+      overflow: hidden;
     }
-    .s12-map-line {
-      display: flex;
-      align-items: center;
-      position: relative;
-      margin: 2rem 0;
-      padding: 0 1rem;
-    }
-    .s12-rail {
+    .s23-wedge {
       position: absolute;
-      left: 0;
-      right: 0;
-      height: 8px;
-      background: linear-gradient(90deg, #64D2FF 0%, #30D158 35%, #FF9F0A 70%, #FF453A 100%);
-      border-radius: 4px;
+      top: -50px;
+      right: -50px;
+      width: 320px;
+      height: 320px;
+      background: #D90429;
+      transform: rotate(45deg);
       z-index: 1;
     }
-    .s12-stations {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      z-index: 2;
+    .s23-content { position: relative; z-index: 2; }
+    .s23-title {
+      font-size: 4.5rem;
+      line-height: 0.85;
+      color: #000;
+      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
     }
-    .s12-station {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .s23-title span { color: #D90429; }
+    .s23-slogan-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 850px) { .s23-slogan-grid { grid-template-columns: 1fr; } }
+    .s23-box {
+      background: #000;
+      color: #FFF;
+      padding: 1.5rem;
+      transform: skewY(-2deg);
+    }
+
+    /* 24. Y2K ACID LIQUID CHROME */
+    .s24-canvas {
+      background: #050010;
+      color: #FFF;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 3rem 2rem;
+      border: 2px solid #FF00E5;
+      box-shadow: inset 0 0 50px rgba(255, 0, 229, 0.25);
+    }
+    .s24-chrome-text {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #A0E9FF 40%, #002244 50%, #FF00D4 80%, #FFFFFF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
       text-align: center;
-      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.6));
     }
-    .s12-dot {
+    .s24-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 800px) { .s24-grid { grid-template-columns: 1fr; } }
+    .s24-card {
+      background: rgba(255, 0, 229, 0.05);
+      border: 1px solid #FF00D4;
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: 0 0 20px rgba(255, 0, 212, 0.2);
+    }
+
+    /* 25. APOLLO 11 FLIGHT MANUAL */
+    .s25-canvas {
+      background: #F4EFE6;
+      color: #1F2328;
+      font-family: 'Special Elite', monospace;
+      padding: 3rem 2.5rem 3rem 4rem;
+      border: 1px solid #D0C8B8;
+      position: relative;
+    }
+    .s25-binder-ring {
+      position: absolute;
+      left: 15px;
       width: 22px;
       height: 22px;
       border-radius: 50%;
-      background: #FFF;
-      border: 4px solid #18191F;
-      box-shadow: 0 0 0 3px #64D2FF;
+      background: #060608;
+      border: 3px solid #8C8270;
     }
-    .s12-dot.race { box-shadow: 0 0 0 4px #FF9F0A; width: 26px; height: 26px; }
+    .s25-ring-1 { top: 60px; }
+    .s25-ring-2 { top: 220px; }
+    .s25-ring-3 { top: 380px; }
+    .s25-stamp {
+      border: 3px solid #C92A2A;
+      color: #C92A2A;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      transform: rotate(-4deg);
+      letter-spacing: 2px;
+    }
 
-    /* 13. VINTAGE BLUEPRINT DRAFT */
-    .s13-canvas {
-      background: #002244;
-      color: #E6F0FA;
+    /* 26. 8-BIT GAMEBOY CLASSIC */
+    .s26-canvas {
+      background: #8BAC0F;
+      color: #0F380F;
+      font-family: 'Press Start 2P', monospace;
+      padding: 2.5rem 2rem;
+      border: 8px solid #306230;
+      box-shadow: inset 0 0 30px rgba(15, 56, 15, 0.3);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .s26-dialog-box {
+      border: 4px solid #0F380F;
+      background: #9BBC0F;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* 27. FORENSIC AUTOPSY FILE */
+    .s27-canvas {
+      background: #D8C3A5;
+      color: #2D2721;
       font-family: 'Courier Prime', monospace;
-      padding: 2.5rem;
-      border: 2px solid #336699;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-    .s13-spec-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-    .s13-spec-table th, .s13-spec-table td {
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.85rem;
-      text-align: left;
-    }
-    .s13-spec-table th { background: rgba(0, 34, 68, 0.7); color: #64D2FF; }
-
-    /* 14. ANALOG AUDIO MIXING DESK */
-    .s14-canvas {
-      background: #1C1D21;
-      color: #D1D2D6;
-      font-family: 'Share Tech Mono', monospace;
-      padding: 2.5rem;
-      border: 2px solid #3A3B42;
-    }
-    .s14-rack {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 850px) { .s14-rack { grid-template-columns: 1fr 1fr; } }
-    .s14-strip {
-      background: #25262B;
-      border: 1px solid #40424A;
-      border-radius: 8px;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .s14-vu-box {
-      width: 100%;
-      background: #0F1012;
-      border: 1px solid #000;
-      border-radius: 4px;
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    .s14-meter-bar { height: 6px; border-radius: 2px; }
-
-    /* 15. OCCULT GOLD-FOIL TAROT DECK */
-    .s15-canvas {
-      background: #0B0A0F;
-      color: #E2D7BE;
-      font-family: 'Italiana', serif;
-      padding: 3rem 2rem;
-    }
-    .s15-deck {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    @media (max-width: 900px) { .s15-deck { grid-template-columns: 1fr; } }
-    .s15-card {
-      border: 2px solid #C49B55;
-      border-radius: 14px;
-      background: #131119;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-      box-shadow: 0 0 30px rgba(196, 155, 85, 0.15);
-      position: relative;
-    }
-    .s15-roman { font-family: 'Cinzel', serif; font-size: 1.4rem; color: #C49B55; }
-    .s15-card-title { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 700; color: #FFF; }
-
-    /* 16. SYNOPTIC WEATHER RADAR */
-    .s16-canvas {
-      background: #060E1A;
-      color: #92B4D6;
-      font-family: 'Space Mono', monospace;
-      padding: 2.5rem;
-      border: 1px solid #1E3A5F;
-    }
-    .s16-stations-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    @media (max-width: 850px) { .s16-stations-grid { grid-template-columns: 1fr; } }
-    .s16-wx-box {
-      background: #0A172A;
-      border: 1px solid #1E3A5F;
-      border-radius: 10px;
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    /* 17. SUNDAY SPORTS GAZETTE BROADSHEET */
-    .s17-canvas {
-      background: #F7F5F0;
-      color: #1A1A1A;
-      font-family: 'Newsreader', Georgia, serif;
       padding: 3rem 2.5rem;
-      border: 3px double #000;
+      border: 2px solid #8E7960;
     }
-    .s17-headline {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      text-align: center;
-      line-height: 1.05;
-      border-bottom: 2px solid #000;
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
+    .s27-redacted {
+      background: #000;
+      color: #000;
+      padding: 0 0.4rem;
+      user-select: none;
     }
-    .s17-cols {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 2rem;
-    }
-    @media (max-width: 850px) { .s17-cols { grid-template-columns: 1fr; } }
-
-    /* 18. FIGHTER JET FLIGHT HUD */
-    .s18-canvas {
-      background: #030805;
-      color: #24E556;
-      font-family: 'VT323', monospace;
-      padding: 2.5rem;
-      border: 2px solid #175428;
-      position: relative;
-      font-size: 1.3rem;
-    }
-    .s18-hud-grid {
-      display: grid;
-      grid-template-columns: 180px 1fr 180px;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    @media (max-width: 800px) { .s18-hud-grid { grid-template-columns: 1fr; } }
-    .s18-reticle {
-      border: 1px dashed #24E556;
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(36, 229, 86, 0.2);
+    .s27-paperclip {
+      position: absolute;
+      top: -15px;
+      right: 40px;
+      width: 18px;
+      height: 50px;
+      border: 3px solid #777;
+      border-radius: 9px;
     }
 
-    /* 19. JAPANESE WABI-SABI BENTO */
-    .s19-canvas {
-      background: #161514;
-      color: #E2DBD2;
-      font-family: 'Noto Serif JP', serif;
-      padding: 2.5rem;
+    /* 28. MONUMENTAL SWISS ALPINE PLAKAT */
+    .s28-canvas {
+      background: #FFF000;
+      color: #000;
+      font-family: 'Bebas Neue', sans-serif;
+      padding: 3rem 2rem;
+      border: 12px solid #000;
     }
-    .s19-bento-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
+    .s28-mega-number {
+      font-size: 8rem;
+      line-height: 0.8;
+      letter-spacing: -4px;
+      margin-bottom: 1rem;
     }
-    @media (max-width: 900px) { .s19-bento-grid { grid-template-columns: 1fr; } }
-    .s19-bento-box {
-      background: #1E1D1B;
-      border: 1px solid #33312E;
-      border-radius: 6px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
+
+    /* 29. SYNTHWAVE 1984 RETROWAVE */
+    .s29-canvas {
+      background: #0B0014;
+      color: #00F0FF;
+      font-family: 'Righteous', cursive;
+      padding: 3rem 2rem;
+      border: 3px solid #FF007F;
+      box-shadow: 0 0 40px rgba(255, 0, 127, 0.4);
       position: relative;
     }
-    .s19-hanko {
-      width: 32px;
-      height: 32px;
-      border: 2px solid #C43D32;
-      color: #C43D32;
-      font-size: 0.75rem;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 4px;
+    .s29-horizon-grid {
+      height: 120px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255, 0, 127, 0.2) 100%),
+        repeating-linear-gradient(90deg, #00F0FF 0px, #00F0FF 2px, transparent 2px, transparent 40px);
+      border-bottom: 3px solid #00F0FF;
+      margin-top: 1.5rem;
     }
 
-    /* 20. CYBER-RPG QUEST TERMINAL */
-    .s20-canvas {
-      background: #09080F;
-      color: #E0DAF5;
-      font-family: 'Space Grotesk', sans-serif;
-      padding: 2.5rem;
-      border: 2px solid #5B32A3;
+    /* 30. DAVID CARSON RAY GUN DECONSTRUCTION */
+    .s30-canvas {
+      background: #141416;
+      color: #E0E0E0;
+      font-family: 'Permanent Marker', cursive;
+      padding: 3.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 4px solid #FFF;
     }
-    .s20-quest-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 1.5rem;
-      margin-top: 1rem;
+    .s30-layer-bg {
+      position: absolute;
+      font-size: 9rem;
+      color: rgba(255,255,255,0.04);
+      font-weight: 900;
+      top: -20px; left: -10px;
+      line-height: 0.8;
+      user-select: none;
+      font-family: 'Bebas Neue', sans-serif;
     }
-    @media (max-width: 850px) { .s20-quest-grid { grid-template-columns: 1fr; } }
-    .s20-hero-stats {
-      background: #141124;
-      border: 1px solid #3D2370;
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .s20-quest-card {
-      background: #141124;
-      border: 1px solid #FF9F0A;
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
+    .s30-fragment {
+      font-family: 'Courier Prime', monospace;
+      font-size: 0.95rem;
+      background: #FFF;
+      color: #000;
+      padding: 0.6rem 1rem;
+      display: inline-block;
+      margin: 0.5rem 0;
+      transform: rotate(-1.5deg);
+      font-weight: 700;
     }
   </style>
 </head>
 <body>
 
-  <!-- STICKY TOPBAR JUMP NAVIGATION (ALL 20) -->
+  <!-- STICKY TOPBAR JUMP NAVIGATION (ALL 30) -->
   <header class="showcase-header">
     <div class="showcase-topbar">
       <div class="showcase-brand">
-        ⚡ <span>Trailrunning 2027</span> · 20 Architektonische Layouts &amp; Stile
+        ⚡ <span>Trailrunning 2027</span> · 30 Architektonische Layouts &amp; Stile
       </div>
       <a href="index.html" class="btn-return">← Zurück zur Haupt-App</a>
     </div>
     <nav class="showcase-nav">
+      <!-- 1-10 -->
       <a href="#style-1" class="nav-pill">01. Swiss Brutalism</a>
       <a href="#style-2" class="nav-pill">02. Cyber-Biometrie</a>
       <a href="#style-3" class="nav-pill">03. Alpin-Topographie</a>
@@ -646,26 +643,37 @@
       <a href="#style-8" class="nav-pill">08. Nordic Glass</a>
       <a href="#style-9" class="nav-pill">09. Retro CRT</a>
       <a href="#style-10" class="nav-pill">10. Pro Studio</a>
-      <!-- NEW TIER 11 - 20 -->
-      <a href="#style-11" class="nav-pill new-tier">11. Bio-Chem Lab</a>
-      <a href="#style-12" class="nav-pill new-tier">12. Transit Metro</a>
-      <a href="#style-13" class="nav-pill new-tier">13. Blueprint Bauplan</a>
-      <a href="#style-14" class="nav-pill new-tier">14. Audio Console</a>
-      <a href="#style-15" class="nav-pill new-tier">15. Gold-Foil Tarot</a>
-      <a href="#style-16" class="nav-pill new-tier">16. Weather Radar</a>
-      <a href="#style-17" class="nav-pill new-tier">17. Sports Gazette</a>
-      <a href="#style-18" class="nav-pill new-tier">18. Fighter Jet HUD</a>
-      <a href="#style-19" class="nav-pill new-tier">19. Wabi-Sabi Bento</a>
-      <a href="#style-20" class="nav-pill new-tier">20. Cyber-RPG Quest</a>
+      <!-- 11-20 -->
+      <a href="#style-11" class="nav-pill">11. Bio-Chem Lab</a>
+      <a href="#style-12" class="nav-pill">12. Transit Metro</a>
+      <a href="#style-13" class="nav-pill">13. Blueprint Bauplan</a>
+      <a href="#style-14" class="nav-pill">14. Audio Console</a>
+      <a href="#style-15" class="nav-pill">15. Gold-Foil Tarot</a>
+      <a href="#style-16" class="nav-pill">16. Weather Radar</a>
+      <a href="#style-17" class="nav-pill">17. Sports Gazette</a>
+      <a href="#style-18" class="nav-pill">18. Fighter Jet HUD</a>
+      <a href="#style-19" class="nav-pill">19. Wabi-Sabi Bento</a>
+      <a href="#style-20" class="nav-pill">20. Cyber-RPG Quest</a>
+      <!-- EXTREME TIER 21-30 -->
+      <a href="#style-21" class="nav-pill extreme">21. Punk Fanzine</a>
+      <a href="#style-22" class="nav-pill extreme">22. Salomon Gorpcore</a>
+      <a href="#style-23" class="nav-pill extreme">23. Constructivism</a>
+      <a href="#style-24" class="nav-pill extreme">24. Y2K Liquid Chrome</a>
+      <a href="#style-25" class="nav-pill extreme">25. Apollo 11 Manual</a>
+      <a href="#style-26" class="nav-pill extreme">26. 8-Bit GameBoy</a>
+      <a href="#style-27" class="nav-pill extreme">27. Forensic File</a>
+      <a href="#style-28" class="nav-pill extreme">28. Swiss Mega-Plakat</a>
+      <a href="#style-29" class="nav-pill extreme">29. Outrun 1984</a>
+      <a href="#style-30" class="nav-pill extreme">30. Ray Gun Grunge</a>
     </nav>
   </header>
 
   <!-- INTRO -->
   <div class="showcase-intro">
-    <span class="kicker">Kompendium der 20 Gestaltungs-Paradigmen</span>
-    <h1>20 Radikal Eigenständige Design-Konzepte</h1>
+    <span class="kicker">Kompendium der 30 Gestaltungs-Paradigmen</span>
+    <h1>30 Radikal Eigenständige Design-Konzepte</h1>
     <p>
-      Jedes einzelne der 20 Layouts basiert auf einem fundamental anderen Organisationsprinzip und besitzt eine eigenständige visuelle DNA (Typografie, Farbwelt, Oberflächenmaterialität). Alle 20 nutzen dieselben echten Daten des Athleten: VT1 105–118 bpm, Malto-Setup, Verbot von Gels, keine Stöcke, reale Wettkämpfe Drachenlauf, Belgenbach, 7G-HM, RET22, TS16.
+      Von klassischer Informationsarchitektur bis hin zu extremem Avantgarde-Design, Punk-Fanzine, Raumfahrt-Checklisten, 8-Bit Retro und Konstruktivismus. Alle 30 Designs nutzen zu 100% die echten Athletendaten: VT1 105–118 bpm, Malto-Setup, keine Gels, keine Stöcke, reale Wettkämpfe Drachenlauf, Belgenbach, 7G-HM, RET22, TS16.
     </p>
   </div>
 
@@ -675,52 +683,16 @@
       <div>
         <div class="layout-idx">Konzept 01 // Kernwert: Reine Mathematische Struktur</div>
         <h2 class="layout-name">Swiss Brutalism &amp; High-Precision Grid</h2>
-        <p class="layout-narrative">
-          Inspiriert vom Schweizer Plakatdesign der 60er (Müller-Brockmann). Reines Schwarz-Weiß, monolithische 2px-Rahmen, serifenlose Space Grotesk.
-        </p>
+        <p class="layout-narrative">Reines Schwarz-Weiß, monolithische 2px-Rahmen, serifenlose Space Grotesk.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Papierkontrast (#F4F4F6 &amp; Tiefschwarz)<br>
-        <strong>Typografie:</strong> Space Grotesk (Bold &amp; Black)
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> #F4F4F6 &amp; Tiefschwarz<br><strong>Typo:</strong> Space Grotesk</div>
     </div>
     <div class="canvas-frame">
       <div class="s1-canvas">
-        <div style="font-size:0.75rem; font-weight:900; letter-spacing:2px; margin-bottom:1rem; text-transform:uppercase;">
-          GERHARD RUNNING SYSTEM · TEMPORAL HORIZON MATRIX
-        </div>
         <div class="s1-grid">
-          <div class="s1-cell">
-            <span class="s1-label">01 / Mikro (24H)</span>
-            <div class="s1-num">0.0</div>
-            <div style="font-weight:900; font-size:1.4rem;">CHILL · MONTAG 16.11.</div>
-            <p style="font-size:0.9rem; line-height:1.4;">
-              Vollständige Erholung nach 7,0 km Rückreise-Lauf (118 bpm). 48h Post-Race Regeneration aktiv.
-            </p>
-            <div class="s1-btn">Status: Ruhetag</div>
-          </div>
-          <div class="s1-cell">
-            <span class="s1-label">02 / Meso (Woche KW 47)</span>
-            <div class="s1-num">34.0</div>
-            <div style="font-weight:900; font-size:1.4rem;">KM SOLL-UMFANG</div>
-            <p style="font-size:0.9rem; line-height:1.4;">
-              Schwerpunkt: Samstag 16k Erkrath (+350 Hm). Freitag Studio reines Rumpf/Mobility ohne Beinkraft.
-            </p>
-            <div style="font-weight:900; font-size:0.85rem; border:2px solid #000; padding:0.6rem; text-align:center;">
-              DI 8K · DO 10K · SA 16K
-            </div>
-          </div>
-          <div class="s1-cell">
-            <span class="s1-label">03 / Makro (Saison)</span>
-            <div class="s1-num">20</div>
-            <div style="font-weight:900; font-size:1.4rem;">TAGE BIS 7G-HM</div>
-            <p style="font-size:0.9rem; line-height:1.4;">
-              06.12.2026: 21,4 km (+360 Hm). Zielkorridor: 2:28 – 2:33 Std. Nächster Halt: Belgenbachtrail 30k.
-            </p>
-            <div class="s1-btn" style="background:#FFF; color:#000; border:2px solid #000;">
-              Drachenlauf: T-342 D
-            </div>
-          </div>
+          <div class="s1-cell"><span class="s1-label">01 / Mikro (24H)</span><div class="s1-num">0.0</div><div style="font-weight:900; font-size:1.4rem;">CHILL · MO 16.11.</div><p>7,0 km Rückreise-Lauf (118 bpm) regeneriert. Beine frei für 8k GA1 am Dienstag.</p><div class="s1-btn">Status: Ruhetag</div></div>
+          <div class="s1-cell"><span class="s1-label">02 / Meso (Woche KW 47)</span><div class="s1-num">34.0</div><div style="font-weight:900; font-size:1.4rem;">KM SOLL-UMFANG</div><p>Schwerpunkt: Samstag 16k Erkrath (+350 Hm). Freitag Studio reines Rumpf/Mobility ohne Beine.</p><div class="s1-btn" style="background:#FFF; color:#000; border:2px solid #000;">DI 8K · DO 10K · SA 16K</div></div>
+          <div class="s1-cell"><span class="s1-label">03 / Makro (Saison)</span><div class="s1-num">20</div><div style="font-weight:900; font-size:1.4rem;">TAGE BIS 7G-HM</div><p>06.12.2026: 21,4 km (+360 Hm). Zielkorridor: 2:28 – 2:33 Std. Nächster Halt: Belgenbach 30k.</p><div class="s1-btn">Drachenlauf: T-342 D</div></div>
         </div>
       </div>
     </div>
@@ -732,45 +704,17 @@
       <div>
         <div class="layout-idx">Konzept 02 // Kernwert: Vital-Telemetrie &amp; Homöostase</div>
         <h2 class="layout-name">Cyber-Biometrics Medical Cockpit</h2>
-        <p class="layout-narrative">
-          Visualisiert die physiologische Belastung wie auf der Intensivstation: Phosphor-Neon (#00FF88), kardiale Belastungszonen und Glüh-Effekte.
-        </p>
+        <p class="layout-narrative">Phosphor-Neon (#00FF88), kardiale Belastungszonen und Glüh-Effekte.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Deep Space Void (#040507) &amp; Neon Phosphor<br>
-        <strong>Typografie:</strong> Orbitron &amp; JetBrains Mono
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Void (#040507) &amp; Neon Phosphor<br><strong>Typo:</strong> Orbitron &amp; JetBrains Mono</div>
     </div>
     <div class="canvas-frame">
       <div class="s2-canvas">
-        <div style="font-size:0.85rem; letter-spacing:2px; margin-bottom:1.5rem; text-transform:uppercase;">
-          ▲ PHYSIOLOGICAL STRAIN TELEMETRY // REALTIME
-        </div>
         <div class="s2-cockpit-grid">
-          <div class="s2-pod">
-            <span style="font-size:0.75rem; letter-spacing:1px; color:#A1FFA1;">AEROBIC CORE (VT1)</span>
-            <div class="s2-val">118</div>
-            <span class="s2-sub">MAX BPM CEILING · 100% COMPLIANT</span>
-            <div class="s2-ekg-line"></div>
-          </div>
-          <div class="s2-pod">
-            <span style="font-size:0.75rem; letter-spacing:1px; color:#00F0FF;">POWER-HIKE LOAD</span>
-            <div class="s2-val" style="color:#00F0FF; text-shadow:0 0 12px #00F0FF;">132</div>
-            <span class="s2-sub" style="color:#80F7FF;">Z2 THRESHOLD · CÔTE D'OPALE LEVEL</span>
-            <div class="s2-ekg-line" style="background:#00F0FF; box-shadow:0 0 10px #00F0FF;"></div>
-          </div>
-          <div class="s2-pod">
-            <span style="font-size:0.75rem; letter-spacing:1px; color:#FFB000;">ANAEROBIC PEAK</span>
-            <div class="s2-val" style="color:#FFB000; text-shadow:0 0 12px #FFB000;">151</div>
-            <span class="s2-sub" style="color:#FFD273;">MARTINSLAUF 10K BENCHMARK</span>
-            <div class="s2-ekg-line" style="background:#FFB000; box-shadow:0 0 10px #FFB000;"></div>
-          </div>
-          <div class="s2-pod">
-            <span style="font-size:0.75rem; letter-spacing:1px; color:#FFF;">CNS HOMEOSTASIS</span>
-            <div class="s2-val" style="color:#FFF; text-shadow:0 0 12px #FFF;">0.0</div>
-            <span class="s2-sub" style="color:#D1D1D6;">PASSIVE CELLULAR RECOVERY ACTIVE</span>
-            <div class="s2-ekg-line" style="background:#FFF; box-shadow:0 0 10px #FFF;"></div>
-          </div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#A1FFA1;">AEROBIC CORE (VT1)</span><div class="s2-val">118</div><span style="font-size:0.75rem;">MAX BPM · 100% COMPLIANT</span><div class="s2-ekg-line"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#00F0FF;">POWER-HIKE LOAD</span><div class="s2-val" style="color:#00F0FF;">132</div><span style="font-size:0.75rem;">Z2 THRESHOLD</span><div class="s2-ekg-line" style="background:#00F0FF;"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#FFB000;">ANAEROBIC PEAK</span><div class="s2-val" style="color:#FFB000;">151</div><span style="font-size:0.75rem;">MARTINSLAUF 10K BENCHMARK</span><div class="s2-ekg-line" style="background:#FFB000;"></div></div>
+          <div class="s2-pod"><span style="font-size:0.75rem; color:#FFF;">CNS HOMEOSTASIS</span><div class="s2-val" style="color:#FFF;">0.0</div><span style="font-size:0.75rem;">PASSIVE RECOVERY ACTIVE</span><div class="s2-ekg-line" style="background:#FFF;"></div></div>
         </div>
       </div>
     </div>
@@ -782,41 +726,15 @@
       <div>
         <div class="layout-idx">Konzept 03 // Kernwert: Höhenmeter &amp; Geologisches Terrain</div>
         <h2 class="layout-name">Alpine Topographic Cartography</h2>
-        <p class="layout-narrative">
-          Alte geodätische Geländekarten: Schiefergrau (#141619), Topo-Gold (#C49B55) und markante Fels-Typografie (Syne).
-        </p>
+        <p class="layout-narrative">Schiefergrau (#141619), geodätisches Topo-Gold (#C49B55) und Fels-Typografie.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Mineral-Schiefer, Höhenlinien, Topo-Gold<br>
-        <strong>Typografie:</strong> Syne &amp; Inter
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Mineral-Schiefer, Topo-Gold<br><strong>Typo:</strong> Syne &amp; Inter</div>
     </div>
     <div class="canvas-frame">
       <div class="s3-canvas">
-        <div class="s3-ridge-item">
-          <div class="s3-alt-tag">50 Hm/km</div>
-          <div>
-            <strong style="font-size:1.2rem; color:#FFF;">Tschirgant Sky TS16 &amp; Drachenlauf</strong>
-            <div style="font-size:0.8rem; color:#9BA1A8;">1.250 Hm &amp; 850 Hm · Alpin &amp; 7 Gipfel</div>
-          </div>
-          <div style="font-size:0.8rem; color:#C49B55; text-align:right;">100% Power-Hiking</div>
-        </div>
-        <div class="s3-ridge-item" style="border-left-color:#E57A3C; margin-top:0.75rem;">
-          <div class="s3-alt-tag" style="color:#E57A3C;">37 Hm/km</div>
-          <div>
-            <strong style="font-size:1.2rem; color:#FFF;">Rureifel Trail RET22 &amp; Belgenbach</strong>
-            <div style="font-size:0.8rem; color:#9BA1A8;">851 Hm &amp; 941 Hm · Buntsandstein &amp; Bachtäler</div>
-          </div>
-          <div style="font-size:0.8rem; color:#E57A3C; text-align:right;">Morast &amp; Stollen</div>
-        </div>
-        <div class="s3-ridge-item" style="border-left-color:#64D2FF; margin-top:0.75rem;">
-          <div class="s3-alt-tag" style="color:#64D2FF;">17 Hm/km</div>
-          <div>
-            <strong style="font-size:1.2rem; color:#FFF;">Siebengebirgs-HM</strong>
-            <div style="font-size:0.8rem; color:#9BA1A8;">21,4 km / 360 Hm · Wald &amp; Schotter</div>
-          </div>
-          <div style="font-size:0.8rem; color:#64D2FF; text-align:right;">Korridor: 2:28–2:33 h</div>
-        </div>
+        <div class="s3-ridge-item"><div class="s3-alt-tag">50 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Tschirgant Sky TS16 &amp; Drachenlauf</strong><div style="font-size:0.8rem; color:#9BA1A8;">1.250 Hm &amp; 850 Hm · Alpin &amp; 7 Gipfel</div></div><div style="color:#C49B55; text-align:right;">100% Power-Hiking</div></div>
+        <div class="s3-ridge-item" style="border-left-color:#E57A3C; margin-top:0.75rem;"><div class="s3-alt-tag" style="color:#E57A3C;">37 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Rureifel RET22 &amp; Belgenbach</strong><div style="font-size:0.8rem; color:#9BA1A8;">851 Hm &amp; 941 Hm · Buntsandstein</div></div><div style="color:#E57A3C; text-align:right;">Morast &amp; Stollen</div></div>
+        <div class="s3-ridge-item" style="border-left-color:#64D2FF; margin-top:0.75rem;"><div class="s3-alt-tag" style="color:#64D2FF;">17 Hm/km</div><div><strong style="font-size:1.2rem; color:#FFF;">Siebengebirgs-HM</strong><div style="font-size:0.8rem; color:#9BA1A8;">21,4 km / 360 Hm · Waldwege</div></div><div style="color:#64D2FF; text-align:right;">Korridor: 2:28–2:33 h</div></div>
       </div>
     </div>
   </section>
@@ -827,26 +745,13 @@
       <div>
         <div class="layout-idx">Konzept 04 // Kernwert: Renn-Hierarchie &amp; Taktischer Fokus</div>
         <h2 class="layout-name">Aerospace Tactical Mission Control</h2>
-        <p class="layout-narrative">
-          Militärisches Lagezentrum: Warnstreifen, Status-Beacons, Monospace-Codes und A/B/C Einsatzprioritäten.
-        </p>
+        <p class="layout-narrative">Militärisches Lagezentrum: Warnstreifen, Status-Beacons und Monospace-Codes.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Stealth Graphite (#0D0F13), Gefahrenstreifen, Amber<br>
-        <strong>Typografie:</strong> JetBrains Mono
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Stealth Graphite (#0D0F13), Amber<br><strong>Typo:</strong> JetBrains Mono</div>
     </div>
     <div class="canvas-frame">
       <div class="s4-canvas">
-        <div class="s4-tactical-card">
-          <div class="s4-stripe-tape"></div>
-          <div style="font-size:0.75rem; color:#FF9F0A; font-weight:800; margin-top:0.4rem;">PRIORITY ALPHA // T-342 DAYS</div>
-          <div style="font-size:1.8rem; font-weight:900;">DRACHENLAUF 2027</div>
-          <div style="font-size:0.85rem; color:#8B949E; line-height:1.4;">
-            SPECS: 26.0 KM · 1.250 HM · 7 GIPFEL · REVANCHE NACH INFEKT<br>
-            FUELING: 2x 500ML MALTO · NO GELS · NO POLES
-          </div>
-        </div>
+        <div class="s4-tactical-card"><div class="s4-stripe-tape"></div><div style="font-size:0.75rem; color:#FF9F0A; font-weight:800; margin-top:0.4rem;">PRIORITY ALPHA // T-342 DAYS</div><div style="font-size:1.8rem; font-weight:900;">DRACHENLAUF 2027</div><div style="font-size:0.85rem; color:#8B949E;">SPECS: 26.0 KM · 1.250 HM · 7 GIPFEL · FUELING: 2x 500ML MALTO · NO GELS · NO POLES</div></div>
       </div>
     </div>
   </section>
@@ -857,33 +762,16 @@
       <div>
         <div class="layout-idx">Konzept 05 // Kernwert: Extreme Glancability &amp; Modularität</div>
         <h2 class="layout-name">Apple Watch Ultra "Wayfinder" OLED</h2>
-        <p class="layout-narrative">
-          OLED-Schwarz (#000000), leuchtendes Titanium-Orange (#FF5500) und markante 32px-Squircle-Kacheln.
-        </p>
+        <p class="layout-narrative">OLED-Schwarz (#000000), leuchtendes Titanium-Orange (#FF5500) und 32px-Squircles.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> True OLED Black, Titanium Orange Glühakzent<br>
-        <strong>Typografie:</strong> SF Pro Display &amp; Compact Numerals
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> OLED Black &amp; Titanium Orange<br><strong>Typo:</strong> SF Pro Display</div>
     </div>
     <div class="canvas-frame">
       <div class="s5-canvas">
         <div class="s5-watch-grid">
-          <div class="s5-squircle">
-            <span class="s5-label-micro">Wochendistanz</span>
-            <div class="s5-num-giant">12.0</div>
-            <span style="font-size:0.85rem; color:#30D158; font-weight:800;">von 15.0 km (80%)</span>
-          </div>
-          <div class="s5-squircle">
-            <span class="s5-label-micro">VT1 Sprechgrenze</span>
-            <div class="s5-num-giant" style="color:#64D2FF;">118</div>
-            <span style="font-size:0.85rem; color:#64D2FF; font-weight:800;">BPM MAX (100% GA1)</span>
-          </div>
-          <div class="s5-squircle">
-            <span class="s5-label-micro">Countdown 7G-HM</span>
-            <div class="s5-num-giant" style="color:#FFF;">20</div>
-            <span style="font-size:0.85rem; color:#8E8E93; font-weight:800;">TAGE BIS 06. DEZEMBER</span>
-          </div>
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">Wochendistanz</span><div class="s5-num-giant">12.0</div><span style="font-size:0.85rem; color:#30D158;">von 15.0 km (80%)</span></div>
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">VT1 Sprechgrenze</span><div class="s5-num-giant" style="color:#64D2FF;">118</div><span style="font-size:0.85rem; color:#64D2FF;">BPM MAX (100% GA1)</span></div>
+          <div class="s5-squircle"><span style="font-size:0.75rem; color:#8E8E93;">Countdown 7G-HM</span><div class="s5-num-giant" style="color:#FFF;">20</div><span style="font-size:0.85rem; color:#8E8E93;">TAGE BIS 06. DEZEMBER</span></div>
         </div>
       </div>
     </div>
@@ -895,21 +783,13 @@
       <div>
         <div class="layout-idx">Konzept 06 // Kernwert: Kontemplative Reise &amp; Alpin-Chronik</div>
         <h2 class="layout-name">Vintage Alpine Field Journal</h2>
-        <p class="layout-narrative">
-          Klassische Buchdruck-Eleganz: Warme Tinte auf Pergament-Sepia (#181512), Renaissance-Schrift und literarische Depeschen.
-        </p>
+        <p class="layout-narrative">Pergament-Sepia (#181512), Renaissance-Schrift und literarische Depeschen.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Antik-Sepia, Tinte &amp; Goldfolien-Prägung<br>
-        <strong>Typografie:</strong> Newsreader &amp; Cinzel
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Antik-Sepia, Tinte<br><strong>Typo:</strong> Newsreader &amp; Cinzel</div>
     </div>
     <div class="canvas-frame">
       <div class="s6-canvas">
-        <div class="s6-journal-title">Chronik der Pfade &amp; Gipfel</div>
-        <div class="s6-entry-block">
-          <span class="dropcap">A</span>m fünfzehnten Tage des Novembers kehrte der Läufer aus den weiten Ebenen von Geseke zurück. Die Uhr wies sieben Kilometer und eine Nettozeit von sechsundfünfzig Minuten aus. Der Puls verweilte mit eiserner Stetigkeit bei einhundertundachtzehn Schlägen – exakt an der Schwelle des ruhigen Wortwechsels.
-        </div>
+        <div class="s6-entry-block"><span class="dropcap">A</span>m fünfzehnten Tage des Novembers kehrte der Läufer aus den weiten Ebenen von Geseke zurück. Die Uhr wies sieben Kilometer und eine Nettozeit von sechsundfünfzig Minuten aus. Der Puls verweilte mit eiserner Stetigkeit bei einhundertundachtzehn Schlägen – exakt an der Schwelle des ruhigen Wortwechsels.</div>
       </div>
     </div>
   </section>
@@ -918,26 +798,15 @@
   <section id="style-7" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx">Konzept 07 // Kernwert: Zyklen der Natur &amp; Kosmische 365-Tage-Bahn</div>
+        <div class="layout-idx">Konzept 07 // Kernwert: Zyklen der Natur &amp; Kosmische Bahn</div>
         <h2 class="layout-name">Astronomical Astrolabe &amp; Polar Year</h2>
-        <p class="layout-narrative">
-          Das Jahr 2027 als 360-Grad-Astrolabium: Deep Nebula Indigo (#101426), sphärische Orbit-Bahnen und Planeten-Knotenpunkte.
-        </p>
+        <p class="layout-narrative">Deep Nebula Indigo (#101426), sphärische Orbit-Bahnen und Planeten-Knotenpunkte.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Kosmisches Indigo, Polar-Glow<br>
-        <strong>Typografie:</strong> Space Grotesk
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Kosmisches Indigo, Polar-Glow<br><strong>Typo:</strong> Space Grotesk</div>
     </div>
     <div class="canvas-frame">
       <div class="s7-canvas">
-        <div class="s7-astrolabe">
-          <div class="s7-inner-dial">
-            <span style="font-size:0.75rem; letter-spacing:1.5px; color:#64D2FF;">STANDORT JETZT</span>
-            <div style="font-size:2rem; font-weight:900; color:#FFF; margin:0.3rem 0;">KW 46</div>
-            <span style="font-size:0.75rem; color:#A3B8FF;">SPÄTHERBST 2026</span>
-          </div>
-        </div>
+        <div class="s7-astrolabe"><div class="s7-inner-dial"><span style="font-size:0.75rem; color:#64D2FF;">STANDORT JETZT</span><div style="font-size:2rem; font-weight:900; color:#FFF;">KW 46</div><span style="font-size:0.75rem; color:#A3B8FF;">SPÄTHERBST 2026</span></div></div>
       </div>
     </div>
   </section>
@@ -946,36 +815,19 @@
   <section id="style-8" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx">Konzept 08 // Kernwert: Moderner Arbeitsfluss &amp; Agile Vorbereitung</div>
+        <div class="layout-idx">Konzept 08 // Kernwert: Moderner Arbeitsfluss &amp; Kanban</div>
         <h2 class="layout-name">Nordic Minimalist SaaS (Linear Glass)</h2>
-        <p class="layout-narrative">
-          Inspiriert von Linear &amp; Cron: Feinstes Milchglas, 1px-Lichtkanten, samtweiche Pastelltöne und Kanban-Karten.
-        </p>
+        <p class="layout-narrative">Frosted Glassmorphism, 1px-Lichtkanten und agile Statuskarten.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Frosted Glassmorphism, 1px Gradient Border<br>
-        <strong>Typografie:</strong> DM Sans
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Frosted Glassmorphism<br><strong>Typo:</strong> DM Sans</div>
     </div>
     <div class="canvas-frame">
       <div class="s8-canvas">
         <div class="s8-kanban-row">
-          <div class="s8-glass-col">
-            <span style="font-size:0.75rem; font-weight:700; color:#8E8E93; text-transform:uppercase;">Backlog</span>
-            <div class="s8-glass-card"><strong style="font-size:0.9rem;">Drachenlauf '27</strong><span style="font-size:0.75rem; color:#8E8E93;">26k / 1.250 Hm</span></div>
-          </div>
-          <div class="s8-glass-col">
-            <span style="font-size:0.75rem; font-weight:700; color:#64D2FF; text-transform:uppercase;">Diese Woche (KW 47)</span>
-            <div class="s8-glass-card" style="border-color:rgba(100,210,255,0.3);"><strong style="font-size:0.9rem;">Sa 16k Key Longrun</strong><span style="font-size:0.75rem; color:#64D2FF;">Erkrath (+350 Hm)</span></div>
-          </div>
-          <div class="s8-glass-col">
-            <span style="font-size:0.75rem; font-weight:700; color:#FFD60A; text-transform:uppercase;">Heute</span>
-            <div class="s8-glass-card" style="border-color:rgba(255,214,10,0.4);"><strong style="font-size:0.9rem; color:#FFD60A;">Mo 16.11. CHILL</strong><span style="font-size:0.75rem; color:#D1D1D6;">Ruhetag &amp; Regeneration</span></div>
-          </div>
-          <div class="s8-glass-col">
-            <span style="font-size:0.75rem; font-weight:700; color:#30D158; text-transform:uppercase;">Verifiziert</span>
-            <div class="s8-glass-card" style="border-color:rgba(48,209,88,0.3);"><strong style="font-size:0.9rem;">✓ So 7,0k GA1</strong><span style="font-size:0.75rem; color:#30D158;">56 min @ 118 bpm</span></div>
-          </div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#8E8E93;">Backlog</span><div class="s8-glass-card"><strong>Drachenlauf '27</strong><span style="font-size:0.75rem; color:#8E8E93;">26k / 1.250 Hm</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#64D2FF;">KW 47 Geplant</span><div class="s8-glass-card"><strong>Sa 16k Key Longrun</strong><span style="font-size:0.75rem; color:#64D2FF;">Erkrath (+350 Hm)</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#FFD60A;">Heute</span><div class="s8-glass-card" style="border-color:#FFD60A;"><strong>Mo 16.11. CHILL</strong><span style="font-size:0.75rem; color:#D1D1D6;">Ruhetag &amp; Regeneration</span></div></div>
+          <div class="s8-glass-col"><span style="font-size:0.75rem; color:#30D158;">Verifiziert</span><div class="s8-glass-card" style="border-color:#30D158;"><strong>✓ So 7,0k GA1</strong><span style="font-size:0.75rem; color:#30D158;">56 min @ 118 bpm</span></div></div>
         </div>
       </div>
     </div>
@@ -985,20 +837,15 @@
   <section id="style-9" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx">Konzept 09 // Kernwert: Unverfälschte Rohdaten &amp; Hacker-Effizienz</div>
+        <div class="layout-idx">Konzept 09 // Kernwert: Unverfälschte Rohdaten</div>
         <h2 class="layout-name">Phosphor CRT Terminal / VT220 Retro Cyberdeck</h2>
-        <p class="layout-narrative">
-          Tiefes Monochrom-Grün (#33FF33) auf gewölbtem Röhren-Schwarz (#000000) mit dezenten horizontalen Scanlines.
-        </p>
+        <p class="layout-narrative">Monochrom-Grün (#33FF33) auf gewölbtem Röhren-Schwarz mit horizontalen Scanlines.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> CRT Röhren-Scanlines, Phosphor-Nachleuchten<br>
-        <strong>Typografie:</strong> VT323
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> CRT Scanlines, Phosphor-Glow<br><strong>Typo:</strong> VT323</div>
     </div>
     <div class="canvas-frame">
       <div class="s9-canvas s9-scanline">
-        <div>>>> ATHLETE TELEMETRY RUNNING GUIDE OS [VERSION 11.34]</div>
+        <div>>>> ATHLETE TELEMETRY RUNNING GUIDE OS [VERSION 11.35]</div>
         <div>  VT1_THRESHOLD : 105-118 BPM [STATUS: LOCKED_OK]</div>
         <div>  WEEK_PROGRESS : [********************-----] 12.0/15.0 KM (80%)</div>
         <div>  NEXT_RACE     : SIEBENGEBIRGS-HM IN 20 DAYS (21.4K / +360HM)</div>
@@ -1011,491 +858,297 @@
   <section id="style-10" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx">Konzept 10 // Kernwert: Desktop-Produktivität &amp; Räumliche Tiefe</div>
+        <div class="layout-idx">Konzept 10 // Kernwert: Desktop-Produktivität</div>
         <h2 class="layout-name">macOS Pro Studio Workstation (Tahoe Split-View)</h2>
-        <p class="layout-narrative">
-          Desktop-Erfahrung: Feste Steuerungs-Sidebar links (#17181E), Titan-Akzente und ein weiträumiger Detail-Inspektor.
-        </p>
+        <p class="layout-narrative">Steuerungs-Sidebar links (#17181E), Titan-Akzente und Detail-Inspektor.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Titan-Anthrazit, SF Symbols<br>
-        <strong>Typografie:</strong> SF Pro Text
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Titan-Anthrazit, SF Symbols<br><strong>Typo:</strong> SF Pro Text</div>
     </div>
     <div class="canvas-frame">
       <div class="s10-canvas">
-        <aside class="s10-sidebar">
-          <div class="s10-nav-btn active"><span>📅</span> KW 47 • Basis &amp; 16k</div>
-          <div class="s10-nav-btn"><span>⚡</span> KW 48 • Key 18k</div>
-          <div class="s10-nav-btn"><span>🏁</span> KW 49 • 7G-HM</div>
-        </aside>
-        <main class="s10-content">
-          <div style="font-size:1.4rem; font-weight:900;">KW 47 • Basis &amp; 16k Erkrath (+350 Hm)</div>
-          <p style="color:#8C8E99;">Soll-Umfang 34,0 km. Samstag Key Longrun im Morper Bachtal. Freitag reines Rumpfstabi ohne Beinkraft.</p>
-        </main>
+        <aside class="s10-sidebar"><div class="s10-nav-btn active"><span>📅</span> KW 47 • Basis &amp; 16k</div><div class="s10-nav-btn"><span>⚡</span> KW 48 • Key 18k</div><div class="s10-nav-btn"><span>🏁</span> KW 49 • 7G-HM</div></aside>
+        <main class="s10-content"><div style="font-size:1.4rem; font-weight:900;">KW 47 • Basis &amp; 16k Erkrath (+350 Hm)</div><p style="color:#8C8E99;">Soll-Umfang 34,0 km. Samstag Key Longrun im Morper Bachtal. Freitag reines Rumpfstabi ohne Beinkraft.</p></main>
       </div>
     </div>
   </section>
 
-  <!-- TIER 2 DIVIDER BANNER -->
-  <div class="tier-divider-banner">
-    <div>
-      <h2>10 Weitere Radikal Neue Gestaltungs-Stile &amp; Architekturen (#11 – #20)</h2>
-      <p style="color:#A1A1A6; font-size:0.9rem; margin-top:0.25rem;">
-        Vollkommen unbespielte Domänen: Biochemisches Labor, U-Bahn-Liniennetz, Architektur-Bauplan, Mischpult-Konsole, Tarot-Archetypen, Wetter-Radar, Sportzeitung, Kampfjet-HUD, Zen-Bento und Cyber-RPG.
-      </p>
-    </div>
-    <span>All-New Concepts 11–20</span>
-  </div>
-
-  <!-- =========================================================================
-       11. BIO-CHEMICAL LABORATORY
-       ========================================================================= -->
+  <!-- 11. BIO-CHEMICAL LAB -->
   <section id="style-11" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 11 // Kernwert: Stoffwechsel-Chemie &amp; Osmolarität</div>
+        <div class="layout-idx">Konzept 11 // Kernwert: Stoffwechsel-Chemie &amp; Osmolarität</div>
         <h2 class="layout-name">Bio-Chemical Laboratory &amp; Osmolarity Engine</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Biochemische Substrat-Verbrennung &amp; Hydratation.</strong> Alles ist organisiert nach Glykogen-Erhalt, Fettstoffwechsel-Oxidation bei VT1 (105–118 bpm = ~80% Fettoxidation) und exakter Maltodextrin-Grammatur pro Stunde (40–60g/h). Gels sind molekular gebannt.
-        </p>
+        <p class="layout-narrative">Fettoxidation bei VT1 (82% bei 115 bpm), Glykogen-Erhalt und Maltodextrin-Grammatur pro Stunde.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Reines Labor-Weiß (#F0F4F8), Enzym-Bernstein (#FF9F0A), Kobalt-Blau<br>
-        <strong>Typografie:</strong> DM Mono &amp; Space Mono
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Labor-Weiß (#F0F4F8), Enzym-Amber<br><strong>Typo:</strong> DM Mono</div>
     </div>
     <div class="canvas-frame">
       <div class="s11-canvas">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #CBD5E1; padding-bottom:0.75rem;">
-          <span style="font-weight:700; color:#0F172A;">METABOLIC LAB REPORT // SUBSTRATE FLUX RUN_47</span>
-          <span style="font-size:0.75rem; color:#64748B;">CALIBRATION: VT1 105–118 BPM</span>
-        </div>
         <div class="s11-lab-grid">
-          <div class="s11-beaker">
-            <span class="s11-badge" style="background:#DCFCE7; color:#166534;">LIPID OXIDATION [82%]</span>
-            <div style="font-size:1.8rem; font-weight:800; color:#0F172A;">0.78 <span style="font-size:0.9rem; color:#64748B;">g/min</span></div>
-            <div style="font-size:0.75rem; color:#64748B;">Fettverbrennung bei 115 bpm. Schont endogene Glykogendepots für Anstiege.</div>
-            <div class="s11-beaker-fill"><div class="s11-fill-inner" style="width:82%; background:#22C55E;"></div></div>
-          </div>
-          <div class="s11-beaker">
-            <span class="s11-badge" style="background:#FEF3C7; color:#92400E;">MALTO FUELING SETUP</span>
-            <div style="font-size:1.8rem; font-weight:800; color:#0F172A;">2x 500 <span style="font-size:0.9rem; color:#64748B;">ml Flasks</span></div>
-            <div style="font-size:0.75rem; color:#64748B;">Isotone Maltodextrin-Lösung + Marzipan/Feigen. Gels molekular eliminiert.</div>
-            <div class="s11-beaker-fill"><div class="s11-fill-inner" style="width:65%; background:#F59E0B;"></div></div>
-          </div>
-          <div class="s11-beaker">
-            <span class="s11-badge" style="background:#E0F2FE; color:#075985;">ELECTROLYTE HOMEOSTASIS</span>
-            <div style="font-size:1.8rem; font-weight:800; color:#0F172A;">450 <span style="font-size:0.9rem; color:#64748B;">mg Na+/h</span></div>
-            <div style="font-size:0.75rem; color:#64748B;">Verhindert Krämpfe an Steilhängen in Erkrath &amp; Belgenbach.</div>
-            <div class="s11-beaker-fill"><div class="s11-fill-inner" style="width:100%; background:#0284C7;"></div></div>
-          </div>
+          <div class="s11-beaker"><span style="font-size:0.75rem; font-weight:800; color:#166534;">LIPID OXIDATION [82%]</span><div style="font-size:1.8rem; font-weight:800;">0.78 g/min</div><p style="font-size:0.75rem; color:#64748B;">Schont Glykogendepots bei 115 bpm Sprechgrenze.</p></div>
+          <div class="s11-beaker"><span style="font-size:0.75rem; font-weight:800; color:#92400E;">MALTO FUELING SETUP</span><div style="font-size:1.8rem; font-weight:800;">2x 500 ml</div><p style="font-size:0.75rem; color:#64748B;">Maltodextrin-Lösung + Feigen. Gels molekular verboten.</p></div>
+          <div class="s11-beaker"><span style="font-size:0.75rem; font-weight:800; color:#075985;">ELECTROLYTE BALANCE</span><div style="font-size:1.8rem; font-weight:800;">450 mg Na+/h</div><p style="font-size:0.75rem; color:#64748B;">Verhindert Krämpfe an Steilhängen in Erkrath.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       12. TRANSIT ROUTE MAP
-       ========================================================================= -->
+  <!-- 12. TRANSIT METRO -->
   <section id="style-12" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 12 // Kernwert: Etappen-Netzwerk &amp; Haltestellen</div>
+        <div class="layout-idx">Konzept 12 // Kernwert: Etappen-Netzwerk &amp; Haltestellen</div>
         <h2 class="layout-name">Mass Transit Metro Line (Beck-Style Subway Vector)</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Topologisches U-Bahn-Liniennetz.</strong> Die Saison als U-Bahn-Netzplan: Die <em>Winter-Linie</em> führt über Erkrath zum Umsteigebahnhof <em>7G-HM</em>, weiter zur <em>Eifel-Linie</em> (Belgenbach &amp; RET22) bis zum Zentralterminal <em>Drachenlauf</em>.
-        </p>
+        <p class="layout-narrative">Die Saison als U-Bahn-Netzplan mit Linien, Umsteigebahnhöfen und Endstationen.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Vektor-Linien (#18191F), Signal-Transitfarben<br>
-        <strong>Typografie:</strong> Inter (Bold Transport)
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Subway-Rails (#18191F)<br><strong>Typo:</strong> Inter Bold Transport</div>
     </div>
     <div class="canvas-frame">
       <div class="s12-canvas">
-        <div style="font-weight:900; font-size:1.1rem; letter-spacing:0.5px; color:#64D2FF; margin-bottom:0.5rem;">
-          NETZPLAN SAISON 2026/2027 // LINIE U1: WINTER-ZENTRAL
-        </div>
-        <div style="font-size:0.8rem; color:#8E8E93;">FAHRRICHTUNG: KÖNIGSWINTER DRACHENLAUF HBF</div>
-
         <div class="s12-map-line">
           <div class="s12-rail"></div>
           <div class="s12-stations">
-            <div class="s12-station">
-              <div class="s12-dot" style="box-shadow:0 0 0 3px #30D158;"></div>
-              <span style="font-size:0.75rem; font-weight:800;">KW 46 Geseke<br><small style="color:#8E8E93;">7k @ 118 bpm</small></span>
-            </div>
-            <div class="s12-station">
-              <div class="s12-dot" style="box-shadow:0 0 0 3px #64D2FF;"></div>
-              <span style="font-size:0.75rem; font-weight:800;">KW 47 Erkrath<br><small style="color:#64D2FF;">16k (+350 Hm)</small></span>
-            </div>
-            <div class="s12-station">
-              <div class="s12-dot" style="box-shadow:0 0 0 3px #FFD60A;"></div>
-              <span style="font-size:0.75rem; font-weight:800;">KW 48 Peak<br><small style="color:#FFD60A;">18k (+500 Hm)</small></span>
-            </div>
-            <div class="s12-station">
-              <div class="s12-dot race"></div>
-              <span style="font-size:0.8rem; font-weight:900; color:#FF9F0A;">06.12. 7G-HM<br><small style="color:#FFF;">Transfer Hbf</small></span>
-            </div>
-            <div class="s12-station">
-              <div class="s12-dot race" style="box-shadow:0 0 0 4px #FF453A;"></div>
-              <span style="font-size:0.8rem; font-weight:900; color:#FF453A;">24.10. Drachen<br><small style="color:#FFF;">Endstation</small></span>
-            </div>
+            <div class="s12-station"><div class="s12-dot"></div><span style="font-size:0.75rem; font-weight:800;">KW 46<br><small style="color:#8E8E93;">7k @ 118</small></span></div>
+            <div class="s12-station"><div class="s12-dot" style="box-shadow:0 0 0 3px #30D158;"></div><span style="font-size:0.75rem; font-weight:800;">KW 47<br><small style="color:#30D158;">16k Erkrath</small></span></div>
+            <div class="s12-station"><div class="s12-dot" style="box-shadow:0 0 0 3px #FFD60A;"></div><span style="font-size:0.75rem; font-weight:800;">KW 48 Peak<br><small style="color:#FFD60A;">18k (+500 Hm)</small></span></div>
+            <div class="s12-station"><div class="s12-dot" style="box-shadow:0 0 0 4px #FF9F0A;"></div><span style="font-size:0.8rem; font-weight:900; color:#FF9F0A;">06.12. 7G-HM<br><small style="color:#FFF;">Transfer</small></span></div>
+            <div class="s12-station"><div class="s12-dot" style="box-shadow:0 0 0 4px #FF453A;"></div><span style="font-size:0.8rem; font-weight:900; color:#FF453A;">24.10. Drachen<br><small style="color:#FFF;">Endstation</small></span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       13. VINTAGE BLUEPRINT DRAFT
-       ========================================================================= -->
+  <!-- 13. BLUEPRINT -->
   <section id="style-13" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 13 // Kernwert: Tragwerks-Konstruktion &amp; Lasten</div>
+        <div class="layout-idx">Konzept 13 // Kernwert: Tragwerks-Konstruktion &amp; Lasten</div>
         <h2 class="layout-name">Cyanotype Architectural Blueprint (Bauplan)</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Tragwerks-Engineering.</strong> Der Körper als Bauwerk: Fundament (422 km aerobe Basis), Tragpfeiler (Sehnensteifigkeit durch 8.179 Hm), Lastgrenzen (Pulsdeckel 132 bpm) und Sicherheitsbeiwerte (48h Erholung).
-        </p>
+        <p class="layout-narrative">Bauingenieur-Plan auf Preußisch-Blau mit Fundament, Stützpfeilern und Sicherheitsbeiwerten.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Preußisch-Blau (#002244), Konstruktions-Gitter<br>
-        <strong>Typografie:</strong> Courier Prime &amp; Share Tech Mono
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Preußisch-Blau (#002244)<br><strong>Typo:</strong> Courier Prime</div>
     </div>
     <div class="canvas-frame">
       <div class="s13-canvas">
-        <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.4); padding-bottom:0.5rem;">
-          <span style="font-weight:700;">BAUPLAN: TRAIL-FUNDAMENT 2027 // PLAN-NR. 2026-KW47</span>
-          <span>MASSTAB: 1:1 REALLAST</span>
-        </div>
         <table class="s13-spec-table">
-          <thead>
-            <tr>
-              <th>BAUTEIL / BEREICH</th>
-              <th>SOLL-SPEZIFIKATION</th>
-              <th>IST-PRÜFUNG</th>
-              <th>SICHERHEITSBEIWERT</th>
-            </tr>
-          </thead>
+          <thead><tr><th>BAUTEIL</th><th>SOLL-SPEZIFIKATION</th><th>IST-PRÜFUNG</th><th>BEIWERT</th></tr></thead>
           <tbody>
-            <tr>
-              <td><strong>Fundament (Aerob VT1)</strong></td>
-              <td>105 – 118 bpm (Sprechgrenze)</td>
-              <td>118 bpm (So 15.11.)</td>
-              <td>1.00 (Vollständige Reserve)</td>
-            </tr>
-            <tr>
-              <td><strong>Stützpfeiler (Hm-Dichte)</strong></td>
-              <td>+350 Hm (Sa 16k Erkrath)</td>
-              <td>Morper Bachtal Hänge</td>
-              <td>Exzentrische Bremslast OK</td>
-            </tr>
-            <tr>
-              <td><strong>Bewehrung (Rumpfstabi)</strong></td>
-              <td>Studio Fr 20.11. (reines Rumpf)</td>
-              <td>Keine Beingeräte</td>
-              <td>Verhindert Vorermüdung</td>
-            </tr>
+            <tr><td>Fundament (VT1)</td><td>105 – 118 bpm</td><td>118 bpm (So 15.11.)</td><td>1.00 (Reserve OK)</td></tr>
+            <tr><td>Stützpfeiler (Hm)</td><td>+350 Hm (Sa 16k)</td><td>Morper Bachtal Hänge</td><td>Exzentrisch OK</td></tr>
+            <tr><td>Bewehrung (Stabi)</td><td>Studio Fr (reines Rumpf)</td><td>Keine Beingeräte</td><td>Keine Vorermüdung</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       14. ANALOG AUDIO MIXING DESK
-       ========================================================================= -->
+  <!-- 14. AUDIO CONSOLE -->
   <section id="style-14" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 14 // Kernwert: Multitrack-Balance &amp; Frequenzen</div>
+        <div class="layout-idx">Konzept 14 // Kernwert: Multitrack-Balance &amp; Frequenzen</div>
         <h2 class="layout-name">Analog Audio Mixing Console &amp; VU Meters</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Audio-Mastering &amp; Spuren-Abmischung.</strong> Training als Neve/SSL Mischpult: Distanz, Höhenmeter, Regeneration und Pace als Fader. Der Master-Ausgang darf niemals ins Clipping (Übertraining / ZNS-Erschöpfung) geraten.
-        </p>
+        <p class="layout-narrative">Mischpult mit Fadern für Distanz, Höhenmeter, Pace und VU-Metern gegen ZNS-Clipping.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Gebürstetes Pultblech (#1C1D21), VU-LED-Ketten<br>
-        <strong>Typografie:</strong> Share Tech Mono &amp; DM Mono
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Pultblech (#1C1D21), VU-LEDs<br><strong>Typo:</strong> Share Tech Mono</div>
     </div>
     <div class="canvas-frame">
       <div class="s14-canvas">
-        <div style="display:flex; justify-content:space-between; font-size:0.85rem; border-bottom:1px solid #40424A; padding-bottom:0.5rem;">
-          <span>MASTER CONSOLE: GERRY NEVE-88R // CHANNEL BALANCE KW 47</span>
-          <span style="color:#30D158;">PEAK: -3.2 dB [NO CLIPPING]</span>
-        </div>
         <div class="s14-rack">
-          <div class="s14-strip">
-            <span style="font-size:0.75rem; font-weight:700;">CH 1: DISTANZ</span>
-            <div class="s14-vu-box">
-              <div class="s14-meter-bar" style="background:#30D158; width:80%;"></div>
-              <div class="s14-meter-bar" style="background:#30D158; width:80%;"></div>
-            </div>
-            <span style="font-size:1.4rem; font-weight:800; color:#FFF;">34.0 k</span>
-            <span style="font-size:0.7rem; color:#8E8E93;">Fader: +0 dB</span>
-          </div>
-          <div class="s14-strip">
-            <span style="font-size:0.75rem; font-weight:700;">CH 2: HÖHENMETER</span>
-            <div class="s14-vu-box">
-              <div class="s14-meter-bar" style="background:#FF9F0A; width:65%;"></div>
-              <div class="s14-meter-bar" style="background:#FF9F0A; width:65%;"></div>
-            </div>
-            <span style="font-size:1.4rem; font-weight:800; color:#FF9F0A;">+350 Hm</span>
-            <span style="font-size:0.7rem; color:#8E8E93;">Gain: Moderate</span>
-          </div>
-          <div class="s14-strip">
-            <span style="font-size:0.75rem; font-weight:700;">CH 3: INTENSITÄT</span>
-            <div class="s14-vu-box">
-              <div class="s14-meter-bar" style="background:#64D2FF; width:45%;"></div>
-              <div class="s14-meter-bar" style="background:#64D2FF; width:45%;"></div>
-            </div>
-            <span style="font-size:1.4rem; font-weight:800; color:#64D2FF;">118 bpm</span>
-            <span style="font-size:0.7rem; color:#8E8E93;">EQ: Low Cut VT1</span>
-          </div>
-          <div class="s14-strip">
-            <span style="font-size:0.75rem; font-weight:700;">CH 4: RECOVERY</span>
-            <div class="s14-vu-box">
-              <div class="s14-meter-bar" style="background:#30D158; width:100%;"></div>
-              <div class="s14-meter-bar" style="background:#30D158; width:100%;"></div>
-            </div>
-            <span style="font-size:1.4rem; font-weight:800; color:#30D158;">48h REST</span>
-            <span style="font-size:0.7rem; color:#8E8E93;">Mo/Di Enforced</span>
-          </div>
+          <div class="s14-strip"><span style="font-size:0.75rem;">CH 1: DISTANZ</span><span style="font-size:1.3rem; font-weight:800;">34.0 k</span><span style="font-size:0.7rem; color:#8E8E93;">Fader: +0 dB</span></div>
+          <div class="s14-strip"><span style="font-size:0.75rem;">CH 2: HÖHENMETER</span><span style="font-size:1.3rem; font-weight:800; color:#FF9F0A;">+350 Hm</span><span style="font-size:0.7rem; color:#8E8E93;">Gain: Moderate</span></div>
+          <div class="s14-strip"><span style="font-size:0.75rem;">CH 3: INTENSITÄT</span><span style="font-size:1.3rem; font-weight:800; color:#64D2FF;">118 bpm</span><span style="font-size:0.7rem; color:#8E8E93;">Low Cut VT1</span></div>
+          <div class="s14-strip"><span style="font-size:0.75rem;">CH 4: RECOVERY</span><span style="font-size:1.3rem; font-weight:800; color:#30D158;">48h REST</span><span style="font-size:0.7rem; color:#8E8E93;">Mo/Di Enforced</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       15. OCCULT GOLD-FOIL TAROT DECK
-       ========================================================================= -->
+  <!-- 15. TAROT -->
   <section id="style-15" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 15 // Kernwert: Symbolische Etappen &amp; Archetypen</div>
+        <div class="layout-idx">Konzept 15 // Kernwert: Symbolische Etappen &amp; Archetypen</div>
         <h2 class="layout-name">Mystical Gold-Foil Tarot &amp; Archetype Deck</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Archetypische Phasenkarten.</strong> Die Kampagne als Tarot-Arkana: Karte XIX <em>Der Bergdrache</em> (Drachenlauf), Karte VII <em>Das Bachtal</em> (Belgenbach 30k) und Karte II <em>Die Stille Einkehr</em> (Post-Race Ruhetage).
-        </p>
+        <p class="layout-narrative">Arkana-Phasenkarten mit Goldfolien-Prägung (#C49B55) auf samtigem Nacht-Schwarz.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Samtiges Nacht-Schwarz (#0B0A0F), Feinstes Gold (#C49B55)<br>
-        <strong>Typografie:</strong> Italiana &amp; Cinzel
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Samtschwarz &amp; Goldfolie<br><strong>Typo:</strong> Italiana &amp; Cinzel</div>
     </div>
     <div class="canvas-frame">
       <div class="s15-canvas">
         <div class="s15-deck">
-          <div class="s15-card">
-            <span class="s15-roman">XIX</span>
-            <div class="s15-card-title">DER BERGDRACHE</div>
-            <p style="font-size:0.95rem; font-style:italic; line-height:1.5;">
-              „Die sieben Kuppen prüfen den Geist. Wer ohne Stolz und ohne Stöcke klettert, bezwingt die 1.250 Höhenmeter.“
-            </p>
-            <div style="font-size:0.8rem; color:#C49B55; font-weight:700;">24. OKTOBER 2027 · A-RACE</div>
-          </div>
-          <div class="s15-card" style="border-color:#64D2FF; box-shadow:0 0 30px rgba(100,210,255,0.15);">
-            <span class="s15-roman" style="color:#64D2FF;">VII</span>
-            <div class="s15-card-title">DER TIEFE BACH</div>
-            <p style="font-size:0.95rem; font-style:italic; line-height:1.5;">
-              „Kaltes Wasser und schwere Erde fordern das Fleisch über 30 Kilometer. Die Geduld im tiefen Puls besiegt die Eile.“
-            </p>
-            <div style="font-size:0.8rem; color:#64D2FF; font-weight:700;">07. MÄRZ 2027 · 30,7 KM</div>
-          </div>
-          <div class="s15-card" style="border-color:#30D158; box-shadow:0 0 30px rgba(48,209,88,0.15);">
-            <span class="s15-roman" style="color:#30D158;">II</span>
-            <div class="s15-card-title">DIE STILLE EINKEHR</div>
-            <p style="font-size:0.95rem; font-style:italic; line-height:1.5;">
-              „Zwei volle Tage nach dem Wettkampf ruhen die Sehnen. Nur in der Bewegungslosigkeit erneuert sich die Kraft.“
-            </p>
-            <div style="font-size:0.8rem; color:#30D158; font-weight:700;">48H RECOVERY · MONTAG &amp; DIENSTAG</div>
-          </div>
+          <div class="s15-card"><span class="s15-roman">XIX</span><div class="s15-card-title">DER BERGDRACHE</div><p style="font-style:italic; font-size:0.9rem;">Die sieben Kuppen prüfen den Geist über 1.250 Hm.</p><span style="font-size:0.75rem; color:#C49B55;">24.10.2027 · A-RACE</span></div>
+          <div class="s15-card" style="border-color:#64D2FF;"><span class="s15-roman" style="color:#64D2FF;">VII</span><div class="s15-card-title">DER TIEFE BACH</div><p style="font-style:italic; font-size:0.9rem;">Kaltes Wasser fordert das Fleisch über 30 Kilometer.</p><span style="font-size:0.75rem; color:#64D2FF;">07.03.2027 · 30,7 KM</span></div>
+          <div class="s15-card" style="border-color:#30D158;"><span class="s15-roman" style="color:#30D158;">II</span><div class="s15-card-title">DIE STILLE EINKEHR</div><p style="font-style:italic; font-size:0.9rem;">Zwei volle Tage nach dem Wettkampf ruhen die Sehnen.</p><span style="font-size:0.75rem; color:#30D158;">48H RECOVERY</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       16. SYNOPTIC WEATHER RADAR
-       ========================================================================= -->
+  <!-- 16. WEATHER RADAR -->
   <section id="style-16" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 16 // Kernwert: Meteorologie &amp; Mikroklima</div>
+        <div class="layout-idx">Konzept 16 // Kernwert: Meteorologie &amp; Mikroklima</div>
         <h2 class="layout-name">Synoptic Weather Radar &amp; Microclimate Station</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Wetterbedingungen &amp; Umweltfaktoren.</strong> Trailrunning als meteorologische Gleichung: Monschau Eifel (2–9 °C, tiefer Morast), Imst TS16 (Alpine Höhenluft 1.800m), Düsseldorf Seeufer (Gegenwind 30 km/h) bestimmen die Taktik.
-        </p>
+        <p class="layout-narrative">Trailrunning als meteorologische Gleichung: Monschau Eifel (2–9 °C, tiefer Morast).</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Synoptisches Radar-Blau (#060E1A), Isobaren, Vektoren<br>
-        <strong>Typografie:</strong> Space Mono (Weather Telemetry)
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Radar-Blau (#060E1A)<br><strong>Typo:</strong> Space Mono</div>
     </div>
     <div class="canvas-frame">
       <div class="s16-canvas">
-        <div style="display:flex; justify-content:space-between; border-bottom:1px solid #1E3A5F; padding-bottom:0.75rem;">
-          <span>WX_METAR // REGIONAL ENVIRONMENTAL TELEMETRY</span>
-          <span style="color:#64D2FF;">RADAR: DOPPLER ACTIVE</span>
-        </div>
         <div class="s16-stations-grid">
-          <div class="s16-wx-box">
-            <span style="font-size:0.75rem; color:#64D2FF;">STATION: MONSCHAU-KONZEN (550m)</span>
-            <div style="font-size:1.6rem; font-weight:700; color:#FFF;">2–9 °C</div>
-            <div style="font-size:0.78rem;">BODEN: Tief &amp; morastig<br>AUSRÜSTUNG: Stollen 5mm + Windschutz</div>
-          </div>
-          <div class="s16-wx-box">
-            <span style="font-size:0.75rem; color:#30D158;">STATION: DÜSSELDORF / ERKRATH</span>
-            <div style="font-size:1.6rem; font-weight:700; color:#FFF;">9 °C / NASS</div>
-            <div style="font-size:0.78rem;">KW 47 KEY: Sa 16k Morper Bachtal<br>WIND: Mäßig aus SW · Grip OK</div>
-          </div>
-          <div class="s16-wx-box">
-            <span style="font-size:0.75rem; color:#FF9F0A;">STATION: TSCHIRGANT IMST (1.800m)</span>
-            <div style="font-size:1.6rem; font-weight:700; color:#FFF;">ALPIN WX</div>
-            <div style="font-size:0.78rem;">12.06.2027: Dünne Höhenluft<br>STRATEGIE: Hohe Hydratation im Camp FiNK</div>
-          </div>
+          <div class="s16-wx-box"><span style="font-size:0.75rem; color:#64D2FF;">MONSCHAU-KONZEN (550m)</span><div style="font-size:1.6rem; font-weight:700; color:#FFF;">2–9 °C</div><div style="font-size:0.78rem;">BODEN: Tief &amp; morastig · Stollen 5mm</div></div>
+          <div class="s16-wx-box"><span style="font-size:0.75rem; color:#30D158;">DÜSSELDORF / ERKRATH</span><div style="font-size:1.6rem; font-weight:700; color:#FFF;">9 °C / NASS</div><div style="font-size:0.78rem;">KW 47 KEY: Sa 16k Morper Bachtal</div></div>
+          <div class="s16-wx-box"><span style="font-size:0.75rem; color:#FF9F0A;">TSCHIRGANT IMST (1.800m)</span><div style="font-size:1.6rem; font-weight:700; color:#FFF;">ALPIN WX</div><div style="font-size:0.78rem;">12.06.2027: Dünne Höhenluft</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       17. SUNDAY SPORTS GAZETTE BROADSHEET
-       ========================================================================= -->
+  <!-- 17. SPORTS GAZETTE -->
   <section id="style-17" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 17 // Kernwert: Sportjournalismus &amp; Sonntagsblatt</div>
+        <div class="layout-idx">Konzept 17 // Kernwert: Sportjournalismus &amp; Sonntagsblatt</div>
         <h2 class="layout-name">Sunday Sports Gazette Broadsheet</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Klassischer Zeitungsdruck.</strong> Das Training im Stil von *L'Équipe* oder *NZZ*: Große Titelseite, dreispaltiger Bleisatz, investigativer Bericht über Belgenbach-Meldezahlen und Leitartikel zur aeroben Disziplin.
-        </p>
+        <p class="layout-narrative">Klassischer Zeitungsdruck: Große Titelseite, Bleisatz und investigativer Bericht.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Vintage Zeitungspapier (#F7F5F0), Bleisatz-Schwarz<br>
-        <strong>Typografie:</strong> Newsreader (Serif Body) &amp; Playfair Display
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Zeitungspapier (#F7F5F0)<br><strong>Typo:</strong> Playfair &amp; Newsreader</div>
     </div>
     <div class="canvas-frame">
       <div class="s17-canvas">
-        <div style="text-align:center; font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:0.5rem;">
-          DIE TRAILRUNNING ZEITUNG · JAHRGANG 2026 · NR. 46 · DÜSSELDORF &amp; EIFEL
-        </div>
-        <div class="s17-headline">
-          PUNKTLANDUNG AM UNTERBACHER SEE: 7 KM BEI EXAKT 118 SCHLÄGEN
-        </div>
+        <div class="s17-headline">PUNKTLANDUNG: 7 KM BEI EXAKT 118 SCHLÄGEN</div>
         <div class="s17-cols">
-          <div>
-            <p style="font-size:1.05rem; line-height:1.6; margin-bottom:1rem;">
-              <strong>ERKRATH, 16. November.</strong> Nach der Rückkehr aus Geseke bewies der Athlet am gestrigen Sonntag eisernen Gehorsam gegenüber der aeroben Sprechgrenze (VT1). Bei einer Pace von glatt 8:00 Minuten pro Kilometer verharrte die Herzfrequenz über die gesamte Distanz bei 118 Schlägen. <em>„Keinerlei Nachwehen des schnellen Zehn-Kilometer-Rennens“</em>, hieß es aus dem Trainingslager. Die Beine seien frei für den anstehenden 16-km-Lauf im Morper Bachtal.
-            </p>
-          </div>
-          <div style="border-left:1px solid #CCC; padding-left:1.5rem;">
-            <div style="font-family:'Playfair Display'; font-weight:900; font-size:1.1rem; margin-bottom:0.5rem;">
-              MELDEREKORD IN KONZEN
-            </div>
-            <p style="font-size:0.88rem; line-height:1.5;">
-              Bereits 123 von maximal 300 Startplätzen für den Belgenbach Strong-Trail de Luxe (30,7 km) sind vergeben. Experten raten zur raschen Buchung vor dem ersten Frost.
-            </p>
-          </div>
+          <div><p><strong>ERKRATH, 16. Nov.</strong> Am gestrigen Sonntag bewies der Athlet eisernen Gehorsam gegenüber der aeroben Sprechgrenze (VT1). Bei einer Pace von 8:00 min/km verharrte der Puls über 56 Minuten bei exakt 118 Schlägen.</p></div>
+          <div style="border-left:1px solid #CCC; padding-left:1.5rem;"><strong>MELDEREKORD IN KONZEN</strong><p style="font-size:0.85rem; margin-top:0.3rem;">Bereits 123 von maximal 300 Startplätzen für den Belgenbach Strong-Trail (30,7 km) sind vergeben.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       18. FIGHTER JET FLIGHT HUD
-       ========================================================================= -->
+  <!-- 18. FIGHTER JET HUD -->
   <section id="style-18" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 18 // Kernwert: Steigrate &amp; Ziel-Vektor-Erfassung</div>
+        <div class="layout-idx">Konzept 18 // Kernwert: Steigrate &amp; Ziel-Vektor-Erfassung</div>
         <h2 class="layout-name">Military Fighter Jet Flight HUD (Collimated Green)</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Flugleitsystem &amp; Steigrate.</strong> Trailrunning als Kampfjet-Flug: Steigrate in Höhenmetern pro Stunde (VVI m/h), Anstellwinkel an den Rampen, Treibstofffluss und Zielvektor auf den Belgenbach- und Drachenlauf-Lock.
-        </p>
+        <p class="layout-narrative">Steigrate in Höhenmetern pro Stunde (+650 m/h) und Ziel-Vektor-Lock auf die Wettkämpfe.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Cockpit-Kanzel (#030805), Kollimiertes Phosphor-Grün<br>
-        <strong>Typografie:</strong> VT323 &amp; OCR-Stil
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Cockpit-Glas (#030805), Phosphor<br><strong>Typo:</strong> VT323</div>
     </div>
     <div class="canvas-frame">
       <div class="s18-canvas">
-        <div style="display:flex; justify-content:space-between; margin-bottom:1.5rem;">
-          <span>ARMED // AIR-TO-TERRAIN TARGETING</span>
-          <span>ALT: 550M // HDG: 180° EIFEL</span>
-        </div>
         <div class="s18-hud-grid">
-          <div>
-            <div>CLIMB RATE:</div>
-            <div style="font-size:2.2rem; font-weight:700;">+650 m/h</div>
-            <div style="font-size:0.9rem; color:#175428;">POWER-HIKE STANDARD</div>
-          </div>
-          <div class="s18-reticle">
-            <div>
-              [ TARGET LOCKED ]<br>
-              <strong>BELGENBACH 30K</strong><br>
-              T-111 DAYS
-            </div>
-          </div>
-          <div style="text-align:right;">
-            <div>FUEL FLOW:</div>
-            <div style="font-size:2.2rem; font-weight:700;">500 ml/h</div>
-            <div style="font-size:0.9rem; color:#175428;">MALTO-SOLUTION OK</div>
-          </div>
+          <div><div>CLIMB RATE:</div><div style="font-size:2.2rem; font-weight:700;">+650 m/h</div><div style="font-size:0.9rem; color:#175428;">POWER-HIKE OK</div></div>
+          <div class="s18-reticle"><div>[ TARGET LOCKED ]<br><strong>BELGENBACH 30K</strong><br>T-111 DAYS</div></div>
+          <div style="text-align:right;"><div>FUEL FLOW:</div><div style="font-size:2.2rem; font-weight:700;">500 ml/h</div><div style="font-size:0.9rem; color:#175428;">MALTO FLASK OK</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================================================================
-       19. JAPANESE WABI-SABI BENTO
-       ========================================================================= -->
+  <!-- 19. WABI-SABI BENTO -->
   <section id="style-19" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 19 // Kernwert: Zen-Gleichgewicht von Anstrengung &amp; Ruhe</div>
+        <div class="layout-idx">Konzept 19 // Kernwert: Zen-Gleichgewicht von Anstrengung &amp; Ruhe</div>
         <h2 class="layout-name">Japanese Wabi-Sabi Bento &amp; Woodcut</h2>
-        <p class="layout-narrative">
-          <strong>Organisationsprinzip: Harmonische Bento-Kammern &amp; Yin/Yang.</strong> Die vollendete Balance aus Aufstieg (Yang) und absoluter Ruhe (Yin). Dunkles Hinoki-Holz (#161514), Zinnoberroter Hanko-Stempel und geometrische Besinnung.
-        </p>
+        <p class="layout-narrative">Die Zen-Balance aus Anstrengung (Yang) und Stille (Yin). Hinoki-Holz und Zinnober-Hanko.</p>
       </div>
-      <div class="style-spec-box">
-        <strong>Materialität:</strong> Hinoki-Holz, Sumi-e Tinte, Zinnoberrotes Siegel<br>
-        <strong>Typografie:</strong> Noto Serif JP
-      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Hinoki-Holz, Zinnober-Siegel<br><strong>Typo:</strong> Noto Serif JP</div>
     </div>
     <div class="canvas-frame">
       <div class="s19-canvas">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #33312E; padding-bottom:0.75rem;">
-          <span style="font-size:1.1rem; font-weight:700;">道 · TRAIL ZEN // DIE HARMONIE DES GEISTES</span>
-          <div class="s19-hanko">極</div>
-        </div>
         <div class="s19-bento-grid">
-          <div class="s19-bento-box">
-            <span style="font-size:0.75rem; color:#C43D32; font-weight:700;">YANG // DIE ANSTRENGUNG</span>
-            <div style="font-size:1.5rem; font-weight:700;">16 km Morper Bachtal</div>
-            <p style="font-size:0.85rem; color:#9E9B95; line-height:1.5;">
-              350 Höhenmeter im langsamen Schritt erklimmen. Die Füße finden den Pfad im Schweigen.
-            </p>
+          <div class="s19-bento-box"><span style="font-size:0.75rem; color:#C43D32; font-weight:700;">YANG // DIE ANSTRENGUNG</span><div style="font-size:1.4rem; font-weight:700;">16 km Morper Bachtal</div><p style="font-size:0.85rem; color:#9E9B95;">350 Höhenmeter im langsamen Schritt erklimmen.</p></div>
+          <div class="s19-bento-box"><span style="font-size:0.75rem; color:#64D2FF; font-weight:700;">YIN // DIE STILLE</span><div style="font-size:1.4rem; font-weight:700;">Montag Ruhe</div><p style="font-size:0.85rem; color:#9E9B95;">Der Körper regeneriert im Nicht-Handeln.</p></div>
+          <div class="s19-bento-box"><span style="font-size:0.75rem; color:#FF9F0A; font-weight:700;">ZEN // PULS</span><div style="font-size:1.4rem; font-weight:700;">118 bpm</div><p style="font-size:0.85rem; color:#9E9B95;">Die vollkommene Mitte der Sprechgrenze.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20. CYBER-RPG QUEST -->
+  <section id="style-20" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx">Konzept 20 // Kernwert: Gamifizierte Kampagne &amp; Bosskämpfe</div>
+        <h2 class="layout-name">Cyber-RPG Quest Terminal &amp; Overworld Log</h2>
+        <p class="layout-narrative">Level 47 Trail Walker, Erfahrungspunkte (422,4 km EXP), Mana (Malto) und Drachen-Raidboss.</p>
+      </div>
+      <div class="style-spec-box"><strong>Material:</strong> Obsidian-Violett (#09080F)<br><strong>Typo:</strong> Space Grotesk</div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s20-canvas">
+        <div class="s20-quest-grid">
+          <div class="s20-hero-stats">
+            <span style="font-size:0.75rem; color:#B794F4; font-weight:800;">CHARAKTER-WERTE</span>
+            <div style="font-size:0.85rem;">STAMINA (VT1): <strong style="color:#30D158;">118 BPM [MAX]</strong></div>
+            <div style="font-size:0.85rem;">MANA (GLYKOGEN): <strong style="color:#64D2FF;">2x 500ML MALTO</strong></div>
+            <div style="font-size:0.85rem;">RECOVERY: <strong style="color:#FFD60A;">48H POST-RACE ACTIVE</strong></div>
           </div>
-          <div class="s19-bento-box">
-            <span style="font-size:0.75rem; color:#64D2FF; font-weight:700;">YIN // DIE STILLE</span>
-            <div style="font-size:1.5rem; font-weight:700;">Montag Ruhe</div>
-            <p style="font-size:0.85rem; color:#9E9B95; line-height:1.5;">
-              Kein Schritt. Der Körper baut sich im Nicht-Handeln neu auf.
-            </p>
+          <div class="s20-quest-card">
+            <span style="font-size:0.75rem; color:#FF9F0A; font-weight:900;">HAUPTQUEST (RAID BOSS)</span>
+            <div style="font-size:1.5rem; font-weight:900; color:#FFF;">DER 7-KÖPFIGE DRACHE (24.10.2027)</div>
+            <p style="font-size:0.85rem; color:#C4B5FD;">26,0 km Distanz · 1.250 Hm Aufstieg · 7 Gipfel.</p>
           </div>
-          <div class="s19-bento-box">
-            <span style="font-size:0.75rem; color:#FF9F0A; font-weight:700;">ZEN // PULS</span>
-            <div style="font-size:1.5rem; font-weight:700;">118 bpm</div>
-            <p style="font-size:0.85rem; color:#9E9B95; line-height:1.5;">
-              Weder zu schnell noch zu träge. Die vollkommene Mitte.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTREME TIER DIVIDER BANNER -->
+  <div class="tier-divider-banner" style="background:linear-gradient(90deg, #FF0055, #7928CA, transparent); border-left-color:#FF0055;">
+    <div>
+      <h2 style="font-size:1.5rem; letter-spacing:0.5px;">DIE 10 EXTREMEN AVANTGARDE-KONZEPTE (#21 – #30)</h2>
+      <p style="color:#FFE5EE; font-size:0.95rem; margin-top:0.25rem;">
+        Radikal, ungezähmt und kompromisslos im visuellen Ausdruck: Anti-Design Punk Fanzine, Salomon S/LAB Gorpcore, Russischer Konstruktivismus, Y2K Liquid Chrome, Apollo 11 Flugmanual, 8-Bit GameBoy, Gerichtsmedizinische Akte, Schweizer Riesenplakat, Outrun 1984 und David Carson Ray Gun Deconstruction.
+      </p>
+    </div>
+    <span style="color:#FFF; background:#000; padding:0.4rem 0.8rem; border-radius:6px; font-weight:900;">EXTREME TIER</span>
+  </div>
+
+  <!-- =========================================================================
+       21. ANTI-DESIGN PUNK FANZINE
+       ========================================================================= -->
+  <section id="style-21" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 21 // Kernwert: Rohe Anarchie &amp; DIY-Widerstand</div>
+        <h2 class="layout-name">Anti-Design Punk Fanzine &amp; Xerox Cutout</h2>
+        <p class="layout-narrative">
+          <strong>Radikaler Fanzine-Stil:</strong> Ausgerissene Zeitungsschnipsel, Tesafilm-Streifen, schräge Schnittwinkel (-3°), xerografische Kopierverzerrung und rotziger Marker-Stil. Gegen die Tyrannei steriler Fitness-Apps.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Grobes Zeitungspapier, Neon-Pink, Tesafilm<br>
+        <strong>Typografie:</strong> Permanent Marker &amp; Courier Prime
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s21-canvas">
+        <div class="s21-cutout-header">DRACHENLAUF IS NOT A JOKE!</div>
+        <div class="s21-zine-grid">
+          <div class="s21-tape-card">
+            <div class="s21-tape"></div>
+            <div style="font-size:1.8rem; font-weight:900; line-height:1; margin-bottom:0.75rem;">
+              STOP DRINKING INDUSTRIAL GEL SLUDGE!
+            </div>
+            <p style="font-size:0.95rem; line-height:1.5; font-family:'Courier Prime';">
+              Die SSOT des Athleten ist Gesetz: <strong>2x 500ml Softflasks mit Maltodextrin</strong>. Auf langen Trails (>15k) Marzipan und Feigen. Wer chemische Gels verordnet, fliegt aus der Crew.
+            </p>
+            <div style="background:#000; color:#FFF; padding:0.5rem; margin-top:1rem; font-size:1.1rem; text-align:center;">
+              NO POLES // REINE BEINKRAFT // 1.250 HM
+            </div>
+          </div>
+          <div class="s21-tape-card" style="transform:rotate(-2deg); background:#FFEB3B;">
+            <div class="s21-tape" style="left:60%; transform:rotate(4deg);"></div>
+            <div style="font-size:1.5rem; font-weight:900; margin-bottom:0.5rem;">VT1 OR DIE</div>
+            <div style="font-size:3.5rem; line-height:0.8; font-family:'Bebas Neue';">118 BPM</div>
+            <p style="font-family:'Courier Prime'; font-size:0.85rem; margin-top:0.5rem;">
+              So 15.11.: 7,0 km in 56 min. Punktlandung an der Sprechgrenze. Vollständige Erholung nach dem Martinslauf.
             </p>
           </div>
         </div>
@@ -1504,51 +1157,339 @@
   </section>
 
   <!-- =========================================================================
-       20. CYBER-RPG QUEST TERMINAL
+       22. SALOMON S/LAB ACRONYM GORPCORE
        ========================================================================= -->
-  <section id="style-20" class="layout-stage">
+  <section id="style-22" class="layout-stage">
     <div class="layout-briefing">
       <div>
-        <div class="layout-idx orange">Konzept 20 // Kernwert: Gamifizierte Kampagne &amp; Bosskämpfe</div>
-        <h2 class="layout-name">Cyber-RPG Quest Terminal &amp; Overworld Log</h2>
+        <div class="layout-idx extreme">Konzept 22 // Kernwert: Hyper-Utilitarismus &amp; Seam-Sealed Precision</div>
+        <h2 class="layout-name">Salomon S/LAB &amp; Acronym Gorpcore</h2>
         <p class="layout-narrative">
-          <strong>Organisationsprinzip: Quest-Logbuch &amp; Charakter-Progression.</strong> Training als monumentales Rollenspiel: Erfahrungspunkte (422 km XP), Mana-Vorrat (Maltodextrin), Zwischenbosse (Belgenbach 30k) und der ultimative Raid-Boss (Drachenlauf 26k / 1.250 Hm).
+          <strong>Extreme technische Bekleidungs-Architektur:</strong> Wasserdichte Nahtbänder, reflektierendes Laser-Giftgrün (#CCFF00), Koordinaten in Millirad, QR-Barcodes und industrielle Textil-Etikettierung.
         </p>
       </div>
       <div class="style-spec-box">
-        <strong>Materialität:</strong> Obsidian-Violett (#09080F), Goldene Quest-Rahmen, Mana-Neon<br>
-        <strong>Typografie:</strong> Space Grotesk &amp; Inter
+        <strong>Materialität:</strong> Storm-Matte Anthrazit (#0B0C0E), Laser-Neon (#CCFF00)<br>
+        <strong>Typografie:</strong> Inter (Heavy Tracking &amp; Glyph Codes)
       </div>
     </div>
     <div class="canvas-frame">
-      <div class="s20-canvas">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #3D2370; padding-bottom:0.75rem;">
-          <span style="font-weight:900; color:#B794F4; letter-spacing:1px;">QUEST LOG // HERO: GERRY [LEVEL 47 TRAIL WALKER]</span>
-          <span style="font-size:0.8rem; color:#FFD700;">TOTAL EXP: 422.4 KM LOGGED</span>
+      <div class="s22-canvas">
+        <div class="s22-tech-bar">
+          <span>SALOMON_SPEC // MODULAR_RUNNING_FRAMEWORK // VER: 11.35</span>
+          <span>SYSTEM_WATERPROOF_SEALED</span>
         </div>
-        <div class="s20-quest-grid">
-          <div class="s20-hero-stats">
-            <span style="font-size:0.75rem; color:#B794F4; font-weight:800; text-transform:uppercase;">Charakter-Attribute</span>
-            <div style="display:flex; justify-content:space-between; font-size:0.88rem;"><span>STAMINA (VT1 GA1):</span> <strong style="color:#30D158;">118 BPM [MAXED]</strong></div>
-            <div style="display:flex; justify-content:space-between; font-size:0.88rem;"><span>MANA (GLYKOGEN):</span> <strong style="color:#64D2FF;">2x 500ML MALTO</strong></div>
-            <div style="display:flex; justify-content:space-between; font-size:0.88rem;"><span>DEFENSE (RECOVERY):</span> <strong style="color:#FFD60A;">48H POST-RACE ACTIVE</strong></div>
-            <div style="display:flex; justify-content:space-between; font-size:0.88rem;"><span>GEAR LOADOUT:</span> <strong style="color:#FFF;">NO POLES / TRAIL SHOES</strong></div>
+        <div class="s22-gear-grid">
+          <div class="s22-module">
+            <div class="s22-seam-tape"></div>
+            <span style="font-size:0.7rem; color:#CCFF00; font-weight:900;">MEMBRANE LOAD SPEC</span>
+            <div style="font-size:2rem; font-weight:900; color:#FFF;">30.7 KM</div>
+            <div style="font-size:0.8rem; color:#8E929B;">BELGENBACH STRONG-TRAIL DE LUXE<br>ELEVATION: +941M VERTICAL<br>TIRE PROFILE: 5.0MM LUG DEPTH</div>
           </div>
-          <div class="s20-quest-card">
-            <span style="font-size:0.75rem; color:#FF9F0A; font-weight:900; text-transform:uppercase;">Aktive Hauptquest (Raid Boss)</span>
-            <div style="font-size:1.6rem; font-weight:900; color:#FFF;">DER 7-KÖPFIGE DRACHE (24.10.2027)</div>
-            <p style="font-size:0.85rem; color:#C4B5FD; line-height:1.4;">
-              Boss-Attribute: 26,0 km Distanz · 1.250 Hm Aufstieg · 7 Gipfel.<br>
-              Voraussetzung: Abschluss der Nebenquests Belgenbach (30,7k) und Tschirgant Sky (16,9k).
-            </p>
-            <div style="display:flex; justify-content:space-between; align-items:center; background:#1C1733; padding:0.6rem 1rem; border-radius:8px;">
-              <span style="font-size:0.8rem; color:#FFD700;">BELOHNUNG: FINISHER LEGACY</span>
-              <span style="font-size:0.75rem; color:#30D158; font-weight:800;">STATUS: UNLOCKED</span>
+          <div class="s22-module">
+            <div class="s22-seam-tape" style="background:#00F0FF;"></div>
+            <span style="font-size:0.7rem; color:#00F0FF; font-weight:900;">HYDRO_FLASK ENGINE</span>
+            <div style="font-size:2rem; font-weight:900; color:#FFF;">1000 ML</div>
+            <div style="font-size:0.8rem; color:#8E929B;">DUAL 500ML SOFTFLASK MALTO<br>OSMOLARITY: ISOTONIC<br>SOLID FUEL: DRIED FIGS / MARZIPAN</div>
+          </div>
+          <div class="s22-module">
+            <div class="s22-seam-tape" style="background:#FF0055;"></div>
+            <span style="font-size:0.7rem; color:#FF0055; font-weight:900;">RECOVERY ENFORCEMENT</span>
+            <div style="font-size:2rem; font-weight:900; color:#FFF;">48 H</div>
+            <div style="font-size:0.8rem; color:#8E929B;">RULE §7 STRICT ENFORCEMENT<br>MON/TUE CELLULAR REPAIR<br>NO JOGGING ALLOWED</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       23. RUSSIAN CONSTRUCTIVISM AGITPROP
+       ========================================================================= -->
+  <section id="style-23" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 23 // Kernwert: Monumentale Diagonale &amp; Willenskraft</div>
+        <h2 class="layout-name">Russian Constructivism Agitprop (Rodtschenko 1925)</h2>
+        <p class="layout-narrative">
+          <strong>Dynamischer Konstruktivismus:</strong> 45-Grad-Schrägen, monumentale rote Keile, schwarze Balken, gewaltige Blockbuchstaben (Bebas Neue) und ideologische Trainingsdisziplin.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Agitprop-Rot (#D90429), Tiefschwarz, Zement-Beige<br>
+        <strong>Typografie:</strong> Bebas Neue &amp; Russo One
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s23-canvas">
+        <div class="s23-wedge"></div>
+        <div class="s23-content">
+          <div class="s23-title">
+            VORWÄRTS ZUM <span>DRACHEN!</span><br>
+            1.250 HM DURCH DISZIPLIN!
+          </div>
+          <div class="s23-slogan-grid">
+            <div class="s23-box">
+              <div style="font-size:2.8rem; line-height:0.9;">118 BPM</div>
+              <p style="font-size:0.85rem; font-family:'Inter'; text-transform:uppercase; margin-top:0.5rem;">
+                KEIN SCHRITT ÜBER DIE AEROBE GRENZE! DAS FUNDAMENT IST UNERSCHÜTTERLICH.
+              </p>
+            </div>
+            <div class="s23-box" style="background:#D90429;">
+              <div style="font-size:2.8rem; line-height:0.9;">34 KM</div>
+              <p style="font-size:0.85rem; font-family:'Inter'; text-transform:uppercase; margin-top:0.5rem;">
+                KW 47: 16K ERKATH (+350 HM) ERFÜLLEN DIE WOCHENQUOTE!
+              </p>
+            </div>
+            <div class="s23-box">
+              <div style="font-size:2.8rem; line-height:0.9;">48 STD</div>
+              <p style="font-size:0.85rem; font-family:'Inter'; text-transform:uppercase; margin-top:0.5rem;">
+                EISERNE REGENERATION NACH JEDEM KAMPF! RUHE AM MONTAG UND DIENSTAG!
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- =========================================================================
+       24. Y2K ACID LIQUID CHROME
+       ========================================================================= -->
+  <section id="style-24" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 24 // Kernwert: Cyber-Rave &amp; Flüssiges Chrom</div>
+        <h2 class="layout-name">Y2K Acid Graphics &amp; Liquid Chrome 2000</h2>
+        <p class="layout-narrative">
+          <strong>Millennium Rave &amp; Acid Wireframe:</strong> Flüssige Chrom-Reflexionen, schillerndes Hologramm-Magenta (#FF00D4), spiegelnde Neon-Grids und Cyber-Stacheln.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Chrom-Glanzeffekte, Acid-Magenta, Neon-Cyan<br>
+        <strong>Typografie:</strong> Space Grotesk &amp; Liquid Chrome
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s24-canvas">
+        <div class="s24-chrome-text">HYPER-TRAIL 2027</div>
+        <div class="s24-grid">
+          <div class="s24-card">
+            <div style="font-size:1.8rem; font-weight:900; color:#00F0FF; margin-bottom:0.5rem;">★ ZERO GELS PROTOCOL ★</div>
+            <p style="font-size:0.95rem; color:#E0CFFF; line-height:1.5;">
+              Synthesisiere 500ml Maltodextrin in Softflasks. Reiner Bio-Treibstoff für 30,7 km Belgenbach Strong-Trail de Luxe.
+            </p>
+          </div>
+          <div class="s24-card" style="border-color:#00F0FF; box-shadow:0 0 20px rgba(0,240,255,0.2);">
+            <div style="font-size:1.8rem; font-weight:900; color:#FF00D4; margin-bottom:0.5rem;">★ 118 BPM TRANSCENDENCE ★</div>
+            <p style="font-size:0.95rem; color:#E0CFFF; line-height:1.5;">
+              Vollständige aerobe Resonanz bei exakt 118 bpm Sprechgrenze (So 15.11. Rückreise 7k).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       25. APOLLO 11 FLIGHT MANUAL
+       ========================================================================= -->
+  <section id="style-25" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 25 // Kernwert: Missionskritische Raumfahrt-Checkliste</div>
+        <h2 class="layout-name">NASA Apollo 11 Ring-Bound Flight Manual</h2>
+        <p class="layout-narrative">
+          <strong>Missionsprotokoll:</strong> Originale Ringbuch-Lochung links, rote "FLIGHT CRITICAL"-Stempel, vergilbtes NASA-Papier und Schreibmaschinen-Schriftsatz (Special Elite).
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Gealtertes Papier (#F4EFE6), Roter Stempellack<br>
+        <strong>Typografie:</strong> Special Elite &amp; Typewriter
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s25-canvas">
+        <div class="s25-binder-ring s25-ring-1"></div>
+        <div class="s25-binder-ring s25-ring-2"></div>
+        <div class="s25-binder-ring s25-ring-3"></div>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1.5rem;">
+          <div>
+            <div style="font-size:1.3rem; font-weight:900; letter-spacing:1px;">NASA MANNED TRAILRUNNING MISSION</div>
+            <div style="font-size:0.85rem; color:#666;">FLIGHT CHECKLIST // MISSION DR-2027 // STAGE: KW 47</div>
+          </div>
+          <div class="s25-stamp">FLIGHT CRITICAL</div>
+        </div>
+        <div style="font-size:1rem; line-height:1.7;">
+          [X] ITEM 01: 48H POST-FLIGHT RECOVERY COMPLETED (15.11. 7K AT 118 BPM VERIFIED)<br>
+          [X] ITEM 02: STOW DUAL 500ML MALTO FLASKS FOR KEY RUN 16K ERKRATH<br>
+          [X] ITEM 03: VERIFY REGISTRATION STATUS: BELGENBACH 30K (123/300 SLOTS OCCUPIED)<br>
+          [ ] ITEM 04: EXECUTE TUESDAY RECON RUN: 8.0 KM GA1 AT VT1 THRESHOLD (&lt; 118 BPM)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       26. 8-BIT GAMEBOY CLASSIC
+       ========================================================================= -->
+  <section id="style-26" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 26 // Kernwert: 1989 Nintendo Hardware Nostalgie</div>
+        <h2 class="layout-name">8-Bit GameBoy Classic Dot-Matrix LCD</h2>
+        <p class="layout-narrative">
+          <strong>Reine 4-Graustufen-Olive-Palette:</strong> Die authentischen Farben des Original GameBoys (#0F380F, #306230, #8BAC0F, #9BBC0F) mit grobem Pixel-Font (Press Start 2P) und RPG-Kampfmenü.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Dot-Matrix Olive LCD (#8BAC0F), Pixel-Gitter<br>
+        <strong>Typografie:</strong> Press Start 2P
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s26-canvas">
+        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+          <span>GERRY LVL 47</span>
+          <span>HP: 118/118 [VT1]</span>
+        </div>
+        <div style="border:4px solid #0F380F; padding:1rem; background:#9BBC0F;">
+          <div>A WILD BELGENBACH 30K APPEARS!</div>
+          <div style="margin-top:0.5rem;">ELEVATION: +941 HM · SLOTS: 123/300</div>
+        </div>
+        <div class="s26-dialog-box">
+          <div>> GERRY USES MALTO-FLASK!</div>
+          <div style="margin-top:0.5rem;">> IT'S SUPER EFFECTIVE! NO GELS NEEDED!</div>
+          <div style="margin-top:0.5rem;">> 7G-HM BOSS IN 20 DAYS!</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       27. FORENSIC AUTOPSY FILE
+       ========================================================================= -->
+  <section id="style-27" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 27 // Kernwert: Rechtsmedizinischer Belastungsbefund</div>
+        <h2 class="layout-name">Forensic Strain Autopsy &amp; Morgue Casefile</h2>
+        <p class="layout-narrative">
+          <strong>Streng geheimer Befundbericht:</strong> Manila-Aktendeckel (#D8C3A5), geschwärzte "REDACTED"-Sicherheitsstufen, Büroklammern und pathologische Belastungsanalysen.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Manila-Pappe (#D8C3A5), Büroklammer, Zensurbalken<br>
+        <strong>Typografie:</strong> Courier Prime &amp; Typewriter
+      </div>
+    </div>
+    <div class="canvas-frame" style="position:relative;">
+      <div class="s27-paperclip"></div>
+      <div class="s27-canvas">
+        <div style="border-bottom:2px solid #000; padding-bottom:0.75rem; margin-bottom:1.25rem; display:flex; justify-content:space-between;">
+          <span style="font-weight:700;">OFFICE OF THE CHIEF CORONER // ATHLETE CASEFILE #46-7</span>
+          <span style="color:#C92A2A; font-weight:700;">CLASSIFIED: STRICT BIO-SSOT</span>
+        </div>
+        <div style="font-size:0.95rem; line-height:1.7;">
+          <strong>SUBJECT:</strong> GERHARD // AGE: <span class="s27-redacted">CONFIDENTIAL</span> // STATUS: AEROBICALLY INTACT<br>
+          <strong>EXAMINATION OF SONDAY RUN (15.11.):</strong><br>
+          Tissue samples show zero myocardial inflammation. Heart rate steady at 118 bpm. Blood lactate: &lt; 1.5 mmol/L (pure VT1). The subject was observed adhering strictly to Rule §7: 48-hour mandatory recovery phase enacted. No running allowed on Monday or Tuesday.<br>
+          <strong>FINDINGS ON CONTINGENCY:</strong> Belgenbach trail registration exhibits 123 of 300 capacity filled. Immediate lock-in advised before <span class="s27-redacted">REDACTED REDACTED</span>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       28. MONUMENTAL SWISS ALPINE PLAKAT
+       ========================================================================= -->
+  <section id="style-28" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 28 // Kernwert: Monumentale Skalierung &amp; Straßenplakat</div>
+        <h2 class="layout-name">Swiss Alpine Monumental Bill-Poster (120pt)</h2>
+        <p class="layout-narrative">
+          <strong>Bauhaus &amp; Zürcher Plakatsäule:</strong> Signalgelb (#FFF000), 120pt riesige Zahlen, die über den Rand laufen, drastischer CMYK-Kontrast und plakative Kernaussagen.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Signal-Gelb (#FFF000), 12px Massivrahmen<br>
+        <strong>Typografie:</strong> Bebas Neue (Extrem kondensiert)
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s28-canvas">
+        <div style="font-size:1.5rem; letter-spacing:2px; margin-bottom:0.5rem;">06. DEZEMBER 2026 // KORRIDOR</div>
+        <div class="s28-mega-number">2:28 – 2:33 H</div>
+        <div style="font-size:2.2rem; line-height:1; letter-spacing:1px;">
+          SIEBENGEBIRGS-HALBMARATHON · 21,4 KM · +360 HM · WALDWEGE &amp; SCHOTTER
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       29. SYNTHWAVE 1984 RETROWAVE
+       ========================================================================= -->
+  <section id="style-29" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 29 // Kernwert: 80s Cyber-Sunset &amp; Vektor-Horizont</div>
+        <h2 class="layout-name">Synthwave 1984 / Outrun Retrowave</h2>
+        <p class="layout-narrative">
+          <strong>Retro-Futurismus der 80er:</strong> Neon-Magenta (#FF007F), Laser-Cyan (#00F0FF), chromglänzende Retro-Schrift (Righteous) und ein unendliches Vektorgitter auf dem Weg zum Drachenlauf.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Neon-Magenta Glühung, Vektor-Perspektive<br>
+        <strong>Typografie:</strong> Righteous
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s29-canvas">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:1.2rem; color:#FF007F;">OUTRUN THE DRAGON // 1984</span>
+          <span style="font-size:0.85rem; color:#00F0FF;">CRUISE CONTROL: 118 BPM</span>
+        </div>
+        <div style="font-size:3.2rem; line-height:1; margin:1rem 0; color:#FFF; text-shadow:0 0 20px #FF007F;">
+          CRUISING AT VT1 // 26.0 KM AHEAD
+        </div>
+        <div class="s29-horizon-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       30. DAVID CARSON RAY GUN DECONSTRUCTION
+       ========================================================================= -->
+  <section id="style-30" class="layout-stage">
+    <div class="layout-briefing">
+      <div>
+        <div class="layout-idx extreme">Konzept 30 // Kernwert: Dekonstruierte Typografie &amp; Grunge</div>
+        <h2 class="layout-name">David Carson Ray Gun Deconstruction (90s Grunge)</h2>
+        <p class="layout-narrative">
+          <strong>Legende der 90er Typography:</strong> Überlappende Schriftfragmente, rotierte Wortfetzen, gebrochene Layout-Hierarchien und rohe Energie. Die Kunst des Nicht-Erwartbaren.
+        </p>
+      </div>
+      <div class="style-spec-box">
+        <strong>Materialität:</strong> Zerrissene Texturen, Schichtungen, Dirty Contrast<br>
+        <strong>Typografie:</strong> Permanent Marker &amp; Bebas Neue
+      </div>
+    </div>
+    <div class="canvas-frame">
+      <div class="s30-canvas">
+        <div class="s30-layer-bg">DRACHENLAUF</div>
+        <div style="position:relative; z-index:2;">
+          <div style="font-size:2.8rem; line-height:0.9; color:#FF0055; transform:rotate(-1deg); margin-bottom:1rem;">
+            PULSE 118 // WHY WOULD YOU RUN FAST WHEN GA1 IS LIFE
+          </div>
+          <div><span class="s30-fragment">30.7 KM MONSCHAU DEEP MUD</span></div>
+          <div><span class="s30-fragment" style="background:#000; color:#FFF; border:2px solid #FFF; transform:rotate(2deg);">ZERO GELS // MALTO IS LAW</span></div>
+          <div><span class="s30-fragment" style="background:#FFEB3B; transform:rotate(-3deg);">7G-HM TARGET 2:28-2:33 H VALIDATED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
