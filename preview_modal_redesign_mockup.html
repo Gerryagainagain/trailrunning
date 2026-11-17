@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pure Zen Redesign: 5 Varianten (Editierbar + BPM)</title>
+  <title>Pure Zen 1A – Bereinigt (Nur KM & HM, Keine Pfeile)</title>
   <link rel="stylesheet" href="tokens.css">
   <style>
     :root {
@@ -28,9 +28,20 @@
       padding: 24px 16px 60px;
     }
 
+    /* BROWSER-PFEILE (SPINNER) STRIKT ENTFERNEN */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0 !important;
+    }
+    input[type=number] {
+      -moz-appearance: textfield !important;
+      appearance: textfield !important;
+    }
+
     .header {
       text-align: center;
-      max-width: 680px;
+      max-width: 640px;
       margin-bottom: 20px;
     }
     .header h1 {
@@ -42,7 +53,6 @@
     .header p {
       font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.45;
     }
 
     /* CONCEPT TABS */
@@ -56,7 +66,6 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 760px;
     }
     .tab-btn {
       background: transparent;
@@ -64,7 +73,7 @@
       color: var(--muted);
       font-size: 0.80rem;
       font-weight: 800;
-      padding: 8px 13px;
+      padding: 8px 14px;
       border-radius: 10px;
       cursor: pointer;
       font-family: inherit;
@@ -95,7 +104,7 @@
       margin: 0 auto 16px;
     }
 
-    /* BASE SHEET */
+    /* SHEET CARD */
     .sheet {
       background: var(--card-bg);
       border: 1px solid rgba(255, 255, 255, 0.10);
@@ -133,7 +142,117 @@
       cursor: pointer;
     }
 
-    /* SHARED LOG BUTTON */
+    /* THE CORE NUMBER GRID: ZERO SPINNERS, PURE TYPO */
+    .zen-main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px 4px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 14px;
+    }
+    .zen-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .zen-col:first-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding-right: 8px;
+    }
+    .zen-col:last-child {
+      padding-left: 8px;
+    }
+
+    /* DIRECT TOUCH INPUT: LOOKS LIKE PURE NUMBER, TOUCHABLE WITH NUMPAD */
+    .zen-input-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      width: 100%;
+    }
+    .zen-num-input {
+      background: transparent;
+      border: 0;
+      outline: 0;
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      text-align: center;
+      width: 110px;
+      font-feature-settings: "tnum";
+      font-family: inherit;
+      padding: 2px 0;
+      border-bottom: 2px dashed rgba(255, 255, 255, 0.18);
+      transition: all 0.2s ease;
+      cursor: text;
+    }
+    .zen-num-input:focus {
+      border-bottom-style: solid;
+      border-bottom-color: #FFF;
+      transform: scale(1.03);
+    }
+    .zen-unit-tag {
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    /* BPM ROW (SLIM & DISCREET) */
+    .zen-bpm-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 10px 14px;
+    }
+    .zen-bpm-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .zen-bpm-lbl {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .zen-bpm-sub {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .zen-bpm-input-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .zen-bpm-input {
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: var(--apple-green);
+      font-size: 1.5rem;
+      font-weight: 900;
+      width: 58px;
+      text-align: right;
+      font-feature-settings: "tnum";
+      font-family: inherit;
+      border-bottom: 1.5px dashed rgba(48, 209, 88, 0.3);
+    }
+    .zen-bpm-input:focus {
+      border-bottom-style: solid;
+    }
+
+    /* ACTION BUTTON */
     .btn-zen-log {
       width: 100%;
       height: 52px;
@@ -166,275 +285,31 @@
     }
     .swap-link:hover { opacity: 1; text-decoration: underline; }
 
-    /* =========================================================
-       1A: INLINE-TAPPABLE ZEN (DIREKT IN DIE ZAHL TIPPEN)
-       ========================================================= */
-    .c1a-grid {
-      display: flex;
-      justify-content: space-around;
-      align-items: baseline;
-      padding: 14px 0 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      margin-bottom: 14px;
-    }
-    .c1a-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .c1a-input-wrap {
-      display: flex;
-      align-items: baseline;
-    }
-    .c1a-num-input {
-      background: transparent;
-      border: 0;
-      border-bottom: 2px dashed rgba(255, 255, 255, 0.20);
-      outline: 0;
-      color: #FFF;
-      font-size: 3.2rem;
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -2px;
-      text-align: center;
-      width: 120px;
-      font-feature-settings: "tnum";
-      font-family: inherit;
-      transition: border-color 0.2s ease;
-    }
-    .c1a-num-input:focus {
-      border-bottom-color: var(--apple-cyan);
-      color: var(--apple-cyan);
-    }
-    .c1a-lbl {
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      margin-top: 6px;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* ELEGANT BPM LINE IN 1A */
-    .c1a-bpm-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 10px 14px;
-    }
-    .c1a-bpm-label {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .c1a-bpm-wrap {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-    }
-    .c1a-bpm-input {
-      background: transparent;
-      border: 0;
-      outline: 0;
-      color: var(--apple-green);
-      font-size: 1.4rem;
-      font-weight: 900;
-      width: 60px;
-      text-align: right;
-      font-feature-settings: "tnum";
-    }
-
-    /* =========================================================
-       1B: ZEN TRIAD (3 SÄULEN: KM · HM · BPM)
-       ========================================================= */
-    .c1b-triad {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      padding: 14px 0 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      margin-bottom: 14px;
-    }
-    .c1b-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .c1b-col:not(:last-child) {
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .c1b-input {
-      background: transparent;
-      border: 0;
-      outline: 0;
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 900;
-      width: 100%;
-      letter-spacing: -1px;
-      line-height: 1;
-      font-feature-settings: "tnum";
-      font-family: inherit;
-    }
-    .c1b-lbl {
-      font-size: 0.64rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-top: 6px;
-      color: var(--muted);
-    }
-    .c1b-steppers {
-      display: flex;
-      gap: 8px;
-      margin-top: 6px;
-    }
-    .c1b-btn {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      border: 0;
-      color: #FFF;
-      font-weight: 900;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
-    /* =========================================================
-       1C: ZEN HERO + MICRO-DRAWER (QUICK VS EDIT)
-       ========================================================= */
-    .c1c-hero {
-      text-align: center;
-      padding: 10px 0 18px;
-    }
-    .c1c-values {
-      font-size: 3.2rem;
-      font-weight: 900;
-      letter-spacing: -2px;
-      line-height: 1;
-      color: #FFF;
-    }
-    .c1c-sub {
-      font-size: 0.84rem;
-      font-weight: 800;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-    .c1c-bpm-box {
-      background: #171A26;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 14px;
-      padding: 10px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .c1c-adjust-toggle {
-      background: none;
-      border: 0;
-      color: var(--apple-cyan);
-      font-size: 0.76rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: block;
-      margin: 8px auto 0;
-    }
-    .c1c-edit-panel {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 10px;
-      background: rgba(0,0,0,0.3);
-      padding: 10px;
-      border-radius: 12px;
-    }
-
-    /* =========================================================
-       1D: ZEN MIT PULS-QUICK-CHIPS (1-TAP BPM SELECTION)
-       ========================================================= */
-    .c1d-chips-row {
+    /* INLINE STEPPER ROW (VARIANTE A2) */
+    .zen-stepper-btn-row {
       display: flex;
       gap: 6px;
-      justify-content: center;
-      margin-top: 10px;
+      margin-top: 6px;
     }
-    .c1d-chip {
+    .zen-step-btn {
+      width: 26px;
+      height: 24px;
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 20px;
-      padding: 6px 12px;
-      font-size: 0.80rem;
-      font-weight: 800;
+      border-radius: 6px;
       color: #FFF;
+      font-size: 0.85rem;
+      font-weight: 900;
       cursor: pointer;
-      transition: all 0.15s ease;
-    }
-    .c1d-chip.active {
-      background: var(--apple-green);
-      color: #000;
-      border-color: var(--apple-green);
-      box-shadow: 0 0 10px rgba(48, 209, 88, 0.4);
-    }
-
-    /* =========================================================
-       1E: ZEN COMBINED BOTTOM BAR
-       ========================================================= */
-    .c1e-combined-bar {
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #171A28;
-      border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      padding: 8px 10px;
-      margin-top: 14px;
+      justify-content: center;
     }
-    .c1e-bpm-cell {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding-left: 6px;
-    }
-    .c1e-bpm-lbl {
-      font-size: 0.60rem;
-      font-weight: 900;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-    .c1e-bpm-val {
-      background: transparent;
-      border: 0;
-      outline: 0;
-      color: var(--apple-green);
-      font-size: 1.35rem;
-      font-weight: 900;
-    }
-    .c1e-save-btn {
-      height: 44px;
-      padding: 0 20px;
-      background: var(--apple-green);
-      color: #000;
-      border: 0;
-      border-radius: 12px;
-      font-size: 0.92rem;
-      font-weight: 900;
-      cursor: pointer;
-      white-space: nowrap;
-    }
+    .zen-step-btn:active { background: rgba(255, 255, 255, 0.2); }
 
-    /* RATIONALE EXPLANATION */
+    /* EXPLANATION CARD */
     .expl-card {
-      max-width: 680px;
+      max-width: 640px;
       width: 100%;
       background: #11131C;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -454,232 +329,155 @@
 <body>
 
   <div class="header">
-    <h1>Pure Zen Redesign: 5 editierbare Varianten + BPM</h1>
-    <p>Die Schlichtheit von Konzept 1 („Pure Number Zen“), ergänzt um <b>direkte Editierbarkeit</b> und <b>Herzfrequenz (BPM)</b>.</p>
+    <h1>1A Pure Zen: Bereinigt &amp; Optimiert</h1>
+    <p>• <b>Keine Browser-Pfeile mehr:</b> Spinner per CSS komplett deaktiviert.<br>
+       • <b>Nur KM &amp; HM:</b> Keine langen Wörter wie „Kilometer“ – exakt die etablierten Einheiten.<br>
+       • <b>Direkter Touch:</b> Man tippt einfach auf die Zahl und gibt den Wert wie gewohnt ein.</p>
   </div>
 
-  <!-- NAVIGATION TABS -->
+  <!-- TABS -->
   <div class="nav">
-    <button class="tab-btn active" onclick="showTab('1a')">1A. Inline-Tappable Zen (Empfehlung)</button>
-    <button class="tab-btn" onclick="showTab('1b')">1B. Zen Triad (3 Säulen)</button>
-    <button class="tab-btn" onclick="showTab('1c')">1C. Zen Hero + Drawer</button>
-    <button class="tab-btn" onclick="showTab('1d')">1D. Puls Quick-Chips</button>
-    <button class="tab-btn" onclick="showTab('1e')">1E. Zen Split-Bar</button>
+    <button class="tab-btn active" onclick="showTab('a1')">1A. Pure Touch (Direkt tippen)</button>
+    <button class="tab-btn" onclick="showTab('a2')">1A-Step (Mit feinen + / – Tastern)</button>
+    <button class="tab-btn" onclick="showTab('a3')">1A-Inline (KM &amp; HM direkt an Ziffer)</button>
   </div>
 
-  <!-- IPHONE FRAME -->
   <div class="phone">
     <div class="notch"></div>
 
-    <!-- =======================================================
-         1A: INLINE-TAPPABLE ZEN (DIREKT IN DIE GROSSEN ZAHLEN TIPPEN)
-         ======================================================= -->
-    <div class="sheet active" id="sheet-1a">
+    <!-- ========================================================
+         VARIANTE A1: REINER DIREKTTIPP (KEINE PFEILE, NUR KM & HM)
+         ======================================================== -->
+    <div class="sheet active" id="sheet-a1">
       <div class="sheet-head">
         <span class="sheet-date-pill">Dienstag 17.11 · KW 47</span>
         <button class="sheet-close">✕</button>
       </div>
 
-      <!-- DIE BEIDEN RIESIGEN ZAHLEN SIND DIREKT TIPP- & EDITIERBAR -->
-      <div class="c1a-grid">
-        <div class="c1a-col">
-          <div class="c1a-input-wrap">
-            <input type="number" step="0.1" class="c1a-num-input" id="c1a-km" value="8.0" style="color:var(--apple-cyan);">
+      <!-- DIE 2 DOMINANTEN TRAIL-WERTE (KEINE BROWSER-PFEILE, NUR KM & HM) -->
+      <div class="zen-main-grid">
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="0.1" inputmode="decimal" class="zen-num-input" id="a1-km" value="8.0" style="color:var(--apple-cyan);">
           </div>
-          <div class="c1a-lbl" style="color:var(--apple-cyan);">Kilometer ✎</div>
+          <div class="zen-unit-tag" style="color:var(--apple-cyan);">KM</div>
         </div>
-        <div class="c1a-col">
-          <div class="c1a-input-wrap">
-            <input type="number" step="5" class="c1a-num-input" id="c1a-hm" value="80" style="color:var(--apple-orange);">
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="5" inputmode="numeric" class="zen-num-input" id="a1-hm" value="80" style="color:var(--apple-orange);">
           </div>
-          <div class="c1a-lbl" style="color:var(--apple-orange);">Höhenmeter ✎</div>
+          <div class="zen-unit-tag" style="color:var(--apple-orange);">HM</div>
         </div>
       </div>
 
-      <!-- DEZENTE BPM-ZEILE MIT LIVE VT1-KONTROLLE -->
-      <div class="c1a-bpm-row">
-        <div>
-          <div class="c1a-bpm-label">Ø Herzfrequenz</div>
-          <div style="font-size:0.72rem; color:var(--muted); font-weight:700;">Vorgabe: &lt; 118 bpm (VT1)</div>
+      <!-- PULS-ZEILE MIT LIVE-FARBE -->
+      <div class="zen-bpm-bar">
+        <div class="zen-bpm-info">
+          <span class="zen-bpm-lbl">Ø Puls</span>
+          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
         </div>
-        <div class="c1a-bpm-wrap">
-          <input type="number" class="c1a-bpm-input" id="c1a-bpm" value="114" oninput="checkBpm(this)">
+        <div class="zen-bpm-input-wrap">
+          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a1-bpm" value="114" oninput="checkBpm(this)">
           <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
         </div>
       </div>
 
-      <button type="button" class="btn-zen-log" onclick="alertLog('1a')">
+      <!-- LOG BUTTON -->
+      <button type="button" class="btn-zen-log" onclick="alertLogged('A1', 'a1-km', 'a1-hm', 'a1-bpm')">
         ✓ EINHEIT LOGGEN
       </button>
 
       <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
-    <!-- =======================================================
-         1B: ZEN TRIAD (3 SÄULEN: KM · HM · BPM)
-         ======================================================= -->
-    <div class="sheet" id="sheet-1b">
+    <!-- ========================================================
+         VARIANTE A2: MIT DEZENTEN + / - TASTERN ZUSÄTZLICH
+         ======================================================== -->
+    <div class="sheet" id="sheet-a2">
       <div class="sheet-head">
         <span class="sheet-date-pill">Dienstag 17.11 · KW 47</span>
         <button class="sheet-close">✕</button>
       </div>
 
-      <div class="c1b-triad">
-        <div class="c1b-col">
-          <input type="number" step="0.1" class="c1b-input" id="c1b-km" value="8.0" style="color:var(--apple-cyan);">
-          <div class="c1b-lbl">KM</div>
-          <div class="c1b-steppers">
-            <button class="c1b-btn" onclick="stepVal('c1b-km', -0.5, 1)">–</button>
-            <button class="c1b-btn" onclick="stepVal('c1b-km', +0.5, 1)">+</button>
+      <div class="zen-main-grid">
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="0.1" inputmode="decimal" class="zen-num-input" id="a2-km" value="8.0" style="color:var(--apple-cyan);">
+          </div>
+          <div class="zen-unit-tag" style="color:var(--apple-cyan);">KM</div>
+          <div class="zen-stepper-btn-row">
+            <button type="button" class="zen-step-btn" onclick="stepVal('a2-km', -0.5, 1)">–</button>
+            <button type="button" class="zen-step-btn" onclick="stepVal('a2-km', +0.5, 1)">+</button>
           </div>
         </div>
-        <div class="c1b-col">
-          <input type="number" step="5" class="c1b-input" id="c1b-hm" value="80" style="color:var(--apple-orange);">
-          <div class="c1b-lbl">HM</div>
-          <div class="c1b-steppers">
-            <button class="c1b-btn" onclick="stepVal('c1b-hm', -10, 0)">–</button>
-            <button class="c1b-btn" onclick="stepVal('c1b-hm', +10, 0)">+</button>
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="5" inputmode="numeric" class="zen-num-input" id="a2-hm" value="80" style="color:var(--apple-orange);">
           </div>
-        </div>
-        <div class="c1b-col">
-          <input type="number" step="1" class="c1b-input" id="c1b-bpm" value="114" style="color:var(--apple-green);">
-          <div class="c1b-lbl">Ø BPM</div>
-          <div class="c1b-steppers">
-            <button class="c1b-btn" onclick="stepVal('c1b-bpm', -2, 0)">–</button>
-            <button class="c1b-btn" onclick="stepVal('c1b-bpm', +2, 0)">+</button>
+          <div class="zen-unit-tag" style="color:var(--apple-orange);">HM</div>
+          <div class="zen-stepper-btn-row">
+            <button type="button" class="zen-step-btn" onclick="stepVal('a2-hm', -10, 0)">–</button>
+            <button type="button" class="zen-step-btn" onclick="stepVal('a2-hm', +10, 0)">+</button>
           </div>
         </div>
       </div>
 
-      <div style="text-align:center; font-size:0.80rem; font-weight:700; color:var(--muted); margin-bottom:10px;">
-        Hügel-GA1 · Sprechgrenze &lt; 118 bpm strikt
+      <div class="zen-bpm-bar">
+        <div class="zen-bpm-info">
+          <span class="zen-bpm-lbl">Ø Puls</span>
+          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
+        </div>
+        <div class="zen-bpm-input-wrap">
+          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a2-bpm" value="114" oninput="checkBpm(this)">
+          <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
+        </div>
       </div>
 
-      <button type="button" class="btn-zen-log" onclick="alertLog('1b')">
+      <button type="button" class="btn-zen-log" onclick="alertLogged('A2', 'a2-km', 'a2-hm', 'a2-bpm')">
         ✓ EINHEIT LOGGEN
       </button>
 
       <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
-    <!-- =======================================================
-         1C: ZEN HERO + MICRO-DRAWER
-         ======================================================= -->
-    <div class="sheet" id="sheet-1c">
+    <!-- ========================================================
+         VARIANTE A3: INLINE UNIT DIREKT AN DER ZIFFER
+         ======================================================== -->
+    <div class="sheet" id="sheet-a3">
       <div class="sheet-head">
         <span class="sheet-date-pill">Dienstag 17.11 · KW 47</span>
         <button class="sheet-close">✕</button>
       </div>
 
-      <div class="c1c-hero">
-        <div class="c1c-values">
-          <span style="color:var(--apple-cyan);">8.0</span> <small style="font-size:1.4rem;">km</small>
-          &nbsp;
-          <span style="color:var(--apple-orange);">+80</span> <small style="font-size:1.4rem;">hm</small>
+      <div class="zen-main-grid" style="align-items:center;">
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="0.1" inputmode="decimal" class="zen-num-input" id="a3-km" value="8.0" style="color:var(--apple-cyan); width:90px; text-align:right;">
+            <span style="font-size:1.1rem; font-weight:900; color:var(--apple-cyan); margin-left:4px;">KM</span>
+          </div>
         </div>
-        <div class="c1c-sub">Hügel-GA1 (Erkrath)</div>
-      </div>
-
-      <div class="c1c-bpm-box">
-        <span style="font-size:0.82rem; font-weight:800; color:var(--muted);">Ø HERZFREQUENZ:</span>
-        <div style="display:flex; align-items:baseline; gap:4px;">
-          <input type="number" value="114" style="background:transparent; border:0; outline:0; color:var(--apple-green); font-size:1.5rem; font-weight:900; width:65px; text-align:right;">
-          <span style="font-size:0.80rem; font-weight:800; color:var(--muted);">BPM</span>
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" step="5" inputmode="numeric" class="zen-num-input" id="a3-hm" value="80" style="color:var(--apple-orange); width:85px; text-align:right;">
+            <span style="font-size:1.1rem; font-weight:900; color:var(--apple-orange); margin-left:4px;">HM</span>
+          </div>
         </div>
       </div>
 
-      <button type="button" class="c1c-adjust-toggle" onclick="toggleDrawer('c1c-drawer')">
-        ✎ Distanz oder Höhenmeter anpassen
-      </button>
-
-      <div id="c1c-drawer" style="display:none;" class="c1c-edit-panel">
-        <div>
-          <div style="font-size:0.62rem; font-weight:800; color:var(--muted);">REALE KM</div>
-          <input type="number" step="0.1" value="8.0" style="background:transparent; border:0; color:#FFF; font-size:1.4rem; font-weight:900; width:100%;">
+      <div class="zen-bpm-bar">
+        <div class="zen-bpm-info">
+          <span class="zen-bpm-lbl">Ø Puls</span>
+          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
         </div>
-        <div>
-          <div style="font-size:0.62rem; font-weight:800; color:var(--muted);">REALE HM</div>
-          <input type="number" value="80" style="background:transparent; border:0; color:var(--apple-orange); font-size:1.4rem; font-weight:900; width:100%;">
+        <div class="zen-bpm-input-wrap">
+          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a3-bpm" value="114" oninput="checkBpm(this)">
+          <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
         </div>
       </div>
 
-      <button type="button" class="btn-zen-log" onclick="alertLog('1c')">
-        ✓ JETZT LOGGEN
-      </button>
-
-      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
-    </div>
-
-    <!-- =======================================================
-         1D: ZEN MIT PULS-QUICK-CHIPS (1-TAP BPM SELECTION)
-         ======================================================= -->
-    <div class="sheet" id="sheet-1d">
-      <div class="sheet-head">
-        <span class="sheet-date-pill">Dienstag 17.11 · KW 47</span>
-        <button class="sheet-close">✕</button>
-      </div>
-
-      <div class="c1a-grid" style="padding-bottom:12px; margin-bottom:12px;">
-        <div class="c1a-col">
-          <input type="number" step="0.1" class="c1a-num-input" value="8.0" style="color:var(--apple-cyan);">
-          <div class="c1a-lbl" style="color:var(--apple-cyan);">Kilometer ✎</div>
-        </div>
-        <div class="c1a-col">
-          <input type="number" step="5" class="c1a-num-input" value="80" style="color:var(--apple-orange);">
-          <div class="c1a-lbl" style="color:var(--apple-orange);">Höhenmeter ✎</div>
-        </div>
-      </div>
-
-      <div style="text-align:center; font-size:0.72rem; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em;">
-        Ø Puls schnell wählen:
-      </div>
-
-      <!-- QUICK CHIPS: 1-TAP PULS SELECTION -->
-      <div class="c1d-chips-row">
-        <button type="button" class="c1d-chip" onclick="selectChip(this)">108</button>
-        <button type="button" class="c1d-chip" onclick="selectChip(this)">112</button>
-        <button type="button" class="c1d-chip active" onclick="selectChip(this)">115</button>
-        <button type="button" class="c1d-chip" onclick="selectChip(this)">118</button>
-        <button type="button" class="c1d-chip" onclick="selectChip(this)">124</button>
-      </div>
-
-      <button type="button" class="btn-zen-log" onclick="alertLog('1d')">
+      <button type="button" class="btn-zen-log" onclick="alertLogged('A3', 'a3-km', 'a3-hm', 'a3-bpm')">
         ✓ EINHEIT LOGGEN
       </button>
-
-      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
-    </div>
-
-    <!-- =======================================================
-         1E: ZEN COMBINED BOTTOM BAR
-         ======================================================= -->
-    <div class="sheet" id="sheet-1e">
-      <div class="sheet-head">
-        <span class="sheet-date-pill">Dienstag 17.11 · KW 47</span>
-        <button class="sheet-close">✕</button>
-      </div>
-
-      <div class="c1a-grid" style="border-bottom:0; padding-bottom:0; margin-bottom:4px;">
-        <div class="c1a-col">
-          <input type="number" step="0.1" class="c1a-num-input" value="8.0" style="color:var(--apple-cyan);">
-          <div class="c1a-lbl" style="color:var(--apple-cyan);">Kilometer ✎</div>
-        </div>
-        <div class="c1a-col">
-          <input type="number" step="5" class="c1a-num-input" value="80" style="color:var(--apple-orange);">
-          <div class="c1a-lbl" style="color:var(--apple-orange);">Höhenmeter ✎</div>
-        </div>
-      </div>
-
-      <!-- INTEGRIERTE BOTTOM-BAR: PULS + LOGGEN IN EINEM FLUSS -->
-      <div class="c1e-combined-bar">
-        <div class="c1e-bpm-cell">
-          <span class="c1e-bpm-lbl">Ø Puls (bpm)</span>
-          <input type="number" class="c1e-bpm-val" value="114">
-        </div>
-        <button type="button" class="c1e-save-btn" onclick="alertLog('1e')">
-          ✓ Loggen
-        </button>
-      </div>
 
       <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
@@ -691,28 +489,19 @@
 
   <script>
     const expls = {
-      '1a': `
-        <h3>1A. Inline-Tappable Zen (Empfehlung)</h3>
-        <p>• <b>Direkt auf die Zahl tippen:</b> Die großen Ziffern (<b>8.0</b> und <b>80</b>) sind selbst die Eingabefelder. Wer nichts ändert, drückt direkt auf den grünen Button. Wer 8.4 km gelaufen ist, tippt einfach kurz auf die 8.0 und tippt 8.4 ein.</p>
-        <p>• <b>BPM-Integration:</b> Die Herzfrequenz steht in einer einzigen, ruhigen Zeile darunter – sofort sichtbar, ohne Sub-Menüs.</p>
+      'a1': `
+        <h3>Variante A1: Pure Touch (Direkt tippen · Empfehlung)</h3>
+        <p>• <b>Spinner-Pfeile komplett entfernt:</b> Kein störender Browser-Pfeil mehr im Textfeld.</p>
+        <p>• <b>Nur KM & HM:</b> Statt langer Wörter nur die echten Einheiten.</p>
+        <p>• <b>Einfachste Bedienung:</b> Wer 8,0 km gelaufen ist, drückt direkt auf den grünen Button. Wer 7,9 km gelaufen ist, tippt einfach kurz auf die Zahl und ändert sie ab.</p>
       `,
-      '1b': `
-        <h3>1B. Zen Triad (3 Säulen: KM · HM · BPM)</h3>
-        <p>• <b>Alle 3 Trainingswährungen nebeneinander:</b> <b>KM</b>, <b>HM</b> und <b>Ø BPM</b> als drei cleane Ziffernspalten.</p>
-        <p>• <b>Mit Schnell-Tasten:</b> Jede Spalte hat dezent <code>+</code> und <code>–</code>, um Werte ohne Tastatur blitzschnell mit dem Daumen anzupassen.</p>
+      'a2': `
+        <h3>Variante A2: Mit dezenten + / – Tastern</h3>
+        <p>• Zusätzlich sitzen unter KM und HM kleine Taster (<code>+</code> / <code>–</code>), um die Werte bei Bedarf mit dem Daumen anzupassen, ohne die Tastatur öffnen zu müssen.</p>
       `,
-      '1c': `
-        <h3>1C. Zen Hero + Drawer</h3>
-        <p>• <b>Reiner Lesemodus als Standard:</b> Im Ruhezustand sind KM und HM reiner Text (keine Inputs sichtbar). BPM wird in einem kompakten Feld abgefragt.</p>
-        <p>• <b>Aufklappen bei Abweichung:</b> Nur wer KM/HM abweichend lief, tippt auf <i>Anpassen</i>.</p>
-      `,
-      '1d': `
-        <h3>1D. Puls Quick-Chips</h3>
-        <p>• <b>1-Tap Puls-Wahl:</b> Unter den editierbaren Großzahlen sitzen kleine Chips (<code>108</code>, <code>112</code>, <code>115</code>, <code>118</code>, <code>124</code>). 1 Tap wählt den Puls, ohne Ziffern tippen zu müssen.</p>
-      `,
-      '1e': `
-        <h3>1E. Zen Split-Bar</h3>
-        <p>• <b>Unten kompakt gebündelt:</b> Oben nur die beiden monumentalen Zahlen. Unten verschmelzen das Puls-Feld und der Log-Button zu einer einzigen ergonomischen Bedieneinheit.</p>
+      'a3': `
+        <h3>Variante A3: Inline Unit direkt an der Ziffer</h3>
+        <p>• Die Einheiten <b>KM</b> und <b>HM</b> stehen direkt rechts neben der Eingabeziffer in einer typographischen Zeile.</p>
       `
     };
 
@@ -743,22 +532,15 @@
       }
     }
 
-    function selectChip(btn) {
-      document.querySelectorAll('.c1d-chip').forEach(c => c.classList.remove('active'));
-      btn.classList.add('active');
-    }
-
-    function toggleDrawer(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'none' ? 'grid' : 'none';
-    }
-
-    function alertLog(variant) {
-      alert(`✓ Einheit erfolgreich geloggt mit Variante ${variant.toUpperCase()}!`);
+    function alertLogged(ver, kmId, hmId, bpmId) {
+      const km = document.getElementById(kmId).value;
+      const hm = document.getElementById(hmId).value;
+      const bpm = document.getElementById(bpmId).value;
+      alert(`✓ Geloggt (${ver}): ${km} KM · +${hm} HM · Ø ${bpm} BPM`);
     }
 
     // Init
-    document.getElementById('expl-box').innerHTML = rationales = expls['1a'];
+    document.getElementById('expl-box').innerHTML = expls['a1'];
   </script>
 </body>
 </html>
