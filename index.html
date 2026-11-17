@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.50">
-  <link rel="stylesheet" href="styles.css?v=11.50">
+  <link rel="stylesheet" href="tokens.css?v=11.51">
+  <link rel="stylesheet" href="styles.css?v=11.51">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -333,12 +333,14 @@
 
     .days-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(7, minmax(0, 1fr));
       gap: 12px;
     }
 
     /* COACH APPLE DAY CARD SPECIFICATION */
     .apple-day-card {
+      min-width: 0;
+      width: 100%;
       background: #141622;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
@@ -353,7 +355,6 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       position: relative;
-      overflow: visible !important;
     }
 
     .apple-day-card:hover {
@@ -364,8 +365,8 @@
 
     /* RUHETAG: LEICHT & LUFTIG STATT SCHWERER FLÄCHE */
     .apple-day-card.card-rest {
-      background: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(20, 22, 34, 0.40);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       box-shadow: none;
     }
 

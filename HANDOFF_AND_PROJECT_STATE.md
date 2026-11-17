@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.50 (Re-Tausch: Longrun KW 47 wieder von Sonntag auf Samstag 21.11. verlegt · v11.50)  
+**Document Version:** 11.51 (Apple HIG Equal-Width Fix: Strikte 1/7-Gleichverteilung aller Tageskarten · v11.51)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.50)
+## 📌 1. Project Overview & Release Freeze State (v11.51)
+
+- **Apple HIG Equal-Width Grid Fix (Strikte 1/7-Gleichverteilung · v11.51):**
+  - **Problem-Analyse:**
+    - Die Tageskarten im Hauptkalender wurden mit `grid-template-columns: repeat(7, 1fr)` gerendert. Im CSS-Grid-Standard expandiert `1fr` implizit zu `minmax(auto, 1fr)`.
+    - Tage mit längeren Textinhalten (z. B. `DIE` mit `Ø 118 bpm · 45:48 min · 80 Hm` oder `SON` mit Longrun-Details) forderten eine größere `auto`-Mindestbreite an, während Ruhetage (`MON`, `MIT`, `SAM` mit kurzem `CHILL`) gestaucht wurden.
+    - Zudem waren Ruhetage mit `background: rgba(255,255,255,0.015)` und `border: rgba(255,255,255,0.04)` visuell fast unsichtbar und wirkten optisch wie „Löcher“ im Raster.
+  - **Apple HIG Konformität & Lösung:**
+    - Laut Apple HIG verlangt ein linearer Wochenkalender eine strikte **Equal-Width-Homogenität**: Jeder der 7 Wochentage hat denselben kalendarischen Wert und muss exakt 1/7 der Rasterbühne einnehmen.
+    - **CSS-Architektur:** `.days-grid` nutzt nun `grid-template-columns: repeat(7, minmax(0, 1fr))` in Kombination mit `min-width: 0; width: 100%;` auf `.apple-day-card`. Dadurch wird die intrinsische Content-Breite entkoppelt und jeder Tag mathematisch pixelgenau auf die exakt gleiche Breite fixiert.
+    - **Visuelle Kontur für Ruhetage:** `.card-rest` erhält eine saubere, dezent gedämpfte Apple-Dark-Surface (`background: rgba(20, 22, 34, 0.40)` und `border: 1px solid rgba(255, 255, 255, 0.06)`). Ruhetage bleiben klar als passive Tage erkennbar, halten aber die architektonische Rhythmik der 7-Tage-Bühne stabil aufrecht.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Wochenplan-Anpassung KW 47 (Longrun zurück auf Samstag 21.11. · v11.50):**
   - **Änderung:** Auf Wunsch des Athleten wurde der 16,0 km Schlüssel-Longrun (`Longrun Erkrath`, 350–400 Hm, GA1 105–118 bpm) wieder auf **Samstag (`SAM 21.11.`)** gelegt.
