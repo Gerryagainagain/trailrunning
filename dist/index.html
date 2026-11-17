@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tokens.css?v=11.40">
+  <link rel="stylesheet" href="styles.css?v=11.40">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1853,6 +1853,107 @@
     .s-brief-drawer-btn { display: flex; align-items: center; justify-content: center; gap: 0.4rem; width: 100%; min-height: 38px; margin-bottom: 0.6rem; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 14px; background: rgba(255, 255, 255, 0.08); color: var(--text-white); font-size: 0.82rem; font-weight: 700; font-family: inherit; cursor: pointer; }
     .s-reset { display: block; margin: 0.7rem auto 0; background: none; border: 0; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; cursor: pointer; font-family: inherit; }
 
+    /* Mobile Day Swap Accordion (Apple HIG & Ergonomic Spacing) */
+    .s-swap-box {
+      margin-top: 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(100, 210, 255, 0.28);
+      border-radius: 14px;
+      padding: 0.75rem 0.9rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .s-swap-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .s-swap-btn-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+      letter-spacing: 0.01em;
+    }
+    .s-swap-arrow {
+      font-size: 0.75rem;
+      color: var(--apple-cyan);
+      transition: transform 0.2s ease;
+    }
+    .s-swap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .s-swap-hint {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .s-swap-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      border-radius: 10px;
+      background: #151722;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .s-swap-item:hover, .s-swap-item:active {
+      background: #1D2132;
+      border-color: var(--apple-cyan);
+    }
+    .s-swap-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .s-swap-item-day {
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: var(--text-white);
+    }
+    .s-swap-item-val {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+    }
+    .s-swap-item-btn {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+    }
+    .s-swap-reset-btn {
+      width: 100%;
+      margin-top: 0.4rem;
+      padding: 0.5rem;
+      background: transparent;
+      border: 1px dashed rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .s-swap-reset-btn:hover {
+      color: var(--apple-orange);
+      border-color: var(--apple-orange);
+    }
+
     @media (max-width: 600px) {
       body { padding: max(10px, env(safe-area-inset-top)) 12px max(20px, env(safe-area-inset-bottom)); display: block; overflow-x: hidden; }
       .app-container { display: none !important; }
@@ -3332,6 +3433,89 @@
       return day.d.includes(todayPattern);
     }
 
+    // ==========================================================================
+    // SCHEDULE OVERRIDES & DAY SWAPPING (iPhone Mobile & Desktop Sync)
+    // ==========================================================================
+    const SCHEDULE_OVERRIDES_KEY = 'rg_schedule_overrides_v1';
+
+    function loadScheduleOverrides() {
+      try {
+        const raw = localStorage.getItem(SCHEDULE_OVERRIDES_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveScheduleOverrides(overrides) {
+      try {
+        localStorage.setItem(SCHEDULE_OVERRIDES_KEY, JSON.stringify(overrides));
+      } catch (e) {
+        console.error('Failed to save schedule overrides:', e);
+      }
+    }
+
+    function getEffectiveWeekDays(kwNum) {
+      const w = weeksData[kwNum];
+      if (!w || !w.days) return [];
+      const overrides = loadScheduleOverrides();
+      const kwOverrides = overrides[kwNum];
+      if (Array.isArray(kwOverrides) && kwOverrides.length === w.days.length) {
+        // Guarantee slot dates (d) remain immutable for calendar alignment
+        return kwOverrides.map((day, idx) => ({
+          ...day,
+          d: w.days[idx].d
+        }));
+      }
+      return w.days;
+    }
+
+    function hasWeekOverride(kwNum) {
+      const overrides = loadScheduleOverrides();
+      return Array.isArray(overrides[kwNum]);
+    }
+
+    function resetWeekSchedule(kwNum) {
+      const overrides = loadScheduleOverrides();
+      delete overrides[kwNum];
+      saveScheduleOverrides(overrides);
+      switchWeek(kwNum);
+      closeSheet();
+      showToast(`✓ Originalplan für KW ${kwNum} wiederhergestellt`);
+    }
+
+    function swapWeekDays(kwNum, idxA, idxB) {
+      if (idxA === idxB) return;
+      const originalDays = weeksData[kwNum].days;
+      const current = getEffectiveWeekDays(kwNum).map(d => ({ ...d }));
+
+      const { d: dA, ...contentA } = current[idxA];
+      const { d: dB, ...contentB } = current[idxB];
+
+      current[idxA] = { d: originalDays[idxA].d, ...contentB };
+      current[idxB] = { d: originalDays[idxB].d, ...contentA };
+
+      const overrides = loadScheduleOverrides();
+      overrides[kwNum] = current;
+      saveScheduleOverrides(overrides);
+
+      switchWeek(kwNum);
+      closeSheet();
+
+      const nameA = originalDays[idxA].d.split(' ')[0];
+      const nameB = originalDays[idxB].d.split(' ')[0];
+      showToast(`✓ Einheit zwischen ${nameA} und ${nameB} getauscht`);
+    }
+
+    function toggleSheetSwap() {
+      const list = document.getElementById('sSwapList');
+      const arrow = document.getElementById('sSwapArrow');
+      if (!list || !arrow) return;
+      const isHidden = list.style.display === 'none';
+      list.style.display = isHidden ? 'flex' : 'none';
+      arrow.textContent = isHidden ? '▲' : '▼';
+    }
+
     function renderWeek(kwNum) {
       const data = weeksData[kwNum];
       if (!data) return;
@@ -3353,8 +3537,9 @@
       const grid = document.getElementById('mainDaysGrid');
       let html = '';
       let planned = 0, done = 0;
+      const days = getEffectiveWeekDays(kwNum);
 
-      data.days.forEach((day, idx) => {
+      days.forEach((day, idx) => {
         const parts = day.d.split(' ');
         const dayName = parts[0];
         const dayDate = parts[1];
@@ -3711,7 +3896,8 @@
       document.getElementById('mNextBtn').disabled = kwNum === kwList[kwList.length - 1];
 
       let planned = 0, done = 0;
-      const rows = w.days.map((day, i) => {
+      const days = getEffectiveWeekDays(kwNum);
+      const rows = days.map((day, i) => {
         const [dn, dd] = day.d.split(' ');
         const run = isRunDay(day);
         const log = findRunLog(dd);
@@ -3775,10 +3961,12 @@
     }
 
     // ==========================================================================
-    // LOG BOTTOM SHEET (Inklusive BPM, Vorgaben, VT1 und Ausschreibungs-Link)
+    // LOG BOTTOM SHEET (Inklusive BPM, Vorgaben, VT1 und Tag-Tauschen Accordion)
     // ==========================================================================
     function openSheet(kwNum, i) {
-      const day = weeksData[kwNum].days[i];
+      const days = getEffectiveWeekDays(kwNum);
+      const day = days[i];
+      if (!day) return;
       const dd = day.d.split(' ')[1];
       const log = findRunLog(dd) || {};
       const run = isRunDay(day);
@@ -3829,6 +4017,40 @@
       const val = (k) => (log[k] !== undefined && log[k] !== 0 ? log[k] : '');
       const durFormatted = formatDurationForInput(log.duration);
 
+      // Options for Day Swapping in bottom accordion
+      const swapOptionsHtml = days.map((otherDay, otherIdx) => {
+        if (otherIdx === i) return '';
+        const oRun = isRunDay(otherDay);
+        const oDesc = oRun 
+          ? `${parseFloat(otherDay.val).toFixed(1)} km · ${otherDay.tag || 'Lauf'}` 
+          : (otherDay.isStudio ? 'Studio · Kraft' : (otherDay.isHike ? 'Wandern' : 'CHILL · Ruhetag'));
+        return `
+          <div class="s-swap-item" onclick="swapWeekDays(${kwNum}, ${i}, ${otherIdx})">
+            <div class="s-swap-item-info">
+              <span class="s-swap-item-day">${otherDay.d}</span>
+              <span class="s-swap-item-val">${oDesc}</span>
+            </div>
+            <span class="s-swap-item-btn">⇄ Tauschen</span>
+          </div>
+        `;
+      }).join('');
+
+      const swapSectionHtml = `
+        <div class="s-swap-box">
+          <div class="s-swap-header" onclick="toggleSheetSwap()">
+            <div class="s-swap-btn-label">
+              <span>⇄ Einheit verschieben / Tag tauschen</span>
+            </div>
+            <span id="sSwapArrow" class="s-swap-arrow">▼</span>
+          </div>
+          <div id="sSwapList" class="s-swap-list" style="display:none;">
+            <div class="s-swap-hint">Einheit mit einem anderen Tag in KW ${kwNum} tauschen:</div>
+            ${swapOptionsHtml}
+            ${hasWeekOverride(kwNum) ? `<button type="button" class="s-swap-reset-btn" onclick="resetWeekSchedule(${kwNum})">↺ Originalplan für KW ${kwNum} wiederherstellen</button>` : ''}
+          </div>
+        </div>
+      `;
+
       document.getElementById('sheetBody').innerHTML = `
         <div class="s-date">${day.d.replace(' ', ' · ')} · KW ${kwNum}</div>
         <div class="s-title">${title}</div>
@@ -3842,6 +4064,7 @@
           <button type="submit" class="s-save">✓ Speichern</button>
         </form>
         ${log.dayDate || log.date ? `<button type="button" class="s-reset" onclick="resetSheetLog('${dd}')">Eintrag zurücksetzen</button>` : ''}
+        ${swapSectionHtml}
       `;
       document.getElementById('mSheet').classList.add('open');
       document.getElementById('mBackdrop').classList.add('open');
@@ -3854,7 +4077,8 @@
 
     function saveSheetLog(e, kwNum, i) {
       e.preventDefault();
-      const day = weeksData[kwNum].days[i];
+      const day = getEffectiveWeekDays(kwNum)[i];
+      if (!day) return;
       const dd = day.d.split(' ')[1];
       const f = new FormData(e.target);
       const run = isRunDay(day);
@@ -4022,15 +4246,21 @@
 
     function shareRunsToMac() {
       const runs = loadRuns();
-      // Compact base64 representation of stored runs
-      const payload = btoa(unescape(encodeURIComponent(JSON.stringify(runs))));
+      const overrides = loadScheduleOverrides();
+      const envelope = {
+        v: 2,
+        runs: runs,
+        scheduleOverrides: overrides
+      };
+      // Compact base64 representation of stored runs and schedule overrides
+      const payload = btoa(unescape(encodeURIComponent(JSON.stringify(envelope))));
       const base = window.location.origin + window.location.pathname;
       const syncUrl = `${base}?import=${encodeURIComponent(payload)}`;
 
       if (navigator.share) {
         navigator.share({
           title: 'Running Guide 2027 Sync',
-          text: 'Läufe vom iPhone an MacBook übertragen',
+          text: 'Läufe & Plan-Verschiebungen an MacBook übertragen',
           url: syncUrl
         }).catch(() => {});
       } else if (navigator.clipboard) {
@@ -4046,9 +4276,12 @@
 
     function openDesktopSyncModal() {
       const stored = loadRuns();
+      const overrides = loadScheduleOverrides();
+      const numOverrides = Object.keys(overrides).length;
       const statusEl = document.getElementById('syncStatusMsg');
       if (statusEl) {
-        statusEl.innerText = `${stored.length} Einheit(en) im lokalen Speicher geladen.`;
+        const extra = numOverrides > 0 ? ` + ${numOverrides} verschobene Woche(n)` : '';
+        statusEl.innerText = `${stored.length} Einheit(en)${extra} im lokalen Speicher geladen.`;
       }
       const m = document.getElementById('desktopSyncModal');
       const b = document.getElementById('desktopSyncBackdrop');
@@ -4063,6 +4296,13 @@
       if (b) b.classList.remove('open');
     }
 
+    function mergeAndStoreScheduleOverrides(incomingOverrides) {
+      if (!incomingOverrides || typeof incomingOverrides !== 'object') return;
+      const current = loadScheduleOverrides();
+      const merged = { ...current, ...incomingOverrides };
+      saveScheduleOverrides(merged);
+    }
+
     async function pasteFromClipboardSync() {
       try {
         const text = await navigator.clipboard.readText();
@@ -4075,13 +4315,35 @@
           const rawParam = rawJson.split('?import=')[1].split('&')[0];
           rawJson = decodeURIComponent(escape(atob(decodeURIComponent(rawParam))));
         }
-        const incomingRuns = JSON.parse(rawJson);
-        if (Array.isArray(incomingRuns) && incomingRuns.length > 0) {
+        const parsed = JSON.parse(rawJson);
+        let incomingRuns = [];
+        let incomingOverrides = null;
+
+        if (Array.isArray(parsed)) {
+          incomingRuns = parsed;
+        } else if (parsed && typeof parsed === 'object') {
+          if (Array.isArray(parsed.runs)) incomingRuns = parsed.runs;
+          if (parsed.scheduleOverrides && typeof parsed.scheduleOverrides === 'object') {
+            incomingOverrides = parsed.scheduleOverrides;
+          }
+        }
+
+        const summary = [];
+        if (incomingRuns.length > 0) {
           mergeAndStoreRuns(incomingRuns);
+          summary.push(`${incomingRuns.length} Läufe`);
+        }
+        if (incomingOverrides && Object.keys(incomingOverrides).length > 0) {
+          mergeAndStoreScheduleOverrides(incomingOverrides);
+          summary.push('Plan-Verschiebungen');
+        }
+
+        if (summary.length > 0) {
+          switchWeek(currentKw);
           closeDesktopSyncModal();
-          showToast(`✓ ${incomingRuns.length} Läufe aus Zwischenablage importiert!`);
+          showToast(`✓ ${summary.join(' & ')} aus Zwischenablage importiert!`);
         } else {
-          showToast('⚠️ Kein gültiges Laufprotokoll in Zwischenablage');
+          showToast('⚠️ Kein gültiges Lauf- oder Planprotokoll in Zwischenablage');
         }
       } catch (err) {
         showToast('⚠️ Zugriff auf Zwischenablage nicht gestattet');
@@ -4106,9 +4368,31 @@
 
       try {
         const rawJson = decodeURIComponent(escape(atob(decodeURIComponent(importParam))));
-        const incomingRuns = JSON.parse(rawJson);
-        if (Array.isArray(incomingRuns) && incomingRuns.length > 0) {
+        const parsed = JSON.parse(rawJson);
+        let incomingRuns = [];
+        let incomingOverrides = null;
+
+        if (Array.isArray(parsed)) {
+          incomingRuns = parsed;
+        } else if (parsed && typeof parsed === 'object') {
+          if (Array.isArray(parsed.runs)) incomingRuns = parsed.runs;
+          if (parsed.scheduleOverrides && typeof parsed.scheduleOverrides === 'object') {
+            incomingOverrides = parsed.scheduleOverrides;
+          }
+        }
+
+        const summary = [];
+        if (incomingRuns.length > 0) {
           mergeAndStoreRuns(incomingRuns);
+          summary.push(`${incomingRuns.length} Läufe`);
+        }
+        if (incomingOverrides && Object.keys(incomingOverrides).length > 0) {
+          mergeAndStoreScheduleOverrides(incomingOverrides);
+          summary.push('Plan-Verschiebungen');
+        }
+
+        if (summary.length > 0) {
+          switchWeek(currentKw);
 
           // Clean ?import= from URL bar without reload
           p.delete('import');
@@ -4117,7 +4401,7 @@
           window.history.replaceState({}, document.title, cleanUrl);
 
           setTimeout(() => {
-            showToast(`✓ ${incomingRuns.length} Läufe vom iPhone erfolgreich synchronisiert!`);
+            showToast(`✓ ${summary.join(' & ')} vom iPhone erfolgreich synchronisiert!`);
           }, 400);
         }
       } catch (e) {
@@ -4130,6 +4414,9 @@
     window.openDesktopSyncModal = openDesktopSyncModal;
     window.closeDesktopSyncModal = closeDesktopSyncModal;
     window.pasteFromClipboardSync = pasteFromClipboardSync;
+    window.swapWeekDays = swapWeekDays;
+    window.toggleSheetSwap = toggleSheetSwap;
+    window.resetWeekSchedule = resetWeekSchedule;
 
     // ==========================================================================
     // AUTH GATE VALIDATION (APPLE HIG & BACKWARD-COMPATIBLE SESSION)

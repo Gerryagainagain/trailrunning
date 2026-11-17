@@ -1,14 +1,35 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.39 (30 ECHTE RADIKAL DIFFERENZIERTE LANDING ARCHITECTURES · `preview_30_landing_views.html`)  
-**Last Updated:** November 16, 2026  
+**Document Version:** 11.40 (Mobile Day-Swapping & Dynamic Schedule Reordering with Cross-Device Sync)  
+**Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.39)
+## 📌 1. Project Overview & Release Freeze State (v11.40)
+
+- **Mobile Day-Swapping & Dynamic Schedule Reordering (v11.40):**
+  - **Ergonomische Reihenfolge im Bottom Sheet („Erst loggen, danach tauschen“):**
+    1. Kopfzeile mit Wochentag, Datum, KW und Einheitentitel.
+    2. Vorgaben & Pacing-Spezifikationen (Distanz, Puls, Physiologie/VT1 bzw. Wettkampf-Briefing).
+    3. Schnelleingabe-Formular für Ist-Werte (Distanz, Dauer, HF, Hm, RPE, Speichern-Button) + Zurücksetzen-Aktion.
+    4. Darunter die zusammengefaltete Accordion-Leiste `[ ⇄ Einheit verschieben / Tag tauschen ▼ ]`.
+  - **Funktionsweise des Tag-Tauschs:**
+    - Beim Aufklappen werden die anderen 6 Wochentage der aktuellen Trainingswoche mit Datum und geplantem Inhalt angezeigt.
+    - Ein Fingertipp tauscht die Trainingsinhalte (Vorgaben, Kilometer, Tags, Ruhetage/CHILL) zwischen dem aktiven und dem ausgewählten Tag.
+    - **Datums-Integrität:** Die Kalenderdaten und Wochentage (`d`, z. B. `MON 16.11`, `DIE 17.11`) verbleiben unverrückbar an ihren Positionen; ausschließlich die Einheiten-Objekte rotieren.
+  - **Lokale Persistenz & Reversion:**
+    - Gespeichert in `localStorage` unter `rg_schedule_overrides_v1`.
+    - Bei angepassten Wochen erscheint in der Tausch-Leiste die Option `[ ↺ Originalplan für KW wiederherstellen ]`.
+  - **Nahtlose Desktop- & Mobile-Synchronisation (AirDrop / Clipboard / URL Sync Envelope v2):**
+    - Die Übertragungsfunktion (`shareRunsToMac()`) packt sowohl absolvierte Realläufe (`runs`) als auch aktive Plan-Verschiebungen (`scheduleOverrides`) in einen abwärtskompatiblen v2-Envelope.
+    - Beim Öffnen auf dem MacBook via AirDrop-Link oder bei Zwischenablage-Sync (`pasteFromClipboardSync()`) übernimmt der Desktop-Browser die Verschiebungen vollautomatisch in seine Wochenansicht.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **30 Echte, Radikal Differenzierte Landing Architectures (`preview_30_landing_views.html` · v11.39):**
   - **Bruch mit dem statischen 7-Karten-Raster:** Jedes einzelne der 30 Konzepte (#01 bis #30) besitzt eine **vollkommen eigenständige DOM-Struktur, Informationshierarchie und ein individuelles mentales Modell** für die Startansicht:
