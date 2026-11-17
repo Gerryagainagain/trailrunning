@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.40 (Mobile Day-Swapping & Dynamic Schedule Reordering with Cross-Device Sync)  
+**Document Version:** 11.41 (Optimized Mobile Week Header Titles · No Ellipsis Truncation)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,22 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.40)
+## 📌 1. Project Overview & Release Freeze State (v11.41)
+
+- **Optimierte Mobile-Wochenheader ohne Textabschneiden (v11.41):**
+  - **Problem gelöst:** Auf Mobilgeräten (375–390 px) wurden lange Wochentitel zwischen den beiden Pager-Buttons mit Auslassungspunkten abgeschnitten (z. B. `Siebengebirgs-HM Renn...`).
+  - **Präzise `shortTitle`-SSOT in `weeksData`:**
+    - KW 45: `Martinslauf 10k`
+    - KW 46: `Post-Race Erholung`
+    - KW 47: `HM-Aufbau 34 km`
+    - KW 48: `HM-Peak 38 km`
+    - KW 49: `7G-HM Rennwoche`
+    - KW 50: `Saisonpause`
+  - **Adaptive Darstellung:** Mobile greift automatisch auf `shortTitle` zu (einzeilig, zentriert, kein Clipping). Desktop behält den ausführlichen Langtitel.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Mobile Day-Swapping & Dynamic Schedule Reordering (v11.40):**
   - **Ergonomische Reihenfolge im Bottom Sheet („Erst loggen, danach tauschen“):**

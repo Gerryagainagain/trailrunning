@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.40">
-  <link rel="stylesheet" href="styles.css?v=11.40">
+  <link rel="stylesheet" href="tokens.css?v=11.41">
+  <link rel="stylesheet" href="styles.css?v=11.41">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3328,6 +3328,7 @@
     const weeksData = {
       45: {
         title: 'Diese Woche KW 45 • Martinslauf U-See',
+        shortTitle: 'Martinslauf 10k',
         dates: '02. – 08. November 2026',
         benchmark: 'SUB 58:00 · 5:48 min/km · Start 11:45 Uhr',
         benchmarkType: 'race',
@@ -3344,6 +3345,7 @@
       },
       46: {
         title: 'KW 46 • Post-Race Erholung & Rückreise',
+        shortTitle: 'Post-Race Erholung',
         dates: '09. – 15. November 2026',
         benchmark: '12,0 km',
         benchmarkType: 'blue',
@@ -3360,6 +3362,7 @@
       },
       47: {
         title: 'KW 47 • Spezifischer HM-Aufbau I',
+        shortTitle: 'HM-Aufbau 34 km',
         dates: '16. – 22. November 2026',
         benchmark: '34,0 km',
         benchmarkType: 'blue',
@@ -3376,6 +3379,7 @@
       },
       48: {
         title: 'KW 48 • HM-Peak Belastungswoche',
+        shortTitle: 'HM-Peak 38 km',
         dates: '23. – 29. November 2026',
         benchmark: '38,0 km',
         benchmarkType: 'orange',
@@ -3392,6 +3396,7 @@
       },
       49: {
         title: 'KW 49 • Siebengebirgs-HM Rennwoche',
+        shortTitle: '7G-HM Rennwoche',
         dates: '30. November – 06. Dezember 2026',
         benchmark: '31,4 km',
         benchmarkType: 'race',
@@ -3408,6 +3413,7 @@
       },
       50: {
         title: 'KW 50 • Saisonpause & Jahresausklang',
+        shortTitle: 'Saisonpause',
         dates: '07. – 13. Dezember 2026',
         benchmark: '12,0 km',
         benchmarkType: 'green',
@@ -3888,7 +3894,7 @@
       if (!w) return;
       const titleParts = w.title.split('•');
       document.getElementById('mKw').textContent = `KW ${kwNum}`;
-      document.getElementById('mName').textContent = (titleParts[1] || titleParts[0]).trim();
+      document.getElementById('mName').textContent = w.shortTitle || (titleParts[1] || titleParts[0]).trim();
       document.getElementById('mDates').textContent = w.dates;
       document.getElementById('mBench').textContent = w.benchmark;
       document.getElementById('mFocus').innerHTML = w.summary.replace(/^Fokus:\s*/, '').replace(/\n/g, '<br>');
