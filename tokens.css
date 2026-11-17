@@ -18,6 +18,7 @@
   /* --- 2. LEGACY APPLE ALIASES (BACKWARD COMPATIBILITY) --- */
   --apple-green: var(--color-brand-green);
   --apple-cyan: var(--color-brand-cyan);
+  --apple-yellow: var(--color-brand-yellow);
   --apple-blue: var(--color-brand-blue);
   --apple-orange: var(--color-brand-orange);
   --apple-red: var(--color-brand-red);

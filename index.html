@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.47">
-  <link rel="stylesheet" href="styles.css?v=11.47">
+  <link rel="stylesheet" href="tokens.css?v=11.48">
+  <link rel="stylesheet" href="styles.css?v=11.48">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1911,6 +1911,13 @@
       gap: 12px;
       padding: 8px 4px 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 0;
+    }
+    .zen-second-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px 4px 16px;
       margin-bottom: 14px;
     }
     .zen-col {
@@ -1942,7 +1949,7 @@
       letter-spacing: -1px;
       text-align: center;
       width: 100%;
-      max-width: 140px;
+      max-width: 150px;
       min-width: 0;
       box-sizing: border-box;
       font-feature-settings: "tnum";
@@ -1951,6 +1958,10 @@
       border-bottom: 2px dashed rgba(255, 255, 255, 0.18);
       transition: all 0.2s ease;
       cursor: text;
+    }
+    .zen-num-input::placeholder {
+      color: rgba(255, 255, 255, 0.22);
+      font-weight: 700;
     }
     .zen-num-input:focus {
       border-bottom-style: solid;
@@ -4184,10 +4195,16 @@
         const m = day.sub.match(/< *(\d+) *bpm/i) || day.sub.match(/(\d+)-(\d+) *bpm/i);
         if (m) defaultHr = parseInt(m[1] || m[2], 10);
       }
+      let defaultDur = '';
+      if (day.sub) {
+        const mDur = day.sub.match(/(\d+)\s*min/i);
+        if (mDur) defaultDur = `${mDur[1]}:00`;
+      }
       const hrSpec = day.sub && day.sub.includes('bpm') ? day.sub : '< 118 bpm (GA1 Sprechgrenze)';
       const currentHm = log.hm !== undefined && log.hm !== 0 ? log.hm : (defaultHm || '');
       const currentDist = log.dist !== undefined ? log.dist : (run ? parseFloat(day.val).toFixed(1) : '');
       const currentHr = log.hr !== undefined && log.hr !== 0 ? log.hr : '';
+      const currentDur = log.duration ? formatDurationForInput(log.duration) : '';
 
       // Options for Day Swapping in bottom accordion
       const swapOptionsHtml = days.map((otherDay, otherIdx) => {
@@ -4258,10 +4275,22 @@
                 <div class="zen-unit-tag" style="color:var(--apple-orange);">HM</div>
               </div>
             </div>
-            <div class="zen-bpm-pure">
-              <input name="hr" type="number" inputmode="numeric" class="zen-bpm-num" value="${currentHr}" placeholder="145" oninput="if(parseInt(this.value,10)>148){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
-              <span class="zen-bpm-unit">BPM</span>
+
+            <div class="zen-second-grid">
+              <div class="zen-col">
+                <div class="zen-input-row">
+                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="58:00" style="color:var(--apple-yellow);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="zen-unit-tag" style="color:var(--apple-yellow);">ZEIT</div>
+              </div>
+              <div class="zen-col">
+                <div class="zen-input-row">
+                  <input name="hr" type="number" inputmode="numeric" class="zen-num-input" value="${currentHr}" placeholder="145" style="color:${currentHr && parseInt(currentHr,10) > 148 ? 'var(--apple-orange)' : 'var(--apple-green)'};" oninput="if(parseInt(this.value,10)>148){this.style.color='var(--apple-orange)'; document.getElementById('zenRaceBpmTag').style.color='var(--apple-orange)';}else{this.style.color='var(--apple-green)'; document.getElementById('zenRaceBpmTag').style.color='var(--apple-green)';}">
+                </div>
+                <div class="zen-unit-tag" id="zenRaceBpmTag" style="color:${currentHr && parseInt(currentHr,10) > 148 ? 'var(--apple-orange)' : 'var(--apple-green)'};">BPM</div>
+              </div>
             </div>
+
             <button type="submit" class="btn-zen-log">✓ WETTKAMPF LOGGEN</button>
           </form>
         `;
@@ -4288,9 +4317,19 @@
               </div>
             </div>
 
-            <div class="zen-bpm-pure">
-              <input name="hr" type="number" inputmode="numeric" class="zen-bpm-num" value="${currentHr}" placeholder="${defaultHr || '114'}" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
-              <span class="zen-bpm-unit">BPM</span>
+            <div class="zen-second-grid">
+              <div class="zen-col">
+                <div class="zen-input-row">
+                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="${defaultDur || '00:00'}" style="color:var(--apple-yellow);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                </div>
+                <div class="zen-unit-tag" style="color:var(--apple-yellow);">ZEIT</div>
+              </div>
+              <div class="zen-col">
+                <div class="zen-input-row">
+                  <input name="hr" type="number" inputmode="numeric" class="zen-num-input" value="${currentHr}" placeholder="${defaultHr || '114'}" style="color:${currentHr && parseInt(currentHr,10) > 118 ? 'var(--apple-orange)' : 'var(--apple-green)'};" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'; document.getElementById('zenBpmTag').style.color='var(--apple-orange)';}else{this.style.color='var(--apple-green)'; document.getElementById('zenBpmTag').style.color='var(--apple-green)';}">
+                </div>
+                <div class="zen-unit-tag" id="zenBpmTag" style="color:${currentHr && parseInt(currentHr,10) > 118 ? 'var(--apple-orange)' : 'var(--apple-green)'};">BPM</div>
+              </div>
             </div>
 
             <button type="submit" class="btn-zen-log">✓ EINHEIT LOGGEN</button>

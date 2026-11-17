@@ -153,6 +153,13 @@
       gap: 12px;
       padding: 8px 4px 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 0;
+    }
+    .zen-second-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 14px 4px 16px;
       margin-bottom: 14px;
     }
     .zen-col {
@@ -187,7 +194,7 @@
       letter-spacing: -1px;
       text-align: center;
       width: 100%;
-      max-width: 140px;
+      max-width: 150px;
       min-width: 0;
       box-sizing: border-box;
       font-feature-settings: "tnum";
@@ -196,6 +203,10 @@
       border-bottom: 2px dashed rgba(255, 255, 255, 0.18);
       transition: all 0.2s ease;
       cursor: text;
+    }
+    .zen-num-input::placeholder {
+      color: rgba(255, 255, 255, 0.22);
+      font-weight: 700;
     }
     .zen-num-input:focus {
       border-bottom-style: solid;
@@ -351,7 +362,7 @@
         <button class="sheet-close">✕</button>
       </div>
 
-      <!-- DIE 2 DOMINANTEN TRAIL-WERTE (KEINE BROWSER-PFEILE, NUR KM & HM) -->
+      <!-- DIE 4 TRAIL-WERTE: KM & HM, ZEIT & BPM (2x2 GRID) -->
       <div class="zen-main-grid">
         <div class="zen-col">
           <div class="zen-input-row">
@@ -367,10 +378,19 @@
         </div>
       </div>
 
-      <!-- PURE BPM: NUR ZIFFER & BPM -->
-      <div class="zen-bpm-pure">
-        <input type="number" inputmode="numeric" class="zen-bpm-num" id="a1-bpm" value="114" oninput="checkBpm(this)">
-        <span class="zen-bpm-unit">BPM</span>
+      <div class="zen-second-grid">
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="text" inputmode="decimal" class="zen-num-input" id="a1-dur" value="41:00" placeholder="00:00" style="color:var(--apple-yellow);">
+          </div>
+          <div class="zen-unit-tag" style="color:var(--apple-yellow);">ZEIT</div>
+        </div>
+        <div class="zen-col">
+          <div class="zen-input-row">
+            <input type="number" inputmode="numeric" class="zen-num-input" id="a1-bpm" value="114" style="color:var(--apple-green);" oninput="checkBpm(this)">
+          </div>
+          <div class="zen-unit-tag" id="a1-bpm-tag" style="color:var(--apple-green);">BPM</div>
+        </div>
       </div>
 
       <!-- LOG BUTTON -->

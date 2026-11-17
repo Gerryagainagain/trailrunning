@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.47 (Wochenplan KW 47: Longrun Erkrath von Samstag auf Sonntag morgen umgelegt · v11.47)  
+**Document Version:** 11.48 (Pure Zen Modal 2x2: Zeit-/Dauer-Eingabe `ZEIT` reintegriert · v11.48)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,26 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.47)
+## 📌 1. Project Overview & Release Freeze State (v11.48)
+
+- **Pure Zen Modal 2x2 Grid (Zeit-/Dauer-Eingabe `ZEIT` reintegriert · v11.48):**
+  - **Problem:** Beim Redesign auf das Pure Zen Modal (v11.42) war das Zeit-Eingabefeld entfallen. Beim Erfassen von Realläufen (z. B. heutige Einheit: 5,6 km / 80 Hm / 114 bpm) fehlte dem Athleten die Möglichkeit, die absolvierte Nettozeit einzutragen, wodurch auch keine reale Pace berechnet werden konnte.
+  - **Lösung:** Vollständige Harmonisierung des Modals in ein symmetrisches **2x2-Grid** mit den 4 maßgeblichen Trailrunning-Währungen:
+    - **Zeile 1 (Distanz & Gelände):**
+      - Links: **`KM`** (Apple Cyan `#64D2FF`, `step="0.1"`, `inputmode="decimal"`)
+      - Rechts: **`HM`** (Apple Orange `#FF9F0A`, `step="5"`, `inputmode="numeric"`)
+    - **Zeile 2 (Dauer & Physiologie):**
+      - Links: **`ZEIT`** (Apple Yellow `#FFD60A`, `name="dur"`, `inputmode="decimal"`, Placeholder `00:00` bzw. Soll-Dauer)
+      - Rechts: **`BPM`** (Apple Green `#30D158`, dynamischer Farbwechsel auf Apple Orange bei Überschreitung von VT1 > 118 bpm bzw. Wettkampf > 148 bpm)
+  - **Typographie & Layout-Integrität:**
+    - Trennung beider Zeilen durch eine dezente horizontale Hairline (`border-bottom: 1px solid rgba(255,255,255,0.08)`).
+    - Vertikale Trennung durch zentrierte Hairlines (`border-right: 1px solid rgba(255,255,255,0.08)` in beiden Zeilen).
+    - Tabular Figures (`font-feature-settings: "tnum"`) mit `clamp(2.3rem, 7vw, 2.9rem)` und `max-width: 150px` verhindern Textumbruch auch bei mehrstelligen Zeiteingaben (z. B. `1:35:00`).
+  - **Eingabe-Flexibilität:** Das Feld verarbeitet nahtlos Ganzzahlen (`41` ➔ 41 Min.), Standard-Notation (`41:00`, `41:25`), Dezimal-/Punktnotation (`41.25`, `41,25` ➔ 41:25) und Stundenformate (`1:35:41`). Die Pace wird im Datenmodell automatisch via `paceFrom(dist, seconds)` berechnet.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Wochenplan-Anpassung KW 47 (Longrun von Samstag auf Sonntag morgen umgelegt · v11.47):**
   - **Änderung:** Der 16,0 km Schlüssel-Longrun (`Longrun Erkrath`, 350–400 Hm, GA1 105–118 bpm) wurde im Stammplan von `SAM 21.11` auf `SON 22.11` (Sonntag morgen) verschoben.
