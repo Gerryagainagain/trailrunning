@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.41 (Optimized Mobile Week Header Titles · No Ellipsis Truncation)  
+**Document Version:** 11.42 (Pure Zen 1A Workout Modal · KM & HM Dominant, No Spinners, Editable + BPM)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,19 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.41)
+## 📌 1. Project Overview & Release Freeze State (v11.42)
+
+- **Pure Zen 1A Workout Modal (`index.html` & `dist/index.html` · v11.42):**
+  - **Radikale Entrümpelung des Modals:** Beseitigung aller 8 redundanten Kacheln zugunsten der puren typographischen Dominanz der beiden echten Trail-Währungen: **`KM`** und **`HM`**.
+  - **Browser-Pfeile (Spinner) strikt unterdrückt:** Native HTML5-Browser-Pfeile (`::-webkit-inner-spin-button`) wurden per CSS vollständig deaktiviert.
+  - **Direkte Touch-Editierbarkeit:** Die großen Ziffern (3.4rem tabular figures) sind selbst direkt antipp- und editierbare Eingabefelder mit `inputmode="decimal"` und `inputmode="numeric"`. Wer planmäßig gelaufen ist, muss nichts tippen; wer abweicht (z. B. 7,9 km / 75 Hm), tippt einfach kurz auf die Zahl.
+  - **Schlanke BPM-Zeile:** Ein einziges, dezentes Feld für Ø Puls mit Live-Farbwechsel (Grün bei `< 118 bpm VT1`, Orange bei Überschreitung).
+  - **Etablierte Kurzeinheiten:** Ausschließlich **`KM`** und **`HM`** in Kurzform (keine ausgeschriebenen Wörter).
+  - **1-Tap Action:** Prominenter Primary CTA `[ ✓ EINHEIT LOGGEN ]`. Darunter sitzt eingeklappt das Accordion `[ ⇄ Einheit verschieben / Tag tauschen ▼ ]`.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Optimierte Mobile-Wochenheader ohne Textabschneiden (v11.41):**
   - **Problem gelöst:** Auf Mobilgeräten (375–390 px) wurden lange Wochentitel zwischen den beiden Pager-Buttons mit Auslassungspunkten abgeschnitten (z. B. `Siebengebirgs-HM Renn...`).
