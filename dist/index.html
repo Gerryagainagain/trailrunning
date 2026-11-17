@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.42">
-  <link rel="stylesheet" href="styles.css?v=11.42">
+  <link rel="stylesheet" href="tokens.css?v=11.43">
+  <link rel="stylesheet" href="styles.css?v=11.43">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1958,54 +1958,41 @@
       text-transform: uppercase;
     }
 
-    .zen-bpm-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 10px 14px;
-      margin-bottom: 14px;
-    }
-    .zen-bpm-info {
-      display: flex;
-      flex-direction: column;
-    }
-    .zen-bpm-lbl {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    .zen-bpm-sub {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-    .zen-bpm-input-wrap {
+    .zen-bpm-pure {
       display: flex;
       align-items: baseline;
-      gap: 4px;
+      justify-content: center;
+      gap: 6px;
+      margin: 6px 0 16px;
     }
-    .zen-bpm-input {
+    .zen-bpm-num {
       background: transparent;
       border: 0;
       outline: 0;
       color: var(--apple-green);
-      font-size: 1.5rem;
+      font-size: 2.2rem;
       font-weight: 900;
-      width: 58px;
+      line-height: 1;
+      width: 75px;
       text-align: right;
       font-feature-settings: "tnum";
       font-family: inherit;
-      border-bottom: 1.5px dashed rgba(48, 209, 88, 0.3);
+      border-bottom: 2px dashed rgba(48, 209, 88, 0.25);
+      padding: 2px 0;
+      transition: all 0.2s ease;
+      cursor: text;
     }
-    .zen-bpm-input:focus {
+    .zen-bpm-num:focus {
       border-bottom-style: solid;
       border-bottom-color: var(--apple-green);
+      transform: scale(1.03);
+    }
+    .zen-bpm-unit {
+      font-size: 0.90rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--apple-green);
+      text-transform: uppercase;
     }
 
     .btn-zen-log {
@@ -4267,15 +4254,9 @@
                 <div class="zen-unit-tag" style="color:var(--apple-orange);">HM</div>
               </div>
             </div>
-            <div class="zen-bpm-bar">
-              <div class="zen-bpm-info">
-                <span class="zen-bpm-lbl">Ø Puls</span>
-                <span class="zen-bpm-sub">Wettkampf HF</span>
-              </div>
-              <div class="zen-bpm-input-wrap">
-                <input name="hr" type="number" inputmode="numeric" class="zen-bpm-input" value="${currentHr}" placeholder="145" oninput="if(parseInt(this.value,10)>148){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
-                <span style="font-size:0.80rem; font-weight:900; color:var(--text-muted);">BPM</span>
-              </div>
+            <div class="zen-bpm-pure">
+              <input name="hr" type="number" inputmode="numeric" class="zen-bpm-num" value="${currentHr}" placeholder="145" oninput="if(parseInt(this.value,10)>148){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
+              <span class="zen-bpm-unit">BPM</span>
             </div>
             <button type="submit" class="btn-zen-log">✓ WETTKAMPF LOGGEN</button>
           </form>
@@ -4306,15 +4287,9 @@
               </div>
             </div>
 
-            <div class="zen-bpm-bar">
-              <div class="zen-bpm-info">
-                <span class="zen-bpm-lbl">Ø Puls</span>
-                <span class="zen-bpm-sub">Vorgabe: ${hrSpec}</span>
-              </div>
-              <div class="zen-bpm-input-wrap">
-                <input name="hr" type="number" inputmode="numeric" class="zen-bpm-input" value="${currentHr}" placeholder="${defaultHr}" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
-                <span style="font-size:0.80rem; font-weight:900; color:var(--text-muted);">BPM</span>
-              </div>
+            <div class="zen-bpm-pure">
+              <input name="hr" type="number" inputmode="numeric" class="zen-bpm-num" value="${currentHr}" placeholder="${defaultHr || '114'}" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'}else{this.style.color='var(--apple-green)'}">
+              <span class="zen-bpm-unit">BPM</span>
             </div>
 
             <button type="submit" class="btn-zen-log">✓ EINHEIT LOGGEN</button>

@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.42 (Pure Zen 1A Workout Modal · KM & HM Dominant, No Spinners, Editable + BPM)  
+**Document Version:** 11.43 (Pure BPM Field Without Explanation Text · Pure Zen Modal v11.43)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,16 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.42)
+## 📌 1. Project Overview & Release Freeze State (v11.43)
+
+- **Pure Zen BPM-Feld ohne Box & Erklärungstexte (v11.43):**
+  - **Beseitigung der störenden BPM-Box:** Der graue Containerblock mit `Ø PULS` und `Vorgabe: 115–118 bpm (+80 Hm)` wurde restlos entfernt.
+  - **Reines Zahlenfeld:** Wie bei KM und HM gibt es nur noch das zentrierte, schlanke Ziffernfeld mit der Einheit **`BPM`** (`zen-bpm-num` + `zen-bpm-unit`).
+  - **Automatische Farbrückmeldung:** Bleibt bei `< 118 bpm` im Apple Green und wechselt bei Überschreitung auf Apple Orange.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Pure Zen 1A Workout Modal (`index.html` & `dist/index.html` · v11.42):**
   - **Radikale Entrümpelung des Modals:** Beseitigung aller 8 redundanten Kacheln zugunsten der puren typographischen Dominanz der beiden echten Trail-Währungen: **`KM`** und **`HM`**.

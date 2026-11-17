@@ -203,53 +203,42 @@
       text-transform: uppercase;
     }
 
-    /* BPM ROW (SLIM & DISCREET) */
-    .zen-bpm-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 10px 14px;
-    }
-    .zen-bpm-info {
-      display: flex;
-      flex-direction: column;
-    }
-    .zen-bpm-lbl {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-    .zen-bpm-sub {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .zen-bpm-input-wrap {
+    /* PURE BPM (NUR ZIFFER & BPM, KEINE ERKLÄRUNG) */
+    .zen-bpm-pure {
       display: flex;
       align-items: baseline;
-      gap: 4px;
+      justify-content: center;
+      gap: 6px;
+      margin: 6px 0 16px;
     }
-    .zen-bpm-input {
+    .zen-bpm-num {
       background: transparent;
       border: 0;
       outline: 0;
       color: var(--apple-green);
-      font-size: 1.5rem;
+      font-size: 2.2rem;
       font-weight: 900;
-      width: 58px;
+      line-height: 1;
+      width: 75px;
       text-align: right;
       font-feature-settings: "tnum";
       font-family: inherit;
-      border-bottom: 1.5px dashed rgba(48, 209, 88, 0.3);
+      border-bottom: 2px dashed rgba(48, 209, 88, 0.25);
+      padding: 2px 0;
+      transition: all 0.2s ease;
+      cursor: text;
     }
-    .zen-bpm-input:focus {
+    .zen-bpm-num:focus {
       border-bottom-style: solid;
+      border-bottom-color: var(--apple-green);
+      transform: scale(1.03);
+    }
+    .zen-bpm-unit {
+      font-size: 0.90rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: var(--apple-green);
+      text-transform: uppercase;
     }
 
     /* ACTION BUTTON */
@@ -370,16 +359,10 @@
         </div>
       </div>
 
-      <!-- PULS-ZEILE MIT LIVE-FARBE -->
-      <div class="zen-bpm-bar">
-        <div class="zen-bpm-info">
-          <span class="zen-bpm-lbl">Ø Puls</span>
-          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
-        </div>
-        <div class="zen-bpm-input-wrap">
-          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a1-bpm" value="114" oninput="checkBpm(this)">
-          <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
-        </div>
+      <!-- PURE BPM: NUR ZIFFER & BPM -->
+      <div class="zen-bpm-pure">
+        <input type="number" inputmode="numeric" class="zen-bpm-num" id="a1-bpm" value="114" oninput="checkBpm(this)">
+        <span class="zen-bpm-unit">BPM</span>
       </div>
 
       <!-- LOG BUTTON -->
@@ -422,15 +405,9 @@
         </div>
       </div>
 
-      <div class="zen-bpm-bar">
-        <div class="zen-bpm-info">
-          <span class="zen-bpm-lbl">Ø Puls</span>
-          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
-        </div>
-        <div class="zen-bpm-input-wrap">
-          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a2-bpm" value="114" oninput="checkBpm(this)">
-          <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
-        </div>
+      <div class="zen-bpm-pure">
+        <input type="number" inputmode="numeric" class="zen-bpm-num" id="a2-bpm" value="114" oninput="checkBpm(this)">
+        <span class="zen-bpm-unit">BPM</span>
       </div>
 
       <button type="button" class="btn-zen-log" onclick="alertLogged('A2', 'a2-km', 'a2-hm', 'a2-bpm')">
@@ -464,15 +441,9 @@
         </div>
       </div>
 
-      <div class="zen-bpm-bar">
-        <div class="zen-bpm-info">
-          <span class="zen-bpm-lbl">Ø Puls</span>
-          <span class="zen-bpm-sub">Vorgabe: &lt; 118 bpm (VT1)</span>
-        </div>
-        <div class="zen-bpm-input-wrap">
-          <input type="number" inputmode="numeric" class="zen-bpm-input" id="a3-bpm" value="114" oninput="checkBpm(this)">
-          <span style="font-size:0.80rem; font-weight:900; color:var(--muted);">BPM</span>
-        </div>
+      <div class="zen-bpm-pure">
+        <input type="number" inputmode="numeric" class="zen-bpm-num" id="a3-bpm" value="114" oninput="checkBpm(this)">
+        <span class="zen-bpm-unit">BPM</span>
       </div>
 
       <button type="button" class="btn-zen-log" onclick="alertLogged('A3', 'a3-km', 'a3-hm', 'a3-bpm')">
