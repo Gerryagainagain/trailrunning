@@ -3,26 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quick-Tap Modal: 3 KM + HM Varianten – Running Guide</title>
+  <title>Ultra-Vereinfachte Modals: 5 Radikale Konzepte</title>
   <link rel="stylesheet" href="tokens.css">
   <style>
     :root {
-      --bg: #0B0B10;
-      --card: #151722;
-      --border: rgba(255, 255, 255, 0.10);
+      --bg: #07080C;
+      --card-bg: #10121A;
       --apple-cyan: #64D2FF;
       --apple-green: #30D158;
       --apple-orange: #FF9F0A;
-      --apple-yellow: #FFD60A;
-      --text: #FFF;
-      --muted: #8E8E93;
+      --text: #FFFFFF;
+      --muted: #7E8294;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -30,412 +28,410 @@
       padding: 24px 16px 60px;
     }
 
-    /* TOP HEADER & SELECTOR */
-    .mockup-header {
+    .header {
       text-align: center;
-      max-width: 720px;
+      max-width: 640px;
       margin-bottom: 20px;
     }
-    .mockup-header h1 {
-      font-size: 1.45rem;
+    .header h1 {
+      font-size: 1.4rem;
       font-weight: 900;
       letter-spacing: -0.5px;
       margin-bottom: 6px;
     }
-    .mockup-header p {
-      font-size: 0.86rem;
+    .header p {
+      font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.45;
     }
 
-    .concept-nav {
+    /* CONCEPT TABS */
+    .nav {
       display: flex;
       gap: 6px;
       background: rgba(255, 255, 255, 0.05);
       padding: 4px;
       border-radius: 14px;
       margin-bottom: 22px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       flex-wrap: wrap;
       justify-content: center;
-      max-width: 760px;
+      max-width: 720px;
     }
-    .concept-btn {
+    .tab-btn {
       background: transparent;
       border: 0;
       color: var(--muted);
       font-size: 0.80rem;
       font-weight: 800;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 10px;
       cursor: pointer;
-      transition: all 0.2s ease;
       font-family: inherit;
+      transition: all 0.2s ease;
     }
-    .concept-btn.active {
-      background: #252838;
+    .tab-btn.active {
+      background: #232736;
       color: #FFF;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-    .concept-btn:hover:not(.active) {
-      color: #FFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
-    /* DEVICE WRAPPER (IPHONE FRAME) */
-    .device-stage {
+    /* IPHONE FRAME */
+    .phone {
       width: 100%;
-      max-width: 410px;
+      max-width: 390px;
       background: #000;
       border: 3px solid rgba(255, 255, 255, 0.15);
-      border-radius: 44px;
-      padding: 16px 14px 28px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      border-radius: 46px;
+      padding: 18px 14px 28px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85);
       position: relative;
-      overflow: hidden;
     }
     .notch {
-      width: 120px;
+      width: 110px;
       height: 24px;
-      background: #151515;
+      background: #141414;
       border-radius: 20px;
       margin: 0 auto 16px;
     }
 
-    /* BASE SHEET CARD */
-    .sheet-card {
-      background: #13151F;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    /* CARDS BASE */
+    .sheet {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 28px;
-      padding: 18px 16px 16px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      padding: 20px 18px 18px;
       display: none;
     }
-    .sheet-card.active { display: block; animation: fadeIn 0.25s ease; }
+    .sheet.active { display: block; animation: pop 0.2s ease; }
+    @keyframes pop { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .top-meta-row {
+    .sheet-head {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
-    .meta-badge {
-      font-size: 0.70rem;
+    .sheet-title-micro {
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
+      color: var(--muted);
       text-transform: uppercase;
-      color: var(--apple-cyan);
-      background: rgba(100, 210, 255, 0.12);
-      padding: 3px 8px;
-      border-radius: 6px;
     }
-    .btn-close-circle {
+    .sheet-close {
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      color: var(--muted);
+      background: rgba(255, 255, 255, 0.08);
       border: 0;
+      color: var(--muted);
       font-weight: 700;
       cursor: pointer;
     }
 
-    /* SWAP FOOTER STRIP */
-    .mock-swap-strip {
-      margin-top: 14px;
-      padding: 9px 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.74rem;
-      color: var(--apple-cyan);
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    /* -------------------------------------------------------------
-       VARIANTE 2A: DUAL-HERO SPLIT (KM & HM SEITE AN SEITE)
-       ------------------------------------------------------------- */
-    .c2a-hero-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      background: linear-gradient(145deg, #181C2B, #12141F);
-      border: 1.5px solid rgba(100, 210, 255, 0.28);
-      border-radius: 20px;
-      padding: 14px 12px 12px;
-      margin-bottom: 14px;
-    }
-    .c2a-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .swap-link {
+      display: block;
       text-align: center;
-    }
-    .c2a-col:first-child {
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      padding-right: 8px;
-    }
-    .c2a-col:last-child {
-      padding-left: 8px;
-    }
-    .c2a-col-lbl {
-      font-size: 0.62rem;
+      margin-top: 14px;
+      font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2px;
+      color: var(--apple-cyan);
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.8;
     }
-    .c2a-big-num {
-      font-size: 2.6rem;
+    .swap-link:hover { opacity: 1; text-decoration: underline; }
+
+    /* =========================================================
+       KONZEPT 01: PURE NUMBER ZEN
+       ========================================================= */
+    .c1-zen-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: baseline;
+      padding: 16px 0 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 18px;
+    }
+    .c1-zen-item { text-align: center; }
+    .c1-zen-num {
+      font-size: 3.4rem;
       font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -1.5px;
+      line-height: 0.9;
+      letter-spacing: -2px;
       color: #FFF;
       font-feature-settings: "tnum";
     }
-    .c2a-big-unit {
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-top: 3px;
+    .c1-zen-lbl {
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+      text-transform: uppercase;
     }
-    .c2a-strip-footer {
-      grid-column: span 2;
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
+    .c1-sub-plain {
+      text-align: center;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
-
-    /* 1-TAP BUTTON IN 2A */
-    .btn-quick-primary {
+    .btn-zen-log {
       width: 100%;
-      min-height: 52px;
-      background: linear-gradient(180deg, #34E05E, #28B94A);
+      height: 54px;
+      background: var(--apple-green);
       color: #000;
       border: 0;
       border-radius: 16px;
-      font-size: 0.96rem;
+      font-size: 1.05rem;
       font-weight: 900;
+      letter-spacing: 0.04em;
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(48, 209, 88, 0.32);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2px;
-    }
-    .btn-quick-primary small {
-      font-size: 0.72rem;
-      font-weight: 700;
-      opacity: 0.9;
+      box-shadow: 0 8px 24px rgba(48, 209, 88, 0.25);
     }
 
-    .btn-adjust-toggle {
-      width: 100%;
-      margin-top: 10px;
-      padding: 9px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      color: var(--apple-cyan);
-      font-size: 0.78rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    /* -------------------------------------------------------------
-       VARIANTE 2B: TRAIL HUD CARDS (GARMIN/ULTRA DUAL METRIC TILES)
-       ------------------------------------------------------------- */
-    .c2b-hud-grid {
+    /* =========================================================
+       KONZEPT 02: DUAL-PILL STEPPER
+       ========================================================= */
+    .c2-pills-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 12px;
+      margin-bottom: 18px;
     }
-    .c2b-hud-card {
-      background: #0E1018;
+    .c2-pill {
+      background: #171A26;
       border: 1.5px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      padding: 12px 14px;
-      position: relative;
+      border-radius: 20px;
+      padding: 14px 10px;
+      text-align: center;
     }
-    .c2b-hud-card.km {
-      border-color: rgba(100, 210, 255, 0.4);
-      box-shadow: inset 0 0 20px rgba(100, 210, 255, 0.05);
-    }
-    .c2b-hud-card.hm {
-      border-color: rgba(255, 159, 10, 0.4);
-      box-shadow: inset 0 0 20px rgba(255, 159, 10, 0.05);
-    }
-    .c2b-hud-tag {
-      font-size: 0.62rem;
+    .c2-pill-tag {
+      font-size: 0.64rem;
       font-weight: 900;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
       color: var(--muted);
+      text-transform: uppercase;
     }
-    .c2b-hud-val {
-      font-size: 2.8rem;
+    .c2-pill-val {
+      font-size: 2.6rem;
       font-weight: 900;
-      line-height: 0.95;
+      line-height: 1;
       letter-spacing: -1.5px;
       margin: 6px 0 2px;
-      font-feature-settings: "tnum";
+      color: #FFF;
     }
-    .c2b-hud-unit {
-      font-size: 0.82rem;
+    .c2-pill-unit {
+      font-size: 0.78rem;
       font-weight: 900;
       letter-spacing: 0.05em;
     }
+    .c2-pill-ctrls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .c2-pill-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 0;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+    .btn-c2-confirm {
+      width: 100%;
+      height: 52px;
+      background: #FFF;
+      color: #000;
+      border: 0;
+      border-radius: 16px;
+      font-size: 0.98rem;
+      font-weight: 900;
+      cursor: pointer;
+    }
 
-    .c2b-target-pill {
-      background: #171A28;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 8px 12px;
+    /* =========================================================
+       KONZEPT 03: SLIDE TO LOG (APPLE SLIDER)
+       ========================================================= */
+    .c3-header-clean {
+      text-align: center;
+      padding: 10px 0 20px;
+    }
+    .c3-combo-val {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1;
+      color: #FFF;
+    }
+    .c3-combo-sub {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .c3-slider-track {
+      width: 100%;
+      height: 56px;
+      background: #181B27;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+    .c3-slider-thumb {
+      position: absolute;
+      left: 4px;
+      width: 48px;
+      height: 48px;
+      background: var(--apple-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: 900;
+      box-shadow: 0 4px 12px rgba(48, 209, 88, 0.4);
+    }
+    .c3-slider-text {
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.6);
+      padding-left: 36px;
+    }
+
+    /* =========================================================
+       KONZEPT 04: RADICAL VERTICAL 2-LINE
+       ========================================================= */
+    .c4-v-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      margin-bottom: 14px;
+      align-items: baseline;
+      padding: 14px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
     }
-
-    /* DIRECT STEPPERS IN 2B */
-    .c2b-stepper-row {
-      display: flex;
-      gap: 8px;
-      margin-top: 10px;
-    }
-    .c2b-stepper-btn {
-      flex: 1;
-      padding: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 10px;
-      color: #FFF;
-      font-size: 0.76rem;
-      font-weight: 800;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-
-    /* -------------------------------------------------------------
-       VARIANTE 2C: MONUMENTAL QUICK-PUNCH (GROSSBLOCK + 1-TAP INLINE)
-       ------------------------------------------------------------- */
-    .c2c-hero-box {
-      background: #151826;
-      border: 2px solid var(--apple-cyan);
-      border-radius: 20px;
-      padding: 16px 14px;
-      text-align: center;
-      margin-bottom: 14px;
-      box-shadow: 0 8px 30px rgba(100, 210, 255, 0.12);
-    }
-    .c2c-headline {
-      font-size: 0.72rem;
+    .c4-v-label {
+      font-size: 0.82rem;
       font-weight: 900;
       letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--apple-cyan);
-      margin-bottom: 6px;
-    }
-    .c2c-metric-line {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      gap: 12px;
-      font-feature-settings: "tnum";
-    }
-    .c2c-num-km {
-      font-size: 3.2rem;
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -2px;
-      color: #FFF;
-    }
-    .c2c-sep {
-      font-size: 2.0rem;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.25);
-    }
-    .c2c-num-hm {
-      font-size: 2.4rem;
-      font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -1px;
-      color: var(--apple-orange);
-    }
-    .c2c-subcopy {
-      margin-top: 10px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--apple-green);
-    }
-
-    /* INLINE TIME & HR COMPACT ROW (READY TO LOG) */
-    .c2c-quick-inputs {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      background: rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      padding: 8px 10px;
-      margin-bottom: 12px;
-    }
-    .c2c-q-cell {
-      display: flex;
-      flex-direction: column;
-    }
-    .c2c-q-lbl {
-      font-size: 0.58rem;
-      font-weight: 800;
       color: var(--muted);
       text-transform: uppercase;
     }
-    .c2c-q-input {
+    .c4-v-num {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+    .c4-v-num small {
+      font-size: 1.0rem;
+      font-weight: 800;
+      margin-left: 4px;
+    }
+    .btn-c4-log {
+      width: 100%;
+      height: 52px;
+      background: transparent;
+      color: #FFF;
+      border: 2px solid #FFF;
+      border-radius: 16px;
+      font-size: 0.95rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 18px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-c4-log:hover {
+      background: #FFF;
+      color: #000;
+    }
+
+    /* =========================================================
+       KONZEPT 05: ULTRA-SLIM 1-ROW LOG (KM · HM · MIN)
+       ========================================================= */
+    .c5-hero-note {
+      text-align: center;
+      margin-bottom: 14px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+    }
+    .c5-row-strip {
+      display: flex;
+      background: #171A28;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      padding: 10px 8px;
+      margin-bottom: 16px;
+    }
+    .c5-cell {
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 6px;
+    }
+    .c5-cell:last-child { border-right: 0; }
+    .c5-input {
+      width: 100%;
       background: transparent;
       border: 0;
       outline: 0;
-      color: #FFF;
-      font-size: 1.15rem;
+      text-align: center;
+      font-size: 1.7rem;
       font-weight: 900;
-      margin-top: 2px;
+      color: #FFF;
       font-feature-settings: "tnum";
     }
-
-    /* EXPLANATION CARD BELOW */
-    .rationale-card {
-      max-width: 720px;
+    .c5-unit {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .btn-c5-save {
       width: 100%;
-      background: #141722;
-      border: 1px solid var(--border);
+      height: 50px;
+      background: var(--apple-green);
+      color: #000;
+      border: 0;
+      border-radius: 14px;
+      font-size: 0.96rem;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    /* RATIONALE BOTTOM CARD */
+    .expl-card {
+      max-width: 680px;
+      width: 100%;
+      background: #11131C;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
-      padding: 16px 20px;
+      padding: 18px 20px;
       margin-top: 24px;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       line-height: 1.5;
     }
-    .rationale-card h3 {
+    .expl-card h3 {
       font-size: 0.98rem;
       margin-bottom: 6px;
       color: var(--apple-cyan);
@@ -444,274 +440,246 @@
 </head>
 <body>
 
-  <div class="mockup-header">
-    <h1>Quick-Tap Redesign: 3 Varianten mit KM + HM Dominanz</h1>
-    <p>Vergleich: Drei verschiedene Arten, wie <b>KM</b> und <b>HM</b> im 1-Tap Quick-Log visuell absolut dominieren, ohne den schnellen Flow zu bremsen.</p>
+  <div class="header">
+    <h1>Radikale Vereinfachung: 5 neue Mockups</h1>
+    <p>Alles Überflüssige entfernt: Null Text-Redundanz, Null Kachelsalat, 100 % Fokus auf <b>KM &amp; HM</b> mit maximal 1 Tap zum Loggen.</p>
   </div>
 
-  <!-- CONCEPT NAV -->
-  <div class="concept-nav">
-    <button class="concept-btn active" onclick="showConcept('2a')">Var 2A: Dual-Hero Split (Side-by-Side)</button>
-    <button class="concept-btn" onclick="showConcept('2b')">Var 2B: Trail Telemetrie HUD (Garmin Style)</button>
-    <button class="concept-btn" onclick="showConcept('2c')">Var 2C: Monumental Punch (Dual-Line + Inline)</button>
-    <button class="concept-btn" onclick="showConcept('sq')">0. Status Quo (Bisher)</button>
+  <!-- NAVIGATION TABS -->
+  <div class="nav">
+    <button class="tab-btn active" onclick="showTab(1)">01. Pure Number Zen</button>
+    <button class="tab-btn" onclick="showTab(2)">02. Dual-Pill Stepper</button>
+    <button class="tab-btn" onclick="showTab(3)">03. Slide to Log</button>
+    <button class="tab-btn" onclick="showTab(4)">04. Vertical 2-Line</button>
+    <button class="tab-btn" onclick="showTab(5)">05. 1-Row Strip</button>
   </div>
 
-  <!-- DEVICE FRAME -->
-  <div class="device-stage">
+  <!-- IPHONE SHELL -->
+  <div class="phone">
     <div class="notch"></div>
 
-    <!-- ========================================================
-         VARIANTE 2A: DUAL-HERO SPLIT (KM + HM SEITE AN SEITE)
-         ======================================================== -->
-    <div class="sheet-card active" id="sheet-2a">
-      <div class="top-meta-row">
-        <span class="meta-badge">Dienstag 17.11 · KW 47</span>
-        <button class="btn-close-circle">✕</button>
+    <!-- =======================================================
+         KONZEPT 01: PURE NUMBER ZEN
+         ======================================================= -->
+    <div class="sheet active" id="sheet-1">
+      <div class="sheet-head">
+        <span class="sheet-title-micro">Dienstag 17.11 · KW 47</span>
+        <button class="sheet-close">✕</button>
       </div>
 
-      <!-- DUAL-HERO BLOCK: BEIDE TRAIL-WERTE GLEICHBERECHTIGT GROSS -->
-      <div class="c2a-hero-split">
-        <div class="c2a-col">
-          <div class="c2a-col-lbl">Distanz-Plan</div>
-          <div class="c2a-big-num">8.0</div>
-          <div class="c2a-big-unit" style="color:var(--apple-cyan);">KILOMETER</div>
+      <div class="c1-zen-grid">
+        <div class="c1-zen-item">
+          <div class="c1-zen-num" style="color:var(--apple-cyan);">8.0</div>
+          <div class="c1-zen-lbl" style="color:var(--apple-cyan);">Kilometer</div>
         </div>
-        <div class="c2a-col">
-          <div class="c2a-col-lbl">Höhenprofil</div>
-          <div class="c2a-big-num" style="color:var(--apple-orange);">+80</div>
-          <div class="c2a-big-unit" style="color:var(--apple-orange);">HÖHENMETER</div>
-        </div>
-        <div class="c2a-strip-footer">
-          <span style="font-weight:800; color:#FFF;">Hügel-GA1 (Erkrath)</span>
-          <span style="font-weight:700; color:var(--apple-green);">&lt; 118 bpm (VT1)</span>
+        <div class="c1-zen-item">
+          <div class="c1-zen-num" style="color:var(--apple-orange);">+80</div>
+          <div class="c1-zen-lbl" style="color:var(--apple-orange);">Höhenmeter</div>
         </div>
       </div>
 
-      <!-- 1-TAP QUICK LOG BUTTON -->
-      <button type="button" class="btn-quick-primary" onclick="alert('✓ Einheit mit 8.0 km und 80 Hm sofort geloggt!')">
-        <span>✓ 8.0 KM &amp; +80 HM gelaufen</span>
-        <small>1-Tap Quick-Log (Planmäßig absolviert)</small>
+      <div class="c1-sub-plain">Hügel-GA1 &nbsp;·&nbsp; Sprechgrenze &lt; 118 bpm</div>
+
+      <button type="button" class="btn-zen-log" onclick="alert('✓ Geloggt!')">
+        ✓ EINHEIT LOGGEN
       </button>
 
-      <!-- ACCORDION FOR EDITING -->
-      <button type="button" class="btn-adjust-toggle" onclick="toggleForm('form-2a')">
-        <span>✎ Reale Werte abweichend anpassen (Dauer, Hm, Puls)</span>
-      </button>
-
-      <div id="form-2a" style="display:none; margin-top:10px;">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div style="background:#171A28; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
-            <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase; font-weight:800;">Reale KM</div>
-            <input type="number" step="0.1" value="8.0" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.4rem; font-weight:900;">
-          </div>
-          <div style="background:#171A28; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
-            <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase; font-weight:800;">Reale HM</div>
-            <input type="number" value="80" style="width:100%; background:transparent; border:0; color:var(--apple-orange); font-size:1.4rem; font-weight:900;">
-          </div>
-          <div style="background:#171A28; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
-            <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase; font-weight:800;">Dauer</div>
-            <input type="text" value="48:30" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.1rem; font-weight:900;">
-          </div>
-          <div style="background:#171A28; padding:8px 10px; border-radius:12px; border:1px solid rgba(255,255,255,0.08);">
-            <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase; font-weight:800;">Ø Puls (bpm)</div>
-            <input type="number" value="114" style="width:100%; background:transparent; border:0; color:var(--apple-green); font-size:1.1rem; font-weight:900;">
-          </div>
-        </div>
-      </div>
-
-      <div class="mock-swap-strip">
-        <span>⇄ Einheit verschieben / Tag tauschen</span>
-        <span>▼</span>
-      </div>
+      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
-    <!-- ========================================================
-         VARIANTE 2B: TRAIL TELEMETRIE HUD (GARMIN ULTRA STYLE)
-         ======================================================== -->
-    <div class="sheet-card" id="sheet-2b">
-      <div class="top-meta-row">
-        <span class="meta-badge" style="color:var(--apple-orange); background:rgba(255,159,10,0.12);">KW 47 · DIENSTAG</span>
-        <button class="btn-close-circle">✕</button>
+    <!-- =======================================================
+         KONZEPT 02: DUAL-PILL STEPPER
+         ======================================================= -->
+    <div class="sheet" id="sheet-2">
+      <div class="sheet-head">
+        <span class="sheet-title-micro">Dienstag 17.11 · KW 47</span>
+        <button class="sheet-close">✕</button>
       </div>
 
-      <!-- 2 GROSSE HUD-KACHELN -->
-      <div class="c2b-hud-grid">
-        <div class="c2b-hud-card km">
-          <div class="c2b-hud-tag">DISTANZ</div>
-          <div class="c2b-hud-val" style="color:#FFF;">8.0</div>
-          <div class="c2b-hud-unit" style="color:var(--apple-cyan);">KILOMETER</div>
+      <div class="c2-pills-row">
+        <div class="c2-pill">
+          <div class="c2-pill-tag">DISTANZ</div>
+          <div class="c2-pill-val" id="c2-km-val">8.0</div>
+          <div class="c2-pill-unit" style="color:var(--apple-cyan);">KM</div>
+          <div class="c2-pill-ctrls">
+            <button class="c2-pill-btn" onclick="stepC2Km(-0.5)">–</button>
+            <button class="c2-pill-btn" onclick="stepC2Km(+0.5)">+</button>
+          </div>
         </div>
-        <div class="c2b-hud-card hm">
-          <div class="c2b-hud-tag">ELEVATION</div>
-          <div class="c2b-hud-val" style="color:var(--apple-orange);">+80</div>
-          <div class="c2b-hud-unit" style="color:var(--apple-orange);">HÖHENMETER</div>
+
+        <div class="c2-pill">
+          <div class="c2-pill-tag">HÖHENMETER</div>
+          <div class="c2-pill-val" id="c2-hm-val" style="color:var(--apple-orange);">+80</div>
+          <div class="c2-pill-unit" style="color:var(--apple-orange);">HM</div>
+          <div class="c2-pill-ctrls">
+            <button class="c2-pill-btn" onclick="stepC2Hm(-10)">–</button>
+            <button class="c2-pill-btn" onclick="stepC2Hm(+10)">+</button>
+          </div>
         </div>
       </div>
 
-      <!-- ZIEL-PULSGRENZE -->
-      <div class="c2b-target-pill">
-        <span style="font-weight:800; color:#FFF;">Hügel-GA1 (Morper Bachtal)</span>
-        <span style="font-weight:800; color:var(--apple-green);">Puls &lt; 118 bpm</span>
-      </div>
-
-      <!-- 1-TAP BESTÄTIGEN -->
-      <button type="button" class="btn-quick-primary" onclick="alert('✓ 8.0 km und +80 Hm bestätigt!')">
-        <span>✓ Planmäßig bestätigen</span>
-        <small>1-Tap Quick-Log (8.0 km / +80 Hm)</small>
+      <button type="button" class="btn-c2-confirm" onclick="alert('✓ Bestätigt!')">
+        ✓ Bestätigen (1-Tap)
       </button>
 
-      <!-- FEINJUSTIERUNG OHNE FORMULAR -->
-      <div class="c2b-stepper-row">
-        <button type="button" class="c2b-stepper-btn" onclick="alert('KM Feinjustierung')">
-          <span>KM anpassen ±</span>
-        </button>
-        <button type="button" class="c2b-stepper-btn" onclick="alert('HM Feinjustierung')">
-          <span>HM anpassen ±</span>
-        </button>
-      </div>
-
-      <div class="mock-swap-strip">
-        <span>⇄ Einheit verschieben / Tag tauschen</span>
-        <span>▼</span>
-      </div>
+      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
-    <!-- ========================================================
-         VARIANTE 2C: MONUMENTAL QUICK-PUNCH (GROSSBLOCK + INLINE)
-         ======================================================== -->
-    <div class="sheet-card" id="sheet-2c">
-      <div class="top-meta-row">
-        <span class="meta-badge">DIE 17.11 · HEUTE</span>
-        <button class="btn-close-circle">✕</button>
+    <!-- =======================================================
+         KONZEPT 03: SLIDE TO LOG
+         ======================================================= -->
+    <div class="sheet" id="sheet-3">
+      <div class="sheet-head">
+        <span class="sheet-title-micro">Dienstag 17.11 · KW 47</span>
+        <button class="sheet-close">✕</button>
       </div>
 
-      <!-- DER MONUMENTALE DUO-BLOCK -->
-      <div class="c2c-hero-box">
-        <div class="c2c-headline">TRAIL-ZIELVORGABE</div>
-        <div class="c2c-metric-line">
-          <div><span class="c2c-num-km">8.0</span><small style="font-size:1.1rem; font-weight:800; color:var(--apple-cyan); margin-left:3px;">KM</small></div>
-          <div class="c2c-sep">/</div>
-          <div><span class="c2c-num-hm">+80</span><small style="font-size:1.1rem; font-weight:800; color:var(--apple-orange); margin-left:3px;">HM</small></div>
-        </div>
-        <div class="c2c-subcopy">Hügel-GA1 · Strikte Sprechgrenze &lt; 118 bpm</div>
+      <div class="c3-header-clean">
+        <div class="c3-combo-val">8.0 <span style="font-size:1.4rem; color:var(--apple-cyan);">KM</span> &nbsp;·&nbsp; +80 <span style="font-size:1.4rem; color:var(--apple-orange);">HM</span></div>
+        <div class="c3-combo-sub">Hügel-GA1 · Sprechgrenze &lt; 118 bpm</div>
       </div>
 
-      <!-- SCHLANKE INLINE-WERTE FÜR ZEIT & PULS (SCHON VORBEREITET) -->
-      <div class="c2c-quick-inputs">
-        <div class="c2c-q-cell">
-          <span class="c2c-q-lbl">Laufdauer (min)</span>
-          <input type="text" class="c2c-q-input" value="48:30" placeholder="00:00">
-        </div>
-        <div class="c2c-q-cell">
-          <span class="c2c-q-lbl">Ø Herzfrequenz (bpm)</span>
-          <input type="number" class="c2c-q-input" value="114" placeholder="0" style="color:var(--apple-green);">
-        </div>
+      <div class="c3-slider-track" onclick="simulateSlide()">
+        <div class="c3-slider-thumb" id="slider-thumb">➔</div>
+        <span class="c3-slider-text" id="slider-text">Zum Loggen tippen oder wischen</span>
       </div>
 
-      <!-- 1-TAP ACTION BUTTON -->
-      <button type="button" class="btn-quick-primary" onclick="alert('✓ Lauf erfolgreich gespeichert!')">
-        <span>✓ Lauf jetzt speichern</span>
-        <small>8.0 km · 80 Hm · 48:30 min · 114 bpm</small>
+      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
+    </div>
+
+    <!-- =======================================================
+         KONZEPT 04: RADICAL VERTICAL 2-LINE
+         ======================================================= -->
+    <div class="sheet" id="sheet-4">
+      <div class="sheet-head">
+        <span class="sheet-title-micro">Dienstag 17.11 · KW 47</span>
+        <button class="sheet-close">✕</button>
+      </div>
+
+      <div class="c4-v-row">
+        <div class="c4-v-label">DISTANZ</div>
+        <div class="c4-v-num" style="color:#FFF;">8.0 <small style="color:var(--apple-cyan);">KM</small></div>
+      </div>
+
+      <div class="c4-v-row">
+        <div class="c4-v-label">HÖHENMETER</div>
+        <div class="c4-v-num" style="color:var(--apple-orange);">+80 <small>HM</small></div>
+      </div>
+
+      <button type="button" class="btn-c4-log" onclick="alert('✓ Geloggt!')">
+        Lauf jetzt loggen
       </button>
 
-      <div class="mock-swap-strip">
-        <span>⇄ Einheit verschieben / Tag tauschen</span>
-        <span>▼</span>
-      </div>
+      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
-    <!-- ========================================================
-         0. STATUS QUO (ZUM VERGLEICH)
-         ======================================================== -->
-    <div class="sheet-card" id="sheet-sq">
-      <div class="top-meta-row">
-        <span class="meta-badge">DIE · 17.11 · KW 47</span>
-        <button class="btn-close-circle">✕</button>
+    <!-- =======================================================
+         KONZEPT 05: 1-ROW STRIP
+         ======================================================= -->
+    <div class="sheet" id="sheet-5">
+      <div class="sheet-head">
+        <span class="sheet-title-micro">Dienstag 17.11 · KW 47</span>
+        <button class="sheet-close">✕</button>
       </div>
-      <div style="font-size:1.25rem; font-weight:900; margin-bottom:12px;">8.0 km · Hügel-GA1</div>
-      
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
-        <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:8px 10px;">
-          <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase;">Distanz (Plan)</div>
-          <div style="font-size:0.85rem; font-weight:700;">8.0 km</div>
+
+      <div class="c5-hero-note">Hügel-GA1 · &lt; 118 bpm Sprechgrenze</div>
+
+      <div class="c5-row-strip">
+        <div class="c5-cell">
+          <input type="number" step="0.1" class="c5-input" value="8.0" style="color:var(--apple-cyan);">
+          <div class="c5-unit">KM</div>
         </div>
-        <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:8px 10px;">
-          <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase;">Puls-Vorgabe</div>
-          <div style="font-size:0.85rem; font-weight:700; color:var(--apple-green);">115–118 bpm</div>
+        <div class="c5-cell">
+          <input type="number" step="5" class="c5-input" value="80" style="color:var(--apple-orange);">
+          <div class="c5-unit">HM</div>
         </div>
-        <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:8px 10px;">
-          <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase;">Einheit/Fokus</div>
-          <div style="font-size:0.85rem; font-weight:700;">Hügel-GA1</div>
-        </div>
-        <div style="background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:8px 10px;">
-          <div style="font-size:0.60rem; color:var(--muted); text-transform:uppercase;">Physiologie</div>
-          <div style="font-size:0.85rem; font-weight:700;">105–118 bpm</div>
+        <div class="c5-cell">
+          <input type="number" step="1" class="c5-input" value="48" style="color:#FFF;">
+          <div class="c5-unit">MIN</div>
         </div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-        <div style="background:#171A28; padding:8px 10px; border-radius:12px;"><div style="font-size:0.60rem; color:var(--muted);">Distanz</div><input type="text" value="8.0" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.1rem; font-weight:800;"></div>
-        <div style="background:#171A28; padding:8px 10px; border-radius:12px;"><div style="font-size:0.60rem; color:var(--muted);">Dauer</div><input type="text" value="00:00" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.1rem; font-weight:800;"></div>
-        <div style="background:#171A28; padding:8px 10px; border-radius:12px;"><div style="font-size:0.60rem; color:var(--muted);">Ø HF</div><input type="text" value="0" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.1rem; font-weight:800;"></div>
-        <div style="background:#171A28; padding:8px 10px; border-radius:12px;"><div style="font-size:0.60rem; color:var(--muted);">Höhenmeter</div><input type="text" value="0" style="width:100%; background:transparent; border:0; color:#FFF; font-size:1.1rem; font-weight:800;"></div>
-      </div>
+      <button type="button" class="btn-c5-save" onclick="alert('✓ Gespeichert!')">
+        ✓ Werte eintragen
+      </button>
 
-      <button type="button" style="width:100%; min-height:46px; background:var(--apple-green); border:0; border-radius:14px; color:#000; font-weight:900; margin-top:10px;">✓ Speichern</button>
-      <div class="mock-swap-strip"><span>⇄ Einheit verschieben</span><span>▼</span></div>
+      <a class="swap-link">⇄ Einheit verschieben / Tag tauschen</a>
     </div>
 
   </div>
 
-  <!-- RATIONALE CARD -->
-  <div class="rationale-card" id="rationale-box">
-    <!-- Populated by JS -->
-  </div>
+  <!-- EXPLANATION -->
+  <div class="expl-card" id="expl-box"></div>
 
   <script>
-    const rationales = {
-      '2a': `
-        <h3>Variante 2A: Dual-Hero Split (Side-by-Side Monumental)</h3>
-        <p>• <b>Volle optische Parität:</b> <b>8.0 KM</b> (Weiß/Cyan) und <b>+80 HM</b> (Orange) stehen nebeneinander in riesigen 42px-Ziffern als zwei gleichwertige Säulen.</p>
-        <p>• <b>Der Quick-Tap-Button:</b> Greift genau das auf: <code>[ ✓ 8.0 KM & +80 HM gelaufen ]</code>. 1 Tap genügt.</p>
-        <p>• <b>Bei Abweichungen:</b> Ein Klick auf <i>Werte abweichend anpassen</i> klappt die Maske auf, wo KM und HM ebenfalls groß oben stehen.</p>
+    const expls = {
+      1: `
+        <h3>01. Pure Number Zen (Empfehlung für maximale Klarheit)</h3>
+        <p>• <b>Radikal aufgeräumt:</b> Keine Kacheln, keine Rahmen, keine Formularfelder. Nur zwei riesige Ziffern: <b>8.0 km</b> und <b>+80 hm</b>.</p>
+        <p>• <b>Ein einziger Klick:</b> Ein satter grüner Button <code>[ ✓ EINHEIT LOGGEN ]</code>. Null Ablenkung, 100 % Fokus.</p>
       `,
-      '2b': `
-        <h3>Variante 2B: Trail Telemetrie HUD (Garmin / Apple Ultra Style)</h3>
-        <p>• <b>Zwei dominante Kacheln:</b> Links <b>DISTANZ 8.0 KM</b>, rechts <b>ELEVATION +80 HM</b> in markanten Sportuhr-Boxen.</p>
-        <p>• <b>Puls & Terrain:</b> Kompakt im Zwischenbalken (<i>Puls &lt; 118 bpm · Morper Bachtal</i>).</p>
-        <p>• <b>Direkte Stepper:</b> Darunter zwei schnelle Justier-Buttons (<code>KM ±</code> und <code>HM ±</code>) für 1-Tap Anpassung ohne Formular.</p>
+      2: `
+        <h3>02. Dual-Pill Stepper</h3>
+        <p>• <b>Zwei dicke Touch-Pillen:</b> KM und HM stehen wie Instrumente nebeneinander.</p>
+        <p>• <b>Feintuning ohne Tastatur:</b> Mit <code>+</code> und <code>–</code> direkt mit dem Daumen anpassen (z. B. 8.0 ➔ 8.5 km).</p>
       `,
-      '2c': `
-        <h3>Variante 2C: Monumental Quick-Punch (Großblock + Inline-Inputs)</h3>
-        <p>• <b>Ein einziger massiver Block:</b> <b>8.0 KM &nbsp;/&nbsp; +80 HM</b> in monumentaler Typographie unübersehbar im Zentrum.</p>
-        <p>• <b>Alles auf einen Blick (Kein Akkordeon nötig):</b> Direkt unter dem Block stehen zwei schlanke, bereits vorausgefüllte Felder für <b>Dauer (48:30)</b> und <b>HF (114 bpm)</b>.</p>
-        <p>• <b>Der grün leuchtende Action-Button:</b> Schließt den Lauf mit 1 Klick ab – entweder mit den Default-Werten oder den sofort sichtbaren Ist-Werten.</p>
+      3: `
+        <h3>03. Slide to Log (Apple Lockscreen Style)</h3>
+        <p>• <b>Absolute Ruhe im Screen:</b> <code>8.0 KM · +80 HM</code> kompakt und lesbar oben.</p>
+        <p>• <b>Wischen oder Tippen:</b> Verhindert Fehlklicks und fühlt sich wie das Beenden eines Laufs auf der Apple Watch an.</p>
       `,
-      'sq': `
-        <h3>Status Quo (Zum direkten Vergleich)</h3>
-        <p>• 8 Mini-Kacheln, Text-Wiederholungen und kein Höhenmeter-Fokus.</p>
+      4: `
+        <h3>04. Radical Vertical 2-Line</h3>
+        <p>• <b>Zeile 1:</b> <code>DISTANZ  8.0 KM</code></p>
+        <p>• <b>Zeile 2:</b> <code>HÖHENMETER  +80 HM</code></p>
+        <p>• <b>Typo-Purismus:</b> Extrem schnell lesbar, wie ein Stoppuhr-Display.</p>
+      `,
+      5: `
+        <h3>05. 1-Row Strip (KM · HM · MIN)</h3>
+        <p>• <b>Drei Werte in einer einzigen Zeile:</b> KM, HM und Dauer (Minuten) ohne separates Formular sofort editierbar.</p>
+        <p>• <b>Direkt speichern:</b> 1 Fingertipp und fertig.</p>
       `
     };
 
-    function showConcept(key) {
-      document.querySelectorAll('.concept-btn').forEach(b => b.classList.remove('active'));
-      event.target.classList.add('active');
+    let kmVal = 8.0;
+    let hmVal = 80;
 
-      document.querySelectorAll('.sheet-card').forEach(s => s.classList.remove('active'));
-      const target = document.getElementById('sheet-' + key);
-      if (target) target.classList.add('active');
-
-      document.getElementById('rationale-box').innerHTML = rationales[key];
+    function stepC2Km(delta) {
+      kmVal = Math.max(0, +(kmVal + delta).toFixed(1));
+      document.getElementById('c2-km-val').innerText = kmVal.toFixed(1);
     }
 
-    function toggleForm(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    function stepC2Hm(delta) {
+      hmVal = Math.max(0, hmVal + delta);
+      document.getElementById('c2-hm-val').innerText = '+' + hmVal;
     }
 
-    // Init with 2a
-    document.getElementById('rationale-box').innerHTML = rationales['2a'];
+    function simulateSlide() {
+      const thumb = document.getElementById('slider-thumb');
+      const text = document.getElementById('slider-text');
+      thumb.style.transition = 'transform 0.3s ease';
+      thumb.style.transform = 'translateX(280px)';
+      text.innerText = '✓ Geloggt!';
+      setTimeout(() => {
+        alert('✓ Einheit geloggt!');
+        thumb.style.transform = 'translateX(0)';
+        text.innerText = 'Zum Loggen tippen oder wischen';
+      }, 350);
+    }
+
+    function showTab(n) {
+      document.querySelectorAll('.tab-btn').forEach((b, idx) => {
+        b.classList.toggle('active', idx === (n - 1));
+      });
+      document.querySelectorAll('.sheet').forEach(s => s.classList.remove('active'));
+      const activeSheet = document.getElementById('sheet-' + n);
+      if (activeSheet) activeSheet.classList.add('active');
+
+      document.getElementById('expl-box').innerHTML = expls[n];
+    }
+
+    // Init
+    showTab(1);
   </script>
 </body>
 </html>
