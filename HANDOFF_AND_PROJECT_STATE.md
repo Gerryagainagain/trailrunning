@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.46 (Bugfix Modal Trigger: Variable `dn` ReferenceError Fix · v11.46)  
+**Document Version:** 11.47 (Wochenplan KW 47: Longrun Erkrath von Samstag auf Sonntag morgen umgelegt · v11.47)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,20 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.46)
+## 📌 1. Project Overview & Release Freeze State (v11.47)
+
+- **Wochenplan-Anpassung KW 47 (Longrun von Samstag auf Sonntag morgen umgelegt · v11.47):**
+  - **Änderung:** Der 16,0 km Schlüssel-Longrun (`Longrun Erkrath`, 350–400 Hm, GA1 105–118 bpm) wurde im Stammplan von `SAM 21.11` auf `SON 22.11` (Sonntag morgen) verschoben.
+  - **Samstag (`SAM 21.11`):** Wird zum Ruhetag (`Ruhetag · Volle Erholung`).
+  - **Sonntag (`SON 22.11`):** Erhält die Longrun-Spezifikation (`16.0 KM · Longrun Erkrath · Sonntag morgen · 350–400 Hm · 105–118 bpm`, `isLongrun: true`).
+  - **Wochenzusammenfassung:** Text in `summary` aktualisiert auf `Umfangserweiterung auf 34 km · Di 8k Hügel, Do 10k Rhein flach · So 16k Longrun Erkrath (+350–400 Hm).`
+  - **Regenerations- & Belastungskontext:**
+    - Durch den Tausch entsteht nach dem Studio-Training am Freitag (Rumpf & Mobility) ein voller Ruhetag am Samstag, sodass der 16k-Lauf mit vollständig regenerierter Beinmuskulatur angegangen werden kann.
+    - Am darauffolgenden Montag (`MON 23.11`, KW 48) steht regulär ein Ruhetag an, sodass bis zum Hügel-Fahrtspiel am Dienstag (`DIE 24.11`) rund 48 Stunden Erholungsabstand gewährleistet sind.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Bugfix Modal Trigger (`openSheet` ReferenceError · v11.46):**
   - **Ursache:** Bei der Vereinfachung des Modal-Headers auf `${dn} · ${day.tag}` wurde in `openSheet(kwNum, i)` zwar `${dn}` in den Template-Strings verwendet, in Zeile 4168 war jedoch nur `const dd = day.d.split(' ')[1];` deklariert. Dies führte beim Anklicken einer beliebigen Tageskarte zu einem JavaScript-Laufzeitfehler `ReferenceError: dn is not defined`, wodurch die Ausführung vor `mSheet.classList.add('open')` abbrach und das Modal nicht getriggert wurde.
@@ -251,7 +264,7 @@
 
 - **Trainingsplan KW 47 & KW 48 vom Athleten kalibriert (v11.24 / State 11.24):**
   - **Dienstag KW 48 (24.11.):** Auf spezifisches **Hügel-Fahrtspiel (8,0 km)** festgelegt: 4–5 dynamische Bergauf-Schübe nach Gefühl mit Pulsdeckel an der Kuppe bis max. 132 bpm (Option B).
-  - **Samstag KW 47 (21.11.):** Longrun Erkrath auf **16,0 km / 350–400 Hm** im GA1-Bereich (105–118 bpm) bestätigt als Vorstufe zur Peak-Woche KW 48.
+  - **Sonntag KW 47 (22.11., vormittags):** Longrun Erkrath auf **16,0 km / 350–400 Hm** im GA1-Bereich (105–118 bpm) bestätigt als Vorstufe zur Peak-Woche KW 48 (Samstag 21.11. als Ruhetag).
   - **Freitag KW 47 (20.11.):** Studio-Einheit präzisiert als **reines Rumpf/Oberkörper/Mobility-Training (keine Beinkraft)** zur Schonung der Beine vor dem 16-km-Lauf.
   - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
