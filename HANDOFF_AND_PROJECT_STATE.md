@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.44 (Modal Header Simplification & 3-Digit Number Clipping Fix · v11.44)  
+**Document Version:** 11.45 (Single Close Button & Compact Accordion Label · v11.45)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,18 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.44)
+## 📌 1. Project Overview & Release Freeze State (v11.45)
+
+- **Beseitigung des doppelten Schließen-Buttons (v11.45):**
+  - **Ursache:** Im Desktop-Modus (> 600px) wurde sowohl der statische Button `<button class="s-modal-close">✕</button>` auf der `<aside class="m-sheet">` gerendert als auch der dynamisch generierte `.sheet-close-btn` im `.sheet-head`. Durch leichten Versatz (16px vs Header-Flow) überlagerten sich beide Buttons mit einem Ghost-/Schatten-Effekt.
+  - **Lösung:** Der redundante statische Button in `<aside class="m-sheet">` wurde entfernt. Auf allen Geräten (Desktop wie Mobile) existiert nun exakt ein einziger Schließen-Button in `.sheet-head`.
+
+- **Prägnante Beschriftung der Tausch-Aktion (v11.45):**
+  - Der lange Text `⇄ Einheit verschieben / Tag tauschen` wurde prägnant auf **`⇄ Tag tauschen`** gekürzt.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Modal Header Vereinfachung (v11.44):**
   - **Beseitigung redundanter Doppel-Zeilen:** Die gestapelten zwei Zeilen (Zeile 1: `SAM · 21.11 · KW 47` + Zeile 2: `Longrun Erkrath` in 1.15rem Fett) wurden durch eine einzige, extrem kompakte und aufgeräumte Kopfzeile ersetzt: `${dn} · ${day.tag || 'Lauf'}` (z. B. `SAM · Longrun`) neben dem `✕`-Schließen-Button.
