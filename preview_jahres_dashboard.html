@@ -505,13 +505,23 @@
 
     .hero-sub-micro {
       font-size: 0.80rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text-secondary);
       font-feature-settings: "tnum";
+      line-height: 1.35;
+      min-height: 2.7em;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2px;
+      margin-top: 4px;
+      max-width: 100%;
+    }
+    .hero-sub-line {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 100%;
+      line-height: 1.3;
     }
 
     .day-footer-row {
@@ -3386,16 +3396,40 @@
         if (isToday) headerStyle = 'color:var(--apple-cyan);';
         else if (isRace) headerStyle = 'color:var(--apple-orange);';
 
+        function renderCardSubLines(subText, l) {
+          if (l) {
+            const durStr = l.duration ? formatDurationCompact(l.duration) : '';
+            const hmStr = (l.hm && l.hm > 0) ? `${l.hm} Hm` : '';
+            const line1 = [durStr, hmStr].filter(Boolean).join(' · ');
+            const line2 = l.hr ? `Ø ${l.hr} bpm` : '';
+            if (line1 && line2) {
+              return `<div class="hero-sub-line">${line1}</div><div class="hero-sub-line">${line2}</div>`;
+            }
+            return `<div class="hero-sub-line">${line1 || line2 || 'Erledigt'}</div>`;
+          }
+          if (!subText) return '';
+          if (subText.includes(' · ')) {
+            const parts = subText.split(' · ');
+            return `<div class="hero-sub-line">${parts[0]}</div><div class="hero-sub-line">${parts[1]}</div>`;
+          }
+          const mHm = subText.match(/\(([^)]+Hm[^)]*)\)/i);
+          if (mHm) {
+            const hmPart = mHm[1];
+            const hrPart = subText.replace(mHm[0], '').trim();
+            return `<div class="hero-sub-line">${hmPart}</div><div class="hero-sub-line">${hrPart}</div>`;
+          }
+          return `<div class="hero-sub-line">${subText}</div>`;
+        }
+
         let heroHtml = '';
         if (log) {
-          const meta = [log.hr ? `Ø ${log.hr} bpm` : '', log.duration ? formatDurationCompact(log.duration) : '', log.hm ? `${log.hm} Hm` : ''].filter(Boolean).join(' · ');
           heroHtml = `
             <div class="hero-val-wrap">
               <span class="hero-val" style="color:var(--apple-green);">${Number(log.dist).toFixed(1)}</span>
               <span class="hero-unit" style="color:var(--apple-green);">KM</span>
             </div>
             <div class="hero-tag" style="color:var(--apple-green);">✓ ${day.tag || 'Erledigt'}</div>
-            <div class="hero-sub-micro">${meta || 'Erledigt'}</div>
+            <div class="hero-sub-micro">${renderCardSubLines('', log)}</div>
           `;
         } else if (isRest) {
           const restStyle = isToday ? 'style="color:var(--apple-cyan);"' : '';
@@ -3403,32 +3437,31 @@
           heroHtml = `
             <div class="hero-val-wrap"><span class="hero-word-val" ${restStyle}>CHILL</span></div>
             ${tagHtml}
-            <div class="hero-sub-micro">${day.sub}</div>
+            <div class="hero-sub-micro">${renderCardSubLines(day.sub)}</div>
           `;
         } else if (isStudio) {
           heroHtml = `
             <div class="hero-val-wrap"><span class="hero-word-val" style="color:var(--apple-cyan);">STUDIO</span></div>
             <div class="hero-tag" style="color:var(--apple-cyan);">${day.tag}</div>
-            <div class="hero-sub-micro">${day.sub}</div>
+            <div class="hero-sub-micro">${renderCardSubLines(day.sub)}</div>
           `;
         } else if (isHike) {
           heroHtml = `
             <div class="hero-val-wrap"><span class="hero-word-val" style="color:var(--apple-green);">WANDERN</span></div>
             <div class="hero-tag" style="color:var(--apple-green);">${day.tag}</div>
-            <div class="hero-sub-micro">${day.sub}</div>
+            <div class="hero-sub-micro">${renderCardSubLines(day.sub)}</div>
           `;
         } else {
           let valColor = isRace ? 'var(--apple-orange)' : (day.isLongrun ? 'var(--apple-blue)' : 'var(--apple-green)');
           const tagStyle = isRace ? 'style="color:var(--apple-orange);"' : (day.isLongrun ? 'style="color:var(--apple-blue);"' : '');
           const subStyle = isRace ? 'style="color:var(--apple-orange);"' : '';
-          const cleanSub = day.sub ? day.sub.replace(/<[^>]+bpm\s*[·•]?\s*/gi, '').replace(/\d+\s*bpm\s*[·•]?\s*/gi, '').trim() : '';
           heroHtml = `
             <div class="hero-val-wrap">
               <span class="hero-val" style="color:${valColor};">${day.val}</span>
               <span class="hero-unit" style="color:${valColor};">${day.unit || 'KM'}</span>
             </div>
             <div class="hero-tag" ${tagStyle}>${day.tag}</div>
-            <div class="hero-sub-micro" ${subStyle}>${cleanSub || day.sub}</div>
+            <div class="hero-sub-micro" ${subStyle}>${renderCardSubLines(day.sub)}</div>
           `;
         }
 

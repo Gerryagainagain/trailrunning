@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.51 (Apple HIG Equal-Width Fix: Strikte 1/7-Gleichverteilung aller Tageskarten · v11.51)  
+**Document Version:** 11.52 (Apple HIG Subcopy 2-Line Stack: Keine Auslassungspunkte `...` mehr · v11.52)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,28 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.51)
+## 📌 1. Project Overview & Release Freeze State (v11.52)
+
+- **Apple HIG Subcopy 2-Line Key-Value Stack (Auslassungspunkte `...` restlos beseitigt · v11.52):**
+  - **Problem-Analyse:**
+    - Die Subcopy der Tageskarten (`.hero-sub-micro`) war mit `white-space: nowrap; overflow: hidden; text-overflow: ellipsis;` belegt.
+    - Sobald mehr als zwei Metadaten vorlagen (z. B. geloggte Einheiten mit Puls + Dauer + Hm: `Ø 118 bpm · 45:48 min · 80 Hm`), wurde der Text auf den Karten horizontal abgeschnitten (`45:48 mi...` oder `41:00 min...`), während über 50 % der vertikalen Kartenhöhe (215px) komplett leer blieb.
+    - Bei Plan-Läufen (z. B. `350–400 Hm · 105–118 bpm`) schnitt zudem ein fehlerhafter Regex `118 bpm` weg, sodass ein verstümmeltes `350–400 Hm · 105–` stehen blieb.
+  - **Apple HIG Best Practice & Lösung:**
+    - Apple verlangt im HIG, Text niemals mit Ellipsen (`...`) abzuschneiden, wenn im Container ausreichend vertikaler Freiraum vorhanden ist.
+    - **Architektur des 2-Zeilen-Stacks:**
+      - **Geloggte Realläufe:**
+        - Zeile 1: Dauer & Höhenmeter (`45:48 min · 80 Hm` bzw. `41:00 min · 15 Hm`)
+        - Zeile 2: Puls & Physiologie (`Ø 118 bpm`)
+      - **Plan-Vorgaben:**
+        - Zeile 1: Gelände / Streckendetail (`350–400 Hm` bzw. `Flach am Rhein` bzw. `+80 Hm`)
+        - Zeile 2: Zielzone / Herzfrequenz (`105–118 bpm` bzw. `GA1`)
+      - **Ruhetage / Studio:** Kompakte, unbeschnittene Einzeiler (`Regeneration`, `Passiv`, `Keine Beinkraft`).
+    - **Höhen-Integrität:** `.hero-sub-micro` nutzt `min-height: 2.7em` und Flexbox-Spaltenausrichtung. Dadurch stehen alle Fußzeilen, Badges und Header über alle 7 Wochentage hinweg exakt auf derselben horizontalen Fluchtlinie.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Apple HIG Equal-Width Grid Fix (Strikte 1/7-Gleichverteilung · v11.51):**
   - **Problem-Analyse:**
