@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.43">
-  <link rel="stylesheet" href="styles.css?v=11.43">
+  <link rel="stylesheet" href="tokens.css?v=11.44">
+  <link rel="stylesheet" href="styles.css?v=11.44">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1869,17 +1869,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     .sheet-date-pill {
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: var(--apple-cyan);
       text-transform: uppercase;
       background: rgba(100, 210, 255, 0.12);
-      padding: 3px 8px;
+      padding: 4px 10px;
       border-radius: 6px;
+      max-width: calc(100% - 42px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .sheet-close-btn {
       width: 28px;
@@ -1905,7 +1909,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
-      padding: 12px 4px 16px;
+      padding: 8px 4px 14px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       margin-bottom: 14px;
     }
@@ -1932,15 +1936,18 @@
       background: transparent;
       border: 0;
       outline: 0;
-      font-size: 3.4rem;
+      font-size: clamp(2.3rem, 7vw, 2.9rem);
       font-weight: 900;
-      line-height: 0.95;
-      letter-spacing: -2px;
+      line-height: 1;
+      letter-spacing: -1px;
       text-align: center;
-      width: 110px;
+      width: 100%;
+      max-width: 140px;
+      min-width: 0;
+      box-sizing: border-box;
       font-feature-settings: "tnum";
       font-family: inherit;
-      padding: 2px 0;
+      padding: 2px 4px;
       border-bottom: 2px dashed rgba(255, 255, 255, 0.18);
       transition: all 0.2s ease;
       cursor: text;
@@ -1963,18 +1970,19 @@
       align-items: baseline;
       justify-content: center;
       gap: 6px;
-      margin: 6px 0 16px;
+      margin: 4px 0 16px;
     }
     .zen-bpm-num {
       background: transparent;
       border: 0;
       outline: 0;
       color: var(--apple-green);
-      font-size: 2.2rem;
+      font-size: 2.0rem;
       font-weight: 900;
       line-height: 1;
       width: 75px;
       text-align: right;
+      box-sizing: border-box;
       font-feature-settings: "tnum";
       font-family: inherit;
       border-bottom: 2px dashed rgba(48, 209, 88, 0.25);
@@ -4220,11 +4228,8 @@
       if (isRace) {
         bodyContent = `
           <div class="sheet-head">
-            <span class="sheet-date-pill">${day.d.replace(' ', ' · ')} · KW ${kwNum}</span>
+            <span class="sheet-date-pill" style="color:var(--apple-orange); background:rgba(255,159,10,0.12);">${dn} · ${day.tag || 'Wettkampf'}</span>
             <button type="button" class="sheet-close-btn" onclick="closeSheet()">✕</button>
-          </div>
-          <div style="font-size:1.20rem; font-weight:900; margin:2px 0 10px; color:var(--apple-orange);">
-            ${day.tag || 'Wettkampf'}
           </div>
           <div class="s-grid">
             <div class="s-cell"><div class="s-lbl">Distanz / Start</div><div class="s-txt">10,0 km · Start 11:45 Uhr</div></div>
@@ -4264,11 +4269,8 @@
       } else if (run) {
         bodyContent = `
           <div class="sheet-head">
-            <span class="sheet-date-pill">${day.d.replace(' ', ' · ')} · KW ${kwNum}</span>
+            <span class="sheet-date-pill">${dn} · ${day.tag || 'Lauf'}</span>
             <button type="button" class="sheet-close-btn" onclick="closeSheet()">✕</button>
-          </div>
-          <div style="font-size:1.15rem; font-weight:900; margin:2px 0 10px; color:#FFF;">
-            ${day.tag || 'Grundlagenlauf'}
           </div>
 
           <form onsubmit="saveSheetLog(event, ${kwNum}, ${i})">
@@ -4298,7 +4300,7 @@
       } else {
         bodyContent = `
           <div class="sheet-head">
-            <span class="sheet-date-pill">${day.d.replace(' ', ' · ')} · KW ${kwNum}</span>
+            <span class="sheet-date-pill" style="color:var(--text-muted); background:rgba(255,255,255,0.08);">${dn} · ${word}</span>
             <button type="button" class="sheet-close-btn" onclick="closeSheet()">✕</button>
           </div>
           <div class="zen-nonrun-box">

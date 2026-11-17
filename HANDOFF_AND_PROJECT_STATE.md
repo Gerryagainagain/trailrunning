@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.43 (Pure BPM Field Without Explanation Text · Pure Zen Modal v11.43)  
+**Document Version:** 11.44 (Modal Header Simplification & 3-Digit Number Clipping Fix · v11.44)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,20 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.43)
+## 📌 1. Project Overview & Release Freeze State (v11.44)
+
+- **Modal Header Vereinfachung (v11.44):**
+  - **Beseitigung redundanter Doppel-Zeilen:** Die gestapelten zwei Zeilen (Zeile 1: `SAM · 21.11 · KW 47` + Zeile 2: `Longrun Erkrath` in 1.15rem Fett) wurden durch eine einzige, extrem kompakte und aufgeräumte Kopfzeile ersetzt: `${dn} · ${day.tag || 'Lauf'}` (z. B. `SAM · Longrun`) neben dem `✕`-Schließen-Button.
+  - **Keine überdimensionierten Zwischentitel:** Spart über 40 px vertikale Bauhöhe, wodurch das Modal direkt auf die wesentlichen Werte (KM, HM, BPM) fokussiert.
+
+- **Beseitigung von Ziffernabschneiden bei 3- und 4-stelligen Werten (v11.44):**
+  - **Problem gelöst:** Die harte Begrenzung auf `width: 110px` bei `3.4rem` führte auf Mobilgeräten bei 3-stelligen HM-Werten (`400`, `941`) und 4-Zeichen-KM-Werten (`16,0`) zum horizontalen Überlaufen und Abschneiden der linken Ziffer.
+  - **Flexible Skalierung:** Eingabefelder nutzen nun `font-size: clamp(2.3rem, 7vw, 2.9rem)`, `width: 100%`, `max-width: 140px`, `letter-spacing: -1px` und `padding: 2px 4px; box-sizing: border-box;`, wodurch auch mehrstellige Zahlen (`400`, `1250`, `16,0`) mit sicherem Randabstand dargestellt werden.
+  - **BPM-Ziffer:** Auf `width: 75px` und `2.0rem` optimiert.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Pure Zen BPM-Feld ohne Box & Erklärungstexte (v11.43):**
   - **Beseitigung der störenden BPM-Box:** Der graue Containerblock mit `Ø PULS` und `Vorgabe: 115–118 bpm (+80 Hm)` wurde restlos entfernt.
