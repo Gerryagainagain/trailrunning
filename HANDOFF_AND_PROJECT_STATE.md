@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.49 (Pure Zen Modal 2x2: Auto-Doppelpunkt-Maskierung, Komma-Konvertierung & Pure White ZEIT · v11.49)  
+**Document Version:** 11.50 (Re-Tausch: Longrun KW 47 wieder von Sonntag auf Samstag 21.11. verlegt · v11.50)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.49)
+## 📌 1. Project Overview & Release Freeze State (v11.50)
+
+- **Wochenplan-Anpassung KW 47 (Longrun zurück auf Samstag 21.11. · v11.50):**
+  - **Änderung:** Auf Wunsch des Athleten wurde der 16,0 km Schlüssel-Longrun (`Longrun Erkrath`, 350–400 Hm, GA1 105–118 bpm) wieder auf **Samstag (`SAM 21.11.`)** gelegt.
+  - **Samstag (`SAM 21.11.`):** `16.0 KM · Longrun Erkrath` (350–400 Hm · 105–118 bpm Sprechgrenze VT1 · `isLongrun: true`).
+  - **Sonntag (`SON 22.11.`):** `Ruhetag · Volle Erholung`.
+  - **Wochenzusammenfassung:** Aktualisiert auf `Umfangserweiterung auf 34 km · Di 8k Hügel, Do 10k Rhein flach · Sa 16k Longrun Erkrath (+350–400 Hm).`
+  - **Regenerations- & Belastungsgefüge:**
+    - Freitag (`FRE 20.11.`): Reines Studio Rumpf/Mobility ohne Beinkraft zur Schonung vor dem Longrun.
+    - Samstag (`SAM 21.11.`): 16k Longrun Erkrath.
+    - Sonntag (`SON 22.11.`) & Montag (`MON 23.11.`, KW 48): **Zwei volle Erholungstage (48+ Stunden)** nach dem Longrun, bevor am Dienstag (`DIE 24.11.`) das anspruchsvolle Hügel-Fahrtspiel (8,0 km mit Schüben bis 132 bpm) ansteht.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Pure Zen Modal 2x2 Ergonomie-Upgrade (Auto-Maskierung & Pure White ZEIT · v11.49):**
   - **Farb-Harmonisierung (Pure White `#FFFFFF` für ZEIT):**
@@ -297,7 +311,7 @@
 
 - **Trainingsplan KW 47 & KW 48 vom Athleten kalibriert (v11.24 / State 11.24):**
   - **Dienstag KW 48 (24.11.):** Auf spezifisches **Hügel-Fahrtspiel (8,0 km)** festgelegt: 4–5 dynamische Bergauf-Schübe nach Gefühl mit Pulsdeckel an der Kuppe bis max. 132 bpm (Option B).
-  - **Sonntag KW 47 (22.11., vormittags):** Longrun Erkrath auf **16,0 km / 350–400 Hm** im GA1-Bereich (105–118 bpm) bestätigt als Vorstufe zur Peak-Woche KW 48 (Samstag 21.11. als Ruhetag).
+  - **Samstag KW 47 (21.11.):** Longrun Erkrath auf **16,0 km / 350–400 Hm** im GA1-Bereich (105–118 bpm) bestätigt als Vorstufe zur Peak-Woche KW 48 (Sonntag 22.11. als Ruhetag).
   - **Freitag KW 47 (20.11.):** Studio-Einheit präzisiert als **reines Rumpf/Oberkörper/Mobility-Training (keine Beinkraft)** zur Schonung der Beine vor dem 16-km-Lauf.
   - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
 
