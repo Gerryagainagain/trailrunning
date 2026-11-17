@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.45 (Single Close Button & Compact Accordion Label · v11.45)  
+**Document Version:** 11.46 (Bugfix Modal Trigger: Variable `dn` ReferenceError Fix · v11.46)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.45)
+## 📌 1. Project Overview & Release Freeze State (v11.46)
+
+- **Bugfix Modal Trigger (`openSheet` ReferenceError · v11.46):**
+  - **Ursache:** Bei der Vereinfachung des Modal-Headers auf `${dn} · ${day.tag}` wurde in `openSheet(kwNum, i)` zwar `${dn}` in den Template-Strings verwendet, in Zeile 4168 war jedoch nur `const dd = day.d.split(' ')[1];` deklariert. Dies führte beim Anklicken einer beliebigen Tageskarte zu einem JavaScript-Laufzeitfehler `ReferenceError: dn is not defined`, wodurch die Ausführung vor `mSheet.classList.add('open')` abbrach und das Modal nicht getriggert wurde.
+  - **Korrektur:** Deklaration in Zeile 4168 auf `const [dn, dd] = day.d.split(' ');` korrigiert. Das Modal triggert nun wieder sofort und fehlerfrei beim Antippen einer beliebigen Trainingseinheit.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Beseitigung des doppelten Schließen-Buttons (v11.45):**
   - **Ursache:** Im Desktop-Modus (> 600px) wurde sowohl der statische Button `<button class="s-modal-close">✕</button>` auf der `<aside class="m-sheet">` gerendert als auch der dynamisch generierte `.sheet-close-btn` im `.sheet-head`. Durch leichten Versatz (16px vs Header-Flow) überlagerten sich beide Buttons mit einem Ghost-/Schatten-Effekt.

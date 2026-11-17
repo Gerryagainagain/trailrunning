@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.45">
-  <link rel="stylesheet" href="styles.css?v=11.45">
+  <link rel="stylesheet" href="tokens.css?v=11.46">
+  <link rel="stylesheet" href="styles.css?v=11.46">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -4165,7 +4165,7 @@
       const days = getEffectiveWeekDays(kwNum);
       const day = days[i];
       if (!day) return;
-      const dd = day.d.split(' ')[1];
+      const [dn, dd] = day.d.split(' ');
       const log = findRunLog(dd) || {};
       const run = isRunDay(day);
       const isRace = !!day.isRace;
