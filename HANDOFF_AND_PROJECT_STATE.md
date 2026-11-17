@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.48 (Pure Zen Modal 2x2: Zeit-/Dauer-Eingabe `ZEIT` reintegriert · v11.48)  
+**Document Version:** 11.49 (Pure Zen Modal 2x2: Auto-Doppelpunkt-Maskierung, Komma-Konvertierung & Pure White ZEIT · v11.49)  
 **Last Updated:** November 17, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.48)
+## 📌 1. Project Overview & Release Freeze State (v11.49)
+
+- **Pure Zen Modal 2x2 Ergonomie-Upgrade (Auto-Maskierung & Pure White ZEIT · v11.49):**
+  - **Farb-Harmonisierung (Pure White `#FFFFFF` für ZEIT):**
+    - Das bisherige Apple Yellow (`#FFD60A`) erzeugte mit Cyan, Orange, Gelb und Grün vier konkurrierende Buntfarben (Quadrant-Bunt-Effekt) und lag zu nah an Höhenmeter-Orange (`#FF9F0A`).
+    - Umstellung von Ziffer und Label auf **Pure White (`#FFFFFF` / `rgba(255,255,255,0.70)`)** nach Vorbild der Apple-Watch-Stoppuhr und Apple-Fitness-Chronometrie. Sorgt für maximale Lesbarkeit und ein ruhiges, nobles Cockpit.
+  - **Live Auto-Maskierung & Komma-Konvertierung (`formatDurInputLive`):**
+    - **Keine Komma-Eingabe mehr nötig:** Auf der iPhone-Zifferntastatur (die keinen Doppelpunkt hat) wird ein getipptes Komma `,` oder ein Punkt `.` sofort und nahtlos in einen Doppelpunkt `:` gewandelt (z. B. `48,45` ➔ direkt `48:45`).
+    - **Reine Ziffern-Eingabe (Auto-Colon):** Wer auf der Zehnertastatur einfach vier Ziffern eintippt (z. B. `4845`), erhält vollautomatisch die formatierte Zeit `48:45`. Bei drei Ziffern (z. B. `530`) wird `5:30` formatiert. Bei fünf Ziffern (`11500`) wird `1:15:00` formatiert.
+    - **Reine Minuten-Eingabe (`normalizeDurOnBlur`):** Wer nur Minuten eingibt (z. B. `48`), erhält beim Verlassen des Felds oder Abschicken automatisch `48:00`.
+    - **One-Tap Overwrite:** Beim Antippen des Felds wird der bestehende Inhalt mit `this.select()` direkt markiert und kann sofort ohne vorheriges Löschen überschrieben werden.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Pure Zen Modal 2x2 Grid (Zeit-/Dauer-Eingabe `ZEIT` reintegriert · v11.48):**
   - **Problem:** Beim Redesign auf das Pure Zen Modal (v11.42) war das Zeit-Eingabefeld entfallen. Beim Erfassen von Realläufen (z. B. heutige Einheit: 5,6 km / 80 Hm / 114 bpm) fehlte dem Athleten die Möglichkeit, die absolvierte Nettozeit einzutragen, wodurch auch keine reale Pace berechnet werden konnte.

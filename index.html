@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.48">
-  <link rel="stylesheet" href="styles.css?v=11.48">
+  <link rel="stylesheet" href="tokens.css?v=11.49">
+  <link rel="stylesheet" href="styles.css?v=11.49">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -4065,6 +4065,37 @@
       return `${dur} min`;
     }
 
+    function formatDurInputLive(el) {
+      let val = el.value;
+      if (val.includes(',') || val.includes('.')) {
+        val = val.replace(/[.,]/g, ':');
+      }
+      val = val.replace(/[^0-9:]/g, '');
+      const rawDigits = val.replace(/:/g, '');
+      if (!val.includes(':') && rawDigits.length >= 3) {
+        if (rawDigits.length === 3) {
+          val = rawDigits[0] + ':' + rawDigits.slice(1);
+        } else if (rawDigits.length === 4) {
+          val = rawDigits.slice(0, 2) + ':' + rawDigits.slice(2);
+        } else if (rawDigits.length >= 5) {
+          val = rawDigits.slice(0, rawDigits.length - 4) + ':' + rawDigits.slice(-4, -2) + ':' + rawDigits.slice(-2);
+        }
+      }
+      el.value = val;
+    }
+
+    function normalizeDurOnBlur(el) {
+      let val = el.value.trim();
+      if (!val) return;
+      if (/^\d{1,2}$/.test(val)) {
+        el.value = val + ':00';
+      } else if (/^\d{3}$/.test(val)) {
+        el.value = val[0] + ':' + val.slice(1);
+      } else if (/^\d{4}$/.test(val)) {
+        el.value = val.slice(0, 2) + ':' + val.slice(2);
+      }
+    }
+
     function paceFrom(distKm, durationOrSecs) {
       if (!distKm || distKm <= 0) return '-:--';
       let totalSecs = 0;
@@ -4279,9 +4310,9 @@
             <div class="zen-second-grid">
               <div class="zen-col">
                 <div class="zen-input-row">
-                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="58:00" style="color:var(--apple-yellow);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="58:00" style="color:#FFF;" oninput="formatDurInputLive(this)" onblur="normalizeDurOnBlur(this)" onfocus="this.select()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 </div>
-                <div class="zen-unit-tag" style="color:var(--apple-yellow);">ZEIT</div>
+                <div class="zen-unit-tag" style="color:rgba(255,255,255,0.70);">ZEIT</div>
               </div>
               <div class="zen-col">
                 <div class="zen-input-row">
@@ -4320,9 +4351,9 @@
             <div class="zen-second-grid">
               <div class="zen-col">
                 <div class="zen-input-row">
-                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="${defaultDur || '00:00'}" style="color:var(--apple-yellow);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="${defaultDur || '00:00'}" style="color:#FFF;" oninput="formatDurInputLive(this)" onblur="normalizeDurOnBlur(this)" onfocus="this.select()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 </div>
-                <div class="zen-unit-tag" style="color:var(--apple-yellow);">ZEIT</div>
+                <div class="zen-unit-tag" style="color:rgba(255,255,255,0.70);">ZEIT</div>
               </div>
               <div class="zen-col">
                 <div class="zen-input-row">
