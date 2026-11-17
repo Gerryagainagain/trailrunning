@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Redesign Mockups – Running Guide</title>
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    :root {
+      --bg: #0B0B10;
+      --card: #151722;
+      --border: rgba(255, 255, 255, 0.10);
+      --apple-cyan: #64D2FF;
+      --apple-green: #30D158;
+      --apple-orange: #FF9F0A;
+      --apple-yellow: #FFD60A;
+      --text: #FFF;
+      --muted: #8E8E93;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 60px;
+    }
+
+    /* TOP BAR & SELECTOR */
+    .mockup-header {
+      text-align: center;
+      max-width: 680px;
+      margin-bottom: 24px;
+    }
+    .mockup-header h1 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    .mockup-header p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .concept-nav {
+      display: flex;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .concept-btn {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 8px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .concept-btn.active {
+      background: #252838;
+      color: #FFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .concept-btn:hover:not(.active) {
+      color: #FFF;
+    }
+
+    /* DEVICE WRAPPER */
+    .device-stage {
+      width: 100%;
+      max-width: 410px;
+      background: #000;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      border-radius: 44px;
+      padding: 16px 14px 28px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .notch {
+      width: 120px;
+      height: 24px;
+      background: #151515;
+      border-radius: 20px;
+      margin: 0 auto 16px;
+    }
+
+    /* MODAL SHEETS BASE */
+    .sheet-card {
+      background: #13151F;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 18px 16px 16px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      display: none;
+    }
+    .sheet-card.active { display: block; animation: fadeIn 0.25s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* -------------------------------------------------------------
+       CONCEPT 0: STATUS QUO (DAS "KLEIN-KLEIN" ZUM VERGLEICH)
+       ------------------------------------------------------------- */
+    .sq-date { font-size: 0.70rem; font-weight: 800; letter-spacing: 0.08em; color: var(--apple-cyan); text-transform: uppercase; }
+    .sq-title { font-size: 1.25rem; font-weight: 900; margin: 0.25rem 0 0.75rem; color: #FFFFFF; }
+    .sq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 0.85rem; }
+    .sq-cell { background: rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 0.65rem 0.85rem; }
+    .sq-lbl { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+    .sq-txt { font-size: 0.88rem; font-weight: 700; margin-top: 3px; color: #FFF; }
+    .sq-form { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 0.5rem; }
+    .sq-field { background: #151722; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 0.55rem 0.8rem; }
+    .sq-field label { display: block; font-size: 0.62rem; font-weight: 800; color: var(--muted); text-transform: uppercase; }
+    .sq-field div { display: flex; align-items: baseline; gap: 4px; margin-top: 2px; }
+    .sq-field input { width: 100%; background: transparent; border: 0; outline: 0; color: #FFF; font-size: 1.2rem; font-weight: 900; }
+    .sq-save { width: 100%; margin-top: 0.7rem; min-height: 46px; border: 0; border-radius: 14px; background: var(--apple-green); color: #000; font-size: 0.95rem; font-weight: 900; cursor: pointer; }
+
+    /* -------------------------------------------------------------
+       CONCEPT 1: TRAIL DUAL-FOCUS (KM + HM PROMINENT)
+       ------------------------------------------------------------- */
+    .c1-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .c1-badge {
+      font-size: 0.70rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--apple-cyan);
+      background: rgba(100, 210, 255, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .c1-close {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--muted);
+      border: 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* THE POWER HERO */
+    .c1-hero {
+      background: linear-gradient(145deg, #181C2B, #12141F);
+      border: 1px solid rgba(100, 210, 255, 0.25);
+      border-radius: 18px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .c1-hero-main {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .c1-hero-km {
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: #FFF;
+      line-height: 1;
+    }
+    .c1-hero-km small {
+      font-size: 1.0rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+      margin-left: 2px;
+    }
+    .c1-hero-hm {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--apple-orange);
+      letter-spacing: -0.5px;
+    }
+    .c1-hero-sub {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+    .c1-hero-focus { font-weight: 800; color: #FFF; }
+    .c1-hero-puls { font-weight: 700; color: var(--apple-green); }
+
+    /* SECTION TITLE */
+    .c-sec-title {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 12px 0 8px;
+    }
+
+    /* PRIMARY TRAIL INPUT DUO (KM & HM) */
+    .c1-duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    .c1-duo-card {
+      background: #171A28;
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 10px 12px;
+      transition: all 0.15s ease;
+    }
+    .c1-duo-card:focus-within {
+      border-color: var(--apple-cyan);
+      background: #1D2235;
+      box-shadow: 0 0 0 2px rgba(100, 210, 255, 0.25);
+    }
+    .c1-duo-label {
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .c1-duo-input-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .c1-duo-input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #FFF;
+      font-feature-settings: "tnum";
+    }
+    .c1-duo-unit {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+    }
+
+    /* SECONDARY METRICS (TIME & PULSE) */
+    .c1-sub-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .c1-sub-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 8px 12px;
+    }
+    .c1-sub-label {
+      font-size: 0.60rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .c1-sub-input-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: 2px;
+    }
+    .c1-sub-input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFF;
+      font-feature-settings: "tnum";
+    }
+
+    .btn-save-prime {
+      width: 100%;
+      min-height: 48px;
+      background: var(--apple-green);
+      color: #000;
+      border: 0;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* -------------------------------------------------------------
+       CONCEPT 2: 1-TAP QUICK-CONFIRM
+       ------------------------------------------------------------- */
+    .c2-hero {
+      background: #171A28;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 18px 16px;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .c2-hero-title {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #FFF;
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+    .c2-hero-title span { color: var(--apple-cyan); font-size: 1.2rem; }
+    .c2-hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+    .c2-quick-btn {
+      width: 100%;
+      min-height: 54px;
+      background: linear-gradient(180deg, #34E05E, #28B94A);
+      color: #000;
+      border: 0;
+      border-radius: 16px;
+      font-size: 0.98rem;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(48, 209, 88, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+    .c2-quick-btn small {
+      font-size: 0.72rem;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+    .c2-adjust-toggle {
+      width: 100%;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 12px;
+      color: var(--apple-cyan);
+      font-size: 0.80rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* -------------------------------------------------------------
+       CONCEPT 3: MONUMENTAL ALPINE (BILD 2 STYLE)
+       ------------------------------------------------------------- */
+    .c3-wrapper {
+      background: #000;
+      border: 2px solid #FFDE00;
+      border-radius: 20px;
+      padding: 16px;
+      color: #FFF;
+    }
+    .c3-badge {
+      display: inline-block;
+      background: #FFDE00;
+      color: #000;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .c3-huge {
+      font-size: 3.4rem;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -2px;
+      color: #FFDE00;
+      font-family: -apple-system, Impact, sans-serif;
+    }
+    .c3-huge small {
+      font-size: 1.4rem;
+      color: #FFF;
+      letter-spacing: 0;
+    }
+    .c3-sub {
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #FFF;
+      margin-top: 6px;
+      border-bottom: 2px solid #FFDE00;
+      padding-bottom: 10px;
+    }
+    .c3-inputs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .c3-box {
+      background: #111;
+      border: 1.5px solid #333;
+      padding: 10px;
+    }
+    .c3-box.prime {
+      border-color: #FFDE00;
+    }
+    .c3-box-lbl {
+      font-size: 0.65rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #888;
+      text-transform: uppercase;
+    }
+    .c3-box input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: #FFF;
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+    .c3-save-btn {
+      width: 100%;
+      min-height: 50px;
+      background: #FFDE00;
+      color: #000;
+      border: 0;
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+    }
+
+    /* SWAP FOOTER (ALL CONCEPTS) */
+    .mock-swap-strip {
+      margin-top: 12px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      color: var(--apple-cyan);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    /* HIGHLIGHT EXPLANATION PILLS */
+    .rationale-card {
+      max-width: 680px;
+      width: 100%;
+      background: #141722;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px 20px;
+      margin-top: 24px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .rationale-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: var(--apple-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mockup-header">
+    <h1>Workout Modal Redesign: 3 Varianten</h1>
+    <p>Vergleich: Warum das bisherige Modal als „Klein-Klein“ empfunden wird und wie ein radikal aufgeräumter Trail-Fokus (KM + HM) im mobilen Flow wirkt.</p>
+  </div>
+
+  <!-- CONCEPT SELECTOR TABS -->
+  <div class="concept-nav">
+    <button class="concept-btn" onclick="showConcept('sq')">0. Bisher (Status Quo)</button>
+    <button class="concept-btn active" onclick="showConcept('c1')">1. Trail-Duo (KM + HM dominant)</button>
+    <button class="concept-btn" onclick="showConcept('c2')">2. 1-Tap Quick-Confirm</button>
+    <button class="concept-btn" onclick="showConcept('c3')">3. Alpine Monumental (Bild 2)</button>
+  </div>
+
+  <!-- DEVICE FRAME -->
+  <div class="device-stage">
+    <div class="notch"></div>
+
+    <!-- ========================================================
+         0. STATUS QUO (DAS "KLEIN-KLEIN")
+         ======================================================== -->
+    <div class="sheet-card" id="sheet-sq">
+      <div class="sq-date">DIE · 17.11 · KW 47</div>
+      <div class="sq-title">8.0 km · Hügel-GA1</div>
+      
+      <div class="sq-grid">
+        <div class="sq-cell"><div class="sq-lbl">Distanz (Plan)</div><div class="sq-txt">8.0 km</div></div>
+        <div class="sq-cell"><div class="sq-lbl">Puls-Vorgabe (BPM)</div><div class="sq-txt" style="color:var(--apple-green);">115–118 bpm (+80 Hm)</div></div>
+        <div class="sq-cell"><div class="sq-lbl">Einheit / Fokus</div><div class="sq-txt">Hügel-GA1</div></div>
+        <div class="sq-cell"><div class="sq-lbl">Physiologie / VT1</div><div class="sq-txt">105–118 bpm Sprechgrenze</div></div>
+      </div>
+
+      <div class="c-sec-title">Ist-Werte eintragen</div>
+      <div class="sq-form">
+        <div class="sq-field"><label>Distanz</label><div><input type="text" value="8.0"><span>km</span></div></div>
+        <div class="sq-field"><label>Dauer</label><div><input type="text" value="00:00"><span>min</span></div></div>
+        <div class="sq-field"><label>Ø HF</label><div><input type="text" value="0"><span>bpm</span></div></div>
+        <div class="sq-field"><label>Höhenmeter</label><div><input type="text" value="0"><span>Hm</span></div></div>
+        <button type="button" class="sq-save">✓ Speichern</button>
+      </div>
+
+      <div class="mock-swap-strip">
+        <span>⇄ Einheit verschieben / Tag tauschen</span>
+        <span>▼</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         1. CONCEPT 1: TRAIL DUAL-FOCUS (KM + HM DOMINANT)
+         ======================================================== -->
+    <div class="sheet-card active" id="sheet-c1">
+      <div class="c1-meta">
+        <span class="c1-badge">Dienstag 17.11 · KW 47</span>
+        <button class="c1-close">✕</button>
+      </div>
+
+      <!-- VORGABE HERO: Groß, klar, 0% Redundanz -->
+      <div class="c1-hero">
+        <div class="c1-hero-main">
+          <div class="c1-hero-km">8.0 <small>KM</small></div>
+          <div class="c1-hero-hm">+80 HM</div>
+        </div>
+        <div class="c1-hero-sub">
+          <span class="c1-hero-focus">Hügel-GA1</span>
+          <span class="c1-hero-puls">&lt; 118 BPM (VT1)</span>
+        </div>
+      </div>
+
+      <div class="c-sec-title">Absolvierte Werte loggen</div>
+      
+      <!-- DIE BEIDEN TRAIL-HAUPTMETRIKEN (GROSS & PROMINENT) -->
+      <div class="c1-duo-grid">
+        <div class="c1-duo-card">
+          <div class="c1-duo-label">
+            <span>Reale Distanz</span>
+            <span style="color:var(--apple-cyan);">Vorgabe 8.0</span>
+          </div>
+          <div class="c1-duo-input-wrap">
+            <input type="number" step="0.1" class="c1-duo-input" value="8.0">
+            <span class="c1-duo-unit">KM</span>
+          </div>
+        </div>
+
+        <div class="c1-duo-card">
+          <div class="c1-duo-label">
+            <span>Höhenmeter</span>
+            <span style="color:var(--apple-orange);">Plan +80</span>
+          </div>
+          <div class="c1-duo-input-wrap">
+            <input type="number" class="c1-duo-input" value="80" style="color:var(--apple-orange);">
+            <span class="c1-duo-unit" style="color:var(--apple-orange);">HM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KONTROLL-METRIKEN (DAUER & PULS KOMPAKT) -->
+      <div class="c1-sub-grid">
+        <div class="c1-sub-card">
+          <div class="c1-sub-label">Dauer (00:00 / min)</div>
+          <div class="c1-sub-input-wrap">
+            <input type="text" class="c1-sub-input" placeholder="48:30" value="48:30">
+          </div>
+        </div>
+        <div class="c1-sub-card">
+          <div class="c1-sub-label">Ø Puls (bpm)</div>
+          <div class="c1-sub-input-wrap">
+            <input type="number" class="c1-sub-input" placeholder="114" value="114" style="color:var(--apple-green);">
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn-save-prime">✓ Lauf jetzt speichern</button>
+
+      <div class="mock-swap-strip">
+        <span>⇄ Einheit verschieben / Tag tauschen</span>
+        <span>▼</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         2. CONCEPT 2: 1-TAP QUICK-CONFIRM
+         ======================================================== -->
+    <div class="sheet-card" id="sheet-c2">
+      <div class="c1-meta">
+        <span class="c1-badge">Dienstag 17.11 · KW 47</span>
+        <button class="c1-close">✕</button>
+      </div>
+
+      <!-- HERO -->
+      <div class="c2-hero">
+        <div class="c2-hero-title">8.0 <span>KM</span></div>
+        <div class="c2-hero-meta">
+          <span style="color:var(--apple-orange);">+80 Hm Hügel</span>
+          <span style="color:var(--muted);">·</span>
+          <span style="color:var(--apple-green);">&lt; 118 bpm GA1</span>
+        </div>
+      </div>
+
+      <!-- 1-TAP QUICK CONFIRM BUTTON -->
+      <button type="button" class="c2-quick-btn">
+        <span>✓ Planmäßig absolviert</span>
+        <small>1-Tap Quick-Log (8.0 km · 80 Hm)</small>
+      </button>
+
+      <!-- ACCORDION FOR MANUAL OVERRIDES -->
+      <button type="button" class="c2-adjust-toggle" onclick="toggleC2Form()">
+        <span>✎ Werte abweichend anpassen (Dauer, Puls, Hm)</span>
+      </button>
+
+      <div id="c2-form-body" style="display:none; margin-top:10px;">
+        <div class="c1-sub-grid">
+          <div class="c1-sub-card"><div class="c1-sub-label">Reale KM</div><input type="text" class="c1-sub-input" value="8.0"></div>
+          <div class="c1-sub-card"><div class="c1-sub-label">Reale HM</div><input type="text" class="c1-sub-input" value="80"></div>
+          <div class="c1-sub-card"><div class="c1-sub-label">Dauer (min)</div><input type="text" class="c1-sub-input" placeholder="48:00"></div>
+          <div class="c1-sub-card"><div class="c1-sub-label">Ø HF (bpm)</div><input type="text" class="c1-sub-input" placeholder="114"></div>
+        </div>
+        <button type="button" class="btn-save-prime" style="min-height:42px; font-size:0.85rem;">Individuelle Werte speichern</button>
+      </div>
+
+      <div class="mock-swap-strip" style="margin-top:14px;">
+        <span>⇄ Einheit verschieben / Tag tauschen</span>
+        <span>▼</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         3. CONCEPT 3: MONUMENTAL ALPINE (BILD 2 STYLE)
+         ======================================================== -->
+    <div class="sheet-card" id="sheet-c3">
+      <div class="c3-wrapper">
+        <div class="c3-badge">DIENSTAG HÜGEL-GA1</div>
+        <div class="c3-huge">8.0 <small>KM</small></div>
+        <div class="c3-sub">+80 METER MORPER BACHTAL · &lt; 118 BPM</div>
+
+        <div class="c3-inputs-grid">
+          <div class="c3-box prime">
+            <div class="c3-box-lbl">IST DISTANZ</div>
+            <input type="text" value="8.0">
+          </div>
+          <div class="c3-box prime">
+            <div class="c3-box-lbl">IST HÖHENMETER</div>
+            <input type="text" value="+80" style="color:#FFDE00;">
+          </div>
+          <div class="c3-box">
+            <div class="c3-box-lbl">DAUER</div>
+            <input type="text" value="48:20">
+          </div>
+          <div class="c3-box">
+            <div class="c3-box-lbl">DURCHSCHNITT HF</div>
+            <input type="text" value="115">
+          </div>
+        </div>
+
+        <button type="button" class="c3-save-btn">EINHEIT LOGGEN ➔</button>
+      </div>
+
+      <div class="mock-swap-strip" style="background:#000; border-color:#FFDE00; color:#FFDE00;">
+        <span>⇄ EINHEIT VERSCHIEBEN / TAG TAUSCHEN</span>
+        <span>▼</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RATIONALE EXPLANATION -->
+  <div class="rationale-card" id="rationale-box">
+    <!-- Populated by JS -->
+  </div>
+
+  <script>
+    const rationales = {
+      sq: `
+        <h3>Status Quo (Problem-Analyse)</h3>
+        <p>• <b>8 gleichförmige Kacheln:</b> Das Auge sieht vier Vorgabe-Boxen und vier Input-Boxen ohne jede visuelle Hierarchie.</p>
+        <p>• <b>Hohe Redundanz:</b> „8.0 km“ steht viermal auf dem Bildschirm. „Hügel-GA1“ steht dreimal.</p>
+        <p>• <b>Der Bruch zur Preview:</b> Auf der Startseite haben wir monumentale Zahlen (Bild 1 & 2) – im Modal verfällt die UI plötzlich in Verwaltungs-Klein-Klein.</p>
+      `,
+      c1: `
+        <h3>Konzept 1: Trail Dual-Focus (KM + HM dominant) – Empfohlen</h3>
+        <p>• <b>Hero-Leitplanke oben:</b> Ein einziger, kompakter Block zeigt in 0,5 Sekunden die drei Kernfakten: <b>8.0 KM</b>, <b>+80 HM</b> und <b>&lt; 118 BPM</b>. Keine redundanten Kacheln mehr.</p>
+        <p>• <b>Reale Trail-Hierarchie:</b> Die beiden echten Belastungswerte (KM und HM) sind doppelt so groß wie Zeit und Puls.</p>
+        <p>• <b>Vorbefüllung:</b> KM (8.0) und HM (80) sind mit dem Plan vorbefüllt. Wer planmäßig gelaufen ist, muss nur die Minuten eintragen oder direkt auf Speichern tippen.</p>
+      `,
+      c2: `
+        <h3>Konzept 2: 1-Tap Quick-Confirm</h3>
+        <p>• <b>Minimalster Aufwand:</b> Nach dem Lauf reicht ein einziger Fingertipp auf den großen grünen Button <code>[ ✓ Planmäßig absolviert ]</code>.</p>
+        <p>• <b>Detail-Inputs auf Wunsch:</b> Wer abweichende Werte (z. B. 8.4 km / 95 Hm / Puls 112) erfassen möchte, klappt die Details mit einem Tipp auf.</p>
+        <p>• <b>Ideal für den Alltag:</b> 80 % der Trainingseinheiten werden exakt nach Plan absolviert – der Quick-Log spart täglich Zeit.</p>
+      `,
+      c3: `
+        <h3>Konzept 3: Monumental Alpine (Direkte Adaption von Bild 2)</h3>
+        <p>• <b>Brutalistischer Kontrast:</b> Tiefschwarz mit Signalgelb (#FFDE00), extreme Schriftdicken und Kanten.</p>
+        <p>• <b>Haptische Sicherheit:</b> Extra große Ziffern und Trefferflächen, die auch mit kalten oder verschwitzten Händen direkt bedient werden können.</p>
+        <p>• <b>Kein Schnickschnack:</b> Reine Sportler-Ästhetik ohne filigrane Linien.</p>
+      `
+    };
+
+    function showConcept(key) {
+      document.querySelectorAll('.concept-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.sheet-card').forEach(s => s.classList.remove('active'));
+      const activeSheet = document.getElementById('sheet-' + key);
+      if (activeSheet) activeSheet.classList.add('active');
+
+      document.getElementById('rationale-box').innerHTML = rationales[key];
+    }
+
+    function toggleC2Form() {
+      const b = document.getElementById('c2-form-body');
+      b.style.display = b.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Init
+    document.getElementById('rationale-box').innerHTML = rationales['c1'];
+  </script>
+</body>
+</html>
