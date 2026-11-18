@@ -1,14 +1,28 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.52 (Apple HIG Subcopy 2-Line Stack: Keine Auslassungspunkte `...` mehr · v11.52)  
-**Last Updated:** November 17, 2026  
+**Document Version:** 11.53 (Trainingsplan-Anpassung KW 47: Impf-Pause Do 19.11 & Fokus Sa 16k Longrun · v11.53)  
+**Last Updated:** November 18, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.52)
+## 📌 1. Project Overview & Release Freeze State (v11.53)
+
+- **Trainingsplan-Anpassung KW 47 (Impf-Pause am DON 19.11.2026 · v11.53):**
+  - **Sportwissenschaftliche & physiologische Begründung:**
+    - Nach erfolgter Impfung (18.11.) steht das Immunsystem unter hoher akuter Synthese- und Aktivierungsbelastung.
+    - Ausdauertraining (auch aerobes GA1) konkurriert um dieselben Aminosäure- und Glykogenspeicher, erhöht Zytokin-Ausschüttungen und birgt kardiovaskuläre Risiken.
+    - Der geplante 10.0 km GA1-Lauf am Donnerstag (19.11.) wurde gestrichen und in einen Ruhetag (`Ruhe · Impf-Pause · Schonung`) umgewandelt.
+  - **Planungs- & Wochenumfangs-Update in `weeksData[47]`:**
+    - **DON 19.11:** `{ d: 'DON 19.11', val: '—', tag: 'Ruhe', sub: 'Impf-Pause · Schonung' }`
+    - **Wochen-Benchmark:** Reduziert von 34,0 km auf 24,0 km (`shortTitle: 'HM-Aufbau 24 km'`).
+    - **Schwerpunkt:** Komplette Schonung an Do + Fr (Studio nur Rumpf/Mobility, null Beinkraft), um voll regeneriert in den Schlüssel-Longrun am Samstag (21.11., 16 km / 350–400 Hm Erkrath) zu starten.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Apple HIG Subcopy 2-Line Key-Value Stack (Auslassungspunkte `...` restlos beseitigt · v11.52):**
   - **Problem-Analyse:**
@@ -26,10 +40,6 @@
         - Zeile 2: Zielzone / Herzfrequenz (`105–118 bpm` bzw. `GA1`)
       - **Ruhetage / Studio:** Kompakte, unbeschnittene Einzeiler (`Regeneration`, `Passiv`, `Keine Beinkraft`).
     - **Höhen-Integrität:** `.hero-sub-micro` nutzt `min-height: 2.7em` und Flexbox-Spaltenausrichtung. Dadurch stehen alle Fußzeilen, Badges und Header über alle 7 Wochentage hinweg exakt auf derselben horizontalen Fluchtlinie.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **Apple HIG Equal-Width Grid Fix (Strikte 1/7-Gleichverteilung · v11.51):**
   - **Problem-Analyse:**
