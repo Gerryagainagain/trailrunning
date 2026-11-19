@@ -1,28 +1,42 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.53 (Trainingsplan-Anpassung KW 47: Impf-Pause Do 19.11 & Fokus Sa 16k Longrun · v11.53)  
-**Last Updated:** November 18, 2026  
+**Document Version:** 11.54 (Belgenbachtrail Anmeldestand Update 19.11.: 125/300 bei 30k, 184/300 bei 18k · v11.54)  
+**Last Updated:** November 19, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.53)
+## 📌 1. Project Overview & Release Freeze State (v11.54)
 
-- **Trainingsplan-Anpassung KW 47 (Impf-Pause am DON 19.11.2026 · v11.53):**
-  - **Sportwissenschaftliche & physiologische Begründung:**
-    - Nach erfolgter Impfung (18.11.) steht das Immunsystem unter hoher akuter Synthese- und Aktivierungsbelastung.
-    - Ausdauertraining (auch aerobes GA1) konkurriert um dieselben Aminosäure- und Glykogenspeicher, erhöht Zytokin-Ausschüttungen und birgt kardiovaskuläre Risiken.
-    - Der geplante 10.0 km GA1-Lauf am Donnerstag (19.11.) wurde gestrichen und in einen Ruhetag (`Ruhe · Impf-Pause · Schonung`) umgewandelt.
-  - **Planungs- & Wochenumfangs-Update in `weeksData[47]`:**
-    - **DON 19.11:** `{ d: 'DON 19.11', val: '—', tag: 'Ruhe', sub: 'Impf-Pause · Schonung' }`
-    - **Wochen-Benchmark:** Reduziert von 34,0 km auf 24,0 km (`shortTitle: 'HM-Aufbau 24 km'`).
-    - **Schwerpunkt:** Komplette Schonung an Do + Fr (Studio nur Rumpf/Mobility, null Beinkraft), um voll regeneriert in den Schlüssel-Longrun am Samstag (21.11., 16 km / 350–400 Hm Erkrath) zu starten.
+- **Belgenbachtrail Anmeldestand-Update (Stand 19.11.2026 · v11.54):**
+  - **Realdaten der Anmeldephase:**
+    - `30,7 km Strong-Trail de Luxe` (09:30 Uhr): **125 von max. 300 Plätzen gebucht (41,7 % Belegung)**.
+      - Zuwachs von lediglich +2 Anmeldungen in 4 Tagen (von 123 auf 125). Sehr stabile, flache Nachfragekurve auf der langen Distanz.
+      - Noch 175 Plätze verfügbar. Keinerlei akuter Handlungs- oder Buchungsdruck.
+    - `18,7 km Strong-Trail plus` (10:00 Uhr): **184 von max. 300 Plätzen gebucht (61,3 % Belegung)**.
+      - Zuwachs von +11 Anmeldungen in 4 Tagen (von 173 auf 184). Zügigerer Abverkauf auf der kürzeren Einsteiger-/Volksdistanz.
+  - **Strategische Einordnung & Trigger:**
+    - Die 30,7 km Distanz bleibt bis nach dem Siebengebirgs-HM (06.12.) entspannt beobachtbar.
+    - Empfohlener Buchungs-Trigger: Sobald ~200 Plätze bei den 30k erreicht sind (oder direkt nach erfolgreicher 7G-HM Auswertung).
+  - **App-Synchronisation:**
+    - Header-Kalenderdock für 07. März aktualisiert: `07. März 2027 · Belgenbachtrail (30,7 km · 941 Hm · 125/300 gebucht)`.
+    - `raceBriefings.belgenbach` Metadaten & Textblock `Anmeldedynamik & Kontingent` auf Stand 19.11. synchronisiert.
 
 ---
 
 ## 📌 2. Vorherige Meilensteine
+
+- **Trainingsplan-Anpassung KW 47 (Impf-Pause am DON 19.11.2026 · v11.53):**
+  - **Sportwissenschaftliche & physiologische Begründung:**
+    - Nach erfolgter Impfung (18.11.) steht das Immunsystem unter hoher akuter Synthese- und Aktivierungsbelastung.
+    - Der geplante 10.0 km GA1-Lauf am Donnerstag (19.11.) wurde gestrichen und in einen Ruhetag (`Ruhe · Impf-Pause · Schonung`) umgewandelt.
+  - **Planungs- & Wochenumfangs-Update in `weeksData[47]`:**
+    - **DON 19.11:** `{ d: 'DON 19.11', val: '—', tag: 'Ruhe', sub: 'Impf-Pause · Schonung' }`
+    - **Wochen-Benchmark:** Reduziert von 34,0 km auf 24,0 km (`shortTitle: 'HM-Aufbau 24 km'`).
+    - **Ruhepuls-Kontrolle (19.11. morgens):** Liegend im Bett gemessener RHR stabil bei ~40 bpm (Normalwert / Baseline). Bestätigt optimale Verträglichkeit ohne systemische Entzündungsreaktion.
+    - **Schwerpunkt:** Komplette Schonung an Do + Fr (Studio nur Rumpf/Mobility, null Beinkraft), um voll regeneriert in den Schlüssel-Longrun am Samstag (21.11., 16 km / 350–400 Hm Erkrath) zu starten.
 
 - **Apple HIG Subcopy 2-Line Key-Value Stack (Auslassungspunkte `...` restlos beseitigt · v11.52):**
   - **Problem-Analyse:**
