@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.54">
-  <link rel="stylesheet" href="styles.css?v=11.54">
+  <link rel="stylesheet" href="tokens.css?v=11.55">
+  <link rel="stylesheet" href="styles.css?v=11.55">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3580,15 +3580,15 @@
         dates: '16. – 22. November 2026',
         benchmark: '24,0 km',
         benchmarkType: 'blue',
-        summary: 'Do 10k Lauf entfällt zugunsten Immunabwehr (Impf-Pause) · Fokus voll auf Samstag: 16k Longrun Erkrath (+350–400 Hm).',
+        summary: 'Do 10k Lauf entfällt (Impf-Pause) · Fr Studio erledigt · Sa Wandern · So 16k Longrun Erkrath (+350–400 Hm).',
         days: [
           { d: 'MON 16.11', val: '—', tag: 'Ruhe', sub: 'Regeneration' },
           { d: 'DIE 17.11', val: '8.0', unit: 'KM', tag: 'Hügel-GA1', sub: '115–118 bpm (+80 Hm)' },
           { d: 'MIT 18.11', val: '—', tag: 'Ruhe', sub: 'Passiv' },
           { d: 'DON 19.11', val: '—', tag: 'Ruhe', sub: 'Impf-Pause · Schonung' },
-          { d: 'FRE 20.11', val: 'STUDIO', tag: 'Rumpf & Mobility', sub: 'Keine Beinkraft', isStudio: true },
-          { d: 'SAM 21.11', val: '16.0', unit: 'KM', tag: 'Longrun Erkrath', sub: '350–400 Hm · 105–118 bpm', isLongrun: true },
-          { d: 'SON 22.11', val: '—', tag: 'Ruhetag', sub: 'Volle Erholung' }
+          { d: 'FRE 20.11', val: 'STUDIO', tag: '✓ Rumpf & Mobility', sub: 'Erledigt · Keine Beinkraft', isStudio: true },
+          { d: 'SAM 21.11', val: 'WANDERN', tag: 'Wandertour', sub: 'Aerobe Basis · Vorbelastung', isHike: true },
+          { d: 'SON 22.11', val: '16.0', unit: 'KM', tag: 'Longrun Erkrath', sub: '350–400 Hm · 105–118 bpm', isLongrun: true }
         ]
       },
       48: {
@@ -3817,14 +3817,22 @@
 
         let heroHtml = '';
         if (log) {
-          heroHtml = `
-            <div class="hero-val-wrap">
-              <span class="hero-val" style="color:var(--apple-green);">${Number(log.dist).toFixed(1)}</span>
-              <span class="hero-unit" style="color:var(--apple-green);">KM</span>
-            </div>
-            <div class="hero-tag" style="color:var(--apple-green);">✓ ${day.tag || 'Erledigt'}</div>
-            <div class="hero-sub-micro">${renderCardSubLines('', log)}</div>
-          `;
+          if (log.type === 'kraft' || isStudio) {
+            heroHtml = `
+              <div class="hero-val-wrap"><span class="hero-word-val" style="color:var(--apple-green);">STUDIO</span></div>
+              <div class="hero-tag" style="color:var(--apple-green);">✓ ${day.tag.replace(/^✓\s*/, '') || 'Erledigt'}</div>
+              <div class="hero-sub-micro">${renderCardSubLines(day.sub || 'Rumpf & Mobility')}</div>
+            `;
+          } else {
+            heroHtml = `
+              <div class="hero-val-wrap">
+                <span class="hero-val" style="color:var(--apple-green);">${Number(log.dist).toFixed(1)}</span>
+                <span class="hero-unit" style="color:var(--apple-green);">KM</span>
+              </div>
+              <div class="hero-tag" style="color:var(--apple-green);">✓ ${day.tag.replace(/^✓\s*/, '') || 'Erledigt'}</div>
+              <div class="hero-sub-micro">${renderCardSubLines('', log)}</div>
+            `;
+          }
         } else if (isRest) {
           const restStyle = isToday ? 'style="color:var(--apple-cyan);"' : '';
           const tagHtml = day.tag ? `<div class="hero-tag" style="${day.tagColor ? `color:${day.tagColor};` : ''}">${day.tag}</div>` : '';
@@ -3834,9 +3842,11 @@
             <div class="hero-sub-micro">${renderCardSubLines(day.sub)}</div>
           `;
         } else if (isStudio) {
+          const isDone = day.tag && day.tag.includes('✓');
+          const color = isDone ? 'var(--apple-green)' : 'var(--apple-cyan)';
           heroHtml = `
-            <div class="hero-val-wrap"><span class="hero-word-val" style="color:var(--apple-cyan);">STUDIO</span></div>
-            <div class="hero-tag" style="color:var(--apple-cyan);">${day.tag}</div>
+            <div class="hero-val-wrap"><span class="hero-word-val" style="color:${color};">STUDIO</span></div>
+            <div class="hero-tag" style="color:${color};">${day.tag}</div>
             <div class="hero-sub-micro">${renderCardSubLines(day.sub)}</div>
           `;
         } else if (isHike) {
@@ -3910,6 +3920,38 @@
     const SEASON_YEAR = 2026;
 
     const seedDefaultRuns = [
+      {
+        id: 1795150000000,
+        kw: 47,
+        date: "20.11.2026",
+        dayDate: "20.11",
+        dist: 0,
+        distMeters: 0,
+        duration: "00:45:00",
+        hm: 0,
+        hr: 0,
+        pace: "-:--",
+        type: "kraft",
+        isErsatz: true,
+        tag: "Rumpf & Mobility",
+        notes: "Studio erledigt: Rumpf & Mobility (keine Beinkraft)"
+      },
+      {
+        id: 1794950000000,
+        kw: 47,
+        date: "17.11.2026",
+        dayDate: "17.11",
+        dist: 5.6,
+        distMeters: 5600,
+        duration: "00:45:48",
+        hm: 80,
+        hr: 118,
+        pace: "8:11",
+        type: "laufen",
+        isErsatz: false,
+        tag: "Hügel-GA1",
+        notes: "Geloggt: 5.6 km in 45:48 min · Pace 8:11 min/km · Ø 118 bpm · 80 Hm"
+      },
       {
         id: 1794760000000,
         kw: 46,
@@ -4187,11 +4229,12 @@
 
         const color = log ? 'var(--apple-green)' : isToday ? 'var(--apple-cyan)' : day.isRace ? 'var(--apple-orange)' : day.isLongrun ? 'var(--apple-blue)' : 'var(--apple-green)';
         let main;
-        if (log || run) {
-          const v = log ? Number(log.dist).toFixed(1) : parseFloat(day.val).toFixed(1);
+        if ((log && log.type !== 'kraft' && !day.isStudio) || run) {
+          const v = (log && log.type !== 'kraft') ? Number(log.dist).toFixed(1) : parseFloat(day.val).toFixed(1);
           main = `<div class="m-val"><span class="m-num" style="color:${color}">${v}</span><span class="m-unit" style="color:${color}">KM</span></div>`;
         } else if (day.isStudio) {
-          main = `<div class="m-word" style="color:var(--apple-cyan)">STUDIO</div>`;
+          const studioColor = (log || (day.tag && day.tag.includes('✓'))) ? 'var(--apple-green)' : 'var(--apple-cyan)';
+          main = `<div class="m-word" style="color:${studioColor}">STUDIO</div>`;
         } else if (day.isHike) {
           main = `<div class="m-word" style="color:var(--apple-green)">WANDERN</div>`;
         } else {

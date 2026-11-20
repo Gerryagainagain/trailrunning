@@ -1,14 +1,31 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.54 (Belgenbachtrail Anmeldestand Update 19.11.: 125/300 bei 30k, 184/300 bei 18k · v11.54)  
-**Last Updated:** November 19, 2026  
+**Document Version:** 11.55 (KW 47 Wochenplan: Studio erledigt · Sa Wandern · So 16k Longrun Erkrath · v11.55)  
+**Last Updated:** November 20, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.54)
+## 📌 1. Project Overview & Release Freeze State (v11.55)
+
+- **KW 47 Wochenplan-Update (Wandern Sa 21.11. & Longrun So 22.11. · v11.55):**
+  - **Planungs-Anpassungen auf Athleten-Vorgabe:**
+    - **FRE 20.11:** Studio absolviert (`✓ Rumpf & Mobility`, keine Beinkraft). Realspeicher und UI auf erledigt gesetzt.
+    - **SAM 21.11:** Umgestellt auf `WANDERN` (`Wandertour · Aerobe Basis · Vorbelastung`, `isHike: true`).
+    - **SON 22.11:** `16.0 KM · Longrun Erkrath` (350–400 Hm · 105–118 bpm GA1 Sprechgrenze VT1, `isLongrun: true`).
+  - **Physiologische Bewertung & Trade-Off (GEMINI.md § 6):**
+    - *Vorteil / Aerobe Basis:* Die Wandertour am Samstag sorgt für eine sanfte aerobe Grundaktivierung und längere Zeit auf den Beinen (Time on Feet), ohne das Herzkreislauf-System hochzujagen.
+    - *Trade-Off / Vorermüdung:* Durch das mehrstündige Gehen am Vortag entsteht eine spürbare Vorbelastung der Fußgewölbe-, Waden- und Stützmuskulatur. Für den 16k Longrun am Sonntag bedeutet das: Posturale Ermüdung setzt früher ein als nach einem Ruhetag.
+    - *Empfehlung für Sonntag:* Bergabpassagen am Sonntag bewusst technisch sauber und trittsicher laufen, Tempo deckeln und keine abrupten exzentrischen Bremskräfte erzwingen.
+  - **Code- & UI-Verbesserungen:**
+    - Studio-Einheiten (`isStudio`) werden in Desktop-Karten und mobiler Wochenliste bei Abschluss sauber mit `✓` und grünem Styling gerendert (ohne fälschliches `0.0 KM`).
+    - Realdaten für 17.11 (5,6 km / 80 Hm) und 20.11 (Studio) fest im Seed-Speicher (`seedDefaultRuns`, `defaultInitialRuns`) hinterlegt.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Belgenbachtrail Anmeldestand-Update (Stand 19.11.2026 · v11.54):**
   - **Realdaten der Anmeldephase:**
@@ -23,10 +40,6 @@
   - **App-Synchronisation:**
     - Header-Kalenderdock für 07. März aktualisiert: `07. März 2027 · Belgenbachtrail (30,7 km · 941 Hm · 125/300 gebucht)`.
     - `raceBriefings.belgenbach` Metadaten & Textblock `Anmeldedynamik & Kontingent` auf Stand 19.11. synchronisiert.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **Trainingsplan-Anpassung KW 47 (Impf-Pause am DON 19.11.2026 · v11.53):**
   - **Sportwissenschaftliche & physiologische Begründung:**

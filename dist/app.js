@@ -87,6 +87,40 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
+  // KW 47 (Studio Rumpf & Mobility)
+  {
+    id: 1795150000000,
+    kw: 47,
+    date: '20.11.2026',
+    dayDate: '20.11',
+    dist: 0,
+    distMeters: 0,
+    hm: 0,
+    duration: '00:45:00',
+    hr: 0,
+    pace: '-:--',
+    type: 'kraft',
+    isErsatz: true,
+    tag: 'Rumpf & Mobility',
+    notes: 'Studio erledigt: Rumpf & Mobility (keine Beinkraft)'
+  },
+  // KW 47 (Hügel-GA1)
+  {
+    id: 1794950000000,
+    kw: 47,
+    date: '17.11.2026',
+    dayDate: '17.11',
+    dist: 5.6,
+    distMeters: 5600,
+    hm: 80,
+    duration: '00:45:48',
+    hr: 118,
+    pace: '8:11',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Hügel-GA1',
+    notes: 'Geloggt: 5.6 km in 45:48 min · Pace 8:11 min/km · Ø 118 bpm · 80 Hm'
+  },
   // KW 46 (Locker GA1 / Rückreise)
   {
     id: 1794760000000,
