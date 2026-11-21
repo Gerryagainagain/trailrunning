@@ -1,14 +1,28 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.55 (KW 47 Wochenplan: Studio erledigt · Sa Wandern · So 16k Longrun Erkrath · v11.55)  
-**Last Updated:** November 20, 2026  
+**Document Version:** 11.56 (Reisen-Layer Default fixiert: [ • Reisen ] Button & Schraffur immer standardmäßig aktiv · v11.56)  
+**Last Updated:** November 21, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.55)
+## 📌 1. Project Overview & Release Freeze State (v11.56)
+
+- **Reisen-Toggle im Meta-Dock per Default aktiv (`isTravelLayerActive = true` · v11.56):**
+  - **Problem-Analyse:**
+    - Ursprünglich war die Variable `isTravelLayerActive` im Script auf `false` initialisiert (`let isTravelLayerActive = false;`) und das HTML-Element `#travelMasterBtn` trug `aria-pressed="false"` ohne die Klasse `.active`.
+    - Dadurch wurden bei jedem Neuladen der Anwendung die Urlaubs- und Reisezeiträume (z. B. Zoutelande im Januar, Bergurlaub / TS16 im Juni) ausgeblendet und der Button blieb inaktiv grau, bis der Nutzer ihn manuell anklickte.
+  - **Lösung & Konsistenz:**
+    - `isTravelLayerActive` fest auf `true` initialisiert: `let isTravelLayerActive = true; // Standard: AKTIV`.
+    - HTML-Element `#travelMasterBtn` standardmäßig mit `.active` und `aria-pressed="true"` gerendert.
+    - Die gelbe Schraffur und der aktive Reise-Layer im Quartalskalender sind damit ab sofort beim Start und bei Quartalswechseln immer direkt sichtbar. Nutzer können die Ebene bei Bedarf weiterhin jederzeit per Klick temporär ausblenden.
+    - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **KW 47 Wochenplan-Update (Wandern Sa 21.11. & Longrun So 22.11. · v11.55):**
   - **Planungs-Anpassungen auf Athleten-Vorgabe:**
@@ -22,10 +36,6 @@
   - **Code- & UI-Verbesserungen:**
     - Studio-Einheiten (`isStudio`) werden in Desktop-Karten und mobiler Wochenliste bei Abschluss sauber mit `✓` und grünem Styling gerendert (ohne fälschliches `0.0 KM`).
     - Realdaten für 17.11 (5,6 km / 80 Hm) und 20.11 (Studio) fest im Seed-Speicher (`seedDefaultRuns`, `defaultInitialRuns`) hinterlegt.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **Belgenbachtrail Anmeldestand-Update (Stand 19.11.2026 · v11.54):**
   - **Realdaten der Anmeldephase:**

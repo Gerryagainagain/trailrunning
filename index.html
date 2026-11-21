@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.55">
-  <link rel="stylesheet" href="styles.css?v=11.55">
+  <link rel="stylesheet" href="tokens.css?v=11.56">
+  <link rel="stylesheet" href="styles.css?v=11.56">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2484,7 +2484,7 @@
 
       <div class="quarter-meta-strip" id="quarterMetaStrip">
         <div class="quarter-key-event" id="quarterKeyEvent">07. März · Belgenbachtrail (30,7 km · 941 Hm)</div>
-        <button type="button" class="layer-chip-btn" id="travelMasterBtn" onclick="toggleTravelLayer()" aria-pressed="false" title="Reisen ein-/ausblenden">
+        <button type="button" class="layer-chip-btn active" id="travelMasterBtn" onclick="toggleTravelLayer()" aria-pressed="true" title="Reisen ein-/ausblenden">
           <span class="layer-chip-dot"></span>
           <span>Reisen</span>
         </button>
@@ -2775,7 +2775,7 @@
 
     let currentQuarterNum = 0; // Standard: Q1 (Jan – März 2027)
     const TOTAL_QUARTERS = 4;
-    let isTravelLayerActive = false; // Standard: aus; Klick aktiviert die Schraffur für alle Reisen
+    let isTravelLayerActive = true; // Standard: AKTIV (Reisen per Default immer eingeblendet)
 
     function toggleTravelLayer() {
       isTravelLayerActive = !isTravelLayerActive;
