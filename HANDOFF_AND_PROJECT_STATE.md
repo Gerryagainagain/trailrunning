@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.60 (Custom Domain Vorbereitung: CNAME für trail.gerhardschmal.de · v11.60)  
+**Document Version:** 11.61 (Reise Halle an der Saale 04.–08.02.2027 aus Saisonkalender entfernt · v11.61)  
 **Last Updated:** November 22, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/` (Custom Subdomain: `https://trail.gerhardschmal.de`)  
@@ -8,7 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.60)
+## 📌 1. Project Overview & Release Freeze State (v11.61)
+
+- **Reise Halle an der Saale (04.–08.02.2027) entfernt (v11.61):**
+  - Der Reise-Eintrag `{ id: 'halle', label: 'Kulturhauptstadt Halle (04.–08.02.)', startDay: 4, endDay: 8 }` wurde aus `quartersData[0].months[1]` (Februar) in `index.html` und `preview_jahres_dashboard.html` restlos entfernt (`trips: []`).
+  - Der Februar 2027 wird nun im Kalender und in den Tagesdetails als reine Vorbereitungsphase ohne Reise-Overlay dargestellt.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Vorbereitung Custom Subdomain `trail.gerhardschmal.de` (v11.60):**
   - **CNAME-Konfiguration:**
