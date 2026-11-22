@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.58 (Wandertouren-Metrik freigeschaltet: 10,0 km Wanderung SAM 21.11. verbucht & Modal-Logging für Wandern aktiviert · v11.58)  
+**Document Version:** 11.59 (Bereinigung Zeit- & Puls-Vorbelegung: Keine synthetischen Schätzwerte vor dem Lauf · v11.59)  
 **Last Updated:** November 22, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.58)
+## 📌 1. Project Overview & Release Freeze State (v11.59)
+
+- **Bereinigung der Vorbelegung im Log-Modal (GEMINI.md § 8 Daten-Separation · v11.59):**
+  - **Problem & Ursache:**
+    - Nach der v11.57-Anpassung wurden `ZEIT` und `BPM` mit errechneten Heuristik-Werten (z. B. `2:24` bei 18 km via pauschalen 8:00 min/km sowie `114 bpm`) vorab in die Input-Felder geschrieben.
+    - Das täuschte vor dem Lauf Realdaten vor, verfälschte die reale Trail-Pace (da profilierte 500–600 Hm Longruns bei 9:30–10:00 min/km liegen) und widersprach dem Schätzungsverbot in `GEMINI.md` § 8.
+  - **Lösung & saubere Trennung:**
+    - **KM und HM:** Bleiben als Vorgabe aus dem Plan vorausgefüllt (z. B. 18,0 km / 600 Hm), da sie das Trainingsziel definieren.
+    - **ZEIT und BPM:** Bleiben bei ungelaufenen Einheiten standardmäßig **leer** (`value=""`, nur dezente Platzhalter `00:00` bzw. `0`).
+    - Erst nach dem Lauf trägt der Athlet seine echten Nettozeiten und Durchschnittspulswerte ein.
+    - Bereits geloggte Einheiten zeigen weiterhin ihre echten Realdaten.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Wandertour-Metriken & Erfassung (SAM 21.11.2026 · v11.58):**
   - **Erfassung der Samstags-Wanderung:**
@@ -17,10 +31,6 @@
   - **Modal-Freigabe für Wandertage (`isHike`):**
     - `openSheet` öffnet für `day.isHike` ab sofort ebenfalls das vollwertige 2x2-Modal (KM, HM, ZEIT, BPM) statt der starren 0-Werte-Box.
     - Athleten können Wandertouren jederzeit mit genauer Distanz, Höhenmetern und Dauer erfassen und nachkorrigieren.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **Mobile Log Modal Root-Cause Fix & Smart Input (v11.57):**
   - **Problem 1 (Browser-Validierungsfehler „Nächstliegende gültige Werte sind 375 und 380“):**
