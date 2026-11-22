@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.57">
-  <link rel="stylesheet" href="styles.css?v=11.57">
+  <link rel="stylesheet" href="tokens.css?v=11.58">
+  <link rel="stylesheet" href="styles.css?v=11.58">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3937,6 +3937,22 @@
         notes: "Geloggt: 13.3 km in 2:12:00 h · Pace 9:55 min/km · Ø 119 bpm · 376 Hm (Longrun Erkrath nach Wandertour)"
       },
       {
+        id: 1795250000000,
+        kw: 47,
+        date: "21.11.2026",
+        dayDate: "21.11",
+        dist: 10.0,
+        distMeters: 10000,
+        duration: "02:00:00",
+        hm: 0,
+        hr: 0,
+        pace: "-:--",
+        type: "wandern",
+        isErsatz: true,
+        tag: "Wandertour",
+        notes: "Wandertour: 10,0 km (Aerobe Basis & Time on Feet)"
+      },
+      {
         id: 1795150000000,
         kw: 47,
         date: "20.11.2026",
@@ -4366,10 +4382,10 @@
         const mDur = day.sub.match(/(\d+)\s*min/i);
         if (mDur) defaultDur = `${mDur[1]}:00`;
       }
-      if (!defaultDur && run) {
-        const distNum = parseFloat(day.val) || 0;
+      if (!defaultDur && (run || day.isHike)) {
+        const distNum = day.isHike ? 10.0 : (parseFloat(day.val) || 0);
         if (distNum > 0) {
-          const paceMin = defaultHm >= 100 ? 8.0 : 7.5;
+          const paceMin = day.isHike ? 12.0 : (defaultHm >= 100 ? 8.0 : 7.5);
           const totalM = Math.round(distNum * paceMin);
           const h = Math.floor(totalM / 60);
           const m = totalM % 60;
@@ -4378,8 +4394,8 @@
       }
       const hrSpec = day.sub && day.sub.includes('bpm') ? day.sub : '< 118 bpm (GA1 Sprechgrenze)';
       const currentHm = (log.hm !== undefined && log.hm !== null) ? log.hm : (defaultHm || 0);
-      const currentDist = (log.dist !== undefined && log.dist !== null) ? log.dist : (run ? parseFloat(day.val).toFixed(1) : '');
-      const currentHr = (log.hr !== undefined && log.hr !== null && log.hr !== 0) ? log.hr : defaultHr;
+      const currentDist = (log.dist !== undefined && log.dist !== null) ? log.dist : (run ? parseFloat(day.val).toFixed(1) : (day.isHike ? '10.0' : ''));
+      const currentHr = (log.hr !== undefined && log.hr !== null && log.hr !== 0) ? log.hr : (day.isHike ? 100 : defaultHr);
       const currentDur = log.duration ? formatDurationForInput(log.duration) : defaultDur;
 
       // Options for Day Swapping in bottom accordion
@@ -4470,10 +4486,11 @@
             <button type="submit" class="btn-zen-log">✓ WETTKAMPF LOGGEN</button>
           </form>
         `;
-      } else if (run) {
+      } else if (run || day.isHike) {
+        const defaultDistVal = day.isHike ? '10.0' : parseFloat(day.val).toFixed(1);
         bodyContent = `
           <div class="sheet-head">
-            <span class="sheet-date-pill">${dn} · ${day.tag || 'Lauf'}</span>
+            <span class="sheet-date-pill">${dn} · ${day.tag || (day.isHike ? 'Wandern' : 'Lauf')}</span>
             <button type="button" class="sheet-close-btn" onclick="closeSheet()">✕</button>
           </div>
 
@@ -4481,7 +4498,7 @@
             <div class="zen-main-grid">
               <div class="zen-col">
                 <div class="zen-input-row">
-                  <input name="dist" type="text" inputmode="decimal" class="zen-num-input" value="${currentDist}" placeholder="${parseFloat(day.val).toFixed(1)}" style="color:var(--apple-cyan);" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" spellcheck="false">
+                  <input name="dist" type="text" inputmode="decimal" class="zen-num-input" value="${currentDist}" placeholder="${defaultDistVal}" style="color:var(--apple-cyan);" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" spellcheck="false">
                 </div>
                 <div class="zen-unit-tag" style="color:var(--apple-cyan);">KM</div>
               </div>
@@ -4496,19 +4513,19 @@
             <div class="zen-second-grid">
               <div class="zen-col">
                 <div class="zen-input-row">
-                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="${defaultDur || '00:00'}" style="color:#FFF;" oninput="formatDurInputLive(this)" onblur="normalizeDurOnBlur(this)" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                  <input name="dur" type="text" inputmode="decimal" class="zen-num-input" value="${currentDur}" placeholder="${defaultDur || '02:00'}" style="color:#FFF;" oninput="formatDurInputLive(this)" onblur="normalizeDurOnBlur(this)" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
                 </div>
                 <div class="zen-unit-tag" style="color:rgba(255,255,255,0.70);">ZEIT</div>
               </div>
               <div class="zen-col">
                 <div class="zen-input-row">
-                  <input name="hr" type="text" inputmode="numeric" class="zen-num-input" value="${currentHr}" placeholder="${defaultHr || '114'}" style="color:${currentHr && parseInt(currentHr,10) > 118 ? 'var(--apple-orange)' : 'var(--apple-green)'};" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'; document.getElementById('zenBpmTag').style.color='var(--apple-orange)';}else{this.style.color='var(--apple-green)'; document.getElementById('zenBpmTag').style.color='var(--apple-green)';}" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" spellcheck="false">
+                  <input name="hr" type="text" inputmode="numeric" class="zen-num-input" value="${currentHr}" placeholder="${defaultHr || (day.isHike ? '100' : '114')}" style="color:${currentHr && parseInt(currentHr,10) > 118 ? 'var(--apple-orange)' : 'var(--apple-green)'};" oninput="if(parseInt(this.value,10)>118){this.style.color='var(--apple-orange)'; document.getElementById('zenBpmTag').style.color='var(--apple-orange)';}else{this.style.color='var(--apple-green)'; document.getElementById('zenBpmTag').style.color='var(--apple-green)';}" onfocus="this.select(); setTimeout(() => this.setSelectionRange(0, 9999), 50);" autocomplete="off" spellcheck="false">
                 </div>
                 <div class="zen-unit-tag" id="zenBpmTag" style="color:${currentHr && parseInt(currentHr,10) > 118 ? 'var(--apple-orange)' : 'var(--apple-green)'};">BPM</div>
               </div>
             </div>
 
-            <button type="submit" class="btn-zen-log">✓ EINHEIT LOGGEN</button>
+            <button type="submit" class="btn-zen-log">${day.isHike ? '✓ WANDERN LOGGEN' : '✓ EINHEIT LOGGEN'}</button>
           </form>
         `;
       } else {

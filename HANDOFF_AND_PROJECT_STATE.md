@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.57 (Mobile Log Modal: Beseitigung Browser-Validierungsblockade, Smart-Zeitparsing & Pre-Loading aller 4 Felder · v11.57)  
+**Document Version:** 11.58 (Wandertouren-Metrik freigeschaltet: 10,0 km Wanderung SAM 21.11. verbucht & Modal-Logging für Wandern aktiviert · v11.58)  
 **Last Updated:** November 22, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,19 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.57)
+## 📌 1. Project Overview & Release Freeze State (v11.58)
+
+- **Wandertour-Metriken & Erfassung (SAM 21.11.2026 · v11.58):**
+  - **Erfassung der Samstags-Wanderung:**
+    - Die Wandertour vom Samstag (21.11.) ist mit **10,0 km** (`type: 'wandern'`, `isErsatz: true`) fest im Realspeicher verbucht.
+    - Sportwissenschaftliche Einordnung: Aerobe Basiskonservierung und Time-on-Feet ohne exzentrische Bremsbelastung.
+  - **Modal-Freigabe für Wandertage (`isHike`):**
+    - `openSheet` öffnet für `day.isHike` ab sofort ebenfalls das vollwertige 2x2-Modal (KM, HM, ZEIT, BPM) statt der starren 0-Werte-Box.
+    - Athleten können Wandertouren jederzeit mit genauer Distanz, Höhenmetern und Dauer erfassen und nachkorrigieren.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Mobile Log Modal Root-Cause Fix & Smart Input (v11.57):**
   - **Problem 1 (Browser-Validierungsfehler „Nächstliegende gültige Werte sind 375 und 380“):**
@@ -24,10 +36,6 @@
     - **One-Tap-Overwrite:** Über `this.select()` und automatisches Selection-Range-Handling auf iOS wird bei Antippen sofort der gesamte Wert markiert, sodass er mit einem einzigen Tastendruck überschrieben werden kann.
   - **Sonntags-Longrun geloggt (SON 22.11.2026):**
     - Einheit `Longrun Erkrath` (13,3 km · 376 Hm · 2:12:00 h · Ø 119 bpm · Pace 9:55 min/km) fest im Realspeicher (`seedDefaultRuns`, `defaultInitialRuns`) verankert.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **Reisen-Toggle im Meta-Dock per Default aktiv (`isTravelLayerActive = true` · v11.56):**
   - **Problem-Analyse:**

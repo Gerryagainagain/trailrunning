@@ -104,6 +104,23 @@ const defaultInitialRuns = [
     tag: 'Longrun Erkrath',
     notes: 'Geloggt: 13.3 km in 2:12:00 h · Pace 9:55 min/km · Ø 119 bpm · 376 Hm (Longrun Erkrath nach Wandertour)'
   },
+  // KW 47 (Wandertour)
+  {
+    id: 1795250000000,
+    kw: 47,
+    date: '21.11.2026',
+    dayDate: '21.11',
+    dist: 10.0,
+    distMeters: 10000,
+    hm: 0,
+    duration: '02:00:00',
+    hr: 0,
+    pace: '-:--',
+    type: 'wandern',
+    isErsatz: true,
+    tag: 'Wandertour',
+    notes: 'Wandertour: 10,0 km (Aerobe Basis & Time on Feet)'
+  },
   // KW 47 (Studio Rumpf & Mobility)
   {
     id: 1795150000000,
