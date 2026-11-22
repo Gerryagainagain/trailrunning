@@ -1,14 +1,29 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.59 (Bereinigung Zeit- & Puls-Vorbelegung: Keine synthetischen Schätzwerte vor dem Lauf · v11.59)  
+**Document Version:** 11.60 (Custom Domain Vorbereitung: CNAME für trail.gerhardschmal.de · v11.60)  
 **Last Updated:** November 22, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
-**Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
+**Live Application URL:** `https://gerryagainagain.github.io/trailrunning/` (Custom Subdomain: `https://trail.gerhardschmal.de`)  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.59)
+## 📌 1. Project Overview & Release Freeze State (v11.60)
+
+- **Vorbereitung Custom Subdomain `trail.gerhardschmal.de` (v11.60):**
+  - **CNAME-Konfiguration:**
+    - `CNAME`-Datei im Projekt-Root sowie im `dist/`-Verzeichnis angelegt mit dem Inhalt `trail.gerhardschmal.de`.
+    - Assets und Skripte in `index.html` verwenden relative Pfade und funktionieren sowohl im GitHub-Pages-Unterverzeichnis (`/trailrunning/`) als auch nahtlos auf der Root-Ebene der Custom Subdomain (`/`).
+  - **DNS-Anbindung beim Hoster:**
+    - Subdomain: `trail`
+    - Record-Typ: `CNAME`
+    - Ziel: `gerryagainagain.github.io.`
+  - **GitHub Pages:**
+    - Custom Domain hinterlegt; automatisches Let's Encrypt SSL-Zertifikat wird nach DNS-Propagierung via GitHub Pages bereitgestellt („Enforce HTTPS“).
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Bereinigung der Vorbelegung im Log-Modal (GEMINI.md § 8 Daten-Separation · v11.59):**
   - **Problem & Ursache:**
