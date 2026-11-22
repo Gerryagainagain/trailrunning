@@ -1,14 +1,33 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.56 (Reisen-Layer Default fixiert: [ • Reisen ] Button & Schraffur immer standardmäßig aktiv · v11.56)  
-**Last Updated:** November 21, 2026  
+**Document Version:** 11.57 (Mobile Log Modal: Beseitigung Browser-Validierungsblockade, Smart-Zeitparsing & Pre-Loading aller 4 Felder · v11.57)  
+**Last Updated:** November 22, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.56)
+## 📌 1. Project Overview & Release Freeze State (v11.57)
+
+- **Mobile Log Modal Root-Cause Fix & Smart Input (v11.57):**
+  - **Problem 1 (Browser-Validierungsfehler „Nächstliegende gültige Werte sind 375 und 380“):**
+    - Ursache: Das Höhenmeter-Feld war mit `type="number" step="5"` definiert. Bei Eingabe krummer Realdaten wie `376 Hm` verweigerte der mobile Browser das Absenden des Formulars und blendete ein störendes Standard-Tooltip ein.
+    - Lösung: `step="5"` restlos entfernt; Umstellung auf `type="text" inputmode="numeric"` und Ergänzung von `novalidate` am `<form>`. Jeder ganzzahlige Höhenmeter-Wert ist nun ohne Browser-Blockade speicherbar.
+  - **Problem 2 (Mühsame Zeit-Eingabe ohne Doppelpunkt auf mobiler Zifferntastatur):**
+    - Ursache: Die mobile Zehnertastatur bietet primär Ziffern und ein Komma/Punkt, aber keinen Doppelpunkt. Zudem interpretierte der alte Parser zweistellige Eingaben wie `2:12` starr als Minuten:Sekunden (2 min 12 s statt 2 h 12 min).
+    - Lösung:
+      - **Intelligente Stunden/Minuten-Erkennung:** Da kein Ausdauerlauf unter 6 Minuten dauert, werden Werte wie `2:12`, `2,12` oder `212` automatisch als **2 Stunden 12 Minuten** (`02:12:00`, 132 min) interpretiert.
+      - **Flexibles Format:** Komma `,`, Punkt `.` oder reine Zifferneingabe ohne Trennzeichen (`212`) werden sofort akzeptiert und automatisch zu sauberem Zeitformat normalisiert.
+  - **Problem 3 (Leere Eingabefelder / Mangelndes Pre-Loading):**
+    - Lösung: Alle 4 Felder (KM, HM, ZEIT, BPM) werden beim Öffnen des Modals mit realistischen Plan- und Erfahrungswerten vorbelegt.
+    - **One-Tap-Overwrite:** Über `this.select()` und automatisches Selection-Range-Handling auf iOS wird bei Antippen sofort der gesamte Wert markiert, sodass er mit einem einzigen Tastendruck überschrieben werden kann.
+  - **Sonntags-Longrun geloggt (SON 22.11.2026):**
+    - Einheit `Longrun Erkrath` (13,3 km · 376 Hm · 2:12:00 h · Ø 119 bpm · Pace 9:55 min/km) fest im Realspeicher (`seedDefaultRuns`, `defaultInitialRuns`) verankert.
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Reisen-Toggle im Meta-Dock per Default aktiv (`isTravelLayerActive = true` · v11.56):**
   - **Problem-Analyse:**
@@ -19,10 +38,6 @@
     - HTML-Element `#travelMasterBtn` standardmäßig mit `.active` und `aria-pressed="true"` gerendert.
     - Die gelbe Schraffur und der aktive Reise-Layer im Quartalskalender sind damit ab sofort beim Start und bei Quartalswechseln immer direkt sichtbar. Nutzer können die Ebene bei Bedarf weiterhin jederzeit per Klick temporär ausblenden.
     - Synchronisiert in `index.html`, `preview_jahres_dashboard.html`, gespiegelt nach `dist/`.
-
----
-
-## 📌 2. Vorherige Meilensteine
 
 - **KW 47 Wochenplan-Update (Wandern Sa 21.11. & Longrun So 22.11. · v11.55):**
   - **Planungs-Anpassungen auf Athleten-Vorgabe:**

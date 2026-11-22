@@ -87,6 +87,23 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
+  // KW 47 (Longrun Erkrath)
+  {
+    id: 1795350000000,
+    kw: 47,
+    date: '22.11.2026',
+    dayDate: '22.11',
+    dist: 13.3,
+    distMeters: 13300,
+    hm: 376,
+    duration: '02:12:00',
+    hr: 119,
+    pace: '9:55',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Longrun Erkrath',
+    notes: 'Geloggt: 13.3 km in 2:12:00 h · Pace 9:55 min/km · Ø 119 bpm · 376 Hm (Longrun Erkrath nach Wandertour)'
+  },
   // KW 47 (Studio Rumpf & Mobility)
   {
     id: 1795150000000,
