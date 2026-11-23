@@ -228,14 +228,14 @@
       inset: 0;
       background-size: cover;
       background-position: center;
-      opacity: 0.45;
+      opacity: 0.55;
       transition: opacity 0.2s ease;
     }
-    .race-card:hover .race-card-bg { opacity: 0.65; }
+    .race-card:hover .race-card-bg { opacity: 0.75; }
     .race-card-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 85%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.82) 85%);
     }
     .race-card-badge {
       position: absolute;
@@ -626,7 +626,7 @@
 
         return `
           <div class="race-card" style="background: ${c.bg}">
-            <div class="race-card-bg" style="${c.imageUrl ? `background-image: url('${c.imageUrl}'); background-position: ${c.bgPosition || 'center 20%'}; opacity: 0.65;` : ''}"></div>
+            <div class="race-card-bg" style="${c.imageUrl ? `background-image: url('${c.imageUrl}'); background-position: ${c.bgPosition || 'center 20%'}; opacity: 0.75;` : ''}"></div>
             <div class="race-card-gradient"></div>
             ${c.badge ? `<div class="race-card-badge ${c.badgeClass}">${c.badge}</div>` : ''}
             <div class="race-card-content">

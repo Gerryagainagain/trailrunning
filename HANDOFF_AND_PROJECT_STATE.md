@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.77 (Shelf-Karte Bergurlaub Tirol Bildausschnitt +15% nach oben justiert · v11.77)  
+**Document Version:** 11.78 (Amazon-Shelf Kartenbilder um ca. 10% aufgehellt & Gradient optimiert · v11.78)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.77)
+## 📌 1. Project Overview & Release Freeze State (v11.78)
 
+- **Aufhellung der Shelf-Coverbilder (v11.78):**
+  - Bild-Transparenz `.shelf-card-bg` von `opacity: 0.65` auf `0.75` angehoben (+10 % Helligkeit/Lichtdurchlässigkeit; Hover von `0.80` auf `0.88`).
+  - Vertikaler Abdunklungs-Verlauf `.shelf-card-gradient` optimiert: Statt harter vorzeitiger Abdunklung ab Bildmitte (`rgba(0,0,0,0.1) 0% -> 0.88 bei 80%`) greift nun ein weicherer Verlauf (`rgba(0,0,0,0) 0% -> 0.18 bei 45% -> 0.82 bei 85%`).
+  - Gesichter, Landschaften und Details im oberen/mittleren Bilddrittel bleiben dadurch natürlich hell und kontrastreich, während der untere Metriken-Bereich für 100 % Lesbarkeit tief dunkel bleibt.
 - **Bildausschnitt Bergurlaub Tirol justiert (v11.77):**
   - Für die Kachel `Bergurlaub Tirol` (Camping FiNK, 05.–25.06.) in `Apr – Juni 2027` wurde der vertikale Bildfokus via `bgPosition: 'center 35%'` um 15 % gegenüber dem Default (20 %) nach oben geschoben, sodass Zeltwiese und Campinggelände unterhalb des Bergpanoramas optimal im Bild stehen.
 - **Bildausschnitt-Justierung Drachenlauf & Martinslauf (v11.76):**
