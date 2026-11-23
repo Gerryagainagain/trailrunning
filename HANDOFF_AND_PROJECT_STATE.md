@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.74 (Bergurlaub Tirol Camping FiNK: Original Coverfoto eingebunden · v11.74)  
+**Document Version:** 11.75 (Martinslauf Unterbacher See: Original Finisher-Foto eingebunden · v11.75)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.74)
+## 📌 1. Project Overview & Release Freeze State (v11.75)
 
+- **Martinslauf Unterbacher See Cover eingebunden (v11.75):**
+  - Das hochgeladene Original-Foto vom Martinslauf am Unterbacher See wurde als `assets/martinslauf_cover.jpg` hinterlegt.
+  - In `Okt – Dez 2027` besitzt die Karte `Martinslauf U-See` (07.11.2027 · Option · 10,0 km · 30 Hm) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
 - **Bergurlaub Tirol Cover eingebunden (v11.74):**
   - Das Originalfoto von Camping FiNK Tirol (`3P9A6125.jpg`) wurde heruntergeladen, auf 1600 px web-optimiert (383 KB) und als `assets/tirol_cover.jpg` hinterlegt.
   - In `Apr – Juni 2027` besitzt die Reise-Kachel `Bergurlaub Tirol` (05.–25.06.) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
