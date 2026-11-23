@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.82 (Shelf-Karten: Datumsanzeige ohne redundante Jahreszahl formatiert · v11.82)  
+**Document Version:** 11.83 (Shelf-Design: Favorit A implementiert – Monumentale Höhenmeter +HM, weicheres Fading & puristische Typo · v11.83)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,16 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.82)
+## 📌 1. Project Overview & Release Freeze State (v11.83)
 
+- **Favorit A im Amazon-Shelf umgesetzt (v11.83):**
+  - **Monumentale Höhenmeter als Hero-Typo (`.shelf-card-hero-num`):** Ziffern im Schweizer Akzidenz-Stil in `2.85rem` fetter Apple Cyan (`+1.250M`, `+941M`, `+851M`, `+850M`, `+600M`, `+30M`).
+  - **Puristische Typo-Hierarchie ohne Badge:** 
+    - Zeile 1: Datum (`24.10.`)
+    - Zeile 2: Höhenmeter (`+1.250M`)
+    - Zeile 3: Laufname & Distanz (`Drachenlauf · 26k`, `Belgenbach · 30,7k`, etc.)
+    - Anmelde-Badges auf den Wettkampfkarten komplett weggelassen für ein ungestörtes kinoreifes Postergefühl.
+  - **Dunkel-Fading um 10 % reduziert:** Schwarzverlauf `.shelf-card-gradient` von maximal `0.82` auf `0.72` abgeschwächt (`rgba(0,0,0,0.12) 35% -> rgba(0,0,0,0.72) 80%`), sodass Fotos heller, natürlicher und lebendiger bleiben.
 - **Datumsformatierung in Amazon-Shelf-Karten gestrafft (v11.82):**
   - Alle Wettkampfkarten zeigen nun einheitlich und kompakt das Datum ohne redundante Jahreszahl (`07.03.`, `17.04.`, `12.06.`, `11.09.`, `24.10.`, `07.11.`), harmonisiert mit den bereits jahreslosen Reise- und Urlaubskarten (`31.12.–04.01.`, `10.–11.04.`, `05.–25.06.`).
 - **Drachenlauf Anmelde-Pill im Amazon-Shelf ergänzt (v11.81):**

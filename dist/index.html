@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.82">
-  <link rel="stylesheet" href="styles.css?v=11.82">
+  <link rel="stylesheet" href="tokens.css?v=11.83">
+  <link rel="stylesheet" href="styles.css?v=11.83">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1347,7 +1347,7 @@
     .shelf-card-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.82) 85%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.12) 35%, rgba(0, 0, 0, 0.72) 80%);
     }
     .shelf-card-badge {
       position: absolute;
@@ -1372,13 +1372,36 @@
     .shelf-card-content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
     }
     .shelf-card-date {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: var(--apple-orange, #FF9F0A);
-      letter-spacing: 0.3px;
-      margin-bottom: 2px;
+      letter-spacing: 0.4px;
+      margin-bottom: 1px;
+    }
+    .shelf-card-hero-num {
+      font-family: var(--font-display, -apple-system, sans-serif);
+      font-size: clamp(2.3rem, 3.2vw, 2.9rem);
+      font-weight: 900;
+      color: var(--apple-cyan, #64D2FF);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      font-feature-settings: "tnum";
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+      margin: 2px 0 4px 0;
+    }
+    .shelf-card-sub {
+      font-family: var(--font-text, -apple-system, sans-serif);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
     .shelf-card-title {
       font-size: 1.15rem;
@@ -2903,11 +2926,10 @@
           isTrip: false,
           raceKey: 'belgenbach',
           title: 'Belgenbachtrail',
+          shortTitle: 'Belgenbach',
           date: '07.03.',
           km: '30,7',
           hm: '941',
-          badge: '7.12. ANMELDUNG',
-          badgeClass: 'badge-cyan',
           imageUrl: 'assets/belgenbach_cover.jpg',
           bg: 'linear-gradient(135deg, #2b1f1d, #1c130c)'
         }
@@ -2917,6 +2939,7 @@
           id: 'barbershop',
           isTrip: true,
           title: 'Barbershop Apeldoorn',
+          shortTitle: 'Barbershop',
           date: '10.–11.04.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',
@@ -2928,6 +2951,7 @@
           isTrip: false,
           raceKey: 'ret22',
           title: 'Rureifel Trail RET22',
+          shortTitle: 'Rureifel Trail',
           date: '17.04.',
           km: '22,8',
           hm: '851',
@@ -2938,6 +2962,7 @@
           id: 'vacation',
           isTrip: true,
           title: 'Bergurlaub Tirol',
+          shortTitle: 'Bergurlaub',
           date: '05.–25.06.',
           badge: 'URLAUB',
           badgeClass: 'badge-yellow',
@@ -2950,6 +2975,7 @@
           isTrip: false,
           raceKey: 'ts16',
           title: 'Tschirgant Sky Run TS16',
+          shortTitle: 'Tschirgant Sky Run',
           date: '12.06.',
           km: '16,9',
           hm: '850',
@@ -2962,11 +2988,10 @@
           id: 'muellerthal',
           isTrip: false,
           title: 'Ultra Trail Müllerthal',
+          shortTitle: 'Müllerthal',
           date: '11.09.',
           km: '21,0',
           hm: '600',
-          badge: '1.2. ANMELDUNG',
-          badgeClass: 'badge-cyan',
           imageUrl: 'assets/muellerthal_cover.jpg',
           bg: 'linear-gradient(135deg, #201a2b, #100d18)'
         }
@@ -2977,11 +3002,10 @@
           isTrip: false,
           raceKey: 'drachenlauf',
           title: 'Drachenlauf Königswinter',
+          shortTitle: 'Drachenlauf',
           date: '24.10.',
           km: '26,0',
           hm: '1.250',
-          badge: '14.6. ANMELDUNG',
-          badgeClass: 'badge-cyan',
           imageUrl: 'assets/drachenlauf_cover.jpg',
           bgPosition: 'center 85%',
           bg: 'linear-gradient(135deg, #331f14, #1c100a)'
@@ -2991,11 +3015,10 @@
           isTrip: false,
           raceKey: 'martinslauf',
           title: 'Martinslauf U-See',
+          shortTitle: 'Martinslauf',
           date: '07.11.',
           km: '10,0',
           hm: '30',
-          badge: 'OPTION',
-          badgeClass: 'badge-cyan',
           imageUrl: 'assets/martinslauf_cover.jpg',
           bgPosition: 'center 75%',
           bg: 'linear-gradient(135deg, #14202b, #0a1118)'
@@ -3145,24 +3168,28 @@
 
       let html = '';
       visibleCards.forEach(c => {
-        let metricsHtml = '';
-        if (c.km && c.hm) {
-          metricsHtml = `
-            <div class="shelf-card-metrics-hero">
-              <div class="m-block"><span class="m-num">${c.km}</span><span class="m-unit">KM</span></div>
-              <div class="m-sep">·</div>
-              <div class="m-block"><span class="m-num">${c.hm}</span><span class="m-unit">HM</span></div>
-            </div>
-          `;
-        } else if (c.desc) {
-          metricsHtml = `<div class="shelf-card-desc">${c.desc}</div>`;
-        }
-
         const clickHandler = c.raceKey ? `onclick="openRaceDrawer('${c.raceKey}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRaceDrawer('${c.raceKey}');}" role="button" tabindex="0" aria-label="${c.title} Briefing öffnen"` : '';
         const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
         const bgPos = c.bgPosition ? `background-position: ${c.bgPosition};` : '';
-        const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
+        const badgeHtml = (c.isTrip && c.badge) ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
         const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
+
+        let cardContentHtml = '';
+        if (c.hm && c.km) {
+          const kmFormatted = c.km.endsWith(',0') ? c.km.slice(0, -2) : c.km;
+          const displayTitle = c.shortTitle || c.title;
+          cardContentHtml = `
+            <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
+            <div class="shelf-card-hero-num">+${c.hm}M</div>
+            <div class="shelf-card-sub">${displayTitle} · ${kmFormatted}k</div>
+          `;
+        } else {
+          cardContentHtml = `
+            <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
+            <div class="shelf-card-title">${c.title}</div>
+            ${c.desc ? `<div class="shelf-card-desc">${c.desc}</div>` : ''}
+          `;
+        }
 
         html += `
           <div class="shelf-card" style="background: ${c.bg};" ${clickHandler}>
@@ -3170,9 +3197,7 @@
             <div class="shelf-card-gradient"></div>
             ${badgeHtml}
             <div class="shelf-card-content">
-              <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
-              <div class="shelf-card-title">${c.title}</div>
-              ${metricsHtml}
+              ${cardContentHtml}
             </div>
           </div>
         `;
