@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.71 (Drachenlauf Königswinter: Original Gruppenfoto als Cover eingebunden · v11.71)  
+**Document Version:** 11.72 (Barbershop Apeldoorn Holland: Original Coverfoto eingebunden · v11.72)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.71)
+## 📌 1. Project Overview & Release Freeze State (v11.72)
 
+- **Barbershop Apeldoorn Cover eingebunden (v11.72):**
+  - Das hochgeladene Originalfoto (`IMG_5269.heic`) für die Holland-Reise nach Apeldoorn (Sing Festival, 10.–11.04.2027) wurde via nativer Hardware-Dekodierung in ein 1600x1200 JPEG konvertiert (`assets/barbershop_cover.jpg`).
+  - In `Apr – Juni 2027` besitzt die Reise-Kachel `Barbershop Apeldoorn` nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
 - **Drachenlauf-Cover eingebunden (v11.71):**
   - Das hochgeladene Gruppenfoto der Siebengebirge-Community / Probedrachen wurde als `assets/drachenlauf_cover.jpg` hinterlegt.
   - In `Okt – Dez 2027` ziert das Bild nun fest die Karte `Drachenlauf Königswinter` (24.10.2027 · 26,0 km · 1.250 Hm).
