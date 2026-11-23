@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.64 (Strikte kalendarische Reihenfolge für Amazon-Shelf bei aktiver Reise-Ebene · v11.64)  
+**Document Version:** 11.65 (Reise-Card Q1: Titel exakt auf Holland Gangelt Zoutelande gesetzt · v11.65)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,12 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.64)
+## 📌 1. Project Overview & Release Freeze State (v11.65)
 
-- **Strikte kalendarische Reihenfolge im Amazon-Shelf (v11.64):**
-  - **Q1 (Jan–Mär):** 1. *Holland Zoutelande* (31.12.–04.01.) ➔ 2. *Belgenbachtrail* (07.03.).
-  - **Q2 (Apr–Jun):** 1. *Barbershop Apeldoorn* (10.–11.04.) ➔ 2. *Rureifel Trail RET22* (17.04.) ➔ 3. *Bergurlaub Tirol* (05.–25.06.) ➔ 4. *Tschirgant Sky Run TS16* (12.06.).
-  - Bei Deaktivierung von Reisen rutschen die reinen Wettkämpfe automatisch und nahtlos auf die ersten Slots nach.
+- **Reise-Card Q1 bereinigt (v11.65):**
+  - Titel exakt auf **`Holland Gangelt Zoutelande`** gesetzt.
+  - Subline („Jahreswechsel & Küste“) entfernt – die Karte zeigt jetzt clean nur Datum (`31.12.–04.01.`), Badge (`REISE`) und die Headline.
 
 ---
 
