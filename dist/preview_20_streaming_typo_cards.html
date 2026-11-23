@@ -624,6 +624,73 @@
       padding: 2px 7px;
       border-radius: 4px;
     }
+
+    /* ==========================================================================
+       USER FAVORITEN (PURISTISCH OHNE ANMELDE-PILL)
+       ========================================================================== */
+    .c-fav17-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.94) 80%);
+    }
+    .c-fav17-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .c-fav17-date {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--apple-orange);
+      letter-spacing: 0.5px;
+    }
+    .c-fav17-num {
+      font-size: 3.1rem;
+      font-weight: 900;
+      color: var(--apple-cyan);
+      line-height: 0.88;
+      letter-spacing: -2px;
+      font-feature-settings: "tnum";
+      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+      margin: 2px 0 4px 0;
+    }
+    .c-fav17-sub {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+
+    .c-fav08-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.94) 80%);
+    }
+    .c-fav08-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .c-fav08-num {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 0.85;
+      letter-spacing: -2.5px;
+      font-feature-settings: "tnum";
+      text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+      margin: 2px 0 4px 0;
+    }
+    .c-fav08-sub {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.95);
+      letter-spacing: -0.2px;
+    }
   </style>
 </head>
 <body>
@@ -648,6 +715,59 @@
     <div class="section-intro">
       <h1>20 Typografische Varianten für den Amazon-Shelf</h1>
       <p>Inspiriert von Amazon Prime Video, Paramount+ und HBO Max: Jede Variante experimentiert mit einer anderen visuellen Hierarchie – von riesigen Höhenmetern (`1250 HM`), über kinoreife gesperrte Titel (`LIONESS`), bis hin zu Schweizer Akzidenz-Typo.</p>
+    </div>
+
+    <!-- ==========================================================================
+         SPOTLIGHT: DEINE 2 FAVORITEN (PURISTISCH OHNE ANMELDE-PILL)
+         ========================================================================== -->
+    <div style="background: rgba(20, 24, 34, 0.85); border: 1.5px solid rgba(100, 210, 255, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.7); border-radius: 22px; padding: 1.5rem; margin-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+        <div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--apple-cyan); letter-spacing: 0.8px; text-transform: uppercase;">User-Favoriten · Puristische Typo</span>
+          <h2 style="font-size: 1.35rem; font-weight: 900; margin: 3px 0 0; color: #FFF;">Die 2 Favoriten im Spotlight (Ohne Anmelde-Badge)</h2>
+        </div>
+        <span style="font-size: 0.78rem; font-weight: 800; color: var(--apple-orange); background: rgba(255,159,10,0.15); border: 1px solid rgba(255,159,10,0.35); padding: 4px 12px; border-radius: 999px;">Puristischer Fokus</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;">
+
+        <!-- FAVORIT A: V17 PURIFIED (+1.250M HERO) -->
+        <div class="item-box" style="background: rgba(10, 12, 18, 0.95); border: 1px solid rgba(100, 210, 255, 0.35);">
+          <div class="item-header">
+            <span class="item-id" style="color: var(--apple-cyan); font-size: 0.82rem;">Favorit A (aus V17)</span>
+            <span class="item-name">Höhenmeter-Fokus: +1.250M</span>
+            <span class="item-desc">24.10. / +1.250M / Drachenlauf · 26k</span>
+          </div>
+          <div class="stream-card">
+            <div class="card-photo" id="fav_p17" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+            <div class="c-fav17-grad"></div>
+            <div class="c-fav17-content">
+              <div class="c-fav17-date" id="fav_d17">24.10.</div>
+              <div class="c-fav17-num" id="fav_hm17">+1.250M</div>
+              <div class="c-fav17-sub"><span id="fav_t17">Drachenlauf</span> · <span id="fav_km17">26k</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAVORIT B: V08 PURIFIED (26K HERO) -->
+        <div class="item-box" style="background: rgba(10, 12, 18, 0.95); border: 1px solid rgba(255, 159, 10, 0.35);">
+          <div class="item-header">
+            <span class="item-id" style="color: var(--apple-orange); font-size: 0.82rem;">Favorit B (aus V08)</span>
+            <span class="item-name">Distanz-Fokus: 26K</span>
+            <span class="item-desc">24.10. / 26K / Drachenlauf · 1.250 Hm</span>
+          </div>
+          <div class="stream-card">
+            <div class="card-photo" id="fav_p08" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+            <div class="c-fav08-grad"></div>
+            <div class="c-fav08-content">
+              <div class="c-fav17-date" id="fav_d08">24.10.</div>
+              <div class="c-fav08-num" id="fav_km08">26K</div>
+              <div class="c-fav08-sub"><span id="fav_t08">Drachenlauf</span> · <span id="fav_hm08">1.250 Hm</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <div class="cards-20-grid">
@@ -1201,6 +1321,37 @@
         const w11 = document.getElementById(`w11`);
         if (w11) w11.innerText = b.kmPlain + 'K';
       }
+
+      // Update Spotlight Favorites
+      const favP17 = document.getElementById('fav_p17');
+      const favD17 = document.getElementById('fav_d17');
+      const favHm17 = document.getElementById('fav_hm17');
+      const favT17 = document.getElementById('fav_t17');
+      const favKm17 = document.getElementById('fav_km17');
+
+      const favP08 = document.getElementById('fav_p08');
+      const favD08 = document.getElementById('fav_d08');
+      const favKm08 = document.getElementById('fav_km08');
+      const favT08 = document.getElementById('fav_t08');
+      const favHm08 = document.getElementById('fav_hm08');
+
+      if (favP17) {
+        favP17.style.backgroundImage = `url('${b.bg}')`;
+        if (b.bgPos) favP17.style.backgroundPosition = b.bgPos;
+      }
+      if (favD17) favD17.innerText = b.date;
+      if (favHm17) favHm17.innerText = '+' + b.hm + 'M';
+      if (favT17) favT17.innerText = b.shortTitle;
+      if (favKm17) favKm17.innerText = b.kmPlain + 'k';
+
+      if (favP08) {
+        favP08.style.backgroundImage = `url('${b.bg}')`;
+        if (b.bgPos) favP08.style.backgroundPosition = b.bgPos;
+      }
+      if (favD08) favD08.innerText = b.date;
+      if (favKm08) favKm08.innerText = b.kmPlain + 'K';
+      if (favT08) favT08.innerText = b.shortTitle;
+      if (favHm08) favHm08.innerText = b.hm + ' Hm';
     }
   </script>
 </body>
