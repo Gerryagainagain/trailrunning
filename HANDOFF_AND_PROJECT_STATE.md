@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.79 (Above-the-Fold Optimierung: Variante 2 Nav-Pager Integration in Master-Header & kompakte Kalender-Metriken · v11.79)  
+**Document Version:** 11.80 (Shelf-Pills: Anmeldedaten für Müllerthal 1.2. & Belgenbachtrail 7.12. aktualisiert · v11.80)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.79)
+## 📌 1. Project Overview & Release Freeze State (v11.80)
 
+- **Anmelde-Pills im Amazon-Shelf aktualisiert (v11.80):**
+  - **Ultra Trail Müllerthal (Q3):** Badge von `OPTION` auf `1.2. ANMELDUNG` geändert (Registrierungsstart am 01. Februar).
+  - **Belgenbachtrail (Q1):** Neue obere rechte Eck-Pille mit `7.12. ANMELDUNG` (`badge-cyan`) integriert (Anmeldefenster nach 7G-HM am 07. Dezember).
 - **Above-the-Fold Optimierung: Variante 2 "Nav-Pager Integration" umgesetzt (v11.79):**
   - **Nav-Pager in Master-Header integriert (`.season-nav-pager`):** Die freistehende Pager-Leiste (`‹ Jan – März 2027 ›`) wurde aus `#tab-season` entfernt und direkt in den `<header>` fusioniert. Erscheint nahtlos zentriert, sobald der Tab „Saison 2027“ aktiv ist (`body.season-active .season-nav-pager { display: inline-flex; }`).
   - **Freistehende `.season-header`-Zeile eliminiert:** Spart volle **60 px** vertikale Leerhöhe im Saisonkalender ein.
