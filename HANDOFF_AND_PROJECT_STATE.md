@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.62 (Rücknahme Custom Domain CNAME: Direkte Erreichbarkeit via GitHub Pages URL wiederhergestellt · v11.62)  
+**Document Version:** 11.63 (Amazon-Style Race Shelf im Saisonkalender integriert: Große Kennzahlen, Quartalssynchron & Live-Bildassets · v11.63)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,7 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.62)
+## 📌 1. Project Overview & Release Freeze State (v11.63)
+
+- **Amazon-Style Shelf im Saisonkalender 2027 integriert (v11.63):**
+  - **Ergonomisches 3er-Raster:** Feste 16:9-Karten (`repeat(3, 1fr)`) ohne Layout-Jitter oder Kartenskalierung.
+  - **Hero-Kennzahlen:** Große, markante Typografie (`1.4rem`, `font-weight: 900`, tabular-nums) für `KM` und `HM` analog zu den Trainings-Cards.
+  - **Dynamischer Header:** Schaltet bei aktiver Reiseebene auf `Hauptläufe & Reisen` um und zeigt Reisekarten in Apple-Gelb; bei Deaktivierung heißt er `Hauptläufe` und filtert strikt auf reine Wettkämpfe.
+  - **Echte Bild-Assets:**
+    - `assets/belgenbach_cover.jpg`: Reales Trail-Foto von Gerhard im Belgenbachtrail (Q1).
+    - `assets/ret22_cover.jpg`: Rureifel Trail RET22 Streckenfoto (Q2).
+    - `assets/ts16_cover.webp`: Tschirgant Sky Run TS16 Alpenmotiv (Q2).
+  - **Interaktion:** Klick auf eine Renn-Card öffnet direkt das zugehörige Wettkampf-Briefing (`openRaceDrawer`).
+
+---
+
+## 📌 2. Vorherige Meilensteine
 
 - **Rücknahme der Custom Domain `trail.gerhardschmal.de` (v11.62):**
   - Die `CNAME`-Datei wurde aus dem Repository-Root sowie dem `dist/`-Verzeichnis restlos gelöscht.

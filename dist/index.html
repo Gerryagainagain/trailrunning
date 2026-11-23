@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.62">
-  <link rel="stylesheet" href="styles.css?v=11.62">
+  <link rel="stylesheet" href="tokens.css?v=11.63">
+  <link rel="stylesheet" href="styles.css?v=11.63">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1230,6 +1230,160 @@
       outline: 2px solid var(--apple-cyan) !important;
       outline-offset: 1px;
       z-index: 10 !important;
+    }
+
+    /* ==========================================================================
+       AMAZON-STYLE SHELF (HAUPTLÄUFE & REISEN)
+       ========================================================================== */
+    .season-shelf-section {
+      margin-top: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .season-shelf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      padding: 0 0.25rem;
+    }
+    .season-shelf-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+    .season-shelf-all-btn {
+      background: none;
+      border: none;
+      color: var(--apple-cyan, #30D158);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 4px 8px;
+      transition: opacity 0.2s;
+    }
+    .season-shelf-all-btn:hover { opacity: 0.8; }
+    .season-shelf-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .season-shelf-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+    .shelf-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: rgba(22, 22, 30, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .shelf-card:hover {
+      transform: translateY(-3px) scale(1.015);
+      border-color: rgba(255, 255, 255, 0.28);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+    .shelf-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 20%;
+      opacity: 0.65;
+      transition: opacity 0.2s ease;
+    }
+    .shelf-card:hover .shelf-card-bg { opacity: 0.8; }
+    .shelf-card-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.88) 80%);
+    }
+    .shelf-card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .shelf-card-badge.badge-yellow {
+      background: var(--apple-yellow, #FFD60A);
+      color: #000000;
+    }
+    .shelf-card-badge.badge-cyan {
+      background: var(--apple-cyan, #30D158);
+      color: #000000;
+    }
+    .shelf-card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .shelf-card-date {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--apple-orange, #FF9F0A);
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+    .shelf-card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+    .shelf-card-metrics-hero {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .shelf-card-metrics-hero .m-block {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+    .shelf-card-metrics-hero .m-num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1.0;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      font-feature-settings: "tnum";
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .shelf-card-metrics-hero .m-unit {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .shelf-card-metrics-hero .m-sep {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin: 0 1px;
+    }
+    .shelf-card-desc {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 3px;
     }
 
     /* ==========================================================================
@@ -2490,6 +2644,17 @@
         </button>
       </div>
 
+      <!-- AMAZON-STYLE RACE & EVENT SHELF (QUARTALSSYNCHRON) -->
+      <div class="season-shelf-section" id="seasonShelfSection">
+        <div class="season-shelf-header">
+          <div class="season-shelf-title" id="seasonShelfTitle">Hauptläufe & Reisen</div>
+          <button type="button" class="season-shelf-all-btn" onclick="openAllSeasonRacesModal()">Alle ›</button>
+        </div>
+        <div class="season-shelf-grid" id="seasonShelfGrid">
+          <!-- WIRD DYNAMISCH GENERIERT -->
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -2680,6 +2845,114 @@
       }
     };
 
+    // Quartals-Karten für den Amazon-Shelf (Saison 2027)
+    const seasonCardsData = {
+      0: [ // Q1
+        {
+          id: 'belgenbach',
+          isTrip: false,
+          raceKey: 'belgenbach',
+          title: 'Belgenbachtrail',
+          date: '07.03.2027',
+          km: '30,7',
+          hm: '941',
+          imageUrl: 'assets/belgenbach_cover.jpg',
+          bg: 'linear-gradient(135deg, #2b1f1d, #1c130c)'
+        },
+        {
+          id: 'zoutelande',
+          isTrip: true,
+          title: 'Holland Zoutelande',
+          date: '31.12.–04.01.',
+          desc: 'Jahreswechsel & Küste',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        }
+      ],
+      1: [ // Q2
+        {
+          id: 'ret22',
+          isTrip: false,
+          raceKey: 'ret22',
+          title: 'Rureifel Trail RET22',
+          date: '17.04.2027',
+          km: '22,8',
+          hm: '851',
+          imageUrl: 'assets/ret22_cover.jpg',
+          bg: 'linear-gradient(135deg, #142823, #0d1a17)'
+        },
+        {
+          id: 'ts16',
+          isTrip: false,
+          raceKey: 'ts16',
+          title: 'Tschirgant Sky Run TS16',
+          date: '12.06.2027',
+          km: '16,9',
+          hm: '850',
+          imageUrl: 'assets/ts16_cover.webp',
+          bg: 'linear-gradient(135deg, #1b2133, #0d111a)'
+        },
+        {
+          id: 'vacation',
+          isTrip: true,
+          title: 'Bergurlaub Tirol',
+          date: '05.–25.06.',
+          desc: 'Standlager FiNK Imst',
+          badge: 'URLAUB',
+          badgeClass: 'badge-yellow',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        },
+        {
+          id: 'barbershop',
+          isTrip: true,
+          title: 'Barbershop Apeldoorn',
+          date: '10.–11.04.',
+          desc: 'Sing Festival',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        }
+      ],
+      2: [ // Q3
+        {
+          id: 'muellerthal',
+          isTrip: false,
+          title: 'Ultra Trail Müllerthal',
+          date: '11.09.2027',
+          km: '21,0',
+          hm: '600',
+          badge: 'OPTION',
+          badgeClass: 'badge-cyan',
+          bg: 'linear-gradient(135deg, #201a2b, #100d18)'
+        }
+      ],
+      3: [ // Q4
+        {
+          id: 'drachenlauf',
+          isTrip: false,
+          raceKey: 'drachenlauf',
+          title: 'Drachenlauf Königswinter',
+          date: '24.10.2027',
+          km: '26,0',
+          hm: '1.250',
+          bg: 'linear-gradient(135deg, #331f14, #1c100a)'
+        },
+        {
+          id: 'martinslauf',
+          isTrip: false,
+          raceKey: 'martinslauf',
+          title: 'Martinslauf U-See',
+          date: '07.11.2027',
+          km: '10,0',
+          hm: '30',
+          badge: 'OPTION',
+          badgeClass: 'badge-cyan',
+          bg: 'linear-gradient(135deg, #14202b, #0a1118)'
+        }
+      ]
+    };
+
     function getPhase(mIdx, d) {
       if (mIdx === 1026) { // Nov 2026
         if (d === 8) return 'race'; // Martinslauf 10k Hauptlauf
@@ -2776,6 +3049,7 @@
       isTravelLayerActive = !isTravelLayerActive;
       updateTravelMasterUI();
       renderMonths(quartersData[currentQuarterNum].months);
+      renderSeasonShelf();
     }
 
     function toggleVacationLayer() {
@@ -2807,6 +3081,59 @@
       return null;
     }
 
+    function renderSeasonShelf() {
+      const titleEl = document.getElementById('seasonShelfTitle');
+      const gridEl = document.getElementById('seasonShelfGrid');
+      if (!gridEl) return;
+
+      if (titleEl) {
+        titleEl.innerText = isTravelLayerActive ? 'Hauptläufe & Reisen' : 'Hauptläufe';
+      }
+
+      const cards = seasonCardsData[currentQuarterNum] || [];
+      const visibleCards = cards.filter(c => !c.isTrip || isTravelLayerActive);
+
+      let html = '';
+      visibleCards.forEach(c => {
+        let metricsHtml = '';
+        if (c.km && c.hm) {
+          metricsHtml = `
+            <div class="shelf-card-metrics-hero">
+              <div class="m-block"><span class="m-num">${c.km}</span><span class="m-unit">KM</span></div>
+              <div class="m-sep">·</div>
+              <div class="m-block"><span class="m-num">${c.hm}</span><span class="m-unit">HM</span></div>
+            </div>
+          `;
+        } else if (c.desc) {
+          metricsHtml = `<div class="shelf-card-desc">${c.desc}</div>`;
+        }
+
+        const clickHandler = c.raceKey ? `onclick="openRaceDrawer('${c.raceKey}')"` : '';
+        const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
+        const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
+        const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
+
+        html += `
+          <div class="shelf-card" style="background: ${c.bg};" ${clickHandler}>
+            <div class="shelf-card-bg" style="${bgImg}"></div>
+            <div class="shelf-card-gradient"></div>
+            ${badgeHtml}
+            <div class="shelf-card-content">
+              <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
+              <div class="shelf-card-title">${c.title}</div>
+              ${metricsHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      gridEl.innerHTML = html;
+    }
+
+    function openAllSeasonRacesModal() {
+      openRaceDrawer('belgenbach');
+    }
+
     function switchQuarter(qNum) {
       if (qNum < 0) qNum = TOTAL_QUARTERS - 1;
       if (qNum >= TOTAL_QUARTERS) qNum = 0;
@@ -2833,6 +3160,7 @@
       }
 
       renderMonths(q.months);
+      renderSeasonShelf();
     }
 
     function prevQuarter() {

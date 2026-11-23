@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mockup-Vergleich: 5 Varianten Amazon-Race-Shelf & Kalender</title>
+  <style>
+    :root {
+      --bg: #0B0B10;
+      --card-bg: rgba(22, 22, 30, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-top: rgba(255, 255, 255, 0.18);
+      --text: #F5F5F7;
+      --text-muted: #8E8E93;
+      --accent-orange: #FF9F0A;
+      --accent-cyan: #32D74B;
+      --accent-blue: #0A84FF;
+      --accent-yellow: #FFD60A;
+      --accent-purple: #BF5AF2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 20px; min-height: 100vh; }
+
+    /* Top Navigation Switcher */
+    .variant-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      margin-bottom: 24px;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    .variant-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 980px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .variant-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+    .variant-btn.active {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+    }
+
+    /* Explanation Banner */
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .info-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .info-desc { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+    .badge-pros { background: rgba(50, 215, 75, 0.15); color: #32D74B; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+    .badge-cons { background: rgba(255, 69, 58, 0.15); color: #FF453A; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+
+    /* Canvas Frame */
+    .viewport-frame {
+      background: #000;
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    /* Pager Header */
+    .pager-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .pager-title {
+      font-size: 15px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 6px 18px;
+      border-radius: 980px;
+      border: 1px solid var(--card-border);
+      color: #fff;
+    }
+
+    /* 3-Month Calendar Grid */
+    .calendar-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+    .month-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 1px solid var(--card-border-top);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .month-name {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .days-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .day-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .day-cell:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+    .day-cell.race {
+      background: var(--accent-orange);
+      color: #000;
+      font-weight: 800;
+      box-shadow: 0 0 10px rgba(255, 159, 10, 0.5);
+    }
+    .day-cell.build { background: rgba(10, 132, 255, 0.2); color: #5AC8FA; }
+    .day-cell.rekom { background: rgba(50, 215, 75, 0.2); color: #32D74B; }
+    .day-cell.active-click { outline: 2px solid #fff; }
+
+    /* Mitteilung / Statusdock */
+    .status-dock {
+      background: rgba(22, 22, 30, 0.95);
+      border: 1px solid rgba(255, 159, 10, 0.3);
+      border-radius: 980px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      backdrop-filter: blur(12px);
+    }
+    .status-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-orange);
+    }
+    .status-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Amazon-Style Shelf / Carousel */
+    .amazon-shelf {
+      margin-top: 10px;
+    }
+    .shelf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .shelf-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .shelf-more {
+      font-size: 12px;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .race-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #1C1C24;
+      border: 1px solid var(--card-border);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 14px;
+    }
+    .race-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
+    .race-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.45;
+      transition: opacity 0.2s ease;
+    }
+    .race-card:hover .race-card-bg { opacity: 0.65; }
+    .race-card-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 85%);
+    }
+    .race-card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      color: #000;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .race-card-badge.orange { background: var(--accent-orange); color: #000; }
+    .race-card-badge.cyan { background: var(--accent-cyan); color: #000; }
+    .race-card-badge.yellow { background: var(--accent-yellow); color: #000; }
+    .race-card-content {
+      position: relative;
+      z-index: 2;
+    }
+    .race-card-date {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent-orange);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .race-card-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+    }
+    .race-card-metrics {
+      font-size: 11px;
+      font-weight: 600;
+      color: #EBEBF5;
+      opacity: 0.85;
+    }
+
+    /* GROSSE KENNZAHLEN WIE AUF DEN TRAINING CARDS */
+    .race-card-metrics-hero {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .metric-block {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+    .metric-num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1.0;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      font-feature-settings: "tnum";
+      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .metric-unit {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .metric-sep {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin: 0 1px;
+    }
+
+    /* VARIANT 3: INTEGRATED DOCK (Hero Card + Details Side-by-Side) */
+    .integrated-panel {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    /* VARIANT 4: FLOATING PILL OVERLAY */
+    .floating-pill {
+      background: rgba(30, 30, 40, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 980px;
+      padding: 10px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: blur(25px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      margin: 0 auto 18px auto;
+    }
+
+    /* VARIANT 5: TWO COLUMN (Split View) */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Selector -->
+  <div class="variant-bar">
+    <button class="variant-btn active" onclick="setVariant(1)">1. Classic Stack (Empfohlen)</button>
+    <button class="variant-btn" onclick="setVariant(2)">2. Hero Strip Top</button>
+    <button class="variant-btn" onclick="setVariant(3)">3. Integrated Feature Dock</button>
+    <button class="variant-btn" onclick="setVariant(4)">4. Floating Glass Pill</button>
+    <button class="variant-btn" onclick="setVariant(5)">5. Split Stage (Side-by-Side)</button>
+  </div>
+
+  <!-- Info Box -->
+  <div class="info-card">
+    <div>
+      <div class="info-title" id="variantTitle">Variante 1: Classic Stack (Kalender ➔ Mitteilung ➔ Amazon Shelf)</div>
+      <div class="info-desc" id="variantDesc">Die Mitteilung sitzt als direkte Klick-Rückmeldung unmittelbar unter den Monatsblöcken. Darunter liegt der Amazon-Shelf mit den visuellen Renn-Covern.</div>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <span class="badge-pros" id="variantPros">✓ Perfekte Fitts' Law Nähe</span>
+      <span class="badge-cons" id="variantCons">− Benötigt vertikales Scrollen</span>
+    </div>
+  </div>
+
+  <!-- Canvas Container -->
+  <div class="viewport-frame" id="canvasFrame">
+    <!-- Wird via JavaScript befüllt -->
+  </div>
+
+  <script>
+    let currentQuarter = 0; // 0: Q1, 1: Q2, 2: Q3, 3: Q4
+    let currentDaySelected = "07. März · Belgenbachtrail (30,7 km · 941 Hm · Hauptziel Q1)";
+
+    const quartersConfig = [
+      {
+        title: "Jan – März 2027",
+        months: [
+          { name: "Januar", days: 31, raceDay: 0 },
+          { name: "Februar", days: 28, raceDay: 0 },
+          { name: "März", days: 31, raceDay: 7 }
+        ],
+        defaultStatus: "07. März · Belgenbachtrail (30,7 km · 941 Hm · Hauptziel Q1)",
+        cards: [
+          {
+            id: "belgenbach",
+            isTrip: false,
+            title: "Belgenbachtrail",
+            date: "07.03.2027",
+            km: "30,7",
+            hm: "941",
+            badge: "",
+            badgeClass: "",
+            imageUrl: "assets/belgenbach_cover.jpg",
+            bg: "linear-gradient(135deg, #2b1f1d, #1c130c)"
+          },
+          {
+            id: "zoutelande",
+            isTrip: true,
+            title: "Holland Zoutelande",
+            date: "31.12.–04.01.",
+            metrics: "Jahreswechsel & Küste",
+            badge: "REISE",
+            badgeClass: "yellow",
+            bg: "linear-gradient(135deg, #2b2714, #17150a)"
+          }
+        ]
+      },
+      {
+        title: "Apr – Juni 2027",
+        months: [
+          { name: "April", days: 30, raceDay: 17 },
+          { name: "Mai", days: 31, raceDay: 0 },
+          { name: "Juni", days: 30, raceDay: 12 }
+        ],
+        defaultStatus: "17. April · RET22 & 12. Juni · Tschirgant Sky Run TS16",
+        cards: [
+          {
+            id: "ret22",
+            isTrip: false,
+            title: "Rureifel Trail RET22",
+            date: "17.04.2027",
+            km: "22,8",
+            hm: "851",
+            badge: "",
+            badgeClass: "",
+            imageUrl: "assets/ret22_cover.jpg",
+            bg: "linear-gradient(135deg, #142823, #0d1a17)"
+          },
+          {
+            id: "ts16",
+            isTrip: false,
+            title: "Tschirgant Sky Run TS16",
+            date: "12.06.2027",
+            km: "16,9",
+            hm: "850",
+            badge: "",
+            badgeClass: "",
+            imageUrl: "assets/ts16_cover.webp",
+            bg: "linear-gradient(135deg, #1b2133, #0d111a)"
+          },
+          {
+            id: "vacation",
+            isTrip: true,
+            title: "Bergurlaub Tirol",
+            date: "05.–25.06.",
+            metrics: "Standlager FiNK Imst",
+            badge: "URLAUB",
+            badgeClass: "yellow",
+            bg: "linear-gradient(135deg, #2b2714, #17150a)"
+          },
+          {
+            id: "barbershop",
+            isTrip: true,
+            title: "Barbershop Apeldoorn",
+            date: "10.–11.04.",
+            metrics: "Sing Festival",
+            badge: "REISE",
+            badgeClass: "yellow",
+            bg: "linear-gradient(135deg, #2b2714, #17150a)"
+          }
+        ]
+      },
+      {
+        title: "Juli – Sept 2027",
+        months: [
+          { name: "Juli", days: 31, raceDay: 0 },
+          { name: "August", days: 31, raceDay: 0 },
+          { name: "September", days: 30, raceDay: 11 }
+        ],
+        defaultStatus: "11. September · Option: Ultra Trail Müllerthal (21 km · ~600 Hm)",
+        cards: [
+          {
+            id: "muellerthal",
+            isTrip: false,
+            title: "Ultra Trail Müllerthal",
+            date: "11.09.2027",
+            km: "21,0",
+            hm: "600",
+            badge: "OPTION",
+            badgeClass: "cyan",
+            bg: "linear-gradient(135deg, #201a2b, #100d18)"
+          }
+        ]
+      },
+      {
+        title: "Okt – Dez 2027",
+        months: [
+          { name: "Oktober", days: 31, raceDay: 24 },
+          { name: "November", days: 30, raceDay: 7 },
+          { name: "Dezember", days: 31, raceDay: 0 }
+        ],
+        defaultStatus: "24. Oktober · Drachenlauf (26,0 km · 1.250 Hm · 7 Gipfel)",
+        cards: [
+          {
+            id: "drachenlauf",
+            isTrip: false,
+            title: "Drachenlauf",
+            date: "24.10.2027",
+            km: "26,0",
+            hm: "1.250",
+            badge: "",
+            badgeClass: "",
+            bg: "linear-gradient(135deg, #331f14, #1c100a)"
+          },
+          {
+            id: "martinslauf",
+            isTrip: false,
+            title: "Martinslauf U-See",
+            date: "07.11.2027",
+            km: "10,0",
+            hm: "30",
+            badge: "OPTION",
+            badgeClass: "cyan",
+            bg: "linear-gradient(135deg, #14202b, #0a1118)"
+          }
+        ]
+          {
+            id: "drachenlauf",
+            title: "Drachenlauf",
+            date: "24.10.2027",
+            metrics: "26,0 km · 1.250 Hm",
+            badge: "SAISON-HAUPTZIEL",
+            badgeClass: "orange",
+            bg: "linear-gradient(135deg, #331f14, #1c100a)"
+          },
+          {
+            id: "martinslauf",
+            title: "Martinslauf U-See",
+            date: "07.11.2027",
+            metrics: "5,8 km / 10,0 km",
+            badge: "OPTION AUSKLANG",
+            badgeClass: "cyan",
+            bg: "linear-gradient(135deg, #14202b, #0a1118)"
+          }
+        ]
+      }
+    ];
+
+    function changeQuarter(delta) {
+      currentQuarter = (currentQuarter + delta + quartersConfig.length) % quartersConfig.length;
+      currentDaySelected = quartersConfig[currentQuarter].defaultStatus;
+      renderCurrentVariant();
+    }
+
+    function renderMonthGrid(name, days, raceDay) {
+      let cells = "";
+      for (let i = 1; i <= days; i++) {
+        let cls = "day-cell";
+        if (i === raceDay) cls += " race";
+        else if (raceDay > 0 && i > raceDay && i <= raceDay + 7) cls += " rekom";
+        else if (raceDay > 0 && i >= raceDay - 14 && i < raceDay) cls += " build";
+        cells += `<div class="${cls}" onclick="selectDay('${i}. ${name}')">${i}</div>`;
+      }
+      return `
+        <div class="month-box">
+          <div class="month-name">${name}</div>
+          <div class="days-grid">${cells}</div>
+        </div>
+      `;
+    }
+
+    function renderCalendarRow() {
+      const q = quartersConfig[currentQuarter];
+      return `
+        <div class="calendar-row">
+          ${q.months.map(m => renderMonthGrid(m.name, m.days, m.raceDay)).join("")}
+        </div>
+      `;
+    }
+
+    function renderStatusDock() {
+      return `
+        <div class="status-dock">
+          <div class="status-text" id="liveStatusText">${currentDaySelected}</div>
+          <button id="reisenToggleBtn" onclick="toggleReisenInPreview()" style="background: ${isTravelActive ? '#FFD60A' : 'rgba(255,255,255,0.06)'}; color: ${isTravelActive ? '#000' : 'var(--text-muted)'}; border: none; padding: 6px 14px; border-radius: 980px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">
+            ● Reisen ${isTravelActive ? 'AN' : 'AUS'}
+          </button>
+        </div>
+      `;
+    }
+
+    function renderAmazonShelf() {
+      const q = quartersConfig[currentQuarter];
+      const visibleCards = q.cards.filter(c => !c.isTrip || isTravelActive);
+      const count = visibleCards.length;
+      
+      const gridStyle = "grid-template-columns: repeat(3, 1fr);";
+
+      const cardsHtml = visibleCards.map(c => {
+        let metricsHtml = '';
+        if (c.km && c.hm) {
+          metricsHtml = `
+            <div class="race-card-metrics-hero">
+              <div class="metric-block">
+                <span class="metric-num">${c.km}</span>
+                <span class="metric-unit">KM</span>
+              </div>
+              <div class="metric-sep">·</div>
+              <div class="metric-block">
+                <span class="metric-num">${c.hm}</span>
+                <span class="metric-unit">HM</span>
+              </div>
+            </div>
+          `;
+        } else {
+          metricsHtml = `<div class="race-card-metrics">${c.metrics || ''}</div>`;
+        }
+
+        return `
+          <div class="race-card" style="background: ${c.bg}">
+            <div class="race-card-bg" style="${c.imageUrl ? `background-image: url('${c.imageUrl}'); background-position: center 20%; opacity: 0.65;` : ''}"></div>
+            <div class="race-card-gradient"></div>
+            ${c.badge ? `<div class="race-card-badge ${c.badgeClass}">${c.badge}</div>` : ''}
+            <div class="race-card-content">
+              <div class="race-card-date" style="color: ${c.isTrip ? 'var(--accent-yellow)' : 'var(--accent-orange)'}">${c.date}</div>
+              <div class="race-card-title">${c.title}</div>
+              ${metricsHtml}
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      const shelfTitle = isTravelActive ? "Hauptläufe & Reisen" : "Hauptläufe";
+
+      return `
+        <div class="amazon-shelf">
+          <div class="shelf-header">
+            <div class="shelf-title">${shelfTitle}</div>
+            <div class="shelf-more" onclick="alert('Option A: Öffnet modales Sheet mit allen Saison-Rennen 2027')">Alle ›</div>
+          </div>
+          <div class="cards-row" style="${gridStyle}">
+            ${cardsHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    function selectDay(str) {
+      currentDaySelected = str + " · Klick-Detail: GA1 Basistraining & spezifische Vorbereitung";
+      const el = document.getElementById("liveStatusText");
+      if (el) el.innerText = currentDaySelected;
+    }
+
+    let isTravelActive = true; // Reisen ist per Default aktiv
+
+    function toggleReisenInPreview() {
+      isTravelActive = !isTravelActive;
+      const btn = document.getElementById("reisenToggleBtn");
+      if (btn) {
+        btn.classList.toggle("active", isTravelActive);
+        btn.style.background = isTravelActive ? "#FFD60A" : "rgba(255,255,255,0.06)";
+        btn.style.color = isTravelActive ? "#000" : "var(--text-muted)";
+      }
+      renderCurrentVariant();
+    }
+
+    function setVariant(n) {
+      activeVariantNumber = n;
+      document.querySelectorAll(".variant-btn").forEach((b, i) => {
+        b.classList.toggle("active", i === (n - 1));
+      });
+      renderCurrentVariant();
+    }
+
+    function renderCurrentVariant() {
+      const n = activeVariantNumber;
+      const q = quartersConfig[currentQuarter];
+      const frame = document.getElementById("canvasFrame");
+      const title = document.getElementById("variantTitle");
+      const desc = document.getElementById("variantDesc");
+      const pros = document.getElementById("variantPros");
+      const cons = document.getElementById("variantCons");
+
+      const pagerHtml = `
+        <div class="pager-header">
+          <button onclick="changeQuarter(-1)" style="background: rgba(255,255,255,0.08); border: 1px solid var(--card-border); color:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer;">‹</button>
+          <div class="pager-title">${q.title}</div>
+          <button onclick="changeQuarter(1)" style="background: rgba(255,255,255,0.08); border: 1px solid var(--card-border); color:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer;">›</button>
+        </div>
+      `;
+
+      if (n === 1) {
+        title.innerText = "Variante 1: Classic Stack (Quarter-Sync: Nur Highlights des aktiven Quartals)";
+        desc.innerText = "Beim Wechseln des Quartals (< oder >) zeigt der Amazon-Shelf exakt nur die Läufe dieses Quartals (z. B. Q1 = nur Belgenbach, Q2 = RET22 + TS16).";
+        pros.innerText = "✓ Strikt fokussiert auf das gewählte Quartal";
+        cons.innerText = "− Wenn nur 1 Lauf ansteht, bleibt rechts Leerraum (oder Karte zentriert)";
+        frame.innerHTML = `
+          ${pagerHtml}
+          ${renderCalendarRow()}
+          ${renderStatusDock()}
+          ${renderAmazonShelf()}
+        `;
+      } else if (n === 2) {
+        title.innerText = "Variante 2: Hero Strip Top (Amazon Shelf oben ➔ Kalender ➔ Mitteilung)";
+        desc.innerText = "Die Amazon-Karten stehen als optischer Eyecatcher ganz oben. Kalender und Mitteilungen liegen darunter.";
+        pros.innerText = "✓ Maximale emotionale Bildwirkung sofort sichtbar";
+        cons.innerText = "− Kalender rutscht nach unten; Mitteilungen ganz am Fuß";
+        frame.innerHTML = `
+          ${pagerHtml}
+          ${renderAmazonShelf()}
+          <div style="margin-top: 24px;"></div>
+          ${renderCalendarRow()}
+          ${renderStatusDock()}
+        `;
+      } else if (n === 3) {
+        title.innerText = "Variante 3: Integrated Feature Dock (Hero Card verschmilzt mit Mitteilung)";
+        desc.innerText = "Unter dem Kalender verschmilzt die Highlight-Card des Quartals mit dem dynamischen Mitteilungspanel.";
+        pros.innerText = "✓ Extrem kompakt, keine überladenen Screens";
+        cons.innerText = "− Zeigt immer nur 1 Lauf prominent statt alle 3 nebeneinander";
+        const heroCard = q.cards[0] || { title: "KEIN RENNEN", date: "SOMMERPAUSE", metrics: "-", badge: "BASIS", badgeClass: "cyan", bg: "#1C1C24" };
+        frame.innerHTML = `
+          ${pagerHtml}
+          ${renderCalendarRow()}
+          <div class="integrated-panel">
+            <div class="race-card" style="background: ${heroCard.bg}; aspect-ratio: 16/9;">
+              <div class="race-card-bg"></div>
+              <div class="race-card-gradient"></div>
+              <div class="race-card-badge ${heroCard.badgeClass}">${heroCard.badge}</div>
+              <div class="race-card-content">
+                <div class="race-card-date">${heroCard.date}</div>
+                <div class="race-card-title">${heroCard.title}</div>
+                <div class="race-card-metrics">${heroCard.metrics}</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-size: 11px; text-transform: uppercase; color: var(--accent-orange); font-weight: 700; margin-bottom: 6px;">Detail-Mitteilung & Quartalsfokus</div>
+              <div style="font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px;" id="liveStatusText">${currentDaySelected}</div>
+              <div style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">Wettkampf-Taktik & Rennstrategie: Rhythmus im Flachen konservieren, Höhenmeter im Power-Hike. Verpflegung: Ausschließlich Maltodextrin in Softflasks.</div>
+            </div>
+          </div>
+        `;
+      } else if (n === 4) {
+        title.innerText = "Variante 4: Floating Glass Pill & Bottom Gallery";
+        desc.innerText = "Die Mitteilung schwebt als zentrierte Glassmorphism-Pille über der Trennlinie. Darunter folgt der Amazon-Shelf des Quartals.";
+        pros.innerText = "✓ Modernster Apple-HIG Look, sehr clean";
+        cons.innerText = "− Kann bei viel Text leicht über den Monatsblöcken stören";
+        frame.innerHTML = `
+          ${pagerHtml}
+          ${renderCalendarRow()}
+          <div style="text-align: center;">
+            <div class="floating-pill">
+              <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background: var(--accent-orange);"></span>
+              <span style="font-size: 13px; font-weight: 600; color: #fff;" id="liveStatusText">${currentDaySelected}</span>
+            </div>
+          </div>
+          ${renderAmazonShelf()}
+        `;
+      } else if (n === 5) {
+        title.innerText = "Variante 5: Split Stage (Kalender links, Feature-Poster & Mitteilung rechts)";
+        desc.innerText = "Kalender und Renn-Preview stehen nebeneinander. Die Mitteilung ist direkt in das rechte Poster-Panel integriert.";
+        pros.innerText = "✓ Alles auf einen Blick ohne vertikales Scrollen";
+        cons.innerText = "− Nur auf breiten Desktop-Monitoren möglich; bricht auf Tablets & Mobile";
+        const heroCard = q.cards[0] || { title: "KEIN RENNEN", date: "SOMMERPAUSE", metrics: "-", badge: "BASIS", badgeClass: "cyan", bg: "#1C1C24" };
+        frame.innerHTML = `
+          ${pagerHtml}
+          <div class="split-layout">
+            <div>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                ${q.months.map(m => renderMonthGrid(m.name.slice(0, 3), m.days, m.raceDay)).join("")}
+              </div>
+            </div>
+            <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="race-card" style="background: ${heroCard.bg}; aspect-ratio: 16/9; margin-bottom: 14px;">
+                <div class="race-card-bg"></div>
+                <div class="race-card-gradient"></div>
+                <div class="race-card-badge ${heroCard.badgeClass}">${heroCard.badge}</div>
+                <div class="race-card-content">
+                  <div class="race-card-title">${heroCard.title}</div>
+                  <div class="race-card-metrics">${heroCard.metrics}</div>
+                </div>
+              </div>
+              <div style="background: rgba(0,0,0,0.4); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);">
+                <div style="font-size: 11px; color: var(--accent-orange); font-weight: 700; margin-bottom: 4px;">Klick-Mitteilung</div>
+                <div style="font-size: 13px; font-weight: 600; color: #fff;" id="liveStatusText">${currentDaySelected}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Init with Variant 1
+    setVariant(1);
+  </script>
+</body>
+</html>
