@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.90 (Shelf-Ergänzung: Reise-Karte für re:publica Berlin 10.–12.05. hinzugefügt · v11.90)  
+**Document Version:** 11.91 (re:publica Berlin Cover: Echtes Bühnenfoto des Nutzers eingebunden · v11.91)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.90)
+## 📌 1. Project Overview & Release Freeze State (v11.91)
 
+- **Authentisches re:publica Bühnenfoto als Cover (v11.91):**
+  - Das vom Nutzer hochgeladene Originalfoto der re:publica-Bühne (mit kreisrunden Lichttürmen und re:publica26-Säule) wurde als offizielles Cover `assets/republica_cover.jpg` (und in `dist/`) übernommen.
+  - Karten-Ausrichtung `bgPosition: 'center 40%'` mit dezent abgestimmtem Dunkelblau-Gradient-Fallback `linear-gradient(135deg, #182030, #0a0e17)`.
 - **Reise-Karte für re:publica Berlin im Shelf (v11.90):**
   - Die fehlende Karte für die re:publica Berlin (`10.–12.05.`) wurde in `seasonCardsData[1]` (Q2) chronologisch zwischen RET22 (`17.04.`) und Bergurlaub Tirol (`05.–25.06.`) ergänzt.
   - Mit gelbem `REISE`-Badge (`badge-yellow`), Datumszeile `10.–12.05.`, Titel `re:publica Berlin` und atmosphärischem Cover (`assets/republica_cover.jpg`).
