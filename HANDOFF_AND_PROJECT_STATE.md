@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.76 (Shelf-Karten Bildausschnitte Drachenlauf & Martinslauf optimiert · v11.76)  
+**Document Version:** 11.77 (Shelf-Karte Bergurlaub Tirol Bildausschnitt +15% nach oben justiert · v11.77)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,10 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.76)
+## 📌 1. Project Overview & Release Freeze State (v11.77)
 
+- **Bildausschnitt Bergurlaub Tirol justiert (v11.77):**
+  - Für die Kachel `Bergurlaub Tirol` (Camping FiNK, 05.–25.06.) in `Apr – Juni 2027` wurde der vertikale Bildfokus via `bgPosition: 'center 35%'` um 15 % gegenüber dem Default (20 %) nach oben geschoben, sodass Zeltwiese und Campinggelände unterhalb des Bergpanoramas optimal im Bild stehen.
 - **Bildausschnitt-Justierung Drachenlauf & Martinslauf (v11.76):**
   - Für `Drachenlauf Königswinter` wurde `bgPosition: 'center 85%'` konfiguriert, sodass die Läufergruppe auf dem Weg sauber im sichtbaren oberen Bereich der Kachel positioniert ist statt vom dunklen unteren Textgradienten verdeckt zu werden.
   - Für `Martinslauf U-See` wurde `bgPosition: 'center 75%'` hinterlegt, wodurch die Gesichter beider Läufer aus dem unteren Rand nach oben in das Hauptblickfeld der Kachel wandern und nicht mehr abgeschnitten werden.
