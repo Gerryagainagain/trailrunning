@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.72 (Barbershop Apeldoorn Holland: Original Coverfoto eingebunden · v11.72)  
+**Document Version:** 11.73 (Ultra Trail Müllerthal: Original Felsen- & Wald-Coverfoto eingebunden · v11.73)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.72)
+## 📌 1. Project Overview & Release Freeze State (v11.73)
 
+- **Ultra Trail Müllerthal Cover eingebunden (v11.73):**
+  - Das hochgeladene Originalfoto der Müllerthal-Felsformationen im Nebelwald wurde als `assets/muellerthal_cover.jpg` hinterlegt.
+  - In `Jul – Sep 2027` besitzt die Karte `Ultra Trail Müllerthal` (11.09.2027 · Option · 21,0 km · 600 Hm) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
 - **Barbershop Apeldoorn Cover eingebunden (v11.72):**
   - Das hochgeladene Originalfoto (`IMG_5269.heic`) für die Holland-Reise nach Apeldoorn (Sing Festival, 10.–11.04.2027) wurde via nativer Hardware-Dekodierung in ein 1600x1200 JPEG konvertiert (`assets/barbershop_cover.jpg`).
   - In `Apr – Juni 2027` besitzt die Reise-Kachel `Barbershop Apeldoorn` nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
