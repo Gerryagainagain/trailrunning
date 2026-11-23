@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.91">
-  <link rel="stylesheet" href="styles.css?v=11.91">
+  <link rel="stylesheet" href="tokens.css?v=11.92">
+  <link rel="stylesheet" href="styles.css?v=11.92">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -660,6 +660,14 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 0;
+      overflow-x: auto;
+      max-width: 100%;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .week-selector-bar::-webkit-scrollbar {
+      display: none;
     }
 
     .week-pill-selector {
@@ -673,6 +681,7 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       gap: 4px;
+      flex-shrink: 0;
     }
 
     .week-pill-btn {
@@ -2691,6 +2700,10 @@
             <span class="pill-kw">KW 49</span>
             <span class="pill-label">7G-HM</span>
           </button>
+          <button class="week-pill-btn" onclick="switchWeek(50)" id="pill-kw-50" data-kw="50">
+            <span class="pill-kw">KW 50</span>
+            <span class="pill-label">parkrun</span>
+          </button>
         </div>
       </div>
 
@@ -4229,19 +4242,19 @@
       },
       50: {
         title: 'KW 50 • Saisonpause & Jahresausklang',
-        shortTitle: 'Saisonpause',
-        dates: '07. – 13. Dezember 2026',
-        benchmark: '12,0 km',
+        shortTitle: 'Saisonpause & parkrun',
+        dates: 'Dezember 2026',
+        benchmark: '10,0 km',
         benchmarkType: 'green',
-        summary: 'Vollständige Erholung nach Halbmarathon · Lockere Bewegung nach Lust und Laune vor Belgenbach-Start im Januar.',
+        summary: 'Vollständige Erholung nach Siebengebirgs-HM · Lockere Bewegung nach Lust und Laune · Sa 26.12.2026: parkrun 5k (Volksgarten Düsseldorf).',
         days: [
           { d: 'MON 07.12', val: '—', tag: 'Ruhe', sub: 'Saisonpause' },
           { d: 'DIE 08.12', val: '—', tag: 'Pause', sub: 'Ausschlafen' },
           { d: 'MIT 09.12', val: '5.0', unit: 'KM', tag: 'Spaziertrab', sub: 'Reines Wohlfühlen' },
           { d: 'DON 10.12', val: '—', tag: 'Pause', sub: 'Regeneration' },
           { d: 'FRE 11.12', val: 'STUDIO', tag: 'Leichtes Stabi', sub: 'Rumpf mobilisieren', isStudio: true },
-          { d: 'SAM 12.12', val: '7.0', unit: 'KM', tag: 'Winterwald', sub: 'Ohne Zeit & Puls' },
-          { d: 'SON 13.12', val: '—', tag: 'Ruhetag', sub: 'Familienzeit' }
+          { d: 'SAM 26.12', val: '5.0', unit: 'KM', tag: 'parkrun 5k', sub: 'Volksgarten · 9:00 Uhr', isHighlight: true },
+          { d: 'SON 27.12', val: '—', tag: 'Ruhetag', sub: 'Familienzeit' }
         ]
       }
     };

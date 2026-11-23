@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.91 (re:publica Berlin Cover: Echtes Bühnenfoto des Nutzers eingebunden · v11.91)  
+**Document Version:** 11.92 (Trainingswoche KW 50: parkrun 5k am 26.12.2026 integriert · v11.92)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.91)
+## 📌 1. Project Overview & Release Freeze State (v11.92)
 
+- **parkrun 5k in Trainingswoche KW 50 integriert (v11.92):**
+  - In der operativen Trainingswoche KW 50 (Saisonpause & Jahresausklang) wurde für Samstag der `parkrun 5k` (26.12.2026, Volksgarten Düsseldorf, 9:00 Uhr) als 5,0 km Highlight-Einheit eingetragen.
+  - Der Pill-Button im Wochenwähler zeigt nun `KW 50 · parkrun`.
+  - Es wurde strikt **kein neuer Kalender für 2026** geöffnet; der 3-Monats-Kalender bleibt unverändert auf die Saison 2027 fokussiert.
 - **Authentisches re:publica Bühnenfoto als Cover (v11.91):**
   - Das vom Nutzer hochgeladene Originalfoto der re:publica-Bühne (mit kreisrunden Lichttürmen und re:publica26-Säule) wurde als offizielles Cover `assets/republica_cover.jpg` (und in `dist/`) übernommen.
   - Karten-Ausrichtung `bgPosition: 'center 40%'` mit dezent abgestimmtem Dunkelblau-Gradient-Fallback `linear-gradient(135deg, #182030, #0a0e17)`.
