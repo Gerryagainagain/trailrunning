@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.87">
-  <link rel="stylesheet" href="styles.css?v=11.87">
+  <link rel="stylesheet" href="tokens.css?v=11.88">
+  <link rel="stylesheet" href="styles.css?v=11.88">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3879,10 +3879,10 @@
         targetPill: '',
         sections: [
           {
-            title: 'Wettkampf-Kalender 2027 (Tippen für Detail-Briefing)',
+            title: '',
             type: 'text',
             text: `
-              <div style="display:flex; flex-direction:column; gap:12px; margin-top:8px;">
+              <div style="display:flex; flex-direction:column; gap:12px; margin-top:0;">
                 <div style="background:rgba(255,255,255,0.04); padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,0.08); cursor:pointer; transition:all 0.2s;" onclick="openRaceDrawer('belgenbach')">
                   <div style="display:flex; justify-content:space-between; align-items:center;">
                     <span style="color:var(--apple-orange); font-size:11px; font-weight:800; letter-spacing:0.5px; text-transform:uppercase;">07. März 2027</span>
@@ -3978,7 +3978,9 @@
       if (b.sections) {
         b.sections.forEach(sec => {
           contentHtml += `<div class="race-section">`;
-          contentHtml += `<div class="race-section-title">${sec.title}</div>`;
+          if (sec.title) {
+            contentHtml += `<div class="race-section-title">${sec.title}</div>`;
+          }
 
           if (sec.type === 'grid' && sec.items) {
             contentHtml += `<div class="race-info-grid">`;

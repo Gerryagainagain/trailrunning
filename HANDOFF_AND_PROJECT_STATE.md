@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.87 (Feiertags-Integration: Apple HIG Micro-Dot reduziert auf 29.03. Ostermontag · v11.87)  
+**Document Version:** 11.88 (Modal-Bereinigung: Sektionstitel "Wettkampf-Kalender 2027" in season_all entfernt · v11.88)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.87)
+## 📌 1. Project Overview & Release Freeze State (v11.88)
 
+- **Modal-Bereinigung season_all (v11.88):**
+  - Der überflüssige Sektionstitel `Wettkampf-Kalender 2027 (Tippen für Detail-Briefing)` wurde im Modal vollständig entfernt.
+  - Das Modal zeigt nun oben ausschließlich den monumentalen Header `SAISON 2027`, unmittelbar gefolgt von der interaktiven Liste der Saison-Wettkämpfe ohne Textballast.
+  - `openRaceDrawer` prüft nun `if (sec.title)`, sodass Abschnitte ohne Titel kein leeres Überschriftenelement im DOM erzeugen.
 - **Feiertags-Indikator Variante A (Apple HIG Micro-Dot, v11.87):**
   - Implementierung eines subtilen 3,5px Micro-Dots (`.cal-cell.has-holiday::before`) zentriert über der Kalenderziffer.
   - Vorerst strikt reduziert aktiv für **29.03.2027 (Ostermontag)** im Monat März (Q1).
