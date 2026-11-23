@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.85 (Modal-Header Wettkampf-Übersicht: Puristischer Titel "SAISON 2027" · v11.85)  
+**Document Version:** 11.86 (Martinslauf-Karte: Höhenmeter entfernt, reiner Titel "Martinslauf" · v11.86)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.85)
+## 📌 1. Project Overview & Release Freeze State (v11.86)
 
+- **Martinslauf Shelf-Karte: Höhenmeter entfernt (v11.86):**
+  - Zeile 3 zeigt nun ausschließlich den Titel `Martinslauf` ohne Höhenmeterangabe.
+  - Zeile 1: `07.11.` · Zeile 2: `10K` · Zeile 3: `Martinslauf`.
 - **Wettkampf-Übersicht Modal-Header bereinigt (v11.85):**
   - In der Gesamtübersicht der Saison-Wettkämpfe (`season_all` Drawer) wurden Subtitel und Target-Pill entfernt.
   - Der Kopfbereich zeigt nun ausschließlich den puristischen, klaren Titel: **`SAISON 2027`**.
