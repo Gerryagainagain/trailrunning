@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vergleich 4 Varianten: Vertikale Höhen-Einsparung & Above-the-Fold (ATF)</title>
+  <link rel="stylesheet" href="tokens.css?v=11.78">
+  <link rel="stylesheet" href="styles.css?v=11.78">
+  <style>
+    /* ==========================================================================
+       VARIANTS CONTROLLER & SIMULATOR BAR
+       ========================================================================== */
+    .variant-ctrl-panel {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(18, 18, 24, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+    .variant-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .variant-brand-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--apple-cyan, #64D2FF);
+      text-transform: uppercase;
+    }
+    .variant-brand-sub {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .variant-selector-pills {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 4px;
+    }
+    .var-pill-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .var-pill-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .var-pill-btn.active {
+      background: #FFFFFF;
+      color: #000000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    .var-pill-badge {
+      font-size: 0.68rem;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+    .var-pill-btn.active .var-pill-badge {
+      background: #000;
+      color: #fff;
+    }
+    .var-pill-btn:not(.active) .var-pill-badge {
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .variant-meta-pills {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .metric-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 0.76rem;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .metric-chip strong {
+      color: var(--apple-yellow, #FFD60A);
+      font-weight: 800;
+    }
+    .metric-chip.savings strong {
+      color: var(--apple-cyan, #64D2FF);
+    }
+    .fold-toggle-btn {
+      background: rgba(255, 69, 58, 0.15);
+      border: 1px solid rgba(255, 69, 58, 0.4);
+      color: #FF453A;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .fold-toggle-btn.active {
+      background: rgba(255, 69, 58, 0.9);
+      color: #FFFFFF;
+      box-shadow: 0 0 12px rgba(255, 69, 58, 0.4);
+    }
+
+    /* ==========================================================================
+       VISUAL FOLD INDICATOR LINE
+       ========================================================================== */
+    .viewport-fold-line {
+      position: absolute;
+      top: 820px; /* Typischer Laptop / Desktop Fold-Wert */
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, #FF453A, #FF453A 8px, transparent 8px, transparent 16px);
+      z-index: 998;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 2rem;
+    }
+    .fold-line-badge {
+      background: #FF453A;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      transform: translateY(-50%);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       CONTAINER WRAPPER FOR VARIANTS
+       ========================================================================== */
+    .preview-canvas {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+      transition: all 0.25s ease;
+    }
+
+    /* ==========================================================================
+       VARIANTE 1: MICRO-GRID (-150 px)
+       ========================================================================== */
+    body[data-variant="v1"] .preview-canvas {
+      padding-top: 1rem;
+    }
+    body[data-variant="v1"] .season-header {
+      min-height: 36px;
+    }
+    body[data-variant="v1"] .season-pager-bar {
+      height: 36px;
+    }
+    body[data-variant="v1"] .season-pager-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 1.15rem;
+    }
+    body[data-variant="v1"] .season-pager-label {
+      height: 36px;
+      padding: 0 18px;
+    }
+    body[data-variant="v1"] .season-pager-title {
+      font-size: 0.95rem;
+    }
+    body[data-variant="v1"] .month-block {
+      padding: 0.85rem 0.85rem 0.75rem;
+      border-radius: 18px;
+      gap: 0.6rem;
+    }
+    body[data-variant="v1"] .month-header {
+      padding-bottom: 0.45rem;
+    }
+    body[data-variant="v1"] .month-title {
+      font-size: 1.15rem;
+    }
+    body[data-variant="v1"] .calendar-matrix {
+      gap: 4px;
+    }
+    body[data-variant="v1"] .week-row {
+      height: 40px; /* -80px Ersparnis bei 5 Wochen */
+    }
+    body[data-variant="v1"] .cal-cell {
+      font-size: 1.05rem;
+    }
+    body[data-variant="v1"] .quarter-meta-strip {
+      min-height: 38px;
+      padding: 0.45rem 90px;
+      border-radius: 10px;
+    }
+    body[data-variant="v1"] .quarter-key-event {
+      font-size: 0.85rem;
+    }
+    body[data-variant="v1"] .season-shelf-section {
+      margin-top: 0.85rem;
+    }
+
+    /* ==========================================================================
+       VARIANTE 2: HEADER-FUSION (-140 px)
+       ========================================================================== */
+    body[data-variant="v2"] .preview-canvas {
+      padding-top: 0.75rem;
+    }
+    body[data-variant="v2"] .season-header {
+      display: none; /* Pager wandert in die Top-Bar */
+    }
+    body[data-variant="v2"] .app-header-with-pager {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    body[data-variant="v2"] .month-block {
+      padding: 1rem 1rem 0.85rem;
+      border-radius: 20px;
+      gap: 0.75rem;
+    }
+    body[data-variant="v2"] .week-row {
+      height: 44px; /* -60px Ersparnis */
+    }
+    body[data-variant="v2"] .cal-cell {
+      font-size: 1.12rem;
+    }
+    body[data-variant="v2"] .quarter-meta-strip {
+      min-height: 40px;
+      padding: 0.5rem 100px;
+      margin-top: 0.75rem;
+    }
+    body[data-variant="v2"] .season-shelf-section {
+      margin-top: 0.85rem;
+    }
+
+    /* ==========================================================================
+       VARIANTE 3: DOCK-TO-SHELF FUSION (-180 px)
+       ========================================================================== */
+    body[data-variant="v3"] .preview-canvas {
+      padding-top: 0.85rem;
+    }
+    body[data-variant="v3"] .season-header {
+      min-height: 38px;
+      margin-bottom: 0.5rem;
+    }
+    body[data-variant="v3"] .season-pager-bar {
+      height: 38px;
+    }
+    body[data-variant="v3"] .season-pager-btn {
+      width: 38px;
+      height: 38px;
+    }
+    body[data-variant="v3"] .season-pager-label {
+      height: 38px;
+    }
+    body[data-variant="v3"] .month-block {
+      padding: 0.9rem 0.9rem 0.8rem;
+      border-radius: 18px;
+      gap: 0.65rem;
+    }
+    body[data-variant="v3"] .week-row {
+      height: 42px; /* -70px Ersparnis */
+    }
+    body[data-variant="v3"] .cal-cell {
+      font-size: 1.08rem;
+    }
+    body[data-variant="v3"] .quarter-meta-strip {
+      display: none; /* Separate Box entfällt komplett! */
+    }
+    body[data-variant="v3"] .season-shelf-section {
+      margin-top: 0.85rem;
+    }
+    body[data-variant="v3"] .shelf-integrated-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--card-bg, rgba(22, 22, 30, 0.85));
+      border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+      border-radius: 12px;
+      padding: 0.5rem 0.85rem 0.5rem 1rem;
+      margin-bottom: 0.85rem;
+    }
+    body[data-variant="v3"] .shelf-integrated-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    body[data-variant="v3"] .shelf-integrated-title {
+      font-size: 1.0rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      white-space: nowrap;
+    }
+    body[data-variant="v3"] .shelf-integrated-event {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--apple-orange, #FF9F0A);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    body[data-variant="v3"] .shelf-integrated-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       VARIANTE 4: ZERO-SCROLL DASHBOARD (-260 px · 100% ATF)
+       ========================================================================== */
+    body[data-variant="v4"] .preview-canvas {
+      padding-top: 0.5rem;
+    }
+    body[data-variant="v4"] .season-header {
+      display: none; /* In Top-Nav */
+    }
+    body[data-variant="v4"] .quarter-meta-strip {
+      display: none; /* Im Shelf-Header */
+    }
+    body[data-variant="v4"] .app-header-with-pager {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    body[data-variant="v4"] .month-block {
+      padding: 0.75rem 0.75rem 0.65rem;
+      border-radius: 16px;
+      gap: 0.5rem;
+    }
+    body[data-variant="v4"] .month-header {
+      padding-bottom: 0.35rem;
+    }
+    body[data-variant="v4"] .month-title {
+      font-size: 1.05rem;
+    }
+    body[data-variant="v4"] .calendar-matrix {
+      gap: 3px;
+    }
+    body[data-variant="v4"] .week-row {
+      height: 38px; /* -90px Ersparnis */
+    }
+    body[data-variant="v4"] .cal-cell {
+      font-size: 1.0rem;
+    }
+    body[data-variant="v4"] .shelf-integrated-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--card-bg, rgba(22, 22, 30, 0.85));
+      border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+      border-radius: 10px;
+      padding: 0.4rem 0.75rem 0.4rem 0.85rem;
+      margin-bottom: 0.65rem;
+    }
+    body[data-variant="v4"] .season-shelf-section {
+      margin-top: 0.65rem;
+    }
+    /* CINEMA FORMAT 21:9 FÜR DIE SHELF KACHELN IN VARIANTE 4 */
+    body[data-variant="v4"] .shelf-card {
+      aspect-ratio: 21 / 9 !important; /* Flacheres Kino-Format */
+      padding: 0.75rem 0.85rem !important;
+    }
+    body[data-variant="v4"] .shelf-card-title {
+      font-size: 1.05rem !important;
+    }
+    body[data-variant="v4"] .shelf-card-metrics-hero {
+      margin-top: 0.15rem !important;
+    }
+    body[data-variant="v4"] .m-num {
+      font-size: 1.25rem !important;
+    }
+  </style>
+</head>
+<body data-variant="v1">
+
+  <!-- ==========================================================================
+       VARIANTS CONTROLLER & SIMULATOR BAR (STICKY TOP)
+       ========================================================================== -->
+  <div class="variant-ctrl-panel">
+    <div class="variant-brand">
+      <span class="variant-brand-title">Above-the-Fold (ATF) Optimizer</span>
+      <span class="variant-brand-sub">Vergleich der 4 Design-Strategien zur vertikalen Höhen-Einsparung</span>
+    </div>
+
+    <div class="variant-selector-pills">
+      <button type="button" class="var-pill-btn" onclick="setVariant('v0')">
+        <span>Bisher</span>
+        <span class="var-pill-badge">±0 px</span>
+      </button>
+      <button type="button" class="var-pill-btn active" onclick="setVariant('v1')">
+        <span>1: Micro-Grid</span>
+        <span class="var-pill-badge">-150 px</span>
+      </button>
+      <button type="button" class="var-pill-btn" onclick="setVariant('v2')">
+        <span>2: Header-Fusion</span>
+        <span class="var-pill-badge">-140 px</span>
+      </button>
+      <button type="button" class="var-pill-btn" onclick="setVariant('v3')">
+        <span>3: Dock-to-Shelf</span>
+        <span class="var-pill-badge">-180 px</span>
+      </button>
+      <button type="button" class="var-pill-btn" onclick="setVariant('v4')">
+        <span>4: Zero-Scroll</span>
+        <span class="var-pill-badge">-260 px</span>
+      </button>
+    </div>
+
+    <div class="variant-meta-pills">
+      <div class="metric-chip savings">
+        <span>Ersparnis:</span>
+        <strong id="metricSavings">-150 px</strong>
+      </div>
+      <div class="metric-chip">
+        <span>Shelf ATF:</span>
+        <strong id="metricAtf">ca. 60 % sichtbar</strong>
+      </div>
+      <button type="button" class="fold-toggle-btn active" id="foldToggleBtn" onclick="toggleFoldLine()">
+        <span>Fold-Linie (820px)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- VISUELLE FOLD-LINIE (SIMULIERT DIE TYPISCHE NOTEBOOK/DESKTOP VIEWPORT-GRENZE) -->
+  <div class="viewport-fold-line" id="foldLine">
+    <span class="fold-line-badge">Typische Fold-Grenze (820 px Höhe)</span>
+  </div>
+
+  <!-- ==========================================================================
+       PREVIEW CANVAS
+       ========================================================================== -->
+  <div class="preview-canvas">
+
+    <!-- TOP-HEADER (FÜR VARIANTE 2 & 4 MIT INTEGRIERTEM PAGER) -->
+    <div class="app-header-with-pager" id="topNavPager" style="display: none;">
+      <div style="font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px; color: var(--text-white);">TRAILRUNNING 2027</div>
+      
+      <!-- INLINE PAGER FÜR V2 & V4 -->
+      <div class="season-pager-bar" style="height: 38px;">
+        <button class="season-pager-btn" onclick="prevQuarter()" aria-label="Vorheriges Quartal" style="width: 36px; height: 36px;">‹</button>
+        <div class="season-pager-label" style="height: 36px; padding: 0 20px;">
+          <span class="season-pager-title" id="inlinePagerTitle" style="font-size: 0.92rem;">Jan – März 2027</span>
+        </div>
+        <button class="season-pager-btn" onclick="nextQuarter()" aria-label="Nächstes Quartal" style="width: 36px; height: 36px;">›</button>
+      </div>
+
+      <div style="display: flex; gap: 8px;">
+        <div class="master-segmented-control" style="transform: scale(0.92); transform-origin: right center;">
+          <button class="master-segment-btn" onclick="alert('Demo: Wechselt im echten Kalender')">Training</button>
+          <button class="master-segment-btn active">Saison 2027</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEPARATER STANDALONE PAGER (FÜR V0, V1, V3) -->
+    <div class="season-header" id="standaloneSeasonHeader">
+      <div class="season-pager-bar">
+        <button class="season-pager-btn" onclick="prevQuarter()" aria-label="Vorheriges Quartal">‹</button>
+        <div class="season-pager-label">
+          <span class="season-pager-title" id="seasonPagerTitle">Jan – März 2027</span>
+        </div>
+        <button class="season-pager-btn" onclick="nextQuarter()" aria-label="Nächstes Quartal">›</button>
+      </div>
+    </div>
+
+    <!-- 3-MONATS-GRID -->
+    <div class="three-months-grid" id="threeMonthsContainer">
+      <!-- WIRD DYNAMISCH GENERIERT -->
+    </div>
+
+    <!-- SEPARATER META-STRIP / DOCK (FÜR V0, V1, V2) -->
+    <div class="quarter-meta-strip" id="quarterMetaStrip">
+      <div class="quarter-key-event" id="quarterKeyEvent">07. März · Belgenbachtrail (30,7 km · 941 Hm)</div>
+      <button type="button" class="layer-chip-btn active" id="travelMasterBtn" onclick="toggleTravelLayer()" aria-pressed="true">
+        <span class="layer-chip-dot"></span>
+        <span>Reisen</span>
+      </button>
+    </div>
+
+    <!-- SHELF-SECTION -->
+    <div class="season-shelf-section" id="seasonShelfSection">
+      
+      <!-- STANDARD-SHELF-HEADER (FÜR V0, V1, V2) -->
+      <div class="season-shelf-header" id="standardShelfHeader">
+        <div class="season-shelf-title" id="seasonShelfTitle">Hauptläufe & Reisen</div>
+        <button type="button" class="season-shelf-all-btn" onclick="openAllModal()">Alle ›</button>
+      </div>
+
+      <!-- FUSED DOCK-TO-SHELF HEADER (FÜR V3 & V4) -->
+      <div class="shelf-integrated-header" id="fusedShelfHeader" style="display: none;">
+        <div class="shelf-integrated-left">
+          <div class="shelf-integrated-title">Hauptläufe & Reisen</div>
+          <div style="color: rgba(255,255,255,0.25);">|</div>
+          <div class="shelf-integrated-event" id="fusedKeyEvent">07. März · Belgenbachtrail (30,7 km · 941 Hm)</div>
+        </div>
+        <div class="shelf-integrated-actions">
+          <button type="button" class="layer-chip-btn active" id="travelFusedBtn" onclick="toggleTravelLayer()" style="height: 28px; padding: 0 10px; font-size: 0.76rem;">
+            <span class="layer-chip-dot"></span>
+            <span>Reisen</span>
+          </button>
+          <button type="button" class="season-shelf-all-btn" onclick="openAllModal()" style="min-height: 32px; min-width: 32px; padding: 0 8px; font-size: 0.82rem;">Alle ›</button>
+        </div>
+      </div>
+
+      <!-- GRID DER SHELF-KARTEN -->
+      <div class="season-shelf-grid" id="seasonShelfGrid">
+        <!-- WIRD DYNAMISCH BEFÜLLT -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT LOGIK -->
+  <script>
+    const variantData = {
+      v0: { savings: "±0 px (Status Quo)", atf: "ca. 0 % (unter dem Fold)", scroll: "Voll erforderlich" },
+      v1: { savings: "-150 px", atf: "ca. 60 % der Karten sichtbar", scroll: "Minimal" },
+      v2: { savings: "-140 px", atf: "ca. 55 % der Karten sichtbar", scroll: "Minimal" },
+      v3: { savings: "-180 px", atf: "ca. 85 % der Karten sichtbar", scroll: "Kaum noch" },
+      v4: { savings: "-260 px", atf: "100 % (Vollständig Above-the-Fold)", scroll: "0 Pixel (Zero-Scroll)" }
+    };
+
+    let currentQuarterNum = 0;
+    let isTravelLayerActive = true;
+
+    const quartersData = {
+      0: {
+        heading: 'Jan – März 2027',
+        keyEvent: '07. März · Belgenbachtrail (30,7 km · 941 Hm)',
+        months: [
+          { 
+            name: 'Januar', mIdx: 0, days: 31, startOffset: 4,
+            trips: [
+              { id: 'zoutelande', label: 'Holland Gangelt Zoutelande', startDay: 1, endDay: 4, details: '31.12.–04.01.: Holland Gangelt Zoutelande' }
+            ]
+          },
+          { name: 'Februar', mIdx: 1, days: 28, startOffset: 0, trips: [] },
+          { name: 'März', mIdx: 2, days: 31, startOffset: 0, trips: [] }
+        ]
+      },
+      1: {
+        heading: 'Apr – Juni 2027',
+        keyEvent: '17. April · RET22 & 12. Juni · Tschirgant Sky Run TS16',
+        months: [
+          { 
+            name: 'April', mIdx: 3, days: 30, startOffset: 3,
+            trips: [
+              { id: 'barbershop', label: 'Sing Barbershop Festival Apeldoorn', startDay: 10, endDay: 11, details: '10.–11. April 2027: Sing Barbershop Festival Apeldoorn' }
+            ]
+          },
+          { name: 'Mai', mIdx: 4, days: 31, startOffset: 5, trips: [] },
+          { 
+            name: 'Juni', mIdx: 5, days: 30, startOffset: 1,
+            trips: [
+              { id: 'vacation', label: 'Bergurlaub Tirol (05.–25.06.)', startDay: 5, endDay: 25, details: '05.–25. Juni 2027: Bergurlaub Tirol · Standlager Camping FiNK Imst' }
+            ]
+          }
+        ]
+      },
+      2: {
+        heading: 'Jul – Sep 2027',
+        keyEvent: '11. September · Option: Ultra Trail Müllerthal (21 km · ~600 Hm)',
+        months: [
+          { name: 'Juli', mIdx: 6, days: 31, startOffset: 3, trips: [] },
+          { name: 'August', mIdx: 7, days: 31, startOffset: 6, trips: [] },
+          { name: 'September', mIdx: 8, days: 30, startOffset: 2, trips: [] }
+        ]
+      },
+      3: {
+        heading: 'Okt – Dez 2027',
+        keyEvent: '24. Oktober · Drachenlauf (26,0 km · 1.250 Hm · 7 Gipfel)',
+        months: [
+          { name: 'Oktober', mIdx: 9, days: 31, startOffset: 4, trips: [] },
+          { name: 'November', mIdx: 10, days: 30, startOffset: 0, trips: [] },
+          { name: 'Dezember', mIdx: 11, days: 31, startOffset: 2, trips: [] }
+        ]
+      }
+    };
+
+    const seasonCardsData = {
+      0: [
+        {
+          id: 'zoutelande',
+          isTrip: true,
+          title: 'Holland Gangelt Zoutelande',
+          date: '31.12.–04.01.',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/holland_cover.jpg',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        },
+        {
+          id: 'belgenbach',
+          isTrip: false,
+          raceKey: 'belgenbach',
+          title: 'Belgenbachtrail',
+          date: '07.03.2027',
+          km: '30,7',
+          hm: '941',
+          imageUrl: 'assets/belgenbach_cover.jpg',
+          bg: 'linear-gradient(135deg, #2b1f1d, #1c130c)'
+        }
+      ],
+      1: [
+        {
+          id: 'barbershop',
+          isTrip: true,
+          title: 'Barbershop Apeldoorn',
+          date: '10.–11.04.',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/barbershop_cover.jpg',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        },
+        {
+          id: 'ret22',
+          isTrip: false,
+          raceKey: 'ret22',
+          title: 'Rureifel Trail RET22',
+          date: '17.04.2027',
+          km: '22,8',
+          hm: '851',
+          imageUrl: 'assets/ret22_cover.jpg',
+          bg: 'linear-gradient(135deg, #142823, #0d1a17)'
+        },
+        {
+          id: 'vacation',
+          isTrip: true,
+          title: 'Bergurlaub Tirol',
+          date: '05.–25.06.',
+          badge: 'URLAUB',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/tirol_cover.jpg',
+          bgPosition: 'center 35%',
+          bg: 'linear-gradient(135deg, #2b2714, #17150a)'
+        },
+        {
+          id: 'ts16',
+          isTrip: false,
+          raceKey: 'ts16',
+          title: 'Tschirgant Sky Run TS16',
+          date: '12.06.2027',
+          km: '16,9',
+          hm: '850',
+          imageUrl: 'assets/ts16_cover.webp',
+          bg: 'linear-gradient(135deg, #1b2133, #0d111a)'
+        }
+      ],
+      2: [
+        {
+          id: 'muellerthal',
+          isTrip: false,
+          title: 'Ultra Trail Müllerthal',
+          date: '11.09.2027',
+          km: '21,0',
+          hm: '600',
+          badge: 'OPTION',
+          badgeClass: 'badge-cyan',
+          imageUrl: 'assets/muellerthal_cover.jpg',
+          bg: 'linear-gradient(135deg, #201a2b, #100d18)'
+        }
+      ],
+      3: [
+        {
+          id: 'drachenlauf',
+          isTrip: false,
+          raceKey: 'drachenlauf',
+          title: 'Drachenlauf Königswinter',
+          date: '24.10.2027',
+          km: '26,0',
+          hm: '1.250',
+          imageUrl: 'assets/drachenlauf_cover.jpg',
+          bgPosition: 'center 85%',
+          bg: 'linear-gradient(135deg, #331f14, #1c100a)'
+        },
+        {
+          id: 'martinslauf',
+          isTrip: false,
+          raceKey: 'martinslauf',
+          title: 'Martinslauf U-See',
+          date: '07.11.2027',
+          km: '10,0',
+          hm: '30',
+          badge: 'OPTION',
+          badgeClass: 'badge-cyan',
+          imageUrl: 'assets/martinslauf_cover.jpg',
+          bgPosition: 'center 75%',
+          bg: 'linear-gradient(135deg, #14202b, #0a1118)'
+        }
+      ]
+    };
+
+    function setVariant(varKey) {
+      document.body.setAttribute('data-variant', varKey);
+      
+      document.querySelectorAll('.var-pill-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.var-pill-btn')).find(b => b.getAttribute('onclick').includes(varKey));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const meta = variantData[varKey];
+      if (meta) {
+        document.getElementById('metricSavings').innerText = meta.savings;
+        document.getElementById('metricAtf').innerText = meta.atf;
+      }
+
+      // UI Strukturelemente umschalten
+      const isHeaderFused = (varKey === 'v2' || varKey === 'v4');
+      const isDockFused = (varKey === 'v3' || varKey === 'v4');
+
+      document.getElementById('topNavPager').style.display = isHeaderFused ? 'flex' : 'none';
+      document.getElementById('standaloneSeasonHeader').style.display = isHeaderFused ? 'none' : 'flex';
+
+      document.getElementById('quarterMetaStrip').style.display = isDockFused ? 'none' : 'flex';
+      document.getElementById('standardShelfHeader').style.display = isDockFused ? 'none' : 'flex';
+      document.getElementById('fusedShelfHeader').style.display = isDockFused ? 'flex' : 'none';
+    }
+
+    function toggleFoldLine() {
+      const line = document.getElementById('foldLine');
+      const btn = document.getElementById('foldToggleBtn');
+      const isVisible = line.style.display !== 'none';
+      line.style.display = isVisible ? 'none' : 'flex';
+      btn.classList.toggle('active', !isVisible);
+    }
+
+    function prevQuarter() {
+      switchQuarter(currentQuarterNum - 1);
+    }
+    function nextQuarter() {
+      switchQuarter(currentQuarterNum + 1);
+    }
+
+    function switchQuarter(qNum) {
+      if (qNum < 0) qNum = 3;
+      if (qNum > 3) qNum = 0;
+      currentQuarterNum = qNum;
+
+      const q = quartersData[qNum];
+      document.getElementById('seasonPagerTitle').innerText = q.heading;
+      document.getElementById('inlinePagerTitle').innerText = q.heading;
+
+      document.getElementById('quarterKeyEvent').innerText = q.keyEvent;
+      document.getElementById('fusedKeyEvent').innerText = q.keyEvent;
+
+      renderMonths(q.months);
+      renderSeasonCards();
+    }
+
+    function toggleTravelLayer() {
+      isTravelLayerActive = !isTravelLayerActive;
+      document.getElementById('travelMasterBtn').classList.toggle('active', isTravelLayerActive);
+      document.getElementById('travelFusedBtn').classList.toggle('active', isTravelLayerActive);
+      switchQuarter(currentQuarterNum);
+    }
+
+    function getPhase(mIdx, d) {
+      if (mIdx === 0 && d >= 1 && d <= 4) return 'build';
+      if (mIdx === 2 && d === 7) return 'race'; // Belgenbach
+      if (mIdx === 2 && d < 7) return 'build';
+      if (mIdx === 2 && d > 7 && d <= 14) return 'rekom';
+      if (mIdx === 3 && d === 17) return 'race'; // RET22
+      if (mIdx === 5 && d === 12) return 'race'; // TS16
+      if (mIdx === 8 && d === 11) return 'option'; // Müllerthal
+      if (mIdx === 9 && d === 24) return 'race'; // Drachenlauf
+      if (mIdx === 10 && d === 7) return 'option'; // Martinslauf
+      return '';
+    }
+
+    function isDayInActiveTrip(mIdx, d) {
+      if (!isTravelLayerActive) return null;
+      const q = quartersData[currentQuarterNum];
+      if (!q) return null;
+      const m = q.months.find(month => month.mIdx === mIdx);
+      if (!m || !m.trips) return null;
+      return m.trips.find(t => d >= t.startDay && d <= t.endDay) || null;
+    }
+
+    function renderMonths(months) {
+      const container = document.getElementById('threeMonthsContainer');
+      let html = '';
+
+      months.forEach(m => {
+        html += `
+          <div class="month-block">
+            <div class="month-header">
+              <span class="month-title">${m.name}</span>
+            </div>
+            <div class="calendar-matrix">
+        `;
+
+        let currentDay = 1;
+        let weekRow = 0;
+
+        while (currentDay <= m.days) {
+          html += `<div class="week-row">`;
+          for (let col = 0; col < 7; col++) {
+            if (weekRow === 0 && col < m.startOffset) {
+              html += `<div class="cal-cell empty"></div>`;
+            } else if (currentDay <= m.days) {
+              const d = currentDay;
+              const isSun = (col === 6);
+              const phase = getPhase(m.mIdx, d);
+
+              let cellClass = isSun ? 'is-sunday ' : '';
+              if (phase === 'race') cellClass += 'phase-race is-interactive';
+              else if (phase === 'option') cellClass += 'phase-option is-interactive';
+              else if (phase === 'build') cellClass += 'phase-build is-interactive';
+              else if (phase === 'rekom') cellClass += 'phase-rekom is-interactive';
+              else cellClass += 'neutral-day';
+
+              const activeTrip = isDayInActiveTrip(m.mIdx, d);
+              if (activeTrip) {
+                cellClass += ' vacation-layer';
+                if (d === activeTrip.startDay || col === 0) cellClass += ' vac-start';
+                if (d === activeTrip.endDay || col === 6) cellClass += ' vac-end';
+              }
+
+              html += `<div class="cal-cell ${cellClass}">${d}</div>`;
+              currentDay++;
+            } else {
+              html += `<div class="cal-cell empty"></div>`;
+            }
+          }
+          html += `</div>`;
+          weekRow++;
+        }
+        html += `
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function renderSeasonCards() {
+      const gridEl = document.getElementById('seasonShelfGrid');
+      const cards = seasonCardsData[currentQuarterNum] || [];
+      const visibleCards = cards.filter(c => !c.isTrip || isTravelLayerActive);
+
+      let html = '';
+      visibleCards.forEach(c => {
+        let metricsHtml = '';
+        if (c.km && c.hm) {
+          metricsHtml = `
+            <div class="shelf-card-metrics-hero">
+              <div class="m-block"><span class="m-num">${c.km}</span><span class="m-unit">KM</span></div>
+              <div class="m-sep">·</div>
+              <div class="m-block"><span class="m-num">${c.hm}</span><span class="m-unit">HM</span></div>
+            </div>
+          `;
+        }
+        const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
+        const bgPos = c.bgPosition ? `background-position: ${c.bgPosition};` : '';
+        const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
+        const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
+
+        html += `
+          <div class="shelf-card" style="background: ${c.bg};">
+            <div class="shelf-card-bg" style="${bgImg} ${bgPos}"></div>
+            <div class="shelf-card-gradient"></div>
+            ${badgeHtml}
+            <div class="shelf-card-content">
+              <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
+              <div class="shelf-card-title">${c.title}</div>
+              ${metricsHtml}
+            </div>
+          </div>
+        `;
+      });
+
+      gridEl.innerHTML = html;
+    }
+
+    function openAllModal() {
+      alert("Demo: Öffnet die Gesamtübersicht der 5 Wettkämpfe (season_all Drawer).");
+    }
+
+    // Init
+    switchQuarter(0);
+    setVariant('v1');
+  </script>
+</body>
+</html>
