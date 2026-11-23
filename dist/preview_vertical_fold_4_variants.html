@@ -8,7 +8,470 @@
   <link rel="stylesheet" href="styles.css?v=11.78">
   <style>
     /* ==========================================================================
-       VARIANTS CONTROLLER & SIMULATOR BAR
+       BASIS STYLES AUS INDEX.HTML FÜR DEN 3-MONATS-KALENDER & DAS SHELF
+       ========================================================================== */
+    .season-header {
+      min-height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .season-pager-bar {
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+    }
+
+    .season-pager-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-white, #FFFFFF);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .season-pager-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: scale(1.06);
+    }
+
+    .season-pager-label {
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0 24px;
+      border-radius: 9999px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .season-pager-title {
+      font-family: var(--font-display, -apple-system, sans-serif);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--text-white, #FFFFFF);
+    }
+
+    .layer-chip-btn {
+      height: 30px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 6px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: var(--text-secondary, rgba(255, 255, 255, 0.6));
+      font-size: 0.80rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .layer-chip-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .layer-chip-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255, 214, 10, 0.40);
+      transition: all 0.2s ease;
+    }
+
+    .layer-chip-btn.active {
+      background: rgba(255, 214, 10, 0.15);
+      border-color: rgba(255, 214, 10, 0.50);
+      color: #FFF3C4;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 0 12px rgba(255, 214, 10, 0.25);
+    }
+
+    .layer-chip-btn.active .layer-chip-dot {
+      background: var(--apple-yellow, #FFD60A);
+      box-shadow: 0 0 8px var(--apple-yellow, #FFD60A);
+    }
+
+    .three-months-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .month-block {
+      background: var(--card-bg, rgba(22, 22, 30, 0.85));
+      border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+      border-top: 1px solid var(--card-border-top, rgba(255, 255, 255, 0.18));
+      border-radius: 24px;
+      padding: 1.5rem 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    .month-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .month-title {
+      font-family: var(--font-display, -apple-system, sans-serif);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      text-align: center;
+      color: var(--text-white, #FFFFFF);
+    }
+
+    .calendar-matrix {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .week-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      height: 56px;
+      position: relative;
+    }
+
+    .cal-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-text, -apple-system, sans-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      font-feature-settings: "tnum" on;
+      user-select: none;
+      position: relative;
+      height: 100%;
+      border: 1px solid transparent;
+      color: var(--text-secondary, rgba(255, 255, 255, 0.6));
+      transition: all 0.15s ease;
+    }
+
+    .cal-cell.empty {
+      cursor: default;
+    }
+
+    .cal-cell.neutral-day {
+      background: rgba(255, 255, 255, 0.025);
+      border-radius: 8px;
+      margin: 1.5px;
+      cursor: default;
+    }
+
+    .cal-cell.is-interactive {
+      cursor: pointer;
+    }
+
+    .cal-cell.is-interactive:hover {
+      filter: brightness(1.2);
+    }
+
+    .cal-cell.is-sunday:not(.phase-race) {
+      color: rgba(255, 140, 130, 0.70) !important;
+      font-weight: 700;
+    }
+
+    .cal-cell.phase-build {
+      background: var(--phase-build-bg, rgba(48, 209, 88, 0.18)) !important;
+      border-top: 1px solid var(--phase-build-border, rgba(48, 209, 88, 0.45));
+      border-bottom: 1px solid var(--phase-build-border, rgba(48, 209, 88, 0.45));
+      color: var(--phase-build-text, #30D158) !important;
+      font-weight: 600;
+      margin: 1.5px 0;
+    }
+
+    .cal-cell.phase-rekom {
+      background: var(--phase-rekom-bg, rgba(100, 210, 255, 0.18)) !important;
+      border-top: 1px solid var(--phase-rekom-border, rgba(100, 210, 255, 0.45));
+      border-bottom: 1px solid var(--phase-rekom-border, rgba(100, 210, 255, 0.45));
+      color: var(--phase-rekom-text, #64D2FF) !important;
+      font-weight: 600;
+      margin: 1.5px 0;
+    }
+
+    .cal-cell.phase-race {
+      background: var(--phase-race-bg, #FF9F0A) !important;
+      border: 1px solid rgba(255, 255, 255, 0.9) !important;
+      color: #FFFFFF !important;
+      font-weight: 900 !important;
+      font-size: 1.25rem;
+      border-radius: 8px !important;
+      box-shadow: 0 0 16px var(--phase-race-glow, rgba(255, 159, 10, 0.5));
+      z-index: 3;
+      margin: 1.5px;
+    }
+
+    .cal-cell.phase-option {
+      border: 1px dashed rgba(191, 90, 242, 0.75) !important;
+      border-radius: 8px;
+      color: #E8B4F8 !important;
+      font-weight: 700;
+      margin: 1.5px;
+      cursor: pointer;
+    }
+
+    .cal-cell.vacation-layer {
+      position: relative;
+    }
+
+    .cal-cell.vacation-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-top: 3px solid var(--apple-yellow, #FFD60A);
+      background-image: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 5px,
+        rgba(255, 214, 10, 0.16) 5px,
+        rgba(255, 214, 10, 0.16) 7px
+      );
+      z-index: 2;
+    }
+
+    .cal-cell.vacation-layer.vac-start::after {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px;
+      border-left: 2px solid var(--apple-yellow, #FFD60A);
+    }
+
+    .cal-cell.vacation-layer.vac-end::after {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px;
+      border-right: 2px solid var(--apple-yellow, #FFD60A);
+    }
+
+    .quarter-meta-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: var(--card-bg, rgba(22, 22, 30, 0.85));
+      border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+      border-top: 1px solid var(--card-border-top, rgba(255, 255, 255, 0.18));
+      border-radius: 14px;
+      padding: 0.65rem 110px;
+      min-height: 48px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      margin-top: 1.25rem;
+    }
+
+    .quarter-meta-strip .layer-chip-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .quarter-key-event {
+      font-family: var(--font-text, -apple-system, sans-serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--apple-orange, #FF9F0A);
+      text-align: center;
+    }
+
+    /* SHELF STYLES */
+    .season-shelf-section {
+      margin-top: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .season-shelf-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+      padding: 0 0.25rem;
+    }
+
+    .season-shelf-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+    }
+
+    .season-shelf-all-btn {
+      background: none;
+      border: none;
+      color: var(--apple-cyan, #64D2FF);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5rem;
+      border-radius: 8px;
+    }
+
+    .season-shelf-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .shelf-card {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: rgba(22, 22, 30, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .shelf-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 20%;
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+
+    .shelf-card:hover .shelf-card-bg {
+      opacity: 0.88;
+    }
+
+    .shelf-card-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.82) 85%);
+    }
+
+    .shelf-card-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .shelf-card-badge.badge-yellow {
+      background: var(--apple-yellow, #FFD60A);
+      color: #000000;
+    }
+
+    .shelf-card-badge.badge-cyan {
+      background: var(--apple-cyan, #64D2FF);
+      color: #000000;
+    }
+
+    .shelf-card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .shelf-card-date {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--apple-orange, #FF9F0A);
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+    }
+
+    .shelf-card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.2px;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .shelf-card-metrics-hero {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .shelf-card-metrics-hero .m-block {
+      display: flex;
+      align-items: baseline;
+      gap: 2px;
+    }
+
+    .shelf-card-metrics-hero .m-num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      line-height: 1.0;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      font-feature-settings: "tnum";
+    }
+
+    .shelf-card-metrics-hero .m-unit {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 0.5px;
+    }
+
+    .shelf-card-metrics-hero .m-sep {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin: 0 1px;
+    }
+
+    /* ==========================================================================
+       SIMULATOR & VERGLEICHS-STEUERUNG
        ========================================================================== */
     .variant-ctrl-panel {
       position: sticky;
@@ -133,12 +596,9 @@
       box-shadow: 0 0 12px rgba(255, 69, 58, 0.4);
     }
 
-    /* ==========================================================================
-       VISUAL FOLD INDICATOR LINE
-       ========================================================================== */
     .viewport-fold-line {
       position: absolute;
-      top: 820px; /* Typischer Laptop / Desktop Fold-Wert */
+      top: 820px;
       left: 0;
       right: 0;
       height: 2px;
@@ -163,25 +623,19 @@
       text-transform: uppercase;
     }
 
-    /* ==========================================================================
-       CONTAINER WRAPPER FOR VARIANTS
-       ========================================================================== */
     .preview-canvas {
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
       padding: 1.5rem 1.5rem 4rem;
-      transition: all 0.25s ease;
     }
 
     /* ==========================================================================
        VARIANTE 1: MICRO-GRID (-150 px)
        ========================================================================== */
-    body[data-variant="v1"] .preview-canvas {
-      padding-top: 1rem;
-    }
     body[data-variant="v1"] .season-header {
       min-height: 36px;
+      margin-bottom: 0.5rem;
     }
     body[data-variant="v1"] .season-pager-bar {
       height: 36px;
@@ -213,7 +667,7 @@
       gap: 4px;
     }
     body[data-variant="v1"] .week-row {
-      height: 40px; /* -80px Ersparnis bei 5 Wochen */
+      height: 40px;
     }
     body[data-variant="v1"] .cal-cell {
       font-size: 1.05rem;
@@ -222,9 +676,7 @@
       min-height: 38px;
       padding: 0.45rem 90px;
       border-radius: 10px;
-    }
-    body[data-variant="v1"] .quarter-key-event {
-      font-size: 0.85rem;
+      margin-top: 0.85rem;
     }
     body[data-variant="v1"] .season-shelf-section {
       margin-top: 0.85rem;
@@ -233,27 +685,13 @@
     /* ==========================================================================
        VARIANTE 2: HEADER-FUSION (-140 px)
        ========================================================================== */
-    body[data-variant="v2"] .preview-canvas {
-      padding-top: 0.75rem;
-    }
-    body[data-variant="v2"] .season-header {
-      display: none; /* Pager wandert in die Top-Bar */
-    }
-    body[data-variant="v2"] .app-header-with-pager {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
     body[data-variant="v2"] .month-block {
       padding: 1rem 1rem 0.85rem;
       border-radius: 20px;
       gap: 0.75rem;
     }
     body[data-variant="v2"] .week-row {
-      height: 44px; /* -60px Ersparnis */
+      height: 44px;
     }
     body[data-variant="v2"] .cal-cell {
       font-size: 1.12rem;
@@ -261,7 +699,7 @@
     body[data-variant="v2"] .quarter-meta-strip {
       min-height: 40px;
       padding: 0.5rem 100px;
-      margin-top: 0.75rem;
+      margin-top: 0.85rem;
     }
     body[data-variant="v2"] .season-shelf-section {
       margin-top: 0.85rem;
@@ -270,9 +708,6 @@
     /* ==========================================================================
        VARIANTE 3: DOCK-TO-SHELF FUSION (-180 px)
        ========================================================================== */
-    body[data-variant="v3"] .preview-canvas {
-      padding-top: 0.85rem;
-    }
     body[data-variant="v3"] .season-header {
       min-height: 38px;
       margin-bottom: 0.5rem;
@@ -293,13 +728,10 @@
       gap: 0.65rem;
     }
     body[data-variant="v3"] .week-row {
-      height: 42px; /* -70px Ersparnis */
+      height: 42px;
     }
     body[data-variant="v3"] .cal-cell {
       font-size: 1.08rem;
-    }
-    body[data-variant="v3"] .quarter-meta-strip {
-      display: none; /* Separate Box entfällt komplett! */
     }
     body[data-variant="v3"] .season-shelf-section {
       margin-top: 0.85rem;
@@ -344,23 +776,6 @@
     /* ==========================================================================
        VARIANTE 4: ZERO-SCROLL DASHBOARD (-260 px · 100% ATF)
        ========================================================================== */
-    body[data-variant="v4"] .preview-canvas {
-      padding-top: 0.5rem;
-    }
-    body[data-variant="v4"] .season-header {
-      display: none; /* In Top-Nav */
-    }
-    body[data-variant="v4"] .quarter-meta-strip {
-      display: none; /* Im Shelf-Header */
-    }
-    body[data-variant="v4"] .app-header-with-pager {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
     body[data-variant="v4"] .month-block {
       padding: 0.75rem 0.75rem 0.65rem;
       border-radius: 16px;
@@ -376,7 +791,7 @@
       gap: 3px;
     }
     body[data-variant="v4"] .week-row {
-      height: 38px; /* -90px Ersparnis */
+      height: 38px;
     }
     body[data-variant="v4"] .cal-cell {
       font-size: 1.0rem;
@@ -395,9 +810,8 @@
     body[data-variant="v4"] .season-shelf-section {
       margin-top: 0.65rem;
     }
-    /* CINEMA FORMAT 21:9 FÜR DIE SHELF KACHELN IN VARIANTE 4 */
     body[data-variant="v4"] .shelf-card {
-      aspect-ratio: 21 / 9 !important; /* Flacheres Kino-Format */
+      aspect-ratio: 21 / 9 !important;
       padding: 0.75rem 0.85rem !important;
     }
     body[data-variant="v4"] .shelf-card-title {
@@ -471,21 +885,21 @@
   <div class="preview-canvas">
 
     <!-- TOP-HEADER (FÜR VARIANTE 2 & 4 MIT INTEGRIERTEM PAGER) -->
-    <div class="app-header-with-pager" id="topNavPager" style="display: none;">
-      <div style="font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px; color: var(--text-white);">TRAILRUNNING 2027</div>
+    <div class="app-header-with-pager" id="topNavPager" style="display: none; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+      <div style="font-weight: 800; font-size: 0.95rem; letter-spacing: 0.5px; color: var(--text-white, #fff);">TRAILRUNNING 2027</div>
       
       <!-- INLINE PAGER FÜR V2 & V4 -->
       <div class="season-pager-bar" style="height: 38px;">
-        <button class="season-pager-btn" onclick="prevQuarter()" aria-label="Vorheriges Quartal" style="width: 36px; height: 36px;">‹</button>
+        <button class="season-pager-btn" onclick="prevQuarter()" aria-label="Vorheriges Quartal" style="width: 36px; height: 36px; font-size: 1.15rem;">‹</button>
         <div class="season-pager-label" style="height: 36px; padding: 0 20px;">
           <span class="season-pager-title" id="inlinePagerTitle" style="font-size: 0.92rem;">Jan – März 2027</span>
         </div>
-        <button class="season-pager-btn" onclick="nextQuarter()" aria-label="Nächstes Quartal" style="width: 36px; height: 36px;">›</button>
+        <button class="season-pager-btn" onclick="nextQuarter()" aria-label="Nächstes Quartal" style="width: 36px; height: 36px; font-size: 1.15rem;">›</button>
       </div>
 
       <div style="display: flex; gap: 8px;">
         <div class="master-segmented-control" style="transform: scale(0.92); transform-origin: right center;">
-          <button class="master-segment-btn" onclick="alert('Demo: Wechselt im echten Kalender')">Training</button>
+          <button class="master-segment-btn" onclick="alert('Demo')">Training</button>
           <button class="master-segment-btn active">Saison 2027</button>
         </div>
       </div>
@@ -794,14 +1208,14 @@
 
     function getPhase(mIdx, d) {
       if (mIdx === 0 && d >= 1 && d <= 4) return 'build';
-      if (mIdx === 2 && d === 7) return 'race'; // Belgenbach
+      if (mIdx === 2 && d === 7) return 'race';
       if (mIdx === 2 && d < 7) return 'build';
       if (mIdx === 2 && d > 7 && d <= 14) return 'rekom';
-      if (mIdx === 3 && d === 17) return 'race'; // RET22
-      if (mIdx === 5 && d === 12) return 'race'; // TS16
-      if (mIdx === 8 && d === 11) return 'option'; // Müllerthal
-      if (mIdx === 9 && d === 24) return 'race'; // Drachenlauf
-      if (mIdx === 10 && d === 7) return 'option'; // Martinslauf
+      if (mIdx === 3 && d === 17) return 'race';
+      if (mIdx === 5 && d === 12) return 'race';
+      if (mIdx === 8 && d === 11) return 'option';
+      if (mIdx === 9 && d === 24) return 'race';
+      if (mIdx === 10 && d === 7) return 'option';
       return '';
     }
 
@@ -892,7 +1306,7 @@
         const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
         const bgPos = c.bgPosition ? `background-position: ${c.bgPosition};` : '';
         const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
-        const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
+        const dateColor = c.isTrip ? 'var(--apple-yellow, #FFD60A)' : 'var(--apple-orange, #FF9F0A)';
 
         html += `
           <div class="shelf-card" style="background: ${c.bg};">
