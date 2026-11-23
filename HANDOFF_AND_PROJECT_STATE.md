@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.88 (Modal-Bereinigung: Sektionstitel "Wettkampf-Kalender 2027" in season_all entfernt · v11.88)  
+**Document Version:** 11.89 (Feiertags-System: Gelber 5px Apple HIG Micro-Dot & alle NRW-Feiertage 2027 mit Brückentagen · v11.89)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,23 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.88)
+## 📌 1. Project Overview & Release Freeze State (v11.89)
 
+- **Vollständiges Feiertags-System mit gelben 5px Micro-Dots (v11.89):**
+  - **Dot-Styling:** Dot-Größe auf 5px angehoben und in den authentischen Apple-Gelbton (`var(--apple-yellow, #FFD60A)`) umgestellt, mit sanfter gelber Aura (`box-shadow: 0 0 3px rgba(255, 214, 10, 0.55)`).
+  - **Alle NRW-Feiertage 2027 integriert:**
+    - `01.01.`: Neujahr (Fr)
+    - `26.03.`: Karfreitag (Fr)
+    - `29.03.`: Ostermontag (Mo)
+    - `01.05.`: Tag der Arbeit (Sa)
+    - `06.05.`: Christi Himmelfahrt (Do) · *Brückentag Fr 07.05.*
+    - `17.05.`: Pfingstmontag (Mo)
+    - `27.05.`: Fronleichnam (Do) · *Brückentag Fr 28.05.*
+    - `03.10.`: Tag der Deutschen Einheit (So)
+    - `01.11.`: Allerheiligen (Mo)
+    - `25.12.`: 1. Weihnachtstag (Sa)
+    - `26.12.`: 2. Weihnachtstag (So)
+  - **Interaktion:** Klick auf einen Feiertag blendet im Status-Dock (`quarterKeyEvent`) die Feiertagsbezeichnung inklusive Brückentag-Hinweisen und eventuell aktiven Reisedaten ein.
 - **Modal-Bereinigung season_all (v11.88):**
   - Der überflüssige Sektionstitel `Wettkampf-Kalender 2027 (Tippen für Detail-Briefing)` wurde im Modal vollständig entfernt.
   - Das Modal zeigt nun oben ausschließlich den monumentalen Header `SAISON 2027`, unmittelbar gefolgt von der interaktiven Liste der Saison-Wettkämpfe ohne Textballast.
