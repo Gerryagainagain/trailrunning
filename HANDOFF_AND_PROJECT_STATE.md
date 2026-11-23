@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.89 (Feiertags-System: Gelber 5px Apple HIG Micro-Dot & alle NRW-Feiertage 2027 mit Brückentagen · v11.89)  
+**Document Version:** 11.90 (Shelf-Ergänzung: Reise-Karte für re:publica Berlin 10.–12.05. hinzugefügt · v11.90)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.89)
+## 📌 1. Project Overview & Release Freeze State (v11.90)
 
+- **Reise-Karte für re:publica Berlin im Shelf (v11.90):**
+  - Die fehlende Karte für die re:publica Berlin (`10.–12.05.`) wurde in `seasonCardsData[1]` (Q2) chronologisch zwischen RET22 (`17.04.`) und Bergurlaub Tirol (`05.–25.06.`) ergänzt.
+  - Mit gelbem `REISE`-Badge (`badge-yellow`), Datumszeile `10.–12.05.`, Titel `re:publica Berlin` und atmosphärischem Cover (`assets/republica_cover.jpg`).
 - **Vollständiges Feiertags-System mit gelben 5px Micro-Dots (v11.89):**
   - **Dot-Styling:** Dot-Größe auf 5px angehoben und in den authentischen Apple-Gelbton (`var(--apple-yellow, #FFD60A)`) umgestellt, mit sanfter gelber Aura (`box-shadow: 0 0 3px rgba(255, 214, 10, 0.55)`).
   - **Alle NRW-Feiertage 2027 integriert:**
