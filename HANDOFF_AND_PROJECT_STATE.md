@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.69 (Büro-Sprech Bereinigung: Sämtliche Q-Zahlen Q1–Q4 aus Benutzeroberfläche verbannt · v11.69)  
+**Document Version:** 11.70 (Root-Cause Fix Holland-Bild & Vollständiges Apple HIG / System-Audit · v11.70)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,9 +8,22 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.69)
+## 📌 1. Project Overview & Release Freeze State (v11.70)
 
-- **Q-Zahlen (Q1–Q4) vollständig eliminiert (v11.69):**
+- **Root-Cause Fix Holland-Cover (`assets/holland_cover.jpg` · v11.70):**
+  - **Problem & Ursache:** Das konvertierte JPEG war zuvor komplett schwarz (alle Pixel RGB=0), weil der Apple-HEIC-Hardware-Dekoder innerhalb der Sandbox-Sicherheitsgrenze keinen Zugriff auf den Grafiktreiber hatte und stumm leere Bytes erzeugte.
+  - **Lösung:** Re-Decodierung via `sips` mit voller Hardware-Beschleunigung: Ein gestochen scharfes, farbechtes 731 KB JPEG (`1920x1440`) erzeugt und in `assets/` sowie `dist/assets/` synchronisiert.
+- **Vollständiges Apple HIG & Accessibility Audit:**
+  - **Touch-Targets (§ 5):** `season-shelf-all-btn` auf vollwertige 44 × 44 px Mindesthöhe nach Apple HIG Spezifikation angehoben inklusive `:focus-visible` Tastatur-Fokusring.
+  - **Accessibility (A11y):** Alle Klick-Karten mit `role="button"`, `tabindex="0"`, `aria-label` und Tastatur-Support (`Enter`/`Space`) ausgestattet.
+  - **Kein Büro-Sprech:** Alle Q-Bezeichnungen (Q1–Q4) vollständig eliminiert.
+  - **GEMINI.md Compliance:** Strikte Trennung von Realdaten (§ 1), Pulskalibrierung 105–118 bpm (§ 2), Schätzungsverbot (§ 8) und Verpflegungs-SSOT (§ 9: nur Malto, Marzipan & Feigen, 0x Gels) verifiziert.
+
+---
+
+## 📌 2. Vorherige Meilensteine
+
+- **Büro-Sprech Bereinigung: Sämtliche Q-Zahlen Q1–Q4 aus Benutzeroberfläche verbannt (v11.69):**
   - Sämtliche Unternehmens-/Büro-Bezeichnungen („Q1 bis Q4“, „Q1“, „Q2“, etc.) wurden aus den Badges, Headern und Kacheln des `season_all`-Drawers entfernt.
   - Anstelle künstlicher Quartalskürzel treten natürliche Datums- und Saisonbezeichnungen („5 WETTKÄMPFE · SAISON 2027“, „07. März 2027“, „24. Oktober 2027 · Saisonfinale“).
 

@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.69">
-  <link rel="stylesheet" href="styles.css?v=11.69">
+  <link rel="stylesheet" href="tokens.css?v=11.70">
+  <link rel="stylesheet" href="styles.css?v=11.70">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1259,10 +1259,23 @@
       font-size: 0.88rem;
       font-weight: 700;
       cursor: pointer;
-      padding: 4px 8px;
-      transition: opacity 0.2s;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.5rem;
+      border-radius: 8px;
+      transition: opacity 0.2s, background-color 0.2s;
     }
-    .season-shelf-all-btn:hover { opacity: 0.8; }
+    .season-shelf-all-btn:hover {
+      opacity: 0.85;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .season-shelf-all-btn:focus-visible {
+      outline: 2px solid var(--apple-cyan, #30D158);
+      outline-offset: 2px;
+    }
     .season-shelf-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -3106,7 +3119,7 @@
           metricsHtml = `<div class="shelf-card-desc">${c.desc}</div>`;
         }
 
-        const clickHandler = c.raceKey ? `onclick="openRaceDrawer('${c.raceKey}')"` : '';
+        const clickHandler = c.raceKey ? `onclick="openRaceDrawer('${c.raceKey}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRaceDrawer('${c.raceKey}');}" role="button" tabindex="0" aria-label="${c.title} Briefing öffnen"` : '';
         const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
         const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
         const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
