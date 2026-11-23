@@ -1,22 +1,27 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.61 (Reise Halle an der Saale 04.–08.02.2027 aus Saisonkalender entfernt · v11.61)  
-**Last Updated:** November 22, 2026  
+**Document Version:** 11.62 (Rücknahme Custom Domain CNAME: Direkte Erreichbarkeit via GitHub Pages URL wiederhergestellt · v11.62)  
+**Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
-**Live Application URL:** `https://gerryagainagain.github.io/trailrunning/` (Custom Subdomain: `https://trail.gerhardschmal.de`)  
+**Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.61)
+## 📌 1. Project Overview & Release Freeze State (v11.62)
 
-- **Reise Halle an der Saale (04.–08.02.2027) entfernt (v11.61):**
-  - Der Reise-Eintrag `{ id: 'halle', label: 'Kulturhauptstadt Halle (04.–08.02.)', startDay: 4, endDay: 8 }` wurde aus `quartersData[0].months[1]` (Februar) in `index.html` und `preview_jahres_dashboard.html` restlos entfernt (`trips: []`).
-  - Der Februar 2027 wird nun im Kalender und in den Tagesdetails als reine Vorbereitungsphase ohne Reise-Overlay dargestellt.
+- **Rücknahme der Custom Domain `trail.gerhardschmal.de` (v11.62):**
+  - Die `CNAME`-Datei wurde aus dem Repository-Root sowie dem `dist/`-Verzeichnis restlos gelöscht.
+  - Die Anwendung wird damit wieder ohne externe Weiterleitung direkt unter der Standard-GitHub-Pages-Adresse bereitgestellt:
+    `https://gerryagainagain.github.io/trailrunning/`
 
 ---
 
 ## 📌 2. Vorherige Meilensteine
+
+- **Reise Halle an der Saale (04.–08.02.2027) entfernt (v11.61):**
+  - Der Reise-Eintrag `{ id: 'halle', label: 'Kulturhauptstadt Halle (04.–08.02.)', startDay: 4, endDay: 8 }` wurde aus `quartersData[0].months[1]` (Februar) in `index.html` und `preview_jahres_dashboard.html` restlos entfernt (`trips: []`).
+  - Der Februar 2027 wird nun im Kalender und in den Tagesdetails als reine Vorbereitungsphase ohne Reise-Overlay dargestellt.
 
 - **Vorbereitung Custom Subdomain `trail.gerhardschmal.de` (v11.60):**
   - **CNAME-Konfiguration:**
