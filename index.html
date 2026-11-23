@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.84">
-  <link rel="stylesheet" href="styles.css?v=11.84">
+  <link rel="stylesheet" href="tokens.css?v=11.85">
+  <link rel="stylesheet" href="styles.css?v=11.85">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3817,9 +3817,9 @@
         ]
       },
       season_all: {
-        title: 'Saison 2027 · Alle Wettkämpfe',
-        subtitle: 'Gesamtübersicht der Hauptläufe & Schlüssel-Events 2027',
-        targetPill: '5 WETTKÄMPFE · SAISON 2027',
+        title: 'SAISON 2027',
+        subtitle: '',
+        targetPill: '',
         sections: [
           {
             title: 'Wettkampf-Kalender 2027 (Tippen für Detail-Briefing)',
@@ -3882,8 +3882,18 @@
       if (!b) return;
 
       document.getElementById('drawerTitle').innerText = b.title || '';
-      document.getElementById('drawerSubtitle').innerText = b.subtitle || '';
-      document.getElementById('drawerTargetPill').innerText = b.targetPill || '';
+      
+      const subEl = document.getElementById('drawerSubtitle');
+      if (subEl) {
+        subEl.innerText = b.subtitle || '';
+        subEl.style.display = b.subtitle ? 'block' : 'none';
+      }
+
+      const pillEl = document.getElementById('drawerTargetPill');
+      if (pillEl) {
+        pillEl.innerText = b.targetPill || '';
+        pillEl.style.display = b.targetPill ? 'inline-flex' : 'none';
+      }
 
       const orgLinkEl = document.getElementById('drawerOrganizerLink');
       if (orgLinkEl) {

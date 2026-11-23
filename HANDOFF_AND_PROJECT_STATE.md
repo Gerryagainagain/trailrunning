@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.84 (Martinslauf-Karte: Hero-Metrik auf 10K angepasst · v11.84)  
+**Document Version:** 11.85 (Modal-Header Wettkampf-Übersicht: Puristischer Titel "SAISON 2027" · v11.85)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.84)
+## 📌 1. Project Overview & Release Freeze State (v11.85)
 
+- **Wettkampf-Übersicht Modal-Header bereinigt (v11.85):**
+  - In der Gesamtübersicht der Saison-Wettkämpfe (`season_all` Drawer) wurden Subtitel und Target-Pill entfernt.
+  - Der Kopfbereich zeigt nun ausschließlich den puristischen, klaren Titel: **`SAISON 2027`**.
+  - Die Drawer-Logik (`openRaceDrawer`) blendet Untertitel und Target-Pill bei leeren Werten automatisch via `display: none` aus, sodass kein Leerraum verbleibt.
 - **Martinslauf Shelf-Karte angepasst (v11.84):**
   - Für den flachen Seelauf Martinslauf (nur 30 Hm) wurde die Hero-Metrik spezifisch auf **`10K`** umgestellt (statt unpassender `+30M`).
   - Zeile 1: `07.11.` · Zeile 2: `10K` · Zeile 3: `Martinslauf · 30 Hm`.
