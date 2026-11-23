@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.83 (Shelf-Design: Favorit A implementiert – Monumentale Höhenmeter +HM, weicheres Fading & puristische Typo · v11.83)  
+**Document Version:** 11.84 (Martinslauf-Karte: Hero-Metrik auf 10K angepasst · v11.84)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.83)
+## 📌 1. Project Overview & Release Freeze State (v11.84)
 
+- **Martinslauf Shelf-Karte angepasst (v11.84):**
+  - Für den flachen Seelauf Martinslauf (nur 30 Hm) wurde die Hero-Metrik spezifisch auf **`10K`** umgestellt (statt unpassender `+30M`).
+  - Zeile 1: `07.11.` · Zeile 2: `10K` · Zeile 3: `Martinslauf · 30 Hm`.
 - **Favorit A im Amazon-Shelf umgesetzt (v11.83):**
   - **Monumentale Höhenmeter als Hero-Typo (`.shelf-card-hero-num`):** Ziffern im Schweizer Akzidenz-Stil in `2.85rem` fetter Apple Cyan (`+1.250M`, `+941M`, `+851M`, `+850M`, `+600M`, `+30M`).
   - **Puristische Typo-Hierarchie ohne Badge:** 

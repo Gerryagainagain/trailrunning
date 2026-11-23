@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.83">
-  <link rel="stylesheet" href="styles.css?v=11.83">
+  <link rel="stylesheet" href="tokens.css?v=11.84">
+  <link rel="stylesheet" href="styles.css?v=11.84">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -3019,6 +3019,8 @@
           date: '07.11.',
           km: '10,0',
           hm: '30',
+          heroMetric: '10K',
+          subMetric: 'Martinslauf · 30 Hm',
           imageUrl: 'assets/martinslauf_cover.jpg',
           bgPosition: 'center 75%',
           bg: 'linear-gradient(135deg, #14202b, #0a1118)'
@@ -3175,7 +3177,13 @@
         const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
 
         let cardContentHtml = '';
-        if (c.hm && c.km) {
+        if (c.heroMetric) {
+          cardContentHtml = `
+            <div class="shelf-card-date" style="color: ${dateColor};">${c.date}</div>
+            <div class="shelf-card-hero-num">${c.heroMetric}</div>
+            <div class="shelf-card-sub">${c.subMetric || c.title}</div>
+          `;
+        } else if (c.hm && c.km) {
           const kmFormatted = c.km.endsWith(',0') ? c.km.slice(0, -2) : c.km;
           const displayTitle = c.shortTitle || c.title;
           cardContentHtml = `
