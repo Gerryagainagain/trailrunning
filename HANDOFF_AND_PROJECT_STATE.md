@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.65 (Reise-Card Q1: Titel exakt auf Holland Gangelt Zoutelande gesetzt · v11.65)  
+**Document Version:** 11.66 (Alle-Button Verlinkung: Vollwertiges Saison-Briefing season_all mit interaktiven Renn-Kacheln · v11.66)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.65)
+## 📌 1. Project Overview & Release Freeze State (v11.66)
 
-- **Reise-Card Q1 bereinigt (v11.65):**
-  - Titel exakt auf **`Holland Gangelt Zoutelande`** gesetzt.
-  - Subline („Jahreswechsel & Küste“) entfernt – die Karte zeigt jetzt clean nur Datum (`31.12.–04.01.`), Badge (`REISE`) und die Headline.
+- **„Alle ›“-Button korrekt verlinkt (v11.66):**
+  - Statt des temporären Verweises auf Belgenbach öffnet der Button `Alle ›` ab sofort das umfassende **Saison-Briefing `season_all`** im Apple HIG Slide-Over Drawer.
+  - Enthält alle 5 Wettkämpfe des Jahres 2027 (Belgenbachtrail, RET22, TS16, Müllerthal, Drachenlauf) mit Datum, Distanz, Höhenmetern und direktem Klick-Sprung in das jeweilige Detail-Briefing.
 
 ---
 
