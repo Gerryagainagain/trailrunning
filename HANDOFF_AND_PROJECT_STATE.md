@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.80 (Shelf-Pills: Anmeldedaten für Müllerthal 1.2. & Belgenbachtrail 7.12. aktualisiert · v11.80)  
+**Document Version:** 11.81 (Shelf-Pills: Anmeldedatum für Drachenlauf 14.6. hinterlegt · v11.81)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,10 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.80)
+## 📌 1. Project Overview & Release Freeze State (v11.81)
 
+- **Drachenlauf Anmelde-Pill im Amazon-Shelf ergänzt (v11.81):**
+  - **Drachenlauf Königswinter (Q4):** Neue Eck-Pille mit `14.6. ANMELDUNG` (`badge-cyan`) oben rechts hinterlegt (Anmeldestart am 14. Juni).
 - **Anmelde-Pills im Amazon-Shelf aktualisiert (v11.80):**
   - **Ultra Trail Müllerthal (Q3):** Badge von `OPTION` auf `1.2. ANMELDUNG` geändert (Registrierungsstart am 01. Februar).
   - **Belgenbachtrail (Q1):** Neue obere rechte Eck-Pille mit `7.12. ANMELDUNG` (`badge-cyan`) integriert (Anmeldefenster nach 7G-HM am 07. Dezember).
