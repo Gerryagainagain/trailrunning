@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.68 (Holland Gangelt Zoutelande: Reales Foto aus HEIC konvertiert und als Cover hinterlegt · v11.68)  
+**Document Version:** 11.69 (Büro-Sprech Bereinigung: Sämtliche Q-Zahlen Q1–Q4 aus Benutzeroberfläche verbannt · v11.69)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.68)
+## 📌 1. Project Overview & Release Freeze State (v11.69)
 
-- **Holland-Cover integriert (v11.68):**
-  - Hochgeladenes Originalfoto (`IMG_4983.HEIC`) via `sips` in webkompatibles JPEG (`assets/holland_cover.jpg`) konvertiert und skaliert.
-  - Bild fest als Hintergrund-Cover der Reisekarte `Holland Gangelt Zoutelande` eingebunden.
+- **Q-Zahlen (Q1–Q4) vollständig eliminiert (v11.69):**
+  - Sämtliche Unternehmens-/Büro-Bezeichnungen („Q1 bis Q4“, „Q1“, „Q2“, etc.) wurden aus den Badges, Headern und Kacheln des `season_all`-Drawers entfernt.
+  - Anstelle künstlicher Quartalskürzel treten natürliche Datums- und Saisonbezeichnungen („5 WETTKÄMPFE · SAISON 2027“, „07. März 2027“, „24. Oktober 2027 · Saisonfinale“).
 
 ---
 
