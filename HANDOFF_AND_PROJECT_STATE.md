@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.66 (Alle-Button Verlinkung: Vollwertiges Saison-Briefing season_all mit interaktiven Renn-Kacheln · v11.66)  
+**Document Version:** 11.67 (Reisekarten: Sämtliche Sublines gestrichen – reine Headlines · v11.67)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.66)
+## 📌 1. Project Overview & Release Freeze State (v11.67)
 
-- **„Alle ›“-Button korrekt verlinkt (v11.66):**
-  - Statt des temporären Verweises auf Belgenbach öffnet der Button `Alle ›` ab sofort das umfassende **Saison-Briefing `season_all`** im Apple HIG Slide-Over Drawer.
-  - Enthält alle 5 Wettkämpfe des Jahres 2027 (Belgenbachtrail, RET22, TS16, Müllerthal, Drachenlauf) mit Datum, Distanz, Höhenmetern und direktem Klick-Sprung in das jeweilige Detail-Briefing.
+- **Reisekarten ohne Sublines (v11.67):**
+  - Auf allen Reisekarten (Holland Gangelt Zoutelande, Barbershop Apeldoorn, Bergurlaub Tirol) wurden die Sublines („Jahreswechsel & Küste“, „Sing Festival“, „Standlager FiNK Imst“) gestrichen.
+  - Karten zeigen strikt nur noch Datum, Badge (`REISE` / `URLAUB`) und die Headline.
 
 ---
 
