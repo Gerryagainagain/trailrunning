@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.86 (Martinslauf-Karte: Höhenmeter entfernt, reiner Titel "Martinslauf" · v11.86)  
+**Document Version:** 11.87 (Feiertags-Integration: Apple HIG Micro-Dot reduziert auf 29.03. Ostermontag · v11.87)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.86)
+## 📌 1. Project Overview & Release Freeze State (v11.87)
 
+- **Feiertags-Indikator Variante A (Apple HIG Micro-Dot, v11.87):**
+  - Implementierung eines subtilen 3,5px Micro-Dots (`.cal-cell.has-holiday::before`) zentriert über der Kalenderziffer.
+  - Vorerst strikt reduziert aktiv für **29.03.2027 (Ostermontag)** im Monat März (Q1).
+  - Beim Klick auf den 29. März wird der Tag selektiert und das Status-Dock (`quarterKeyEvent`) blendet nüchtern ein:
+    `Mo 29.03.2027 · Ostermontag (Gesetzlicher Feiertag)`.
+  - Desktop-Hover zeigt zusätzlich den Tooltip `title="Ostermontag (Gesetzlicher Feiertag)"`.
+  - Modulare Lookup-Tabelle `HOLIDAYS_2027` für künftige Erweiterungen vorbereitet.
 - **Martinslauf Shelf-Karte: Höhenmeter entfernt (v11.86):**
   - Zeile 3 zeigt nun ausschließlich den Titel `Martinslauf` ohne Höhenmeterangabe.
   - Zeile 1: `07.11.` · Zeile 2: `10K` · Zeile 3: `Martinslauf`.
