@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.67 (Reisekarten: Sämtliche Sublines gestrichen – reine Headlines · v11.67)  
+**Document Version:** 11.68 (Holland Gangelt Zoutelande: Reales Foto aus HEIC konvertiert und als Cover hinterlegt · v11.68)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.67)
+## 📌 1. Project Overview & Release Freeze State (v11.68)
 
-- **Reisekarten ohne Sublines (v11.67):**
-  - Auf allen Reisekarten (Holland Gangelt Zoutelande, Barbershop Apeldoorn, Bergurlaub Tirol) wurden die Sublines („Jahreswechsel & Küste“, „Sing Festival“, „Standlager FiNK Imst“) gestrichen.
-  - Karten zeigen strikt nur noch Datum, Badge (`REISE` / `URLAUB`) und die Headline.
+- **Holland-Cover integriert (v11.68):**
+  - Hochgeladenes Originalfoto (`IMG_4983.HEIC`) via `sips` in webkompatibles JPEG (`assets/holland_cover.jpg`) konvertiert und skaliert.
+  - Bild fest als Hintergrund-Cover der Reisekarte `Holland Gangelt Zoutelande` eingebunden.
 
 ---
 
