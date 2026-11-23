@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 radikal neue Layout-Konzepte: Vertikale Höhen-Optimierung</title>
+  <link rel="stylesheet" href="tokens.css?v=11.78">
+  <style>
+    :root {
+      --bg-dark: #08090D;
+      --card-bg: rgba(20, 22, 30, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-top: rgba(255, 255, 255, 0.16);
+      --apple-cyan: #64D2FF;
+      --apple-orange: #FF9F0A;
+      --apple-yellow: #FFD60A;
+      --apple-green: #30D158;
+      --apple-purple: #BF5AF2;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================================================
+       TOP SELECTOR DOCK
+       ========================================================================== */
+    .concept-bar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(14, 15, 22, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .concept-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--apple-cyan);
+      text-transform: uppercase;
+    }
+
+    .concept-nav {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      gap: 3px;
+    }
+
+    .concept-btn {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .concept-btn:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .concept-btn.active {
+      background: #FFFFFF;
+      color: #000000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+    .concept-badge {
+      font-size: 0.65rem;
+      padding: 1px 5px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+    .concept-btn.active .concept-badge {
+      background: rgba(0, 0, 0, 0.15);
+      color: #000;
+    }
+    .concept-btn:not(.active) .concept-badge {
+      background: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .fold-badge {
+      background: rgba(48, 209, 88, 0.15);
+      border: 1px solid rgba(48, 209, 88, 0.4);
+      color: #30D158;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    /* STAGE CONTAINER */
+    .stage-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+
+    .concept-section {
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+    .concept-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .concept-header-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .concept-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .concept-desc {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 2px;
+    }
+    .concept-gain {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+    }
+
+    /* ==========================================================================
+       SHARED CARDS & SHELF STYLES
+       ========================================================================== */
+    .shelf-card-shared {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: rgba(22, 22, 30, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+    .shelf-card-shared .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.75;
+    }
+    .shelf-card-shared .grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.18) 45%, rgba(0,0,0,0.85) 85%);
+    }
+    .shelf-card-shared .content {
+      position: relative;
+      z-index: 2;
+    }
+    .shelf-card-shared .date {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--apple-orange);
+      margin-bottom: 2px;
+    }
+    .shelf-card-shared .title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .shelf-card-shared .metrics {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .shelf-card-shared .metrics strong {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #FFFFFF;
+    }
+    .shelf-card-shared .metrics span {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .shelf-badge-chip {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .shelf-badge-chip.yellow {
+      background: var(--apple-yellow);
+      color: #000;
+    }
+
+    /* ==========================================================================
+       KONZEPT 1: SIDE-BY-SIDE SPLIT (62% KALENDER / 38% SHELF HERO)
+       ========================================================================== */
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .split-calendar-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .split-months-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .mini-month-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 0.75rem;
+    }
+    .mini-month-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+    }
+    .mini-cell {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .mini-cell.race {
+      background: var(--apple-orange) !important;
+      color: #FFFFFF !important;
+      font-weight: 800;
+      box-shadow: 0 0 10px rgba(255, 159, 10, 0.5);
+    }
+    .mini-cell.trip {
+      border-top: 2px solid var(--apple-yellow);
+      background: rgba(255, 214, 10, 0.12);
+      color: #FFF;
+    }
+    .mini-cell.build {
+      background: rgba(48, 209, 88, 0.15);
+      color: #30D158;
+    }
+    .mini-cell.rekom {
+      background: rgba(100, 210, 255, 0.15);
+      color: #64D2FF;
+    }
+
+    .split-shelf-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .split-shelf-header {
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       KONZEPT 2: LINEAR TIMELINE (3 ZEILEN STATT 18 ZEILEN!)
+       ========================================================================== */
+    .linear-timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .linear-month-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      align-items: center;
+      gap: 1rem;
+    }
+    .linear-m-label {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .linear-days-track {
+      display: grid;
+      grid-template-columns: repeat(31, 1fr);
+      gap: 2px;
+      height: 28px;
+    }
+    .linear-day-pill {
+      height: 100%;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .linear-day-pill.race {
+      background: var(--apple-orange) !important;
+      color: #fff !important;
+      font-weight: 900;
+      box-shadow: 0 0 10px rgba(255, 159, 10, 0.6);
+    }
+    .linear-day-pill.trip {
+      background: rgba(255, 214, 10, 0.25);
+      border-top: 2px solid var(--apple-yellow);
+      color: #fff;
+    }
+    .linear-day-pill.build {
+      background: rgba(48, 209, 88, 0.2);
+      color: #30D158;
+    }
+    .linear-day-pill.rekom {
+      background: rgba(100, 210, 255, 0.2);
+      color: #64D2FF;
+    }
+
+    /* ==========================================================================
+       KONZEPT 3: HERO-FIRST (SHELF BÜHNE OBEN, KALENDER DARUNTER)
+       ========================================================================== */
+    .hero-first-shelf {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ==========================================================================
+       KONZEPT 4: FOCUS MONTH + SATELLITES
+       ========================================================================== */
+    .focus-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.6fr 0.8fr;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .focus-month-card {
+      background: rgba(255, 159, 10, 0.04);
+      border: 1px solid rgba(255, 159, 10, 0.35);
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    }
+    .focus-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      background: var(--apple-orange);
+      color: #fff;
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-bottom: 4px;
+    }
+
+    /* ==========================================================================
+       KONZEPT 5: 13-WOCHEN GANTT-STRIP
+       ========================================================================== */
+    .gantt-strip-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .gantt-grid {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap: 4px;
+    }
+    .gantt-col {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .gantt-kw-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .gantt-bar {
+      height: 48px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.70rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 2px;
+    }
+    .gantt-bar.race {
+      background: var(--apple-orange);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 0 12px rgba(255, 159, 10, 0.5);
+    }
+    .gantt-bar.trip {
+      background: rgba(255, 214, 10, 0.25);
+      border-top: 2px solid var(--apple-yellow);
+      color: #fff;
+    }
+    .gantt-bar.build {
+      background: rgba(48, 209, 88, 0.2);
+      color: #30D158;
+    }
+    .gantt-bar.rekom {
+      background: rgba(100, 210, 255, 0.2);
+      color: #64D2FF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       FLOATING CONCEPT SWITCHER
+       ========================================================================== */ -->
+  <div class="concept-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="concept-title">5 Radikale Layout-Konzepte</span>
+      <span class="fold-badge">100% Above-the-Fold (0 Scroll)</span>
+    </div>
+
+    <div class="concept-nav">
+      <button type="button" class="concept-btn active" onclick="showConcept('c1')">
+        <span>1: Split-Screen</span>
+        <span class="concept-badge">60/40 Side-by-Side</span>
+      </button>
+      <button type="button" class="concept-btn" onclick="showConcept('c2')">
+        <span>2: Linear Timeline</span>
+        <span class="concept-badge">3 Zeilen Strip</span>
+      </button>
+      <button type="button" class="concept-btn" onclick="showConcept('c3')">
+        <span>3: Hero-First</span>
+        <span class="concept-badge">Shelf oben</span>
+      </button>
+      <button type="button" class="concept-btn" onclick="showConcept('c4')">
+        <span>4: Focus Month</span>
+        <span class="concept-badge">März Spotlight</span>
+      </button>
+      <button type="button" class="concept-btn" onclick="showConcept('c5')">
+        <span>5: 13-Wochen-Gantt</span>
+        <span class="concept-badge">Macro Studio</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="stage-wrapper">
+
+    <!-- ==========================================================================
+         KONZEPT 1: SPLIT-SCREEN (60% KALENDER LINKS / 40% SHELF RECHTS)
+         ========================================================================== -->
+    <div class="concept-section active" id="sec-c1">
+      <div class="concept-header-box">
+        <div>
+          <div class="concept-name">Konzept 1: Split-Screen Studio (Side-by-Side)</div>
+          <div class="concept-desc">Kalender und Kacheln stehen nicht mehr vertikal im Stau, sondern nebeneinander auf einer Bühne.</div>
+        </div>
+        <div class="concept-gain">Höhen-Ersparnis: 100% (Kein Scrollen nötig)</div>
+      </div>
+
+      <div class="split-layout">
+        <!-- LINKS: KOMPAKTER 3-MONATS-KALENDER -->
+        <div class="split-calendar-col">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.1rem; font-weight: 800;">Saison 2027 · Jan – März</div>
+            <div style="font-size: 0.85rem; color: var(--apple-orange); font-weight: 700;">07. März · Belgenbachtrail (30,7 km · 941 Hm)</div>
+          </div>
+
+          <div class="split-months-grid">
+            <!-- JAN -->
+            <div class="mini-month-card">
+              <div class="mini-month-title">Januar</div>
+              <div class="mini-grid">
+                <div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div>
+                <div class="mini-cell trip">1</div><div class="mini-cell trip">2</div><div class="mini-cell trip">3</div>
+                <div class="mini-cell trip">4</div><div class="mini-cell">5</div><div class="mini-cell">6</div><div class="mini-cell">7</div><div class="mini-cell">8</div><div class="mini-cell">9</div><div class="mini-cell">10</div>
+                <div class="mini-cell">11</div><div class="mini-cell">12</div><div class="mini-cell">13</div><div class="mini-cell">14</div><div class="mini-cell">15</div><div class="mini-cell">16</div><div class="mini-cell">17</div>
+                <div class="mini-cell">18</div><div class="mini-cell">19</div><div class="mini-cell">20</div><div class="mini-cell">21</div><div class="mini-cell">22</div><div class="mini-cell">23</div><div class="mini-cell">24</div>
+                <div class="mini-cell">25</div><div class="mini-cell">26</div><div class="mini-cell">27</div><div class="mini-cell">28</div><div class="mini-cell">29</div><div class="mini-cell">30</div><div class="mini-cell">31</div>
+              </div>
+            </div>
+
+            <!-- FEB -->
+            <div class="mini-month-card">
+              <div class="mini-month-title">Februar</div>
+              <div class="mini-grid">
+                <div class="mini-cell build">1</div><div class="mini-cell build">2</div><div class="mini-cell build">3</div><div class="mini-cell build">4</div><div class="mini-cell build">5</div><div class="mini-cell build">6</div><div class="mini-cell build">7</div>
+                <div class="mini-cell build">8</div><div class="mini-cell build">9</div><div class="mini-cell build">10</div><div class="mini-cell build">11</div><div class="mini-cell build">12</div><div class="mini-cell build">13</div><div class="mini-cell build">14</div>
+                <div class="mini-cell build">15</div><div class="mini-cell build">16</div><div class="mini-cell build">17</div><div class="mini-cell build">18</div><div class="mini-cell build">19</div><div class="mini-cell build">20</div><div class="mini-cell build">21</div>
+                <div class="mini-cell build">22</div><div class="mini-cell build">23</div><div class="mini-cell build">24</div><div class="mini-cell build">25</div><div class="mini-cell build">26</div><div class="mini-cell build">27</div><div class="mini-cell build">28</div>
+              </div>
+            </div>
+
+            <!-- MÄRZ -->
+            <div class="mini-month-card">
+              <div class="mini-month-title" style="color: var(--apple-orange);">März (Wettkampf)</div>
+              <div class="mini-grid">
+                <div class="mini-cell build">1</div><div class="mini-cell build">2</div><div class="mini-cell build">3</div><div class="mini-cell build">4</div><div class="mini-cell build">5</div><div class="mini-cell build">6</div>
+                <div class="mini-cell race">7</div>
+                <div class="mini-cell rekom">8</div><div class="mini-cell rekom">9</div><div class="mini-cell rekom">10</div><div class="mini-cell rekom">11</div><div class="mini-cell rekom">12</div><div class="mini-cell rekom">13</div><div class="mini-cell rekom">14</div>
+                <div class="mini-cell">15</div><div class="mini-cell">16</div><div class="mini-cell">17</div><div class="mini-cell">18</div><div class="mini-cell">19</div><div class="mini-cell">20</div><div class="mini-cell">21</div>
+                <div class="mini-cell">22</div><div class="mini-cell">23</div><div class="mini-cell">24</div><div class="mini-cell">25</div><div class="mini-cell">26</div><div class="mini-cell">27</div><div class="mini-cell">28</div>
+                <div class="mini-cell">29</div><div class="mini-cell">30</div><div class="mini-cell">31</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RECHTS: PROMINENTER RACE & TRIP STACK -->
+        <div class="split-shelf-col">
+          <div class="split-shelf-header">
+            <span>Hauptläufe & Reisen</span>
+            <span style="color: var(--apple-cyan); font-size: 0.85rem; cursor: pointer;">Alle 5 Wettkämpfe ›</span>
+          </div>
+
+          <!-- KACHEL 1: BELGENBACHTRAIL -->
+          <div class="shelf-card-shared">
+            <div class="bg" style="background-image: url('assets/belgenbach_cover.jpg');"></div>
+            <div class="grad"></div>
+            <div class="content">
+              <div class="date">07.03.2027 · HAUPTLINDIVIDUUM</div>
+              <div class="title">Belgenbachtrail</div>
+              <div class="metrics">
+                <strong>30,7</strong><span>KM</span> · <strong>941</strong><span>HM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- KACHEL 2: HOLLAND -->
+          <div class="shelf-card-shared" style="aspect-ratio: 21 / 9;">
+            <div class="bg" style="background-image: url('assets/holland_cover.jpg');"></div>
+            <div class="grad"></div>
+            <div class="shelf-badge-chip yellow">REISE</div>
+            <div class="content">
+              <div class="date" style="color: var(--apple-yellow);">31.12.–04.01.</div>
+              <div class="title" style="font-size: 1.05rem;">Holland Gangelt Zoutelande</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         KONZEPT 2: LINEAR TIMELINE (3 ZEILEN STATT 18 ZEILEN)
+         ========================================================================== -->
+    <div class="concept-section" id="sec-c2">
+      <div class="concept-header-box">
+        <div>
+          <div class="concept-name">Konzept 2: Linear 3-Zeilen Timeline (Kalender nur 115 px hoch!)</div>
+          <div class="concept-desc">Jeder Monat ist ein horizontaler Zeitstrahl. 75% der Bildschirmhöhe gehört direkt den bildgewaltigen Kacheln.</div>
+        </div>
+        <div class="concept-gain">Höhen-Ersparnis: ca. -320 px</div>
+      </div>
+
+      <div class="linear-timeline-card">
+        <!-- JAN -->
+        <div class="linear-month-row">
+          <div class="linear-m-label">Januar</div>
+          <div class="linear-days-track">
+            <div class="linear-day-pill trip">1</div><div class="linear-day-pill trip">2</div><div class="linear-day-pill trip">3</div><div class="linear-day-pill trip">4</div>
+            <div class="linear-day-pill">5</div><div class="linear-day-pill">6</div><div class="linear-day-pill">7</div><div class="linear-day-pill">8</div><div class="linear-day-pill">9</div><div class="linear-day-pill">10</div>
+            <div class="linear-day-pill">11</div><div class="linear-day-pill">12</div><div class="linear-day-pill">13</div><div class="linear-day-pill">14</div><div class="linear-day-pill">15</div><div class="linear-day-pill">16</div><div class="linear-day-pill">17</div>
+            <div class="linear-day-pill">18</div><div class="linear-day-pill">19</div><div class="linear-day-pill">20</div><div class="linear-day-pill">21</div><div class="linear-day-pill">22</div><div class="linear-day-pill">23</div><div class="linear-day-pill">24</div>
+            <div class="linear-day-pill">25</div><div class="linear-day-pill">26</div><div class="linear-day-pill">27</div><div class="linear-day-pill">28</div><div class="linear-day-pill">29</div><div class="linear-day-pill">30</div><div class="linear-day-pill">31</div>
+          </div>
+        </div>
+
+        <!-- FEB -->
+        <div class="linear-month-row">
+          <div class="linear-m-label">Februar</div>
+          <div class="linear-days-track" style="grid-template-columns: repeat(28, 1fr);">
+            <div class="linear-day-pill build">1</div><div class="linear-day-pill build">2</div><div class="linear-day-pill build">3</div><div class="linear-day-pill build">4</div><div class="linear-day-pill build">5</div><div class="linear-day-pill build">6</div><div class="linear-day-pill build">7</div>
+            <div class="linear-day-pill build">8</div><div class="linear-day-pill build">9</div><div class="linear-day-pill build">10</div><div class="linear-day-pill build">11</div><div class="linear-day-pill build">12</div><div class="linear-day-pill build">13</div><div class="linear-day-pill build">14</div>
+            <div class="linear-day-pill build">15</div><div class="linear-day-pill build">16</div><div class="linear-day-pill build">17</div><div class="linear-day-pill build">18</div><div class="linear-day-pill build">19</div><div class="linear-day-pill build">20</div><div class="linear-day-pill build">21</div>
+            <div class="linear-day-pill build">22</div><div class="linear-day-pill build">23</div><div class="linear-day-pill build">24</div><div class="linear-day-pill build">25</div><div class="linear-day-pill build">26</div><div class="linear-day-pill build">27</div><div class="linear-day-pill build">28</div>
+          </div>
+        </div>
+
+        <!-- MÄRZ -->
+        <div class="linear-month-row">
+          <div class="linear-m-label" style="color: var(--apple-orange);">März</div>
+          <div class="linear-days-track">
+            <div class="linear-day-pill build">1</div><div class="linear-day-pill build">2</div><div class="linear-day-pill build">3</div><div class="linear-day-pill build">4</div><div class="linear-day-pill build">5</div><div class="linear-day-pill build">6</div>
+            <div class="linear-day-pill race">7</div>
+            <div class="linear-day-pill rekom">8</div><div class="linear-day-pill rekom">9</div><div class="linear-day-pill rekom">10</div><div class="linear-day-pill rekom">11</div><div class="linear-day-pill rekom">12</div><div class="linear-day-pill rekom">13</div><div class="linear-day-pill rekom">14</div>
+            <div class="linear-day-pill">15</div><div class="linear-day-pill">16</div><div class="linear-day-pill">17</div><div class="linear-day-pill">18</div><div class="linear-day-pill">19</div><div class="linear-day-pill">20</div><div class="linear-day-pill">21</div>
+            <div class="linear-day-pill">22</div><div class="linear-day-pill">23</div><div class="linear-day-pill">24</div><div class="linear-day-pill">25</div><div class="linear-day-pill">26</div><div class="linear-day-pill">27</div><div class="linear-day-pill">28</div>
+            <div class="linear-day-pill">29</div><div class="linear-day-pill">30</div><div class="linear-day-pill">31</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIE KARTEN STEHEN VOLLKOMMEN FREI UND PROMINENT IM VIEWPORT -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+        <span style="font-size: 1.1rem; font-weight: 800;">Hauptläufe & Reisen (Jan – März 2027)</span>
+        <span style="color: var(--apple-cyan); font-weight: 700; cursor: pointer;">Alle 5 Wettkämpfe ›</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/holland_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="shelf-badge-chip yellow">REISE</div>
+          <div class="content">
+            <div class="date" style="color: var(--apple-yellow);">31.12.–04.01.</div>
+            <div class="title">Holland Gangelt Zoutelande</div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/belgenbach_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="content">
+            <div class="date">07.03.2027</div>
+            <div class="title">Belgenbachtrail</div>
+            <div class="metrics">
+              <strong>30,7</strong><span>KM</span> · <strong>941</strong><span>HM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared" style="border: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; text-align: center;">
+          <div style="color: rgba(255,255,255,0.4); font-size: 0.88rem; font-weight: 700;">
+            Nächster Lauf:<br><span style="color: var(--apple-cyan); font-weight: 800;">17.04. · RET22</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         KONZEPT 3: HERO-FIRST (SHELF OBEN, KALENDER DARUNTER)
+         ========================================================================== -->
+    <div class="concept-section" id="sec-c3">
+      <div class="concept-header-box">
+        <div>
+          <div class="concept-name">Konzept 3: Hero-First / Invertierte Hierarchie</div>
+          <div class="concept-desc">Wettkämpfe und Reisen begrüßen dich sofort als Hauptbühne ganz oben. Der Kalender folgt als Arbeitsdeck.</div>
+        </div>
+        <div class="concept-gain">Ergebnis: Kacheln liegen zu 100% ganz oben</div>
+      </div>
+
+      <!-- SHELF GANZ OBEN -->
+      <div class="hero-first-shelf">
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/holland_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="shelf-badge-chip yellow">REISE</div>
+          <div class="content">
+            <div class="date" style="color: var(--apple-yellow);">31.12.–04.01.</div>
+            <div class="title">Holland Gangelt Zoutelande</div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/belgenbach_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="content">
+            <div class="date">07.03.2027</div>
+            <div class="title">Belgenbachtrail</div>
+            <div class="metrics">
+              <strong>30,7</strong><span>KM</span> · <strong>941</strong><span>HM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared" style="background: rgba(255,255,255,0.02); border: 1px dashed rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; text-align: center;">
+          <div style="color: rgba(255,255,255,0.5); font-size: 0.88rem; font-weight: 700;">
+            125 / 300 Plätze gebucht<br><span style="color: var(--apple-cyan); font-weight: 800; text-decoration: underline;">Ausschreibung ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATUS-LEISTE MIT KALENDER DARUNTER -->
+      <div style="font-size: 1.05rem; font-weight: 800; margin-bottom: 0.85rem;">Trainingssteuerung & Periodisierung (Jan – März 2027)</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <div class="mini-month-card">
+          <div class="mini-month-title">Januar</div>
+          <div class="mini-grid">
+            <div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div>
+            <div class="mini-cell trip">1</div><div class="mini-cell trip">2</div><div class="mini-cell trip">3</div><div class="mini-cell trip">4</div>
+            <div class="mini-cell">5</div><div class="mini-cell">6</div><div class="mini-cell">7</div><div class="mini-cell">8</div><div class="mini-cell">9</div><div class="mini-cell">10</div>
+            <div class="mini-cell">11</div><div class="mini-cell">12</div><div class="mini-cell">13</div><div class="mini-cell">14</div><div class="mini-cell">15</div><div class="mini-cell">16</div><div class="mini-cell">17</div>
+            <div class="mini-cell">18</div><div class="mini-cell">19</div><div class="mini-cell">20</div><div class="mini-cell">21</div><div class="mini-cell">22</div><div class="mini-cell">23</div><div class="mini-cell">24</div>
+            <div class="mini-cell">25</div><div class="mini-cell">26</div><div class="mini-cell">27</div><div class="mini-cell">28</div><div class="mini-cell">29</div><div class="mini-cell">30</div><div class="mini-cell">31</div>
+          </div>
+        </div>
+        <div class="mini-month-card">
+          <div class="mini-month-title">Februar</div>
+          <div class="mini-grid">
+            <div class="mini-cell build">1</div><div class="mini-cell build">2</div><div class="mini-cell build">3</div><div class="mini-cell build">4</div><div class="mini-cell build">5</div><div class="mini-cell build">6</div><div class="mini-cell build">7</div>
+            <div class="mini-cell build">8</div><div class="mini-cell build">9</div><div class="mini-cell build">10</div><div class="mini-cell build">11</div><div class="mini-cell build">12</div><div class="mini-cell build">13</div><div class="mini-cell build">14</div>
+            <div class="mini-cell build">15</div><div class="mini-cell build">16</div><div class="mini-cell build">17</div><div class="mini-cell build">18</div><div class="mini-cell build">19</div><div class="mini-cell build">20</div><div class="mini-cell build">21</div>
+            <div class="mini-cell build">22</div><div class="mini-cell build">23</div><div class="mini-cell build">24</div><div class="mini-cell build">25</div><div class="mini-cell build">26</div><div class="mini-cell build">27</div><div class="mini-cell build">28</div>
+          </div>
+        </div>
+        <div class="mini-month-card">
+          <div class="mini-month-title" style="color: var(--apple-orange);">März</div>
+          <div class="mini-grid">
+            <div class="mini-cell build">1</div><div class="mini-cell build">2</div><div class="mini-cell build">3</div><div class="mini-cell build">4</div><div class="mini-cell build">5</div><div class="mini-cell build">6</div>
+            <div class="mini-cell race">7</div>
+            <div class="mini-cell rekom">8</div><div class="mini-cell rekom">9</div><div class="mini-cell rekom">10</div><div class="mini-cell rekom">11</div><div class="mini-cell rekom">12</div><div class="mini-cell rekom">13</div><div class="mini-cell rekom">14</div>
+            <div class="mini-cell">15</div><div class="mini-cell">16</div><div class="mini-cell">17</div><div class="mini-cell">18</div><div class="mini-cell">19</div><div class="mini-cell">20</div><div class="mini-cell">21</div>
+            <div class="mini-cell">22</div><div class="mini-cell">23</div><div class="mini-cell">24</div><div class="mini-cell">25</div><div class="mini-cell">26</div><div class="mini-cell">27</div><div class="mini-cell">28</div>
+            <div class="mini-cell">29</div><div class="mini-cell">30</div><div class="mini-cell">31</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         KONZEPT 4: FOCUS MONTH (MÄRZ GROSS, JAN & FEB KOMPAKT)
+         ========================================================================== -->
+    <div class="concept-section" id="sec-c4">
+      <div class="concept-header-box">
+        <div>
+          <div class="concept-name">Konzept 4: Focus Month + Satelliten</div>
+          <div class="concept-desc">Nur der Monat mit dem Hauptrennen (März) steht groß im Rampenlicht. Vorbereitungsmonate sind schmale Begleiter.</div>
+        </div>
+        <div class="concept-gain">Höhen-Ersparnis: ca. -180 px</div>
+      </div>
+
+      <div class="focus-layout">
+        <!-- JAN -->
+        <div class="mini-month-card" style="opacity: 0.85;">
+          <div class="mini-month-title" style="font-size: 0.85rem;">Januar (Trip)</div>
+          <div style="font-size: 0.78rem; color: var(--apple-yellow); font-weight: 700; margin-bottom: 6px;">31.12.–04.01. Zoutelande</div>
+          <div class="mini-grid">
+            <div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div><div class="mini-cell"></div>
+            <div class="mini-cell trip" style="height: 24px;">1</div><div class="mini-cell trip" style="height: 24px;">2</div><div class="mini-cell trip" style="height: 24px;">3</div>
+            <div class="mini-cell trip" style="height: 24px;">4</div><div class="mini-cell" style="height: 24px;">5</div><div class="mini-cell" style="height: 24px;">6</div><div class="mini-cell" style="height: 24px;">7</div>
+          </div>
+        </div>
+
+        <!-- MÄRZ FOCUS -->
+        <div class="focus-month-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <div>
+              <span class="focus-badge">WETTKAMPF-FOKUS</span>
+              <div style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF;">März 2027 · Belgenbachtrail</div>
+            </div>
+            <div style="font-size: 1.1rem; font-weight: 900; color: var(--apple-orange);">07. März</div>
+          </div>
+
+          <div class="mini-grid" style="gap: 3px;">
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">1</div>
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">2</div>
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">3</div>
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">4</div>
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">5</div>
+            <div class="mini-cell build" style="height: 38px; font-size: 1.05rem;">6</div>
+            <div class="mini-cell race" style="height: 38px; font-size: 1.15rem;">7</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">8</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">9</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">10</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">11</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">12</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">13</div>
+            <div class="mini-cell rekom" style="height: 38px; font-size: 1.05rem;">14</div>
+          </div>
+        </div>
+
+        <!-- FEB -->
+        <div class="mini-month-card" style="opacity: 0.85;">
+          <div class="mini-month-title" style="font-size: 0.85rem;">Februar (Aufbau)</div>
+          <div style="font-size: 0.78rem; color: var(--apple-green); font-weight: 700; margin-bottom: 6px;">4 Wochen GA1 / GA2</div>
+          <div class="mini-grid">
+            <div class="mini-cell build" style="height: 24px;">1</div><div class="mini-cell build" style="height: 24px;">2</div><div class="mini-cell build" style="height: 24px;">3</div><div class="mini-cell build" style="height: 24px;">4</div>
+            <div class="mini-cell build" style="height: 24px;">5</div><div class="mini-cell build" style="height: 24px;">6</div><div class="mini-cell build" style="height: 24px;">7</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KACHELN DARUNTER -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/holland_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="shelf-badge-chip yellow">REISE</div>
+          <div class="content">
+            <div class="date" style="color: var(--apple-yellow);">31.12.–04.01.</div>
+            <div class="title">Holland Gangelt Zoutelande</div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/belgenbach_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="content">
+            <div class="date">07.03.2027</div>
+            <div class="title">Belgenbachtrail</div>
+            <div class="metrics">
+              <strong>30,7</strong><span>KM</span> · <strong>941</strong><span>HM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         KONZEPT 5: 13-WOCHEN GANTT-STRIP (MACRO STUDIO)
+         ========================================================================== -->
+    <div class="concept-section" id="sec-c5">
+      <div class="concept-header-box">
+        <div>
+          <div class="concept-name">Konzept 5: 13-Wochen Gantt-Strip (Macro Studio)</div>
+          <div class="concept-desc">Trainingswissenschaftliche Makro-Ansicht. Die gesamte Saison verläuft horizontal über 13 Wochen (nur 95 px hoch).</div>
+        </div>
+        <div class="concept-gain">Höhen-Ersparnis: ca. -340 px</div>
+      </div>
+
+      <div class="gantt-strip-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <span style="font-size: 0.95rem; font-weight: 800;">13 Wochen Makrozyklus · Jan – März 2027</span>
+          <span style="font-size: 0.82rem; color: var(--apple-orange); font-weight: 700;">KW 10: Belgenbachtrail (RACE WEEK)</span>
+        </div>
+
+        <div class="gantt-grid">
+          <div class="gantt-col"><div class="gantt-kw-title">KW 01</div><div class="gantt-bar trip">Trip</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 02</div><div class="gantt-bar build">Base</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 03</div><div class="gantt-bar build">Base</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 04</div><div class="gantt-bar build">Base</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 05</div><div class="gantt-bar build">Build</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 06</div><div class="gantt-bar build">Build</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 07</div><div class="gantt-bar build">Peak</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 08</div><div class="gantt-bar rekom">Rec</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 09</div><div class="gantt-bar build">Taper</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 10</div><div class="gantt-bar race">RACE</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 11</div><div class="gantt-bar rekom">Recov</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 12</div><div class="gantt-bar build">Base</div></div>
+          <div class="gantt-col"><div class="gantt-kw-title">KW 13</div><div class="gantt-bar build">Build</div></div>
+        </div>
+      </div>
+
+      <!-- DIE KARTEN IN VOLLER AMAZON PRIME VIDEO CINEMA-PRACHT -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+        <span style="font-size: 1.1rem; font-weight: 800;">Hauptläufe & Reisen (Q1)</span>
+        <span style="color: var(--apple-cyan); font-weight: 700; cursor: pointer;">Alle Wettkämpfe anzeigen ›</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/holland_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="shelf-badge-chip yellow">REISE</div>
+          <div class="content">
+            <div class="date" style="color: var(--apple-yellow);">31.12.–04.01.</div>
+            <div class="title">Holland Gangelt Zoutelande</div>
+          </div>
+        </div>
+
+        <div class="shelf-card-shared">
+          <div class="bg" style="background-image: url('assets/belgenbach_cover.jpg');"></div>
+          <div class="grad"></div>
+          <div class="content">
+            <div class="date">07.03.2027</div>
+            <div class="title">Belgenbachtrail</div>
+            <div class="metrics">
+              <strong>30,7</strong><span>KM</span> · <strong>941</strong><span>HM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showConcept(cId) {
+      document.querySelectorAll('.concept-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = Array.from(document.querySelectorAll('.concept-btn')).find(b => b.getAttribute('onclick').includes(cId));
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.querySelectorAll('.concept-section').forEach(s => s.classList.remove('active'));
+      const activeSec = document.getElementById('sec-' + cId);
+      if (activeSec) activeSec.classList.add('active');
+    }
+  </script>
+</body>
+</html>
