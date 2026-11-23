@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.81 (Shelf-Pills: Anmeldedatum für Drachenlauf 14.6. hinterlegt · v11.81)  
+**Document Version:** 11.82 (Shelf-Karten: Datumsanzeige ohne redundante Jahreszahl formatiert · v11.82)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,10 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.81)
+## 📌 1. Project Overview & Release Freeze State (v11.82)
 
+- **Datumsformatierung in Amazon-Shelf-Karten gestrafft (v11.82):**
+  - Alle Wettkampfkarten zeigen nun einheitlich und kompakt das Datum ohne redundante Jahreszahl (`07.03.`, `17.04.`, `12.06.`, `11.09.`, `24.10.`, `07.11.`), harmonisiert mit den bereits jahreslosen Reise- und Urlaubskarten (`31.12.–04.01.`, `10.–11.04.`, `05.–25.06.`).
 - **Drachenlauf Anmelde-Pill im Amazon-Shelf ergänzt (v11.81):**
   - **Drachenlauf Königswinter (Q4):** Neue Eck-Pille mit `14.6. ANMELDUNG` (`badge-cyan`) oben rechts hinterlegt (Anmeldestart am 14. Juni).
 - **Anmelde-Pills im Amazon-Shelf aktualisiert (v11.80):**
