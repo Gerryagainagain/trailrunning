@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.73 (Ultra Trail Müllerthal: Original Felsen- & Wald-Coverfoto eingebunden · v11.73)  
+**Document Version:** 11.74 (Bergurlaub Tirol Camping FiNK: Original Coverfoto eingebunden · v11.74)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.73)
+## 📌 1. Project Overview & Release Freeze State (v11.74)
 
+- **Bergurlaub Tirol Cover eingebunden (v11.74):**
+  - Das Originalfoto von Camping FiNK Tirol (`3P9A6125.jpg`) wurde heruntergeladen, auf 1600 px web-optimiert (383 KB) und als `assets/tirol_cover.jpg` hinterlegt.
+  - In `Apr – Juni 2027` besitzt die Reise-Kachel `Bergurlaub Tirol` (05.–25.06.) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
 - **Ultra Trail Müllerthal Cover eingebunden (v11.73):**
   - Das hochgeladene Originalfoto der Müllerthal-Felsformationen im Nebelwald wurde als `assets/muellerthal_cover.jpg` hinterlegt.
   - In `Jul – Sep 2027` besitzt die Karte `Ultra Trail Müllerthal` (11.09.2027 · Option · 21,0 km · 600 Hm) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
