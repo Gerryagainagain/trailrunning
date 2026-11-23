@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.75">
-  <link rel="stylesheet" href="styles.css?v=11.75">
+  <link rel="stylesheet" href="tokens.css?v=11.76">
+  <link rel="stylesheet" href="styles.css?v=11.76">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2951,6 +2951,7 @@
           km: '26,0',
           hm: '1.250',
           imageUrl: 'assets/drachenlauf_cover.jpg',
+          bgPosition: 'center 85%',
           bg: 'linear-gradient(135deg, #331f14, #1c100a)'
         },
         {
@@ -2964,6 +2965,7 @@
           badge: 'OPTION',
           badgeClass: 'badge-cyan',
           imageUrl: 'assets/martinslauf_cover.jpg',
+          bgPosition: 'center 75%',
           bg: 'linear-gradient(135deg, #14202b, #0a1118)'
         }
       ]
@@ -3126,12 +3128,13 @@
 
         const clickHandler = c.raceKey ? `onclick="openRaceDrawer('${c.raceKey}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openRaceDrawer('${c.raceKey}');}" role="button" tabindex="0" aria-label="${c.title} Briefing öffnen"` : '';
         const bgImg = c.imageUrl ? `background-image: url('${c.imageUrl}');` : '';
+        const bgPos = c.bgPosition ? `background-position: ${c.bgPosition};` : '';
         const badgeHtml = c.badge ? `<div class="shelf-card-badge ${c.badgeClass}">${c.badge}</div>` : '';
         const dateColor = c.isTrip ? 'var(--apple-yellow)' : 'var(--apple-orange)';
 
         html += `
           <div class="shelf-card" style="background: ${c.bg};" ${clickHandler}>
-            <div class="shelf-card-bg" style="${bgImg}"></div>
+            <div class="shelf-card-bg" style="${bgImg} ${bgPos}"></div>
             <div class="shelf-card-gradient"></div>
             ${badgeHtml}
             <div class="shelf-card-content">

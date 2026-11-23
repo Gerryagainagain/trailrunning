@@ -514,6 +514,7 @@
             badge: "",
             badgeClass: "",
             imageUrl: "assets/drachenlauf_cover.jpg",
+            bgPosition: "center 85%",
             bg: "linear-gradient(135deg, #331f14, #1c100a)"
           },
           {
@@ -526,6 +527,7 @@
             badge: "OPTION",
             badgeClass: "cyan",
             imageUrl: "assets/martinslauf_cover.jpg",
+            bgPosition: "center 75%",
             bg: "linear-gradient(135deg, #14202b, #0a1118)"
           }
         ]
@@ -623,7 +625,7 @@
 
         return `
           <div class="race-card" style="background: ${c.bg}">
-            <div class="race-card-bg" style="${c.imageUrl ? `background-image: url('${c.imageUrl}'); background-position: center 20%; opacity: 0.65;` : ''}"></div>
+            <div class="race-card-bg" style="${c.imageUrl ? `background-image: url('${c.imageUrl}'); background-position: ${c.bgPosition || 'center 20%'}; opacity: 0.65;` : ''}"></div>
             <div class="race-card-gradient"></div>
             ${c.badge ? `<div class="race-card-badge ${c.badgeClass}">${c.badge}</div>` : ''}
             <div class="race-card-content">

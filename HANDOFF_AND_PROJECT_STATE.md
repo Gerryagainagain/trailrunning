@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.75 (Martinslauf Unterbacher See: Original Finisher-Foto eingebunden · v11.75)  
+**Document Version:** 11.76 (Shelf-Karten Bildausschnitte Drachenlauf & Martinslauf optimiert · v11.76)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,12 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.75)
+## 📌 1. Project Overview & Release Freeze State (v11.76)
 
+- **Bildausschnitt-Justierung Drachenlauf & Martinslauf (v11.76):**
+  - Für `Drachenlauf Königswinter` wurde `bgPosition: 'center 85%'` konfiguriert, sodass die Läufergruppe auf dem Weg sauber im sichtbaren oberen Bereich der Kachel positioniert ist statt vom dunklen unteren Textgradienten verdeckt zu werden.
+  - Für `Martinslauf U-See` wurde `bgPosition: 'center 75%'` hinterlegt, wodurch die Gesichter beider Läufer aus dem unteren Rand nach oben in das Hauptblickfeld der Kachel wandern und nicht mehr abgeschnitten werden.
+  - Dynamischer `bgPosition`-Support in der Rendering-Schleife für den Amazon-Shelf implementiert.
 - **Martinslauf Unterbacher See Cover eingebunden (v11.75):**
   - Das hochgeladene Original-Foto vom Martinslauf am Unterbacher See wurde als `assets/martinslauf_cover.jpg` hinterlegt.
   - In `Okt – Dez 2027` besitzt die Karte `Martinslauf U-See` (07.11.2027 · Option · 10,0 km · 30 Hm) nun ihr authentisches Foto als Cover-Hintergrundbild mit Gradienten-Overlay.
