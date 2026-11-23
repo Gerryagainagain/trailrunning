@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.92">
-  <link rel="stylesheet" href="styles.css?v=11.92">
+  <link rel="stylesheet" href="tokens.css?v=11.93">
+  <link rel="stylesheet" href="styles.css?v=11.93">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2702,6 +2702,12 @@
           </button>
           <button class="week-pill-btn" onclick="switchWeek(50)" id="pill-kw-50" data-kw="50">
             <span class="pill-kw">KW 50</span>
+          </button>
+          <button class="week-pill-btn" onclick="switchWeek(51)" id="pill-kw-51" data-kw="51">
+            <span class="pill-kw">KW 51</span>
+          </button>
+          <button class="week-pill-btn is-race-pill" onclick="switchWeek(52)" id="pill-kw-52" data-kw="52">
+            <span class="pill-kw">KW 52</span>
             <span class="pill-label">parkrun</span>
           </button>
         </div>
@@ -4242,19 +4248,53 @@
       },
       50: {
         title: 'KW 50 • Saisonpause & Jahresausklang',
-        shortTitle: 'Saisonpause & parkrun',
-        dates: 'Dezember 2026',
-        benchmark: '10,0 km',
+        shortTitle: 'Saisonpause',
+        dates: '07. – 13. Dezember 2026',
+        benchmark: '12,0 km',
         benchmarkType: 'green',
-        summary: 'Vollständige Erholung nach Siebengebirgs-HM · Lockere Bewegung nach Lust und Laune · Sa 26.12.2026: parkrun 5k (Volksgarten Düsseldorf).',
+        summary: 'Vollständige Erholung nach Siebengebirgs-HM · Lockere Bewegung nach Lust und Laune vor dem Weihnachtsausklang.',
         days: [
           { d: 'MON 07.12', val: '—', tag: 'Ruhe', sub: 'Saisonpause' },
           { d: 'DIE 08.12', val: '—', tag: 'Pause', sub: 'Ausschlafen' },
           { d: 'MIT 09.12', val: '5.0', unit: 'KM', tag: 'Spaziertrab', sub: 'Reines Wohlfühlen' },
           { d: 'DON 10.12', val: '—', tag: 'Pause', sub: 'Regeneration' },
           { d: 'FRE 11.12', val: 'STUDIO', tag: 'Leichtes Stabi', sub: 'Rumpf mobilisieren', isStudio: true },
+          { d: 'SAM 12.12', val: '7.0', unit: 'KM', tag: 'Winterwald', sub: 'Ohne Zeit & Puls' },
+          { d: 'SON 13.12', val: '—', tag: 'Ruhetag', sub: 'Familienzeit' }
+        ]
+      },
+      51: {
+        title: 'KW 51 • Saisonpause & Winterruhe',
+        shortTitle: 'Winterruhe',
+        dates: '14. – 20. Dezember 2026',
+        benchmark: '10,0 km',
+        benchmarkType: 'green',
+        summary: 'Entlastung & Erholung vor den Feiertagen · Lockere Spaziertrabs ohne Trainingsdruck.',
+        days: [
+          { d: 'MON 14.12', val: '—', tag: 'Ruhe', sub: 'Regeneration' },
+          { d: 'DIE 15.12', val: '—', tag: 'Pause', sub: 'Passiv' },
+          { d: 'MIT 16.12', val: '5.0', unit: 'KM', tag: 'Lockertrab', sub: 'GA1 Flach' },
+          { d: 'DON 17.12', val: '—', tag: 'Ruhe', sub: 'Pause' },
+          { d: 'FRE 18.12', val: 'STUDIO', tag: 'Rumpf & Mobility', sub: 'Stabilität', isStudio: true },
+          { d: 'SAM 19.12', val: '5.0', unit: 'KM', tag: 'Winterwald', sub: 'Locker GA1' },
+          { d: 'SON 20.12', val: '—', tag: 'Ruhetag', sub: 'Erholung' }
+        ]
+      },
+      52: {
+        title: 'KW 52 • Feiertage & parkrun 5k',
+        shortTitle: 'parkrun 5k',
+        dates: '21. – 27. Dezember 2026',
+        benchmark: '5,0 km',
+        benchmarkType: 'blue',
+        summary: 'Weihnachtswoche & Feiertagsruhe · Sa 26.12.2026 (2. Weihnachtstag): parkrun 5k (Volksgarten Düsseldorf) · Lockeres aerobes Durchatmen an den Feiertagen.',
+        days: [
+          { d: 'MON 21.12', val: '—', tag: 'Ruhe', sub: 'Erholung' },
+          { d: 'DIE 22.12', val: '—', tag: 'Pause', sub: 'Vorweihnachtsruhe' },
+          { d: 'MIT 23.12', val: '—', tag: 'Ruhe', sub: 'Passiv' },
+          { d: 'DON 24.12', val: '—', tag: 'Heiligabend', sub: 'Familienzeit' },
+          { d: 'FRE 25.12', val: '—', tag: '1. Feiertag', sub: 'Ruhetag' },
           { d: 'SAM 26.12', val: '5.0', unit: 'KM', tag: 'parkrun 5k', sub: 'Volksgarten · 9:00 Uhr', isHighlight: true },
-          { d: 'SON 27.12', val: '—', tag: 'Ruhetag', sub: 'Familienzeit' }
+          { d: 'SON 27.12', val: '—', tag: 'Ruhe', sub: 'Ausklang' }
         ]
       }
     };

@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.92 (Trainingswoche KW 50: parkrun 5k am 26.12.2026 integriert · v11.92)  
+**Document Version:** 11.93 (Kalenderwochen-Korrektur: Reale Daten für KW 50, KW 51 & KW 52 mit parkrun 5k am 26.12. · v11.93)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,14 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.92)
+## 📌 1. Project Overview & Release Freeze State (v11.93)
 
+- **Kalenderwochen-Korrektur Dezember 2026 (v11.93):**
+  - **KW 50 bereinigt:** Korrekte Realdaten `07. – 13. Dezember 2026` (MON 07.12 bis SON 13.12). Der Sprung auf den 26.12. wurde vollständig entfernt.
+  - **KW 51 hinzugefügt:** `14. – 20. Dezember 2026` (Saisonpause & Winterruhe).
+  - **KW 52 kalendrisch exakt platziert:** `21. – 27. Dezember 2026`. Der `parkrun 5k` (Volksgarten Düsseldorf · 9:00 Uhr) liegt nun auf dem korrekten Wochentag `SAM 26.12.2026` (2. Weihnachtstag).
+  - **Pills im Wochenwähler:** Nahtlose Segmentierung `KW 45, 46, 47, 48, 49 (7G-HM), 50, 51, 52 (parkrun)`.
+  - Der Saisonkalender 2027 bleibt davon vollständig unberührt (kein 2026er Kalender).
 - **parkrun 5k in Trainingswoche KW 50 integriert (v11.92):**
   - In der operativen Trainingswoche KW 50 (Saisonpause & Jahresausklang) wurde für Samstag der `parkrun 5k` (26.12.2026, Volksgarten Düsseldorf, 9:00 Uhr) als 5,0 km Highlight-Einheit eingetragen.
   - Der Pill-Button im Wochenwähler zeigt nun `KW 50 · parkrun`.
