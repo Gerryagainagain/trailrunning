@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.78 (Amazon-Shelf Kartenbilder um ca. 10% aufgehellt & Gradient optimiert · v11.78)  
+**Document Version:** 11.79 (Above-the-Fold Optimierung: Variante 2 Nav-Pager Integration in Master-Header & kompakte Kalender-Metriken · v11.79)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,21 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.78)
+## 📌 1. Project Overview & Release Freeze State (v11.79)
 
+- **Above-the-Fold Optimierung: Variante 2 "Nav-Pager Integration" umgesetzt (v11.79):**
+  - **Nav-Pager in Master-Header integriert (`.season-nav-pager`):** Die freistehende Pager-Leiste (`‹ Jan – März 2027 ›`) wurde aus `#tab-season` entfernt und direkt in den `<header>` fusioniert. Erscheint nahtlos zentriert, sobald der Tab „Saison 2027“ aktiv ist (`body.season-active .season-nav-pager { display: inline-flex; }`).
+  - **Freistehende `.season-header`-Zeile eliminiert:** Spart volle **60 px** vertikale Leerhöhe im Saisonkalender ein.
+  - **Wochenzeilen-Kompaktierung (`.week-row`):** Zeilenhöhe von `56px` auf `44px` reduziert (-60 px über 5 Kalenderwochen).
+  - **Monatskarten-Feinschliff (`.month-block`, `.month-header`, `.cal-cell`):**
+    - Padding von `1.5rem 1.5rem 1.25rem` auf `0.95rem 0.95rem 0.85rem` gestrafft.
+    - Border-Radius auf Apple-konforme `18px` angepasst.
+    - Tagesziffern `.cal-cell` von `1.25rem` auf `1.08rem` skaliert für harmonische Proportionen.
+    - Header-Titel `.month-title` von `1.35rem` auf `1.15rem` justiert.
+  - **Meta-Strip & Shelf-Abstände gestrafft (`.quarter-meta-strip`, `.season-shelf-section`):**
+    - Meta-Strip von `min-height: 48px; padding: 0.65rem 110px;` auf `min-height: 40px; padding: 0.45rem 90px; margin-top: 0.85rem; border-radius: 12px;` gestrafft.
+    - Shelf-Sektion `margin-top` von `1.25rem` auf `0.85rem` reduziert.
+  - **Gesamtersparnis:** **ca. 160 px vertikale Höhe**. Die Amazon-Shelf-Karten („Hauptläufe & Reisen“) sind nun auf Standard-Desktop- und Notebook-Bildschirmen (820 px Fold) sofort zu ca. 60–65 % Above-the-Fold sichtbar, ohne dass der Nutzer scrollen muss.
 - **Aufhellung der Shelf-Coverbilder (v11.78):**
   - Bild-Transparenz `.shelf-card-bg` von `opacity: 0.65` auf `0.75` angehoben (+10 % Helligkeit/Lichtdurchlässigkeit; Hover von `0.80` auf `0.88`).
   - Vertikaler Abdunklungs-Verlauf `.shelf-card-gradient` optimiert: Statt harter vorzeitiger Abdunklung ab Bildmitte (`rgba(0,0,0,0.1) 0% -> 0.88 bei 80%`) greift nun ein weicherer Verlauf (`rgba(0,0,0,0) 0% -> 0.18 bei 45% -> 0.82 bei 85%`).
