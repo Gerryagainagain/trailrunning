@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 Radikal Unterschiedliche Karten-Designs · Trailrunning 2027</title>
+  <link rel="stylesheet" href="tokens.css?v=11.82">
+  <link rel="stylesheet" href="styles.css?v=11.82">
+  <style>
+    /* ==========================================================================
+       RESET & THEME BASE (APPLE HIG DARK STUDIO)
+       ========================================================================== */
+    :root {
+      --bg-canvas: #090A0F;
+      --card-glass-bg: rgba(20, 22, 30, 0.82);
+      --card-glass-border: rgba(255, 255, 255, 0.09);
+      --card-glass-top: rgba(255, 255, 255, 0.18);
+      --apple-cyan: #64D2FF;
+      --apple-orange: #FF9F0A;
+      --apple-yellow: #FFD60A;
+      --apple-green: #30D158;
+      --apple-purple: #BF5AF2;
+      --apple-red: #FF453A;
+      --text-white: #FFFFFF;
+      --text-muted: rgba(255, 255, 255, 0.65);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-white);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", sans-serif;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================================================
+       STICKY CONTROLLER DOCK
+       ========================================================================== */
+    .ctrl-dock-bar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(14, 15, 20, 0.90);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .ctrl-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .ctrl-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      color: var(--apple-cyan);
+      text-transform: uppercase;
+    }
+    .ctrl-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .mode-pills {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      gap: 3px;
+    }
+    .mode-pill {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: inherit;
+      font-size: 0.80rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mode-pill:hover {
+      color: #FFF;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    .mode-pill.active {
+      background: #FFFFFF;
+      color: #000000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    /* ==========================================================================
+       CONTAINER & SECTIONS
+       ========================================================================== */
+    .app-canvas {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 5rem;
+    }
+
+    .section-intro {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .section-intro h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin: 0 0 0.5rem;
+    }
+    .section-intro p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.45;
+    }
+
+    /* GRID FÜR DIE 10 CARDS */
+    .designs-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .designs-gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .design-card-wrap {
+      background: rgba(18, 20, 28, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .design-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 0.75rem;
+    }
+    .design-number {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--apple-cyan);
+      text-transform: uppercase;
+    }
+    .design-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .design-tagline {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       DESIGN 1: CINEMATIC POSTER (Refined Editorial)
+       ========================================================================== */
+    .card-d1 {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #101218;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.20);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.15rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-d1:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.7);
+    }
+    .card-d1-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 85%;
+      opacity: 0.78;
+    }
+    .card-d1-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.88) 85%);
+    }
+    .card-d1-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--apple-cyan);
+      color: #000;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .card-d1-content { position: relative; z-index: 2; }
+    .card-d1-date {
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: var(--apple-orange);
+      margin-bottom: 2px;
+    }
+    .card-d1-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+    }
+    .card-d1-metrics {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-top: 5px;
+    }
+    .card-d1-num {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .card-d1-unit {
+      font-size: 0.75rem;
+      font-weight: 800;
+      opacity: 0.75;
+    }
+    .card-d1-sep { opacity: 0.35; margin: 0 2px; font-size: 1.1rem; }
+
+    /* ==========================================================================
+       DESIGN 2: SPLIT-CARD TWO-TONE (50% Pure Photo / 50% Clean Telemetry)
+       ========================================================================== */
+    .card-d2 {
+      display: flex;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #0E1017;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      height: 190px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .card-d2:hover { transform: translateY(-3px); }
+    .card-d2-photo {
+      width: 44%;
+      position: relative;
+      background-size: cover;
+      background-position: center 85%;
+    }
+    .card-d2-photo-shade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0) 70%, #0E1017 100%);
+    }
+    .card-d2-body {
+      width: 56%;
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-d2-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-d2-date {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--apple-orange);
+    }
+    .card-d2-pill {
+      font-size: 8.5px;
+      font-weight: 800;
+      background: rgba(100, 210, 255, 0.15);
+      color: var(--apple-cyan);
+      border: 1px solid rgba(100, 210, 255, 0.4);
+      padding: 2px 7px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+    .card-d2-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+    .card-d2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .card-d2-stat-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+    .card-d2-stat-val {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #FFF;
+      font-feature-settings: "tnum";
+    }
+
+    /* ==========================================================================
+       DESIGN 3: APPLE WATCH ULTRA HUD (Ring Data & Gauge)
+       ========================================================================== */
+    .card-d3 {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #0B0D14;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card-d3:hover { transform: translateY(-3px); }
+    .card-d3-blur-bg {
+      position: absolute;
+      inset: -20px;
+      background-size: cover;
+      background-position: center 85%;
+      filter: blur(28px) brightness(0.35);
+      opacity: 0.85;
+    }
+    .card-d3-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+    .card-d3-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .card-d3-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center 85%;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+    .card-d3-right-meta {
+      text-align: right;
+    }
+    .card-d3-date {
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: var(--apple-orange);
+    }
+    .card-d3-badge {
+      display: inline-block;
+      margin-top: 3px;
+      background: var(--apple-cyan);
+      color: #000;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .card-d3-body {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .card-d3-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .card-d3-rings {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .gauge-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+    .gauge-num {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #FFF;
+      line-height: 1;
+    }
+    .gauge-sub {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================================================
+       DESIGN 4: SWISS GRID & BRAUN ARCHITECTURE (Typo-Monumental)
+       ========================================================================== */
+    .card-d4 {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #0A0B10;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card-d4:hover { border-color: rgba(255, 255, 255, 0.3); }
+    .card-d4-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .card-d4-mono {
+      font-family: "SF Mono", Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--apple-orange);
+      letter-spacing: 0.5px;
+    }
+    .card-d4-grid-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 110px;
+    }
+    .card-d4-text-cell {
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .card-d4-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+    .card-d4-hero-num {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+    .card-d4-hero-num .big {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 0.9;
+      color: #FFFFFF;
+      font-feature-settings: "tnum";
+    }
+    .card-d4-hero-num .small {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .card-d4-photo-cell {
+      background-size: cover;
+      background-position: center 85%;
+      position: relative;
+    }
+    .card-d4-badge-strip {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      background: #000;
+      color: var(--apple-cyan);
+      border: 1px solid var(--apple-cyan);
+      font-size: 7.5px;
+      font-weight: 800;
+      padding: 2px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       DESIGN 5: RACE PASS / BOARDING TICKET (Perforated Pass)
+       ========================================================================== */
+    .card-d5 {
+      display: flex;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #11131B;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      height: 190px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .card-d5:hover { transform: translateY(-3px); }
+    .card-d5-left {
+      width: 68%;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .card-d5-perf-line {
+      width: 1px;
+      border-left: 2px dashed rgba(255, 255, 255, 0.22);
+      position: relative;
+    }
+    .card-d5-perf-circle-top {
+      position: absolute;
+      top: -10px;
+      left: -8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-canvas);
+    }
+    .card-d5-perf-circle-bot {
+      position: absolute;
+      bottom: -10px;
+      left: -8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-canvas);
+    }
+    .card-d5-right {
+      width: 32%;
+      background-size: cover;
+      background-position: center 85%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.75rem;
+    }
+    .card-d5-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    .card-d5-pass-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .card-d5-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .card-d5-metrics {
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+    .card-d5-right-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .card-d5-barcode {
+      display: flex;
+      gap: 2px;
+      justify-content: center;
+      height: 24px;
+      align-items: flex-end;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+    .card-d5-barcode span {
+      background: #FFF;
+      display: inline-block;
+      width: 2px;
+      height: 100%;
+    }
+
+    /* ==========================================================================
+       DESIGN 6: FLOATING ISLAND / FROSTED CORE (Multi-Layer Glass)
+       ========================================================================== */
+    .card-d6 {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center 85%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card-d6:hover { transform: scale(1.02); }
+    .card-d6-island {
+      width: 100%;
+      background: rgba(14, 16, 24, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 14px;
+      padding: 0.85rem 1.1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .card-d6-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-d6-date { font-size: 0.78rem; font-weight: 800; color: var(--apple-orange); }
+    .card-d6-badge {
+      background: var(--apple-cyan);
+      color: #000;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .card-d6-title { font-size: 1.1rem; font-weight: 800; }
+    .card-d6-met { font-size: 1.15rem; font-weight: 900; }
+
+    /* ==========================================================================
+       DESIGN 7: TOPO ELEVATION GRAPH (Interactive Vector Profile)
+       ========================================================================== */
+    .card-d7 {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #090B12;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card-d7:hover { transform: translateY(-3px); }
+    .card-d7-bg-faint {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 85%;
+      opacity: 0.25;
+      filter: grayscale(80%);
+    }
+    .card-d7-svg-curve {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 25px;
+      height: 70px;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .card-d7-content { position: relative; z-index: 3; }
+    .card-d7-head { display: flex; justify-content: space-between; align-items: center; }
+    .card-d7-bot { display: flex; justify-content: space-between; align-items: flex-end; }
+    .card-d7-title { font-size: 1.15rem; font-weight: 900; }
+    .card-d7-vert-chip {
+      background: rgba(255, 159, 10, 0.15);
+      border: 1px solid rgba(255, 159, 10, 0.4);
+      color: var(--apple-orange);
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 6px;
+    }
+
+    /* ==========================================================================
+       DESIGN 8: CAPSULE STRIP (Ultra-Compact Horizontal)
+       ========================================================================== */
+    .card-d8 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 999px;
+      background: rgba(22, 24, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-top: 1px solid rgba(255, 255, 255, 0.20);
+      padding: 8px 14px 8px 8px;
+      gap: 14px;
+      height: 70px;
+      box-sizing: border-box;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card-d8:hover { transform: scale(1.015); border-color: rgba(255, 255, 255, 0.3); }
+    .card-d8-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center 85%;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      flex-shrink: 0;
+    }
+    .card-d8-mid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow: hidden;
+    }
+    .card-d8-date { font-size: 0.72rem; font-weight: 800; color: var(--apple-orange); }
+    .card-d8-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-d8-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .card-d8-met {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .card-d8-badge {
+      background: var(--apple-cyan);
+      color: #000;
+      font-size: 8px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    /* ==========================================================================
+       DESIGN 9: DARKROOM EXPLORER (Analog Stamped Leica Print)
+       ========================================================================== */
+    .card-d9 {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #0E0F14;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card-d9:hover { transform: translateY(-3px); }
+    .card-d9-frame {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background-size: cover;
+      background-position: center 85%;
+    }
+    .card-d9-stamp {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--apple-cyan);
+      color: var(--apple-cyan);
+      font-size: 8px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+    .card-d9-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 2px 4px;
+    }
+    .card-d9-coord {
+      font-family: monospace;
+      font-size: 0.68rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+    .card-d9-title { font-size: 1.05rem; font-weight: 800; margin-top: 2px; }
+    .card-d9-nums { font-size: 1.15rem; font-weight: 900; color: var(--apple-orange); }
+
+    /* ==========================================================================
+       DESIGN 10: NEON CYBER-TRAIL (Holographic Border Glow)
+       ========================================================================== */
+    .card-d10 {
+      position: relative;
+      border-radius: 16px;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, rgba(100, 210, 255, 0.18), rgba(255, 159, 10, 0.18));
+      padding: 1.5px; /* Gradient Border */
+      box-shadow: 0 0 20px rgba(100, 210, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-d10:hover {
+      box-shadow: 0 0 30px rgba(100, 210, 255, 0.35);
+      transform: translateY(-3px);
+    }
+    .card-d10-inner {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background: #090A10;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.1rem;
+      box-sizing: border-box;
+    }
+    .card-d10-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center 85%;
+      opacity: 0.65;
+    }
+    .card-d10-hud-lines {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(9, 10, 16, 0.92) 80%);
+    }
+    .card-d10-content { position: relative; z-index: 2; }
+    .card-d10-pill-top {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #000;
+      border: 1px solid var(--apple-cyan);
+      color: var(--apple-cyan);
+      box-shadow: 0 0 10px rgba(100, 210, 255, 0.4);
+      font-size: 8.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+    .card-d10-hud-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--apple-cyan);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    .card-d10-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+    }
+    .card-d10-metrics {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY CONTROL DOCK -->
+  <div class="ctrl-dock-bar">
+    <div class="ctrl-left">
+      <span class="ctrl-eyebrow">Design-Laboratorium · Apple HIG Master</span>
+      <span class="ctrl-title">10 Radikal Unterschiedliche Karten-Archetypen</span>
+    </div>
+
+    <div class="mode-pills">
+      <button class="mode-pill active" onclick="filterDesign('all')">Alle 10 im Vergleich</button>
+      <button class="mode-pill" onclick="switchRace('drachenlauf')">Benchmark: Drachenlauf</button>
+      <button class="mode-pill" onclick="switchRace('belgenbach')">Benchmark: Belgenbach</button>
+      <button class="mode-pill" onclick="switchRace('muellerthal')">Benchmark: Müllerthal</button>
+    </div>
+  </div>
+
+  <div class="app-canvas">
+
+    <div class="section-intro">
+      <h2>10 Design-Philosophien für den Amazon-Shelf</h2>
+      <p>Jedes Design nutzt die identischen Realdaten (Datum, Titel, KM, HM, Pill-Badge, Foto) – interpretiert Raum, Typografie, Hierarchie und Bildsprache jedoch grundverschieden.</p>
+    </div>
+
+    <div class="designs-gallery-grid" id="galleryGrid">
+
+      <!-- ==========================================
+           1. CINEMATIC POSTER
+           ========================================== -->
+      <div class="design-card-wrap" data-card="1">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 01</div>
+            <div class="design-name">Cinematic Poster (Aktueller Standard verfeinert)</div>
+          </div>
+          <span class="design-tagline">16:9 · Weicher Verlauf · Hero-Ziffern</span>
+        </div>
+
+        <div class="card-d1">
+          <div class="card-d1-bg" id="d1_bg" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+          <div class="card-d1-gradient"></div>
+          <div class="card-d1-badge" id="d1_badge">14.6. ANMELDUNG</div>
+          <div class="card-d1-content">
+            <div class="card-d1-date" id="d1_date">24.10.</div>
+            <div class="card-d1-title" id="d1_title">Drachenlauf Königswinter</div>
+            <div class="card-d1-metrics">
+              <span class="card-d1-num" id="d1_km">26,0</span><span class="card-d1-unit">KM</span>
+              <span class="card-d1-sep">·</span>
+              <span class="card-d1-num" id="d1_hm">1.250</span><span class="card-d1-unit">HM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           2. SPLIT-CARD TWO-TONE
+           ========================================== -->
+      <div class="design-card-wrap" data-card="2">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 02</div>
+            <div class="design-name">Split-Deck Two-Tone</div>
+          </div>
+          <span class="design-tagline">44% Reines Foto / 56% Clean Telemetry</span>
+        </div>
+
+        <div class="card-d2">
+          <div class="card-d2-photo" id="d2_bg" style="background-image: url('assets/drachenlauf_cover.jpg');">
+            <div class="card-d2-photo-shade"></div>
+          </div>
+          <div class="card-d2-body">
+            <div class="card-d2-top">
+              <span class="card-d2-date" id="d2_date">24.10.</span>
+              <span class="card-d2-pill" id="d2_badge">14.6. ANMELDUNG</span>
+            </div>
+            <div class="card-d2-title" id="d2_title">Drachenlauf Königswinter</div>
+            <div class="card-d2-grid">
+              <div>
+                <div class="card-d2-stat-label">Distanz</div>
+                <div class="card-d2-stat-val" id="d2_km">26,0 km</div>
+              </div>
+              <div>
+                <div class="card-d2-stat-label">Höhenmeter</div>
+                <div class="card-d2-stat-val" id="d2_hm">1.250 hm</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           3. APPLE WATCH HUD
+           ========================================== -->
+      <div class="design-card-wrap" data-card="3">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 03</div>
+            <div class="design-name">Apple Watch Ultra HUD</div>
+          </div>
+          <span class="design-tagline">Circular Gauge · Blur-Aura · Mini-Avatar</span>
+        </div>
+
+        <div class="card-d3">
+          <div class="card-d3-blur-bg" id="d3_bg" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+          <div class="card-d3-inner">
+            <div class="card-d3-head">
+              <div class="card-d3-avatar" id="d3_avatar" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+              <div class="card-d3-right-meta">
+                <div class="card-d3-date" id="d3_date">24.10.</div>
+                <div class="card-d3-badge" id="d3_badge">14.6. ANMELDUNG</div>
+              </div>
+            </div>
+            <div class="card-d3-body">
+              <div class="card-d3-title" id="d3_title">Drachenlauf Königswinter</div>
+              <div class="card-d3-rings">
+                <div class="gauge-wrap">
+                  <span class="gauge-num" id="d3_km">26</span>
+                  <span class="gauge-sub">KM</span>
+                </div>
+                <div style="font-size: 1.2rem; opacity:0.3;">/</div>
+                <div class="gauge-wrap">
+                  <span class="gauge-num" id="d3_hm">1250</span>
+                  <span class="gauge-sub">HM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           4. SWISS GRID
+           ========================================== -->
+      <div class="design-card-wrap" data-card="4">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 04</div>
+            <div class="design-name">Swiss Grid & Architecture</div>
+          </div>
+          <span class="design-tagline">Haarlinien-Raster · Asymmetrisch · Bauhaus</span>
+        </div>
+
+        <div class="card-d4">
+          <div class="card-d4-top-bar">
+            <span class="card-d4-mono" id="d4_date">DATE // 24.10.</span>
+            <span style="font-size:0.75rem; font-weight:800; color:var(--apple-cyan);" id="d4_badge">14.6. ANMELDUNG</span>
+          </div>
+          <div class="card-d4-grid-body">
+            <div class="card-d4-text-cell">
+              <div class="card-d4-title" id="d4_title">Drachenlauf Königswinter</div>
+              <div class="card-d4-hero-num">
+                <span class="big" id="d4_km">26.0</span><span class="small">KM</span>
+                <span style="opacity:0.3; margin:0 4px;">/</span>
+                <span class="big" id="d4_hm">1250</span><span class="small">HM</span>
+              </div>
+            </div>
+            <div class="card-d4-photo-cell" id="d4_bg" style="background-image: url('assets/drachenlauf_cover.jpg');">
+              <div class="card-d4-badge-strip">SIEBENGEBIRGE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           5. RACE TICKET / PASS
+           ========================================== -->
+      <div class="design-card-wrap" data-card="5">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 05</div>
+            <div class="design-name">Boarding Ticket / Race Pass</div>
+          </div>
+          <span class="design-tagline">Perforierter Startpass · Abreißkupon · Barcode</span>
+        </div>
+
+        <div class="card-d5">
+          <div class="card-d5-left">
+            <div>
+              <div class="card-d5-pass-tag" id="d5_badge">14.6. ANMELDUNG · STARTPASS</div>
+              <div class="card-d5-title" id="d5_title" style="margin-top:4px;">Drachenlauf Königswinter</div>
+            </div>
+            <div class="card-d5-metrics">
+              <div style="font-size:0.80rem; font-weight:800; color:var(--apple-orange);" id="d5_date">24.10.</div>
+              <div style="font-size:1.15rem; font-weight:900;"><span id="d5_km">26,0</span> KM · <span id="d5_hm">1.250</span> HM</div>
+            </div>
+          </div>
+
+          <div class="card-d5-perf-line">
+            <div class="card-d5-perf-circle-top"></div>
+            <div class="card-d5-perf-circle-bot"></div>
+          </div>
+
+          <div class="card-d5-right" id="d5_bg" style="background-image: url('assets/drachenlauf_cover.jpg');">
+            <div class="card-d5-right-content">
+              <div style="font-size:9px; font-weight:800; color:#FFF; letter-spacing:1px;">ENTRY</div>
+              <div class="card-d5-barcode">
+                <span style="height:60%;"></span>
+                <span style="height:100%;"></span>
+                <span style="height:40%;"></span>
+                <span style="height:90%;"></span>
+                <span style="height:70%;"></span>
+                <span style="height:100%;"></span>
+                <span style="height:50%;"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           6. FLOATING ISLAND / MULTI-LAYER GLASS
+           ========================================== -->
+      <div class="design-card-wrap" data-card="6">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 06</div>
+            <div class="design-name">Floating Glass Island</div>
+          </div>
+          <span class="design-tagline">Schwebendes Mattglas-Panel über Foto-Rahmen</span>
+        </div>
+
+        <div class="card-d6" id="d6_bg" style="background-image: url('assets/drachenlauf_cover.jpg');">
+          <div class="card-d6-island">
+            <div class="card-d6-top">
+              <span class="card-d6-date" id="d6_date">24.10.</span>
+              <span class="card-d6-badge" id="d6_badge">14.6. ANMELDUNG</span>
+            </div>
+            <div class="card-d6-title" id="d6_title">Drachenlauf Königswinter</div>
+            <div class="card-d6-met"><span id="d6_km">26,0</span> KM <span style="opacity:0.4;">·</span> <span id="d6_hm">1.250</span> HM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           7. TOPO ELEVATION GRAPH
+           ========================================== -->
+      <div class="design-card-wrap" data-card="7">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 07</div>
+            <div class="design-name">Topo Elevation Graph</div>
+          </div>
+          <span class="design-tagline">SVG-Gipfelprofil · Vertikal-Index · Berg-Fokus</span>
+        </div>
+
+        <div class="card-d7">
+          <div class="card-d7-bg-faint" id="d7_bg" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+          
+          <!-- SVG Profil Kurve -->
+          <svg class="card-d7-svg-curve" viewBox="0 0 300 70" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="topoGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#64D2FF" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#64D2FF" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,65 L25,50 L55,58 L85,32 L115,48 L145,20 L175,40 L205,12 L235,38 L265,18 L300,55 L300,70 L0,70 Z" fill="url(#topoGrad)"/>
+            <path d="M0,65 L25,50 L55,58 L85,32 L115,48 L145,20 L175,40 L205,12 L235,38 L265,18 L300,55" fill="none" stroke="#64D2FF" stroke-width="2.2"/>
+          </svg>
+
+          <div class="card-d7-content card-d7-head">
+            <span style="font-size:0.80rem; font-weight:800; color:var(--apple-orange);" id="d7_date">24.10.</span>
+            <span class="card-d7-vert-chip" id="d7_badge">14.6. ANMELDUNG</span>
+          </div>
+
+          <div class="card-d7-content card-d7-bot">
+            <div>
+              <div class="card-d7-title" id="d7_title">Drachenlauf Königswinter</div>
+              <div style="font-size:0.75rem; color:rgba(255,255,255,0.6); margin-top:2px;">7 Gipfel · 48 Hm/km Steigung</div>
+            </div>
+            <div style="font-size:1.3rem; font-weight:900; text-align:right;"><span id="d7_km">26</span>k <span style="color:var(--apple-cyan); font-size:1rem;">/</span> <span id="d7_hm">1250</span>m</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           8. CAPSULE STRIP
+           ========================================== -->
+      <div class="design-card-wrap" data-card="8">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 08</div>
+            <div class="design-name">Horizontal Capsule Strip</div>
+          </div>
+          <span class="design-tagline">70px Kompakt-Pille · Maximaler ATF-Höhengewinn</span>
+        </div>
+
+        <div class="card-d8">
+          <div class="card-d8-thumb" id="d8_bg" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+          <div class="card-d8-mid">
+            <div class="card-d8-date" id="d8_date">24.10.</div>
+            <div class="card-d8-title" id="d8_title">Drachenlauf Königswinter</div>
+          </div>
+          <div class="card-d8-right">
+            <div class="card-d8-met"><span id="d8_km">26,0</span>k · <span id="d8_hm">1.250</span>m</div>
+            <div class="card-d8-badge" id="d8_badge">14.6. ANMELDUNG</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           9. DARKROOM EXPLORER
+           ========================================== -->
+      <div class="design-card-wrap" data-card="9">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 09</div>
+            <div class="design-name">Darkroom Explorer (Leica Print)</div>
+          </div>
+          <span class="design-tagline">Schwarzweiß-Offset-Rahmen · Koordinaten · Pass</span>
+        </div>
+
+        <div class="card-d9">
+          <div class="card-d9-frame" id="d9_bg" style="background-image: url('assets/drachenlauf_cover.jpg');">
+            <div class="card-d9-stamp" id="d9_badge">14.6. ANMELDUNG</div>
+          </div>
+          <div class="card-d9-footer">
+            <div>
+              <div class="card-d9-coord">50°41'N 7°12'E // 24.10.</div>
+              <div class="card-d9-title" id="d9_title">Drachenlauf Königswinter</div>
+            </div>
+            <div class="card-d9-nums"><span id="d9_km">26,0</span> KM · <span id="d9_hm">1.250</span> HM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           10. NEON CYBER-TRAIL
+           ========================================== -->
+      <div class="design-card-wrap" data-card="10">
+        <div class="design-meta-header">
+          <div>
+            <div class="design-number">Archetyp 10</div>
+            <div class="design-name">Neon Cyber-Trail (Border Light)</div>
+          </div>
+          <span class="design-tagline">Cyan/Orange Glow-Border · High-Contrast HUD</span>
+        </div>
+
+        <div class="card-d10">
+          <div class="card-d10-inner">
+            <div class="card-d10-bg" id="d10_bg" style="background-image: url('assets/drachenlauf_cover.jpg');"></div>
+            <div class="card-d10-hud-lines"></div>
+            <div class="card-d10-pill-top" id="d10_badge">14.6. ANMELDUNG</div>
+
+            <div class="card-d10-content">
+              <div class="card-d10-hud-tag" id="d10_date">24.10. · KEY TARGET</div>
+              <div class="card-d10-title" id="d10_title">Drachenlauf Königswinter</div>
+              <div class="card-d10-metrics">
+                <span style="font-size:1.4rem; font-weight:900;" id="d10_km">26,0 KM</span>
+                <span style="color:rgba(255,255,255,0.4);">/</span>
+                <span style="font-size:1.4rem; font-weight:900; color:var(--apple-orange);" id="d10_hm">1.250 HM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const racesData = {
+      drachenlauf: {
+        title: 'Drachenlauf Königswinter',
+        date: '24.10.',
+        km: '26,0',
+        hm: '1.250',
+        badge: '14.6. ANMELDUNG',
+        bg: "assets/drachenlauf_cover.jpg",
+        bgPos: 'center 85%'
+      },
+      belgenbach: {
+        title: 'Belgenbachtrail',
+        date: '07.03.',
+        km: '30,7',
+        hm: '941',
+        badge: '7.12. ANMELDUNG',
+        bg: "assets/belgenbach_cover.jpg",
+        bgPos: 'center 20%'
+      },
+      muellerthal: {
+        title: 'Ultra Trail Müllerthal',
+        date: '11.09.',
+        km: '21,0',
+        hm: '600',
+        badge: '1.2. ANMELDUNG',
+        bg: "assets/muellerthal_cover.jpg",
+        bgPos: 'center 20%'
+      }
+    };
+
+    function switchRace(raceKey) {
+      document.querySelectorAll('.mode-pills .mode-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const data = racesData[raceKey];
+      if (!data) return;
+
+      for (let i = 1; i <= 10; i++) {
+        const titleEl = document.getElementById(`d${i}_title`);
+        const dateEl = document.getElementById(`d${i}_date`);
+        const kmEl = document.getElementById(`d${i}_km`);
+        const hmEl = document.getElementById(`d${i}_hm`);
+        const badgeEl = document.getElementById(`d${i}_badge`);
+        const bgEl = document.getElementById(`d${i}_bg`);
+
+        if (titleEl) titleEl.innerText = data.title;
+        if (dateEl) dateEl.innerText = (i === 4 ? `DATE // ${data.date}` : (i === 10 ? `${data.date} · KEY TARGET` : data.date));
+        if (kmEl) kmEl.innerText = (i === 4 ? data.km.replace(',', '.') : (i === 7 || i === 3 ? data.km.split(',')[0] : (i === 2 ? `${data.km} km` : (i === 10 ? `${data.km} KM` : data.km))));
+        if (hmEl) hmEl.innerText = (i === 4 ? data.hm.replace('.', '') : (i === 7 || i === 3 ? data.hm.replace('.', '') : (i === 2 ? `${data.hm} hm` : (i === 10 ? `${data.hm} HM` : data.hm))));
+        if (badgeEl) badgeEl.innerText = (i === 5 ? `${data.badge} · STARTPASS` : data.badge);
+        if (bgEl) {
+          bgEl.style.backgroundImage = `url('${data.bg}')`;
+          if (data.bgPos) bgEl.style.backgroundPosition = data.bgPos;
+        }
+        const avatarEl = document.getElementById(`d${i}_avatar`);
+        if (avatarEl) {
+          avatarEl.style.backgroundImage = `url('${data.bg}')`;
+        }
+      }
+    }
+
+    function filterDesign(type) {
+      document.querySelectorAll('.mode-pills .mode-pill').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      document.querySelectorAll('.design-card-wrap').forEach(wrap => {
+        wrap.style.display = 'flex';
+      });
+    }
+  </script>
+</body>
+</html>
