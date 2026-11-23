@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.70 (Root-Cause Fix Holland-Bild & Vollständiges Apple HIG / System-Audit · v11.70)  
+**Document Version:** 11.71 (Drachenlauf Königswinter: Original Gruppenfoto als Cover eingebunden · v11.71)  
 **Last Updated:** November 23, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,11 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.70)
+## 📌 1. Project Overview & Release Freeze State (v11.71)
 
-- **Root-Cause Fix Holland-Cover (`assets/holland_cover.jpg` · v11.70):**
-  - **Problem & Ursache:** Das konvertierte JPEG war zuvor komplett schwarz (alle Pixel RGB=0), weil der Apple-HEIC-Hardware-Dekoder innerhalb der Sandbox-Sicherheitsgrenze keinen Zugriff auf den Grafiktreiber hatte und stumm leere Bytes erzeugte.
-  - **Lösung:** Re-Decodierung via `sips` mit voller Hardware-Beschleunigung: Ein gestochen scharfes, farbechtes 731 KB JPEG (`1920x1440`) erzeugt und in `assets/` sowie `dist/assets/` synchronisiert.
+- **Drachenlauf-Cover eingebunden (v11.71):**
+  - Das hochgeladene Gruppenfoto der Siebengebirge-Community / Probedrachen wurde als `assets/drachenlauf_cover.jpg` hinterlegt.
+  - In `Okt – Dez 2027` ziert das Bild nun fest die Karte `Drachenlauf Königswinter` (24.10.2027 · 26,0 km · 1.250 Hm).
 - **Vollständiges Apple HIG & Accessibility Audit:**
   - **Touch-Targets (§ 5):** `season-shelf-all-btn` auf vollwertige 44 × 44 px Mindesthöhe nach Apple HIG Spezifikation angehoben inklusive `:focus-visible` Tastatur-Fokusring.
   - **Accessibility (A11y):** Alle Klick-Karten mit `role="button"`, `tabindex="0"`, `aria-label` und Tastatur-Support (`Enter`/`Space`) ausgestattet.
