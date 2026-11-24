@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.93">
-  <link rel="stylesheet" href="styles.css?v=11.93">
+  <link rel="stylesheet" href="tokens.css?v=11.94">
+  <link rel="stylesheet" href="styles.css?v=11.94">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2908,7 +2908,12 @@
             ]
           },
           { name: 'Februar', mIdx: 1, days: 28, startOffset: 0, trips: [] },
-          { name: 'März', mIdx: 2, days: 31, startOffset: 0, trips: [] }
+          { 
+            name: 'März', mIdx: 2, days: 31, startOffset: 0,
+            trips: [
+              { id: 'maas', label: 'Wochenende an der Maas (12.–14.03.)', startDay: 12, endDay: 14, details: '12.–14. März 2027: Wochenende an der Maas (Post-Belgenbach Erholung)' }
+            ]
+          }
         ]
       },
       1: {
@@ -2980,6 +2985,18 @@
           hm: '941',
           imageUrl: 'assets/belgenbach_cover.jpg',
           bg: 'linear-gradient(135deg, #2b1f1d, #1c130c)'
+        },
+        {
+          id: 'maas',
+          isTrip: true,
+          title: 'Wochenende an der Maas',
+          shortTitle: 'Wochenende Maas',
+          date: '12.–14.03.',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/maas_cover.jpg',
+          bgPosition: 'center center',
+          bg: 'linear-gradient(135deg, #18252a, #0c1417)'
         }
       ],
       1: [ // Q2

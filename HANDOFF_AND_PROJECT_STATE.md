@@ -1,15 +1,18 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.93 (Kalenderwochen-Korrektur: Reale Daten für KW 50, KW 51 & KW 52 mit parkrun 5k am 26.12. · v11.93)  
-**Last Updated:** November 23, 2026  
+**Document Version:** 11.94 (Reise-Ergänzung: Wochenende an der Maas 12.–14.03.2027 in Q1 integriert · v11.94)  
+**Last Updated:** November 24, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.93)
+## 📌 1. Project Overview & Release Freeze State (v11.94)
 
+- **Wochenende an der Maas (12.–14. März 2027, v11.94):**
+  - **Kalender-Integration (Q1):** Im Monat März 2027 (`mIdx: 2`) als Trip hinterlegt (`12.–14.03.`). Bei aktiviertem Reise-Layer wird der gestreifte Erholungsbalken (`vacation-layer`) über der akuten Belgenbach-Regenerationsphase angezeigt. Tapping blendet `12.–14. März 2027: Wochenende an der Maas (Post-Belgenbach Erholung)` im Status-Dock ein.
+  - **Amazon-Shelf (Q1):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `12.–14.03.`, Titel `Wochenende an der Maas` und dem vom Nutzer übergebenen Foto (`assets/maas_cover.jpg` via bookingexperts CDN).
 - **Kalenderwochen-Korrektur Dezember 2026 (v11.93):**
   - **KW 50 bereinigt:** Korrekte Realdaten `07. – 13. Dezember 2026` (MON 07.12 bis SON 13.12). Der Sprung auf den 26.12. wurde vollständig entfernt.
   - **KW 51 hinzugefügt:** `14. – 20. Dezember 2026` (Saisonpause & Winterruhe).
