@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.97 (Trainingswoche KW 52: parkrun PB-Jagd SUB 28:40 · < 5:44 min/km · v11.97)  
+**Document Version:** 11.98 (Kein modales Race-Briefing für parkrun 5k; PB & Racepace rein in der Wochenkarte · v11.98)  
 **Last Updated:** November 24, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,17 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.97)
+## 📌 1. Project Overview & Release Freeze State (v11.98)
 
+- **Kein modales Race-Briefing für parkrun 5k (v11.98):**
+  - **Nutzeranforderung:** Kein modales Race-Fenster zum parkrun; die zu schlagende Bestzeit (28:40 min aus 2025) und die Racepace (5:45 ➔ 5:40 ➔ 5:35 min/km) verbleiben schlank in der Wochen- und Tageskarte.
+  - **Wochenkarte KW 52 (`weeksData[52]`):**
+    - Benchmark: `PB 28:40 schlagen · Pace < 5:44/km`
+    - Summary: `Weihnachtswoche · Sa 26.12. (2. Weihnachtstag): Volksgarten parkrun 5k (9:00 Uhr) · Zu schlagende PB: 28:40 min (2025) · Racepace: 5:45 ➔ 5:40 ➔ 5:35 min/km.`
+    - Samstag 26.12.: `main: true` entfernt (kein `Briefing ↗`-Pill-Button). Subcopy: `PB 28:40 · Pace < 5:44/km`.
+  - **Klick- & Modal-Entkopplung (`renderWeek` & `openSheet`):**
+    - `cardClick` und `footerHtml` rufen `openRaceDrawer` nur noch auf, wenn für den Wettkampf ein expliziter Schlüssel in `raceBriefings[rKey]` hinterlegt ist.
+    - In `openSheet` öffnet der Klick auf den parkrun das normale Zen-Logging-Formular (5,0 km vorgefüllt) zum Eintragen der Ist-Werte nach dem Lauf – ohne Martinslauf-Ausschreibung oder modale Briefing-Links.
 - **parkrun PB-Jagd in KW 52 integriert (v11.97):**
   - **Realdaten-Abgleich & Zielkorridor (§ 1 & § 8):** Bisherige Bestzeit aus 2025 beträgt **28:40 min** (Pace: **5:44 min/km**). Ziel für den Volksgarten parkrun am Samstag, 26.12.2026 (2. Weihnachtstag, 9:00 Uhr): **SUB 28:40 min** (< 5:44 min/km).
   - **Wochenkarte KW 52 (`weeksData[52]`):**

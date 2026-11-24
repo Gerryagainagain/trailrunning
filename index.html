@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.97">
-  <link rel="stylesheet" href="styles.css?v=11.97">
+  <link rel="stylesheet" href="tokens.css?v=11.98">
+  <link rel="stylesheet" href="styles.css?v=11.98">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -4313,19 +4313,19 @@
         ]
       },
       52: {
-        title: 'KW 52 • Feiertage & parkrun PB-Jagd',
-        shortTitle: 'parkrun PB',
+        title: 'KW 52 • Feiertage & parkrun 5k',
+        shortTitle: 'parkrun 5k',
         dates: '21. – 27. Dezember 2026',
-        benchmark: 'SUB 28:40 · < 5:44 min/km',
+        benchmark: 'PB 28:40 schlagen · Pace < 5:44/km',
         benchmarkType: 'race',
-        summary: 'Weihnachtswoche & PB-Jagd · Sa 26.12.2026 (2. Weihnachtstag): Volksgarten parkrun 5k (Start 9:00 Uhr) · Ziel: PB 28:40 min aus 2025 schlagen · Pacing-Korridor: 5:45 ➔ 5:40 ➔ 5:35 min/km.',
+        summary: 'Weihnachtswoche · Sa 26.12. (2. Weihnachtstag): Volksgarten parkrun 5k (9:00 Uhr) · Zu schlagende PB: 28:40 min (2025) · Racepace: 5:45 ➔ 5:40 ➔ 5:35 min/km.',
         days: [
           { d: 'MON 21.12', val: '—', tag: 'Ruhe', sub: 'Erholung' },
           { d: 'DIE 22.12', val: '—', tag: 'Pause', sub: 'Vorweihnachtsruhe' },
           { d: 'MIT 23.12', val: '4.0', unit: 'KM', tag: 'Aktivierung', sub: 'Locker GA1 · 3 Steigerungen' },
           { d: 'DON 24.12', val: '—', tag: 'Heiligabend', sub: 'Familienzeit' },
           { d: 'FRE 25.12', val: '—', tag: 'Pre-Race', sub: '1. Feiertag · Beine hoch' },
-          { d: 'SAM 26.12', val: '5.0', unit: 'KM', tag: 'parkrun PB', sub: 'SUB 28:40 (< 5:44/km)', isRace: true, main: true },
+          { d: 'SAM 26.12', val: '5.0', unit: 'KM', tag: 'parkrun PB', sub: 'PB 28:40 · Pace < 5:44/km', isRace: true },
           { d: 'SON 27.12', val: '—', tag: 'Ruhe', sub: 'Jahresausklang' }
         ]
       }
@@ -4468,8 +4468,8 @@
         if (isRest && !isToday && !log) cardClass += ' card-rest';
 
         let cardClick = `onclick="openSheet(${kwNum}, ${idx})" title="Details & Ist-Werte" style="cursor:pointer;"`;
-        if (isRace) {
-          const rKey = day.raceKey || (kwNum === 45 ? 'martinslauf' : (kwNum === 49 ? '7ghm' : ''));
+        const rKey = day.raceKey || (kwNum === 45 ? 'martinslauf' : (kwNum === 49 ? '7ghm' : ''));
+        if (isRace && rKey && raceBriefings[rKey]) {
           cardClick = `onclick="openRaceDrawer('${rKey}')" title="Wettkampf-Briefing öffnen" style="cursor:pointer;"`;
         }
 
@@ -4557,8 +4557,8 @@
         }
 
         const todayBadge = isToday ? '<span class="badge-today-blue">HEUTE</span>' : '';
-        const footerHtml = day.main
-          ? `<span class="day-pill-badge pill-race" style="cursor:pointer; width:100%; text-align:center; justify-content:center; padding:0.35rem 0.5rem; font-weight:800;" onclick="event.stopPropagation(); openRaceDrawer('${day.raceKey || 'martinslauf'}')">Briefing ↗</span>`
+        const footerHtml = (day.main && rKey && raceBriefings[rKey])
+          ? `<span class="day-pill-badge pill-race" style="cursor:pointer; width:100%; text-align:center; justify-content:center; padding:0.35rem 0.5rem; font-weight:800;" onclick="event.stopPropagation(); openRaceDrawer('${rKey}')">Briefing ↗</span>`
           : '';
 
         html += `
@@ -5110,7 +5110,7 @@
       `;
 
       let bodyContent = '';
-      if (isRace) {
+      if (isRace && rKey && raceBriefings[rKey]) {
         bodyContent = `
           <div class="sheet-head">
             <span class="sheet-date-pill" style="color:var(--apple-orange); background:rgba(255,159,10,0.12);">${dn} · ${day.tag || 'Wettkampf'}</span>
