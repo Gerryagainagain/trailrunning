@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.95">
-  <link rel="stylesheet" href="styles.css?v=11.95">
+  <link rel="stylesheet" href="tokens.css?v=11.96">
+  <link rel="stylesheet" href="styles.css?v=11.96">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -1442,12 +1442,14 @@
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
     .shelf-card-title {
-      font-size: 1.15rem;
-      font-weight: 800;
+      font-family: var(--font-display, -apple-system, sans-serif);
+      font-size: clamp(1.85rem, 2.5vw, 2.45rem);
+      font-weight: 900;
       color: #FFFFFF;
-      letter-spacing: -0.2px;
-      line-height: 1.15;
-      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+      line-height: 1.0;
+      margin-top: 2px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
     }
     .shelf-card-metrics-hero {
       display: flex;
@@ -2967,7 +2969,8 @@
         {
           id: 'zoutelande',
           isTrip: true,
-          title: 'Holland Gangelt Zoutelande',
+          title: 'Holland',
+          shortTitle: 'Holland',
           date: '31.12.–04.01.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',
@@ -2989,8 +2992,8 @@
         {
           id: 'maas',
           isTrip: true,
-          title: 'Wochenende an der Maas',
-          shortTitle: 'Wochenende Maas',
+          title: 'Heel',
+          shortTitle: 'Heel',
           date: '12.–14.03.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',
@@ -3003,8 +3006,8 @@
         {
           id: 'barbershop',
           isTrip: true,
-          title: 'Barbershop Apeldoorn',
-          shortTitle: 'Barbershop',
+          title: 'Sing!',
+          shortTitle: 'Sing!',
           date: '10.–11.04.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',
@@ -3026,7 +3029,7 @@
         {
           id: 'republica',
           isTrip: true,
-          title: 're:publica Berlin',
+          title: 're:publica',
           shortTitle: 're:publica',
           date: '10.–12.05.',
           badge: 'REISE',
@@ -3038,8 +3041,8 @@
         {
           id: 'vacation',
           isTrip: true,
-          title: 'Bergurlaub Tirol',
-          shortTitle: 'Bergurlaub',
+          title: 'Tirol',
+          shortTitle: 'Tirol',
           date: '05.–24.06.',
           badge: 'URLAUB',
           badgeClass: 'badge-yellow',
@@ -3062,8 +3065,8 @@
         {
           id: 'kaub',
           isTrip: true,
-          title: 'Geschwistertreff Kaub',
-          shortTitle: 'Kaub am Rhein',
+          title: 'Kaub',
+          shortTitle: 'Kaub',
           date: '25.–27.06.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',

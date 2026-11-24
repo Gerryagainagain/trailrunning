@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.95 (Reise-Ergänzung: Geschwistertreff Kaub 25.–27.06.2027 mit Originalfoto in Q2 · v11.95)  
+**Document Version:** 11.96 (Typografie-Harmonisierung: Monumentale Einwort-Headlines für alle Reise-Karten · v11.96)  
 **Last Updated:** November 24, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,18 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.95)
+## 📌 1. Project Overview & Release Freeze State (v11.96)
 
+- **Einwort-Headlines für alle Reise-Karten im Amazon-Shelf (v11.96):**
+  - **Typografie (`.shelf-card-title`):** Auf `clamp(1.85rem, 2.5vw, 2.45rem)` und `font-weight: 900` angehoben (Display-Schrift im Schweizer Akzidenz-Stil mit Schlagschatten).
+  - **Konsequenter Aufbau (Datum + Einwort-HL):**
+    - `31.12.–04.01.` · **`Holland`**
+    - `12.–14.03.` · **`Heel`**
+    - `10.–11.04.` · **`Sing!`**
+    - `10.–12.05.` · **`re:publica`**
+    - `05.–24.06.` · **`Tirol`**
+    - `25.–27.06.` · **`Kaub`**
+  - Schafft perfekte visuelle Balance und posterartige Klarheit gegenüber den monumentalen Race-Hero-Ziffern (`+1.250M`, `10K`).
 - **Geschwistertreff Kaub am Rhein (25.–27. Juni 2027, v11.95):**
   - **Amazon-Shelf (Q2):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `25.–27.06.`, Titel `Geschwistertreff Kaub` und dem vom Nutzer hochgeladenen Rheintal-Foto (`assets/kaub_cover.jpg`).
   - **Kalender-Integration (Juni 2027):** Der Tirol-Urlaub wurde auf `05.–24.06.` kalibriert; ab dem 25.06. schließt nahtlos der `Geschwistertreff Kaub (25.–27.06.)` an. Klick auf Tage 25–27 blendet `25.–27. Juni 2027: Geschwistertreff Kaub am Rhein` im Status-Dock ein.
