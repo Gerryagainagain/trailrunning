@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.96 (Typografie-Harmonisierung: Monumentale Einwort-Headlines für alle Reise-Karten · v11.96)  
+**Document Version:** 11.97 (Trainingswoche KW 52: parkrun PB-Jagd SUB 28:40 · < 5:44 min/km · v11.97)  
 **Last Updated:** November 24, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.96)
+## 📌 1. Project Overview & Release Freeze State (v11.97)
 
+- **parkrun PB-Jagd in KW 52 integriert (v11.97):**
+  - **Realdaten-Abgleich & Zielkorridor (§ 1 & § 8):** Bisherige Bestzeit aus 2025 beträgt **28:40 min** (Pace: **5:44 min/km**). Ziel für den Volksgarten parkrun am Samstag, 26.12.2026 (2. Weihnachtstag, 9:00 Uhr): **SUB 28:40 min** (< 5:44 min/km).
+  - **Wochenkarte KW 52 (`weeksData[52]`):**
+    - Benchmark-Badge: `SUB 28:40 · < 5:44 min/km` in markantem Race-Orange (`benchmarkType: 'race'`).
+    - Mittwoch, 23.12.: 4,0 km GA1-Aktivierung mit 3 lockeren Steigerungen.
+    - Samstag, 26.12.: Highlight-Rennmarkierung (`isRace: true, main: true`, Tag: `parkrun PB`, Sub: `SUB 28:40 (< 5:44/km)`).
+    - Renntaktik / Pacing-Korridor: 5:45 min/km (km 1–1,5 zur Vermeidung von Früh-Azidose) ➔ 5:40 min/km (km 2–3,5) ➔ 5:35 min/km (km 4–5).
 - **Einwort-Headlines für alle Reise-Karten im Amazon-Shelf (v11.96):**
   - **Typografie (`.shelf-card-title`):** Auf `clamp(1.85rem, 2.5vw, 2.45rem)` und `font-weight: 900` angehoben (Display-Schrift im Schweizer Akzidenz-Stil mit Schlagschatten).
   - **Konsequenter Aufbau (Datum + Einwort-HL):**
