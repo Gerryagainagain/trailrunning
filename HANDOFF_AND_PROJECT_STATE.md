@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.94 (Reise-Ergänzung: Wochenende an der Maas 12.–14.03.2027 in Q1 integriert · v11.94)  
+**Document Version:** 11.95 (Reise-Ergänzung: Geschwistertreff Kaub 25.–27.06.2027 mit Originalfoto in Q2 · v11.95)  
 **Last Updated:** November 24, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.94)
+## 📌 1. Project Overview & Release Freeze State (v11.95)
 
+- **Geschwistertreff Kaub am Rhein (25.–27. Juni 2027, v11.95):**
+  - **Amazon-Shelf (Q2):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `25.–27.06.`, Titel `Geschwistertreff Kaub` und dem vom Nutzer hochgeladenen Rheintal-Foto (`assets/kaub_cover.jpg`).
+  - **Kalender-Integration (Juni 2027):** Der Tirol-Urlaub wurde auf `05.–24.06.` kalibriert; ab dem 25.06. schließt nahtlos der `Geschwistertreff Kaub (25.–27.06.)` an. Klick auf Tage 25–27 blendet `25.–27. Juni 2027: Geschwistertreff Kaub am Rhein` im Status-Dock ein.
 - **Wochenende an der Maas (12.–14. März 2027, v11.94):**
   - **Kalender-Integration (Q1):** Im Monat März 2027 (`mIdx: 2`) als Trip hinterlegt (`12.–14.03.`). Bei aktiviertem Reise-Layer wird der gestreifte Erholungsbalken (`vacation-layer`) über der akuten Belgenbach-Regenerationsphase angezeigt. Tapping blendet `12.–14. März 2027: Wochenende an der Maas (Post-Belgenbach Erholung)` im Status-Dock ein.
   - **Amazon-Shelf (Q1):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `12.–14.03.`, Titel `Wochenende an der Maas` und dem vom Nutzer übergebenen Foto (`assets/maas_cover.jpg` via bookingexperts CDN).

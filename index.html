@@ -15,8 +15,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=11.94">
-  <link rel="stylesheet" href="styles.css?v=11.94">
+  <link rel="stylesheet" href="tokens.css?v=11.95">
+  <link rel="stylesheet" href="styles.css?v=11.95">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2935,7 +2935,7 @@
           { 
             name: 'Juni', mIdx: 5, days: 30, startOffset: 1,
             trips: [
-              { id: 'vacation', label: 'Urlaub Bergfrühsommer Imst (05.–25.06.)', startDay: 5, endDay: 25, details: '05.–25. Juni 2027: Bergurlaub Tirol & Mittelrhein (Standlager Camping FiNK Imst · Sa 12.06: TS16)' },
+              { id: 'vacation', label: 'Urlaub Bergfrühsommer Imst (05.–24.06.)', startDay: 5, endDay: 24, details: '05.–24. Juni 2027: Bergurlaub Tirol & Mittelrhein (Standlager Camping FiNK Imst · Sa 12.06: TS16)' },
               { id: 'kaub', label: 'Geschwistertreff Kaub (25.–27.06.)', startDay: 25, endDay: 27, details: '25.–27. Juni 2027: Geschwistertreff Kaub am Rhein' }
             ]
           }
@@ -3040,7 +3040,7 @@
           isTrip: true,
           title: 'Bergurlaub Tirol',
           shortTitle: 'Bergurlaub',
-          date: '05.–25.06.',
+          date: '05.–24.06.',
           badge: 'URLAUB',
           badgeClass: 'badge-yellow',
           imageUrl: 'assets/tirol_cover.jpg',
@@ -3058,6 +3058,18 @@
           hm: '850',
           imageUrl: 'assets/ts16_cover.webp',
           bg: 'linear-gradient(135deg, #1b2133, #0d111a)'
+        },
+        {
+          id: 'kaub',
+          isTrip: true,
+          title: 'Geschwistertreff Kaub',
+          shortTitle: 'Kaub am Rhein',
+          date: '25.–27.06.',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/kaub_cover.jpg',
+          bgPosition: 'center 20%',
+          bg: 'linear-gradient(135deg, #1f2b24, #0e1712)'
         }
       ],
       2: [ // Q3
@@ -3537,8 +3549,8 @@
             keyEl.innerHTML = `${day}. Juni 2027: Standlager Camping FiNK Imst · Rekom, Hütten & Familienwandern`;
             return;
           }
-          if (day >= 21 && day <= 25) {
-            keyEl.innerHTML = `${day}. Juni 2027: Kaub am Rhein (Mittelrhein-Ausklang) · Fr 25.06. Heimreise Düsseldorf`;
+          if (day >= 21 && day <= 24) {
+            keyEl.innerHTML = `${day}. Juni 2027: Camping Kaub am Rhein (Mittelrhein-Ausklang)`;
             return;
           }
         } else if (tripOnDay.details) {
