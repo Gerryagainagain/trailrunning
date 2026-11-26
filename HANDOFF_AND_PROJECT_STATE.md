@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.01 (Trainingsplan KW 48: Freitag Studio/Leicht Rumpf mit No-Legs-Direktive vor 18k Key-Longrun · v12.01)  
+**Document Version:** 12.02 (Wochenplan KW 48 kalibriert: Sa 1,5h Wandern Erkrath, So 18k Key-Longrun · v12.02)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,17 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.01)
+## 📌 1. Project Overview & Release Freeze State (v12.02)
 
+- **Wochenplan KW 48 Re-Kalibrierung (v12.02):**
+  - **Neue Struktur:**
+    - Freitag (27.11.): `STUDIO · Leicht Rumpf & Mobility` (Keine Beine · Max. 30–35 min).
+    - Samstag (28.11.): `WANDERN · Leichtes Wandern` (1,5 Std. Erkrath · Time on Feet).
+    - Sonntag (29.11.): `18.0 KM · Key Longrun Erkrath` (+500–600 Hm mit Steilhängen).
+  - **Sportwissenschaftliche Neubewertung:**
+    - Durch die Verlegung des 18k-Longruns von Samstag auf Sonntag vergrößert sich der Erholungsabstand zum 10-km-Lauf von Donnerstag auf volle 72 Stunden.
+    - Das 1,5-stündige leichte Wandern am Samstag wirkt als aktive Erholung (Durchblutungsförderung, Gelenk-Mobilisation ohne exzentrische Muskelkater-Gefahr), analog zur bewährten Kombination aus KW 47.
+    - Das Studio am Freitag ist in dieser Konstellation völlig unkritisch, solange Beinkraftübungen weiterhin strikt vermieden werden.
 - **Freitag KW 48: Leicht Rumpf & Mobility vor Key-Longrun (v12.01):**
   - **Sportwissenschaftliche Einordnung (Coach-Rolle & § 6 Trade-Off):**
     - Da am Samstag (28.11.) der **18,0 km Key-Longrun mit +500–600 Hm** ansteht, ist ein Studiobesuch am Vortag **NUR** unter strikter **No-Legs-Direktive** sinnvoll.
