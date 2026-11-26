@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.00 (Realläufe 26.11. 10k GA1 & 21.11. Wandertour 10k 2:10h fest im Code synchronisiert · v12.00)  
+**Document Version:** 12.01 (Trainingsplan KW 48: Freitag Studio/Leicht Rumpf mit No-Legs-Direktive vor 18k Key-Longrun · v12.01)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.00)
+## 📌 1. Project Overview & Release Freeze State (v12.01)
 
+- **Freitag KW 48: Leicht Rumpf & Mobility vor Key-Longrun (v12.01):**
+  - **Sportwissenschaftliche Einordnung (Coach-Rolle & § 6 Trade-Off):**
+    - Da am Samstag (28.11.) der **18,0 km Key-Longrun mit +500–600 Hm** ansteht, ist ein Studiobesuch am Vortag **NUR** unter strikter **No-Legs-Direktive** sinnvoll.
+    - *Erlaubt:* 30–35 min leichtes Rumpf- und Mobility-Programm (Plank-Variationen, Deadbugs, Brustwirbelsäulen-/Hüftöffner, Faszien).
+    - *Strikt untersagt:* Jede Form von Kniebeugen, Ausfallschritten, Waden- oder Beinpressenübungen, um neuromuskuläre Vorermüdung und Krampfanfälligkeit an den Erkrather Steilhängen auszuschließen.
+  - **Plan-Anpassung:**
+    - Freitag 27.11. von `Ruhe (Kein Studio vor Key)` umgestellt auf `{ d: 'FRE 27.11', val: 'STUDIO', tag: 'Leicht Rumpf & Mobility', sub: 'Keine Beine · Max. 30–35 min', isStudio: true }`.
 - **Reallauf Donnerstag 26.11. & Wandertour 21.11. synchronisiert (v12.00):**
   - **Donnerstag, 26.11.2026 (KW 48):**
     - Einheit: **Locker GA1**
