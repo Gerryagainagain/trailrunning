@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.02 (Wochenplan KW 48 kalibriert: Sa 1,5h Wandern Erkrath, So 18k Key-Longrun · v12.02)  
+**Document Version:** 12.03 (HM-Kalibrierung: 18k Longrun auf 350–400 Hm korrigiert statt Overkill 500–600 Hm · v12.03)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,14 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.02)
+## 📌 1. Project Overview & Release Freeze State (v12.03)
 
+- **Höhenmeter-Korrektur Sonntag 29.11. (v12.03):**
+  - **Physiologischer Befund & Bereinigung:**
+    - Der Siebengebirgs-HM am 06.12. hat ein Streckenprofil von **21,4 km und 360 Hm** (Steigungsdichte: **16,8 Hm/km** auf breiten, rollenden Forstwegen).
+    - Die Angabe von `500–600 Hm` auf 18 km (Steigungsdichte: 30–33 Hm/km) war ein Relikt der ursprünglichen Drachenlauf-Sommerplanung (wo 1.250 Hm anstanden). 7 Tage vor einem Halbmarathon mit 360 Hm wäre das ein physiologischer Overkill, der unnötige exzentrische Muskelschäden und Restermüdung erzeugt hätte.
+    - **Spezifische Zielvorgabe:** 18,0 km mit **350–400 Hm** (ca. 20–22 Hm/km). Bildet den Wettkampf perfekt ab, ohne die Beine vor dem 06.12. zu zerstören.
+  - **Plan-Aktualisierung:** In [index.html](file:///Users/Gerhard/Desktop/running_guide/index.html) und [preview_jahres_dashboard.html](file:///Users/Gerhard/Desktop/running_guide/preview_jahres_dashboard.html) auf `Erkrath (350–400 Hm)` korrigiert.
 - **Wochenplan KW 48 Re-Kalibrierung (v12.02):**
   - **Neue Struktur:**
     - Freitag (27.11.): `STUDIO · Leicht Rumpf & Mobility` (Keine Beine · Max. 30–35 min).
