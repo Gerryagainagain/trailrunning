@@ -87,6 +87,23 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
+  // KW 48 (Locker GA1)
+  {
+    id: 1795680895844,
+    kw: 48,
+    date: '26.11.2026',
+    dayDate: '26.11',
+    dist: 10.0,
+    distMeters: 10000,
+    hm: 43,
+    duration: '01:18:00',
+    hr: 116,
+    pace: '7:48',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Locker GA1',
+    notes: 'Geloggt: 10.0 km in 1:18:00 h · Pace 7:48 min/km · Ø 116 bpm · 43 Hm (Locker GA1)'
+  },
   // KW 48 (Hügel-Fahrtspiel)
   {
     id: 1795507892520,
@@ -123,20 +140,20 @@ const defaultInitialRuns = [
   },
   // KW 47 (Wandertour)
   {
-    id: 1795250000000,
+    id: 1795681489021,
     kw: 47,
     date: '21.11.2026',
     dayDate: '21.11',
     dist: 10.0,
     distMeters: 10000,
     hm: 0,
-    duration: '02:00:00',
+    duration: '02:10:00',
     hr: 0,
-    pace: '-:--',
+    pace: '13:00',
     type: 'wandern',
     isErsatz: true,
     tag: 'Wandertour',
-    notes: 'Wandertour: 10,0 km (Aerobe Basis & Time on Feet)'
+    notes: 'Geloggt: 10.0 km in 2:10:00 h · Pace 13:00 min/km · Wandertour (Time on Feet)'
   },
   // KW 47 (Studio Rumpf & Mobility)
   {

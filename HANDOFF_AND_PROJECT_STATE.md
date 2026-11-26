@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.99 (Reallauf Dienstag 24.11.2026 Hügel-Fahrtspiel 7,1 km fest in den Code synchronisiert · v11.99)  
+**Document Version:** 12.00 (Realläufe 26.11. 10k GA1 & 21.11. Wandertour 10k 2:10h fest im Code synchronisiert · v12.00)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,22 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.99)
+## 📌 1. Project Overview & Release Freeze State (v12.00)
 
+- **Reallauf Donnerstag 26.11. & Wandertour 21.11. synchronisiert (v12.00):**
+  - **Donnerstag, 26.11.2026 (KW 48):**
+    - Einheit: **Locker GA1**
+    - Distanz: **10,0 km**
+    - Zeit / Pace: **1:18:00 h** (Ø Pace: **7:48 min/km**)
+    - Höhenmeter: **43 Hm**
+    - Puls: **Ø 116 bpm** (Perfekt stabil im aeroben Basisfenster < 118 bpm)
+  - **Samstag, 21.11.2026 (KW 47):**
+    - Einheit: **Wandertour**
+    - Distanz: **10,0 km**
+    - Zeit / Pace: **2:10:00 h** (Ø Pace: **13:00 min/km**, Time on Feet)
+  - **Globale Verankerung:**
+    - Beide Einheiten fest in `seedDefaultRuns` ([index.html](file:///Users/Gerhard/Desktop/running_guide/index.html)), `defaultInitialRuns` ([app.js](file:///Users/Gerhard/Desktop/running_guide/app.js)) und [preview_jahres_dashboard.html](file:///Users/Gerhard/Desktop/running_guide/preview_jahres_dashboard.html) eingepflegt.
+    - Synchronisiert nach `dist/` und auf GitHub Pages live bereitgestellt.
 - **Reallauf Dienstag 24.11.2026 fest im Quellcode verankert (v11.99):**
   - **Realdaten aus lokalem Browser-Speicher extrahiert:**
     - Datum: **Dienstag, 24.11.2026 (KW 48)**
