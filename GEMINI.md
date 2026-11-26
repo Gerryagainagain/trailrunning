@@ -83,6 +83,9 @@ This file contains strict system-level instructions for the AI assistant when op
 - **Belastungs- & Regenerationsfenster:**
   - **Kein Beinkrafttraining im Studio innerhalb von 48 Stunden vor einem Key-Longrun** (DOMS-Peak nach 48h). Rumpf & Mobility max. 30–35 Minuten ohne Erschöpfung.
   - Mindestens 48–72 Stunden Abstand zwischen intensiven Einheiten (Tempo / Fahrtspiel) und profilierten Key-Longruns.
+- **Terrain- & Höhenmeter-Allokation (Erkrath vs. Siebengebirge):**
+  - **Erkrath:** Deckt alle Grundlagen-Einheiten und Longruns bis einschließlich **600 Hm** ab (optimale Alltags- und ZNS-Ökonomie vor der Haustür).
+  - **Siebengebirge (Drachenlauf-Trails):** Wird gezielt für Schlüsselläufe mit **700+ Hm** angesteuert, um lange, zusammenhängende Downhills (> 150 Hm am Stück) und spezifische exzentrische Bremskräfte zu trainieren (auch wenn die Steigungsdichte mit 45–50 Hm/km über Belgenbach liegt). Wegen der 2-stündigen Fahrtzeit und der hohen ZNS-/Sehnenlast streng als dosierte Key-Reize mit 72h-Erholungsfenster einbetten.
 - **Rollierendes Freigabe-Protokoll:**
   - Jeweils zur Wochenmitte (Mi/Do) prüft der Assistent die reale Verfassung der laufenden Woche und legt die Folgewoche mit konkreter physiologischer Herleitung zur Freigabe vor.
   - Keine eigenmächtige Fixierung künftiger Wochen im Code ohne vorherige Abstimmung mit dem Athleten.

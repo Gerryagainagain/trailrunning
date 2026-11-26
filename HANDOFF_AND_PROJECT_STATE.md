@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.05 (Wochenplan KW 48 vollständig harmonisiert: 36,0 km Benchmark & Realläufe synchron · v12.05)  
+**Document Version:** 12.06 (Terrain-Allokation Belgenbach verankert: Erkrath bis 600 Hm vs. Siebengebirge 700+ Hm · v12.06)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,15 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.05)
+## 📌 1. Project Overview & Release Freeze State (v12.06)
 
+- **Terrain- & Höhenmeter-Allokation für Belgenbach 2027 verankert (v12.06):**
+  - **Grundsatz (§ 10 GEMINI.md):**
+    - **Erkrath (Hausstrecke):** Deckt alle Grundlagen-Läufe und Longruns bis einschließlich **600 Hm** ab (Düsseltal, Morper Bachtal, Neanderthal). Spart Fahrzeit und ZNS-Reisestress.
+    - **Siebengebirge (Drachenlauf-Trails):** Wird gezielt für Schlüsselläufe mit **700+ Hm** angesteuert.
+  - **Sportwissenschaftlicher Trade-Off:**
+    - *Vorteil:* Lange, zusammenhängende Downhills (> 150 Hm am Stück) schulen die spezifische Bremskraft der Quadrizeps und Sehnensteifigkeit weit über das Belgenbach-Profil hinaus.
+    - *Steuerungs-Regel:* Wegen der höheren Dichte (45–50 Hm/km vs. Belgenbach 30,6 Hm/km) und der Anreise nur als dosierte Key-Reize mit vollem 72h-Erholungsfenster einbetten.
 - **KW 48 Harmonisiert & Verifiziert (v12.05):**
   - **Kilometer-Summe:** Plan-Kilometer auf exakt **36,0 km** kalibriert ($8\text{k Di} + 10\text{k Do} + 18\text{k So}$). Benchmark-Pill und ShortTitle synchronisiert.
   - **Tagesabfolge:**
