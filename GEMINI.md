@@ -73,5 +73,19 @@ This file contains strict system-level instructions for the AI assistant when op
   - Jede taktische Anweisung, Ausrüstungsempfehlung oder Verpflegungsstrategie in den Briefings (`raceBriefings`, Modals) darf nur verwendet werden, wenn sie aus den echten Realdaten hervorgeht oder vom Athleten explizit freigegeben wurde.
   - Das Erfinden generischer Lehrbuch-Ratschläge (wie „1 Gel bei KM 12“, „3–4 Gels“) ist ein systematischer Fehler und strikt untersagt.
 
+---
+
+## 📌 10. Wochenplan-Erstellungs- & Validierungs-Protokoll (Spezifik-Formel & Freigabepflicht)
+- **Wettkampfspezifische Höhenmeterdichte ($D_{Hm}$):**
+  - Die Höhenmeter eines Vorbereitungs-Longruns orientieren sich zwingend an der Höhenmeterdichte ($Hm / km$) des **nächsten anstehenden Zielwettkampfs** ($\pm 10–20\%$).
+  - **Berechnungs-Pflicht:** $\text{Soll-Hm} \approx \text{Distanz}_{\text{Longrun}} \times \left(\frac{\text{Hm}_{\text{Zielrennen}}}{\text{Distanz}_{\text{Zielrennen}}}\right) \times 1{,}1$.
+  - **Verbot:** Niemals unkritisch alpine Steigungsdichten späterer Rennen (wie Drachenlauf 48 Hm/km) auf frühere, flachere Zielwettkämpfe (wie Siebengebirgs-HM 16,8 Hm/km) übertragen.
+- **Belastungs- & Regenerationsfenster:**
+  - **Kein Beinkrafttraining im Studio innerhalb von 48 Stunden vor einem Key-Longrun** (DOMS-Peak nach 48h). Rumpf & Mobility max. 30–35 Minuten ohne Erschöpfung.
+  - Mindestens 48–72 Stunden Abstand zwischen intensiven Einheiten (Tempo / Fahrtspiel) und profilierten Key-Longruns.
+- **Rollierendes Freigabe-Protokoll:**
+  - Jeweils zur Wochenmitte (Mi/Do) prüft der Assistent die reale Verfassung der laufenden Woche und legt die Folgewoche mit konkreter physiologischer Herleitung zur Freigabe vor.
+  - Keine eigenmächtige Fixierung künftiger Wochen im Code ohne vorherige Abstimmung mit dem Athleten.
+
 
 

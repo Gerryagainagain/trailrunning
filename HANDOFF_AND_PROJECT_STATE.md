@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.03 (HM-Kalibrierung: 18k Longrun auf 350–400 Hm korrigiert statt Overkill 500–600 Hm · v12.03)  
+**Document Version:** 12.04 (System-Regel GEMINI.md § 10: Wochenplan-Validierung & Spezifik-Formel verankert · v12.04)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.03)
+## 📌 1. Project Overview & Release Freeze State (v12.04)
 
+- **System-Regel GEMINI.md § 10 verankert (v12.04):**
+  - **Spezifik-Pflicht:** Vor jeder Plan-Eintragung eines Longruns muss die Höhenmeterdichte ($D_{Hm}$) zwingend gegen den unmittelbar anstehenden Zielwettkampf gerechnet werden ($\pm 10\text{–}20\%$).
+  - **Striktes Verbot:** Keine Übertragung von Höhenmeterprofilen späterer Rennen (wie Drachenlauf 48 Hm/km) auf frühere Wettkämpfe (wie 7G-HM 16,8 Hm/km).
+  - **Regenerations- & Belastungsfenster:** Mind. 48–72h zwischen Tempo/Fahrtspiel und Key-Longrun; kein Beinkrafttraining 48h vor Key-Longruns.
+  - **Rollierende Planung:** Vorlage der Folgewoche zur Wochenmitte (Mi/Do) mit physiologischer Begründung zur Freigabe durch den Athleten.
 - **Höhenmeter-Korrektur Sonntag 29.11. (v12.03):**
   - **Physiologischer Befund & Bereinigung:**
     - Der Siebengebirgs-HM am 06.12. hat ein Streckenprofil von **21,4 km und 360 Hm** (Steigungsdichte: **16,8 Hm/km** auf breiten, rollenden Forstwegen).
