@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.04 (System-Regel GEMINI.md § 10: Wochenplan-Validierung & Spezifik-Formel verankert · v12.04)  
+**Document Version:** 12.05 (Wochenplan KW 48 vollständig harmonisiert: 36,0 km Benchmark & Realläufe synchron · v12.05)  
 **Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
@@ -8,8 +8,18 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.04)
+## 📌 1. Project Overview & Release Freeze State (v12.05)
 
+- **KW 48 Harmonisiert & Verifiziert (v12.05):**
+  - **Kilometer-Summe:** Plan-Kilometer auf exakt **36,0 km** kalibriert ($8\text{k Di} + 10\text{k Do} + 18\text{k So}$). Benchmark-Pill und ShortTitle synchronisiert.
+  - **Tagesabfolge:**
+    - MON 23.11: `Ruhe` (0 km geloggt)
+    - DIE 24.11: `Hügel-Fahrtspiel` (7,1 km / 59:36 min / 81 Hm / 117 bpm geloggt)
+    - MIT 25.11: `Ruhe` (passiv)
+    - DON 26.11: `Locker GA1` (10,0 km / 1:18:00 h / 43 Hm / 116 bpm geloggt)
+    - FRE 27.11: `STUDIO · Leicht Rumpf & Mobility` (Keine Beine · Max. 30–35 min)
+    - SAM 28.11: `WANDERN · Leichtes Wandern` (1,5 Std. Erkrath · Time on Feet)
+    - SON 29.11: `18.0 KM · Key Longrun` (Erkrath 350–400 Hm)
 - **System-Regel GEMINI.md § 10 verankert (v12.04):**
   - **Spezifik-Pflicht:** Vor jeder Plan-Eintragung eines Longruns muss die Höhenmeterdichte ($D_{Hm}$) zwingend gegen den unmittelbar anstehenden Zielwettkampf gerechnet werden ($\pm 10\text{–}20\%$).
   - **Striktes Verbot:** Keine Übertragung von Höhenmeterprofilen späterer Rennen (wie Drachenlauf 48 Hm/km) auf frühere Wettkämpfe (wie 7G-HM 16,8 Hm/km).
