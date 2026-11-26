@@ -1,15 +1,26 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 11.98 (Kein modales Race-Briefing für parkrun 5k; PB & Racepace rein in der Wochenkarte · v11.98)  
-**Last Updated:** November 24, 2026  
+**Document Version:** 11.99 (Reallauf Dienstag 24.11.2026 Hügel-Fahrtspiel 7,1 km fest in den Code synchronisiert · v11.99)  
+**Last Updated:** November 26, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v11.98)
+## 📌 1. Project Overview & Release Freeze State (v11.99)
 
+- **Reallauf Dienstag 24.11.2026 fest im Quellcode verankert (v11.99):**
+  - **Realdaten aus lokalem Browser-Speicher extrahiert:**
+    - Datum: **Dienstag, 24.11.2026 (KW 48)**
+    - Distanz: **7,1 km**
+    - Zeit / Pace: **59:36 min** (Ø Pace: **8:24 min/km**)
+    - Höhenmeter: **81 Hm**
+    - Puls: **Ø 117 bpm** (Präzise im aeroben GA1-Fundament unterhalb VT1 118 bpm)
+    - Einheit: **Hügel-Fahrtspiel**
+  - **Globale Verfügbarkeit für Mobile & Desktop:**
+    - Fest hinterlegt in `seedDefaultRuns` ([index.html](file:///Users/Gerhard/Desktop/running_guide/index.html)), `defaultInitialRuns` ([app.js](file:///Users/Gerhard/Desktop/running_guide/app.js)) und [preview_jahres_dashboard.html](file:///Users/Gerhard/Desktop/running_guide/preview_jahres_dashboard.html).
+    - Dadurch ist der Lauf nun geräteunabhängig auf dem iPhone (Safari & PWA) sowie auf dem Desktop automatisch grün als absolviert (`✓ Erledigt · 7.1 km`) markiert, ohne dass manueller AirDrop-Sync erforderlich ist.
 - **Kein modales Race-Briefing für parkrun 5k (v11.98):**
   - **Nutzeranforderung:** Kein modales Race-Fenster zum parkrun; die zu schlagende Bestzeit (28:40 min aus 2025) und die Racepace (5:45 ➔ 5:40 ➔ 5:35 min/km) verbleiben schlank in der Wochen- und Tageskarte.
   - **Wochenkarte KW 52 (`weeksData[52]`):**

@@ -87,6 +87,23 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
+  // KW 48 (Hügel-Fahrtspiel)
+  {
+    id: 1795507892520,
+    kw: 48,
+    date: '24.11.2026',
+    dayDate: '24.11',
+    dist: 7.1,
+    distMeters: 7100,
+    hm: 81,
+    duration: '00:59:36',
+    hr: 117,
+    pace: '8:24',
+    type: 'laufen',
+    isErsatz: false,
+    tag: 'Hügel-Fahrtspiel',
+    notes: 'Geloggt: 7.1 km in 59:36 min · Pace 8:24 min/km · Ø 117 bpm · 81 Hm (Hügel-Fahrtspiel)'
+  },
   // KW 47 (Longrun Erkrath)
   {
     id: 1795350000000,
