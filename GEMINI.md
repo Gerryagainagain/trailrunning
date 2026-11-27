@@ -22,11 +22,21 @@ This file contains strict system-level instructions for the AI assistant when op
 
 ---
 
-## 📌 4. Deployment & Synchronization Protocol
-- Bei jeder Code-Änderung (`app.js`, `index.html`, `styles.css`, `tokens.css`, `HANDOFF_AND_PROJECT_STATE.md`):
+## 📌 4. Deployment, Git & Hosting Protocol (Anti-FTP & No-Althoster-CI/CD)
+- **Live-System & Ziel-Pfad:**
+  - Produktiv-URL: `https://gerhardschmal.de/trail/`
+  - Server-Zielpfad: `/public_html/gerhardschmal_de/page/trail/` (DomainFactory cPanel).
+- **Strikte Rollentrennung (Git vs. Hosting):**
+  - **Git & GitHub (`origin/main`):** Dient **ausschließlich** als Cloud-Backup, lückenlose Revisionshistorie, Time Machine und Single Source of Truth (SSOT).
+  - **Kein FTP / Keine Althoster-CI/CD:** Reines FTP sowie automatisierte GitHub-Action-Pipelines zu Althostern (DomainFactory, IONOS) sind **strikt untersagt**. Sie erzeugen unnötige Fehlerquellen, Port-/Firewall-Konflikte und Authentifizierungs-Abbrüche.
+  - **Produktiv-Deployment:** Erfolgt pragmatisch, transparent und fehlerfrei über den cPanel File Manager im Browser (geänderte Datei, i. d. R. nur `app.js`, per Drag & Drop in `/trail/` ablegen).
+- **Veto- & Mecker-Pflicht für den Assistenten:**
+  - Falls der Nutzer (Athlet) in künftigen Prompts verlangt, FTP-Programme (Cyberduck, FileZilla) oder automatisierte Git-to-FTP-Deployments zu Althostern einzurichten, **MUSS der Assistent sofort widersprechen („meckern“)** und auf dieses verbindliche Verbot verweisen.
+- **Synchronisations-Schritte bei Code-Änderungen:**
   1. Skript-Version in `index.html` anheben (`app.js?v=X.Y`).
   2. `cp index.html dist/index.html && cp app.js dist/app.js && cp styles.css dist/styles.css && cp tokens.css dist/tokens.css`
-  3. Git Commit lokal erstellen.
+  3. Git Commit & Push lokal auf `origin/main` ausführen.
+  4. Nutzer kurz informieren, welche Datei in den cPanel File Manager gezogen werden soll.
 
 ---
 

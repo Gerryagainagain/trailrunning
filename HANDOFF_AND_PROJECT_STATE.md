@@ -1,12 +1,21 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.07 (Live-Deployment auf https://gerhardschmal.de/trail/ etabliert · v12.07)  
+**Document Version:** 12.08 (Deployment-Regel § 4 GEMINI.md verankert: Anti-FTP & Mecker-Pflicht · v12.08)  
 **Last Updated:** November 27, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
 - **Eigene Domain (Produktiv):** [https://gerhardschmal.de/trail/](https://gerhardschmal.de/trail/) (DomainFactory cPanel: `/public_html/gerhardschmal_de/page/trail/`)
 - **GitHub Pages:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
+
+---
+
+## 📌 0. Deployment, Git & Hosting Protocol (§ 4 GEMINI.md)
+* **Produktiv-URL:** `https://gerhardschmal.de/trail/` (mit SSL Let's Encrypt bis 25.02.2027 und auto HTTPS-Redirect via `.htaccess`).
+* **Kein FTP / Keine Althoster-CI/CD:** Reines FTP sowie automatisierte GitHub-Action-Pipelines zu Althostern (DomainFactory, IONOS) sind **strikt verboten**.
+* **Git & GitHub:** Bleibt die reine SSOT für Backups, Versionierung und Diffs.
+* **Live-Deployment:** Erfolgt pragmatisch via Drag & Drop im cPanel File Manager (`trail/`).
+* **Mecker-Pflicht:** Verlangt der Nutzer künftig FTP-Einrichtung oder Althoster-CI/CD, hat der Assistent sofort zu widersprechen.
 
 ---
 
