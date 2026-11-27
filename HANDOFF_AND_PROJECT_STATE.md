@@ -1,9 +1,11 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.06 (Terrain-Allokation Belgenbach verankert: Erkrath bis 600 Hm vs. Siebengebirge 700+ Hm · v12.06)  
-**Last Updated:** November 26, 2026  
+**Document Version:** 12.07 (Live-Deployment auf https://gerhardschmal.de/trail/ etabliert · v12.07)  
+**Last Updated:** November 27, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
-**Live Application URL:** `https://gerryagainagain.github.io/trailrunning/`  
+**Live Application URLs:**
+- **Eigene Domain (Produktiv):** [https://gerhardschmal.de/trail/](https://gerhardschmal.de/trail/) (DomainFactory cPanel: `/public_html/gerhardschmal_de/page/trail/`)
+- **GitHub Pages:** `https://gerryagainagain.github.io/trailrunning/`  
 **Local Workspace Path:** `/Users/Gerhard/Desktop/running_guide`
 
 ---
