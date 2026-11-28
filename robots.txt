@@ -1,49 +1,49 @@
-# Block all web crawlers & search engines
+# Block all web crawlers & search engines ONLY for the /trail/ directory
 User-agent: *
-Disallow: /
+Disallow: /trail/
 
-# Explicitly block AI Training & Search Crawlers (OpenAI, Gemini, Meta, Claude, TikTok, Apple, Perplexity)
+# Explicitly block AI Training & Search Crawlers for /trail/
 User-agent: GPTBot
-Disallow: /
+Disallow: /trail/
 
 User-agent: ChatGPT-User
-Disallow: /
+Disallow: /trail/
 
 User-agent: Google-Extended
-Disallow: /
+Disallow: /trail/
 
 User-agent: GoogleOther
-Disallow: /
+Disallow: /trail/
 
 User-agent: ClaudeBot
-Disallow: /
+Disallow: /trail/
 
 User-agent: Claude-Web
-Disallow: /
+Disallow: /trail/
 
 User-agent: Meta-ExternalAgent
-Disallow: /
+Disallow: /trail/
 
 User-agent: Meta-ExternalFetcher
-Disallow: /
+Disallow: /trail/
 
 User-agent: FacebookExternalHit
-Disallow: /
+Disallow: /trail/
 
 User-agent: Bytespider
-Disallow: /
+Disallow: /trail/
 
 User-agent: CCBot
-Disallow: /
+Disallow: /trail/
 
 User-agent: PerplexityBot
-Disallow: /
+Disallow: /trail/
 
 User-agent: Applebot-Extended
-Disallow: /
+Disallow: /trail/
 
 User-agent: Cohere-ai
-Disallow: /
+Disallow: /trail/
 
 User-agent: Diffbot
-Disallow: /
+Disallow: /trail/
