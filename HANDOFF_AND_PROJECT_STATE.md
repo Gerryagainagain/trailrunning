@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.15 (Offizielle Athleten-Profile UTMB Index & Race Result in Saison-Modal integriert · v12.15)  
+**Document Version:** 12.16 (Button-Label über Saison-Shelf auf „Alle Läufe ›“ präzisiert · v12.16)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.15)
+## 📌 1. Project Overview & Release Freeze State (v12.16)
+
+- **Button-Label auf „Alle Läufe ›“ aktualisiert (v12.16):**
+  - **Saison-Regal-Header:** Der Action-Button über dem Amazon-Shelf wurde von `Alle ›` auf `Alle Läufe ›` präzisiert.
+  - Öffnet wie bisher den Slide-Over-Drawer `season_all` mit den 5 Saisonrennen und den Profilen UTMB Index & Race Result.
 
 - **Offizielle Athleten-Profile in Saison-Historie integriert (v12.15):**
   - **Saison-Modal („Alle ›“ / `season_all`):** Um eine elegante zweite Sektion *„Offizielle Ergebnis-Archive & Profile“* unter den 5 Saisonrennen ergänzt.
