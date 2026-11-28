@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.14 (Beide Ardennen-Termine 12.–14.03. und 26.–29.03. mit Chalet-Cover im Q1-Shelf & Kalender verankert · v12.14)  
+**Document Version:** 12.15 (Offizielle Athleten-Profile UTMB Index & Race Result in Saison-Modal integriert · v12.15)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,14 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.14)
+## 📌 1. Project Overview & Release Freeze State (v12.15)
+
+- **Offizielle Athleten-Profile in Saison-Historie integriert (v12.15):**
+  - **Saison-Modal („Alle ›“ / `season_all`):** Um eine elegante zweite Sektion *„Offizielle Ergebnis-Archive & Profile“* unter den 5 Saisonrennen ergänzt.
+  - **Verknüpfte Profile:**
+    - **UTMB World Index:** `https://utmb.world/my-utmb/my-achievements` (mit cyanfarbenem UTMB-Badge und Leistungsindex-Untertitel).
+    - **m:rr Race Result:** `https://my.raceresult.com/users/Gerryagain/` (mit orangefarbenem RR-Badge und Wettkampf-Archiv Gerryagain).
+  - **Vorteil:** Hält den operativen Alltags-Kalender sauber und bindet die offiziellen Ergebnis-Datenbanken genau dort ein, wo die Wettkampf-Historie verortet ist.
 
 - **Beide Ardennen-Wochenend-Optionen eingepflegt (v12.14):**
   - **Option 1 (12.–14.03.2027):** Post-Belgenbach Erholung (Fr–So).
