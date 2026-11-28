@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.16 (Button-Label über Saison-Shelf auf „Alle Läufe ›“ präzisiert · v12.16)  
+**Document Version:** 12.17 (Minimalistische Links UTMB und my.raceresult ohne Floskeln · v12.17)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.16)
+## 📌 1. Project Overview & Release Freeze State (v12.17)
+
+- **Minimalistische Links im Saison-Briefing (v12.17):**
+  - Textballast und Zwischenüberschriften entfernt.
+  - Nur zwei direkte Buttons: `UTMB ↗` und `my.raceresult ↗` unter den 5 Rennen.
 
 - **Button-Label auf „Alle Läufe ›“ aktualisiert (v12.16):**
   - **Saison-Regal-Header:** Der Action-Button über dem Amazon-Shelf wurde von `Alle ›` auf `Alle Läufe ›` präzisiert.
