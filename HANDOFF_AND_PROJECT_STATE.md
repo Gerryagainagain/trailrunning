@@ -1,7 +1,7 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.08 (Deployment-Regel § 4 GEMINI.md verankert: Anti-FTP & Mecker-Pflicht · v12.08)  
-**Last Updated:** November 27, 2026  
+**Document Version:** 12.09 (Belgenbach Anmeldestand auf 137/300 aktualisiert · v12.09)  
+**Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
 - **Eigene Domain (Produktiv):** [https://gerhardschmal.de/trail/](https://gerhardschmal.de/trail/) (DomainFactory cPanel: `/public_html/gerhardschmal_de/page/trail/`)
