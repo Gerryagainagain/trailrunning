@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.09 (Belgenbach Anmeldestand auf 137/300 aktualisiert · v12.09)  
+**Document Version:** 12.10 (Seitentitel auf "Trailrunning 2027" bereinigt · v12.10)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
