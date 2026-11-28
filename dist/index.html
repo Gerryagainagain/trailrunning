@@ -17,8 +17,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=12.12">
-  <link rel="stylesheet" href="styles.css?v=12.12">
+  <link rel="stylesheet" href="tokens.css?v=12.13">
+  <link rel="stylesheet" href="styles.css?v=12.13">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -4258,8 +4258,8 @@
           { d: 'DIE 24.11', val: '8.0', unit: 'KM', tag: 'Hügel-Fahrtspiel', sub: '4–5 Schübe bis 132 bpm' },
           { d: 'MIT 25.11', val: '—', tag: 'Ruhe', sub: 'Passiv' },
           { d: 'DON 26.11', val: '10.0', unit: 'KM', tag: 'Locker GA1', sub: '112–115 bpm' },
-          { d: 'FRE 27.11', val: 'STUDIO', tag: 'Leicht Rumpf & Mobility', sub: 'Keine Beine · Max. 30–35 min', isStudio: true },
-          { d: 'SAM 28.11', val: 'WANDERN', tag: 'Leichtes Wandern', sub: '1,5 Std. Erkrath · Time on Feet', isHike: true },
+          { d: 'FRE 27.11', val: 'STUDIO', tag: '✓ Leicht Rumpf & Mobility', sub: 'Keine Beine · Max. 30–35 min', isStudio: true },
+          { d: 'SAM 28.11', val: '4.5', unit: 'KM', tag: '✓ Leichtes Wandern', sub: '1:11:00 h · 110 Hm', isHike: true },
           { d: 'SON 29.11', val: '18.0', unit: 'KM', tag: 'Key Longrun', sub: 'Erkrath (350–400 Hm)', isLongrun: true, isHighlight: true }
         ]
       },
@@ -4609,6 +4609,38 @@
     const SEASON_YEAR = 2026;
 
     const seedDefaultRuns = [
+      {
+        id: 1795879400000,
+        kw: 48,
+        date: "28.11.2026",
+        dayDate: "28.11",
+        dist: 4.5,
+        distMeters: 4500,
+        hm: 110,
+        duration: "01:11:00",
+        hr: 0,
+        pace: "15:47",
+        type: "wandern",
+        isErsatz: true,
+        tag: "Leichtes Wandern",
+        notes: "Geloggt: 4.5 km in 1:11:00 h · 110 Hm · Leichtes Wandern Erkrath (Time on Feet)"
+      },
+      {
+        id: 1795790000000,
+        kw: 48,
+        date: "27.11.2026",
+        dayDate: "27.11",
+        dist: 0,
+        distMeters: 0,
+        hm: 0,
+        duration: "00:30:00",
+        hr: 0,
+        pace: "-:--",
+        type: "kraft",
+        isErsatz: true,
+        tag: "Leicht Rumpf & Mobility",
+        notes: "Studio absolviert: Leicht Rumpf & Mobility (Keine Beine · Max. 30–35 min)"
+      },
       {
         id: 1795680895844,
         kw: 48,

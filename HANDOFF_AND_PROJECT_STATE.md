@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.12 (Neues Ardennen-Chalet-Coverbild assets/ardennen_cover.jpg eingebunden · v12.12)  
+**Document Version:** 12.13 (Realdaten KW 48 Freitag Studio & Samstag Wandern 4,5 km fest im Quellcode verankert · v12.13)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,24 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.06)
+## 📌 1. Project Overview & Release Freeze State (v12.13)
+
+- **Realdaten Freitag 27.11. & Samstag 28.11. fest im Quellcode verankert (v12.13):**
+  - **Freitag, 27.11.2026 (KW 48):**
+    - Einheit: **STUDIO · Leicht Rumpf & Mobility**
+    - Dauer: **30–35 min** (Keine Beine)
+    - Status: Absolviert (`✓ Leicht Rumpf & Mobility`)
+    - Typ: `kraft` / `isStudio: true`
+  - **Samstag, 28.11.2026 (KW 48):**
+    - Einheit: **Leichtes Wandern** (Time on Feet vor dem Key-Longrun)
+    - Distanz: **4,5 km**
+    - Zeit: **1:11:00 h** (Ø Pace: **15:47 min/km**)
+    - Höhenmeter: **110 Hm**
+    - Status: Absolviert (`✓ Leichtes Wandern`)
+    - Typ: `wandern` / `isHike: true`
+  - **Globale Verankerung:**
+    - Beide Einheiten fest in `seedDefaultRuns` ([index.html](file:///Users/Gerhard/Desktop/running_guide/index.html)), `defaultInitialRuns` ([app.js](file:///Users/Gerhard/Desktop/running_guide/app.js)) und [preview_jahres_dashboard.html](file:///Users/Gerhard/Desktop/running_guide/preview_jahres_dashboard.html) eingetragen.
+    - Synchronisiert nach `dist/` und per Git auf `origin/main` gesichert.
 
 - **Terrain- & Höhenmeter-Allokation für Belgenbach 2027 verankert (v12.06):**
   - **Grundsatz (§ 10 GEMINI.md):**

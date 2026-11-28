@@ -87,6 +87,40 @@ const kwMap = {
 };
 
 const defaultInitialRuns = [
+  // KW 48 (Leichtes Wandern)
+  {
+    id: 1795879400000,
+    kw: 48,
+    date: '28.11.2026',
+    dayDate: '28.11',
+    dist: 4.5,
+    distMeters: 4500,
+    hm: 110,
+    duration: '01:11:00',
+    hr: 0,
+    pace: '15:47',
+    type: 'wandern',
+    isErsatz: true,
+    tag: 'Leichtes Wandern',
+    notes: 'Geloggt: 4.5 km in 1:11:00 h · 110 Hm · Leichtes Wandern Erkrath (Time on Feet)'
+  },
+  // KW 48 (Studio Leicht Rumpf & Mobility)
+  {
+    id: 1795790000000,
+    kw: 48,
+    date: '27.11.2026',
+    dayDate: '27.11',
+    dist: 0,
+    distMeters: 0,
+    hm: 0,
+    duration: '00:30:00',
+    hr: 0,
+    pace: '-:--',
+    type: 'kraft',
+    isErsatz: true,
+    tag: 'Leicht Rumpf & Mobility',
+    notes: 'Studio absolviert: Leicht Rumpf & Mobility (Keine Beine · Max. 30–35 min)'
+  },
   // KW 48 (Locker GA1)
   {
     id: 1795680895844,
