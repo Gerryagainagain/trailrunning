@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.17 (Minimalistische Links UTMB und my.raceresult ohne Floskeln · v12.17)  
+**Document Version:** 12.18 (UTMB & my.raceresult Buttons dezent und monochrom formatiert · v12.18)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,11 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.17)
+## 📌 1. Project Overview & Release Freeze State (v12.18)
+
+- **Monochrome Links im Saison-Briefing (v12.18):**
+  - Signalfarben (Cyan/Orange) entfernt.
+  - Buttons komplett monochrom und dezent gehalten (`rgba(255,255,255,0.65)`).
 
 - **Minimalistische Links im Saison-Briefing (v12.17):**
   - Textballast und Zwischenüberschriften entfernt.
