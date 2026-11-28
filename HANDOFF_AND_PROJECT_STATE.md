@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.11 (Reisekarte von Heel auf Ardennen aktualisiert · v12.11)  
+**Document Version:** 12.12 (Neues Ardennen-Chalet-Coverbild assets/ardennen_cover.jpg eingebunden · v12.12)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -121,7 +121,7 @@
   - **Kalender-Integration (Juni 2027):** Der Tirol-Urlaub wurde auf `05.–24.06.` kalibriert; ab dem 25.06. schließt nahtlos der `Geschwistertreff Kaub (25.–27.06.)` an. Klick auf Tage 25–27 blendet `25.–27. Juni 2027: Geschwistertreff Kaub am Rhein` im Status-Dock ein.
 - **Wochenende an der Maas (12.–14. März 2027, v11.94):**
   - **Kalender-Integration (Q1):** Im Monat März 2027 (`mIdx: 2`) als Trip hinterlegt (`12.–14.03.`). Bei aktiviertem Reise-Layer wird der gestreifte Erholungsbalken (`vacation-layer`) über der akuten Belgenbach-Regenerationsphase angezeigt. Tapping blendet `12.–14. März 2027: Wochenende in den Ardennen (Post-Belgenbach Erholung)` im Status-Dock ein.
-  - **Amazon-Shelf (Q1):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `12.–14.03.`, Titel `Ardennen` und dem Cover (`assets/maas_cover.jpg`).
+  - **Amazon-Shelf (Q1):** Neue Reisekarte mit gelbem `REISE`-Badge, Datum `12.–14.03.`, Titel `Ardennen` und dem Chalet-Cover (`assets/ardennen_cover.jpg` via ardennes-etape Houffalize).
 - **Kalenderwochen-Korrektur Dezember 2026 (v11.93):**
   - **KW 50 bereinigt:** Korrekte Realdaten `07. – 13. Dezember 2026` (MON 07.12 bis SON 13.12). Der Sprung auf den 26.12. wurde vollständig entfernt.
   - **KW 51 hinzugefügt:** `14. – 20. Dezember 2026` (Saisonpause & Winterruhe).
