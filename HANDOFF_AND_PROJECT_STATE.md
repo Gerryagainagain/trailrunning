@@ -1,6 +1,6 @@
 # 🏃‍♂️ RUNNING GUIDE – HANDOFF & PROJECT STATE DOCUMENT
 
-**Document Version:** 12.13 (Realdaten KW 48 Freitag Studio & Samstag Wandern 4,5 km fest im Quellcode verankert · v12.13)  
+**Document Version:** 12.14 (Beide Ardennen-Termine 12.–14.03. und 26.–29.03. mit Chalet-Cover im Q1-Shelf & Kalender verankert · v12.14)  
 **Last Updated:** November 28, 2026  
 **Repository:** `https://github.com/Gerryagainagain/trailrunning.git`  
 **Live Application URLs:**
@@ -19,7 +19,13 @@
 
 ---
 
-## 📌 1. Project Overview & Release Freeze State (v12.13)
+## 📌 1. Project Overview & Release Freeze State (v12.14)
+
+- **Beide Ardennen-Wochenend-Optionen eingepflegt (v12.14):**
+  - **Option 1 (12.–14.03.2027):** Post-Belgenbach Erholung (Fr–So).
+  - **Option 2 (26.–29.03.2027):** Alternatives langes Wochenende (Fr–Mo).
+  - **Kalender-Integration:** Beide Zeiträume im März 2027 (`mIdx: 2`) mit separaten Interaktions-Daten und `vacation-layer`-Streifen hinterlegt.
+  - **Amazon-Shelf (Q1):** Beide Karten mit identischem Chalet-Cover (`assets/ardennen_cover.jpg`), gelbem `REISE`-Badge, Datum `12.–14.03.` bzw. `26.–29.03.` und Titel `Ardennen` chronologisch nebeneinander platziert.
 
 - **Realdaten Freitag 27.11. & Samstag 28.11. fest im Quellcode verankert (v12.13):**
   - **Freitag, 27.11.2026 (KW 48):**

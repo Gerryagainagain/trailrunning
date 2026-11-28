@@ -17,8 +17,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="tokens.css?v=12.13">
-  <link rel="stylesheet" href="styles.css?v=12.13">
+  <link rel="stylesheet" href="tokens.css?v=12.14">
+  <link rel="stylesheet" href="styles.css?v=12.14">
   <style>
     /* ==========================================================================
        APPLE HIG & DESIGN.md HARMONIZED MASTER SPECIFICATION
@@ -2915,7 +2915,8 @@
           { 
             name: 'März', mIdx: 2, days: 31, startOffset: 0,
             trips: [
-              { id: 'maas', label: 'Wochenende in den Ardennen (12.–14.03.)', startDay: 12, endDay: 14, details: '12.–14. März 2027: Wochenende in den Ardennen (Post-Belgenbach Erholung)' }
+              { id: 'ardennen_1', label: 'Wochenende in den Ardennen (12.–14.03.)', startDay: 12, endDay: 14, details: '12.–14. März 2027: Wochenende in den Ardennen (Option 1 · Post-Belgenbach Erholung)' },
+              { id: 'ardennen_2', label: 'Wochenende in den Ardennen (26.–29.03.)', startDay: 26, endDay: 29, details: '26.–29. März 2027: Wochenende in den Ardennen (Option 2)' }
             ]
           }
         ]
@@ -2992,11 +2993,23 @@
           bg: 'linear-gradient(135deg, #2b1f1d, #1c130c)'
         },
         {
-          id: 'maas',
+          id: 'ardennen_1',
           isTrip: true,
           title: 'Ardennen',
           shortTitle: 'Ardennen',
           date: '12.–14.03.',
+          badge: 'REISE',
+          badgeClass: 'badge-yellow',
+          imageUrl: 'assets/ardennen_cover.jpg',
+          bgPosition: 'center center',
+          bg: 'linear-gradient(135deg, #18252a, #0c1417)'
+        },
+        {
+          id: 'ardennen_2',
+          isTrip: true,
+          title: 'Ardennen',
+          shortTitle: 'Ardennen',
+          date: '26.–29.03.',
           badge: 'REISE',
           badgeClass: 'badge-yellow',
           imageUrl: 'assets/ardennen_cover.jpg',
